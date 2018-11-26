@@ -23,22 +23,25 @@ In the root folder, create a folder with your github nickname.
 ```bash
 .
 ├── README.md
-└── github-username-directory
+└── mickyginger
 ```
 
 ## Submitting work
 
-### Step 1. Create a week/day folder
+### Step 1. Create a folder for the specific homework
 
-When you are going to add a new homework, first create a directory with the information about the week and the day like with the format `w01d02` (for week one, day two).
+```sh
+cd mickyginger
+mkdir js-calculator
+```
 
 Your folder structure should look something like this:
 
 ```
 .
 ├── README.md
-└── github-username-directory
-    └── w01d02
+└── mickyginger
+    └── js-calculator
 ```
 
 ### Step 2. Push to your fork
