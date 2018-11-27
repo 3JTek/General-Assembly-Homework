@@ -54,13 +54,18 @@
 
     <p>Drop in for breakfast and stay for dinner. No-one outstays their welcome.</p>
 
-    Coppa Club, 3 Three Quays Walk, Lower Thames Street, London, EC3R 6AH
+    <p class="contact">Coppa Club, 3 Three Quays Walk, Lower Thames Street, London, EC3R 6AH</p>
 
-    020 7993 3827
+    <p class"contact"><a href=tel:+442079933827>020 7993 3827</a></p>
   </section>
     <!-- gallery -->
-
+  <section class="gallery">
+    <img src="images/gallery-image-1" alt="gallery">
+  </section>
     <!-- menus -->
+    <section class="menus">
+
+
     Menus
 
     We start early, with a breakfast menu including juices, pastries, pancakes, all kinds of eggs and freshly-roasted coffee. At 11.30am, we switch to our all-day menu.
@@ -74,30 +79,83 @@
     Pudding
     Kids
     Bar
-
+    </section>
     <!-- newsletter -->
+    <section class="newsletter">
+
+
     Sign up
 
     If you would like regular updates on Coppa Club events and launches, sign up to our newsletter.
-
+    </section>
     <!-- booking -->
-    Book Now
+    <section class="booking">
+    <form>
+        <h2>Book Now</h2>
+<!--       <div>
+        <label>
+          Tell us about yourself
+      <textarea name="about-yourself">I am legend.</textarea>
+        </label>
+      </div> -->
 
-    Booking Type
-    Number of people
-    Date
-    Time
-    Until
-    Book now
-
-    We’ve installed eight giant igloos on our terrace to make the most of our view over the river. The igloos are available to book throughout the day from breakfast through to dinner for up to a maximum of 8 people, all bookings under 6 people will be sharing with other guests. Bookings can be made online only and are available until 31st March. We still leave some igloos for walk-ins in case your requested day and time is already taken, so feel free to drop in and have a drink at the bar as you wait.
-
+      <div>
+        <label>
+          Booking Type
+        <select name="booking-type">
+          <option value="party">Party</option>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>
+        </label>
+      </div>
+      <div>
+        <label>
+          Number of people
+        <select name="number-people">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        </label>
+      </div>
+      <div>
+        <label>Date
+        <input type="date">
+        </label>
+      <div>
+      <div>
+        <label>Time
+        <input type="time">
+        </label>
+      <div>
+      <div>
+        <label>Until
+        <input type="time">
+        </label>
+      <div>
+        <button>Book now</button>
+      </div>
+      <p>
+        We’ve installed eight giant igloos on our terrace to make the most of our view over the river. The igloos are available to book throughout the day from breakfast through to dinner for up to a maximum of 8 people, all bookings under 6 people will be sharing with other guests. Bookings can be made online only and are available until 31st March. We still leave some igloos for walk-ins in case your requested day and time is already taken, so feel free to drop in and have a drink at the bar as   you wait.
+      </p>
+    </form>
     <!-- location -->
-    Location
+    <section class="location">
 
-    Directions
-    Coppa Club, 3 Three Quays Walk,
+    <h2>Location</h2>
+
+    <button class="directions">Directions</button>
+    <address>
+    Coppa Club, 3 Three Quays Walk,<br>
     Lower Thames Street, London, EC3R 6AH
+    </address>
 
     Monday to Thursday 7.30am – 11pm
     Friday 7.30am – 12am
@@ -109,26 +167,31 @@
 
     020 7993 3827
     towerbridge@coppaclub.co.uk
-
+    </section>
     <!-- join -->
+    <section class="join">
     Join us
 
     Like what we do? Come and work for us…
     We're looking for bright, motivated people to join our team.
 
     recruitment@coppaclub.co.uk
-
+    </section>
     <!-- social -->
     Follow us on...
 
     <!-- footer -->
-    020 7993 3827
-    towerbridge@coppaclub.co.uk
-
+    <footer>
+    <div class="footer1"
+    <p><a href=tel:+442079933827>020 7993 3827</a></p>
+    <p><a href=mailto:towerbridge@coppaclub.co.uk>towerbridge@coppaclub.co.uk</a></p>
+    <div class="foooter2">
     Coppa Club, 3 Three Quays Walk,
     Lower Thames Street, London, EC3R 6AH
+    </div>
 
-    &copy; 2017 CoppaClub
-    All Rights Reserved
+    <p>&copy; 2017 CoppaClub</p>
+    <p>All Rights Reserved</p>
+    </footer>
   </body>
 </html>
