@@ -18,17 +18,17 @@ main {
   overflow: auto;
   max-width: 1178px;
   margin:auto;
-  padding:10px;
+  padding:30px 0;
 }
 
 button {
   background-color: #3897f0;
   border-radius: 4px;
   color: white;
-  font-size: 18px;
-  padding: 8px;
+  font-size: 14px;
+  padding: 5px;
   margin: 10px;
-  width: 350px;
+  width: 85%;
 }
 
 .bold {
@@ -37,9 +37,20 @@ button {
 .bold.account {
   color: black;
 }
+main section {
+  float:left;
+  width:50%;
+  padding: 10px 0px;
+}
+main section > img {
+  position:absolute;
+  right:50%;
+  top:80px;
+
+}
 
 main section div {
-  max-width: 500px;
+  max-width: 350px;
 }
 
 main section div.no_box {
@@ -72,16 +83,15 @@ main section div h1 {
 main section div h2 {
   margin:0;
   padding:8px;
-  font-size: 20px;
+  font-size: 18px;
+  width:80%;
+  margin: auto;
 }
 main section h3 {
   margin:0;
 }
 
-main section {
-  float:left;
-  width:50%;
-}
+
 
 main section > * {
   display: block;
@@ -98,15 +108,23 @@ main section form {
   padding:8px;
 }
 
-main section form * {
-  width: 350px;
+main section form input {
+  width: 85%;
   font-size: 18px;
   margin:4px auto;
   border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+main section form button  {
+  width: 85%;
+  margin:4px auto;
+
 }
 main section form p {
   border:0px solid black;
-  width: 350px;
+  width: 85%;
+  margin:4px auto;
 }
 
 
@@ -115,7 +133,7 @@ footer {
   max-width: 1178px;
   margin: auto;
   padding: 40px;
-  font-size: 16px;
+  font-size: 12px;
 }
 footer nav {
   float: left;
@@ -133,20 +151,24 @@ footer div {
 
 
 @media screen and (max-width: 992px) {
-
+  main {
+    padding: 0;
+  }
   main section:first-child{
     display:none;
   }
   main section {
     width:100%;
+    padding-top:0;
   }
   button {
     width: calc(100% - 16px);
   }
-  main section form{
 
+  main section form input {
+    width: 100%;
   }
-  main section form * {
+  main section form button {
     width: 100%;
   }
   main section form p {
@@ -155,8 +177,12 @@ footer div {
   main section div {
     padding:4px;
   }
+  main section img {
+    margin-top:15px;
+  }
   footer{
     text-align: center;
+    padding:4px;
   }
   footer div {
     float:none;
