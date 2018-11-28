@@ -1,0 +1,88 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+body,
+input {
+  font-family: "Karla", sans-serif;
+}
+main {
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 1200px;
+  overflow: auto;
+  margin: auto;
+}
+
+.image {
+  overflow: auto;
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+
+.right {
+  overflow: auto;
+  float: right;
+  width: 40%;
+  text-align: center;
+  padding: 20px;
+}
+
+.form {
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+}
+.account {
+  float: left;
+  overflow: auto;
+}
+
+#logo {
+  padding: 30px;
+}
+
+#logIn {
+  border: 1px solid #e6e6e6;
+  padding: 30px;
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+  float: left;
+  overflow: auto;
+}
+
+footer nav {
+  float: left;
+  padding-left: 20px;
+  color: #003569;
+  font-weight: bold;
+  font-family: "Karla", sans-serif;
+  text-transform: uppercase;
+}
+
+footer p {
+  float: right;
+  padding-right: 20px;
+  text-transform: uppercase;
+  color: grey;
+  font-weight: bold;
+}
+button {
+  background-color: #3897f0;
+  width: 300px;
+  height: 35px;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+p {
+  text-align: center;
+}
