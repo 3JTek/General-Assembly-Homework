@@ -4,6 +4,106 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+* {
+  box-sizing: border-box;
+}
+
 body, input {
   font-family: 'Karla', sans-serif;
+  color: #999;
+  font-weight: 900;
+}
+
+body {
+  margin: 50px 20px 20px 20px;
+  background-color: #fafafa;
+}
+/* container has both columns in */
+.container {
+  max-width: 800px;
+  overflow: auto;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #3897f0;
+}
+
+p {
+  text-align: center;
+
+}
+
+button {
+  background-color: #3897f0;
+  border: none;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  margin: 10px;
+}
+
+input {
+  padding: 9px;
+  margin: 2px;
+  width: 100%;
+  display: inline-block;
+}
+
+.column:first-child {
+  width: 50%;
+  float:left;
+}
+
+.column:last-child {
+  width: 50%;
+  float:right;
+  text-align: center;
+}
+
+.row {
+  margin: 20px;
+}
+
+.column:last-child section {
+  background-color: #fff;
+  border: 2px solid lightgrey;
+  padding: 20px;
+  margin: 10px;
+}
+.column:last-child form {
+  background-color: #fff;
+}
+
+footer {
+  max-width: 1000px;
+  overflow: auto;
+  margin: auto;
+  display: inline;
+}
+
+footer nav {
+  float: left;
+}
+
+footer p {
+  float: right;
+}
+
+footer a {
+  color: #003569;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  img {
+    display: none;
+  }
+
+  main section {
+    float: none;
+    width: 100%;
+  }
 }
