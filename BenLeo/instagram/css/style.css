@@ -6,4 +6,16 @@
 
 body, input {
   font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+}
+
+#mobileHero {
+  margin: 100px 200px 100px 200px;
+  float: left;
+}
+
+.signup {
+  border: 5px solid red;
+  text-align: center;
+
 }
