@@ -3,7 +3,9 @@
 /*border color = #e6e6e6*/
 /*footer link color = #003569*/
 /*text grey color = #999*/
-
+*{
+  box-sizing: border-box;
+}
 body, input {
   font-family: 'Karla', sans-serif;
   background-color: #fafafa;
@@ -18,9 +20,13 @@ button {
 }
 
 main {
-  float: left;
-  padding: 50px;
-  overfloat: auto;
+margin: auto;
+  max-width: 800px;
+  overflow: auto;
+}
+
+h3 {
+  color: #999;
 }
 
 h4 {
@@ -28,18 +34,25 @@ h4 {
   margin: 6px;
 }
 
+span {
+  font-weight: bolder;
+}
+
 .mobile {
   float: left;
+  width: 50%;
+
 }
 input {
   display:block;
 }
+
 .desktop {
-  float: left;
-  margin: 100px;
+  float: right;
   text-align: center;
   border: 1px solid #e6e6e6;
   padding: 20px;
+  width: 50%;
 }
 
 section {
@@ -58,6 +71,14 @@ form > * {
 
 aside {
   margin: 7px;
+  color: #999;
+}
+.desktop aside {
+  color: black;
+}
+
+article {
+  color: #999;
 }
 
 nav p {
@@ -68,6 +89,10 @@ nav p {
     main section {
       width: 50%;
       text-align: center;
+    }
+    .mobile {
+      float: left;
+      display: none;
     }
     main section:nth-child(3) {
       width: 100%
