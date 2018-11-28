@@ -3,7 +3,51 @@
 /*border color = #e6e6e6*/
 /*footer link color = #003569*/
 /*text grey color = #999*/
+*{
+ background-color: #fafafa;
 
+}
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
+
+section{
+  overflow: auto;
+}
 body, input {
   font-family: 'Karla', sans-serif;
+}
+#logo{
+
+}
+
+section img{
+  float:left;
+
+}
+section section{
+  background-color: red;
+  width: 35%;
+  float:left;
+  overflow: auto;
+}
+footer{
+    overflow: auto;
+}
+nav ul li{
+  float: left;
+  list-style-type: none;
+  margin-right: 15px;
+}
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  font-family: 'Karla', sans-serif;
+  font-weight:bold;
+}
+
+footer p{
+  float: right;
+  margin:0;
 }
