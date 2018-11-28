@@ -3,25 +3,45 @@
 /*border color = #e6e6e6*/
 /*footer link color = #003569*/
 /*text grey color = #999*/
+
 *{
  background-color: #fafafa;
  font-family:   font-family: 'Karla', sans-serif;
 }
-.wrapper{
-    width: 80%;
-    margin: auto;
+
+a{
+  color: black;
+  text-decoration: none;
+  font-family: 'Karla', sans-serif;
 }
 
-section{
-  overflow: auto;
-}
 body, input {
   font-family: 'Karla', sans-serif;
 }
 
-form{
-  width: 70%;
-  margin:auto;
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
+section{
+  overflow: auto;
+
+
+}
+
+.left{
+  float:left;
+  width: 40%;
+  margin-bottom: 400px;
+
+}
+.right{
+  text-align: center;
+  background-color: white;
+  width: 40%;
+  float:left;
+  border: 1px solid #999;
+
 }
 button{
   width: 100%;
@@ -33,31 +53,39 @@ button{
   font-size: 15px;
 
 }
-#right{
-  text-align: center;
-  background-color: white;
 
+form{
+  width: 70%;
+  margin:auto;
+  color: #999;
 }
+
 input{
   width: 93%;
   padding:5px;
   font-size: 15px;
-
   margin: 3.5px  0px;
+}
+
+
+.login-access{
+  text-align: center;
+  text-align: center;
+  float: left;
+  width: 40%;
+  padding: 10px;
+
+}
+
+.app{
+  text-align: center;
+  float: left;
+  text-align: center;
+  width: 40%;
 
 }
 
 
-#left img{
-  float:left;
-  background-color: white;
-
-}
-section section{
-  width: 35%;
-  float:left;
-  overflow: auto;
-}
 footer{
     overflow: auto;
 }
@@ -68,8 +96,6 @@ nav ul li{
 }
 nav ul li a{
   color: black;
-  text-decoration: none;
-  font-family: 'Karla', sans-serif;
   font-weight:bold;
 }
 
@@ -78,11 +104,27 @@ footer p{
   margin:0;
 }
 
-.login-access{
-  text-align: center;
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+#left img{
+  float:left;
   background-color: white;
+
+}
+section section{
+
 }
 
-.app{
-  text-align: center;
-}
+
+*/
