@@ -4,6 +4,38 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+body {
+  background-color: #fafafa;
+  color = #999;
+}
 body, input {
   font-family: 'Karla', sans-serif;
+}
+main {
+  overflow: auto;
+  max-width: 1178px;
+  margin:auto;
+}
+main section {
+  float:left;
+  width:50%;
+}
+
+main section * {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main section div {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+}
+
+main section form {
+
+}
+
+main section div h1 {
+  display:none;
 }
