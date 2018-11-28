@@ -9,13 +9,17 @@
   box-sizing: border-box;
 }
 
-body, input {
+body {
   font-family: 'Karla', sans-serif;
+  color: #999;
   background-color: #fafafa;
   text-align: center;
+  font-weight: bolder;
 }
 main{
   overflow: auto;
+  width: 900px;
+  margin: auto;
 }
 
 div.column:first-child section:first-child{
@@ -24,7 +28,6 @@ div.column:first-child section:first-child{
 
 div.input{
   float left;
-  width: 60%;
 }
 
 div.column:first-child{
@@ -34,19 +37,28 @@ div.column:first-child{
 div.column:last-child{
   float:right;
   width: 50%;
+  padding: 10px;
 }
 
-section{
-  width: 80%;
 
-}
 .input-area{
   background-color: #fff;
   border: 1px #e6e6e6 solid;
+  margin: 10px;
+  padding: 10px;
 }
 
 form input{
   width: 80%;
+  height: 35px;
+}
+
+button{
+  width: 80%;
+  height: 35px;
+  color: #fff;
+  background-color: #3897f0;
+  font-weight: 700;
 }
 
 footer{
@@ -55,6 +67,10 @@ footer{
 
 footer nav{
   float: left;
+}
+
+nav a{
+  color: #003569;
 }
 
 footer p{
