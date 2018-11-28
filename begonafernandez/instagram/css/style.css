@@ -49,9 +49,13 @@ section {
   margin: 30px 125px 50px 100px;
 }
 
-.signup {
+.signup, .login {
   border: 1px solid #e6e6e6;
   padding: 20px 0;
+}
+
+div {
+  margin: 10px 0;
 }
 
 form p {
@@ -88,6 +92,10 @@ button {
   font-weight: 600;
 }
 
+.login {
+    text-align: center;
+}
+
 .app{
   text-align: center;
 }
@@ -102,7 +110,7 @@ footer nav {
   float: left;
 }
 
-footer nav a {
+a {
   color: #003569;
   text-decoration: none;
 }
