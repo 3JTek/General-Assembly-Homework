@@ -1,0 +1,54 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+* {
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Karla", sans-serif;
+  background-color: #fafafa;
+}
+
+.container {
+  overflow: auto;
+  max-width: 900px;
+  margin: auto;
+}
+.section1 {
+  width: 50%;
+  float: left;
+}
+
+.section2 {
+  width: 50%;
+  float: left;
+  color: #999;
+  padding: 15px 0;
+}
+.section2 button {
+  background-color: #3897f0;
+  color: white;
+  font-weight: bold;
+  width: 75%;
+}
+
+form input {
+  width: 75%;
+}
+
+.signup,
+.login {
+  font: #999;
+  background-color: white;
+  text-align: center;
+  border: solid 1px #e6e6e6;
+}
+
+.login {
+  margin: 10px 10px;
+  padding: 10px;
+}
