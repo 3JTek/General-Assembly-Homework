@@ -107,7 +107,7 @@ i {
   text-transform: uppercase;
 }
 
-.log {
+#log {
   text-decoration: none;
   color: #3897f0;
 }
@@ -129,7 +129,7 @@ i {
 
   .copyright {
     text-align: center;
-    margin-bottom: 35px;
+    margin: 0 150px;
     display: inline-block;
   }
 
