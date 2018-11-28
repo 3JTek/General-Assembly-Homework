@@ -127,5 +127,9 @@ a {
   }
   #cr {
     display: block;
+    float: none;
+    overflow: auto;
+    text-align: center;
+    padding: 2px;
   }
 }
