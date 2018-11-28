@@ -1,0 +1,114 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+}
+main {
+  width: 60%;
+  margin: auto;
+  overflow: auto;
+  background-color: #fafafa;
+}
+form {
+  border: 1px solid #e6e6e6;
+  text-align: center;
+  height: 425px;
+  width: 270px;
+  padding: 25px 25px 0 25px;
+  color: #999;
+  background-color: #FFFFFF;
+}
+button {
+  background-color: #3897f0;
+  width: 240px;
+  border-radius: 4px;
+  height: 35px;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 12px;
+}
+aside {
+  width: 320px;
+}
+
+input {
+  width: 230px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  padding: 5px 0 5px 5px;
+  border: 1px solid #e6e6e6;
+}
+footer {
+  width: 70%;
+  margin: auto;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  display:none;
+}
+.right {
+  float: left;
+  width: 50%;
+}
+.login {
+  border: 1px solid #e6e6e6;
+  text-align: center;
+  width: 320px;
+  height: 60px;
+  margin-top: 15px;
+  background-color: #FFFFFF;
+}
+.logos {
+  margin: auto;
+  width:260px;
+  overflow: auto;
+}
+form p {
+  font-weight: bold;
+}
+aside p {
+  text-align: center;
+}
+.login a {
+  color: #3897f0;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+.date {
+  float: right;
+  padding-right: 40px;
+}
+.nav{
+  float: left;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline;
+}
+li a {
+  text-decoration: none;
+  color: #003569;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 2px;
+}
+@media screen and (max-width: 600px){
+  main {
+    width: 90%;
+    margin: auto;
+  }
+  img {
+    width:50px;
+  }
+}
