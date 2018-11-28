@@ -16,6 +16,7 @@ body {
   text-align: center;
   font-weight: bolder;
 }
+
 main{
   overflow: auto;
   width: 900px;
@@ -63,6 +64,8 @@ button{
   font-weight: 700;
   margin: 4px;
   border-radius: 3px;
+  border: 0;
+
 }
 
 footer{
@@ -82,5 +85,44 @@ nav a{
 footer p{
   float: right;
   margin: 0;
+
+}
+
+@media screen and (max-width: 600px) {
+  div.column:first-child{
+    float: none;
+    width: 100%;
+  }
+  div.column:last-child{
+    float: none;
+    width: 100%;
+  }
+  div.column:first-child{
+    display: none;
+  }
+  footer p{
+    float: none;
+    margin: 0;
+
+  }
+
+
+}
+
+@media screen and (max-width: 900px) {
+  div.column:first-child{
+    display: none;
+  }
+  div.column:last-child{
+    float: none;
+    width: 100%;
+  }
+  main{
+    width: auto;
+  }
+  footer p{
+    float: none;
+    margin: 0;
+  }
 
 }
