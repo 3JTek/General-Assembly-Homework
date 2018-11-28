@@ -6,4 +6,31 @@
 
 body, input {
   font-family: 'Karla', sans-serif;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3897f0;
+  color: white;
+}
+
+.logo {
+  position: relative;
+}
+
+.firstblock {
+  border: 1px solid black;
+  padding: 20px
+}
+
+.signing {
+  border: 1px solid black;
+}
+
+.all {
+  float: right;
+}
+
+footer {
+  border: 1px solid black;
 }
