@@ -1,0 +1,50 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+  overflow: auto;
+}
+
+main {
+  overflow: auto;
+  width: 100%;
+}
+
+.heroContent {
+  border: 5px solid blue;
+  float: left;
+  padding: 15px;
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+
+}
+
+.columns {
+  border: 5px solid yellow;
+  width: 70%;
+  margin: auto;
+  overflow: auto;
+}
+
+.phoneImage {
+  border: 5px solid red;
+  float: left;
+  max-width: 50%
+}
+
+.interactables {
+  text-align: center;
+  border: 5px solid green;
+  float: left;
+  max-width: 50%
+}

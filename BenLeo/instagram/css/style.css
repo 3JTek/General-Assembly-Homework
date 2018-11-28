@@ -21,11 +21,11 @@ main {
   float: left;
   margin: 0 25px;
   padding: -15px 0 0 0;
-  transform: scale(.8, .8);
+  /* transform: scale(.8, .8); */
 }
 
 .mainContent {
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   margin: 0 auto;
   float: none;
   text-align: center;
@@ -60,9 +60,11 @@ main {
 }
 
 .appCTA {
-  border: 5px solid green;
-  float: none;
+  /* border: 5px solid green; */
   text-align: center;
+  color: black;
+  display: inline-block;
+  margin-left: 700px;
 }
 
 input {
@@ -83,13 +85,26 @@ button {
 }
 
 footer {
-  border: 5px solid brown;
+  /* border: 5px solid brown; */
   min-width: 100%
   float: none;
   overflow: auto;
+  padding: 20px;
 }
 
 ul a {
   margin: 0 5px;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  color: #003569;
 }
+
+.copyright {
+  float: right;
+  text-transform: uppercase;
+}
+
+/* @media only screen and (min-width: 600px) {
+  #mobileHero {
+    display: none;
+  }
+} */
