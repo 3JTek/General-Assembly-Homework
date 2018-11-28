@@ -49,6 +49,7 @@ input {
   margin: 2px;
   width: 100%;
   display: inline-block;
+  font-size: 16px;
 }
 
 .column:first-child {
@@ -76,11 +77,15 @@ input {
   background-color: #fff;
 }
 
+.row:last-child {
+  color: black;
+}
+
 footer {
   max-width: 1000px;
   overflow: auto;
   margin: auto;
-  display: inline;
+  padding-bottom: 15px;
 }
 
 footer nav {
@@ -89,6 +94,7 @@ footer nav {
 
 footer p {
   float: right;
+  margin: 0;
 }
 
 footer a {
@@ -97,13 +103,13 @@ footer a {
 
 
 
-@media screen and (max-width: 600px) {
-  img {
+@media screen and (max-width: 700px) {
+  .column:first-child {
     display: none;
   }
 
-  main section {
-    float: none;
+  .column:last-child {
     width: 100%;
+    float:none;
   }
 }
