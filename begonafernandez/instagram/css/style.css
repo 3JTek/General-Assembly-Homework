@@ -129,3 +129,19 @@ nav a {
 footer span {
   float: right;
 }
+
+@media screen and (max-width: 900px) {
+  aside {
+    display: none;
+  }
+
+  section {
+    margin: 30px 198px 50px 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    margin: 30px 0 50px 100px;
+  }
+}
