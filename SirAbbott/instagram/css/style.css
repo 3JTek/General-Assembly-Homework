@@ -52,6 +52,15 @@ input::placeholder {
   padding: 30px;
   font-weight: bolder;
 }
+#sign {
+  font-weight: 400;
+}
+
+#terms {
+  color: #999;
+  text-decoration: none;
+}
+
 .signup,
 .login {
   font: #999;
