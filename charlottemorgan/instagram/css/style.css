@@ -37,12 +37,14 @@ input {
   font-size: 15px;
   width: 75%;
   padding: 10px;
+  border-radius: 5px;
 }
 
 form input {
   width: 75%;
   background-color: white;
   padding: 10px;
+  border-radius: 5px;
 }
 .signup {
   padding: 30px;
@@ -103,4 +105,17 @@ a {
   float: right;
   margin: 0;
   padding-right: 25px;
+}
+
+@media screen and (max-width: 600px) {
+  .section1 {
+    display: none;
+  }
+  .section2 {
+    width: 100%;
+    float: none;
+  }
+  footer p {
+    float: none;
+  }
 }
