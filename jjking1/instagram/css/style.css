@@ -33,11 +33,13 @@ footer{
 
 footer nav{
   float:left;
+  padding-bottom: 15px;
 }
 
 footer p{
   float: right;
   color: #999;
+  padding-bottom: 15px;
 }
 
 nav a{
@@ -141,4 +143,9 @@ input{
 #appstore{
   float: left;
   width: 50%;
+}
+
+
+@media screen and (max-width: 600px) {
+  
 }
