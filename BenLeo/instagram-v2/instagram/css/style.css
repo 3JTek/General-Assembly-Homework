@@ -12,6 +12,7 @@ body, input {
   font-family: 'Karla', sans-serif;
   background-color: #fafafa;
   overflow: auto;
+  color: #999;
 }
 
 main {
@@ -20,7 +21,7 @@ main {
 }
 
 .heroContent {
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   float: left;
   padding: 15px;
   width: 100%;
@@ -30,21 +31,79 @@ main {
 }
 
 .columns {
-  border: 5px solid yellow;
+  /* border: 5px solid yellow; */
   width: 70%;
-  margin: auto;
+  margin:  auto;
   overflow: auto;
 }
 
 .phoneImage {
-  border: 5px solid red;
+  /* border: 5px solid red; */
   float: left;
-  max-width: 50%
+  width: 50%
 }
 
 .interactables {
   text-align: center;
-  border: 5px solid green;
+  /* border: 5px solid green; */
   float: left;
-  max-width: 50%
+  width: 50%
+}
+
+.signup {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  padding: 20px 0;
+}
+
+.existing {
+  color: black;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  margin: 25px 0;
+  padding: 20px 0;
+}
+
+.login {
+  color: #3897f0;
+}
+
+.appCTA {
+  color: black;
+}
+
+input {
+  background-color: white;
+  display: block;
+  margin: 10px auto;
+  width: 70%;
+  border: 1px solid #e6e6e6;
+}
+
+button {
+  font-family: 'Karla', sans-serif;
+  background-color: #3897f0;
+  color: white;
+  padding: 8px 45px;
+  font-weight: bolder;
+  width: 70%;
+}
+
+footer {
+  /* border: 5px solid brown; */
+  min-width: 100%
+  float: none;
+  overflow: auto;
+  padding: 20px;
+}
+
+ul a {
+  margin: 0 5px;
+  text-transform: uppercase;
+  color: #003569;
+}
+
+.copyright {
+  float: right;
+  text-transform: uppercase;
 }
