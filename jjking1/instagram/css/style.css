@@ -3,7 +3,67 @@
 /*border color = #e6e6e6*/
 /*footer link color = #003569*/
 /*text grey color = #999*/
+*{
+  box-sizing: border-box;
+}
+
+main{
+  margin: 30px 0;
+}
+
+.container{
+  overflow: auto;
+  width: 55%;
+  margin: auto;
+  max-width: 1200px;
+  padding: 10px 0;
+}
+
+#left{
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+#right{
+  float: right;
+  width: 50%;
+  height: auto;
+  padding: 10px;
+}
 
 body, input {
   font-family: 'Karla', sans-serif;
+}
+
+form{
+  border: 2px solid #e6e6e6;
+  text-align: center;
+  height: auto;
+}
+
+aside{
+  border: 2px solid #e6e6e6;
+}
+
+aside p{
+  text-align: center;
+}
+
+button{
+  width: 70%;
+  padding: 4px 0;
+  background-color: #3897f0;
+  color: white;
+}
+input{
+  width: 70%;
+  padding: 4px 0;
+  display: block;
+  margin: 2px auto;
 }
