@@ -4,6 +4,116 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+}
+
 body, input {
   font-family: 'Karla', sans-serif;
+}
+
+main,
+.container {
+  overflow: auto;
+}
+
+.container {
+  width: 65%;
+  margin: auto;
+}
+
+.imageDiv,
+.signUp {
+  float: left;
+  text-align: center;
+}
+
+.imageDiv {
+  width: 50%;
+  padding: 10% 0;
+}
+
+.signUp {
+  width: 45%;
+  padding: 2%;
+}
+
+.signUpForm {
+  padding: 10%;
+  border: solid 1px #e6e6e6;
+  background: #fff;
+  margin: 15% 0 0;
+}
+
+.signUpForm p {
+  color: #999;
+}
+
+.signUpForm p:first-of-type {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#privacyPolicy {
+  color: #999;
+}
+
+.signUpForm + p {
+  background: #fff;
+  border: solid 1px #e6e6e6;
+  padding: 10% 0;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  border: solid 1px #e6e6e6;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+  background: #3897f0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+button img {
+  width: 15px;
+}
+
+footer {
+  overflow: auto;
+}
+
+footer p {
+  margin: 10px;
+  float: right;
+  font-weight: 700;
+  color: #999;
+}
+
+nav {
+  margin: 10px 5px;
+  float: left;
+}
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav a {
+  color: #003569;
+  text-transform: uppercase;
+  margin: 5px;
 }
