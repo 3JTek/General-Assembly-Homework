@@ -48,12 +48,21 @@ section {
 }
 
 .signup {
-  border: 1px solid black;
+  border: 1px solid #e6e6e6;
   padding: 10px;
 }
 
 form p {
   text-align: center;
+}
+
+form input {
+  height: 36px;
+  width: 83%;
+  padding: 5px;
+  margin: 3px 25px;
+  border-radius: 4px;
+  background: #fafafa;
 }
 
 .policy {
