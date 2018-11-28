@@ -1,88 +1,131 @@
-/*background color = #fafafa*/
-/*button blue = #3897f0*/
-/*border color = #e6e6e6*/
-/*footer link color = #003569*/
-/*text grey color = #999*/
-
 * {
   box-sizing: border-box;
 }
+
 body,
 input {
   font-family: "Karla", sans-serif;
-}
-main {
   background-color: #fafafa;
 }
 
 .container {
-  max-width: 1200px;
   overflow: auto;
+  max-width: 900px;
   margin: auto;
 }
-
-.image {
-  overflow: auto;
-  float: left;
+.left {
   width: 50%;
-  text-align: right;
+  float: left;
+  padding: 90px 0;
 }
 
 .right {
-  overflow: auto;
-  float: right;
-  width: 40%;
-  text-align: center;
-  padding: 20px;
-}
-
-.form {
-  border: 1px solid #e6e6e6;
-  padding: 20px;
-}
-.account {
+  width: 50%;
   float: left;
-  overflow: auto;
+  color: #999;
+  padding: 40px 0;
+}
+.right button {
+  background-color: #3897f0;
+  color: white;
+  font-weight: bolder;
+  font-size: 15px;
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-#logo {
+form input {
+  width: 75%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+input::placeholder {
+  font-family: "Karla", sans-serif;
+  font-size: 15px;
+}
+
+.signup {
   padding: 30px;
+  font-weight: bolder;
 }
-
-#logIn {
-  border: 1px solid #e6e6e6;
-  padding: 30px;
+.signup,
+.login {
+  font: #999;
+  background-color: white;
   text-align: center;
-  margin: 20px auto;
-  width: 100%;
-  float: left;
-  overflow: auto;
+  border: solid 1px #e6e6e6;
 }
 
-footer nav {
-  float: left;
-  padding-left: 20px;
+.login {
+  margin: 10px 0;
+  padding: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+.appimages {
+  text-align: center;
+  padding: 10px 0;
+  color: black;
+  font-weight: bold;
+}
+
+input {
+  margin: 3px 3px;
+  font-weight: bold;
+}
+
+.login a {
+  padding-left: 5px;
+  text-decoration: none;
+  color: #3897f0;
+}
+
+footer {
+  padding: 20px;
+  margin: auto;
+  max-width: 1000px;
+}
+nav a {
+  text-decoration: none;
   color: #003569;
   font-weight: bold;
-  font-family: "Karla", sans-serif;
   text-transform: uppercase;
+  float: left;
+  padding-left: 10px;
+}
+a {
+  padding-right: 5px;
 }
 
-footer p {
-  float: right;
-  padding-right: 20px;
+.copyright {
   text-transform: uppercase;
-  color: grey;
+  color: #999;
   font-weight: bold;
-}
-button {
-  background-color: #3897f0;
-  width: 300px;
-  height: 35px;
-  padding: 15px;
-  border-radius: 4px;
+  float: right;
+  margin: 0;
+  padding-right: 25px;
 }
 
-p {
-  text-align: center;
+@media screen and (max-width: 600px) {
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    float: none;
+  }
+  footer {
+    float: none;
+    margin: auto;
+    max-width: 80%;
+    text-align: center;
+  }
+  #cr {
+    display: block;
+  }
 }

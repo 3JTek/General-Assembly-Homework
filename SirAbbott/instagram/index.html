@@ -7,64 +7,64 @@
   <title>Instagram</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
-<header>
 
-</header>
-<main class="container">
-
-  <body>
-
-    <section class="image">
-      <img src="images/phones.png" alt="iphones">
-    </section>
-    <section class="right">
-      <div class="form">
-        <img id="logo" src="images/logo.png" alt="logo">
-        <p class="bold">Sign up to see photos and videos<br>from your friends.</p>
-
-        <button name="logIn">Log in with Facebook</button>
-
-        <p class="bold">Or</P>
-
-        <input type="text" name="emailOrPhone" placeholder="Mobile Number or Email"><br>
-        <input type="text" name="fullName" placeholder="Full Name"><br>
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-
-
-        <button name="signUp">Sign Up</button>
-
-
-        <p class="bold">By signing up, you agree to our<br> Terms &amp; Privacy Policy.</p>
-      </div>
-
-      <div class="account">
-        <div id="logIn">
-          <span>Have an account?</span><a href="#">Log in<a>
+<body>
+  <main>
+    <div class="container">
+      <section class="left">
+        <img src="images/phones.png" alt="picture of two phones">
+      </section>
+      <section class="right">
+        <div class="signup">
+          <img src="images/logo.png" alt="instagram logo">
+          <p>Sign up to see photos and videos<br> from your friends.</p>
+          <button> <i class="fab fa-facebook-square"></i> Log in with Facebook</button>
+          <p>OR</p>
+          <form>
+            <div>
+              <input type="text" name="Mobile number or email" placeholder="Mobile number or email">
+            </div>
+            <div>
+              <input type="text" name="name" placeholder="Full Name">
+            </div>
+            <div>
+              <input type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+          </form>
+          <button>Sign Up</button>
+          <p>By signing up, you agree to our<br> Terms &amp; Privacy Policy.</p>
         </div>
-        <div>
-          <p id="getApp"> Get the app.</p>
-          <img src="images/app-store.png" alt="app store link">
-          <img src="images/google-play.png" alt="google play link">
+        <div class="login">
+          Have an account?<a href="#">Log in</a>
         </div>
-    </section>
-  </body>
-</main>
-<footer>
-  <nav>
-    <a href="#">About us</a>
-    <a href="#">Support</a>
-    <a href="#">Blog</a>
-    <a href="#">Press</a>
-    <a href="#">API</a>
-    <a href="#">Jobs</a>
-    <a href="#">Privacy</a>
-    <a href="#">Terms</a>
-    <a href="#">Directory</a>
-    <a href="#">Language</a>
-  </nav>
-  <p> &copy; 2017 Instagram<p>
-</footer>
+        <div class="appimages">
+          <p>Get the app.</p>
+          <img src="images/app-store.png" alt="app store image">
+          <img src="images/google-play.png" alt="play store image">
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <nav>
+      <a href="#">About us</a>
+      <a href="#">Support</a>
+      <a href="#">Blog</a>
+      <a href="#">Press</a>
+      <a href="#">API</a>
+      <a href="#">Jobs</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Directory</a>
+      <a href="#">Language</a>
+    </nav>
+    <p id="cr" class="copyright"> &copy; 2017 Instagram</p>
+  </footer>
+</body>
 
 </html>
