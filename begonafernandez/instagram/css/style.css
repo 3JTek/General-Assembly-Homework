@@ -4,6 +4,51 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+* {
+  box-sizing: border-box;
+}
+
 body, input {
   font-family: 'Karla', sans-serif;
+  color: #999;
+}
+
+main {
+  overflow: auto;
+}
+
+main aside {
+  width: 50%;
+  float: left;
+}
+
+main section {
+  width: 50%;
+  float: right;
+}
+
+h1 {
+  display: none;
+}
+
+.app{
+  text-align: center;
+}
+footer {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+footer nav {
+  float: left;
+}
+
+footer nav a {
+  color: #003569;
+  text-decoration: none;
+}
+
+footer span {
+  float: right;
 }
