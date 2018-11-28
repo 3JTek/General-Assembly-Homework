@@ -69,6 +69,7 @@ form input {
   margin: 3px 25px;
   border-radius: 4px;
   background: #fafafa;
+  border: 1px solid #e6e6e6;
 }
 
 button {
