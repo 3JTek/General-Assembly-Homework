@@ -7,10 +7,7 @@
   box-sizing: border-box;
 }
 
-/* main{
-  margin: 30px 0;
-} */
-
+/* everything except for the footer */
 .container{
   overflow: auto;
   width: 53%;
@@ -18,13 +15,13 @@
   max-width: 1200px;
   padding: 10px 0;
 }
-
+/* image of the phones */
 #left{
   float: left;
   width: 50%;
   padding: 10px;
 }
-
+/* footer links and copyright tag */
 footer{
   width: 80%;
   margin: 0 auto;
@@ -54,7 +51,7 @@ img{
   width: 100%;
   height: auto;
 }
-
+/* everything on right side including the app store images */
 #right{
   float: right;
   width: 50%;
@@ -68,7 +65,7 @@ body, input {
   font-family: 'Karla', sans-serif;
   background-color: #fafafa;
 }
-
+/* form is entire area from logo to the sign up button */
 form{
   text-align: center;
   height: auto;
@@ -94,7 +91,7 @@ form p{
   margin: 5px auto;
   padding: 10px;
 }
-
+/* "have an account? log in" aside */
 aside{
   border: 2px solid #e6e6e6;
   background-color: white;
@@ -106,6 +103,7 @@ aside p{
   text-align: center;
   color: black;
 }
+/* sign up buttons and form fields */
 
 button{
   width: 70%;
@@ -122,7 +120,9 @@ input{
   margin: 6px auto;
   background-color: #fafafa;
 }
+/*   form fields still ugly :[    */
 
+/* set up app store images */
 .get-app{
   text-align: center;
   width: 100%;
@@ -145,7 +145,25 @@ input{
   width: 50%;
 }
 
+/* set  site to be combatible for mobile */
+/* Not tablet compatible */
+@media screen and (max-width: 650px) {
+  .container{
+    width: 95%;
+  }
 
-@media screen and (max-width: 600px) {
-  
+  footer{
+    text-align: center;
+  }
+
+  footer p{
+    float: none;
+  }
+  #right{
+    width: 100%;
+  }
+
+  #left{
+    display: none;
+  }
 }
