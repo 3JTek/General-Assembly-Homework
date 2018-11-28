@@ -97,6 +97,10 @@ button {
     text-align: center;
 }
 
+.login a {
+  color: #3897f0;
+}
+
 .app{
   text-align: center;
 }
