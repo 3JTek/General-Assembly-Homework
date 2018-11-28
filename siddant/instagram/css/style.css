@@ -150,16 +150,24 @@ footer p{
 
   }
     .wrapper{
-      width: 90%;
+      width: 100%;
     }
     .left, .right, .login-access, .app{
       width: 100%;
 
     }
-
+    .left{
+      display: none;
+    }
+    .right{
+      text-align: center;
+    }
     form{
-      width: 100%;
+      width: 90%;
 
+    }
+    input{
+      width:90%;
     }
     footer{
       width: 100%;
