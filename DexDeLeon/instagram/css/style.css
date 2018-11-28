@@ -123,7 +123,7 @@ nav a {
   text-transform: uppercase;
   margin: 5px;
 }
-
+/* TABLETS */
 @media only screen and (max-width: 900px) {
 
   .imageDiv {
@@ -174,7 +174,7 @@ nav a {
     text-align: center;
   }
 }
-
+/* MID-LARGE PHONES */
 @media only screen and (max-width: 600px) {
 
   .container {
@@ -204,12 +204,24 @@ nav a {
   }
 
 }
-
+/* SMALLER PHONES */
 @media only screen and (max-width: 400px) {
 
   input,
   button {
-    font-size: 1em;
+    font-size: 0.8em;
+  }
+
+  button {
+    padding: 4%;
+  }
+
+  button img {
+    width: 15px;
+  }
+
+  .signUpForm + p {
+    font-size: 1.2em;
   }
 
   nav,
