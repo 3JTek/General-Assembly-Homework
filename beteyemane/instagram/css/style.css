@@ -1,0 +1,77 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  float: left;
+  width: 50%
+}
+
+body {
+  background-color: #fafafa;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  display: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.container {
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.login {
+  text-align: center;
+}
+
+.button {
+
+}
+
+
+button {
+  background-color: #3897f0;
+  color: #fff;
+}
+
+form {
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  color: #999;
+  padding: 30px;
+  font-weight: bold;
+}
+
+input {
+  margin: 2.5px;
+}
+
+input, button {
+  width: 300px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
