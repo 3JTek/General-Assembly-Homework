@@ -13,6 +13,11 @@ body, input {
   color: #999;
 }
 
+a {
+  color: #003569;
+  text-decoration: none;
+}
+
 main {
   overflow: auto;
 }
@@ -109,15 +114,16 @@ footer {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
+  overflow: auto;
+  padding: 10px;
 }
 
 footer nav {
   float: left;
 }
 
-a {
-  color: #003569;
-  text-decoration: none;
+nav a {
+  padding: 10px;
 }
 
 footer span {
