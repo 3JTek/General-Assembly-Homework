@@ -4,6 +4,35 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+
+main {
+  overflow: auto;
+}
+
+
 body, input {
   font-family: 'Karla', sans-serif;
+}
+
+
+.right{
+  border: 1px solid #e6e6e6;
+  overflow: auto;
+  margin: auto;
+  background-color: #ffffff
+}
+
+.phones {
+margin: auto;
+width: 40%;
+padding: 10px;
+display: inline-block
 }
