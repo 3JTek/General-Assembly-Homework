@@ -3,19 +3,45 @@
 /*border color = #e6e6e6*/
 /*footer link color = #003569*/
 /*text grey color = #999*/
-
+* {
+  margin:0;
+  box-sizing: border-box;
+}
 body {
   background-color: #fafafa;
-  color = #999;
+  color: #999;
 }
 body, input {
   font-family: 'Karla', sans-serif;
 }
 main {
+  padding: 40px;
   overflow: auto;
   max-width: 1178px;
   margin:auto;
 }
+
+.bold {
+  font-weight: 800;
+}
+
+.inline * {
+  display: inline;
+}
+
+.log_in {
+
+}
+
+button {
+  background-color: #3897f0;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  padding: 8px;
+  width: 300px;
+}
+
 main section {
   float:left;
   width:50%;
@@ -23,19 +49,39 @@ main section {
 
 main section * {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
 
 main section div {
   background-color: white;
   border: 1px solid #e6e6e6;
+  padding: 20px;
+}
+main section form {
+  padding:8px;
 }
 
-main section form {
+main section form * {
+  width: 300px;
+  font-size: 18px;
+  margin:4px auto;
+}
 
+main section form button {
+  margin: 14px auto;
+}
+
+main section form p {
+  width: 250px;
 }
 
 main section div h1 {
   display:none;
+}
+
+
+
+button.facebook_login {
+
 }
