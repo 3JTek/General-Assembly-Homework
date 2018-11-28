@@ -21,6 +21,10 @@ main aside {
   float: left;
 }
 
+aside img {
+  padding: 100px 0 0 149px;
+}
+
 main section {
   /* width: 50%; */
   float: right;
