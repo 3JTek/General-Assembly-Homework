@@ -21,25 +21,33 @@ input {
 .section1 {
   width: 50%;
   float: left;
+  padding: 90px 0;
 }
 
 .section2 {
   width: 50%;
   float: left;
   color: #999;
-  padding: 15px 0;
+  padding: 40px 0;
 }
 .section2 button {
   background-color: #3897f0;
   color: white;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 15px;
   width: 75%;
+  padding: 10px;
 }
 
 form input {
   width: 75%;
+  background-color: white;
+  padding: 10px;
 }
-
+.signup {
+  padding: 30px;
+  font-weight: bolder;
+}
 .signup,
 .login {
   font: #999;
@@ -49,6 +57,32 @@ form input {
 }
 
 .login {
-  margin: 10px 10px;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+.appimages {
+  text-align: center;
+  padding: 10px 0;
+  color: black;
+  font-weight: bold;
+}
+
+input {
+  margin: 3px 3px;
+  font-weight: bold;
+}
+
+.login a {
+  padding-left: 5px;
+  text-decoration: none;
+  color: #3897f0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #003569;
+  font-weight: bold;
 }
