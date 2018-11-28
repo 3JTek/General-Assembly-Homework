@@ -56,6 +56,17 @@ form p {
   text-align: center;
 }
 
+.policy {
+  margin: 10px 58px;
+  font-size: 14px;
+}
+
+.policy a {
+  text-decoration: none;
+  color: #999;
+  font-weight: 600;
+}
+
 .app{
   text-align: center;
 }
