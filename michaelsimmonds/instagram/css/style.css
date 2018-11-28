@@ -98,3 +98,38 @@ footer span {
   color: #999;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  .desktop-left {
+    display: none;
+  }
+
+  .desktop-right {
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .input .buttom {
+    padding: 30px;
+  }
+
+.form button {
+  width: 90%;
+}
+
+.form input {
+  width: 90%;
+  border: solid 1px #e6e6e6;
+}
+
+footer a {
+  float: left;
+  width: 90%;
+  padding: 0;
+  margin: 0 5px;
+}
+
+footer span {
+  text-align: center;
+}
+}
