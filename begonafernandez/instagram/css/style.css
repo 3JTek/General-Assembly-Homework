@@ -36,9 +36,15 @@ h1 {
   display: none;
 }
 
+h2 {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 30px 10px 30px;
+}
+
 section {
   width: 319px;
-  margin: 50px;
+  margin: 50px 125px 50px 100px;
 }
 
 .signup {
