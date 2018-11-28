@@ -8,9 +8,20 @@
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
 main {
   overflow: auto;
+  margin: 0 20px;
 }
+
+body {
+    background-color: #fafafa;
+}
+
 body, input {
   font-family: 'Karla', sans-serif;
 }
@@ -19,6 +30,7 @@ section {
   width: 50%;
   float: left;
   padding: 15px;
+  text-align: center;
 }
 
 .form {
@@ -27,6 +39,7 @@ section {
   text-align: center;
   color: #999;
   font-weight: bold;
+  background-color: white;
 }
 
 .form input {
@@ -52,12 +65,36 @@ section {
   margin: 0;
 }
 
+.log-in {
+  border: solid 1px #e6e6e6;
+  padding: 15px;
+  text-align: center;
+  margin: 10px 0;
+  color: black;
+  background-color: white;
+}
 
+a {
+  text-decoration: none;
+}
 
+input {
+  margin: 3px 0;
+}
 
+footer {
+  background-color: #fafafa;
+}
 
-
-
-li {
+footer li {
+  float: left;
+  padding: 0 5px;
+  color: #003569;
   list-style-type: none;
+}
+
+footer span {
+  float: right;
+  color: #999;
+  font-weight: bold;
 }
