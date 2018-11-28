@@ -12,31 +12,57 @@ body, input {
   font-weight: bold;
 }
 
+main {
+  overflow: auto;
+}
+
 #mobileHero {
   max-width: 50%;
   float: left;
+  margin: 0 25px;
+  padding: -15px 0 0 0;
+  transform: scale(.8, .8);
 }
 
 .mainContent {
   border: 5px solid blue;
-  max-width: 70%;
   margin: 0 auto;
-  float: left;
+  float: none;
+  text-align: center;
+  overflow: auto;
+  width: 70%;
 }
 
 .signup {
-  border: 5px solid red;
+  border: 1px solid #e6e6e6;
+  background-color: white
   text-align: center;
-  max-width: 50%;
+  min-width: 50%;
   float: left;
+  background-color: white;
+  margin: 20px 0;
+  padding: 15px 0;
 }
 
 .existingAcct {
+
   min-width: 50%;
   text-align: center;
-  border: 5px solid yellow;
+  color: black;
+  background-color: white;
+  border: 1px solid #e6e6e6;
   float: left;
   margin: 0;
+}
+
+.login {
+  color: #3897f0;
+}
+
+.appCTA {
+  border: 5px solid green;
+  float: none;
+  text-align: center;
 }
 
 input {
@@ -54,4 +80,16 @@ button {
   color: white;
   padding: 8px 45px;
   font-weight: bolder;
+}
+
+footer {
+  border: 5px solid brown;
+  min-width: 100%
+  float: none;
+  overflow: auto;
+}
+
+ul a {
+  margin: 0 5px;
+  text-transform: capitalize;
 }
