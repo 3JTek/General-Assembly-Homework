@@ -1,0 +1,62 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+
+*{
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+  text-align: center;
+}
+main{
+  overflow: auto;
+}
+
+div.column:first-child section:first-child{
+  float: right;
+}
+
+div.input{
+  float left;
+  width: 60%;
+}
+
+div.column:first-child{
+  float:left;
+  width: 50%;
+}
+div.column:last-child{
+  float:right;
+  width: 50%;
+}
+
+section{
+  width: 80%;
+
+}
+.input-area{
+  background-color: #fff;
+  border: 1px #e6e6e6 solid;
+}
+
+form input{
+  width: 80%;
+}
+
+footer{
+  overflow: auto;
+}
+
+footer nav{
+  float: left;
+}
+
+footer p{
+  float: right;
+}
