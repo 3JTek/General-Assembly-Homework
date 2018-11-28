@@ -65,6 +65,16 @@ form input {
   background: #fafafa;
 }
 
+button {
+  width: 83%;
+  margin: 3px 25px;
+  border-radius: 4px;
+  background-color: #3897f0;
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+}
+
 .policy {
   margin: 10px 58px;
   font-size: 14px;
