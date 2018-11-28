@@ -6,64 +6,54 @@
     <title>Instagram</title>
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body>
-
     <main>
-    <section>
-      <img src="images/phones.png" alt="Mobile Phones">
+    <section class="one">
+        <img src="images/phones.png" alt="Mobile Phones">
     </section>
 
-    <section>
-
+    <section class="two">
       <form>
-      <img src="images/logo.png" alt="Instagram Logo">
-      <h1>Instagram</h1>
-
-      <p>Sign up to see photos and videos from your friends.</p>
-
-      <button>Log in with Facebook</button>
-
-      <p class="or">Or</p>
-
-
-
-          <div>
+        <img src="images/logo.png" alt="Instagram Logo">
+        <h1>Instagram</h1>
+        <p>Sign up to see photos and videos from your friends.</p>
+        <button><i class="fab fa-facebook-square"></i>Log in with Facebook</button>
+        <p class="or">Or</p>
+        <div>
             <input type="text" name="mobile number and email" placeholder="Mobile Number or Email">
-          </div>
-          <div>
+        </div>
+        <div>
             <input type="text" name="full name" placeholder="Full Name">
-          </div>
-          <div>
+        </div>
+        <div>
             <input type="text" name="username" placeholder="Username">
-          </div>
-          <div>
+        </div>
+        <div>
             <input type="password" name="password" placeholder="Password">
-          </div>
-            <button> Sign up </button>
+        </div>
+          <button class="sign"> Sign up </button>
+          <p>By signing up, you agree to our Terms &amp; Privacy Policy.</p>
+      </form>
 
-      <p>By signing up, you agree to our Terms &amp; Privacy Policy.</p>
+      <div class="container">
+        <p>Have an account? <a class="log" href="#"> Log in</a></p>
+      </div>
 
+      <div class="login">
+        Get the app.
+      </div>
 
-  </form>
+      <div class="buttons">
+        <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+        <a href="#"><img src="images/google-play.png" alt="Google Play"></a>
+      </div>
+    </section>
+  </main>
 
-    <div class="container">
-      <p>Have an account? <a href="#"> Log in</a></p>
-    </div>
-
-    <div class="login">
-      Get the app.
-    </div>
-    <div class="buttons">
-      <img src="images/app-store.png" alt="App Store">
-      <img src="images/google-play.png" alt="Google Play">
-    </div>
-  </section>
-</main>
-
-    <footer>
-      <nav>
-
+  <footer>
+    <nav>
       <a href=#>About us</a>
       <a href=#>Support</a>
       <a href=#>Blog</a>
@@ -74,8 +64,8 @@
       <a href=#>Terms</a>
       <a href=#>Director</a>
       <a href=#>Language</a>
-      <p class="copyright"> © 2017 Instagram</p>
     </nav>
-    </footer>
+    <p class="copyright"> © 2017 Instagram</p>
+  </footer>
   </body>
 </html>
