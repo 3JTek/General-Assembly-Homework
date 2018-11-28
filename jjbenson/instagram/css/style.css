@@ -23,15 +23,44 @@ main {
 
 .bold {
   font-weight: 800;
+  color: black;
 }
 
 .inline * {
   display: inline;
 }
 
-.log_in {
-
+main section div.no_box {
+  background-color: #fafafa;
+  border-width:0px;
+  overflow: auto;
 }
+main section div.center {
+  /* border:1px solid red; */
+  margin:0;
+  padding:0;
+  overflow: auto;
+}
+
+main section div.center span{
+  float:left;
+  width:50%;
+  margin:0;
+}
+main section div.center span img {
+  float:left;
+  padding:8px;
+    margin:0;
+}
+main section div.center span:first-child img{
+  float:right;
+}
+
+main section h3 {
+  margin:0;
+}
+
+
 
 button {
   background-color: #3897f0;
@@ -78,10 +107,4 @@ main section form p {
 
 main section div h1 {
   display:none;
-}
-
-
-
-button.facebook_login {
-
 }
