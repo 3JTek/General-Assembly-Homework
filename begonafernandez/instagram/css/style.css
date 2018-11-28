@@ -26,7 +26,6 @@ aside img {
 }
 
 main section {
-  /* width: 50%; */
   float: right;
 }
 
@@ -46,13 +45,13 @@ h2 {
 }
 
 section {
-  width: 319px;
-  margin: 50px 125px 50px 100px;
+  width: 349px;
+  margin: 30px 125px 50px 100px;
 }
 
 .signup {
   border: 1px solid #e6e6e6;
-  padding: 10px;
+  padding: 20px 0;
 }
 
 form p {
