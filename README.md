@@ -1,5 +1,3 @@
-# HOMEWORK
-WDI38 Homework folder
 # WDI 38 Student Homework Repository
 
 Welcome to the GA London WDI 38 student homework repository. This is the place we are going to monitor the completion of your homework.
