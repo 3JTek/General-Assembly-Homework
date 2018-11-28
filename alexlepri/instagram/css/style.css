@@ -12,9 +12,9 @@ body, input {
 button {
   background-color: #3897f0;
   color: white;
-  border: 1px #e6e6e6;
-  padding: 3px 45px;
-  margin: 5px;
+  border: 1px solid #e6e6e6;
+  padding: 3px 41px;
+  margin: 10px;
 }
 
 main {
@@ -24,8 +24,8 @@ main {
 }
 
 h4 {
-  color: #e6e6e6;
-  margin: 0 auto;
+  color: #999;
+  margin: 6px;
 }
 
 .mobile {
@@ -38,7 +38,7 @@ input {
   float: left;
   margin: 100px;
   text-align: center;
-  border: 1px #e6e6e6;
+  border: 1px solid #e6e6e6;
   padding: 20px;
 }
 
@@ -52,12 +52,16 @@ form > * {
 }
 
 .container {
-  border: 1px #e6e6e6;
+  border: 1px solid #e6e6e6;
   margin: 5px 0;
 }
 
 aside {
-  margin: 3px;
+  margin: 7px;
+}
+
+nav p {
+  text-align: right;
 }
 
 @media screen and (max-width: 900px) {
