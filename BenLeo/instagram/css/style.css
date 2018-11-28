@@ -7,15 +7,51 @@
 body, input {
   font-family: 'Karla', sans-serif;
   background-color: #fafafa;
+  overflow: auto;
+  color: #999;
+  font-weight: bold;
 }
 
 #mobileHero {
-  margin: 100px 200px 100px 200px;
+  max-width: 50%;
+  float: left;
+}
+
+.mainContent {
+  border: 5px solid blue;
+  max-width: 70%;
+  margin: 0 auto;
   float: left;
 }
 
 .signup {
   border: 5px solid red;
   text-align: center;
+  max-width: 50%;
+  float: left;
+}
 
+.existingAcct {
+  min-width: 50%;
+  text-align: center;
+  border: 5px solid yellow;
+  float: left;
+  margin: 0;
+}
+
+input {
+  display: block;
+  margin: 5px auto;
+}
+
+input.placeholder {
+  font-family: 'Karla', sans-serif;
+}
+
+button {
+  font-family: 'Karla', sans-serif;
+  background-color: #3897f0;
+  color: white;
+  padding: 8px 45px;
+  font-weight: bolder;
 }
