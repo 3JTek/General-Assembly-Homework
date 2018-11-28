@@ -15,7 +15,7 @@ button {
   background-color: #3897f0;
   color: white;
   border: 1px solid #e6e6e6;
-  padding: 3px 41px;
+  padding: 0px 41px;
   margin: 10px;
 }
 
@@ -62,6 +62,7 @@ section {
 form > * {
   text-align: center;
   margin: 0 auto;
+  padding: 0 38px;
 }
 
 .container {
