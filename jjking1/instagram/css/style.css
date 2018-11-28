@@ -7,13 +7,13 @@
   box-sizing: border-box;
 }
 
-main{
+/* main{
   margin: 30px 0;
-}
+} */
 
 .container{
   overflow: auto;
-  width: 55%;
+  width: 53%;
   margin: auto;
   max-width: 1200px;
   padding: 10px 0;
@@ -25,6 +25,29 @@ main{
   padding: 10px;
 }
 
+footer{
+  width: 80%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+footer nav{
+  float:left;
+}
+
+footer p{
+  float: right;
+  color: #999;
+}
+
+nav a{
+  color: #003569;
+  text-decoration: none;
+  font-weight: bold;
+  padding-right: 6px;
+}
+
+
 img{
   width: 100%;
   height: auto;
@@ -35,24 +58,51 @@ img{
   width: 50%;
   height: auto;
   padding: 10px;
+  margin: 0;
+  color: #999;
 }
 
 body, input {
   font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
 }
 
 form{
-  border: 2px solid #e6e6e6;
   text-align: center;
   height: auto;
+  background-color: white;
+  border: 2px solid #e6e6e6;
+  line-height: 1.4;
+  padding: 15px;
+}
+
+form div{
+  height: 30%;
+  margin-bottom: 6px;
+}
+
+form img{
+  width:auto;
+  height: auto;
+  padding-top: 15px;
+}
+
+form p{
+  width: 70%;
+  margin: 5px auto;
+  padding: 10px;
 }
 
 aside{
   border: 2px solid #e6e6e6;
+  background-color: white;
+  margin-top: 5px;
+  padding: 5px;
 }
 
 aside p{
   text-align: center;
+  color: black;
 }
 
 button{
@@ -60,10 +110,35 @@ button{
   padding: 4px 0;
   background-color: #3897f0;
   color: white;
+  font-weight: bold;
+  padding: 8px;
 }
 input{
   width: 70%;
-  padding: 4px 0;
+  padding: 4px;
   display: block;
-  margin: 2px auto;
+  margin: 6px auto;
+  background-color: #fafafa;
+}
+
+.get-app{
+  text-align: center;
+  width: 100%;
+  color: black;
+  padding: 45px;
+}
+
+.app-images{
+  overflow: auto;
+  height: auto;
+}
+
+#playstore{
+  float: right;
+  width: 50%;
+}
+
+#appstore{
+  float: left;
+  width: 50%;
 }
