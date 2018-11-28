@@ -4,33 +4,62 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+* {
+  box-sizing: border-box;
+}
+
 body, input {
   font-family: 'Karla', sans-serif;
-  box-sizing: border-box;
 }
 
 button {
   background-color: #3897f0;
   color: white;
-}
-
-.logo {
-  position: relative;
-}
-
-.firstblock {
   border: 1px solid black;
-  padding: 20px
+  padding: 3px 45px;
+  margin: 5px;
 }
 
-.signing {
+main {
+  float: left;
+  padding: 50px;
+  overfloat: auto;
+}
+
+h4 {
+  color: #e6e6e6;
+  margin: 0 auto;
+}
+
+.mobile {
+  float: left;
+}
+
+.desktop {
+  float: left;
+  margin: 100px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.container {
   border: 1px solid black;
 }
 
-.all {
-  float: right;
-}
+@media screen and (max-width: 900px) {
+    main section {
+      width: 50%;
+      text-align: center;
+    }
+    main section:nth-child(3) {
+      width: 100%
+    }
+  }
 
-footer {
-  border: 1px solid black;
+@media screen and (max-width: 600px) {
+    main section {
+    width: 100%
+    float: none;
+  }
 }
