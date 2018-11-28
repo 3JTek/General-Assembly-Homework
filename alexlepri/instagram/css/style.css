@@ -4,18 +4,15 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
-* {
-  box-sizing: border-box;
-}
-
 body, input {
   font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
 }
 
 button {
   background-color: #3897f0;
   color: white;
-  border: 1px solid black;
+  border: 1px #e6e6e6;
   padding: 3px 45px;
   margin: 5px;
 }
@@ -34,17 +31,33 @@ h4 {
 .mobile {
   float: left;
 }
-
+input {
+  display:block;
+}
 .desktop {
   float: left;
   margin: 100px;
   text-align: center;
-  border: 1px solid black;
+  border: 1px #e6e6e6;
   padding: 20px;
 }
 
+section {
+  text-align:left;
+}
+
+form > * {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .container {
-  border: 1px solid black;
+  border: 1px #e6e6e6;
+  margin: 5px 0;
+}
+
+aside {
+  margin: 3px;
 }
 
 @media screen and (max-width: 900px) {
@@ -61,5 +74,6 @@ h4 {
     main section {
     width: 100%
     float: none;
+    text-align: center;
   }
 }
