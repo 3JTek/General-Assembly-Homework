@@ -107,3 +107,33 @@ ul a {
   float: right;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 600px) {
+
+  .phoneImage {
+    display: none;
+  }
+
+  .main {
+    width: 90%;
+    text-align: center;
+    display: inline;
+  }
+
+  .columns {
+    min-width: 100%;
+  }
+
+  .interactables {
+    min-width: 100%;
+  }
+
+  .signup {
+    min-width: 100%;
+  }
+
+  .footer {
+    text-align: center;
+    display: inline;
+  }
+}
