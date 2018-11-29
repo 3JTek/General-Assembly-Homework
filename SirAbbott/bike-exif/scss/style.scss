@@ -1,12 +1,16 @@
+$bikeRed: #ce1f26;
+$textColor: #6a6667;
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: arial;
-  font-weight: bolder;
-  padding-top: 20px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 30px;
   margin: 0;
+  color: $textColor;
+  font-weight: 600;
 }
 
 // This is for all inputs on the page
@@ -15,8 +19,12 @@ input {
 }
 
 header {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
+
+  img {
+    padding: 20px 0;
+  }
 
   h1 {
     display: none;
@@ -30,25 +38,36 @@ header {
     margin-top: 20px;
   }
   a {
-    padding: 3px;
+    padding: 3px 8px;
     text-decoration: none;
-    color: black;
+    color: $textColor;
   }
   #shop {
     margin-left: auto;
-    color: red;
+    color: $bikeRed;
   }
 }
 
 main {
   display: flex;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
 
   .left-main {
     width: 70%;
     padding-top: 30px;
-    padding-right: 10px;
+    padding-right: 20px;
+    p {
+      padding-right: 5px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    hr {
+      margin-bottom: 15px;
+    }
     .small {
       display: flex;
       flex-direction: row;
@@ -59,11 +78,18 @@ main {
     .small-text {
       padding-left: 20px;
     }
+    h2 {
+      text-transform: uppercase;
+      color: black;
+    }
 
     #next {
       margin: 50px 0;
+      text-decoration: none;
       text-align: right;
+      text-transform: uppercase;
       a {
+        color: $textColor;
         display: inline-block;
         border: 1px solid black;
         padding: 20px 30px;
@@ -75,39 +101,40 @@ main {
 
   .right-main {
     width: 30%;
-    padding-top: 30px;
+    padding: 30px 0 0 20px;
 
     .module {
       margin-bottom: 10px;
-      // Use & when there are two classes
       // <div class="module search">
       &.search {
         form {
-          // https://stackoverflow.com/questions/15314407/how-to-add-button-inside-input
-          /* This bit sets up the horizontal layout */
+          // // https://stackoverflow.com/questions/15314407/how-to-add-button-inside-input
+          // /* This bit sets up the horizontal layout */
           display: flex;
           flex-direction: row;
           /* This bit draws the box around it */
           border: 1px solid grey;
-          padding: 2px;
-
+          padding: 5px;
+          width: 100%;
           input[type="text"] {
             /* Tell the input to use all the available space */
-            flex-grow: 2;
+            flex-grow: 1;
+            padding: 5px;
             /* And hide the input's outline, so the form looks like the outline */
             border: none;
           }
 
           button {
             /* Just a little styling to make it pretty */
-            border: 1px solid blue;
-            background: blue;
-            color: white;
+            border: 1px solid grey;
+            background: transparent;
+            color: $textColor;
           }
+          width: 100%;
         }
       }
       &.subscribe {
-        background-color: red;
+        background-color: $bikeRed;
         color: white;
         padding: 5px 10px;
         text-align: center;
@@ -117,22 +144,37 @@ main {
             background: transparent;
             border: 0;
             border-bottom: 1px solid #fff;
-            padding: 5px;
+            padding: 10px;
 
             // input::placeholder (normal CSS)
             &::placeholder {
               color: #fff;
+              font-size: 15px;
             }
           }
         }
+        button {
+          display: inline-block;
+          background: transparent;
+          color: white;
+          border-style: none;
+          text-transform: uppercase;
+          font-size: 15px;
+          text-align: right;
+          padding: 10px 0 10px 0;
+        }
       }
       &.categories {
+        h3 {
+          text-transform: uppercase;
+          color: black;
+        }
         ul {
-          padding: 0;
+          padding: 0px;
           li {
             display: inline-block;
             border: 1px solid #000;
-            padding: 5px;
+            padding: 6px 3px;
           }
         }
       }
@@ -142,16 +184,19 @@ main {
 
 footer {
   width: 100%;
-  padding: 30px;
+  padding: 40px;
   text-align: center;
-  background-color: grey;
+  background-color: #eaede6;
+  img {
+    padding-bottom: 20px;
+  }
   nav {
     padding-top: 15px;
     a {
       text-decoration: none;
       text-transform: uppercase;
-      padding: 2px;
-      color: black;
+      padding: 2px 7px;
+      color: $textColor;
     }
   }
   p {
