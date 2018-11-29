@@ -1,9 +1,24 @@
+* {
+  box-sizing: border-box; }
+
 .container {
-  width: 90%;
+  width: 80%;
   height: auto;
   background-color: red;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: auto; }
+
+nav {
+  width: 100%; }
+  nav ul {
+    display: flex; }
+    nav ul li {
+      list-style-type: none;
+      margin-right: 10px; }
+      nav ul li a {
+        text-decoration: none;
+        color: black; }
 
 header {
   height: 100px;
@@ -15,35 +30,56 @@ header {
     height: auto;
     width: auto;
     background: blue; }
-  header nav {
-    width: 100%; }
-    header nav ul {
-      display: flex; }
-      header nav ul li {
-        list-style-type: none;
-        margin-right: 10px; }
-        header nav ul li:last-child {
-          margin-left: auto;
-          background: #ff0000; }
-        header nav ul li a {
-          text-decoration: none;
-          color: black; }
+  header li:last-child {
+    margin-left: auto;
+    background: #ff0000; }
 
 main {
   width: 100%;
+  height: auto;
   background-color: blue;
   display: flex; }
   main .left {
-    height: 200px;
-    width: 100%;
+    height: auto;
+    width: 70%;
     background-color: grey;
     flex-direction: column; }
-    main .left:first-child {
-      background-color: white; }
+    main .left section {
+      height: auto;
+      width: 100%; }
+      main .left section:first-child {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: white; }
+        main .left section:first-child .content-big {
+          height: auto;
+          width: 100%; }
+          main .left section:first-child .content-big .images-div {
+            height: auto;
+            background-color: white;
+            width: 100%; }
+      main .left section:last-child {
+        background-color: #ff0000; }
+  main .right {
+    height: 400px;
+    width: 30%;
+    background-color: limelight; }
 
 footer {
-  height: 50px;
+  height: auto;
   width: 100%;
-  background-color: green; }
+  background-color: green;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center; }
+  footer div {
+    height: auto;
+    width: 100%;
+    background-color: red; }
+  footer nav {
+    background-color: red; }
+    footer nav ul {
+      justify-content: center; }
 
 /*# sourceMappingURL=main.css.map */
