@@ -39,14 +39,14 @@ header {
   }
 }
 
-// header nav a:nth-child(3) {
-//   flex: 2;
-// }
-
 main {
   display: flex;
 
-  section {
+  .articles {
     max-width: 75%;
+  }
+
+  .extra {
+    max-width: 25%
   }
 }
