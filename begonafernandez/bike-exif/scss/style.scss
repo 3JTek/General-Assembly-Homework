@@ -1,5 +1,6 @@
 $border:1px solid #ddd;
 $color: #444;
+$article-max-width: 92%;
 
 * {
   box-sizing: border-box;
@@ -47,8 +48,11 @@ main {
     article {
       border-bottom: $border;
       padding-bottom: 20px;
+      h2 {
+        max-width: $article-max-width;
+      }
       p {
-        max-width: 92%;
+        max-width: $article-max-width;
         text-align: justify;
       }
     }
