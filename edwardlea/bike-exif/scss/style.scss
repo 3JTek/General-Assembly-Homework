@@ -28,7 +28,7 @@ header{
     margin-bottom: 10px;
     a{
       padding: 15px;
-      font-weight: 700px;
+      font-weight: 900px;
     }
 
     a:last-child{
@@ -93,8 +93,15 @@ main{
   }
 
   form{
+    h3{
+      margin-top: 0;
+      text-align: center;
+    }
+    
     p{
       margin:0;
+      text-align: center;
+      padding-bottom: 10px;
     }
 
     .email-submit{
