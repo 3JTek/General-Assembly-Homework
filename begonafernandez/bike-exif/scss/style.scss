@@ -40,13 +40,20 @@ header {
 }
 
 main {
+  padding-top: 30px;
   display: flex;
-
   .articles {
     max-width: 75%;
+    article {
+      border-bottom: $border;
+      padding-bottom: 20px;
+      p {
+        max-width: 92%;
+        text-align: justify;
+      }
+    }
   }
-
   .extra {
-    max-width: 25%
+    max-width: 25%;
   }
 }
