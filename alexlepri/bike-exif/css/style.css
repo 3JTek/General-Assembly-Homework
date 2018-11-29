@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box; }
 
+body {
+  background-size: contain; }
+
 main {
   display: flex; }
 
@@ -19,6 +22,13 @@ nav {
 header img {
   border-bottom: none; }
 
+.containerright input {
+  background-color: red;
+  border: none;
+  display: block;
+  border-bottom: 1px solid;
+  color: white; }
+
 .flex1 {
   justify-content: space-between;
   display: inline-flex;
@@ -36,7 +46,7 @@ header img {
 
 h3 {
   color: black;
-  padding-right: 10px; }
+  padding: 20px; }
 
 .topnav a {
   float: right;
@@ -44,6 +54,10 @@ h3 {
   padding: 14px 16px;
   font-size: 17px;
   width: 50px; }
+
+.small1 article, .small2 article, .small3 article {
+  margin: 0;
+  display: flex; }
 
 .flex2 h2, .flex2 article {
   background-color: red;
@@ -56,14 +70,16 @@ input {
 footer {
   text-align: center;
   padding: 8px 0 0 0;
-  background-color: #D3D3D3; }
+  background-color: #D3D3D3;
+  margin: 0 auto; }
 
 footer img {
   border-bottom: none; }
 
 footer nav {
   display: flex;
-  text-align: center; }
+  text-align: center;
+  margin: 0 auto; }
 
 .smaller img {
   flex-wrap: wrap; }
@@ -79,5 +95,8 @@ button {
 img {
   border-bottom: 1px solid black;
   padding: 20px; }
+
+.containerright {
+  background-color: red; }
 
 /*# sourceMappingURL=style.css.map */

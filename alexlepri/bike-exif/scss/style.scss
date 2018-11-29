@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-size: contain;
+}
+
 main {
   display: flex;
 }
@@ -27,6 +31,16 @@ header {
   }
 }
 
+.containerright {
+  input {
+  background-color: red;
+  border: none;
+  display: block;
+  border-bottom: 1px solid;
+  color: white;
+}
+}
+
 .flex1 {
   justify-content: space-between;
   display: inline-flex;
@@ -46,7 +60,7 @@ header {
 
 h3 {
   color: black;
-  padding-right: 10px;
+  padding: 20px;
 }
 
 .topnav a {
@@ -57,6 +71,13 @@ h3 {
   width: 50px;
 }
 
+.small1, .small2, .small3 {
+  article {
+    margin: 0;
+    display: flex;
+  }
+}
+
 .flex2 {
   h2, article {
     background-color: red;
@@ -64,7 +85,6 @@ h3 {
     display: block;
   }
 }
-
 
 input {
   margin: 15px;
@@ -74,6 +94,7 @@ footer {
   text-align: center;
   padding: 8px 0 0 0;
   background-color: #D3D3D3;
+  margin: 0 auto;
 }
 footer {
   img {
@@ -85,6 +106,7 @@ footer {
   nav {
     display: flex;
     text-align: center;
+    margin: 0 auto;
   }
 }
 
@@ -108,4 +130,8 @@ button {
 img {
   border-bottom: 1px solid black;
   padding: 20px;
+}
+
+.containerright {
+  background-color: red;
 }
