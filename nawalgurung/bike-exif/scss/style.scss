@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+  article{
+    width: 50%;
+    flex-wrap: wrap;
+  }
+}
+
+.rightCotainer{
+    display: flex;
+    width: 50%;
+}
