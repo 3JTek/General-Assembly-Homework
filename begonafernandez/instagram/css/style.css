@@ -20,10 +20,12 @@ a {
 
 main {
   overflow: auto;
+  max-width: 900px;
 }
 
 main aside {
   float: left;
+  max-width: 450px;
 }
 
 aside img {
@@ -32,6 +34,7 @@ aside img {
 
 main section {
   float: right;
+  max-width: 450%;
 }
 
 header img {
@@ -51,7 +54,6 @@ h2 {
 
 section {
   width: 349px;
-  margin: 30px 125px 50px 100px;
 }
 
 .signup, .login {
