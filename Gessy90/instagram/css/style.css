@@ -32,7 +32,7 @@ main section {
 logo{
   float:left;
   margin:auto;
-  padding: 1000 px;
+  padding: 1000px;
   border-radius: 200px;
   border: solid black 10px;
 }
