@@ -3,40 +3,41 @@
 /*border color = #e6e6e6*/
 /*footer link color = #003569*/
 /*text grey color = #999*/
-
-* {
+ * {
   box-sizing: border-box;
 }
-
-section {
+ section {
   float: left;
   width: 50%;
   padding-top: 50px;
 }
 
-body {
+ body {
   background-color: #fafafa;
 }
 
-body, input {
+ body, input {
   font-family: 'Karla', sans-serif;
 }
 
-h1 {
+ h1 {
   display: none;
 }
 
-main {
+ main {
   width: 900px;
   margin: 0 auto;
 }
 
-button {
+ button {
   background-color: #3897f0;
   color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
-form {
+ form {
   background-color: #fff;
   text-align: center;
   border: 1px solid #e6e6e6;
@@ -45,18 +46,17 @@ form {
   font-weight: bold;
 }
 
-input {
+ input {
   margin: 2.5px;
 }
 
-input, button {
+ input, button {
   width: 300px;
   height: 40px;
   font-size: 14px;
-  font-weight: bold;
 }
 
-a {
+ a {
   text-decoration: none;
   color: #003569;
   font-weight: bold;
@@ -64,7 +64,7 @@ a {
   text-transform: uppercase;
 }
 
-nav {
+ nav {
   display: inline-block;
   margin-left: 100px;
   margin-top: 60px;
@@ -72,11 +72,11 @@ nav {
   padding-bottom: 40px;
 }
 
-i {
+ i {
   margin-right: 2px;
 }
 
-.container {
+ .container {
   border: 1px solid #e6e6e6;
   background-color: #fff;
   text-align: center;
@@ -85,55 +85,63 @@ i {
   font-weight: bold;
 }
 
-.login {
+ .login {
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.buttons {
+ .buttons {
   text-align: center;
 }
 
-.sign {
+ .sign {
   margin-top: 20px;
 }
 
-.copyright {
+ .copyright {
   text-align: right;
   margin: 0;
-  margin-left: 250px;
+  margin-left: 350px;
   display: inline;
   text-transform: uppercase;
 }
 
-#log {
+  .one {
+  padding-top: 90px;
+}
+
+  .photos {
+    font-size: 20px;
+  }
+
+ #log {
   text-decoration: none;
   color: #3897f0;
 }
 
-@media screen and (max-width: 600px) {
+ @media screen and (max-width: 600px) {
   main section {
-    width: 50%;
+    max-width: 40%;
   }
 
-  nav {
+   nav {
     text-align: center;
     margin: 0;
     padding: 0;
   }
 
-  .one {
+   .one {
     display: none;
   }
 
-  .copyright {
+   .copyright {
     text-align: center;
-    margin: 0 150px;
+    margin: 0 110px;
     display: inline-block;
   }
 
-  .buttons{
+   .buttons{
     margin-bottom: 40px;
   }
 }
