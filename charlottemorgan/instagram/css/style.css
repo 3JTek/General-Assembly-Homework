@@ -46,9 +46,19 @@ form input {
   padding: 10px;
   border-radius: 5px;
 }
+
+input::placeholder {
+  font-family: "Karla", sans-serif;
+  font-size: 15px;
+}
+
 .signup {
   padding: 30px;
   font-weight: bolder;
+}
+#terms {
+  color: #999;
+  text-decoration: none;
 }
 .signup,
 .login {
@@ -85,6 +95,8 @@ input {
 
 footer {
   padding: 20px;
+  margin: auto;
+  max-width: 1000px;
 }
 nav a {
   text-decoration: none;
