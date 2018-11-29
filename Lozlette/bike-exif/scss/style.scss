@@ -19,18 +19,35 @@ main {
   display:flex;
 }
 .right{
+  .question {
+    width: 280px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 30px;
+  }
 input {
-  margin-left: 30px;
   width: 280px;
   height: 30px;
   font-size: 12px;
 }
+
 form {
   background-color: red;
   margin-left: 30px;
   color: #FFFFFF;
+  padding: 20px;
+  h2 {
+    font-size: 14px;
+    text-align: center;
+    margin-left: none;
+  }
+  p {
+    font-size: 12px;
+    margin-left: none;
+    text-align: center;
+  }
 }
-p, nav, {
+nav {
   margin-left: 30px;
 }
 }
