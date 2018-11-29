@@ -1,0 +1,22 @@
+.container {
+  width: 90%;
+  height: 1500px;
+  background-color: red;
+  display: flex; }
+
+header {
+  height: 50px;
+  background-color: green;
+  width: 100%;
+  display: flex; }
+  header nav ul {
+    display: flex; }
+
+.hello {
+  width: 90%;
+  height: 1500px;
+  background-color: blue;
+  display: flex;
+  justify-content: center; }
+
+/*# sourceMappingURL=main.css.map */

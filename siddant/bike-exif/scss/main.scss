@@ -1,0 +1,30 @@
+.container{
+  width:90%;
+  height:1500px;
+  background-color: red;
+  display: flex;
+}
+header{
+  height: 50px;
+  background-color: green;
+  width: 100%;
+  display: flex;
+
+  nav{
+    ul{
+      display: flex;
+      li{
+        
+      }
+    }
+
+
+  }
+}
+.hello{
+  width:90%;
+  height:1500px;
+  background-color: blue;
+  display: flex;
+  justify-content:center;
+}
