@@ -10,8 +10,11 @@ body {
 }
 
 main {
+  // background-color: yellow;
   display:flex;
   padding:10px 40px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav {
@@ -48,8 +51,10 @@ header {
 
   }
 }
-section {
-  nav {
+section.section_left {
+width:665px;
+// max-width: 665px;
+  nav.next {
     display: flex;
     justify-content:flex-end;
     a.button {
@@ -68,8 +73,9 @@ section {
 
   article {
     border-bottom: 1px solid $page_grey;
-    padding: 20px 0;
+    padding: 20px 60px 20px 0;
     overflow: auto;
+
     h2 {
       text-transform: uppercase;
 
@@ -82,6 +88,10 @@ section {
     img {
       float:left;
       margin-right: 20px;
+      // max-width: 625px;
+      // min-width: 300px;
+      // width: 100%;
+      height: auto;
     }
   }
 }
@@ -102,4 +112,86 @@ footer {
     height:30px;
   }
 
+}
+
+section.section_right {
+
+  width:400px;
+  div.search {
+    form {
+      border: 1px solid $page_grey;
+      padding:4px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    input {
+      border: 0px solid black;
+      flex-grow: 1;
+      font-size: 20px;
+
+    }
+  }
+  div.subscribe{
+    padding: 20px;
+    background-color: $page_red;
+    color:white;
+
+    form {
+      // display: flex;
+      // align-items: center;
+      border: 0px solid $page_grey;
+      padding:4px;
+      margin-bottom: 20px;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+
+      div{
+        border-bottom: 1px solid white;
+         display: flex;
+        // flex-grow: 1;
+      }
+      input {
+        background-color: $page_red;
+        flex-grow: 1;
+        font-size: 20px;
+        border-width: 0;
+        color:white;
+        padding: 10px 0;
+      }
+      button {
+        // margin-left: auto;
+        // margin:right
+        padding: 0;
+        background-color: $page_red;
+        color:white;
+        text-transform: uppercase;
+        font-size: 20px;
+        border-width: 0px;
+
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1; /* Firefox */
+      }
+    }
+  }
+  div.categories {
+    h2 {
+      text-transform: uppercase;
+      padding: 0;
+      margin: 20px 0 0 0;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 14px;
+      a {
+        border:1px solid $page_grey;
+        padding: 10px;
+        margin: 4px;
+      }
+    }
+  }
 }
