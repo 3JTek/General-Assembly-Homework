@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-body{
+main{
   width: 70%;
   margin: 35px auto;
   header{
@@ -70,8 +70,18 @@ body{
     }
   }
   .small-articles{
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: 50px;
     width: 55%;
+    article{
+      display: flex;
+      justify-content: space-around;
+      padding-top: 15px;
+      img{
+        width: 40%;
+      }
+      .description-small{
+        width: 40%;
+      }
+    }
   }
 }
