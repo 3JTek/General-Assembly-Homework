@@ -1,13 +1,49 @@
-.container{
+
+nav{
+  width: 100%;
+  ul{
     display: flex;
-    justify-content: space-between;
-  article{
-    width: 50%;
-    flex-wrap: wrap;
+    li{
+      list-style-type: none;
+      margin-right: 10px;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+    }
   }
 }
+header{
+  height: 100px;
 
-.rightCotainer{
-    display: flex;
-    width: 50%;
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  .headerImage{
+    height: auto;
+    width:auto;
+  }
+      li{
+        &:last-child{
+          margin-left: auto;
+        }
+      }
+}
+
+
+
+
+footer{
+  height:50px;
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  text-align: center;
+  div{
+    height:auto;
+    width:100%;
+    nav{
+      justify-content: center;
+    }
+  }
 }
