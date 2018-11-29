@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  nav {
+    #shop {
+      text-align: right;
+    }
+  }
+}
+
+h1 {
+  display: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.left-main {
+  width: 75%;
+}
+
+.right-main {
+  width: 25%;
+  background-color: green;
+}
