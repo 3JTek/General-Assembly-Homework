@@ -6,18 +6,24 @@
   box-sizing: border-box;
 }
 
-hr{
-  margin: 40px auto;
-  border: 0;
-  height: 0; /* Firefox... */
-  box-shadow: 0 0 10px 1px black;
-}
 
-main{
+
+body{
+  font-family: proxima-nova,sans-serif;
+  margin: 0;
+  hr{
+    margin: 40px auto;
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+  }
   a{
     color: black;
     text-decoration: none;
   }
+}
+
+main{
   width: 70%;
   margin: 35px auto;
   header{
@@ -47,6 +53,10 @@ main{
       display: flex;
       flex-wrap: wrap;
       width: 63%;
+      aside{
+        font-size: 15px;
+        color: grey;
+      }
       img{
         width: 100%;
       }
@@ -92,8 +102,24 @@ main{
             padding-bottom: 6px;
             color: white;
             background-color: $exif-red;
-            width: 100%;
+            width: 75%;
             padding-top: 5px;
+          }
+          :first-child{
+            width: 100%;
+          }
+          button{
+            width: 20%;
+            background-color: $exif-red;
+            color: white;
+            padding-bottom: 6px;
+            border: none;
+            border-bottom: 2px solid white;
+            line-height: 2;
+            padding-top: 5px;
+            font-size: 12px;
+            font-weight: 800;
+            opacity: 1;
           }
         }
       }
@@ -102,11 +128,13 @@ main{
         padding: 2px;
         a{
           border: 1px solid grey;
-          padding: 1px 5px;
+          margin-top: 1px;
+          padding: 5px 5px;
+        }
         h3{
           color: black;
         }
-        }
+
       }
       .search-bar{
         width: 100%;
@@ -122,8 +150,10 @@ main{
   .small-articles{
     padding-top: 50px;
     width: 66%;
+    text-align: right;
     article{
       display: flex;
+      text-align: left;
       justify-content: space-between;
       border-bottom: 2px solid grey;
       margin-bottom: 20px;
@@ -132,5 +162,38 @@ main{
         width: 40%;
       }
     }
+    button{
+      border-radius: 0;
+      border: 2px solid grey;
+      padding: 17px;
+      font-size: 13px;
+    }
   }
+}
+
+footer{
+  margin: 0;
+  padding: 50px;
+  background-color: #eaede6;
+  display: flex;
+  justify-content: center;
+  div{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    nav{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 15px 0;
+    }
+    p{
+      margin: 0;
+    }
+  }
+
+
 }
