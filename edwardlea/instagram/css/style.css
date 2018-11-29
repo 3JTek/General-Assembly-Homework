@@ -66,6 +66,7 @@ button{
 footer{
   overflow: auto;
   padding-bottom: 10px;
+  padding-top: 60px;
 }
 
 footer nav{
