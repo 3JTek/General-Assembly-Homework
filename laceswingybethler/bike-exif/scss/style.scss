@@ -28,6 +28,8 @@ button {
 
 }
 
+
+
 //in scss start from the top
 
 header {
@@ -69,17 +71,44 @@ main {
     }
   }
   & .column:last-child {
-    // flex-wrap: wrap;
-    & form {
+    form {
       padding: 10px;
-      h3 {
-        color: white;
-      }
       input {
         width: 100%;
       }
-
+      ::placeholder {
+        color: white;
+      }
+    }
+    .searchbox {
+      border: $line;
+    }
+    .subscribe {
+      background-color: $branding;
+      color: white;
+      input {
+        background: $branding;
+        border: none;
+        border-bottom: 2px solid white;
+        padding: 10px;
+        }
+        // how do I get the button to float to the right?
+        & [type=email] {
+          width: 75%;
+        }
+      button {
+        background-color: $branding;
+        width: 25%;
+      }
     }
   }
+}
 
+footer {
+  background-color: lightgrey;
+  text-align: center;
+  padding: 20px; 
+  nav {
+    justify-content: space-around;
+  }
 }
