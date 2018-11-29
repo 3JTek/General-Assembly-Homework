@@ -1,3 +1,5 @@
+$brand-color:rgb(190,52,49);
+
 *{
   box-sizing: border-box;
 }
@@ -13,12 +15,11 @@ body{
   margin: auto;
 }
 
-
-
 header{
   img{
     margin-top: 15px;
   }
+
   nav{
     display: flex;
     border-top: 2px solid #eee;
@@ -29,40 +30,40 @@ header{
       padding: 15px;
       font-weight: 700px;
     }
+
     a:last-child{
-      color: red;
+      color: $brand-color;
       margin-left:  auto;
       padding-right: 0
     }
   }
 }
 
-
 main{
   display: flex;
   justify-content: space-around;
-  section:last-child{
-    padding: 0 0 10px 10px;
-    margin-top: 10px;
-    a{
-      padding: 10px;
-    }
-  }
+
   .large{
     border-bottom: 2px solid #eee;
     padding-top: 10px;
     padding-bottom: 10px;
+    aside{
+      color: grey;
+      font-weight: 700;
+    }
   }
+
   .small{
     display: flex;
     height: 200px;
     border-bottom: 2px solid #eee;
     padding-top: 10px;
     padding-bottom: 10px;
+    .article-text{
+      padding: 10px;
+    }
   }
-  .article-text{
-    padding: 10px;
-  }
+
   .next-page{
     text-align: right;
     padding:30px 0 30px 30px;
@@ -73,29 +74,12 @@ main{
       background-color: transparent;
     }
   }
-  form{
-    p{
-      margin:0;
-    }
 
-    .email-submit{
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid white;
-    }
-    .email{
-      width:auto;
-    }
-
-    input{
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid white;
-      height: 30px;
-
-    }
-    input::placeholder{
-      color: white;
+  section:last-child{
+    padding: 0 0 10px 10px;
+    margin-top: 10px;
+    a{
+      padding: 10px;
     }
 
     .search-bar{
@@ -106,54 +90,68 @@ main{
     .search-bar::placeholder{
       color: grey;
     }
+  }
+
+  form{
+    p{
+      margin:0;
+    }
+
+    .email-submit{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid white;
+      .email{
+        width:auto;
+        border:0;
+      }
+    }
 
     button{
       padding: 0;
       color: white;
       background: transparent;
       border: none;
+      height: 30px;
+    }
+
+    input{
+      width:100%;
+      background-color: transparent;
+      border: none;
       border-bottom: 1px solid white;
       height: 30px;
     }
-  }
 
-
-  input{
-    width:100%;
-    height: 25px;
-    border: 2px solid #eee;
-    color: white;
-  }
-}
-
-
-
-
-.subscribe{
-  background-color: red;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin-top: 5px;
-  form{
-    display: flex;
-    flex-direction: column;
-    input{
+    input::placeholder{
       color: white;
     }
   }
-}
 
-.categories{
-  button{
-    padding: 8px;
-    margin-bottom: 7px;
-    border: 2px solid #eee;
+  .subscribe{
+    background-color: $brand-color;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin-top: 5px;
+    form{
+      display: flex;
+      flex-direction: column;
+      input{
+        color: white;
+      }
+    }
+  }
 
+  .categories{
+    button{
+      padding: 8px;
+      margin-bottom: 7px;
+      border: 2px solid #eee;
+    }
   }
 }
-
 
 footer{
   text-align: center;
@@ -167,8 +165,8 @@ footer{
       padding: 0 20px;
     }
   }
+
   p{
     margin: 0px;
-    padding: 10px;
   }
 }
