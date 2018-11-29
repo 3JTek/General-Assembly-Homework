@@ -9,7 +9,6 @@ body{
 }
 
 .container{
-
   max-width:900px;
   margin: auto;
 }
@@ -42,23 +41,19 @@ header{
 main{
   display: flex;
   justify-content: space-around;
-
   section:last-child{
     background-color: #ccc;
     padding: 0 10px 10px 10px;
     margin-top: 10px;
     a{
       padding: 10px;
-
     }
   }
-
   .large{
     border-bottom: 2px solid #eee;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
   .small{
     display: flex;
     height: 200px;
@@ -79,24 +74,46 @@ main{
       background-color: transparent;
     }
   }
-
   form{
     p{
       margin:0;
     }
 
+    .email-submit{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid white;
+    }
+    .email{
+      width:auto;
+    }
+
     input{
       background-color: transparent;
-      margin-top: 5px;
+      border: none;
+      border-bottom: 1px solid white;
+      height: 30px;
+
+    }
+    input::placeholder{
       color: white;
     }
+
     .search-bar{
       margin-top: 0;
+      border: 1px solid #eee;
     }
+
     button{
-      margin-top: 5px;
+      padding: 0;
+      color: white;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      height: 30px;
     }
   }
+
 
   input{
     width:100%;
@@ -104,7 +121,6 @@ main{
     border: 2px solid #eee;
     color: white;
   }
-
 }
 
 
@@ -120,9 +136,9 @@ main{
   form{
     display: flex;
     flex-direction: column;
-  input{
-    color: white;
-  }
+    input{
+      color: white;
+    }
   }
 }
 
@@ -137,7 +153,6 @@ footer{
     display: flex;
     justify-content:center;
     padding: 10px;
-
     a{
       padding: 0 20px;
     }
