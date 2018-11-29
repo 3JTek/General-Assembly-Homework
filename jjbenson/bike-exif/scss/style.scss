@@ -4,7 +4,32 @@
 * {
   box-sizing: border-box;
 }
-
 body {
-  background: blue;
+  background: white;
+  font-family: 'Karla', sans-serif;
+}
+
+main, footer {
+  display:flex;
+  padding:20px
+}
+header {
+  nav {
+    display:flex;
+    a{
+      font-size: 16px;
+      color: $header_nav_link_colour;
+      &:last-child{
+        flex-grow: 1;
+        text-align: right;
+
+      }
+    }
+
+  }
+}
+section {
+  .section_left {
+
+  }
 }
