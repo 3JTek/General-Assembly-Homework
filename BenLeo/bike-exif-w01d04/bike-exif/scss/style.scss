@@ -1,11 +1,142 @@
+$red: rgb(204,35,45);
+$beige: rgb(234,237,230);
+$divide: 1px solid #ccc;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  padding: 25px;
+}
+
+body {
+  max-width: 900px;
+}
+
 header {
 
+  h1 {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    // justify-content: space-between;
+    padding: 5px 0;
+    border-top: $divide;
+    border-bottom: $divide;
+  }
+  li {
+    list-style: none;
+    padding-right: 15px;
+    text-transform: uppercase;
+
+
+  }
+
+  #shopButton {
+    margin-left: auto;
+    color: $red;
+  }
 }
 
 main {
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .aboveTheFold {
+    display: flex;
+
+    article {
+      // margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+
+  .sidebar {
+    width: 261px;
+    margin-left: 14px;
+  }
+
+  .leadStories {
+    // background-color: dodgerblue;
+    // display: flex;
+    // flex-direction: column;
+    width: 625px;
+  }
+
+  .secondaryStories {
+    display: flex;
+    flex-direction: column;
+    width: 625px;
+
+      img {
+        float: left;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        padding-left: 320px;
+      }
+
+      p {
+        padding-left: 320px;
+      }
+
+
+  }
+
+  article {
+    border-bottom: $divide;
+    // margin-top: 15px;
+    // margin-bottom: 15px;
+  }
+
+
+  input {
+    width: 261px;
+    margin-bottom: 15px;
+  }
+
+  .subscribeOffer{
+    background-color: $red;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    padding: 15px;
+
+    input {
+      color: white;
+      background-color: $red;
+      width: 200px;
+    }
+  }
+
+  .categories {
+    ul {
+      width: 261px;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+#nextButton {
+  text-align: center;
+  text-transform: uppercase;
+  border: $divide;
+  padding: 15px;
+  margin: 15px 0 15px 550px;
+  width: 75px
 }
 
 footer {
-
+  background-color: $beige;
 }
