@@ -1,2 +1,2 @@
-*{box-sizing:border-box}header nav #shop{text-align:right}h1{display:none}main{display:flex;justify-content:center;max-width:900px;margin:auto}.left-main{width:75%}.right-main{width:25%;background-color:green}
+*{box-sizing:border-box}header h1{display:none}header nav{text-transform:uppercase;font-family:arial;font-weight:bolder}body.container{max-width:900px;margin:auto}main{display:flex}.left-main{width:75%}.left-main .small{display:flex}.right-main{width:25%}.right-main div:first-child{background-color:red}
 /*# sourceMappingURL=style.css.map */

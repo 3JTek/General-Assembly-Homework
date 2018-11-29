@@ -3,29 +3,34 @@
 }
 
 header {
+  h1 {
+    display: none;
+  }
   nav {
-    #shop {
-      text-align: right;
-    }
+    text-transform: uppercase;
+    font-family: arial;
+    font-weight: bolder;
   }
 }
 
-h1 {
-  display: none;
-}
-
-main {
-  display: flex;
-  justify-content: center;
+body.container {
   max-width: 900px;
   margin: auto;
+}
+main {
+  display: flex;
 }
 
 .left-main {
   width: 75%;
+  .small {
+    display: flex;
+  }
 }
 
 .right-main {
   width: 25%;
-  background-color: green;
+  div:first-child {
+    background-color: red;
+  }
 }
