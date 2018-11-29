@@ -1,8 +1,10 @@
 .container{
   width:90%;
-  height:1500px;
+  height:auto;
   background-color: red;
   display: flex;
+  flex-wrap:wrap;
+
 }
 header{
   height: 100px;
@@ -12,13 +14,10 @@ header{
   display: flex;
   flex-wrap:wrap;
   .headerImage{
-
     //display: block;
     height: auto;
     width:auto;
     background: blue;
-
-
   }
 
   nav{
@@ -43,10 +42,29 @@ header{
 
   }
 }
-.hello{
-  width:90%;
-  height:1500px;
+
+
+main{
+  width:100%;
+
   background-color: blue;
   display: flex;
-  justify-content:center;
+  .left{
+    height:200px;
+    width:100%;
+    background-color: grey;
+    flex-direction:column;
+    &:first-child{
+      background-color: white;
+
+    }
+  }
+
+}
+
+footer{
+  height:50px;
+  width: 100%;
+  background-color: green;
+
 }

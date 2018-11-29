@@ -1,8 +1,9 @@
 .container {
   width: 90%;
-  height: 1500px;
+  height: auto;
   background-color: red;
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
 
 header {
   height: 100px;
@@ -28,11 +29,21 @@ header {
           text-decoration: none;
           color: black; }
 
-.hello {
-  width: 90%;
-  height: 1500px;
+main {
+  width: 100%;
   background-color: blue;
-  display: flex;
-  justify-content: center; }
+  display: flex; }
+  main .left {
+    height: 200px;
+    width: 100%;
+    background-color: grey;
+    flex-direction: column; }
+    main .left:first-child {
+      background-color: white; }
+
+footer {
+  height: 50px;
+  width: 100%;
+  background-color: green; }
 
 /*# sourceMappingURL=main.css.map */
