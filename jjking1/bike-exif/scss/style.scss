@@ -2,9 +2,32 @@
 @import 'variables';
 @import 'mixins';
 
+*{
+  box-sizing: border-box;
+}
+
 body{
   width: 70%;
-  margin: auto;
+  margin: 35px auto;
+  header{
+    padding-bottom: 40px;
+    padding-top: auto;
+    // justify-content: space-between;
+    width: 100%;
+    img{
+      flex-grow: 3;
+      padding-bottom: 30px;
+    }
+    nav{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      :last-child{
+        text-align: right;
+        margin-left: 30%;
+      }
+    }
+  }
   .container{
     display: flex;
     justify-content: space-between;
@@ -14,15 +37,41 @@ body{
       width: 55%;
     }
     .side-panel{
-      width: 25%;
+      width: 30%;
       height: 80%;
       align-self: flex-start;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      div{
-        padding-top: 30px;
+
+      .contest{
+        background-color: $background-color;
+        margin-top: auto;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+      }
+      .categories{
+        line-height: 1.8;
+        padding: 2px;
+        a{
+          border: 1px solid grey;
+          padding: 3px;
+        }
+      }
+      .search-bar{
+        width: 100%;
+        flex-grow: 1;
+        padding-bottom: 20px;
+        input{
+          width: 100%;
+        }
       }
     }
+  }
+  .small-articles{
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
   }
 }
