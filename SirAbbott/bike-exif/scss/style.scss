@@ -2,14 +2,31 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: arial;
+  font-weight: bolder;
+  padding-top: 20px;
+}
+
 header {
   h1 {
     display: none;
   }
   nav {
+    display: flex;
     text-transform: uppercase;
-    font-family: arial;
-    font-weight: bolder;
+    text-decoration: none;
+    padding: 10px 0;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    margin-top: 20px;
+  }
+  a {
+    padding: 3px;
+  }
+  #shop {
+    margin-left: auto;
+    color: red;
   }
 }
 
@@ -23,14 +40,39 @@ main {
 
 .left-main {
   width: 75%;
+  padding-top: 30px;
   .small {
     display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+  }
+  .small-text {
+    padding-left: 20px;
   }
 }
 
 .right-main {
   width: 25%;
-  div:first-child {
-    background-color: red;
+  padding-top: 30px;
+  #search {
+    display: inline-block;
+    width: 100%;
   }
+}
+
+#next {
+  margin: 50px 0;
+  text-align: right;
+  button {
+    padding: 20px 10px;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  background-color: grey;
 }
