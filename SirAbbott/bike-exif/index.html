@@ -7,7 +7,7 @@
   <title>Bike EXIF</title>
 </head>
 
-<body class="container">
+<body>
   <header>
     <img src="images/logo.svg" alt="logo">
     <h1>BikeExif</h1>
@@ -19,7 +19,6 @@
       <a href="#">How to Guides</a>
       <a href="#">Builds by Model</a>
       <a id="shop" href="#">Shop</a>
-
     </nav>
   </header>
   <main>
@@ -33,6 +32,7 @@
           classic Beemer, choose a K. You’ll get a...<p>
       </article>
       <article class="big">
+        <hr>
         <img src="images/large2.jpg" alt="bike 2">
         <h2>Monomonkee: Getting Dirty with the Wrenchmonkees</h2>
         <adise>4 days ago / 20 comments / Custom Motorcycles</aside>
@@ -64,21 +64,29 @@
         </div>
       </article>
       <div id="next">
-        <button>Next</button>
+        <a href="/">Next</a>
       </div>
     </section>
     <section class="right-main">
-      <input type="search" name="searchBar" placeholder="What are you looking for">
-      <div>
+      <div class="module search">
         <form>
-          <p>Subscribe and win $100
-            Sign up for the Bike EXIF email to get the latest customs as soon as they’re published. We'll also enter you into our monthly draw to win $100 to spend in Equipment, our motorcycle gear store.</p>
-          <input type="text" name="firstName" placeholder="First name ...">
-          <input type="email" name="email" placeholder="Email....">
+          <input type="search" name="searchBar" placeholder="What are you looking for">
+          <!-- I've tried to look up how to do this... -->
+          <button>Search</button>
         </form>
       </div>
-      <div>
-        Categories
+      <div class="module subscribe">
+        <h3>Subscribe and win $100</h3>
+        <p>Sign up for the Bike EXIF email to get the latest customs as soon as they’re published. We'll also enter you into our monthly draw to win $100 to spend in Equipment, our motorcycle gear store.</p>
+        <form>
+          <input type="text" name="firstName" placeholder="First name ...">
+          <input type="email" name="email" placeholder="Email....">
+          <!-- Not sure how to put this button inside the email input?! -->
+          <button>Send</button>
+        </form>
+      </div>
+      <div class="module categories">
+        <h3>Categories</h3>
         <ul>
           <li>Custom Motorcycles</li>
           <li>Classic Motorcycles</li>
@@ -91,6 +99,7 @@
           <li>Top 5</li>
           <li>Ten Best Motorcycles</li>
         </ul>
+      </div>
     </section>
   </main>
   <footer>
@@ -103,7 +112,7 @@
       <a href="#">Terms of user</a>
       <a href="#">Submit your bike</a>
     </nav>
-    &copy; 2008-2017 Garagista Media, PO BOX 668, Warkworth 0941, New Zealand
+    <p>&copy; 2008-2017 Garagista Media, PO BOX 668, Warkworth 0941, New Zealand</p>
   </footer>
 </body>
 
