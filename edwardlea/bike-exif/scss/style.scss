@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+
 .container{
 
 max-width: 900px;
@@ -15,13 +21,16 @@ input{
 header{
   nav{
     display: flex;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
     a{
       padding: 15px;
+      font-weight: 700px;
     }
     a:last-child{
-      color: blue;
+      color: red;
       margin-left:  auto;
       padding-right: 0
     }
@@ -35,25 +44,16 @@ main{
 
   section:last-child{
     background-color: #ccc;
-
+    padding: 10px;
     a{
       padding: 10px;
 
     }
   }
+
 }
 
-footer{
-  text-align: center;
-  nav{
-    display: flex;
-    justify-content:center;
-    background-color: red;
-    a{
-      padding: 0 20px;
-    }
-}
-}
+
 
 
   .subscribe{
@@ -70,4 +70,22 @@ footer{
 .small{
   display: flex;
   height: 200px;
+  margin-top: 10px;
+}
+
+footer{
+  text-align: center;
+  background-color: #eee;
+  nav{
+    display: flex;
+    justify-content:center;
+    padding: 10px;
+    p{
+      margin: 0px;
+      padding: 10px;
+    }
+    a{
+      padding: 0 20px;
+    }
+}
 }
