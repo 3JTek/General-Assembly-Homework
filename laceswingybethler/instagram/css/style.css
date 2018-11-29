@@ -1,0 +1,129 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  color: #999;
+  font-weight: 900;
+}
+
+body {
+  margin: 50px 20px 20px 20px;
+  background-color: #fafafa;
+}
+/* container has both columns in */
+.container {
+  max-width: 800px;
+  overflow: auto;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #3897f0;
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  background-color: #3897f0;
+  border: none;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  margin: 10px;
+  font-size: 16px;
+}
+
+input {
+  padding: 9px;
+  margin: 2px;
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid #e6e6e6;
+}
+
+.column:first-child {
+  width: 50%;
+  float:left;
+}
+
+.column:last-child {
+  width: 50%;
+  float:right;
+  text-align: center;
+}
+
+.row {
+  margin: 20px;
+}
+
+.column:last-child section {
+  background-color: #fff;
+  border: 2px solid #e6e6e6;
+  padding: 20px;
+  margin: 10px;
+}
+.column:last-child form {
+  background-color: #fff;
+}
+
+.row:nth-child(2) {
+  color: black;
+}
+
+.:nth-child (3) {
+  color: black;
+}
+
+footer {
+  max-width: 1000px;
+  overflow: auto;
+  margin: auto;
+  padding-bottom: 15px;
+}
+
+footer nav {
+  float: left;
+}
+
+footer p {
+  float: right;
+  margin: 0;
+}
+
+footer a {
+  color: #003569;
+}
+
+
+
+@media screen and (max-width: 700px) {
+  .column:first-child {
+    display: none;
+  }
+
+  .column:last-child {
+    width: 100%;
+    float:none;
+  }
+
+  footer {
+    text-align:center;
+  }
+
+  footer p {
+    text-align: center;
+    float: none;
+  }
+}
