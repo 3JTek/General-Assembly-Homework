@@ -1,6 +1,5 @@
 $border:1px solid #ddd;
 $color: #444;
-$article-max-width: 92%;
 
 * {
   box-sizing: border-box;
@@ -45,7 +44,7 @@ main {
   .articles {
     max-width: 75%;
     article {
-      max-width: $article-max-width;
+      max-width: 92%;
       padding-top: 30px;
       padding-bottom: 20px;
       border-bottom: $border;
@@ -55,8 +54,29 @@ main {
         text-align: justify;
       }
     }
+    .pagination {
+      max-width: 92%;
+      display: flex;
+      justify-content: flex-end;
+      a {
+        margin: 30px 0;
+        padding:10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: $border;
+        color: $color;
+      }
+    }
   }
   .extra {
     max-width: 25%;
+  }
+}
+
+.small {
+  display: flex;
+  .container {
+    max-width: 45%;
+    margin: 0 auto;
   }
 }
