@@ -41,18 +41,17 @@ header {
 }
 
 main {
-  padding-top: 30px;
   display: flex;
   .articles {
     max-width: 75%;
     article {
-      border-bottom: $border;
+      max-width: $article-max-width;
+      padding-top: 30px;
       padding-bottom: 20px;
+      border-bottom: $border;
       h2 {
-        max-width: $article-max-width;
       }
       p {
-        max-width: $article-max-width;
         text-align: justify;
       }
     }
