@@ -8,6 +8,9 @@ header {
   max-width: 950px;
   margin: auto; }
 
+img {
+  margin: 10px 0; }
+
 header nav {
   display: flex;
   border-top: 2px solid lightgrey;
@@ -31,12 +34,15 @@ main {
   margin: auto;
   padding: 15px; }
 
+.flex-box-two {
+  margin-left: 20px; }
+
 .main-logo {
   padding: 20px 0; }
 
 div {
   flex-direction: column;
-  padding: 10px; }
+  padding: px; }
 
 article aside {
   color: darkgrey; }
@@ -46,7 +52,10 @@ article aside {
   flex-direction: row; }
 
 .small-text h2 {
-  margin-top: 0; }
+  margin-top: 5px; }
+
+.small-images {
+  margin: 10px; }
 
 button {
   border: 2px solid lightgrey;
@@ -86,6 +95,20 @@ div input {
   border: none;
   border-bottom: 1px solid white; }
 
+.button-form {
+  display: flex;
+  flex-direction: row;
+  width: 260px; }
+
+.send-button {
+  background-color: red;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  margin: 5px 0;
+  padding: 5px 0;
+  font-size: 14px; }
+
 form input::placeholder {
   color: white;
   font-size: 14px; }
@@ -112,6 +135,9 @@ footer {
   background-color: lightgrey;
   font-size: 14px;
   padding: 20px 0; }
+
+footer img {
+  margin: 10px; }
 
 footer a {
   text-decoration: none;
