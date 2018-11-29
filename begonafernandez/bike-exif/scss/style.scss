@@ -13,6 +13,7 @@ body {
 }
 
 header {
+  padding-top: 30px;
   nav {
     display: flex;
     justify-content: flex-start;
@@ -25,6 +26,9 @@ header {
       color: $color;
       font-weight: 900;
       font-size: 14px;
+      &:hover {
+        color: red;
+      }
       &:last-child {
       align-items: center;
       margin-left: auto;
