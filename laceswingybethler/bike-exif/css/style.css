@@ -1,3 +1,2 @@
-
-
+*{box-sizing:border-box}body{margin:40px auto;max-width:1000px}.flex{display:flex}header nav{margin:20px 0;padding:10px;border-top:1px solid #d3d3d3;border-bottom:1px solid #d3d3d3}header a{margin-right:20px;color:black;text-transform:uppercase;text-decoration:none;font-weight:bold}header a:last-child{margin-left:auto;color:#CE2026}main .column:first-child article{border-bottom:1px solid #d3d3d3}
 /*# sourceMappingURL=style.css.map */

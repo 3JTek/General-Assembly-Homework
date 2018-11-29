@@ -1,0 +1,47 @@
+ $branding: #CE2026;
+ $line: 1px solid lightgrey;
+//always add the top 2
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.flex {
+  display:flex;
+}
+
+//in scss start from the top
+
+header {
+  nav {
+    margin: 20px 0;
+    padding: 10px;
+    border-top: $line;
+    border-bottom: $line;
+  }
+  & a {
+    margin-right: 20px;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+
+  }
+  & a:last-child {
+    margin-left: auto;
+    color: $branding;
+  }
+
+}
+main {
+  & .column:first-child {
+    & article {
+      border-bottom: $line;
+    }
+  }
+
+}
