@@ -14,6 +14,20 @@ body {
   display:flex;
 }
 
+aside {
+  color: darkgrey;
+  text-transform: uppercase;
+}
+
+button {
+  border: $line;
+  padding: 15px 30px;
+  align-self: flex-end;
+  margin: 0 20px;
+  background-color: white;
+
+}
+
 //in scss start from the top
 
 header {
@@ -39,8 +53,32 @@ header {
 }
 main {
   & .column:first-child {
+    flex-direction: column;
     & article {
       border-bottom: $line;
+      margin: 20px;
+      padding: 10px 0 20px 0;
+      div {
+        margin-left: 20px;
+        padding: 0;
+         h2 {
+          margin: 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  & .column:last-child {
+    // flex-wrap: wrap;
+    & form {
+      padding: 10px;
+      h3 {
+        color: white;
+      }
+      input {
+        width: 100%;
+      }
+
     }
   }
 

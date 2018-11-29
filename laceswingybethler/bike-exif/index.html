@@ -21,7 +21,7 @@
   </header>
 
   <main class="flex">
-    <div class="column">
+    <div class="column flex">
       <article class="featured">
         <img src="./images/large1.jpg" alt="Bike 1">
         <h2>Killer K: Mike Flores' BMW K100 Cafe Racer</h2>
@@ -35,33 +35,44 @@
         <p>The dirt track revolution continues apace. Even the big guns are turning    their eyes towards the ovals, and the latest to catch the bug are Nicholas    Bech and Per Nielsen of the Wrenchmonkees. We’re guessing the scene is    pretty small in Denmark, but it’s only a three-hour drive from Copenhagen     to the German border. “Nicholas...</p>
       </article>
 
-      <article class="unfeatured">
-      <h2>Custom Bikes of the Week: 22 January, 2017</h2>
-      <p>A classy Moto Guzzi Centauro from the USA, a racy BMW K100 fromJapan, and    a brawny Honda CB750 from Vietnam. Let’s end theweekend...</p>
+      <article class="unfeatured flex">
+        <img src="./images/small1.jpg" alt="Bike 3">
+        <div>
+          <h2>Custom Bikes of the Week: 22 January, 2017</h2>
+          <p>A classy Moto Guzzi Centauro from the USA, a racy BMW K100   fromJapan,  and    a brawny Honda CB750 from Vietnam. Let’s end   theweekend...</p>
+        </div>
       </article>
-      <article class="unfeatured">
-      <h2>Gird Yourself: El Solitario's Street Legal Dirt Tracker</h2>
-      <p>Batten down the hatches and don your flak jacket: The purveyors of the    world’s most hated motorcycles are back. This time, the infamous E     Solitario...</p>
+      <article class="unfeatured flex">
+        <img src="./images/small2.jpg" alt="Bike 4">
+        <div>
+          <h2>Gird Yourself: El Solitario's Street Legal Dirt Tracker</h2>
+          <p>Batten down the hatches and don your flak jacket: The purveyors  of   the    world’s most hated motorcycles are back. This time, the   infamous   E     Solitario...</p>
+          </div>
       </article>
-      <article class="unfeatured">
-      <h2>Review: Scramber Ducati Desert Sled</h2>
-      <p>You don’t need to be a regular reader to know that scramblers arehot. Over     the last few years, the term has become the go-to...</p>
+      <article class="unfeatured flex">
+        <img src="./images/small3.jpg" alt="Bike 5">
+        <div>
+          <h2>Review: Scramber Ducati Desert Sled</h2>
+          <p>You don’t need to be a regular reader to know that scramblers arehot.  Over     the last few years, the term has become the go-to...</p>
+        </div>
       </article>
 
-      <button>Next</button>
+    <button>Next</button>
+
     </div>
+
 <!-- End Column 1 - first-child  of main.flex-->
 
 <!-- Begin Column 2 - last-child  of main.flex-->
     <div class="column">
 
-        <form>
+        <form class="searchbox">
           <input type="text" name="search" placeholder="What are you looking for?">
         </form>
-        <form>
+        <form class="subscribe">
           <h3>Subscribe and win $100</h3>
         <p>Sign up for the Bike EXIF email to get the latest customs as soon as    they’re published. We'll also enter you into our monthly draw to win $100     to spend in Equipment, our motorcycle gear store.</p>
-        <form>
+        </form>
         <nav class="contents">
         <h3>Categories</h3>
 
