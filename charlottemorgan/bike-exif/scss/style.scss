@@ -1,19 +1,38 @@
 * {
   box-sizing: border-box;
 }
+body,
+input {
+  font-family: "Karla", sans-serif;
+}
 header {
   h1 {
     display: none;
   }
+  #logo {
+    padding-bottom: 20px;
+  }
   nav {
-    #shop {
-      margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    a {
+      padding: 10px 10px 10px 0;
+      text-decoration: none;
+      color: grey;
     }
+  }
+  #shop {
+    margin-left: auto;
+    color: red;
   }
 }
 
 body.container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -24,14 +43,75 @@ main {
 
 .left-main {
   width: 75%;
+  padding-top: 10px;
   .small {
     display: flex;
+    border-top: 2px solid grey;
+    padding: 30px 20px 20px 0;
   }
+  .big {
+    padding-bottom: 15px;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  h5 {
+    color: #999;
+  }
+}
+input {
+  width: 100%;
 }
 
 .right-main {
   width: 25%;
-  .input {
-    width: 100%;
+  padding-top: 10px;
+  text-align: center;
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    padding: 15px;
+    margin: 0;
   }
+}
+
+form {
+  background-color: red;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 10px;
+}
+button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 10px;
+  width: 45%;
+  padding: 5px;
+}
+#next-button {
+  text-align: right;
+}
+
+footer {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
+  color: #003569;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+p {
+  margin: 0;
 }
