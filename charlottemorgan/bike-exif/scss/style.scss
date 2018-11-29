@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+header {
+  h1 {
+    display: none;
+  }
+  nav {
+    #shop {
+      margin-left: auto;
+    }
+  }
+}
+
+body.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.left-main {
+  width: 75%;
+  .small {
+    display: flex;
+  }
+}
+
+.right-main {
+  width: 25%;
+  .input {
+    width: 100%;
+  }
+}
