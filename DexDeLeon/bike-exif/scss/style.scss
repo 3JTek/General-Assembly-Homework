@@ -1,6 +1,7 @@
 $footer: #EAEDE6;
 $red: #CE302B;
 $border: solid 1px #999;
+$grey: #555;
 
 * {
   box-sizing: border-box;
@@ -16,6 +17,9 @@ h3 {
   font-weight: 700;
 }
 
+h2{
+  text-transform: uppercase;
+}
 
 a {
   text-decoration: none;
@@ -35,6 +39,7 @@ header {
     border-top: $border;
     border-bottom: $border;
     a {
+      color: #333;
       padding: 5px;
       margin: 5px;
       text-transform: uppercase;
@@ -60,10 +65,14 @@ main {
     flex-direction: column;
     width: 65%;
 
-    article.featured {
+    article {
 
+      border-bottom: $border;
+      margin-top: 25px;
       aside {
         font-weight: 700;
+        text-transform: uppercase;
+        color: $grey;
       }
       img {
         width: 100%;
@@ -71,12 +80,16 @@ main {
     }
 
     article.nonFeatured {
-      background-color: $red;
+
+      padding-bottom: 25px;
 
       img {
         max-width: 70%;
-        height: auto;
-        border: 5px solid #000;
+        /*height: auto;*/
+      }
+
+      .smallArticleText {
+        padding: 10px;
       }
     }
 
@@ -90,8 +103,45 @@ main {
     width: 30%;
     margin-left: auto;
 
+    .search {
+      width: 100%;
+
+      input {
+        margin: 25px 0;
+        width: 100%;
+        padding: 2%;
+        border: solid 1px #ccc;
+      }
+    }
+
     aside {
       background: $red;
+      color: #fff;
+      padding: 5px 10px;
+      text-align: center;
+
+      h3 {
+        font-weight: 700;
+      }
+
+      form {
+        width: 80%;
+        margin: auto;
+
+        input {
+          background: $red;
+          color: #fff;
+          border: none;
+          border-bottom: solid 3px #fff;
+          width: 100%;
+          padding: 2%;
+          margin: 10px 0;
+        }
+
+        ::placeholder {
+          color: #fff;
+        }
+      }
     }
 
     nav {
