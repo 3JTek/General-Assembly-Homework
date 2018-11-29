@@ -5,12 +5,28 @@
   display: flex; }
 
 header {
-  height: 50px;
+  height: 100px;
   background-color: green;
   width: 100%;
-  display: flex; }
-  header nav ul {
-    display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
+  header .headerImage {
+    height: auto;
+    width: auto;
+    background: blue; }
+  header nav {
+    width: 100%; }
+    header nav ul {
+      display: flex; }
+      header nav ul li {
+        list-style-type: none;
+        margin-right: 10px; }
+        header nav ul li:last-child {
+          margin-left: auto;
+          background: #ff0000; }
+        header nav ul li a {
+          text-decoration: none;
+          color: black; }
 
 .hello {
   width: 90%;
