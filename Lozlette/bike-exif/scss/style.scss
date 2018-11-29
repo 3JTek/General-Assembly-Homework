@@ -1,7 +1,13 @@
+$fontstack: Montserrat, sans-serif;
+$primary-color: grey;
+@mixin flex(){
+  display:flex;
+}
+
 .container {
 max-width:900px;
 margin: auto;
-font-family: Montserrat;
+font-family: $fontstack;
 }
 main {
   display:flex;
@@ -15,8 +21,8 @@ header{
       display:flex;
       justify-content: flex-start;
       margin-left: none;
-      border-top: 1px solid grey;
-      border-bottom: 1px solid grey;
+      border-top: 1px solid $primary-color;
+      border-bottom: 1px solid $primary-color;
       margin-bottom: 30px;
       padding: 5px 0 5px 0;
 
@@ -45,17 +51,23 @@ header{
   flex-direction: column;
 }
 .first-article {
-  display:flex;
+  @include flex;
 }
 .second-article {
-  display:flex;
+  @include flex;
 }
 .third-article {
-  display:flex;
+  @include flex;
 }
 .bottom {
   article {
-    margin: 20px 0 20px 0;
+    margin: 0 0 20px 0;
     border-bottom: 1px solid grey;
+  }
+  div {
+    padding-left: 20px;
+  }
+  img {
+    margin-bottom: 20px;
   }
 }
