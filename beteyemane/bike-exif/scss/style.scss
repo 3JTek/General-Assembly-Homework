@@ -3,19 +3,67 @@
   box-sizing: border-box;
 }
 
-main, header {
+header {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 0 20px 0;
+}
+
+nav {
+    padding: 20px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-top: 1.5px solid #c0c0c0;
+    border-bottom: 1.5px solid #c0c0c0;
+    display: flex;
+    margin-left: auto;
+    align-content: space-around;
+    color: black;
+}
+
+main, header{
     display: flex;
     max-width: 900px;
-    justify-content: center;
     margin: auto;
 section {
       justify-content: center;
     }
+
+input{
+  height: 46px;
+  width: 350px;
+  border: 1.5px solid #c0c0c0;
+  font-size: 14px;
+}
 .small {
       display: flex;
       flex-direction: row;
   }
 }
+
+.logo {
+  margin-bottom: 20px;
+}
+
+
+#subscibe {
+  height: 300px;
+  width: 350px;
+  background-color: rgb(193, 13, 34);
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+#subscibe p {
+  text-align: justify;
+  font-size: 16px;
+}
+
+#shop {
+  color: rgb(193, 13, 34);
+}
+
 
 footer {
     max-width: 900px;
