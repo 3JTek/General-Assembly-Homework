@@ -24,20 +24,21 @@
   <main>
     <section class="one">
     <article class="top">
-      <div>
-        <img src="images/large1.jpg" alt="Large bike">
-        <h2>Killer K: Mike Flores' BMW K100 Cafe Racer</h2>
-        2 days ago / 23 comments / Custom Motorcycles
-        Is this the year of the BMW K100? We reckon so. The earlier R-series boxers have held the limelight for long enough—and let’s face it, any R donor you find now either comes at a premium, or has already been hacked. So if you’re looking for a classic Beemer, choose a K. You’ll get a...
-        </div>
 
-        <div>
+        <article="big">
+          <img src="images/large1.jpg" alt="Large bike">
+          <h2>Killer K: Mike Flores' BMW K100 Cafe Racer</h2>
+          <aside>2 days ago / 23 comments / Custom Motorcycles</aside>
+          <p>Is this the year of the BMW K100? We reckon so. The earlier R-series boxers have held the limelight for long enough—and let’s face it, any R donor you find now either comes at a premium, or has already been hacked. So if you’re looking for a classic Beemer, choose a K. You’ll get a...</p>
+        </article>
+
+        <article="big">
           <img src="images/large2.jpg" alt="Large 2 bike">
-        <h2>Monomonkee: Getting Dirty with the Wrenchmonkees</h2>
-        <p>4 days ago / 20 comments / Custom Motorcycles</p>
-        The dirt track revolution continues apace. Even the big guns are turning their eyes towards the ovals, and the latest to catch the bug are Nicholas Bech and Per Nielsen of the Wrenchmonkees. We’re guessing the scene is pretty small in Denmark, but it’s only a three-hour drive from Copenhagen to the German border. “Nicholas...
-        </div>
-      </article>
+            <h2>Monomonkee: Getting Dirty with the Wrenchmonkees</h2>
+            <aside>4 days ago / 20 comments / Custom Motorcycles</aside>
+            <p>The dirt track revolution continues apace. Even the big guns are turning their eyes towards the ovals, and the latest to catch the bug are Nicholas Bech and Per Nielsen of the Wrenchmonkees. We’re guessing the scene is pretty small in Denmark, but it’s only a three-hour drive from Copenhagen to the German border. “Nicholas...</p>
+        </article>
+
         <article class="small">
           <div class="images">
             <img src="images/small1.jpg" alt="Small 1 bike">
@@ -73,28 +74,34 @@
 
         <button>Next</button>
     </section>
+
     <section class="two">
-    <input type="text" name="search" placeholder="What are you looking for?">
+
+    <div class="search"><input type="text" name="search" placeholder="What are you looking for?"></div>
     <div id="subscibe">
     <h2 class="sbox">Subscribe and win $100</h2>
     <p>Sign up for the Bike EXIF email to get the latest customs as soon as they’re published. We'll also enter you into our monthly draw to win $100 to spend in Equipment, our motorcycle gear store.</p>
     <form>
-      <input type="text" name="First Name" placeholder="First Name..">
+      <div class="input">
+      <input type="text" name="User First Name" placeholder="First Name..">
+      <input type="Email" name="User Email" placeholder="Email..">
+    </div class="input">
     </form>
   </div>
 </form>
     <h3>Categories</h3>
-
-    Custom Motorcycles
-    Classic Motorcycles
-    Racing Motorcycles
-    Production Motorcycles
-    Motorcycle Gear
-    Special Features
-    Concept Motorcycles
-    Interviews
-    Top 5
-    Ten Best Motorcycles
+    <div class="buttons">
+    <button>Custom Motorcycles</button>
+    <button>Classic Motorcycles</button>
+    <button>Racing Motorcycles</button>
+    <button>Production Motorcycles</button>
+    <button>Motorcycle Gear</button>
+    <button>Special Features</button>
+    <button>Concept Motorcycles</button>
+    <button>Interviews</button>
+    <button>Top 5</button>
+    <button>Ten Best Motorcycles</button>
+  </div>
   </section>
   </main>
 

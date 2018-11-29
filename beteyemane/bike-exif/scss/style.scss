@@ -5,12 +5,17 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 header {
   flex-direction: column;
-  align-items: flex-start;
   padding: 30px 0 20px 0;
+}
+
+article {
+  border-bottom: 2px solid #d3d3d3;
+  padding: 20px 0;
 }
 
 nav {
@@ -26,6 +31,7 @@ a {
   text-transform: uppercase;
   color: black;
   font-weight: bold;
+  padding-right: 15px;
 
 }
 
@@ -35,7 +41,8 @@ main, header{
     margin: auto;
 
 section {
-      justify-content: center;
+    justify-content: center;
+    max-width: 100%;
     }
 
 input{
@@ -43,7 +50,10 @@ input{
   width: 100%;
   border: 1.5px solid #c0c0c0;
   font-size: 14px;
+}
 
+aside {
+  color: #939393;
 }
 .small {
       display: flex;
@@ -59,12 +69,25 @@ input{
   margin: 0;
 }
 
+.input input{
+  background-color: rgb(193, 13, 34);
+  border: 1px solid #fff;
+  font-size: 90%;
+  font-family: inherit;
+  padding: 5px;
+  margin: 2px;
+
+}
+::placeholder {
+    color: #fff;
+}
 #subscibe {
-  height: 300px;
+  height: 330px;
   background-color: rgb(193, 13, 34);
   padding: 30px;
   color: #fff;
   text-align: center;
+
 }
 
 #subscibe p {
@@ -74,6 +97,7 @@ input{
 
 #shop {
   color: rgb(193, 13, 34);
+  margin-left: auto;
 }
 
 
@@ -83,3 +107,37 @@ footer {
     align-items: flex-end;
     margin: auto;
   }
+
+.one h2 {
+  text-transform: uppercase;
+}
+
+.one {
+  padding-right: 25px;
+}
+
+.search
+ { margin-bottom: 20px;
+}
+
+button {
+  font-size: 90%;
+  font-family: inherit;
+  padding: 5px;
+  border: 2px solid #d3d3d3;
+  border-radius: 5%;
+  margin: 2px;
+
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+.text h2 {
+  margin: 0;
+}
+
+.text{
+  margin-left: 20px;
+}
