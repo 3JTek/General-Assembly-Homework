@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
   flex-direction: column;
   align-items: flex-start;
@@ -11,29 +15,35 @@ header {
 
 nav {
     padding: 20px 0;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-top: 1.5px solid #c0c0c0;
-    border-bottom: 1.5px solid #c0c0c0;
+    border-top: 2px solid #d3d3d3;
+    border-bottom: 2px solid #d3d3d3;
     display: flex;
-    margin-left: auto;
-    align-content: space-around;
-    color: black;
+    width: 100%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+
 }
 
 main, header{
     display: flex;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
+
 section {
       justify-content: center;
     }
 
 input{
   height: 46px;
-  width: 350px;
+  width: 100%;
   border: 1.5px solid #c0c0c0;
   font-size: 14px;
+
 }
 .small {
       display: flex;
@@ -45,12 +55,14 @@ input{
   margin-bottom: 20px;
 }
 
+.sbox{
+  margin: 0;
+}
 
 #subscibe {
   height: 300px;
-  width: 350px;
   background-color: rgb(193, 13, 34);
-  padding: 20px;
+  padding: 30px;
   color: #fff;
   text-align: center;
 }
