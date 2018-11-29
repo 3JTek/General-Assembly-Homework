@@ -1,0 +1,25 @@
+
+* {
+  box-sizing: border-box;
+}
+
+main, header {
+    display: flex;
+    max-width: 900px;
+    justify-content: center;
+    margin: auto;
+section {
+      justify-content: center;
+    }
+.small {
+      display: flex;
+      flex-direction: row;
+  }
+}
+
+footer {
+    max-width: 900px;
+    display: flex;
+    align-items: flex-end;
+    margin: auto;
+  }
