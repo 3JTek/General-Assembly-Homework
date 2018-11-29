@@ -96,7 +96,7 @@ input{
   margin: 3.5px  0px;
   border-radius: 5px;
   padding:12px;
-  
+
 
 }
 
@@ -126,6 +126,7 @@ section{
 footer{
     overflow: auto;
     margin:60px 0;
+    
 }
 nav ul li{
   float: left;
@@ -142,6 +143,7 @@ footer p{
  margin: 0;
  color: #999;
 }
+
 
 
 
