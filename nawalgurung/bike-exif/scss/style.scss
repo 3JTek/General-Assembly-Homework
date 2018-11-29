@@ -1,4 +1,7 @@
 
+*{
+  box-sizing: border-box;
+}
 nav{
   width: 100%;
   ul{
@@ -30,7 +33,17 @@ header{
       }
 }
 
-
+main {
+  display: flex;
+  flex-direction: column;
+  .left-1 {
+    border:1px #ccc solid;
+    max-width: 50%;
+  .large-image {
+      max-width: 100%;
+      }
+    }
+}
 
 
 footer{
