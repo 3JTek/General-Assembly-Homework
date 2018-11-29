@@ -5,7 +5,22 @@
 body {
   max-width: 900px;
   margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
 }
+
+header {
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    a:last-child {
+      margin-left: auto;
+    }
+  }
+}
+
+// header nav a:nth-child(3) {
+//   flex: 2;
+// }
 
 main {
   display: flex;

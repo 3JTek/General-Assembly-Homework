@@ -1,2 +1,2 @@
-*{box-sizing:border-box}body{max-width:900px;margin:0 auto}main{display:flex}main section{max-width:75%}
+*{box-sizing:border-box}body{max-width:900px;margin:0 auto;font-family:'Montserrat', sans-serif}header nav{display:flex;justify-content:flex-start}header nav a:last-child{margin-left:auto}main{display:flex}main section{max-width:75%}
 /*# sourceMappingURL=style.css.map */
