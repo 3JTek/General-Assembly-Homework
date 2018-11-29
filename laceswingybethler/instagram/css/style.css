@@ -80,6 +80,7 @@ input {
 
 .row:nth-child(2) {
   color: black;
+  /* color: red; */
 }
 
 .:nth-child (3) {
