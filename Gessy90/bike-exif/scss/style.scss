@@ -27,11 +27,6 @@ ul{
 nav{
 justify-content: space-between;
 }
-.right-main{
-  width:10%;
-  float: right;
-  display: flex;
-}
 
 nav{
  width:20%;
@@ -41,9 +36,7 @@ nav{
    line-height: 20px;
  }
 }
-img{
 
-}
 header{
   display:flex;
   align-self: baseline;
@@ -54,16 +47,6 @@ header{
       }
     }
   }
-.categories{
-  margin: 45%;
-}
-.subscribe{
-margin: 45%;
-}
-p {
-  display: flex;
-  flex-wrap: nowrap;
-}
 
 .flex {
   display: flex;

@@ -26,11 +26,6 @@ footer {
 nav {
   justify-content: space-between; }
 
-.right-main {
-  width: 10%;
-  float: right;
-  display: flex; }
-
 nav {
   width: 20%; }
   nav ul {
@@ -45,16 +40,6 @@ header {
     margin: 10px; }
     header li:last-child {
       margin-left: auto; }
-
-.categories {
-  margin: 45%; }
-
-.subscribe {
-  margin: 45%; }
-
-p {
-  display: flex;
-  flex-wrap: nowrap; }
 
 .flex {
   display: flex; }
