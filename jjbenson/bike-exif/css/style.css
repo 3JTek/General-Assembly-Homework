@@ -1,2 +1,258 @@
-*{box-sizing:border-box}body{background:white;font-family:'Karla', sans-serif}main{display:flex;padding:10px 40px;justify-content:center;flex-wrap:wrap}nav{display:flex}nav a{font-size:14px;text-transform:uppercase;padding:8px;font-weight:600;color:#000;text-decoration:none}header{padding:0;max-width:1065px;margin:20px auto}header img{margin:20px 0}header nav{border:1px solid #ccc;border-left:0px;border-right:0px}header nav a{font-size:20px;padding:10px}header nav a:last-child{flex-grow:1;text-align:right;color:#cc242e}header nav a:hover{text-decoration:underline}section.section_left{width:665px}section.section_left nav.next{display:flex;justify-content:flex-end;padding-right:40px}section.section_left nav.next a.button{background-color:white;border:1px solid #ccc;text-transform:uppercase;text-decoration:none;text-align:center;margin:10px 0;padding:10px 20px;color:black}section.section_left nav.next a.button:hover{background-color:#ccc}section.section_left article{width:625px;border-bottom:1px solid #ccc;padding:20px 0px 20px 0;overflow:auto}section.section_left article:hover{background-color:#eee}section.section_left article a{text-decoration:none;color:black}section.section_left article h2{text-transform:uppercase;padding:0 20px}section.section_left article aside{color:#ccc;text-transform:uppercase;padding:0 20px}section.section_left article p{padding:0 20px}section.section_left article img{float:left;margin-right:20px;height:auto}section.section_left article.featured{padding:20px 0px 20px 0}section.section_left article.featured:first-child{padding:0 0px 20px 0;margin:20px 0 0 0}section.section_left article.featured img{margin:0 0 20px 0}footer{min-height:200px;height:auto;padding:20px 0;display:flex;flex-direction:column;justify-content:center;background-color:#eaede6}footer nav,footer address{display:flex;flex-wrap:nowrap;justify-content:center}footer nav a:hover{text-decoration:underline}footer img{height:30px}section.section_right{width:400px;padding:20px 0}section.section_right div.search form{border:1px solid #ccc;padding:4px;margin-bottom:20px;display:flex;align-items:center}section.section_right div.search input{border:0px solid black;flex-grow:1;font-size:20px}section.section_right div.subscribe{padding:20px;background-color:#cc242e;color:white}section.section_right div.subscribe form{border:0px solid #ccc;padding:4px;margin-bottom:20px}section.section_right div.subscribe form div{border-bottom:1px solid white;display:flex}section.section_right div.subscribe form input{background-color:#cc242e;flex-grow:1;font-size:20px;border-width:0;color:white;padding:10px 0}section.section_right div.subscribe form button{padding:0;background-color:#cc242e;color:white;text-transform:uppercase;font-size:20px;border-width:0px}section.section_right div.subscribe form ::placeholder{color:white;opacity:1}section.section_right div.categories h2{text-transform:uppercase;padding:0;margin:20px 0 0 0}section.section_right div.categories nav{display:flex;flex-wrap:wrap;font-size:14px}section.section_right div.categories nav a{border:1px solid #ccc;padding:10px;margin:4px}section.section_right div.categories nav a:hover{background-color:#ccc}@media screen and (max-width: 623px){section.section_left{width:100%}nav{flex-direction:column}section.section_right{width:100%}main{padding:0}section.section_left article{width:100%}section.section_left article img{width:100%;height:auto}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  font-family: 'Karla', sans-serif;
+  color: #000;
+}
+
+main {
+  display: flex;
+  padding: 10px 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+}
+nav a {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+header {
+  padding: 0;
+  max-width: 1065px;
+  margin: 20px auto;
+}
+header img {
+  margin: 20px 0;
+}
+header nav {
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-right: 0;
+}
+header nav a {
+  font-size: 20px;
+  padding: 10px;
+}
+header nav a:last-child {
+  flex-grow: 1;
+  text-align: right;
+  color: #cc242e;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+
+section.section_left {
+  width: 665px;
+}
+section.section_left nav.next {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+section.section_left nav.next a.button {
+  background-color: white;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: #000;
+}
+section.section_left nav.next a.button:hover {
+  background-color: #ccc;
+}
+section.section_left article {
+  width: 625px;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0px 20px 0;
+  overflow: auto;
+}
+section.section_left article:hover {
+  background-color: #eee;
+}
+section.section_left article aside {
+  display: none;
+}
+section.section_left article a {
+  text-decoration: none;
+  color: #000;
+}
+section.section_left article h2 {
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+section.section_left article aside {
+  color: #ccc;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+section.section_left article p {
+  padding: 0 20px;
+}
+section.section_left article img {
+  float: left;
+  margin-right: 20px;
+  height: auto;
+}
+section.section_left article.featured {
+  padding: 20px 0px 20px 0;
+}
+section.section_left article.featured:first-child {
+  padding: 0 0px 20px 0;
+  margin: 20px 0 0 0;
+}
+section.section_left article.featured aside {
+  display: block;
+}
+section.section_left article.featured img {
+  margin: 0 0 20px 0;
+}
+
+footer {
+  min-height: 200px;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eaede6;
+}
+footer nav, footer address {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+footer nav {
+  flex-wrap: wrap;
+}
+footer nav a:hover {
+  text-decoration: underline;
+}
+footer img {
+  height: 30px;
+}
+
+section.section_right {
+  width: 400px;
+  padding: 20px 0;
+}
+section.section_right div.search form {
+  border: 1px solid #ccc;
+  padding: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+section.section_right div.search input {
+  border: 0px solid black;
+  flex-grow: 1;
+  font-size: 20px;
+}
+section.section_right div.subscribe {
+  padding: 20px;
+  background-color: #cc242e;
+  color: white;
+}
+section.section_right div.subscribe form {
+  border: 0px solid #ccc;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+section.section_right div.subscribe form div {
+  border-bottom: 1px solid white;
+  display: flex;
+}
+section.section_right div.subscribe form input {
+  background-color: #cc242e;
+  flex-grow: 1;
+  font-size: 20px;
+  border-width: 0;
+  color: white;
+  padding: 10px 0;
+}
+section.section_right div.subscribe form button {
+  padding: 0;
+  background-color: #cc242e;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-width: 0px;
+}
+section.section_right div.subscribe form ::placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+section.section_right div.subscribe form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+section.section_right div.subscribe form ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+section.section_right div.categories h2 {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+section.section_right div.categories nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+section.section_right div.categories nav a {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 4px;
+}
+section.section_right div.categories nav a:hover {
+  background-color: #ccc;
+}
+
+@media screen and (max-width: 623px) {
+  section.section_left {
+    width: 100%;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+  header nav a:hover {
+    background-color: #ccc;
+  }
+  header nav a:last-child {
+    text-align: left;
+  }
+
+  section.section_right {
+    width: 100%;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  section.section_left article {
+    width: 100%;
+  }
+  section.section_left article img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

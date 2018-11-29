@@ -5,18 +5,16 @@
   box-sizing: border-box;
 }
 body {
-  background: white;
+  background: $page_background;
   font-family: 'Karla', sans-serif;
+  color: $page_text;
 }
-
 main {
-  // background-color: yellow;
   display:flex;
   padding:10px 40px;
   justify-content: center;
   flex-wrap: wrap;
 }
-
 nav {
   display:flex;
   a{
@@ -24,10 +22,9 @@ nav {
     text-transform: uppercase;
     padding: 8px;
     font-weight: 600;
-    color: $header_nav_link_colour;
+    color: $page_text;
     text-decoration: none;
   }
-
 }
 header {
   padding: 0;
@@ -38,8 +35,8 @@ header {
   }
   nav {
     border: 1px solid $page_grey;
-    border-left: 0px;
-    border-right: 0px;
+    border-left: 0;
+    border-right: 0;
     a{
       font-size: 20px;
       padding: 10px;
@@ -56,7 +53,6 @@ header {
 }
 section.section_left {
 width:665px;
-// max-width: 665px;
   nav.next {
     display: flex;
     justify-content:flex-end;
@@ -64,30 +60,31 @@ width:665px;
     a.button {
       background-color: white;
       border:1px solid $page_grey;
-      // border-radius: 5px;
       text-transform: uppercase;
       text-decoration: none;
       text-align: center;
       margin: 10px 0;
       padding: 10px 20px;
-      color: black;
+      color: $page_text;
       &:hover {
         background-color: $page_grey;
       }
     }
   }
-
   article {
     width:625px;
     border-bottom: 1px solid $page_grey;
     padding: 20px 0px 20px 0;
     overflow: auto;
     &:hover{
-      background-color: #eee;
+      background-color:$page_hover;
+    }
+    aside {
+      display: none;
     }
     a {
       text-decoration: none;
-      color: black;
+      color: $page_text;
     }
     h2 {
       text-transform: uppercase;
@@ -97,19 +94,15 @@ width:665px;
       color:$page_grey;
       text-transform: uppercase;
       padding: 0 20px;
-
     }
     p{
       padding: 0 20px;
-
     }
-
     img {
       float:left;
       margin-right: 20px;
       height: auto;
     }
-
   }
   article.featured {
     padding: 20px 0px 20px 0;
@@ -117,14 +110,14 @@ width:665px;
       padding: 0 0px 20px 0;
       margin: 20px 0 0 0;
     }
-
+    aside {
+      display: block;
+    }
     img {
       margin:0 0 20px 0;
     }
-
   }
 }
-
 footer {
   min-height: 200px;
   height: auto;
@@ -139,6 +132,7 @@ footer {
     justify-content: center;
   }
   nav {
+    flex-wrap: wrap;
     a {
       &:hover {
         text-decoration: underline;
@@ -149,7 +143,6 @@ footer {
     height:30px;
   }
 }
-
 section.section_right {
   width:400px;
   padding: 20px 0;
@@ -165,19 +158,16 @@ section.section_right {
       border: 0px solid black;
       flex-grow: 1;
       font-size: 20px;
-
     }
   }
   div.subscribe{
     padding: 20px;
     background-color: $page_red;
     color:white;
-
     form {
       border: 0px solid $page_grey;
       padding:4px;
       margin-bottom: 20px;
-
       div{
         border-bottom: 1px solid white;
          display: flex;
@@ -198,10 +188,7 @@ section.section_right {
         font-size: 20px;
         border-width: 0px;
       }
-      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: white;
-        opacity: 1; /* Firefox */
-      }
+      @include placeholder ;
     }
   }
   div.categories {
@@ -225,13 +212,20 @@ section.section_right {
     }
   }
 }
-
 @media screen and (max-width:623px){
   section.section_left {
     width:100%;
   }
-  nav {
+  header nav {
     flex-direction: column;
+    a {
+      &:hover{
+        background-color: $page_grey;
+      }
+      &:last-child{
+        text-align: left;
+      }
+    }
   }
   section.section_right{
     width:100%;
