@@ -1,11 +1,17 @@
+$footer-backcol: #ccc;
+
+
 *{
   box-sizing: border-box;
 }
+h1{
+  display: none;
+}
+
 
 .container{
   width:80%;
   height:auto;
-  background-color: red;
   display: flex;
   flex-wrap:wrap;
   margin: auto;
@@ -14,36 +20,37 @@
 }
 nav{
   width: 100%;
-  ul{
-    display: flex;
+  height: auto;
+
+   ul{
+     display: flex;
 
     li{
       list-style-type: none;
-      margin-right: 10px;
+      margin-right: 15px;
+
+
       a{
         text-decoration: none;
         color: black;
       }
-    }
-  }
+   }
+   }
 }
 header{
-  height: 100px;
-  background-color: green;
+  height: auto;
   width: 100%;
   display: flex;
   flex-wrap:wrap;
   .headerImage{
     height: auto;
     width:auto;
-    background: blue;
   }
-      li{
+       li{
 
         &:last-child{
-          margin-left: auto;
-          background: #ff0000;
-        }
+         margin-left: auto;
+         }
       }
 }
 
@@ -51,21 +58,25 @@ header{
 main{
   width:100%;
   height: auto;
-  background-color: blue;
   display: flex;
+
+
   .left{
     height:auto;
-    width:70%;
-    background-color: grey;
-    flex-direction:column;
+    width:65%;
+    flex-wrap:wrap;
+
+
+
     section{
       height: auto;
       width: 100%;
+
       &:first-child{
         height: auto;
-        display: flex;
-        flex-direction:column;
         background-color: white;
+        display: flex;
+        flex-wrap:wrap;
         .content-big{
           height: auto;
           width: 100%;
@@ -73,30 +84,76 @@ main{
             height: auto;
             background-color: white;
             width: 100%;
-
           }
-
         }
+      }
 
+      &:nth-child(2){
+        height: auto;
+        .content-small{
+          width: 100%;
+          height: auto;
+          display: flex;
+        }
       }
       &:last-child{
-        background-color: #ff0000;
+        height: 50px;
+        width: 100%;
+        display: flex;
+
+        form{
+          margin-left: auto;
+
+        }
       }
     }
+
   }
   .right{
-    height:400px;
-    width:30%;
-    background-color: limelight;
+    height:auto;
+    width:35%;
+    form{
+      height: 40px;
+      background-color: red;
+    }
+
+    // form{
+    //   background-color: white;
+    //
+    //   &:last-child{
+    //     height: 500px;
+    //     display: flex;
+    //     flex-direction:column;
+    //     width: 100%;
+    //     background-color: grey;
+    //   }
+    //
+    // }
+
+    nav{
+      width: auto;
+      height: 300px;
+
+      ul{
+        flex-wrap:wrap;
+        li{
+          border: 1px solid black;
+          height: 40px;
+          padding: 10px;
+          margin: 5px 2px;
+        }
+      }
+
+
+    }
 
   }
-
 }
 
 footer{
   height:auto;
   width: 100%;
-  background-color: green;
+  background-color: $footer-backcol;
   display: flex;
   flex-wrap:wrap;
   text-align: center;
@@ -104,10 +161,8 @@ footer{
   div{
     height:auto;
     width:100%;
-    background-color: red;
   }
   nav{
-    background-color: red;
 
     ul{
     justify-content: center;
