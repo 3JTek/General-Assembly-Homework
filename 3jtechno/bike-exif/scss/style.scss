@@ -4,3 +4,16 @@
 main, section, article, footer, header{
   border: 2px solid black;
 }
+header,main, footer{
+  max-width: 900px;
+  margin: auto;
+}
+main{
+  display: flex;
+}
+.secondary-article{
+  display: flex
+}
+button{
+  float: right;
+}
