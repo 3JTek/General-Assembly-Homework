@@ -25,6 +25,15 @@ nav {
   margin: 5px;
 }
 
+nav {
+  button {
+    margin-right: 0;
+    border: none;
+    color: red;
+    font-weight: bold;
+  }
+}
+
 header {
   img {
     border-bottom: none;
@@ -39,6 +48,14 @@ header {
   border-bottom: 1px solid;
   color: white;
 }
+}
+
+.containerright {
+  input:last-child {
+    float: right;
+    margin-bottom: 20px;
+    border-bottom: none;
+  }
 }
 
 .flex1 {
@@ -78,13 +95,13 @@ h3 {
   }
 }
 
-.flex2 {
-  h2, article {
-    background-color: red;
-    text-align: center;
-    display: block;
-  }
-}
+// .flex2 {
+//   h2, article {
+//     background-color: red;
+//     text-align: center;
+//     display: block;
+//   }
+// }
 
 input {
   margin: 15px;
@@ -120,8 +137,7 @@ footer {
 button {
   width: 50px;
   margin-right: auto;
-  background-color: red;
-  color: white;
+  color: black;
   margin-left: auto;
   flex-wrap: wrap;
 }
@@ -134,4 +150,11 @@ img {
 
 .containerright {
   background-color: red;
+  padding: 15px;
+}
+
+.containerright {
+  h2 {
+    text-align: center;
+  }
 }

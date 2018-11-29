@@ -19,6 +19,12 @@ nav {
   padding: 5px;
   margin: 5px; }
 
+nav button {
+  margin-right: 0;
+  border: none;
+  color: red;
+  font-weight: bold; }
+
 header img {
   border-bottom: none; }
 
@@ -28,6 +34,11 @@ header img {
   display: block;
   border-bottom: 1px solid;
   color: white; }
+
+.containerright input:last-child {
+  float: right;
+  margin-bottom: 20px;
+  border-bottom: none; }
 
 .flex1 {
   justify-content: space-between;
@@ -59,11 +70,6 @@ h3 {
   margin: 0;
   display: flex; }
 
-.flex2 h2, .flex2 article {
-  background-color: red;
-  text-align: center;
-  display: block; }
-
 input {
   margin: 15px; }
 
@@ -87,8 +93,7 @@ footer nav {
 button {
   width: 50px;
   margin-right: auto;
-  background-color: red;
-  color: white;
+  color: black;
   margin-left: auto;
   flex-wrap: wrap; }
 
@@ -97,6 +102,10 @@ img {
   padding: 20px; }
 
 .containerright {
-  background-color: red; }
+  background-color: red;
+  padding: 15px; }
+
+.containerright h2 {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
