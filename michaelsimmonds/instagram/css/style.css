@@ -122,14 +122,24 @@ footer span {
   border: solid 1px #e6e6e6;
 }
 
-footer a {
-  float: left;
+footer{
+  text-align: center;
+}
+
+footer nav {
+  float: inherit;
   width: 90%;
   padding: 0;
   margin: 0 5px;
+  overflow: auto;
+}
+
+footer ul {
+  text-align: center;
 }
 
 footer span {
-  text-align: center;
+  float: inherit;
+  margin: 20px;
 }
 }
