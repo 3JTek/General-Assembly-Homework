@@ -74,6 +74,18 @@ main {
   }
   .extra {
     max-width: 25%;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 12px;
+      a {
+        text-decoration: none;
+        color: $color;
+        padding: 5px;
+        margin: 2px;
+        border: $border;
+      }
+    }
   }
 }
 
