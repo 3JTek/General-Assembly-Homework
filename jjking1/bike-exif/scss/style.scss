@@ -21,6 +21,30 @@ body{
     color: black;
     text-decoration: none;
   }
+  footer{
+    margin: 0;
+    padding: 50px;
+    background-color: #eaede6;
+    display: flex;
+    justify-content: center;
+    div{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 15px 0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+  }
 }
 
 main{
@@ -169,31 +193,4 @@ main{
       font-size: 13px;
     }
   }
-}
-
-footer{
-  margin: 0;
-  padding: 50px;
-  background-color: #eaede6;
-  display: flex;
-  justify-content: center;
-  div{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    nav{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 15px 0;
-    }
-    p{
-      margin: 0;
-    }
-  }
-
-
 }
