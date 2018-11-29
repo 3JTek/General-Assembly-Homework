@@ -16,6 +16,9 @@ nav {
   padding: 5px;
   margin: 5px; }
 
+header img {
+  border-bottom: none; }
+
 .flex1 {
   justify-content: space-between;
   display: inline-flex;
@@ -53,13 +56,25 @@ input {
 footer {
   text-align: center;
   padding: 8px 0 0 0;
-  background-color: grey; }
+  background-color: #D3D3D3; }
+
+footer img {
+  border-bottom: none; }
+
+footer nav {
+  display: flex;
+  text-align: center; }
 
 .smaller img {
   flex-wrap: wrap; }
 
 button {
-  width: 50px; }
+  width: 50px;
+  margin-right: auto;
+  background-color: red;
+  color: white;
+  margin-left: auto;
+  flex-wrap: wrap; }
 
 img {
   border-bottom: 1px solid black;

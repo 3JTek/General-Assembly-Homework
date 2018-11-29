@@ -19,7 +19,12 @@ nav {
   border-bottom: 1px solid black;
   padding: 5px;
   margin: 5px;
+}
 
+header {
+  img {
+    border-bottom: none;
+  }
 }
 
 .flex1 {
@@ -45,12 +50,12 @@ h3 {
 }
 
 .topnav a {
-    float: right;
-    color: black;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 50px;
-  }
+  float: right;
+  color: black;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 50px;
+}
 
 .flex2 {
   h2, article {
@@ -68,7 +73,19 @@ input {
 footer {
   text-align: center;
   padding: 8px 0 0 0;
-  background-color: grey;
+  background-color: #D3D3D3;
+}
+footer {
+  img {
+    border-bottom: none;
+  }
+}
+
+footer {
+  nav {
+    display: flex;
+    text-align: center;
+  }
 }
 
 .smaller {
@@ -80,7 +97,13 @@ footer {
 
 button {
   width: 50px;
+  margin-right: auto;
+  background-color: red;
+  color: white;
+  margin-left: auto;
+  flex-wrap: wrap;
 }
+
 
 img {
   border-bottom: 1px solid black;
