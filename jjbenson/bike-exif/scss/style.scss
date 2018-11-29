@@ -9,27 +9,97 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
-main, footer {
+main {
   display:flex;
-  padding:20px
+  padding:10px 40px;
+}
+
+nav {
+  display:flex;
+  a{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px;
+    font-weight: 600;
+    color: $header_nav_link_colour;
+    text-decoration: none;
+
+  }
+
 }
 header {
+  padding: 10px 40px;
+  img {
+    margin:20px 0;
+  }
   nav {
-    display:flex;
+    border: 1px solid $page_grey;
+    border-left: 0px;
+    border-right: 0px;
     a{
-      font-size: 16px;
-      color: $header_nav_link_colour;
+      font-size: 20px;
+      padding: 10px;
       &:last-child{
         flex-grow: 1;
         text-align: right;
-
+        color: $page_red;
       }
     }
 
   }
 }
 section {
-  .section_left {
+  nav {
+    display: flex;
+    justify-content:flex-end;
+    a.button {
+      background-color: white;
+      border:1px solid $page_grey;
+      // border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      margin: 10px 0;
+      padding: 10px 20px;
+      color: black;
 
+    }
   }
+
+  article {
+    border-bottom: 1px solid $page_grey;
+    padding: 20px 0;
+    overflow: auto;
+    h2 {
+      text-transform: uppercase;
+
+    }
+    aside{
+      color:$page_grey;
+      text-transform: uppercase;
+    }
+
+    img {
+      float:left;
+      margin-right: 20px;
+    }
+  }
+}
+
+footer {
+  padding:40px 40px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $footer_grey;
+  nav, address {
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  img {
+    // width:;
+    height:30px;
+  }
+
 }
