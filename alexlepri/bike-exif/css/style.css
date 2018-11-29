@@ -5,28 +5,45 @@ main {
   display: flex; }
 
 header {
-  border: 1px solid black;
   padding: 15px;
-  margin: 10px;
-  display: flex;
-  justify-content: space-around; }
+  margin: 10px; }
 
 nav {
-  margin-left: auto; }
+  margin-left: auto;
+  display: flex;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  margin: 5px; }
 
 .flex1 {
   justify-content: space-between;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   max-width: 60%; }
 
-.flex2 {
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  max-width: 35%; }
+article div {
+  flex-wrap: wrap; }
 
-.flex2 div {
-  flex-direction: row; }
+.flex2 {
+  border: 1px solid black;
+  flex-direction: column;
+  display: flex;
+  background-color: red;
+  justify-content: space-between;
+  max-width: 40%;
+  float: right;
+  color: white; }
+
+footer {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px 0 0 0; }
+
+.smaller img {
+  flex-wrap: wrap; }
+
+button {
+  width: 50px; }
 
 /*# sourceMappingURL=style.css.map */
