@@ -29,36 +29,60 @@ nav {
   max-width: 60%;
 }
 
-article {
-     div {
-    flex-wrap: wrap;
-  }
-}
-
-
 .flex2 {
   border: 1px solid black;
   flex-direction: column;
   display: flex;
-  background-color: red;
   justify-content: space-between;
-  max-width: 40%;
+  max-width: 35%;
   float: right;
   color: white;
 }
 
+h3 {
+  color: black;
+  padding-right: 10px;
+}
+
+.topnav a {
+    float: right;
+    color: black;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50px;
+  }
+
+.flex2 {
+  h2, article {
+    background-color: red;
+    text-align: center;
+    display: block;
+  }
+}
+
+
+input {
+  margin: 15px;
+}
+
 footer {
-  border: 1px solid black;
   text-align: center;
   padding: 8px 0 0 0;
+  background-color: grey;
 }
 
 .smaller {
   img {
     flex-wrap: wrap;
+
   }
 }
 
 button {
   width: 50px;
+}
+
+img {
+  border-bottom: 1px solid black;
+  padding: 20px;
 }
