@@ -8,15 +8,43 @@ max-width: 900px;
 margin: auto;
 }
 
+header{
+  nav{
+    a:last-child{
+      color: blue;
+      text-align:  right;
+    }
+  }
+}
+
+
 main{
-
-
-
   display: flex;
   justify-content: space-around;
 
+  section:last-child{
+    background-color: #ccc;
+
+    a{
+      padding: 10px;
+
+    }
+  }
 }
+
+
+  .subscribe{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    form{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
 
 .small{
   display: flex;
+  height: 200px;
 }

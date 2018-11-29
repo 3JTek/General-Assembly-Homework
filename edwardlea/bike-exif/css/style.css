@@ -1,2 +1,2 @@
-*{box-sizing:border-box}.container{max-width:900px;margin:auto}main{display:flex;justify-content:space-around}.small{display:flex}
+*{box-sizing:border-box}.container{max-width:900px;margin:auto}header nav a:last-child{color:blue;text-align:right}main{display:flex;justify-content:space-around}main section:last-child{background-color:#ccc}main section:last-child a{padding:10px}.subscribe{background-color:red;display:flex;flex-direction:column}.subscribe form{display:flex;flex-direction:column}.small{display:flex;height:200px}
 /*# sourceMappingURL=style.css.map */
