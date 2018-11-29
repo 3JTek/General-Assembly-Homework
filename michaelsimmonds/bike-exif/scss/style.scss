@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial';
+}
+header {
+  max-width: 950px;
+  margin: auto;
+}
+
+header nav {
+  display: flex;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+}
+
+nav a {
+  justify-content: flex-start;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:last-child {
+  margin-left: auto;
+}
+
+main {
+  display: flex;
+  max-width: 950px;
+  margin: auto;
+  padding: 15px;
+}
+
+div {
+  flex-direction: column;
+  padding: 10px;
+}
+
+article aside {
+  color: lightgrey;
+}
+
+.small {
+  display: flex;
+  flex-direction: row;
+}
+
+.small-text h2 {
+  margin-top: 0;
+}
+
+button {
+  border: 2px solid lightgrey;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.button-div {
+  text-align: right;
+}
+
+article {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
+.search-input {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+form {
+  background-color: red;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+div .input-boxes {
+  text-align: left;
+}
+
+ div input {
+  width: 260px;
+  margin: 5px 0;
+  padding: 5px 0;
+  background-color: red;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+input::placeholder {
+  color: white;
+  font-size: 14px;
+}
+
+form h3 {
+  margin: 0;
+}
+
+.categories {
+  padding: 0;
+}
+
+.categories a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  font-size: 8px;
+}
+
+footer {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  background-color: lightgrey;
+}
