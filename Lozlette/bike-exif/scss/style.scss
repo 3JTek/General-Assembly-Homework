@@ -3,6 +3,12 @@ $primary-color: grey;
 @mixin flex(){
   display:flex;
 }
+@mixin li(){
+  padding-right: 10px;
+  list-style: none;
+  color: black;
+  font-weight: bold;
+}
 
 .container {
 max-width:900px;
@@ -13,7 +19,20 @@ main {
   display:flex;
 }
 .right{
-background-color: green;
+input {
+  margin-left: 30px;
+  width: 280px;
+  height: 30px;
+  font-size: 12px;
+}
+form {
+  background-color: red;
+  margin-left: 30px;
+  color: #FFFFFF;
+}
+p, nav, {
+  margin-left: 30px;
+}
 }
 header{
   nav{
@@ -28,10 +47,7 @@ header{
 
     }
     li {
-      padding-right: 10px;
-      list-style: none;
-      color: black;
-      font-weight: bold;
+      @include li;
     }
     li:nth-child(7){
       margin-left: auto;
@@ -42,7 +58,7 @@ header{
 
 .top {
   p {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid $primary-color;
     padding-bottom: 10px;
   }
 }
@@ -62,12 +78,28 @@ header{
 .bottom {
   article {
     margin: 0 0 20px 0;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid $primary-color;
   }
   div {
     padding-left: 20px;
   }
   img {
     margin-bottom: 20px;
+  }
+  a {
+    text-align: right;
+    list-style: none;
+  }
+}
+footer {
+  ul {
+    display: flex;
+    justify-content:center;
+  }
+  li {
+    @include li;
+  }
+  p {
+    text-align: center;
   }
 }
