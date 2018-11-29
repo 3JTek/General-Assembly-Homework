@@ -1,0 +1,125 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  color: #999;
+}
+
+main {
+  overflow: auto;
+}
+
+main aside {
+  float: left;
+}
+
+aside img {
+  padding: 100px 0 0 149px;
+}
+
+main section {
+  float: right;
+}
+
+header img {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  display: none;
+}
+
+h2 {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 30px 10px 30px;
+}
+
+section {
+  width: 349px;
+  margin: 30px 125px 50px 100px;
+}
+
+.signup, .login {
+  border: 1px solid #e6e6e6;
+  padding: 20px 0;
+}
+
+div {
+  margin: 10px 0;
+}
+
+form p {
+  text-align: center;
+}
+
+form input {
+  height: 36px;
+  width: 83%;
+  padding: 5px;
+  margin: 3px 25px;
+  border-radius: 4px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+}
+
+button {
+  width: 83%;
+  margin: 3px 25px;
+  border-radius: 4px;
+  background-color: #3897f0;
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.policy {
+  margin: 10px 58px;
+  font-size: 14px;
+}
+
+.policy a {
+  text-decoration: none;
+  color: #999;
+  font-weight: 600;
+}
+
+.login {
+    text-align: center;
+}
+
+.login a {
+  color: #3897f0;
+}
+
+.app{
+  text-align: center;
+}
+
+footer {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+footer nav {
+  float: left;
+}
+
+a {
+  color: #003569;
+  text-decoration: none;
+}
+
+footer span {
+  float: right;
+}
