@@ -1,14 +1,9 @@
 .container {
 max-width:900px;
 margin: auto;
+font-family: Montserrat;
 }
 main {
-  .top{
-    background-color: pink;
-  }
-  .bottom{
-    background-color: red;
-  }
   display:flex;
 }
 .right{
@@ -24,15 +19,43 @@ header{
       border-bottom: 1px solid grey;
       margin-bottom: 30px;
       padding: 5px 0 5px 0;
+
     }
     li {
       padding-right: 10px;
       list-style: none;
       color: black;
+      font-weight: bold;
     }
     li:nth-child(7){
       margin-left: auto;
       color: red;
     }
+  }
+}
+
+.top {
+  p {
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+  }
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+}
+.first-article {
+  display:flex;
+}
+.second-article {
+  display:flex;
+}
+.third-article {
+  display:flex;
+}
+.bottom {
+  article {
+    margin: 20px 0 20px 0;
+    border-bottom: 1px solid grey;
   }
 }
