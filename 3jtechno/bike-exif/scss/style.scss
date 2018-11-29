@@ -1,19 +1,69 @@
+@import 'variable';
 *{
   box-sizing: border-box;
+  color: $font-color;
+}
+body{
+  margin: 0;
 }
 main, section, article, footer, header{
-  border: 2px solid black;
+  border: $borders-layout;
 }
-header,main, footer{
+header,main{
   max-width: 900px;
   margin: auto;
+}
+header{
+  img{
+    padding: 20px 0;
+  }
+  nav{
+    padding: 15px 0;
+    border-bottom: $borders;
+    border-top: $borders;
+    display: flex;
+    a{
+      text-decoration: none;
+      text-transform: capitalize;
+      font-weight: 700;
+      color: $font-color;
+      padding: 0 10px;
+      &:last-of-type{
+        flex-grow:1;
+        text-align: right;
+        color: #f00;
+      }
+    }
+  }
 }
 main{
   display: flex;
 }
+article, {
+  border-bottom: $borders;
+  padding: 15px 0;
+}
 .secondary-article{
-  display: flex
+  display: flex;
 }
 button{
   float: right;
+  padding: 10px 15px;
+  margin: 20px;
+  border-radius: 4px;
+}
+img{
+  display:block;
+}
+footer{
+  text-align: center;
+  background-color: #eaede6;
+  img{
+    margin: auto;
+    padding: 15px;
+  }
+  p{
+    padding: 10px;
+    margin:0;
+  }
 }
