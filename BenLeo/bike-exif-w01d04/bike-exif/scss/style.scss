@@ -7,7 +7,7 @@ $divide: 1px solid #ccc;
 }
 
 html {
-  padding: 25px;
+  padding: 25px 25px 0 25px;
 }
 
 body {
@@ -138,5 +138,18 @@ main {
 }
 
 footer {
+  padding: 30px 0;
   background-color: $beige;
+  text-align: center;
+  text-transform: uppercase;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    li {
+      padding: 0 15px;
+    }
+  }
 }
