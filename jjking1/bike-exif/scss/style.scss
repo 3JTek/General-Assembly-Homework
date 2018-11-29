@@ -1,0 +1,28 @@
+// sass scss/style.scss:css/style.css --style compressed --watch
+@import 'variables';
+@import 'mixins';
+
+body{
+  width: 70%;
+  margin: auto;
+  .container{
+    display: flex;
+    justify-content: space-between;
+    .big-articles{
+      display: flex;
+      flex-wrap: wrap;
+      width: 55%;
+    }
+    .side-panel{
+      width: 25%;
+      height: 80%;
+      align-self: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      div{
+        padding-top: 30px;
+      }
+    }
+  }
+}

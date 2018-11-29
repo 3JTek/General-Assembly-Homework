@@ -1,0 +1,2 @@
+body{width:70%;margin:auto}body .container{display:flex;justify-content:space-between}body .container .big-articles{display:flex;flex-wrap:wrap;width:55%}body .container .side-panel{width:25%;height:80%;align-self:flex-start;display:flex;flex-wrap:wrap;justify-content:center}body .container .side-panel div{padding-top:30px}
+/*# sourceMappingURL=style.css.map */
