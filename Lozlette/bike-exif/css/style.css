@@ -1,2 +1,2 @@
-main{display:flex;flex-wrap:wrap}main .top{background-color:pink}main .bottom{background-color:red}
+.container{max-width:900px;margin:auto}main{display:flex}main .top{background-color:pink}main .bottom{background-color:red}.right{background-color:green}header nav ul{display:flex;justify-content:flex-start;margin-left:none;border-top:1px solid grey;border-bottom:1px solid grey;margin-bottom:30px;padding:5px 0 5px 0}header nav li{padding-right:10px;list-style:none;color:black}header nav li:nth-child(7){margin-left:auto;color:red}
 /*# sourceMappingURL=style.css.map */
