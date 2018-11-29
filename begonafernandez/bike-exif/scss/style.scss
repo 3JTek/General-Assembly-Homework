@@ -1,4 +1,5 @@
 $border:1px solid #ddd;
+$color: #444;
 
 * {
   box-sizing: border-box;
@@ -8,6 +9,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
+  color: $color;
 }
 
 header {
@@ -19,11 +21,16 @@ header {
     a {
       padding:10px 20px 10px 0;
       text-decoration: none;
-    }
-    a:last-child {
+      text-transform: uppercase;
+      color: $color;
+      font-weight: 900;
+      font-size: 14px;
+      &:last-child {
       align-items: center;
       margin-left: auto;
       padding-right: 0;
+      color: red;
+      }
     }
   }
 }
