@@ -11,7 +11,9 @@ header {
 header nav {
   display: flex;
   border-top: 2px solid lightgrey;
-  border-bottom: 2px solid lightgrey; }
+  border-bottom: 2px solid lightgrey;
+  font-weight: bold;
+  color: darkgrey; }
 
 nav a {
   justify-content: flex-start;
@@ -20,7 +22,8 @@ nav a {
   color: black; }
 
 nav a:last-child {
-  margin-left: auto; }
+  margin-left: auto;
+  color: red; }
 
 main {
   display: flex;
@@ -28,12 +31,15 @@ main {
   margin: auto;
   padding: 15px; }
 
+.main-logo {
+  padding: 20px 0; }
+
 div {
   flex-direction: column;
   padding: 10px; }
 
 article aside {
-  color: lightgrey; }
+  color: darkgrey; }
 
 .small {
   display: flex;
@@ -57,7 +63,10 @@ article {
 .search-input {
   width: 300px;
   margin-bottom: 20px;
-  padding: 10px; }
+  padding: 10px;
+  background-color: white;
+  border: solid 1px lightgrey;
+  color: lightgrey; }
 
 form {
   background-color: red;
@@ -77,7 +86,7 @@ div input {
   border: none;
   border-bottom: 1px solid white; }
 
-input::placeholder {
+form input::placeholder {
   color: white;
   font-size: 14px; }
 
@@ -93,12 +102,21 @@ form h3 {
   padding: 5px;
   margin: 5px;
   border: 1px solid black;
-  font-size: 8px; }
+  font-size: 12px;
+  display: inline-block; }
 
 footer {
   max-width: 1000px;
   margin: auto;
   text-align: center;
-  background-color: lightgrey; }
+  background-color: lightgrey;
+  font-size: 14px;
+  padding: 20px 0; }
+
+footer a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */

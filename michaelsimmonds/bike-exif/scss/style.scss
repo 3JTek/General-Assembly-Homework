@@ -1,3 +1,6 @@
+$border-color: lightgrey;
+
+
 * {
   box-sizing: border-box;
 }
@@ -12,8 +15,10 @@ header {
 
 header nav {
   display: flex;
-  border-top: 2px solid lightgrey;
-  border-bottom: 2px solid lightgrey;
+  border-top: 2px solid $border-color;
+  border-bottom: 2px solid $border-color;
+  font-weight: bold;
+  color: darkgrey
 }
 
 nav a {
@@ -25,6 +30,7 @@ nav a {
 
 nav a:last-child {
   margin-left: auto;
+  color: red;
 }
 
 main {
@@ -34,13 +40,17 @@ main {
   padding: 15px;
 }
 
+.main-logo {
+  padding: 20px 0;
+}
+
 div {
   flex-direction: column;
   padding: 10px;
 }
 
 article aside {
-  color: lightgrey;
+  color: darkgrey;
 }
 
 .small {
@@ -53,7 +63,7 @@ article aside {
 }
 
 button {
-  border: 2px solid lightgrey;
+  border: 2px solid $border-color;
   padding: 10px 20px;
   margin: 10px 0;
 }
@@ -63,14 +73,17 @@ button {
 }
 
 article {
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .search-input {
   width: 300px;
   margin-bottom: 20px;
   padding: 10px;
+  background-color: white;
+  border: solid 1px lightgrey;
+  color: lightgrey;
 }
 
 form {
@@ -94,7 +107,7 @@ div .input-boxes {
   border-bottom: 1px solid white;
 }
 
-input::placeholder {
+form input::placeholder {
   color: white;
   font-size: 14px;
 }
@@ -113,7 +126,8 @@ form h3 {
   padding: 5px;
   margin: 5px;
   border: 1px solid black;
-  font-size: 8px;
+  font-size: 12px;
+  display: inline-block;
 }
 
 footer {
@@ -121,4 +135,13 @@ footer {
   margin: auto;
   text-align: center;
   background-color: lightgrey;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  margin: 5px;
 }
