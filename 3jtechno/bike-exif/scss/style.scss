@@ -6,8 +6,15 @@
 body{
   margin: 0;
 }
-main, section, article, footer, header{
-  border: $borders-layout;
+main{
+  display: flex;
+}
+img{
+  display:block;
+}
+nav a{
+  text-decoration: none;
+  text-transform: capitalize;
 }
 header,main{
   max-width: 900px;
@@ -23,8 +30,6 @@ header{
     border-top: $borders;
     display: flex;
     a{
-      text-decoration: none;
-      text-transform: capitalize;
       font-weight: 700;
       color: $font-color;
       padding: 0 10px;
@@ -36,24 +41,55 @@ header{
     }
   }
 }
-main{
-  display: flex;
-}
-article, {
+article {
   border-bottom: $borders;
   padding: 15px 0;
 }
 .secondary-article{
   display: flex;
 }
-button{
+.text-secondary-article{
+  padding: 0 10px;
+}
+.next{
   float: right;
   padding: 10px 15px;
   margin: 20px;
   border-radius: 4px;
 }
-img{
-  display:block;
+.side-panel{
+  padding: 0 5px;
+  form.search-form{
+    display: flex;
+    padding:15px 0;
+    input{
+      padding: 15px;
+      flex-grow: 1;
+    }
+    p{
+      padding: 15px;
+    }
+  }
+  form.subscribe-form{
+    display: flex;
+    flex-wrap: wrap;
+    input{
+      &:first-of-type{
+        width: 100%;
+      }
+      &:last-of-type{
+        flex-grow:1;
+      }
+    }
+  }
+  h3{
+    margin: 0;
+  }
+}
+.subscribe{
+  text-align: center;
+  background-color: #f00;
+  padding: 15px;
 }
 footer{
   text-align: center;
