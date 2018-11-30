@@ -124,7 +124,7 @@ main{
       width: 100%;
       &:first-child{
         input{
-          width: 80%;
+          width: 100%;
           padding: 10px;
         }
 
@@ -140,7 +140,6 @@ main{
             padding: 10px;
             &:last-child{
               width: 60%;
-              background-color: blue;
             }
           }
         }
@@ -160,6 +159,12 @@ main{
         }
       }
     }
+}
+
+input[type=text] {
+  display: inline-block;
+  border: none;
+  background-color: rgb(191, 64, 64);
 }
 
 footer{
