@@ -3,8 +3,13 @@
 }
 body,
 input {
-  font-family: "Karla", sans-serif;
+  font-family: proxima-nova, sans-serif;
 }
+
+input {
+  -webkit-appearance: none;
+}
+
 header {
   h1 {
     display: none;
@@ -81,6 +86,36 @@ input {
   height: 450px;
   display: flex;
   flex-direction: column;
+  form {
+    background-color: red;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #fff;
+      padding: 10px;
+
+      // input::placeholder (normal CSS)
+      &::placeholder {
+        color: #fff;
+        font-size: 15px;
+      }
+    }
+  }
+  button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 10px;
+    width: 45%;
+    padding: 5px;
+  }
   .categories {
     display: flex;
     flex-wrap: wrap;
@@ -88,23 +123,6 @@ input {
     padding: 15px;
     margin: 0;
   }
-}
-
-form {
-  background-color: red;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  font-size: 13px;
-  padding: 10px;
-}
-button {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  font-size: 10px;
-  width: 45%;
-  padding: 5px;
 }
 
 footer {
