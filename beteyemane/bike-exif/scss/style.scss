@@ -1,3 +1,6 @@
+$border-color: #d3d3d3;
+$grey-background-color: #e2e2d9;
+$red-background-color: rgb(193, 13, 34);
 
 * {
   box-sizing: border-box;
@@ -6,58 +9,65 @@
 body {
   font-family: 'Assistant', sans-serif;
   font-weight: bold;
-}
-
-h1 {
-  display: none;
-}
-
 header {
-  flex-direction: column;
-  padding: 30px 0 20px 0;
-}
-
-article {
-  border-bottom: 2px solid #d3d3d3;
-  padding: 20px 0px;
-}
-
-.top {
-  padding: 0;
-}
-
+    flex-direction: column;
+    padding: 30px 0 20px 0;
 .nav1 {
     padding: 15px 0;
-    border-top: 2px solid #d3d3d3;
-    border-bottom: 2px solid #d3d3d3;
+    border-top: 2px solid $border-color;
+    border-bottom: 2px solid $border-color;
     display: flex;
     width: 100%;
-}
+    }
 
-a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: black;
-  font-weight: bold;
-  padding-right: 15px;
-
-}
-
-main, header{
+  }
+main, header {
     display: flex;
     max-width: 1000px;
     margin: auto;
     margin-top: 20px;
-
-section {
+  }
+main {
+  h1 {
+    display: none;
+    }
+  section {
     justify-content: center;
     max-width: 100%;
+  article {
+      border-bottom: 2px solid $border-color;
+      padding: 20px 0px;
     }
+  }
+  .one {
+      padding-right: 25px;
+  .top {
+      padding: 0;
+  .next {
+      display: flex;
+      justify-content: flex-end;
+        }
+      }
+    }
+  }
+  nav {
+    a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    padding-right: 15px;
+    }
+  }
+}
+
+
+
 
 input{
   height: 46px;
   width: 100%;
-  border: 1.5px solid #c0c0c0;
+  border: 1.5px solid $border-color;
   font-size: 14px;
 }
 
@@ -69,7 +79,6 @@ aside {
       display: flex;
       flex-direction: row;
   }
-}
 
 .logo {
   margin-bottom: 20px;
@@ -124,9 +133,7 @@ footer {
   text-transform: uppercase;
 }
 
-.one {
-  padding-right: 25px;
-}
+
 
 .search {
   margin-bottom: 20px;
@@ -140,7 +147,7 @@ button {
   font-size: 90%;
   font-family: inherit;
   padding: 5px;
-  border: 2px solid #d3d3d3;
+  border: 2px solid $border-color;
   border-radius: 5%;
   margin: 2px;
 
@@ -162,10 +169,6 @@ h3 {
  margin: 20px 0;
 }
 
-.next {
-  display: flex;
-  justify-content: flex-end;
-}
 
 .next button{
   padding: 20px 40px;
