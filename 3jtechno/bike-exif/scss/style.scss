@@ -1,0 +1,123 @@
+@import 'variable';
+//Standard Styling
+*{
+  box-sizing: border-box;
+  color: $font-color;
+}
+body{
+  margin: 0;
+}
+img{
+  display:block;
+}
+nav a{
+  text-decoration: none;
+  text-transform: capitalize;
+}
+//Specific Styling
+main{
+  display: flex;
+}
+header,main{
+  max-width: 900px;
+  margin: auto;
+}
+header{
+  img{
+    padding: 20px 0;
+  }
+  nav{
+    padding: 15px 0;
+    border-bottom: $borders;
+    border-top: $borders;
+    display: flex;
+    a{
+      font-weight: 700;
+      color: $font-color; //Had to be added here otherwise get overwritten by Chrome
+      padding: 0 10px;
+      &:last-of-type{
+        flex-grow:1;
+        text-align: right;
+        color: #f00;
+      }
+    }
+  }
+}
+article {
+  border-bottom: $borders;
+  padding: 15px 0;
+}
+.secondary-article{
+  display: flex;
+}
+.text-secondary-article{
+  padding: 0 10px;
+}
+.next-button{
+  float: right;
+  padding: 10px 15px;
+  margin: 20px;
+  border-radius: 4px;
+  background: #fff;
+}
+.side-panel{
+  padding: 0 5px;
+  h3{
+    margin: 0;
+  }
+}
+form.search-form{
+  display: flex;
+  padding:15px 0;
+  input{
+    padding: 15px;
+    flex-grow: 1;
+  }
+  p{
+    padding: 15px;
+  }
+}
+.subscribe-container{
+  text-align: center;
+  background-color: #f00;
+  padding: 15px;
+}
+.subscribe-form{
+  display: flex;
+  flex-wrap: wrap;
+  input{
+    &:first-of-type{
+      width: 100%;
+    }
+    &:last-of-type{
+      flex-grow:1;
+    }
+  }
+}
+footer{
+  text-align: center;
+  background-color: #eaede6;
+  img{
+    margin: auto;
+    padding: 15px;
+  }
+  p{
+    padding: 10px;
+    margin:0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+   main{
+     flex-direction: column;
+   }
+   body{
+     width:100%;
+   }
+   header{
+     width: 100%;
+     img{
+       margin: auto;
+     }
+   }
+}
