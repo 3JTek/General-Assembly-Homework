@@ -60,6 +60,9 @@ main{
     padding-top: 10px;
     padding-bottom: 10px;
     .article-text{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
       padding: 10px;
     }
   }
@@ -81,13 +84,21 @@ main{
     a{
       padding: 10px;
     }
+    form{
+      display: flex;
+      justify-content: space-between;
 
+    }
     .search-bar{
       margin-top: 0;
       border: 1px solid #eee;
+      button{
+        color: grey;
+        padding-right: 6px;
+      }
     }
 
-    .search-bar::placeholder{
+    .search-bar-input::placeholder{
       color: grey;
     }
   }
@@ -97,7 +108,7 @@ main{
       margin-top: 0;
       text-align: center;
     }
-    
+
     p{
       margin:0;
       text-align: center;
@@ -111,6 +122,9 @@ main{
       .email{
         width:auto;
         border:0;
+      }
+      button{
+        color: white;
       }
     }
 
