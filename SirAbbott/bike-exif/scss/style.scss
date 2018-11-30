@@ -112,6 +112,7 @@ main {
           // /* This bit sets up the horizontal layout */
           display: flex;
           flex-direction: row;
+          justify-content: space-between;
           /* This bit draws the box around it */
           border: 1px solid grey;
           padding: 5px;
@@ -152,16 +153,16 @@ main {
               font-size: 15px;
             }
           }
-        }
-        button {
-          display: inline-block;
-          background: transparent;
-          color: white;
-          border-style: none;
-          text-transform: uppercase;
-          font-size: 15px;
-          text-align: right;
-          padding: 10px 0 10px 0;
+          button {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            border-style: none;
+            text-transform: uppercase;
+            font-size: 15px;
+            text-align: right;
+            padding: 10px 0 10px 0;
+          }
         }
       }
       &.categories {
