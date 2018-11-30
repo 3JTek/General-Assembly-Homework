@@ -103,12 +103,17 @@ li a {
   padding: 3px;
 }
 @media screen and (max-width: 600px){
+
   main {
+
     width: 90%;
     margin: auto;
   }
   img {
-    width:50px;
+    width:150px;
+  }
+  .logos img {
+    width: 100px;
   }
   .left {
     display:none;
