@@ -18,7 +18,8 @@ nav {
     display: flex; }
     nav ul li {
       list-style-type: none;
-      margin-right: 15px; }
+      margin-right: 15px;
+      padding: 20px; }
       nav ul li a {
         text-decoration: none;
         color: black; }
@@ -33,6 +34,8 @@ header {
     width: auto; }
   header li:last-child {
     margin-left: auto; }
+    header li:last-child a {
+      color: red; }
 
 main {
   width: 100%;
@@ -70,21 +73,39 @@ main {
         main .left section:last-child form {
           margin-left: auto; }
   main .right {
+    display: flex;
     height: auto;
-    width: 35%; }
-    main .right form {
-      height: 40px;
-      background-color: red; }
-    main .right nav {
-      width: auto;
-      height: 300px; }
-      main .right nav ul {
-        flex-wrap: wrap; }
-        main .right nav ul li {
-          border: 1px solid black;
-          height: 40px;
-          padding: 10px;
-          margin: 5px 2px; }
+    width: 35%;
+    flex-direction: column; }
+    main .right section {
+      height: auto;
+      width: 100%; }
+      main .right section:first-child input {
+        width: 80%;
+        padding: 10px; }
+      main .right section:nth-child(2) {
+        margin-top: 30px;
+        height: 250px;
+        background-color: red;
+        color: white;
+        text-align: center; }
+        main .right section:nth-child(2) input {
+          width: 80%;
+          padding: 10px; }
+          main .right section:nth-child(2) input:last-child {
+            width: 60%;
+            background-color: blue; }
+  main nav {
+    width: auto;
+    height: 300px;
+    flex-wrap: wrap; }
+    main nav ul {
+      flex-wrap: wrap; }
+      main nav ul li {
+        border: 1px solid black;
+        height: 40px;
+        padding: 10px;
+        margin: 5px 2px; }
 
 footer {
   height: auto;
