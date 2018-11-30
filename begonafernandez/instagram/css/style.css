@@ -13,12 +13,19 @@ body, input {
   color: #999;
 }
 
+a {
+  color: #003569;
+  text-decoration: none;
+}
+
 main {
   overflow: auto;
+  max-width: 900px;
 }
 
 main aside {
   float: left;
+  max-width: 450px;
 }
 
 aside img {
@@ -27,6 +34,7 @@ aside img {
 
 main section {
   float: right;
+  max-width: 450%;
 }
 
 header img {
@@ -46,7 +54,6 @@ h2 {
 
 section {
   width: 349px;
-  margin: 30px 125px 50px 100px;
 }
 
 .signup, .login {
@@ -109,17 +116,34 @@ footer {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
+  overflow: auto;
+  padding: 10px;
 }
 
 footer nav {
   float: left;
 }
 
-a {
-  color: #003569;
-  text-decoration: none;
+nav a {
+  padding: 10px;
 }
 
 footer span {
   float: right;
+}
+
+@media screen and (max-width: 900px) {
+  aside {
+    display: none;
+  }
+
+  section {
+    margin: 30px 198px 50px 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    margin: 30px 0 50px 100px;
+  }
 }
