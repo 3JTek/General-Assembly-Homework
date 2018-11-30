@@ -4,6 +4,10 @@
 /*footer link color = #003569*/
 /*text grey color = #999*/
 
+
+/*************
+ GENERAL
+ **************/
 * {
   box-sizing: border-box;
 }
@@ -38,6 +42,7 @@ main,
   padding: 10% 0;
 }
 
+/* HEADING */
 h2 {
   color: #999;
   font-size: 1em;
@@ -123,6 +128,11 @@ nav a {
   text-transform: uppercase;
   margin: 5px;
 }
+
+/*************
+ MEDIA QUERIES
+ *************/
+
 /* TABLETS */
 @media only screen and (max-width: 900px) {
 
