@@ -50,7 +50,6 @@ main {
     display: flex;
 
     article {
-      // margin-top: 15px;
       margin-bottom: 15px;
     }
   }
@@ -62,9 +61,6 @@ main {
   }
 
   .leadStories {
-    // background-color: dodgerblue;
-    // display: flex;
-    // flex-direction: column;
     width: 625px;
   }
 
@@ -92,8 +88,10 @@ main {
 
   article {
     border-bottom: $divide;
-    // margin-top: 15px;
-    // margin-bottom: 15px;
+  }
+
+  aside {
+    color: #ccc;
   }
 
 
@@ -118,12 +116,25 @@ main {
   }
 
   .categories {
+    h3 {
+      text-transform: uppercase;
+    }
     ul {
       width: 261px;
+      padding: 0;
     }
 
     li {
       list-style: none;
+      padding: 5px;
+      margin: 50px;
+      border: $divide;
+      text-align: center;
+      display: inline;
+
+      button {
+        text-decoration: none;
+      }
     }
   }
 }

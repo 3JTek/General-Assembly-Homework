@@ -48,7 +48,10 @@
 
       <div class="sidebar">
 
-        <input type="search" name="userSearchTerm" placeholder="What are you looking for?">
+        <form id="searchBar">
+          <input type="search" name="userSearchTerm" placeholder="What are you looking for?">
+          <button>Search</button>
+        </form>
 
         <div class="subscribeOffer">
           <h3>Subscribe and win $100</h3>
@@ -56,24 +59,26 @@
           <form>
             <input type="text" name="userName" placeholder="First Name">
             <input type="email" name="userEmail" placeholder="Email">
+            <button>Submit</button>
           </form>
         </div>
 
         <div class="categories">
           <h3>Categories</h3>
-
-          <ul>
-            <li><a>Custom Motorcycles</a></li>
-            <li><a>Classic Motorcycles</a></li>
-            <li><a>Racing Motorcycles</a></li>
-            <li><a>Production Motorcycles</a></li>
-            <li><a>Motorcycle Gear</a></li>
-            <li><a>Special Features</a></li>
-            <li><a>Concept Motorcycles</a></li>
-            <li><a>Interviews</a></li>
-            <li><a>Top 5</a></li>
-            <li><a>Ten Best Motorcycles</a></li>
-          </ul>
+          <nav>
+            <ul>
+              <li><button>Custom Motorcycles</button></li>
+              <li><button>Classic Motorcycles</button></li>
+              <li><button>Racing Motorcycles</button></li>
+              <li><button>Production Motorcycles</button></li>
+              <li><button>Motorcycle Gear</button></li>
+              <li><button>Special Features</button></li>
+              <li><button>Concept Motorcycles</button></li>
+              <li><button>Interviews</button></li>
+              <li><button>Top 5</button></li>
+              <li><button>TenBest Motorcycles</button></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
