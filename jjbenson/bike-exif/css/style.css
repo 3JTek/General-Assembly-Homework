@@ -108,7 +108,7 @@ section.section_left article img {
   height: auto;
 }
 section.section_left article.featured {
-  padding: 20px 0px 20px 0;
+  padding: 20px 0 20px 0;
 }
 section.section_left article.featured:first-child {
   padding: 0 0px 20px 0;
@@ -138,7 +138,7 @@ section.section_right div.search input {
   font-size: 20px;
 }
 section.section_right div.subscribe {
-  padding: 20px;
+  padding: 20px 20px;
   background-color: #cc242e;
   color: white;
 }

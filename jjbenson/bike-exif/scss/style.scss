@@ -74,7 +74,7 @@ width:665px;
   article {
     width:625px;
     border-bottom: 1px solid $page_grey;
-    padding: $padding_h 0 $padding_h 0;
+    padding: 20px 0 20px 0;
     overflow: auto;
     &:hover{
       background-color:$page_hover;
@@ -105,7 +105,7 @@ width:665px;
     }
   }
   article.featured {
-    padding: $padding_h 0px $padding_h 0;
+    padding: 20px 0 20px 0;
     &:first-child{
       padding: 0 0px $padding_h 0;
       margin: $padding_h 0 0 0;
@@ -120,7 +120,7 @@ width:665px;
 }
 section.section_right {
   width:400px;
-  padding: $padding_h 0;
+  padding: 20px 0;
   div.search {
     form {
       border: 1px solid $page_grey;
@@ -136,7 +136,7 @@ section.section_right {
     }
   }
   div.subscribe{
-    padding: $padding_h;
+    padding: 20px $padding_h;
     background-color: $page_red;
     color:white;
     form {
