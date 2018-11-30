@@ -22,9 +22,6 @@ header {
     border-bottom: $border;
     a {
       padding:10px 20px 10px 0;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $color;
       font-weight: 900;
       font-size: 14px;
       &:hover {
@@ -43,7 +40,6 @@ header {
 main {
   display: flex;
   .articles {
-    max-width: 75%;
     article {
       max-width: 92%;
       padding-top: 30px;
@@ -62,10 +58,7 @@ main {
       a {
         margin: 30px 0;
         padding:10px;
-        text-decoration: none;
-        text-transform: uppercase;
         border: $border;
-        color: $color;
         &:hover {
           background-color: Crimson;
           color: white;
@@ -92,8 +85,6 @@ main {
       flex-wrap: wrap;
       font-size: 10px;
       a {
-        text-decoration: none;
-        color: $color;
         padding: 5px;
         margin: 2px;
         border: $border;
@@ -132,15 +123,18 @@ footer {
     margin: 0 auto;
     a {
       margin: 0 auto;
-      text-decoration: none;
-      color: $color;
       margin-right: 10px;
-      text-transform: uppercase;
     }
   }
   p {
     text-align: center;
   }
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
 }
 
 @media screen and (max-width: 900px) {
