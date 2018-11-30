@@ -8,16 +8,16 @@ input {
   background-color: #fafafa;
 }
 
-.container {
+/* .container {
   overflow: auto;
   max-width: 900px;
   margin: auto;
-}
-.left {
+} */
+/* .left {
   width: 50%;
   float: left;
   padding: 90px 0;
-}
+} */
 
 .right {
   width: 50%;
@@ -115,7 +115,6 @@ a {
   text-transform: uppercase;
   color: #999;
   font-weight: bold;
-  float: right;
   margin: 0;
   padding-right: 25px;
 }
@@ -129,7 +128,6 @@ a {
     float: none;
   }
   footer {
-    float: none;
     margin: auto;
     max-width: 80%;
     text-align: center;
@@ -137,7 +135,7 @@ a {
   #cr {
     display: block;
     float: none;
-    overflow: auto;
+    clear: both;
     text-align: center;
     padding: 2px;
   }
