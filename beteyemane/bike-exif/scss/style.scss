@@ -19,11 +19,15 @@ header {
 
 article {
   border-bottom: 2px solid #d3d3d3;
-  padding: 20px 0;
+  padding: 20px 0px;
+}
+
+.top {
+  padding: 0;
 }
 
 .nav1 {
-    padding: 20px 0;
+    padding: 15px 0;
     border-top: 2px solid #d3d3d3;
     border-bottom: 2px solid #d3d3d3;
     display: flex;
@@ -43,6 +47,7 @@ main, header{
     display: flex;
     max-width: 1000px;
     margin: auto;
+    margin-top: 20px;
 
 section {
     justify-content: center;
@@ -58,6 +63,7 @@ input{
 
 aside {
   color: #939393;
+  text-transform: uppercase;
 }
 .small {
       display: flex;
@@ -75,14 +81,15 @@ aside {
 
 .input input{
   background-color: rgb(193, 13, 34);
-  border: 1px solid #fff;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   font-size: 90%;
   font-family: inherit;
   padding: 5px;
   margin: 2px;
 
 }
-::placeholder {
+.input ::placeholder {
     color: #fff;
 }
 #subscibe {
@@ -121,8 +128,12 @@ footer {
   padding-right: 25px;
 }
 
-.search
- { margin-bottom: 20px;
+.search {
+  margin-bottom: 20px;
+}
+
+.search ::placeholder {
+  padding-left: 5px;
 }
 
 button {
@@ -159,4 +170,15 @@ h3 {
 .next button{
   padding: 20px 40px;
   margin: 30px 0;
+}
+
+button:hover {
+  background-color: #e2e2d9;
+}
+a:hover {
+  color: red;
+}
+
+#shop:hover {
+  color: black;
 }
