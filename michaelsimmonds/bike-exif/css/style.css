@@ -44,9 +44,6 @@ div {
   flex-direction: column;
   padding: px; }
 
-article aside {
-  color: darkgrey; }
-
 .small {
   display: flex;
   flex-direction: row; }
@@ -68,6 +65,8 @@ button {
 article {
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey; }
+  article aside {
+    color: darkgrey; }
 
 .search-input {
   width: 300px;
@@ -77,16 +76,6 @@ article {
   border: solid 1px lightgrey;
   color: lightgrey; }
 
-form {
-  background-color: red;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  font-weight: bold; }
-
-div .input-boxes {
-  text-align: left; }
-
 div input {
   width: 260px;
   margin: 5px 0;
@@ -94,6 +83,20 @@ div input {
   background-color: red;
   border: none;
   border-bottom: 1px solid white; }
+  div input .input-boxes {
+    text-align: left; }
+
+form {
+  background-color: red;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold; }
+  form input::placeholder {
+    color: white;
+    font-size: 14px; }
+  form h3 {
+    margin: 0; }
 
 .button-form {
   display: flex;
@@ -109,24 +112,16 @@ div input {
   padding: 5px 0;
   font-size: 14px; }
 
-form input::placeholder {
-  color: white;
-  font-size: 14px; }
-
-form h3 {
-  margin: 0; }
-
 .categories {
   padding: 0; }
-
-.categories a {
-  text-decoration: none;
-  color: black;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid black;
-  font-size: 12px;
-  display: inline-block; }
+  .categories a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    font-size: 12px;
+    display: inline-block; }
 
 footer {
   max-width: 1000px;
@@ -135,14 +130,12 @@ footer {
   background-color: lightgrey;
   font-size: 14px;
   padding: 20px 0; }
-
-footer img {
-  margin: 10px; }
-
-footer a {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-  margin: 5px; }
+  footer img {
+    margin: 10px; }
+  footer a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */
