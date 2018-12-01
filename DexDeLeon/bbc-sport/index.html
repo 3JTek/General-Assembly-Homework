@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name=“viewport” content="width=device-width, initial-scale=1">
     <title>BBC Sport</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -24,32 +25,32 @@
             </a>
           </div>
 
-          <div class="navbar-menu has-background-warning" id="navMenu">
-            <a class="navbar-item has-background-warning">
+          <div class="navbar-menu has-background-warning-desktop has-background-dark-touch" id="navMenu">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Home
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Football
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Formula 1
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Cricket
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Rugby U
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Rugby L
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Tennis
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Golf
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item has-background-dark-touch" href="#">
               Athletics
             </a>
           </div>
@@ -62,11 +63,11 @@
         <div class="container is-widescreen">
 
           <!-- TOP ROW -->
-          <div class="columns">
+          <div class="columns is-multiline">
 
             <!-- FEATURED ARTICLE -->
-            <article class="column columns is-three-quarters">
-              <figure class="image column is-two-thirds">
+            <article class="column columns is-three-quarters-desktop is-full-tablet is-multiline">
+              <figure class="image column is-two-thirds-tablet is-full-mobile">
                 <img src="images/snooker.jpg" alt="Allen and O'Sullivan holding snooker cues">
               </figure>
               <div class="column">
@@ -75,42 +76,44 @@
               </div>
             </article>
 
-            <!-- SIDE ARTICLE -->
-            <article class="column">
+            <!-- SIDE ARTICLE (desktop only)-->
+            <article class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
               <figure class="image">
                 <img src="images/tennis.jpg" alt="Johanna Konta">
               </figure>
               <h3 class="title is-6">Konta knocked out by world number 123 Pera</h3>
             </article>
 
-          </div>
 
-          <!-- SECOND ROW -->
 
-          <div class="columns">
+          <!-- SECOND ROW (desktop/tablet)-->
 
-            <article class="column">
+            <article class="column is-one-third-tablet is-half-mobile">
               <figure class="image">
                 <img src="images/football1.jpg" alt="Sanchez">
               </figure>
               <h3 class="title is-6">Sanchez Likely to join Man Utd - Wenger</h3>
             </article>
 
-            <article class="column">
+            <article class="column is-one-third-tablet is-half-mobile">
               <figure class="image">
                 <img src="images/rugby.jpg" alt="Mercer with rugby ball">
               </figure>
               <h3 class="title is-6">Mercer leads rookies in England squad</h3>
             </article>
 
-            <article class="column">
+            <!-- THIRD ROW (tablet) -->
+
+            <article class="column is-one-third-tablet is-half-mobile">
               <figure class="image">
                 <img src="images/football2.jpg" alt="Football pitch from four angles">
               </figure>
               <h3 class="title is-6">VAR system is a shambles - Shearer</h3>
             </article>
 
-            <article class="column">
+            <!-- THIRD ROW (mobile) -->
+
+            <article class="column is-one-third-tablet is-half-mobile">
               <figure class="image">
                 <img src="images/cricket.jpg" alt="Stokes with cricket bat">
               </figure>
