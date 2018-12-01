@@ -1,19 +1,19 @@
-*{
-  box-sizing:border-box;
-}
-
 .hero-body{
-  background-size: -1;
+background-size: -1;
 background-color: #ffd230;
+padding: 15px;
+margin-left: -150px;
 }
 .hero.is-primary .title {
   color: black;
+  font-size: 2rem;
 }
 a.button{
 background-color: #ffd230;
 border-color:#ffd230;
 display: inline-block;
 display: none;
+padding: 15px;
 }
 @media (min-width: 769px) {
   a.button {
@@ -21,9 +21,14 @@ display: none;
   }
 }
 .section{
-  padding: 25px;
+  display: flex;
+  padding-top: 10px;
+  font-size: 1rem;
 }
-
-
-take off from sections the last 4 images so that they are all in 1 section.
-maybe the first 2 in one section???
+.big{
+  font-size: 2rem;
+  text-align: central;
+}
+.title{
+  font-size: 1rem;
+}
