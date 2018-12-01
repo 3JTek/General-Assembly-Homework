@@ -4,16 +4,16 @@
 
 header {
   background-color: #ffd230;
+  
 }
 
 .navbar-item {
   border-left: 1px solid;
   margin: 0;
   height: 30px;
-  margin: 0px;
   border-left: 1px solid black;
-  border-top: 1px solid black;
   display: flex;
+  margin-left: 16px;
   margin: 0 auto;
 }
 
@@ -22,62 +22,27 @@ header {
   border-bottom: 3px solid black;
 }
 
-
-/* .menu {
-  border-top: solid black;
+.hero {
+  height: 55px;
 }
 
-a.navbar-item:nth-child(2) {
-  border-left: none;
-}
-
-a.navbar-item:first-child {
-  border-left: none;
-}
-
-a.navbar-item:last-child{
-  border-right: none;
-}
-
-.navbar-item {
+/* .navbar-item {
   border-left: 1px solid;
   margin: 0;
   height: 30px;
   margin: 0px;
   border-left: 1px solid black;
   padding-top: 23px;
-
-}
+} */
 
 .navbar {
   width: 100%;
   height: 80px;
   display: flex;
+  margin-left: 12px;
+  border-top: 1px solid black;
 }
 
-.navbar-start {
-      height: 0%;
-      padding-top: 0px;
-} */
-
-/* .navbar {
-  width: 100%;
-  height: 30px;
-  display: flex;
-  background-color: #ffd230;
-
-  .navbar-menu {
-    padding: 21px 0 0 5px;
-
-    .navbar-start {
-      height: 0%;
-      padding-top: 0px;
-
-      .navbar-item {
-        height: 30px;
-        margin: 0px;
-        border-left: 1px solid black;
-        }
-      }
-    }
-  } */
+.pictures {
+  margin-top: 30px;
+}
