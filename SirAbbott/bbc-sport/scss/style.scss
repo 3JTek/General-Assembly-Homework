@@ -2,20 +2,22 @@ body {
   font-family: Arial,Helvetica,sans-serif;
 }
 
-#logo {
-  padding-top: 20px;
+h1.title {
+  font-size: 50px;
+  font-weight: 600px;
+  padding: 20px 0 5px 10px;
+  display: inline-block;
 }
 
 .navbar {
   background-color: #ffd230;
 
   .navbar-menu {
-    border-top: 1px solid black;
+    border-top: 1px solid grey;
 
     .navbar-item,
     .navbar-link {
-      padding: 0 5px;
-      border-left: 1px solid black;
+      border-left: 1px solid grey;
 
       &:hover {
         border-bottom: 4px solid black;
@@ -31,20 +33,11 @@ body {
   border-left: none;
 }
 
-#snookerPic {
-  max-width: none;
-  width: 100%;
-}
-
-h1.title {
-  font-weight: bolder;
-  padding-left: 20px;
-}
-
-section.section {
+.section {
   padding: 10px 0 5px 15px;
-}
 
-.columns {
-  width: 100%;
+  & img {
+    max-width: none;
+    width: 100%;
+  }
 }
