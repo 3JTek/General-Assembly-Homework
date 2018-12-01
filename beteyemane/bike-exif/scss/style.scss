@@ -88,7 +88,7 @@ aside {
   margin: 0;
 }
 
-.input input{
+.input input {
   background-color: rgb(193, 13, 34);
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
@@ -96,8 +96,18 @@ aside {
   font-family: inherit;
   padding: 5px;
   margin: 2px;
-
 }
+
+#send {
+  border: 0;
+  font-size: 90%;
+  font-family: inherit;
+  padding: 5px;
+  margin: 2px;
+  background-color: rgb(193, 13, 34);
+  color: white;
+}
+
 .input ::placeholder {
     color: #fff;
 }
@@ -184,4 +194,10 @@ a:hover {
 
 #shop:hover {
   color: black;
+}
+
+.emailcontainer {
+  display: flex;
+  justify-content: space-between;
+
 }
