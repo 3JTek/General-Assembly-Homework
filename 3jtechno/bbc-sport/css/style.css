@@ -1,2 +1,2 @@
-*{box-sizing:border-box}#main{display:flex;flex-wrap:wrap}img{width:100%}a{margin:0}
+*{box-sizing:border-box}header nav.navbar div.container{display:block}header nav.navbar div.container div.navbar-brand{margin:0;border-bottom:1px solid grey}header nav.navbar div.container div.navbar-brand a{font-weight:700;font-size:36px;padding:0}header nav.navbar div.container div.navbar-menu{font-size:14px}header nav.navbar div.container div.navbar-menu a{border-right:1px solid grey;padding:3px 5px}#main{display:flex;flex-wrap:wrap}.section{padding:1em}img{width:100%}.column{padding:5px 5px}a{margin:0}
 /*# sourceMappingURL=style.css.map */
