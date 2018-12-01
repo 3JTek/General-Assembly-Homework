@@ -21,8 +21,10 @@ h1.div.navbar-item {
 a.navbar-item {
 padding: 15px 12px 2px 12px;
 height: 40px;
-
 }
+a.navbar-item:hover {
+    border-bottom: 4px solid black;
+  }
 h1.title  !important {
   padding-top: 40px;
   margin-top: 20px;
