@@ -1,0 +1,29 @@
+*{
+  box-sizing:border-box;
+}
+
+.hero-body{
+  background-size: -1;
+background-color: #ffd230;
+}
+.hero.is-primary .title {
+  color: black;
+}
+a.button{
+background-color: #ffd230;
+border-color:#ffd230;
+display: inline-block;
+display: none;
+}
+@media (min-width: 769px) {
+  a.button {
+    display: block;
+  }
+}
+.section{
+  padding: 25px;
+}
+
+
+take off from sections the last 4 images so that they are all in 1 section.
+maybe the first 2 in one section???
