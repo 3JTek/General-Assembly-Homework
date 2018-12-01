@@ -1,0 +1,109 @@
+
+
+*{
+  box-sizing: border-box;
+}
+
+main{
+  margin-top: 10px;
+}
+
+.hero{
+  display: none;
+}
+
+
+.images img{
+
+}
+
+
+#first-image{
+  vertical-align: top;
+}
+
+.navbar.is-primary{
+  background-color: #ffd230;
+}
+
+.hero.is-primary{
+background-color: #ffd230;
+
+}
+
+
+.navbar-menu{
+  border-top: 1px solid black;
+}
+
+
+/* Sport brand */
+
+
+.navbar.is-primary .navbar-start>a.navbar-item:hover {
+    background-color: transparent;
+    color: black;
+    border-bottom: 4px solid black;
+}
+
+.navbar.is-primary .navbar-start>.navbar-item{
+  border-right: solid 1px black;
+padding-top: 0;
+padding-bottom: 0;
+color: black
+}
+
+
+
+
+
+
+.navbar.is-primary .navbar-start>.navbar-item:last-child{
+  border-right: none;
+
+}
+
+@media screen and (min-width: 769px) {
+  main>.container{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  navbar.is-primary .navbar-brand>.navbar-item {
+      background-color: #eee;
+      display: auto;
+  }
+
+  @media screen and (max-width: 768px){
+
+}
+
+@media screen and (min-width: 769px) {
+  main>.container{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  navbar.is-primary .navbar-brand>.navbar-item {
+      background-color: #eee;
+      display: auto;
+  }
+  
+}
+@media screen and (min-width: 1088px) {
+  main>.container{
+    margin: auto;
+    div.column{
+      padding-left:5px;
+      padding-right:5px;
+    }
+
+  }
+  .navbar.is-primary .navbar-brand>.navbar-item {
+      background-color: #eee;
+      display: none;
+  }
+
+  .hero{
+    display: flex;
+  }
+}
+}
