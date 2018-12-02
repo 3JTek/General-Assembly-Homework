@@ -1,22 +1,27 @@
 
 
 .hero-body {
-background-color: #ffd230;
-
+  background-color: #ffd230;
+}
 .title {
   font-weight: bold;
   color: black;
+}
 
-}
-}
-#navbarBasicExample{
-  margin-bottom: 5px solid white;
-}
 .navbar {
   background-color: #ffd230;
-
+  margin-bottom: 30px;
   .navbar-item {
     border-top: 1px solid grey;
     border-right: 1px solid grey;
   }
+  }
+article img{
+  width: 280px;
+}
+article p {
+  font-weight: bold;
+}
+article h3 {
+font-weight: bold;  
 }
