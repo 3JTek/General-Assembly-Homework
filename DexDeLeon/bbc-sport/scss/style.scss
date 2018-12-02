@@ -1,1 +1,67 @@
+$warning: hsl(48, 100%, 67%);
+$dark: #121212;
+$navBorder: #343434;
 
+body{
+
+  header {
+    h1.title.is-1{
+      font-weight: 800;
+    }
+
+    nav.navbar {
+
+      div#navMenu{
+
+        border-top: solid 1px #000;
+        a.navbar-item {
+
+          border-right: solid 1px #000;
+
+          &:last-child {
+            border-right: none;
+          }
+
+          &:hover,
+          &.selected {
+            color: #000;
+            background-color: $warning;
+            border-bottom: solid 5px #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+// STYLES FOR touch
+@media only screen and (max-width: 1087px){
+
+  body{
+
+    header {
+
+      nav.navbar {
+
+        div#navMenu.navbar-menu.is-active{
+
+          background-color: $dark;
+          a.navbar-item {
+
+            border-right: none;
+            border-bottom: $navBorder;
+            border-top: $navBorder;
+            color: #fff;
+            &:hover,
+            &.selected {
+              color: #fff;
+              background-color: $dark;
+              border-bottom: none;
+              border-left: solid 5px $warning;
+            }
+          }
+        }
+      }
+    }
+  }
+}
