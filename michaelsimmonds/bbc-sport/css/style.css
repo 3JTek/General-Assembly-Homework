@@ -1,0 +1,37 @@
+nav {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.navbar-item {
+  border: 1px grey solid;
+}
+
+.navbar-item:hover {
+  text-decoration: underline;
+}
+
+.sport {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
