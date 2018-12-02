@@ -9,43 +9,53 @@
   <body>
     <header>
     <!-- nav.navbar  -->
-      <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-        <!-- .navbar-brand  -->
-        <div class="container">
-          <div class="navbar-brand">
-              <a class="navbar-item" href="https://bbc.com">
-                <h1>Sport</h1>
-              </a>
+
+    <div class="has-background-warning is-hidden-mobile is-hidden-tablet-only">
+      <div class="container">
+        <a class= is-warning href="#">
+          <h1 class="title">SPORT</h1>
+        </a>
+      </div>
+    </div>
+
+    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <div class="is-hidden-desktop is-hidden-widescreen">
+            <a class="navbar-item" href="#">
+              <h1 class="title">SPORT</h1>
+            </a>
           </div>
-          <div class="navbar-menu" id="navMenu">
+
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <!-- .navbar-brand  -->
+        <div class="navbar-menu" id="navbarBasicExample">
             <!-- nav bar start left -->
-            <div class="navbar-menu">
-              <div class="navbar-start">
-                <a href="#" class="navbar-item">Home</a>
-                <a href="#" class="navbar-item">Football</a>
-                <a href="#" class="navbar-item">Formula1</a>
-                <a href="#" class="navbar-item">Cricket</a>
-                <a href="#" class="navbar-item">Rugby U</a>
-                <a href="#" class="navbar-item">Rugby L</a>
-                <a href="#" class="navbar-item">Tennis</a>
-                <a href="#" class="navbar-item">Golf</a>
-                <a href="#" class="navbar-item">Althletics</a>
-              </div>
+            <div class="navbar-start">
+              <a href="#" class="navbar-item">Home</a>
+              <a href="#" class="navbar-item">Football</a>
+              <a href="#" class="navbar-item">Formula1</a>
+              <a href="#" class="navbar-item">Cricket</a>
+              <a href="#" class="navbar-item">Rugby U</a>
+              <a href="#" class="navbar-item">Golf</a>
+              <a href="#" class="navbar-item">Althletics</a>
             </div>
           </div>
         </div>
       </nav>
-         <!--sub nav title-->
-
-
-
     </header>
 
-    <div class="container">
-      <!--- Top column -------->
-      <div class="columns">
 
-        <div class="column is-half">
+      <!--- Top column -------->
+    <div class="container">
+      <div class="columns">
+        <div class="column">
           <img src="images/snooker.jpg" alt="Snooker Player">
         </div>
 
@@ -60,9 +70,10 @@
           <img src="images/tennis.jpg" alt="Tennis">
           <h3>Konta knocked out by world number 123 Pera</h3>
         </div>
-
-      </div>
     </div> <!-- Top col container --->
+</div>
+
+
 
     <div class="container">
       <!-- bottom column -->
