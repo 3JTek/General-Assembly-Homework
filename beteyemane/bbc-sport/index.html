@@ -5,99 +5,83 @@
     <title>BBC Sport</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" charset="utf-8"></script>
   </head>
-  <header>
-    <!-- <section class="hero is-warning">
-      <div class="hero-head">
-        <div class="container">
-          <h1 class="title">
-            SPORT
-          </h1> -->
-          <!-- navbar (main container) -->
-        <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-          <!-- <section class="section"> -->
-        <!-- nav container for desktop -->
-          <div class="container is-desktop">
-            <!-- nav brand (always visible) -->
-            <div class="navbar-brand">
-              <!-- title -->
-              <a class="navbar-item">
-                <h1 class="title">
-                  SPORT
-                </h1>
-              </a>
-                <!-- navbar-burger (last child of nav-brand)-->
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-                <!-- nav-menu -->
-              <div class="navbar-menu">
-                <!-- hidden on mobile -->
-                <div class="navbar-start">
-                  <a href="#" class="navbar-item">Home</a>
-                  <a href="#" class="navbar-item">Football</a>
-                  <a href="#" class="navbar-item">Formula 1</a>
-                  <a href="#" class="navbar-item">Cricket</a>
-                  <a href="#" class="navbar-item">Rugby U</a>
-                  <a href="#" class="navbar-item">Rugby L</a>
-                  <a href="#" class="navbar-item">Tennis</a>
-                  <a href="#" class="navbar-item">Golf</a>
-                  <a href="#" class="navbar-item">Athletics</a>
-                </div>
-              </div>
-              <div class="navbar-menu is-active">
-                <!-- shown on mobile -->
-              </div>
-            </div>
-          </section>
-          </nav>
-        <!-- </div>
-      </div>
-    </section> -->
-  </header>
   <body>
-    <section class="section">
-
-      <div class="columns is-multiline is-mobile">
-        <div class="column is-half-desktop is-two-thirds-tablet is-full-mobile">
-          <img src="images/snooker.jpg" alt="Snooker" width="768">
+    <header>
+      <!-- navbar (main container) -->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <!-- nav container for desktop -->
+        <div class="container is-desktop">
+        <!-- nav brand (always visible) -->
+          <div class="navbar-brand">
+          <!-- title -->
+            <a class="navbar-item">
+              <h1 class="title">SPORT</h1>
+            </a>
+          <!-- navbar-burger (last child of nav-brand)-->
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
         </div>
-
-        <div class="column is-one-quarter-desktop is-full-mobile">
-          <h2 class="subtitle">
-            Watch: Masters Snooker - Allen cruises to 6-1 victory over O'Sullivan
-          </h2>
-          <p>
-            Watch live coverage of the 2018 Masters Snooker quarter-finals, as Ronnie O'Sullivan takes on Mark Allen.
-          </p>
+        </nav>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="container is-desktop">
+        <!-- nav-menu -->
+            <div class="navbar-menu" id="navMenu">
+          <!-- hidden on mobile -->
+              <div class="navbar-start">
+              <a href="#" class="navbar-item">Home</a>
+              <a href="#" class="navbar-item">Football</a>
+              <a href="#" class="navbar-item">Formula 1</a>
+              <a href="#" class="navbar-item">Cricket</a>
+              <a href="#" class="navbar-item">Rugby U</a>
+              <a href="#" class="navbar-item">Rugby L</a>
+              <a href="#" class="navbar-item">Tennis</a>
+              <a href="#" class="navbar-item">Golf</a>
+              <a href="#" class="navbar-item">Athletics</a>
+            </div>
+          </div>
         </div>
-
-        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-          <img src="images/tennis.jpg" alt="Tennis" width="335.5">
-          <p>
-            Konta knocked out by world number 123 Pera
-          </p>
-        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="section">
+        <div class="container is-desktop">
+          <div class="columns is-multiline is-mobile">
+            <div class="column is-half-desktop is-two-thirds-tablet is-full-mobile">
+              <img src="images/snooker.jpg" alt="Snooker" width="768">
+            </div>
+            <div class="column is-one-quarter-desktop is-full-mobile">
+              <h2 class="subtitle">Watch: Masters Snooker - Allen cruises to 6-1 victory over O'Sullivan</h2>
+              <p>Watch live coverage of the 2018 Masters Snooker quarter-finals, as Ronnie O'Sullivan takes on Mark Allen.</p>
+            </div>
+            <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+              <img src="images/tennis.jpg" alt="Tennis" width="335.5">
+              <p class="sub">Konta knocked out by world number 123 Pera</p>
+            </div>
             <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
               <img src="images/football1.jpg" alt="Sanchez" width="335.5">
-              <p>Sanchez likely to join Man UTD - Wenger</p>
+              <p class="sub">Sanchez likely to join Man UTD - Wenger</p>
             </div>
             <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
               <img src="images/rugby.jpg" alt="" width="335.5">
-              <p>Mercer leads rookies in England sqaud</p>
+              <p class="sub">Mercer leads rookies in England sqaud</p>
             </div>
             <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
               <img src="images/football2.jpg" alt="" width="335.5">
-              <p>Var system is a shambles - Shearer</p>
+              <p class="sub">Var system is a shambles - Shearer</p>
             </div>
             <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
               <img src="images/cricket.jpg" alt="" width="335.5">
-              <p>Stokes 'raring to go' for England as court date set</p>
+              <p class="sub">Stokes 'raring to go' for England as court date set</p>
             </div>
           </div>
+        </div>
       </section>
+    </main>
   </body>
 </html>
