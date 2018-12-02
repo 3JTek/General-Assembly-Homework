@@ -4,43 +4,44 @@ body {
 
 p {
   font-size: 15px;
+}
+
+p, .subtitle, .title {
   color: black;
 }
 
-.subtitle {
-  color: black;
+.navbar-top, .navbar-bottom {
+  border-top: 1px solid rgba(18,18,18,0.2);
+  background-color: #ffd230;
 }
 
-.subtitle, .sub{
-  font-weight: bold;
+.navbar-top, .navbar-brand {
+  height: 60px;
 }
 
-.column {
-  padding: .4em;
+.navbar-item{
+  font-size: 15px;
+  color: #121212;
+  padding: 0 6px;
 }
 
 .section {
   padding-top: 20px;
 }
 
-.navbar, .navbar-bottom {
-  border-top: 1px solid rgba(18,18,18,0.2);
-  background-color: #ffd230;
+.column {
+  padding: .4em;
 }
 
-
-.navbar-item{
-  font-size: 15px;
-  color: #121212;
-  padding: 6px;
+.up {
+  padding-bottom: 0;
 }
 
 .title {
   font-size: 2.375rem;
   font-weight: bold;
-  color: black;
 }
 
-.navbar-start .navbar-item {
-  border-left: 1px solid rgba(18,18,18,0.2);
+.subtitle, .sub{
+  font-weight: bold;
 }
