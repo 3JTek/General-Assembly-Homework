@@ -1,6 +1,5 @@
 main{
-  margin-left: 130px;
-  margin-right: 120px;
+  margin:auto;
 }
 
 .navbar {
@@ -17,12 +16,14 @@ main{
       padding-top: 0px;
       width: 100%;
       border-top: 1px solid black;
+      border-left: none;
+
 
 
       .navbar-item {
         height: 30px;
         margin: 0px;
-        border-left: 1px solid black;
+        border-right: 1px solid black;
 
         &:hover {
           border-bottom: 3px solid black;
@@ -38,15 +39,15 @@ main{
 a{
   color: black;
 }
-a:hover {
+.a1:hover {
   text-decoration:underline;
 }
 
 .toptitle{
    display: inline-block;
-   margin-top: 12px;
+   margin-top: 10px;
    margin-right: 8px;
-   margin-bottom: 12px;
+   margin-bottom: 5px;
    font-size: 2.8rem;
    font-weight: bold;
    text-transform: uppercase;
@@ -61,11 +62,3 @@ a:hover {
  .hero-body{
     padding-bottom: 1 rem;
   }
-
-.click{
-  padding: 5px;
-}
-
-.boom{
-  padding: 5px;
-}
