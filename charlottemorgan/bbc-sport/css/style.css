@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: ReithSans,Arial,Helvetica,freesans,sans-serif;
 }
@@ -38,6 +42,7 @@ h1.title  !important {
   padding-left: 20px;
   font-weight: bolder;
 }
+
 h2.subtitle {
   color: black;
   font-weight: bolder;
