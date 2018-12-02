@@ -1,1 +1,40 @@
+$border-color: rgba(18,18,18,0.2);
+$color: rgb(18, 18, 18);
+$navbar-background-color: #ffd201;
 
+body {
+  color: $color;
+}
+
+.navbar {
+  background-color: $navbar-background-color;
+  .container {
+  display: block;
+    .navbar-brand {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  h1.title {
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  .navbar-start {
+    a:first-child {
+      padding-left: 0;
+    }
+
+    a {
+      font-size: 15px;
+      padding: 6px;
+      border-bottom: 3px solid $navbar-background-color;
+    }
+
+    a:hover {
+      border-bottom: 3px solid black;
+      background-color: $navbar-background-color;
+      color: $color;
+    }
+  }
+}
