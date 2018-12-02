@@ -1,1 +1,16 @@
 
+*{
+  box-sizing: border-box;
+}
+
+header{
+  .navbar{
+    .navbar-brand {
+      background-color: blue;
+      //the below code should make it wrap - why doesn't it wrap?
+      // flex-wrap: wrap;
+      // width: 100%;
+
+    }
+  }
+}
