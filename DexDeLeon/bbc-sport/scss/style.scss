@@ -34,12 +34,50 @@ body{
   }
 }
 
+body {
+
+  main {
+
+    section.section {
+
+      div.container {
+
+        div.columns{
+
+          a.articleLink {
+
+            p.is-3-mobile {
+              color: #4a4a4a;
+            }
+            &:hover {
+
+              h2,
+              h3 {
+                text-decoration: underline;
+                color: #2c60a4;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // STYLES FOR touch
 @media only screen and (max-width: 1087px){
 
   body{
 
     header {
+
+      div.container {
+
+        h1.title.is-1 {
+          padding: 25px 0 0 25px;
+        }
+      }
 
       nav.navbar {
 
@@ -52,11 +90,11 @@ body{
             border-bottom: $navBorder;
             border-top: $navBorder;
             color: #fff;
-            &:hover,
+            &:hover {
+              background-color: #5a5a5a;
+            }
             &.selected {
-              color: #fff;
               background-color: $dark;
-              border-bottom: none;
               border-left: solid 5px $warning;
             }
           }
