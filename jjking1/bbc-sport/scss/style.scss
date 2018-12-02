@@ -2,41 +2,42 @@
   box-sizing: border-box;
 }
 
+.column a{
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#watch-live{
+  font-weight: normal;
+}
+
 header{
+  .bbc-color{
+    background-color: #ffd230;
+  }
   nav.navbar div.container{
     display:block;
-  }
-  display: flex;
-  flex-wrap: wrap;
-  .navbar-brand{
-    display: block;
-  }
-  .navbar-menu{
-    .navbar-start{
+    .navbar-menu{
+      margin-left: 0;
+      .navbar-start a{
+        border-right: 1px solid grey;
+        margin-left: 0 !important;
+        font-size: 15px;
+      }
     }
   }
+  .navbar-brand{
+    margin-left: 0 !important;
+    border-bottom: 2px solid grey;
+  }
+  #sport{
+    margin-bottom: 0;
+    font-size: 40px;
+  }
 }
 
-.bbc-color{
-  background-color: #ffd230;
+main{
+
 }
-
-
-// *{box-sizing:border-box}
-//
-
-//
-// header nav.navbar div.container div.navbar-brand{margin:0;border-bottom:1px solid grey}
-//
-// header nav.navbar div.container div.navbar-brand a{font-weight:700;font-size:36px;padding:0}
-//
-// header nav.navbar div.container div.navbar-menu{font-size:14px}
-//
-// header nav.navbar div.container div.navbar-menu a{border-right:1px solid grey;padding:3px 5px}
-//
-// .section{padding:1em}
-//
-// img{width:100%}.column{padding:5px 5px}
-//
-// a{margin:0}
-/*# sourceMappingURL=style.css.map */
