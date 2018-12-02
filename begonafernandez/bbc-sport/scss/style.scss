@@ -29,12 +29,22 @@ body {
       font-size: 15px;
       padding: 6px;
       border-bottom: 3px solid $navbar-background-color;
-    }
 
-    a:hover {
-      border-bottom: 3px solid black;
-      background-color: $navbar-background-color;
-      color: $color;
+      &:hover {
+        border-bottom: 3px solid black;
+        background-color: $navbar-background-color;
+        color: $color;
+      }
     }
+  }
+}
+
+main {
+  h2:hover {
+    text-decoration: underline;
+  }
+
+  h6:hover {
+    text-decoration: underline;
   }
 }
