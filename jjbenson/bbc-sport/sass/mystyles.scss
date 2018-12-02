@@ -11,8 +11,10 @@
 
 // // Set your brand colors
 $yellow:#ffd637;
+$blue:#195bfe;
 $dark-yellow:#dbb830;
 $dark-grey:#565656;
+$black:#121212;
 //
 // // Update Bulma's global variables
 $family-sans-serif: "bbcReith", sans-serif;
@@ -21,11 +23,16 @@ $primary: $yellow;
 //
 // // Update some of Bulma's component variables
 $navbar-background-color:$yellow;
-$navbar-item-color:black;
-$navbar-item-hover-color:black;
+$navbar-item-color:$black;
+$navbar-item-hover-color:$black;
 $navbar-item-hover-background-color:$yellow;
 $navbar-height:1rem;
-$section-padding: 1rem 1.5rem;
+$navbar-breakpoint: $tablet;
+
+$title-color: $black;
+$title-size:2.375rem;
+
+$section-padding: 1rem 1rem;
 $column-gap:0.5rem;
 
 // $link: black;
@@ -38,7 +45,20 @@ $footer-padding:3rem;
 img {
   width:100%;
 }
+.section-nav{
+  padding:$section-padding;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.section-title{
+  padding:$section-padding;
+  padding-top:12px;
+}
+
 article {
+  a {
+    display:block;
+  }
   .title {
     padding-top: 0.5rem;
   }
@@ -48,7 +68,7 @@ article {
 
   &:hover {
     .title{
-      color:blue !important;
+      color:$blue !important;
       text-decoration: underline;
     }
   }
@@ -70,21 +90,22 @@ h1.title {
   }
 }
 nav.navbar{
-  min-height:0rem;
+  min-height:0;
   .navbar-brand{
     margin-left:0 !important;
+    // display:flex;
+    align-items: center;
   }
-
 }
 .navbar-menu{
-  padding:  0;
+  // padding:  0;
   &.is-active{
-    padding: 0;
+    // padding: 0;
     .navbar-item{
       margin-top:0;
       &:hover,
       &.is-active {
-        background-color: black;
+        background-color: $black;
         color:$yellow;
       }
     }
@@ -104,7 +125,7 @@ a.navbar-item,
   border-bottom: 4px solid $yellow;
   &.is-active,
   &:hover {
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid $black;
   }
 }
 .site {
@@ -112,7 +133,6 @@ a.navbar-item,
   min-height: 100vh;
   flex-direction: column;
 }
-
 .site-content {
   flex: 1;
 }
@@ -131,21 +151,15 @@ footer {
 
 //phone
 @media screen and (max-width: $tablet){
-  main > .section{
+  .section-nav {
     padding:0;
-    .columns {
-      padding:1rem;
-    }
-    article:first-child{
-      .column {
-        padding:0;
-      }
-    }
   }
 }
 // $tablet
 @media screen and (min-width: $tablet){
-
+  // .navbar-menu {
+  //   // padding: 0 1rem;
+  // }
 }
 // $desktop
 @media screen and (min-width: $desktop){
