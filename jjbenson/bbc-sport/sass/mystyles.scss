@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@fontface {
+  font-family:"bbcReith";
+  src:url(../bbc_reith/BBCReithSerif_W-Rg.otf);
+}
+@import "../bulma-0.7.2/sass/utilities/initial-variables.sass";
+
+
+// // Set your brand colors
+$yellow:#ffd637;
+$dark-yellow:#dbb830;
+$dark-grey:#565656;
+//
+// // Update Bulma's global variables
+$family-sans-serif: "bbcReith", sans-serif;
+$grey-dark: $dark-grey;
+$primary: $yellow;
+//
+// // Update some of Bulma's component variables
+$navbar-background-color:$yellow;
+$navbar-item-color:black;
+$navbar-item-hover-color:black;
+$navbar-item-hover-background-color:$yellow;
+$navbar-height:1rem;
+$section-padding: 1rem 1.5rem;
+$column-gap:0.5rem;
+
+// $link: black;
+// $link-invert: white;
+// $link-focus-border: $primary;
+
+// $footer-background-color:$dark-grey;
+$footer-padding:3rem;
+
+img {
+  width:100%;
+}
+article {
+  .title {
+    padding-top: 0.5rem;
+  }
+  .subtitle {
+    display:none;
+  }
+
+  &:hover {
+    .title{
+      color:blue !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+article.featured{
+  .subtitle {
+    display:block;
+  }
+}
+
+.has-border {
+  border-top: 1px solid $dark-yellow;
+}
+
+h1.title {
+  &:not(:last-child){
+    margin-bottom:0;
+  }
+}
+nav.navbar{
+  min-height:0rem;
+  .navbar-brand{
+    margin-left:0 !important;
+  }
+
+}
+.navbar-menu{
+  padding:  0;
+  &.is-active{
+    padding: 0;
+    .navbar-item{
+      margin-top:0;
+      &:hover,
+      &.is-active {
+        background-color: black;
+        color:$yellow;
+      }
+    }
+  }
+}
+
+.navbar-item,
+.navbar-link{
+  &:not(:last-child){
+    border-right: 1px solid $dark-yellow;
+  }
+}
+a.navbar-item,
+.navbar-link{
+  padding: 0.5rem;
+  margin-top:4px;
+  border-bottom: 4px solid $yellow;
+  &.is-active,
+  &:hover {
+    border-bottom: 4px solid black;
+  }
+}
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+footer {
+  background-color: $dark-grey!important;
+  color:white;
+  a {
+    color:white;
+    white-space: nowrap;
+    &:hover{
+      color:white;
+      text-decoration:underline;
+    }
+  }
+}
+
+//phone
+@media screen and (max-width: $tablet){
+  main > .section{
+    padding:0;
+    .columns {
+      padding:1rem;
+    }
+    article:first-child{
+      .column {
+        padding:0;
+      }
+    }
+  }
+}
+// $tablet
+@media screen and (min-width: $tablet){
+
+}
+// $desktop
+@media screen and (min-width: $desktop){
+
+}
+
+
+
+
+// // Import only what you need from Bulma
+
+// @import "../bulma-0.7.2/bulma.sass";
+@import "../bulma-0.7.2/sass/utilities/_all.sass";
+
+@import "../bulma-0.7.2/sass/base/_all.sass";
+// @import "../bulma-0.7.2/sass/elements/button.sass";
+@import "../bulma-0.7.2/sass/elements/container.sass";
+@import "../bulma-0.7.2/sass/layout/section.sass";
+
+// @import "../bulma-0.7.2/sass/elements/form.sass";
+@import "../bulma-0.7.2/sass/elements/title.sass";
+@import "../bulma-0.7.2/sass/components/navbar.sass";
+@import "../bulma-0.7.2/sass/grid/_all.sass";
