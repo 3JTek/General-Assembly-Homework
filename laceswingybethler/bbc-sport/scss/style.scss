@@ -6,11 +6,28 @@
 header{
   .navbar{
     .navbar-brand {
-      background-color: blue;
       //the below code should make it wrap - why doesn't it wrap?
-      // flex-wrap: wrap;
-      // width: 100%;
-
+      flex-wrap: wrap;
+      flex-grow:1;
+      display: block;
+      }
+    .navbar-menu{
+      border-top: 1px solid black;
+      margin: 1px;
+      padding: 1px;
+      a.navbar-item {
+        border-right: 1px solid black;
+        &:hover {
+          border-bottom: 3px solid black;
+        }
+        &:last-child {
+          border-right: none;
+        }
+      }
     }
   }
+}
+
+a {
+  color: black;
 }

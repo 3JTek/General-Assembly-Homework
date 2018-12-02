@@ -5,6 +5,7 @@
     <title>BBC Sport</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" charset="utf-8"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
   <body>
@@ -22,7 +23,7 @@
               </a>
 
 
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -49,7 +50,6 @@
 
     <!-- MAIN SECTION -->
     <main class="section">
-
           <!-- <div class="container"> -->
             <div class="columns has-background-light is-multiline is-mobile">
               <div class="column is-half-desktop is-two-thirds-tablet is-full-mobile"
@@ -75,32 +75,43 @@
               </content>
             </div>
 
+<!-- second row on desktop -->
+              <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+                <a href="#">
+                  <figure class="image">
+                    <img src="images/football1.jpg">
+                  </figure>
+                  <content>
+                    <h2 class="title is-6">Sanchez likely to join Man Utd - Wenger</h2>
+                  </content>
+                </a>
+              </div>
 
               <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                <figure class="image">
-                  <img src="images/football1.jpg">
-                </figure>
-                <content>
-                  <h2 class="title is-6">Sanchez likely to join Man Utd - Wenger</h2>
-                </content>
+                <a href="#">
+                  <figure class="image">
+                    <img src="images/rugby.jpg"></a>
+                  </figure>
+                  <h2 class="title is-6">Mercer leads rookie in England squad</h2>
+                </a>
               </div>
+
               <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                <figure class="image">
-                  <img src="images/rugby.jpg">
-                </figure>
-                <h2 class="title is-6">Mercer leads rookie in England squad</h2>
-              </div>
-              <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+                <a href="#">
                 <figure class="image">
                   <img src="images/football2.jpg">
                 </figure>
-                <h2 class="title is-6">VAR system is a shambles - Shearer</h2>
+                  <h2 class="title is-6">VAR system is a shambles - Shearer</h2>
+                </a>
               </div>
+
               <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                <figure class="image">
-                  <img src="images/cricket.jpg">
-                </figure>
-                <h2 class="title is-6">Stokes 'raring to go' for England as court date set</h2>
+                <a href="#">
+                  <figure class="image">
+                    <img src="images/cricket.jpg">
+                  </figure>
+                  <h2 class="title is-6">Stokes 'raring to go' for England as court date set</h2>
+                </a>
               </div>
             </div>
 
