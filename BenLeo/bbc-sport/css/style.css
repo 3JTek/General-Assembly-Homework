@@ -1,3 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
 .is-primary {
   background-color: rgb(254,208,68) !important;
+}
+
+/* div.navbar-brand {
+  display: block;
+  margin: auto;
+  width: 100%
+} */
+
+/* div.navbar-menu {
+  display: block;
+} */
+
+header > nav > .container {
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-start > .navbar-item {
+  border-right: 1px solid #ccc;
 }
