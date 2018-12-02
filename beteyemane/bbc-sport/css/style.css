@@ -19,6 +19,10 @@ p, .subtitle, .title {
   height: 60px;
 }
 
+.navbar-menu {
+    height: 35px;
+}
+
 .navbar-item{
   font-size: 15px;
   color: #121212;
@@ -44,4 +48,7 @@ p, .subtitle, .title {
 
 .subtitle, .sub{
   font-weight: bold;
+}
+.navbar-start .navbar-item {
+  border-right: 1px solid rgba(18,18,18,0.2);
 }
