@@ -1,6 +1,7 @@
-$border-color: rgba(18,18,18,0.2);
+$border: 1px solid rgba(18,18,18,0.2);
 $color: rgb(18, 18, 18);
 $navbar-background-color: #ffd201;
+$hover-title-color: #3273dc;
 
 body {
   color: $color;
@@ -11,7 +12,7 @@ body {
   .container {
   display: block;
     .navbar-brand {
-      border-bottom: 1px solid $border-color;
+      border-bottom: $border;
     }
   }
 
@@ -29,6 +30,7 @@ body {
       font-size: 15px;
       padding: 6px;
       border-bottom: 3px solid $navbar-background-color;
+      border-right: $border;
 
       &:hover {
         border-bottom: 3px solid black;
@@ -40,11 +42,14 @@ body {
 }
 
 main {
-  h2:hover {
-    text-decoration: underline;
+  .content {
+    h2:hover, h6:hover{
+      text-decoration: underline;
+      color: $hover-title-color;
+    }
   }
 
-  h6:hover {
-    text-decoration: underline;
+  p {
+    color: $color;
   }
 }
