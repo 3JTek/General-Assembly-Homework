@@ -1,18 +1,26 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 @fontface {
   font-family: "bbcReith";
   src: url(../bbc_reith/BBCReithSerif_W-Rg.otf); }
 img {
   width: 100%; }
 
+div.line {
+  height: 1rem;
+  width: 1px;
+  position: relative;
+  left: 0.5rem;
+  background-color: #dbb830; }
+
 .section-nav {
   padding: 1rem 1rem;
   padding-top: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  border-top: 1px solid #dbb830; }
 
 .section-title {
   padding: 1rem 1rem;
-  padding-top: 12px; }
+  padding-top: 12px;
+  padding-bottom: 8px; }
 
 article a {
   display: block; }
@@ -26,9 +34,6 @@ article:hover .title {
 
 article.featured .subtitle {
   display: block; }
-
-.has-border {
-  border-top: 1px solid #dbb830; }
 
 h1.title:not(:last-child) {
   margin-bottom: 0; }
@@ -45,14 +50,11 @@ nav.navbar {
     background-color: #121212;
     color: #ffd637; }
 
-.navbar-item:not(:last-child),
-.navbar-link:not(:last-child) {
-  border-right: 1px solid #dbb830; }
-
 a.navbar-item,
 .navbar-link {
-  padding: 0.5rem;
-  margin-top: 4px;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-bottom: 4px solid #ffd637; }
   a.navbar-item.is-active, a.navbar-item:hover,
   .navbar-link.is-active,
@@ -67,6 +69,37 @@ a.navbar-item,
 .site-content {
   flex: 1; }
 
+span.live {
+  position: relative;
+  left: -4px;
+  color: #195bfe;
+  text-transform: uppercase;
+  font-size: inherit;
+  text-decoration: none !important; }
+
+@keyframes PULSE {
+  0% {
+    opacity: 1; }
+  75% {
+    opacity: 0.25; }
+  100% {
+    opacity: 1; } }
+.ring {
+  width: 1.1rem;
+  height: 1.1rem;
+  position: relative;
+  border-radius: 0.55rem;
+  background: radial-gradient(white 0%, white 50%, #195bfe 55%, #195bfe 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; }
+  .ring .center {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 0.55rem;
+    background: radial-gradient(#195bfe 0%, #195bfe 40%, white 45%, white 50%, #195bfe 55%, #195bfe 100%);
+    animation: PULSE 2s infinite; }
+
 footer {
   background-color: #565656 !important;
   color: white; }
@@ -79,7 +112,10 @@ footer {
 
 @media screen and (max-width: 769px) {
   .section-nav {
-    padding: 0; } }
+    padding: 0; }
+
+  .line {
+    display: none; } }
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -312,7 +348,7 @@ table th {
   font-size: 2.5rem !important; }
 
 .is-size-3 {
-  font-size: 2rem !important; }
+  font-size: 2.375rem !important; }
 
 .is-size-4 {
   font-size: 1.5rem !important; }
@@ -324,7 +360,7 @@ table th {
   font-size: 1rem !important; }
 
 .is-size-7 {
-  font-size: 0.75rem !important; }
+  font-size: 0.875rem !important; }
 
 @media screen and (max-width: 768px) {
   .is-size-1-mobile {
@@ -334,7 +370,7 @@ table th {
     font-size: 2.5rem !important; }
 
   .is-size-3-mobile {
-    font-size: 2rem !important; }
+    font-size: 2.375rem !important; }
 
   .is-size-4-mobile {
     font-size: 1.5rem !important; }
@@ -346,7 +382,7 @@ table th {
     font-size: 1rem !important; }
 
   .is-size-7-mobile {
-    font-size: 0.75rem !important; } }
+    font-size: 0.875rem !important; } }
 @media screen and (min-width: 769px), print {
   .is-size-1-tablet {
     font-size: 3rem !important; }
@@ -355,7 +391,7 @@ table th {
     font-size: 2.5rem !important; }
 
   .is-size-3-tablet {
-    font-size: 2rem !important; }
+    font-size: 2.375rem !important; }
 
   .is-size-4-tablet {
     font-size: 1.5rem !important; }
@@ -367,7 +403,7 @@ table th {
     font-size: 1rem !important; }
 
   .is-size-7-tablet {
-    font-size: 0.75rem !important; } }
+    font-size: 0.875rem !important; } }
 @media screen and (max-width: 1087px) {
   .is-size-1-touch {
     font-size: 3rem !important; }
@@ -376,7 +412,7 @@ table th {
     font-size: 2.5rem !important; }
 
   .is-size-3-touch {
-    font-size: 2rem !important; }
+    font-size: 2.375rem !important; }
 
   .is-size-4-touch {
     font-size: 1.5rem !important; }
@@ -388,7 +424,7 @@ table th {
     font-size: 1rem !important; }
 
   .is-size-7-touch {
-    font-size: 0.75rem !important; } }
+    font-size: 0.875rem !important; } }
 @media screen and (min-width: 1088px) {
   .is-size-1-desktop {
     font-size: 3rem !important; }
@@ -397,7 +433,7 @@ table th {
     font-size: 2.5rem !important; }
 
   .is-size-3-desktop {
-    font-size: 2rem !important; }
+    font-size: 2.375rem !important; }
 
   .is-size-4-desktop {
     font-size: 1.5rem !important; }
@@ -409,7 +445,7 @@ table th {
     font-size: 1rem !important; }
 
   .is-size-7-desktop {
-    font-size: 0.75rem !important; } }
+    font-size: 0.875rem !important; } }
 @media screen and (min-width: 1280px) {
   .is-size-1-widescreen {
     font-size: 3rem !important; }
@@ -418,7 +454,7 @@ table th {
     font-size: 2.5rem !important; }
 
   .is-size-3-widescreen {
-    font-size: 2rem !important; }
+    font-size: 2.375rem !important; }
 
   .is-size-4-widescreen {
     font-size: 1.5rem !important; }
@@ -430,7 +466,7 @@ table th {
     font-size: 1rem !important; }
 
   .is-size-7-widescreen {
-    font-size: 0.75rem !important; } }
+    font-size: 0.875rem !important; } }
 @media screen and (min-width: 1472px) {
   .is-size-1-fullhd {
     font-size: 3rem !important; }
@@ -439,7 +475,7 @@ table th {
     font-size: 2.5rem !important; }
 
   .is-size-3-fullhd {
-    font-size: 2rem !important; }
+    font-size: 2.375rem !important; }
 
   .is-size-4-fullhd {
     font-size: 1.5rem !important; }
@@ -451,7 +487,7 @@ table th {
     font-size: 1rem !important; }
 
   .is-size-7-fullhd {
-    font-size: 0.75rem !important; } }
+    font-size: 0.875rem !important; } }
 .has-text-centered {
   text-align: center !important; }
 
@@ -1044,7 +1080,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .title.is-2 {
     font-size: 2.5rem; }
   .title.is-3 {
-    font-size: 2rem; }
+    font-size: 2.375rem; }
   .title.is-4 {
     font-size: 1.5rem; }
   .title.is-5 {
@@ -1052,7 +1088,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .title.is-6 {
     font-size: 1rem; }
   .title.is-7 {
-    font-size: 0.75rem; }
+    font-size: 0.875rem; }
 
 .subtitle {
   color: #565656;
@@ -1069,7 +1105,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .subtitle.is-2 {
     font-size: 2.5rem; }
   .subtitle.is-3 {
-    font-size: 2rem; }
+    font-size: 2.375rem; }
   .subtitle.is-4 {
     font-size: 1.5rem; }
   .subtitle.is-5 {
@@ -1077,7 +1113,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .subtitle.is-6 {
     font-size: 1rem; }
   .subtitle.is-7 {
-    font-size: 0.75rem; }
+    font-size: 0.875rem; }
 
 .navbar {
   background-color: #ffd637;
