@@ -4,7 +4,7 @@
 
 header {
   background-color: #ffd230;
-  
+
 }
 
 .navbar-item {
@@ -26,14 +26,6 @@ header {
   height: 55px;
 }
 
-/* .navbar-item {
-  border-left: 1px solid;
-  margin: 0;
-  height: 30px;
-  margin: 0px;
-  border-left: 1px solid black;
-  padding-top: 23px;
-} */
 
 .navbar {
   width: 100%;
@@ -45,4 +37,9 @@ header {
 
 .pictures {
   margin-top: 30px;
+  width: auto;
+}
+
+.title .container {
+  margin-bottom: -40px;
 }
