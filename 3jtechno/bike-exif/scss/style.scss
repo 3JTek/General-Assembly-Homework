@@ -48,29 +48,28 @@ header{
 }
 main>section:first-of-type{
   padding-right: 20px;
-}
-article {
-  border-bottom: $borders;
-  padding: 15px 0;
+  article {
+    border-bottom: $borders;
+    padding: 15px 0;
+  }
+  button{
+    float: right;
+    padding: 10px 15px;
+    margin: 20px;
+    border-radius: 4px;
+    background: #fff;
+  }
 }
 .secondary-article{
   display: flex;
   img{
     max-height: 200px;
   }
-}
-.text-secondary-article{
-  padding: 0 10px;
-}
-.next-button{
-  float: right;
-  padding: 10px 15px;
-  margin: 20px;
-  border-radius: 4px;
-  background: #fff;
+  div{
+    padding: 0 10px;
+  }
 }
 .side-panel{
-  // padding: 0 5px;
   &>h3:first-of-type{
     padding: 15px;
   }
@@ -80,7 +79,7 @@ article {
   }
 }
 
-form.search-form{
+.search-form{
   display: flex;
   padding:15px 0;
   input{
@@ -105,7 +104,7 @@ form.search-form{
   text-align: center;
   background-color: #f00;
   padding: 15px;
-  color: white;
+  color: $subscribe-box-text-color;
   h3{
     color: inherit;
   }
@@ -114,11 +113,13 @@ form.search-form{
     font-size: 14px;
   }
   form{
+    display: flex;
+    flex-wrap: wrap;
     &>*{
-      color: white;
+      color: $subscribe-box-text-color;
       background-color: inherit;
       border: none;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid $subscribe-box-text-color;
       padding: 10px;
       margin: 5px 0;
       font-size: 14px;
@@ -127,24 +128,16 @@ form.search-form{
       &::placeholder{
         color:inherit;
       }
+      &:first-of-type{
+        width: 100%;
+      }
+      &:last-of-type{
+        flex-grow:1;
+      }
     }
-
     button{
       text-transform: uppercase;
       font-weight: 700;
-    }
-  }
-}
-
-.subscribe-form{
-  display: flex;
-  flex-wrap: wrap;
-  input{
-    &:first-of-type{
-      width: 100%;
-    }
-    &:last-of-type{
-      flex-grow:1;
     }
   }
 }
