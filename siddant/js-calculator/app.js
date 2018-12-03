@@ -48,12 +48,17 @@ while(calStatus){
       alert('you may entered the wrong thing please use (sqrt) for square root or (power) for power')
     }
   }else if(options === 'o'){
-    opers = prompt('what would you like to do (mortgage) Mortgage calculator or (BMI) BMI calculator')
+    opers = prompt('what would you like to do (mortgage) Mortgage calculator or (BMI) BMI calculator or (trip calculator) Trip Calculator ')
     if(opers === 'mortgage'){
-      // num1 = parseFloat(prompt('please enter the principal'))
-      // num2 = parseFloat(prompt('please enter the yearly interest rate'))
-
-      alert('currenlty under develeopment ')
+      num1 = parseFloat(prompt('please enter the principal of loan'))
+      num2 = parseFloat(prompt('please enter the yearly interest rate'))
+      var num3 = parseFloat(prompt('please enter the number of payment in months'))
+      if(typeof num1 === 'number' && typeof num2 === 'number' && typeof num3 === 'number'){
+        //var monthly = num1 * num2 * (Math.pow(1 + num2, num3)) / (Math.pow(1 + num2, num3) - 1)
+        //console.log()
+        //alert('your montly mortage is '+monthly)
+        alert('currenlty under develeopment ')
+      }
 
 
     }else if(opers === 'BMI'){
@@ -83,7 +88,7 @@ while(calStatus){
         alert('your BMI is '+bmi+' you are Obesity')
       }
 
-    }else if(opers === 'Trip Calculator'){
+    }else if(opers === 'trip calculator'){
       num1 = parseFloat(prompt('please enter your distance'))
       num2 = parseFloat(prompt('please enter your fuel efficiency (mpg)'))
       var gallon = parseFloat(prompt('please enter your cost per gallon'))
