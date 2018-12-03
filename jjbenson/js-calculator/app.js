@@ -10,6 +10,14 @@
 
 var exitCalculator = false
 CALCULATOR: while (!exitCalculator){
+  var type
+  while(!(type==='a'||type==='b')){
+    type = prompt('Select the (B)asic or (A)dvance calculator')
+  }
+
+  if(type='a'){
+
+  }else if(type='b'){
 
   var exitCalculation = false
   CALCULATION:while(!exitCalculation){
@@ -84,17 +92,14 @@ CALCULATOR: while (!exitCalculator){
           break
 
         default:
+          error = operation +' is not an option!\n'
           operation=null
-          error = 'That is not an option!\n'
           console.log(error)
 
       }
 
     }
-    // var test = confirm('Cancel Calculation?')
-    // console.log(test)
-
-
+  }
 
     promptText = 'Enter the first Value'
 
@@ -104,54 +109,38 @@ CALCULATOR: while (!exitCalculator){
 
       n1 = prompt(error + helper + promptText)
       console.log('HERE'+n1)
+      error = n1 +' is not a Number!\n'
 
       if(n1===null){
         if(confirm('Cancel Calculation?')){
           n1 = 'null'
           break CALCULATION
         }
+        error = ''
       }
+
       n1 = parseFloat(n1)
 
-      error = 'That is Not a Number!\n'
     }
 
     promptText = 'Enter the second Value'
     error = ''
     while(isNaN(n2)){
       n2 = prompt(error + helper + promptText)
+      error = n2 +' is not a Number!\n'
+
       if(n1===null){
         if(confirm('Cancel Calculation?')){
           n1 = 'null'
           n2 = 'null'
           break CALCULATION
         }
+        error = ''
       }
-      console.log('n2' + n2)
+
       n2 = parseFloat(n2)
 
-      error = 'That is Not a Number!\n'
     }
-    // }
-    // while(isNaN(n2)){
-    //   n2 = parseFloat(prompt(error + helper + promptText))
-    //   error = 'That is Not a Number!\n'
-    // }
-
-    // if ((typeof n1) === Number){
-    //   console.log(typeof n1)
-    //   // var n2 = parseFloat(prompt('Enter the second Value'))
-    // }else{
-    //   error = 'n1 is not a number'
-    // }
-
-    // if ((typeof n2)=== Number){
-    //
-    // }else{
-    //   error = 'n2 is not a number'
-    //
-    // }
-
 
     switch(operation){
 
