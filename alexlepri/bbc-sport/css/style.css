@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #ffd230;
+
+}
+
+.navbar-item {
+  border-left: 1px solid;
+  margin: 0;
+  height: 30px;
+  border-left: 1px solid black;
+  display: flex;
+  margin-left: 16px;
+  margin: 0 auto;
+}
+
+.navbar-item:first-child {
+  border-left: none;
+  border-bottom: 3px solid black;
+}
+
+.hero {
+  height: 55px;
+}
+
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  margin-left: 12px;
+  border-top: 1px solid black;
+}
+
+.pictures {
+  margin-top: 30px;
+  width: auto;
+}
+
+.title .container {
+  margin-bottom: -40px;
+}
