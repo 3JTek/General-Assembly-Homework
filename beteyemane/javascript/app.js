@@ -16,12 +16,14 @@ while (running) {
     console.log(secondNumber)
 
     switch(operator) {
-      case '+' : alert(firstNumber + secondNumber); break
-      case '-' : alert(firstNumber - secondNumber); break
-      case '*' : alert(firstNumber * secondNumber); break
-      case '/' : alert(firstNumber / secondNumber); break
+      case '+' : (firstNumber + secondNumber); break
+      case '-' : (firstNumber - secondNumber); break
+      case '*' : (firstNumber * secondNumber); break
+      case '/' : (firstNumber / secondNumber); break
       default : alert('Not a correct operation')
     }
+    var answer = (firstNumber + secondNumber)
+    alert(answer)
 
   } else if(userInput === 'a') {
     firstNumber = parseFloat(prompt('Enter the first number'))
@@ -39,8 +41,7 @@ while (running) {
       default : alert('Not a correct operation')
     }
 
-    var answer = (firstNumber + secondNumber)
-
-    alert(answer)
+    answer = (firstNumber + secondNumber)
   }
+  running = confirm('Your answer is ' + answer + '\nPress ok to start this wonderful calculator')
 }
