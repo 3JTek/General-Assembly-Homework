@@ -44,8 +44,13 @@ while (true) {
 
 switch (action) {
   case '+': alert(firstValue + secondValue)
+    break
   case '-': alert(firstValue - secondValue)
+    break
   case '*': alert(firstValue * secondValue)
+    break
   case '/': alert(firstValue / secondValue)
+    break
   default: alert('Not a correct operation')
+    break
 }
