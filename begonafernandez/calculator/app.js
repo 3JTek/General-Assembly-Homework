@@ -1,8 +1,10 @@
-//What operation does the user want to do?
-
+var userImput
 var operation
+var firstNumber
+
+//What operation does the user want to do?
 while(!operation) {
-  var userImput = prompt('What operation do you wish? Sum, Substraction, Divition or Multiplication')
+  userImput = prompt('What operation do you wish? Sum, Substraction, Divition or Multiplication')
   switch(userImput.toLowerCase()) {
     case 'sum':
       operation = '+'
@@ -16,17 +18,16 @@ while(!operation) {
     case 'Multiplication':
       operation = '*'
       break
-    default:
-      alert('Do not understand. please try again')
   }
+  console.log(operation)
 }
 
-console.log(operation)
-
-
-
 // what is the first number?
-
+while(isNaN(firstNumber)) {
+  userImput = prompt('What is the first number?')
+  firstNumber = parseFloat(userImput)
+  console.log(firstNumber)
+}
 // what is the second number?
 
 // Add the three inputs together and show box with the answer and option to do another operation
