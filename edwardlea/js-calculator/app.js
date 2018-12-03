@@ -17,6 +17,8 @@ while(calculator){
 
   // Ask user for type of calculator
   type = prompt('What type of calculator do you want? (b)asic, (a)dvanced, (mo)rtage, (BM)I, (t)rip calculator')
+
+
   if(type === 'basic' || type === 'b'){
 
     // Ask user what operation they want to perform using prompt
@@ -24,6 +26,10 @@ while(calculator){
 
     // Ask user for first number
     numberOne = parseFloat(prompt('Please enter first number'))
+
+    while(typeOf(numberOne) !== number){
+
+    }
 
     // Ask user for second number
     numberTwo = parseFloat(prompt('Please enter second number'))
@@ -75,15 +81,12 @@ while(calculator){
     // Ask user for interest rate
     rate = ((parseFloat(prompt('Please enter interest rate as a percentage:')))/100)/12
 
-    console.log(loanAmount)
-    console.log(period)
-    console.log(rate)
+    // Monthly repayments calcuated using
+    answer = (loanAmount*((rate*(Math.pow(1+rate,period)))/((Math.pow((1 +rate), period)-1)))).toFixed(2)
 
+    // Alert monthly mortage repayments to user
+    alert('The answer is: £' + answer)
 
-
-
-
-    alert('Feature not ready yet!')
   } else if(type === 'BMI' || type === 'bm'){
     alert('Feature not ready yet!')
 
