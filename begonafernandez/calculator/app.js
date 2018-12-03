@@ -10,11 +10,11 @@ typeOfCalculator = prompt('Do you want the advanced calculator(a) or the basic c
 // if basic
 if(typeOfCalculator === 'b') {
   //What operation does the user want to do?
-  operator = prompt('What operation do you wish? Sum(s), Substraction, Division or Multiplication').toLowerCase()
-
+  operator = prompt('What operation do you wish? Sum, Substraction, Division or Multiplication').toLowerCase()
 
   // what is the first number?
   firstNumber = parseFloat(prompt('What is the first number?'))
+
   // what is the second number?
   secondNumber = parseFloat(prompt('What is the second number?'))
 
@@ -43,9 +43,11 @@ if(typeOfCalculator === 'b') {
   if(operator === 'square root') {
     firstNumber = prompt('What number do you want to square root?')
     result = Math.sqrt(firstNumber)
-  } else {
+  } else if (operator === 'power') {
     firstNumber = prompt('What number do you want to square?')
     result = Math.pow(firstNumber, 2)
+  } else {
+    confirm('not valid type of operation')
   }
   //if invalid
 } else {
