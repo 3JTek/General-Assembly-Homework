@@ -15,16 +15,11 @@ if(typeOfCalculator === 'b') {
 
 
   // what is the first number?
-  while(isNaN(firstNumber)) {
-    firstNumber = parseFloat(prompt('What is the first number?'))
-    // firstNumber = parseFloat(userImput)
-  }
+  firstNumber = parseFloat(prompt('What is the first number?'))
   // what is the second number?
-  while(isNaN(secondNumber)) {
-    secondNumber = parseFloat(prompt('What is the second number?'))
-  }
+  secondNumber = parseFloat(prompt('What is the second number?'))
 
-  // Add the three inputs together and show box with the answer
+  // Add the three inputs together
   switch(operator.toLowerCase()) {
     case 'sum':
       result = firstNumber + secondNumber
@@ -53,10 +48,9 @@ if(typeOfCalculator === 'b') {
     firstNumber = prompt('What number do you want to square?')
     result = Math.pow(firstNumber, 2)
   }
-
-
+  //if invalid
 } else {
   confirm('not valid type of calculator')
 }
-
+//  show box with the answer
 confirm(result)
