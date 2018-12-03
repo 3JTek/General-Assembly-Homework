@@ -4,7 +4,7 @@ var running = true
 var answer
 
 while(running) {
-  var calcType = prompt('What would you like to calculate? Choose (s)imple maths, (a)dvanced maths or (m)ortgage')
+  var calcType = prompt('What would you like to calculate? Choose (s)imple maths, (a)dvanced maths, (m)ortgage or (bmi)')
 
   //Simple Math Calculator
   if (calcType === 's') {
@@ -13,7 +13,7 @@ while(running) {
     var firstNumber = prompt('What is your first number?')
 
     firstNumber= parseFloat(firstNumber)
-     
+
     var secondNumber = prompt('What is your second number?')
 
     secondNumber= parseFloat(secondNumber)
@@ -79,6 +79,21 @@ while(running) {
 
     alert('Your monthly mortgage repayemnts will be £' + answer.toFixed(2))
 
+  //BMI Calculator
+  } else if(calcType === 'bmi') {
 
+    var weight = prompt('What is your weight in kilograms? Exclude kg at the end of your weight.')
+
+    weight = parseFloat(weight)
+
+    var height = prompt('What is your height in meters? Exclude m at the end of your height.')
+
+    height = parseFloat(height)
+
+    answer = weight/(Math.sqrt(height))
+
+    alert('Your Body Mass Index is ' + answer.toFixed(1) + 'kg/m^2')
   }
+
+  //Trip Calculator
 }
