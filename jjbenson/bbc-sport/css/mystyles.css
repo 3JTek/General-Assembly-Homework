@@ -59,9 +59,9 @@ nav.navbar, nav.navbar-article {
     margin-left: 0 !important;
     align-items: center; }
 
-.main .navbar-menu.is-active .navbar-item, .main .is-active.navbar-menu-article .navbar-item, .main .navbar-menu.is-active .navbar-item-article, .main .is-active.navbar-menu-article .navbar-item-article {
+.navbar-menu.is-active .navbar-item, .is-active.navbar-menu-article .navbar-item, .navbar-menu.is-active .navbar-item-article, .is-active.navbar-menu-article .navbar-item-article {
   margin-top: 0; }
-  .main .navbar-menu.is-active .navbar-item:hover, .main .is-active.navbar-menu-article .navbar-item:hover, .main .navbar-menu.is-active .navbar-item-article:hover, .main .is-active.navbar-menu-article .navbar-item-article:hover, .main .navbar-menu.is-active .navbar-item.is-active, .main .is-active.navbar-menu-article .navbar-item.is-active, .main .navbar-menu.is-active .is-active.navbar-item-article, .main .is-active.navbar-menu-article .is-active.navbar-item-article {
+  .navbar-menu.is-active .navbar-item:hover, .is-active.navbar-menu-article .navbar-item:hover, .navbar-menu.is-active .navbar-item-article:hover, .is-active.navbar-menu-article .navbar-item-article:hover, .navbar-menu.is-active .navbar-item.is-active, .is-active.navbar-menu-article .navbar-item.is-active, .navbar-menu.is-active .is-active.navbar-item-article, .is-active.navbar-menu-article .is-active.navbar-item-article {
     background-color: #121212;
     color: #ffd637; }
 
