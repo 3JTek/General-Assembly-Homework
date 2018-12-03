@@ -5,18 +5,37 @@ console.log('working')
 // prompt user to enter a second number
 // generate an alert displaying value of calculation
 
-var firstValue = prompt('Please enter an initial number')
+var action
+
+var firstValue = parseFloat(prompt('Please enter an initial number'))
 console.log(firstValue)
 
-var action = prompt('Please enter a modifier of +, *, - or /')
-console.log(action)
+while(true) {
+  action = prompt('Please enter a modifier of +, *, - or /')
+  console.log(action)
+  if (action === '+' || action === '*' || action === '-' || action === '/') {
+    break
+  } else{
+    alert("Please enter a valid function")
+  }
+}
 
-var secondValue = prompt('Please enter a second number')
+
+
+
+// while (action !== '+' || action !== '*' || action !== '-' || action !== '/') {
+//   alert('Input not valid')
+//   break
+// }
+
+var secondValue = parseFloat(prompt('Please enter a second number'))
 console.log(secondValue)
 
+
 switch (action) {
-  case "+": alert(parseInt(firstValue) + parseInt(secondValue))
-  case "-": alert(parseInt(firstValue) - parseInt(secondValue))
-  case "*": alert(parseInt(firstValue) * parseInt(secondValue))
-  case "/": alert(parseInt(firstValue) / parseInt(secondValue))
+  case "+": alert(firstValue + secondValue)
+  case "-": alert(firstValue - secondValue)
+  case "*": alert(firstValue * secondValue)
+  case "/": alert(firstValue / secondValue)
+  default: alert('Not a correct operation')
 }
