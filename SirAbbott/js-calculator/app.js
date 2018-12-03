@@ -1,9 +1,8 @@
 // Create a calculator that takes input from the browser. The calculator should display the results using alert.
 
 var calculating = true
-var num1
-var num2
-var operator
+var operator, firstNumber, secondNumber, answer
+
 
 while (calculating) {
 
@@ -11,22 +10,27 @@ while (calculating) {
 
   if (calcType === 'b') {
 
-    operator = prompt('What would you like to do? +, -, *, / ')
-    var firstNumber = parseInt(prompt('Enter the first number you would like to use'))
-    var secondNumber = parseInt(prompt('Enter the second number you would like to use'))
-    var answer = eval((firstNumber + operator + secondNumber))
+    operator = prompt('+, -, * or / ')
+    firstNumber = parseInt(prompt('Enter the first number you would like to use'))
+    secondNumber = parseInt(prompt('Enter the second number you would like to use'))
 
-    alert('Your answer is ' + answer)
+    answer = eval((firstNumber + operator + secondNumber))
+    // alert('Your answer is ' + answer)
+
   } else if (calcType === 'a') {
 
     operator = prompt('(s)quare root or (p)ower')
-    num1 = parseInt(prompt('What is your first number'))
+    firstNumber = parseInt(prompt('What is your first number'))
+
   }
+
   if (operator === 's') {
-    alert(Math.sqrt(num1))
+    answer = Math.sqrt(firstNumber)
   } else if (operator === 'p') {
-    num2 = parseInt(prompt('What is your second number'))
+    secondNumber = parseInt(prompt('What is your second number'))
+    answer = Math.pow(firstNumber, secondNumber)
   }
-  alert(Math.pow(num1, num2))
+
+  calculating = confirm('Your answer is ' + answer + '\nPress ok to calculate again or cancel to exit')
 
 }
