@@ -15,7 +15,7 @@ CALCULATOR: while (!exitCalculator){
     type = prompt('Select the (B)asic or (A)dvance calculator')
   }
 
-  if(type='a'){
+  if(type==='a'){
     var exitCalculation = false
     CALCULATION:while(!exitCalculation){
       var operation = null
@@ -56,24 +56,21 @@ CALCULATOR: while (!exitCalculator){
           case 'square':
           case 'squareroot':
           case 'root':
-          operation = '√'
-          helper = 'Square: n1 = X\n'
-          break
+            operation = '√'
+            helper = 'Square: n1 = X\n'
+            break
 
           case 'p':
           case 'power':
           case '^':
-          operation = '^'
-          helper = 'Power: n1 ^ n2 = X\n'
-
-          break
-
-
+            operation = '^'
+            helper = 'Power: n1 ^ n2 = X\n'
+            break
 
           default:
-          error = operation +' is not an option!\n'
-          operation=null
-          console.log(error)
+            error = operation +' is not an option!\n'
+            operation=null
+            console.log(error)
 
         }
 
@@ -102,7 +99,7 @@ CALCULATOR: while (!exitCalculator){
 
       }
       console.log('operation!'+ type)
-      if(operation!='√'){
+      if(operation!=='√'){
         promptText = 'Enter the second Value'
         error = ''
         while(isNaN(n2)){
@@ -127,12 +124,12 @@ CALCULATOR: while (!exitCalculator){
       switch(operation){
 
         case '√': result = Math.sqrt(n1)
-        alert(operation+' '+ n1 +' = ' + result)
-        break
+          alert(operation+' '+ n1 +' = ' + result)
+          break
 
         case '^': result = Math.pow(n1,n2)
-        alert(n1+' '+operation+' '+ n2 +' = ' + result)
-        break
+          alert(n1+' '+operation+' '+ n2 +' = ' + result)
+          break
 
       }
 
@@ -141,14 +138,14 @@ CALCULATOR: while (!exitCalculator){
       console.log('n2: '+n2)
       console.log('Result:'+result)
     }
-  }else if(type='b'){
+  }else if(type==='b'){
     //BASIC CALCULATOR
-    var exitCalculation = false
+    exitCalculation = false
     CALCULATION:while(!exitCalculation){
-      var operation = null
-      var promptText = 'Choose An Operation: (A)dd, (S)ubtract, (M)ultiply (D)ivide'
-      var error = ''
-      var helper = ''
+      operation = null
+      promptText = 'Choose An Operation: (A)dd, (S)ubtract, (M)ultiply (D)ivide'
+      error = ''
+      helper = ''
 
       // while(operation !== ('+'||'-'||'*'||'/')){
       while((operation !== '+')&&
@@ -156,8 +153,8 @@ CALCULATOR: while (!exitCalculator){
       (operation !== '*')&&
       (operation !== '/')){
 
-        var n1 = NaN
-        var n2 = NaN
+        n1 = NaN
+        n2 = NaN
 
         while(operation === null){
           operation = prompt(error + promptText)
@@ -172,10 +169,10 @@ CALCULATOR: while (!exitCalculator){
           }
         }
 
-        var operationString = ''
+        operationString = ''
         error = ''
 
-        var result
+        result = undefined
         operation = operation.toLowerCase()
         console.log('While not valid operation ' + operation)
 
@@ -185,40 +182,40 @@ CALCULATOR: while (!exitCalculator){
           case 'add':
           case 'plus':
           case '+':
-          operation = '+'
-          helper = 'Add: n1 + n2 = X\n'
-          break
+            operation = '+'
+            helper = 'Add: n1 + n2 = X\n'
+            break
 
           case 's':
           case 'subtract':
           case 'minus':
           case '-':
-          operation = '-'
-          helper = 'Subtract: n1 - n2 = X\n'
+            operation = '-'
+            helper = 'Subtract: n1 - n2 = X\n'
 
-          break
+            break
 
           case 'm':
           case 'multiply':
           case 'times':
           case '*':
-          operation = '*'
-          helper = 'Multiply: n1 * n2 = X\n'
+            operation = '*'
+            helper = 'Multiply: n1 * n2 = X\n'
 
-          break
+            break
 
           case 'd':
           case 'divide':
           case '/':
-          operation = '/'
-          helper = 'Divide: n1 / n2 = X\n'
+            operation = '/'
+            helper = 'Divide: n1 / n2 = X\n'
 
-          break
+            break
 
           default:
-          error = operation +' is not an option!\n'
-          operation=null
-          console.log(error)
+            error = operation +' is not an option!\n'
+            operation=null
+            console.log(error)
 
         }
 
@@ -269,16 +266,16 @@ CALCULATOR: while (!exitCalculator){
       switch(operation){
 
         case '+': result = n1 + n2
-        break
+          break
 
         case '-': result = n1 - n2
-        break
+          break
 
         case '*': result = n1 * n2
-        break
+          break
 
         case '/': result = n1 / n2
-        break
+          break
 
       }
       alert(n1+' '+operation+' '+ n2 +' = ' + result)
