@@ -5,6 +5,8 @@ while(calc){
   var op = ''
   var num1 = NaN
   var num2 = NaN
+  var num3 = NaN
+  var num4 = NaN
   var result = 0
 
   // prompt the user to select basic or advanced calculator
@@ -30,8 +32,8 @@ while(calc){
 
   }else {
     // prompt the user to select an advanced operation
-    while (!(op==='p'||op==='s')){
-      op = prompt('Select an operation: (p)ower or (s)quare-root')
+    while (!(op==='p'||op==='s'||op==='m')){
+      op = prompt('Select an operation: (p)ower, (s)quare-root or (m)ortgage')
     }
     switch(op){
       case 'p':
@@ -49,6 +51,20 @@ while(calc){
           num1 = parseFloat(prompt('Please enter a number (radicant)'))
         }
         result = Math.sqrt(num1)
+        break
+
+      case 'm':
+        while(isNaN(num1)){
+          num1 = parseFloat(prompt('Please enter the principal of the loan'))
+        }
+        while(isNaN(num2)){
+          num2 = parseFloat(prompt('Please enter the interest rate'))
+        }
+        while(isNaN(num3)){
+          num3 = parseFloat(prompt('Please enter the number of payments'))
+        }
+        result = num1*((num2*Math.pow(1+num2, num3))/(Math.pow(1+num2, num3)-1))
+        break
     }
   }
 
