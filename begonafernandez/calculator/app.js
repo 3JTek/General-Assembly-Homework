@@ -1,7 +1,6 @@
 
 var typeOfCalculator
 var operator
-var advancedOperator
 var firstNumber
 var secondNumber
 var result
@@ -40,8 +39,8 @@ if(typeOfCalculator === 'b') {
 
 } else if (typeOfCalculator === 'a') {
   // if advanced
-  advancedOperator = prompt('Do you want to square root or power a number?')
-  if(advancedOperator === 'square root') {
+  operator = prompt('Do you want to square root or power a number?')
+  if(operator === 'square root') {
     firstNumber = prompt('What number do you want to square root?')
     result = Math.sqrt(firstNumber)
   } else {
