@@ -1,13 +1,11 @@
 
 .navbar .container {
   display: block;
-
 }
-
 .navbar-brand {
   font-family: sans-serif;
   color: black;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 45px;
   border-bottom: 1px solid black;
 }
@@ -23,7 +21,9 @@
 .navbar-start .navbar-item {
   border-right: 1px solid black;
 }
-
+.navbar-start .navbar-item:nth-of-type(1) {
+  border-bottom: 3px solid black;
+}
 .columns {
   margin-top: 0;
   margin-bottom: 0;
@@ -31,4 +31,8 @@
 }
 section:nth-of-type(2) {
   margin-bottom: 15px
+}
+p {
+  font-family: sans-serif;
+  color: black;
 }
