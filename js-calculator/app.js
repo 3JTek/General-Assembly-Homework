@@ -4,7 +4,7 @@ var running = true
 var answer
 
 while(running) {
-  var calcType = prompt('What would you like to calculate? Choose (s)imple maths, (a)dvanced maths, (m)ortgage or (bmi)')
+  var calcType = prompt('What would you like to calculate? Choose (s)imple maths, (a)dvanced maths, (m)ortgage, (bmi) or (trip)')
 
   //Simple Math Calculator
   if (calcType === 's') {
@@ -93,7 +93,37 @@ while(running) {
     answer = weight/(Math.sqrt(height))
 
     alert('Your Body Mass Index is ' + answer.toFixed(1) + 'kg/m^2')
-  }
 
   //Trip Calculator
+  } else if(calcType === 'trip') {
+
+    var distance = prompt('How far are you travelling in miles? Enter only a number.')
+
+    distance = parseFloat(distance)
+
+    var speed = prompt('How fast will you be driving in miles per hour? Enter only a number.')
+
+    speed = parseFloat(speed)
+
+    var mpg = prompt('What milage in mpg does your car get? Enter only a number.')
+
+    mpg = parseFloat(mpg)
+
+    var cost = prompt('What is the current price of a gallon petrol? Exclude any currency symbols.')
+
+    cost = parseFloat(cost)
+
+    for(var i = 60; i < speed; i++) {
+      mpg = mpg-2
+    }
+
+    if (mpg <=0) {
+      alert('You are driving too fast. Please operate your vehicle with care!')
+    }
+
+    var journeyTime = distance/speed
+    var journeyCost = distance*(cost*mpg)
+
+    alert('Your journey will take ' + journeyTime.toFixed(1) + ' hours and will cost £' + journeyCost.toFixed(2) + '.')
+  }
 }
