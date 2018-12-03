@@ -4,6 +4,7 @@
 
 body{
   color: black;
+
 }
 
 .title {
@@ -18,24 +19,20 @@ a{
   color: black;
 }
 
-main{
-  margin-top: 10px;
-  padding: 10px;
-}
-
 .hero{
   display: none;
-  .is-primary{
-    background-color: #ffd230;
+}
 
-    .title {
-      color: black;
-    }
-
+.hero.is-primary{
+  background-color: #ffd230;
+  .title {
+    color: black;
   }
 }
 
-
+.navbar{
+  min-height: 0;
+}
 
 .navbar.is-primary {
   background-color: #ffd230;
@@ -45,26 +42,14 @@ main{
   min-height: 0;
 }
 
-.nav.navbar{
-  min-height: 0;
-}
 .navbar-brand{
   min-height: 0;
 }
-
-.navbar{
-  min-height: 0;
-}
-
 
 .navbar-menu{
   border-top: 1px solid rgba(18,18,18,0.2);
   height: 30px;
 }
-
-
-/* Sport brand */
-
 
 .navbar.is-primary .navbar-start>a.navbar-item:hover {
   background-color: transparent;
@@ -79,14 +64,19 @@ main{
   color: black;
 }
 
-
-
-
-
-
 .navbar.is-primary .navbar-start>.navbar-item:last-child{
   border-right: none;
+}
 
+div.column:hover{
+  opacity: 0.5
+}
+
+
+@media screen and (max-width: 769px) {
+  main{
+    margin: 10px 5px 5px 5px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -94,18 +84,12 @@ main{
     margin-left: 10px;
     margin-right: 10px;
   }
-  navbar.is-primary .navbar-brand>.navbar-item {
-    background-color: #eee;
-    display: auto;
-  }
+
+  main {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
-
-
-@media screen and (min-width: 769px) {
-  main>.container{
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 
   navbar.is-primary .navbar-brand>.navbar-item {
     background-color: #eee;
@@ -116,11 +100,12 @@ main{
     padding:5px;
   }
 }
+
 @media screen and (min-width: 1088px) {
-  main>.container{
-    margin: auto;
-    div.column{
-      padding:5px;
+  .hero{
+    display: flex;
+    .hero-body{
+      padding: 2px;
     }
   }
 
@@ -129,10 +114,15 @@ main{
     display: none;
   }
 
-  .hero{
-    display: flex;
-    .hero-body{
-      padding: 2px;
+  main>.container{
+    margin: auto;
+    div.column{
+      padding:5px;
     }
+  }
+
+  main{
+    margin-top: 10px;
+    padding: 10px;
   }
 }
