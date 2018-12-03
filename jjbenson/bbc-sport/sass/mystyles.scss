@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+@fontface {
+  font-family:"bbcReith";
+  src:url(../bbc_reith/BBCReithSerif_W-Rg.otf);
+}
+@import "../bulma-0.7.2/sass/utilities/initial-variables.sass";
+
+
+// Set your brand colors
+$yellow:#ffd637;
+$blue:#195bfe;
+$dark-yellow:#dbb830;
+$dark-grey:#565656;
+$black:#121212;
+$transparent:rgba(0, 0, 0, 0);
+
+$navbar-item-padding-v:0.2rem;
+$navbar-item-padding-h:0.5rem;
+
+// Update Bulma's global variables
+$family-sans-serif: "bbcReith", sans-serif;
+$grey-dark: $dark-grey;
+$primary: $yellow;
+
+// Update some of Bulma's component variables
+$navbar-background-color:$yellow;
+$navbar-item-color:$black;
+$navbar-item-hover-color:$black;
+$navbar-item-hover-background-color:$yellow;
+$navbar-height:1rem;
+$navbar-breakpoint: $tablet;
+
+// $size-1: 3rem !default
+// $size-2: 2.5rem !default
+$size-3: 2.375rem;
+// $size-4: 1.5rem !default
+// $size-5: 1.25rem !default
+// $size-6: 1rem !default
+$size-7: 0.875rem;
+
+$title-color: $black;
+$section-padding: 1rem 1rem;
+$column-gap:0.5rem;
+$footer-padding:3rem;
+
+img {
+  width:100%;
+}
+div.line {
+  height:1rem;
+  width:1px;
+  position: relative;
+  left:$navbar-item-padding-h;
+  background-color: $dark-yellow;
+}
+.section-nav{
+  padding:$section-padding;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 1px solid $dark-yellow;
+}
+.section-title{
+  padding:$section-padding;
+  padding-top:12px;
+  padding-bottom:8px;
+}
+article {
+  a {
+    display:block;
+  }
+  h2 {
+    line-height: 1.5rem;
+  }
+  .title {
+    padding-top: 0.5rem;
+  }
+  .subtitle {
+    display:none;
+  }
+  &:hover {
+    .title{
+      color:$blue !important;
+      text-decoration: underline;
+    }
+  }
+}
+article.featured{
+  .subtitle {
+    display:block;
+  }
+}
+h1.title {
+  &:not(:last-child){
+    margin-bottom:0;
+  }
+}
+.navbar-article{
+  @extend .navbar;
+  background-color: white;
+}
+.navbar-menu-article{
+  @extend .navbar-menu;
+  background-color: white;
+}
+.navbar-start-article{
+  @extend .navbar-start;
+  background-color: white;
+}
+.navbar-item-article{
+  @extend .navbar-item;
+  background-color: white;
+  border:0px solid black;
+}
+nav.navbar.main {
+  min-height:0;
+  .navbar-brand{
+    margin-left:0 !important;
+    align-items: center;
+  }
+}
+.main .navbar-menu{
+  &.is-active{
+    .navbar-item{
+      margin-top:0;
+      &:hover,
+      &.is-active {
+        background-color: $black;
+        color:$yellow;
+      }
+    }
+  }
+}
+.main a.navbar-item,
+.navbar-link{
+  padding: $navbar-item-padding-v;
+  padding-left:$navbar-item-padding-h;
+  padding-right:$navbar-item-padding-h;
+  border-bottom: 4px solid $yellow;
+  &.is-active,
+  &:hover {
+    border-bottom: 4px solid $black;
+  }
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.site-content {
+  flex: 1;
+}
+span.live{
+  position: relative;
+  left:-4px;
+  color: $blue;
+  text-transform: uppercase;
+  font-size: inherit;
+  text-decoration: none !important;
+}
+@keyframes PULSE {
+  0% { opacity: 1; }
+  75% { opacity: 0.25; }
+  100%  { opacity: 1; }
+}
+.ring{
+  $my-size:1.1rem;
+  width:$my-size;
+  height: $my-size;
+  position: relative;
+  border-radius: $my-size/2;
+  background:radial-gradient(white 0%, white 50%, $blue 55%,  $blue 100% );
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  .center{
+    width:$my-size;
+    height: $my-size;
+    border-radius: $my-size/2;
+    background:radial-gradient($blue 0%, $blue 40%, white 45%, white 50%, $blue 55%, $blue 100% );
+    animation:PULSE 2s infinite;
+  }
+}
+footer {
+  background-color: $dark-grey!important;
+  color:white;
+  a {
+    color:white;
+    white-space: nowrap;
+    &:hover{
+      color:white;
+      text-decoration:underline;
+    }
+  }
+}
+
+//phone
+@media screen and (max-width: $tablet){
+  .section-nav {
+    padding:0;
+  }
+  .line{
+    display: none;
+  }
+}
+// $tablet
+@media screen and (min-width: $tablet){
+
+}
+// $desktop
+@media screen and (min-width: $desktop){
+
+}
+
+// Import only what you need from Bulma
+
+// @import "../bulma-0.7.2/bulma.sass";
+@import "../bulma-0.7.2/sass/utilities/_all.sass";
+@import "../bulma-0.7.2/sass/base/_all.sass";
+@import "../bulma-0.7.2/sass/elements/container.sass";
+@import "../bulma-0.7.2/sass/layout/section.sass";
+@import "../bulma-0.7.2/sass/elements/title.sass";
+@import "../bulma-0.7.2/sass/components/navbar.sass";
+@import "../bulma-0.7.2/sass/grid/_all.sass";
