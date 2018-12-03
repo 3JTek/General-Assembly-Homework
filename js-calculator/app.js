@@ -4,14 +4,20 @@ var running = true
 var answer
 
 while(running) {
-  var calcType = prompt('What would you like to calculate? Choose (m)ath or (mort)gage')
+  var calcType = prompt('What would you like to calculate? Choose (s)imple maths, (a)dvanced maths or (m)ortgage')
 
-  if (calcType === 'm') {
-    var operator = prompt('What would you like to do? Choose (a)dd, (s)ubtract, (m)ultiply or (d)ivide? Enter a, s, m or d.')
+  //Simple Math Calculator
+  if (calcType === 's') {
+    var operator = prompt('What would you like to do? Choose (a)dd, (s)ubtract, (m)ultiply or (d)ivide?')
+
     var firstNumber = prompt('What is your first number?')
+
     firstNumber= parseFloat(firstNumber)
+     
     var secondNumber = prompt('What is your second number?')
+
     secondNumber= parseFloat(secondNumber)
+
     if (operator === 'a') {
       answer = firstNumber + secondNumber
     } else if (operator === 's') {
@@ -22,9 +28,57 @@ while(running) {
       answer = firstNumber / secondNumber
     }
     alert('Your answer is ' + answer)
-  } else
 
-  if (calcType === 'mort'){
-    alert('Congrats, you are in debt for 30 years')
+  //Advanced Math Calculator
+  } else if (calcType === 'a') {
+    var advancedOperator = prompt('What would you like to calculate? Choose square (root) or (pow)er?')
+
+    //Square Root Calculator
+    if (advancedOperator === 'root') {
+      firstNumber = prompt('What would you like to caculate the square root of? Enter a number.')
+
+      firstNumber= parseFloat(firstNumber)
+
+      answer = Math.sqrt(firstNumber)
+
+      alert('The square root of ' + firstNumber + ' is ' + answer)
+
+
+    //Power Calculator
+    } else if (advancedOperator === 'pow') {
+      firstNumber = prompt('What is your first number?')
+
+      firstNumber= parseFloat(firstNumber)
+
+      secondNumber = prompt('What would you like to calculate ' + firstNumber + ' to the power of?')
+
+      secondNumber= parseFloat(secondNumber)
+
+
+      answer = Math.pow(firstNumber, secondNumber)
+      alert(firstNumber + ' to the power of ' + secondNumber + ' is ' + answer)
+    }
+
+  // Mortgage Calculator ***Not sure that the calculation itself works, but the calculator does***
+  } else if (calcType === 'm'){
+    var loanAmount = prompt('How much do you need to borrow? Exclude currency symbols.')
+
+    loanAmount = parseFloat(loanAmount)
+
+    var interestRate = prompt('What is your interest rate? Exclude the % symbol')
+
+    interestRate = parseFloat(interestRate)
+    interestRate = interestRate/100
+
+
+    var length = prompt('How many months would you like to pay back the mortgage over?')
+
+    length = parseInt(length)
+
+    answer = (loanAmount + (loanAmount*interestRate)) / length
+
+    alert('Your monthly mortgage repayemnts will be £' + answer.toFixed(2))
+
+
   }
 }
