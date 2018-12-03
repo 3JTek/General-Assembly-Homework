@@ -1,7 +1,7 @@
-
-* { $box-sizing:
-  border-box;
-}
+//
+// * {
+//   $box-sizing: border-box;
+// }
 
 $background-color: black;
 $foreground-color: blue;
@@ -9,22 +9,22 @@ $foreground-color: blue;
 //   border: 3px solid $background-color;
 // }
 main {
-  $display: flex;
+  display: flex;
 }
 body {}
 header{}
 section {
-    $display: flex;
-    $width: 50%;
-    $max-width: 900px;
-    $flex-direction: column;
+    display: flex;
+    width: 50%;
+    max-width: 900px;
+    flex-direction: column;
 }
 section {
-  $background-color: red;
-  $width: 900px;
-  $margin: 0 auto;
-  $display: flex;
-  $flex-direction: column;
+  background-color: red;
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 form {}
 form {}
