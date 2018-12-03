@@ -18,9 +18,14 @@ CALCULATOR: while (!exitCalculator){
     var error = ''
     var helper = ''
 
-    while(operation !== ('+'||'-'||'*'||'/')){
-      var n1 = null
-      var n2 = null
+    // while(operation !== ('+'||'-'||'*'||'/')){
+    while((operation !== '+')&&
+        (operation !== '-')&&
+        (operation !== '*')&&
+        (operation !== '/')){
+
+      var n1 = NaN
+      var n2 = NaN
 
       while(operation === null){
         operation = prompt(error + promptText)
@@ -65,7 +70,7 @@ CALCULATOR: while (!exitCalculator){
         case 'multiply':
         case 'times':
         case '*':
-          operation = 'Multiply'
+          operation = '*'
           helper = 'Multiply: n1 * n2 = X\n'
 
           break
@@ -73,13 +78,13 @@ CALCULATOR: while (!exitCalculator){
         case 'd':
         case 'divide':
         case '/':
-          operation = 'Divide'
+          operation = '/'
           helper = 'Divide: n1 / n2 = X\n'
 
           break
 
         default:
-          // operation=''
+          operation=null
           error = 'That is not an option!\n'
           console.log(error)
 
@@ -94,43 +99,37 @@ CALCULATOR: while (!exitCalculator){
     promptText = 'Enter the first Value'
 
     //While n1 is not a valid input ask for valid imput
-    while(typeof n1 !== 'number'){
-      // while(n1 === null){
-      //   n1 = parseFloat(prompt(error + helper + promptText))
-      //   console.log(n1)
-      //   if(n1 === null){
-      //     if(confirm('Exit Calculation?')){
-      //       // exitCalculator = true
-      //       break CALCULATION
-      //     }
-      //   }else{
-      //       console.log(n1)
-      //   }
-      // }
+    // while(typeof n1 !== 'number'){
+    while(isNaN(n1)){
 
-      n1 = parseFloat(prompt(error + helper + promptText))
-      if(isNaN(n1)){
+      n1 = prompt(error + helper + promptText)
+      console.log('HERE'+n1)
+
+      if(n1===null){
         if(confirm('Cancel Calculation?')){
           n1 = 'null'
           break CALCULATION
         }
       }
-      console.log(n1)
+      n1 = parseFloat(n1)
+
       error = 'That is Not a Number!\n'
     }
 
     promptText = 'Enter the second Value'
     error = ''
-    while(typeof n2 !== 'number'){
-      n2 = parseFloat(prompt(error + helper + promptText))
-      if(isNaN(n2)){
+    while(isNaN(n2)){
+      n2 = prompt(error + helper + promptText)
+      if(n1===null){
         if(confirm('Cancel Calculation?')){
           n1 = 'null'
           n2 = 'null'
           break CALCULATION
         }
       }
-      console.log(n2)
+      console.log('n2' + n2)
+      n2 = parseFloat(n2)
+
       error = 'That is Not a Number!\n'
     }
     // }
