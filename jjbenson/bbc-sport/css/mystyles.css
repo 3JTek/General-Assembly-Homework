@@ -53,9 +53,9 @@ h1.title:not(:last-child) {
   background-color: white;
   border: 0px solid black; }
 
-nav.navbar.main, nav.main.navbar-article {
+nav.navbar, nav.navbar-article {
   min-height: 0; }
-  nav.navbar.main .navbar-brand, nav.main.navbar-article .navbar-brand {
+  nav.navbar .navbar-brand, nav.navbar-article .navbar-brand {
     margin-left: 0 !important;
     align-items: center; }
 
