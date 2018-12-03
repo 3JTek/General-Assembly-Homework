@@ -69,6 +69,9 @@ article {
   a {
     display:block;
   }
+  h2 {
+    line-height: 1.5rem;
+  }
   .title {
     padding-top: 0.5rem;
   }
@@ -92,14 +95,31 @@ h1.title {
     margin-bottom:0;
   }
 }
-nav.navbar{
+.navbar-article{
+  @extend .navbar;
+  background-color: white;
+}
+.navbar-menu-article{
+  @extend .navbar-menu;
+  background-color: white;
+}
+.navbar-start-article{
+  @extend .navbar-start;
+  background-color: white;
+}
+.navbar-item-article{
+  @extend .navbar-item;
+  background-color: white;
+  border:0px solid black;
+}
+nav.navbar.main {
   min-height:0;
   .navbar-brand{
     margin-left:0 !important;
     align-items: center;
   }
 }
-.navbar-menu{
+.main .navbar-menu{
   &.is-active{
     .navbar-item{
       margin-top:0;
@@ -111,7 +131,7 @@ nav.navbar{
     }
   }
 }
-a.navbar-item,
+.main a.navbar-item,
 .navbar-link{
   padding: $navbar-item-padding-v;
   padding-left:$navbar-item-padding-h;
@@ -122,6 +142,7 @@ a.navbar-item,
     border-bottom: 4px solid $black;
   }
 }
+
 .site {
   display: flex;
   min-height: 100vh;
