@@ -6,7 +6,7 @@ var operator, firstNumber, secondNumber, answer
 
 while (calculating) {
 
-  var calcType = prompt('(a)dvanced or (b)asic')
+  var calcType = prompt('(a)dvanced, (b)asic or (o)ther')
 
   if (calcType === 'b') {
 
@@ -29,6 +29,20 @@ while (calculating) {
   } else if (operator === 'p') {
     secondNumber = parseInt(prompt('What is your second number'))
     answer = Math.pow(firstNumber, secondNumber)
+  } else if (calcType === 'o') {
+    operator = prompt('(b)mi, (m)ortgage or (t)ravel tips')
+  }
+
+  if (operator === 'b') {
+    var height = parseFloat(prompt('Your height in cm'))
+    var weight = parseFloat(prompt('Your weight in kg'))
+    answer = (weight / Math.pow(height, 2)) * 10000
+  } else if (operator === 'm') {
+    var principle = parseFloat(prompt('Loan amount'))
+    var apr = parseFloat(prompt('Your APR terms') / 100 / 12)
+    var months = parseFloat(prompt('how many months') * 12)
+    answer = principle * apr * (Math.pow(1 + apr, months)) / (Math.pow(1 + apr, months) - 1)
+
   }
 
   calculating = confirm('Your answer is ' + answer + '\nPress ok to calculate again or cancel to exit')
