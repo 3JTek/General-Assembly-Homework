@@ -1,0 +1,40 @@
+@import "variables.scss";
+
+*{
+  box-sizing: border-box;
+}
+header{
+  nav.navbar  {
+    div.container{
+      display:block;
+      div.navbar-brand{
+        margin:0;
+        border-bottom: $nav-border;
+        a{
+          font-weight: 700;
+          font-size: 36px;
+          padding: 0;
+        }
+      }
+      div.navbar-menu{
+        font-size: 14px;
+        a{
+          border-right: $nav-border;
+          padding: 3px 5px;
+        }
+      }
+    }
+  }
+}
+.section{
+  padding: 1em;
+}
+img{
+  width: 100%;
+}
+.column{
+  padding:5px 5px;
+}
+a{
+  margin:0;
+}

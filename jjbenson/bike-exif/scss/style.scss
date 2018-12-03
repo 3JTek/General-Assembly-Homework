@@ -163,7 +163,7 @@ section.section_right {
         font-size: $large_font_size;
         border-width: 0px;
       }
-      @include placeholder ;
+      @include placeholde(white) ;
     }
   }
   div.categories {

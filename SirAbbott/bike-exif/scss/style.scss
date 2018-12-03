@@ -123,6 +123,7 @@ main {
             padding: 5px;
             /* And hide the input's outline, so the form looks like the outline */
             border: none;
+            width: 80%;
           }
 
           button {
@@ -131,7 +132,6 @@ main {
             background: transparent;
             color: $textColor;
           }
-          width: 100%;
         }
       }
       &.subscribe {
@@ -146,15 +146,15 @@ main {
             border: 0;
             border-bottom: 1px solid #fff;
             padding: 10px;
+            display: flex;
 
-            // input::placeholder (normal CSS)
             &::placeholder {
               color: #fff;
               font-size: 15px;
             }
           }
           button {
-            display: inline-block;
+            flex-grow: 1;
             background: transparent;
             color: white;
             border-style: none;
