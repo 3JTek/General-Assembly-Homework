@@ -73,7 +73,7 @@ while(calc){
           num3 = parseFloat(prompt('Please enter the number of payments'))
         }
         // calculate monthly payment and store in result
-        result = num1*((num2*Math.pow(1+num2, num3))/(Math.pow(1+num2, num3)-1))
+        result = (num1*((num2*Math.pow(1+num2, num3))/(Math.pow(1+num2, num3)-1))).toFixed(2)
         break
     }
   }
