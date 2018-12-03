@@ -1,4 +1,4 @@
-var question = prompt('What would you like to do: +, -, *, / or powerof?')
+var question = prompt('What would you like to do: +, -, *, /, power-of or square-root')
 if (question === '+'){
   var add1 = parseFloat(prompt('Enter your first number'))
   var add2 = parseFloat(prompt('Enter your second number'))
@@ -19,11 +19,15 @@ if (question === '+'){
   var divide2 = parseFloat(prompt('Enter your second number'))
   var divide3 = (divide1 / divide2)
   confirm('The answer is ' + divide3)
-} else if (question === 'powerof'){
+} else if (question === 'power-of'){
   var power1 = parseFloat(prompt('Enter your first number'))
   var power2 = parseFloat(prompt('Enter your second number'))
   var power3 = Math.pow(power1,power2)
   confirm('The answer is ' + power3)
+} else if (question === 'square-root'){
+  var square1 = parseFloat(prompt('Enter a number'))
+  var square2 = Math.sqrt((square1))
+  confirm('the answer is ' + square2)
 } else {
   alert('Please choose a valid option')
 }
