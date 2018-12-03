@@ -2,23 +2,16 @@ alert('Welcome to the Calculator')
 
 while(true){
   var calcType = prompt('Please type the correct letter: Multiply(m). Divide(d). Add(a). Subtract(s)')
-  // addition
+  var firstNum = parseFloat(prompt('Type the first number'))
+  var secondNum = parseFloat(prompt('Type the second number'))
   if(calcType === 'a'){
-    var firstA = parseFloat(prompt('Type the first number'))
-    var secondA = parseFloat(prompt('Type the second number'))
-    alert(firstA + secondA)
+    alert(firstNum + secondNum)
   } else if(calcType === 's'){
-    var firstS = parseFloat(prompt('Type the first number'))
-    var secondS = parseFloat(prompt('Type the second number'))
-    alert(firstS - secondS)
+    alert(firstNum - secondNum)
   } else if(calcType === 'm'){
-    var firstM = parseFloat(prompt('Type the first number'))
-    var secondM = parseFloat(prompt('Type the second number'))
-    alert(firstM * secondM)
+    alert(firstNum * secondNum)
   } else if(calcType === 'd'){
-    var firstD = parseFloat(prompt('Type the first number'))
-    var secondD = parseFloat(prompt('Type the second number'))
-    alert(firstD + secondD)
+    alert(firstNum / secondNum)
   }
   if(confirm('Play again?') === false){
     break
