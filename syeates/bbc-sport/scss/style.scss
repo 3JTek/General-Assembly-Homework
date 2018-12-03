@@ -18,16 +18,20 @@ main{
       border-top: 1px solid black;
       border-left: none;
 
-
+      .navbar-item:last-child {
+        border-right: none;
+      }
 
       .navbar-item {
         height: 30px;
         margin: 0px;
         border-right: 1px solid black;
 
+
         &:hover {
           border-bottom: 3px solid black;
           background-color: #ffd230;
+
 
 
 
@@ -36,6 +40,7 @@ main{
     }
   }
 }
+
 a{
   color: black;
 }
@@ -44,21 +49,21 @@ a{
 }
 
 .toptitle{
-   display: inline-block;
-   margin-top: 10px;
-   margin-right: 8px;
-   margin-bottom: 5px;
-   font-size: 2.8rem;
-   font-weight: bold;
-   text-transform: uppercase;
- }
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
- .herotop{
+.herotop{
   background-color: #ffd230;
   width: 100%;
   height: 80px;
   padding-top: 0px;
 }
- .hero-body{
-    padding-bottom: 1 rem;
-  }
+.hero-body{
+  padding-bottom: 1 rem;
+}
