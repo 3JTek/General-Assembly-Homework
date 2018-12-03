@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.is-primary {
+  background-color: rgb(254,208,68) !important;
+}
+
+header > nav > .container {
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-brand {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.container {
+  flex-wrap: wrap;
+}
+
+.navbar-start > .navbar-item {
+  border-right: 1px solid #ccc;
+}
+
+.navbar-start > .navbar-item:last-child {
+  border-right: 0
+}
+
+.navbar.is-primary .navbar-start>a.navbar-item:hover {
+  background-color: transparent;
+  border-bottom: 3px solid black;
+}
