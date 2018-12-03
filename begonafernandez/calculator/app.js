@@ -1,24 +1,31 @@
-var userImput
+
+// var typeOfCalculator
 var operator
 var firstNumber
 var secondNumber
 var result
 
+// Does use want basic or advanced calculator
+// userImput = prompt('Do you want the advanced calculator(a) or the basic calculator(b)')
+// console.log(typeOfCalculator)
+// // if basic
+// if()
+
+// if advanced
+
 //What operation does the user want to do?
 while(!operator) {
-  userImput = prompt('What operation do you wish? Sum, Substraction, Division or Multiplication')
-  operator = userImput.toLowerCase()
+  operator = prompt('What operation do you wish? Sum, Substraction, Division or Multiplication').toLowerCase()
 }
 
 // what is the first number?
 while(isNaN(firstNumber)) {
-  userImput = prompt('What is the first number?')
-  firstNumber = parseFloat(userImput)
+  firstNumber = parseFloat(prompt('What is the first number?'))
+  // firstNumber = parseFloat(userImput)
 }
 // what is the second number?
 while(isNaN(secondNumber)) {
-  userImput = prompt('What is the second number?')
-  secondNumber = parseFloat(userImput)
+  secondNumber = parseFloat(prompt('What is the second number?'))
 }
 
 // Add the three inputs together and show box with the answer
@@ -36,5 +43,7 @@ switch(operator.toLowerCase()) {
   case 'multiplication':
     result = firstNumber * secondNumber
     break
+  default:
+    result = 'not a valid math operation'
 }
 confirm(result)
