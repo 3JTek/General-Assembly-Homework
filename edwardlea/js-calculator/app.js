@@ -19,6 +19,8 @@ while(calculator){
   type = prompt('What type of calculator do you want? (b)asic, (a)dvanced, (mo)rtage, (BM)I, (t)rip calculator')
 
 
+
+
   if(type === 'basic' || type === 'b'){
 
     // Ask user what operation they want to perform using prompt
@@ -27,12 +29,20 @@ while(calculator){
     // Ask user for first number
     numberOne = parseFloat(prompt('Please enter first number'))
 
-    while(typeOf(numberOne) !== number){
-
+    // checks input is a number
+    while(isNaN(numberOne)){
+      numberOne = parseFloat(prompt('Input not a number. Please enter number:'))
     }
 
     // Ask user for second number
     numberTwo = parseFloat(prompt('Please enter second number'))
+
+    // checks input is a number
+    while(isNaN(numberTwo)){
+      numberTwo = parseFloat(prompt('Input not a number. Please enter number:'))
+    }
+
+
 
     // Carry out operation based on operation
     if(operator === 'a' || operator === 'add'){
