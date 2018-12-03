@@ -7,6 +7,8 @@ while(calc){
   var num1 = NaN
   var num2 = NaN
   var num3 = NaN
+  var num4 = NaN
+  var time, cost
   var result = 0
 
   // INITIAL PROMPT
@@ -103,6 +105,9 @@ while(calc){
 
         // calculate monthly payment and store in result
         result = (num1*((num2*Math.pow(1+num2, num3))/(Math.pow(1+num2, num3)-1))).toFixed(2)
+
+        // reassign result as a string that will make sense in the result message
+        result = '£' + result + ' per month'
         break
 
 
@@ -144,14 +149,54 @@ while(calc){
         }
         break
 
+      // TRIP CALCULATOR
+      // if trip is selected
+      case 't':
+        while(isNaN(num1)){
+          num1 = parseFloat(prompt('Please enter the trip distance'))
+        }
+        while(isNaN(num2)){
+          num2 = parseFloat(prompt('Please enter the fuel efficiency (mpg)'))
+        }
+        while(isNaN(num3)){
+          num3 = parseFloat(prompt('Please enter the cost of fuel per gallon'))
+        }
+        while(isNaN(num4)){
+          num4 = parseFloat(prompt('Please enter the driving speed (mph)'))
+        }
+
+        if (num4>60){
+          num3 -= 2*(num4-60)
+          if (num3<=0){
+            break
+          }
+        }
+        time = (num1/num4).toFixed(1)
+        cost = (num1*(num3/num2)).toFixed(2)
+
+        break
+
       // Since all prompts are checking for valid inputs, this should never run
       default:
         alert('Calculation Error')
     }
   }
 
-  console.log('The answer is ' + result)
+  // if the trip calculator was selected and the speed is acceptable...
+  if (op==='t' && num3>0){
 
-  // return the result and ask if another calculation will be made
-  calc = confirm('The answer is ' + result + '\nSelect OK to calculate again, or cancel to end calculation')
+    // ...return the result and ask if another calculation will be made
+    calc = confirm('Your trip will take ' + time + ' hours and cost £' + cost + '\nSelect OK to calculate again, or cancel to end calculation')
+
+  // otherwise, if the speed was too high...
+  }else if (op==='t'){
+    // ...return the error message and prompt user to start again or quit
+    calc = confirm('Speed is too high! Select OK start again, or cancel to quit.')
+
+  // otherwise, for all other calculations...
+  }else {
+    // ...return the result and ask if another calculation will be made
+    console.log('The answer is ' + result)
+    calc = confirm('The answer is ' + result + '\nSelect OK to calculate again, or cancel to end calculation')
+  }
 }
