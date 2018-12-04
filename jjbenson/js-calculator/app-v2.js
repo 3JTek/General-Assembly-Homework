@@ -1,4 +1,4 @@
-
+//DeCLARE VARIABLES
 var exitCalc = false
 var state = 0
 var loopCount = 0
@@ -20,9 +20,11 @@ var calcFinished
 while(!exitCalc){
   //Clear error messages
   error = ''
+
   //INIFITE LOOP PROTECTION
   if(loopCount++ > 1000)break
 
+  //MAIN STATE MACHINE
   switch(state){
     //CHOOSE CALC
     case 0:
@@ -37,14 +39,21 @@ while(!exitCalc){
       //OPERATION
       cancelMessage = 'Exit Calculation'
       switch(value){
+        //ADVANCED
         case 'a':
           promptText = 'Choose An Operation: (P)ower, (S)qureroot'
           type = 'advanced'
           break
+
+        //BASIC
         case 'b':
           promptText = 'Choose An Operation: (A)dd, (S)ubtract, (M)ultiply (D)ivide'
           type = 'basic'
           break
+
+        // EXTRA CALCULATORS GO HERE
+
+        //Debug
         default : console.log('case 1 error')
       }
       break
@@ -57,6 +66,8 @@ while(!exitCalc){
     case 3:
       //SECOND VALUE
       n1 = value
+
+      //IGNORE 2nd Value box is SQUAREROOT
       if(operation!=='√'){
         promptText = 'Enter the second Value'
         break
@@ -66,6 +77,8 @@ while(!exitCalc){
     case 4:
       //RESULT
       n2 = value
+
+      //RESET STATE
       state = 0
       promptText = 'Select the (B)asic or (A)dvance calculator'
 
@@ -95,6 +108,8 @@ while(!exitCalc){
         case '/': result = n1 / n2
           resultString = n1+' '+operation+' '+ n2 +' = ' + result
           break
+
+          //EXTRA OPERATIONS GO HERE
 
         default : console.log('case 4 error')
       }
@@ -137,6 +152,8 @@ while(!exitCalc){
               case 'b':
                 valueValid=true
                 break
+
+                //EXTRA CALCULATORS GO HERE
 
               default:error = valueString + ' is not an option!\n'
             }
@@ -205,6 +222,10 @@ while(!exitCalc){
 
                   default: error = valueString + ' is not an option!\n'
                 }
+                //EXTRA CALCULATORS GO HERE
+
+                  //EXTRA OPERATIONS GO IN SWITCH HERE
+
                 break
             }
             break
