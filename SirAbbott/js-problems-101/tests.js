@@ -92,13 +92,13 @@ describe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })
 })
 
-xdescribe('numOfVowels', () => {
+describe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
@@ -107,7 +107,7 @@ xdescribe('numOfVowels', () => {
   })
 })
 
-xdescribe('frame', () => {
+describe('frame', () => {
   it('should frame a string in asterisks', () => {
     expect(frame('Rumplestiltskin')).to.equal('*******************\n* Rumplestiltskin *\n*******************')
     expect(frame('Hello Kitty')).to.equal('***************\n* Hello Kitty *\n***************')
