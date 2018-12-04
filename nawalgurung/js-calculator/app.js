@@ -38,9 +38,8 @@ while(calcAgain){
     alert(num1 + num2)
   } else if(input==='s'){
     alert(num1 - num2)
+  } else{
+    alert('please choose m, d, a, s, sqr or pow')
   }
-  //  else{
-  //   alert('please choose m, d, a, s, sqr or pow')
-  // }
   calcAgain = confirm('do you want to calcuate again?')
 }
