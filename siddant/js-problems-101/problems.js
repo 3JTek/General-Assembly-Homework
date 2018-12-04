@@ -38,8 +38,18 @@ function orderStringAlphabetically(string) {
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
+  const characterObj = {}
+  string = string.toLowerCase().split(' ').join('')
+  for(let x =0; x<string.length; x++){
+    if(!characterObj.hasOwnProperty(string[x])){
+      characterObj[string[x]] = 1
 
-  console.log(string.toLowerCase().split(' ').join('').split('').sort().join(''))
+    }else{
+      characterObj[string[x]] += 1
+    }
+  }
+  return characterObj
+
 }
 
 // write a function that capitalizes the first letter of each word
@@ -60,7 +70,6 @@ function numOfVowels(string) {
   for(var i = 0 ; i < string.length ; i++){
     if (['a', 'e', 'i', 'o', 'u'].includes(string[i].toLowerCase())){
       numberOfVowels ++
-      console.log(numberOfVowels)
     }
   }
   return numberOfVowels
@@ -71,8 +80,7 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-  const length = string.length
-  // for(){
-  //
-  // }
+  const length = string.length+4
+  const frame = '*'.repeat(length)
+  return frame+'\n* '+string+' *\n'+frame
 }
