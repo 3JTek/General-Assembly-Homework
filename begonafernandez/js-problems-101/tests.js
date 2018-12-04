@@ -39,7 +39,7 @@ describe('numberReverse', () => {
   })
 })
 
-xdescribe('palindromeCheck', () => {
+describe('palindromeCheck', () => {
   it('should check if a word is a palindrome', () => {
     expect(palindromeCheck('pop')).to.be.true
     expect(palindromeCheck('dog')).to.be.false
