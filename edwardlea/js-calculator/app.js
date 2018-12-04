@@ -18,9 +18,6 @@ while(calculator){
   // Ask user for type of calculator
   type = prompt('What type of calculator do you want? (b)asic, (a)dvanced, (mo)rtage, (BM)I, (t)rip calculator')
 
-
-
-
   if(type === 'basic' || type === 'b'){
 
     // Ask user what operation they want to perform using prompt
@@ -41,8 +38,6 @@ while(calculator){
     while(isNaN(numberTwo)){
       numberTwo = parseFloat(prompt('Input not a number. Please enter number:'))
     }
-
-
 
     // Carry out operation based on operation
     if(operator === 'a' || operator === 'add'){
@@ -96,7 +91,7 @@ while(calculator){
 
     // Alert monthly mortage repayments to user
     alert('The answer is: £' + answer)
-
+    
   } else if(type === 'BMI' || type === 'bm'){
     alert('Feature not ready yet!')
 
