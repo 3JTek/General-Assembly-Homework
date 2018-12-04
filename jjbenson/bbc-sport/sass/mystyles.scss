@@ -112,14 +112,14 @@ h1.title {
   background-color: white;
   border:0px solid black;
 }
-nav.navbar.main {
+nav.navbar {
   min-height:0;
   .navbar-brand{
     margin-left:0 !important;
     align-items: center;
   }
 }
-.main .navbar-menu{
+.navbar-menu{
   &.is-active{
     .navbar-item{
       margin-top:0;
