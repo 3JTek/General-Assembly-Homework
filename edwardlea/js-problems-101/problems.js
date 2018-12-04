@@ -18,8 +18,7 @@ function celciusToFarenheit(celcius) {
 
 // write a function that will reverse a number (eg. 456733 become 337654)
 function numberReverse(number) {
-  const string = number.toString()
-  return parseFloat(string.split('').reverse().join(''))
+  return parseFloat(number.toString().split('').reverse().join(''))
 }
 
 // write a function to check if a word or phrase is a palindrome returning a boolean
@@ -36,24 +35,25 @@ function palindromeCheck(string) {
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-  const noSpaceString = string.replace(/\s/g,'').toLowerCase()
-  return noSpaceString.split('').sort().join('')
+  return string.replace(/\s/g,'').toLowerCase().split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
   let object = {}
-  const noSpaceString = string.replace(/\s/g,'').toLowerCase().split('')
-  console.log(noSpaceString)
-  for(var i = 0 ; i < noSpaceString.length ; i++){
-    if (!Object.keys(object) === noSpaceString[i]){
-      object[noSpaceString[i]] = 1
+  const stringArray = string.replace(/\s/g,'').toLowerCase().split('')
+  for(var i = 0 ; i < stringArray.length ; i++){
+    if (!Object.keys(object).includes(stringArray[i])){
+      object[stringArray[i]] = 1
     } else {
-      object[noSpaceString[i]] =+ 1
+      object[stringArray[i]] += 1
     }
   }
+  return object
 }
+
+
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
