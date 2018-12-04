@@ -62,7 +62,7 @@ describe('orderStringAlphabetically', () => {
   })
 })
 
-xdescribe('numOfOccurances', () => {
+describe('numOfOccurances', () => {
   it('should return the number of occurances of each letter of a string', () => {
     expect(numOfOccurances('this is great')).to.deep.equal({ t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 })
   })
@@ -71,7 +71,7 @@ xdescribe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })
