@@ -21,7 +21,7 @@ describe('areaOfCircle', () => {
   })
 })
 
-xdescribe('celciusToFarenheit', () => {
+describe('celciusToFarenheit', () => {
   it('should convert celcius to farenheit', () => {
     expect(celciusToFarenheit(0)).to.equal(32)
     expect(celciusToFarenheit(-40)).to.equal(-40)
@@ -71,7 +71,7 @@ xdescribe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })

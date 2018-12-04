@@ -15,8 +15,7 @@ function areaOfCircle(radius=4) {
 
 // write a function to convert celcius to farenheit
 function celciusToFarenheit(celcius) {
-
-
+  return celcius*9/5+32
 }
 
 // write a function that will reverse a number (eg. 456733 become 337654)
@@ -52,10 +51,13 @@ function numOfOccurances(string) {
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
+  const splitString = string.toLowerCase().split(' ')
+  for (let i = 0; i < splitString.length; i++) {
+    splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1)
+  }
+  return splitString.join(' ')
 
 }
-
-// write a function that returns the number of vowels in a string case insensitive
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
