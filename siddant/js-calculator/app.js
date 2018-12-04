@@ -50,18 +50,20 @@ while(calStatus){
   }else if(options === 'o'){
     opers = prompt('what would you like to do (mortgage) Mortgage calculator or (BMI) BMI calculator or (trip calculator) Trip Calculator ')
     if(opers === 'mortgage'){
-      num1 = parseFloat(prompt('please enter the principal of loan'))
-      num2 = parseFloat(prompt('please enter the yearly interest rate'))
-      var num3 = parseFloat(prompt('please enter the number of payment in months'))
+      num1 = parseFloat(prompt('please enter the total amount '))
+      //calculating the percentge is 6 / 100 === 0.06.  0.06 === 6%
+      //calculating the monthly interest rate is interest rat devide by 12(months)
+      num2 = (parseFloat(prompt('please enter the yearly interest rate'))/100)/12
+      //to get the total amounths of months year Multiply 12(months in a year)
+      var num3 = (parseInt(prompt('please enter you how long is your mortage in years')))*12
       if(typeof num1 === 'number' && typeof num2 === 'number' && typeof num3 === 'number'){
-        //var monthly = num1 * num2 * (Math.pow(1 + num2, num3)) / (Math.pow(1 + num2, num3) - 1)
+        var monthly = num1 * num2 * (Math.pow(1 + num2, num3)) / (Math.pow(1 + num2, num3) - 1)
         //console.log()
-        //alert('your montly mortage is '+monthly)
-        alert('currenlty under develeopment ')
+        alert('your montly mortage is '+monthly)
       }
 
 
-    }else if(opers === 'BMI'){
+    }else if(opers === 'bmi'){
       opers = prompt('imperail or  metric system')
       var bmi
       if(opers === 'metric'){
@@ -88,7 +90,7 @@ while(calStatus){
         alert('your BMI is '+bmi+' you are Obesity')
       }
 
-    }else if(opers === 'trip calculator'){
+    }else if(opers === 'trip'){
       num1 = parseFloat(prompt('please enter your distance'))
       num2 = parseFloat(prompt('please enter your fuel efficiency (mpg)'))
       var gallon = parseFloat(prompt('please enter your cost per gallon'))
@@ -97,7 +99,7 @@ while(calStatus){
         alert('currenlty under develeopment ')
       }
     }else{
-      alert('you may entered the wrong thing please use (power) for power or (BMI) for BMI')
+      alert('you may entered the wrong thing please use (mortgage) for mortgage or (bmi) for BMI or (trip) for trip calculator')
     }
 
   }else{
