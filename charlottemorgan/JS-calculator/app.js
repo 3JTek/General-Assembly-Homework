@@ -15,15 +15,10 @@ while (calculating) {
     answer = eval((firstNumber + operator + secondNumber))
 
   } else if (calcType === 'a') {
-
     operator = prompt('(s)quare root or (p)ower')
     firstNumber = parseFloat(prompt('What is your first number'))
-    console.log(firstNumber)
-  }
-  if (operator === 's') {
-
+  } if (operator === 's') {
     answer = Math.sqrt(firstNumber)
-    console.log(firstNumber)
   } else if (operator === 'p'){
     secondNumber = parseFloat(prompt('What is your second number'))
     answer = (Math.pow(firstNumber, secondNumber))
