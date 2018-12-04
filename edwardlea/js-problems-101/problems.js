@@ -31,7 +31,6 @@ function palindromeCheck(string) {
   } else{
     return false
   }
-
 }
 
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
@@ -44,8 +43,16 @@ function orderStringAlphabetically(string) {
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
-  const noSpaceString = string.replace(/\s/g,'')
-
+  let object = {}
+  const noSpaceString = string.replace(/\s/g,'').toLowerCase().split('')
+  console.log(noSpaceString)
+  for(var i = 0 ; i < noSpaceString.length ; i++){
+    if (!Object.keys(object) === noSpaceString[i]){
+      object[noSpaceString[i]] = 1
+    } else {
+      object[noSpaceString[i]] =+ 1
+    }
+  }
 }
 
 // write a function that capitalizes the first letter of each word
@@ -63,14 +70,13 @@ function titleCase(string) {
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
-
-  let numberOfVowels = 0
+  let counter = 0
   for(var i = 0 ; i < string.length ; i++){
     if (['a', 'e', 'i', 'o', 'u'].includes(string[i].toLowerCase())){
-      numberOfVowels ++
+      counter ++
     }
   }
-  return numberOfVowels
+  return counter
 }
 
 // write a function that frames a string in asterisks (*)
@@ -78,5 +84,6 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-
+  const frameWidth = string.length + 4
+  return `${'*'.repeat(frameWidth)}\n* ${string} *\n${'*'.repeat(frameWidth)}`
 }
