@@ -18,7 +18,12 @@ function celciusToFarenheit(celcius) {
 
 // write a function that will reverse a number (eg. 456733 become 337654)
 function numberReverse(number) {
+  let len = str.length
+  let reverse = ''
 
+  while(len--) reverse += str[len]
+  return reverse
+}
 }
 
 // write a function to check if a word or phrase is a palindrome returning a boolean
