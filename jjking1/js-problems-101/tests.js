@@ -29,7 +29,7 @@ describe('celciusToFarenheit', () => {
   })
 })
 
-xdescribe('numberReverse', () => {
+describe('numberReverse', () => {
   it('should reverse a number', () => {
     expect(numberReverse(123)).to.equal(321)
     expect(numberReverse(4001)).to.equal(1004)
@@ -39,7 +39,7 @@ xdescribe('numberReverse', () => {
   })
 })
 
-xdescribe('palindromeCheck', () => {
+describe('palindromeCheck', () => {
   it('should check if a word is a palindrome', () => {
     expect(palindromeCheck('pop')).to.be.true
     expect(palindromeCheck('dog')).to.be.false
@@ -50,7 +50,7 @@ xdescribe('palindromeCheck', () => {
   })
 })
 
-xdescribe('orderStringAlphabetically', () => {
+describe('orderStringAlphabetically', () => {
   it('should order a word alphabetically', () => {
     expect(orderStringAlphabetically('happy')).to.equal('ahppy')
   })
@@ -71,7 +71,7 @@ xdescribe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })

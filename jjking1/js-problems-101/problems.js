@@ -18,31 +18,39 @@ function celciusToFarenheit(celcius) {
 
 // write a function that will reverse a number (eg. 456733 become 337654)
 function numberReverse(number) {
+  return parseFloat(number.toString().split('').reverse().join(''))
 
 }
 
 // write a function to check if a word or phrase is a palindrome returning a boolean
 // eg. palindromeCheck('dad') => true, palindrome('nonsense') => false
 function palindromeCheck(string) {
-
+  return string.split(' ').join('').split('').reverse().join('') === string.split(' ').join('')
 }
 
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-
+  return string.toLocaleLowerCase().split(' ').join('').split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
+  // put argument string into array
+  // let arr = string.toLocaleLowerCase().split(' ').join('').split('')
 
 }
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
-
+  string = string.split(' ')
+  for(let i = 0; i < string.length; i++){
+    string[i] = string[i].charAt(0).toUpperCase() + string[i].substring(1)
+  }
+  string = string.join(' ')
+  return string
 }
 
 // write a function that returns the number of vowels in a string case insensitive
