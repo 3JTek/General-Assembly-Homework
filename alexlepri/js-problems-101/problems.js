@@ -32,13 +32,14 @@ function numberReverse(number) {
 // write a function to check if a word or phrase is a palindrome returning a boolean
 // eg. palindromeCheck('dad') => true, palindrome('nonsense') => false
 function palindromeCheck(string) {
-
+return string.split(' ').join('') === (string.split(' ').join('').split('').reverse().join(''))
 }
+
 
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-
+return string.toLocaleLowerCase().split(' ').join('').split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
@@ -50,7 +51,9 @@ function numOfOccurances(string) {
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
-
+  return str.replace(/\w\S*/g, function(txt){
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  })
 }
 
 // write a function that returns the number of vowels in a string case insensitive
@@ -65,5 +68,8 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
+  // const = 'Rumplestiltskin'
+  // return 'Rumplestiltskin'.replace(/./g, '*')
+  // // 'Rumplestiltskin'.replace(/./g, '*')
 
 }
