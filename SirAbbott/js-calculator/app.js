@@ -37,6 +37,7 @@ while (calculating) {
     var height = parseFloat(prompt('Your height in cm'))
     var weight = parseFloat(prompt('Your weight in kg'))
     answer = (weight / Math.pow(height, 2)) * 10000
+
   } else if (operator === 'l') {
     var principle = parseFloat(prompt('Loan amount'))
     var apr = parseFloat(prompt('Your APR terms') / 100 / 12)
