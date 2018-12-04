@@ -18,7 +18,7 @@ function celciusToFarenheit(celcius) {
 
 // write a function that will reverse a number (eg. 456733 become 337654)
 function numberReverse(number) {
-  return number.toString().split('').reverse().join('')
+  return parseFloat(number.toString().split('').reverse().join(''))
 }
 
 // write a function to check if a word or phrase is a palindrome returning a boolean

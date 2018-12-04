@@ -29,7 +29,7 @@ describe('celciusToFarenheit', () => {
   })
 })
 
-xdescribe('numberReverse', () => {
+describe('numberReverse', () => {
   it('should reverse a number', () => {
     expect(numberReverse(123)).to.equal(321)
     expect(numberReverse(4001)).to.equal(1004)
