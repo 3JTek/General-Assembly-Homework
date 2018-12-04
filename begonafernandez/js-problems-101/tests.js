@@ -21,7 +21,7 @@ describe('areaOfCircle', () => {
   })
 })
 
-xdescribe('celciusToFarenheit', () => {
+describe('celciusToFarenheit', () => {
   it('should convert celcius to farenheit', () => {
     expect(celciusToFarenheit(0)).to.equal(32)
     expect(celciusToFarenheit(-40)).to.equal(-40)
