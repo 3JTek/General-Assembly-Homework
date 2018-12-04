@@ -45,7 +45,7 @@ function orderStringAlphabetically(string) {
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
-  const counter = {}
+  const counter = {}  //empty object
   const characters = string.toLocaleLowerCase().split(' ').join('').split('')
   for (let i=0;i<characters.length;i++){
     if (Object.keys(counter).includes(characters[i])) {
@@ -92,9 +92,11 @@ function numOfVowels(string) {
 //                             ***************
 function frame(string) {
   let sum = '****'
-  for(let i=0; i<string.length; i++) {
-    sum += '*'
-  }
+  sum += '*'.repeat(string.length)
   const middleLine = ('* ' + string + ' *')
   return sum + '\n'+ middleLine + '\n' + sum
 }
+//orginal for loop written below but then added the repeat string instead to tidy it up a bit
+// for(let i=0; i<string.length; i++) {
+//   sum += '*'
+// }
