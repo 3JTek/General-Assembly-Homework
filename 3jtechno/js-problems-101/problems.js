@@ -28,8 +28,7 @@ function palindromeCheck(string) {
   string = string.replace(/\s/g,'')
   const stringArray = string.split('')
   const reverseString =
- string.split('').reverse()
- console.log(string)
+  string.split('').reverse()
   reverseString.forEach(function(item, index){
     if(string[index] !== item){
       palindrom = false
@@ -41,32 +40,55 @@ function palindromeCheck(string) {
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-
+return string.replace(/\s/g,'').toLowerCase().split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
-
+  // var response ={}
+  // const newArray = string.replace(/\s/g,'').toLowerCase().split('')
+  // myArray.reduce((product, num) => num === product++, 0)//0 is the initial value of "sum" called the accumulator
+  //
+  //   response[item] = string.match(re).index
+  // })
+  // console.log(response)
+  // return response
 }
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
-
+  var newArray = []
+  string.split(' ').forEach(function(element, index) {
+    newArray.push(element.charAt(0).toUpperCase() + element.slice(1))
+  })
+  return newArray.join(' ')
 }
-
 // write a function that returns the number of vowels in a string case insensitive
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
-
+  const myArray = string.split('')
+  let sum = 0
+  myArray.forEach(function(element){
+    if(['a','e','i','o','u'].includes(element)){
+      sum ++
+    }
+  })
+  return sum
 }
+
 
 // write a function that frames a string in asterisks (*)
 //                             ***************
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-
+  console.log(string.length)
+  let newString = ''
+  for(let i=1;i<=string.length + 4;i++){
+    newString = newString + '*'
+  }
+  return newString + '\n* ' + string + ' *\n' + newString
 }
