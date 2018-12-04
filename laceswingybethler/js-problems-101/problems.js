@@ -75,8 +75,31 @@ console.log(numOfOccurances('This is great'))
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
+//split the string into an array of words
+  const words = string.split(' ')
+  let newArray = []
+  //for each wordd
+  for (i=0; i<words.length; i++) {
+    const word = words[i]
 
+    //get the first letter and make it uppercase
+    const startOfWord = word[0].toUpperCase()
+    //create a new string with the remaining letters
+    const restOfWord = word.slice(1, word.length)
+    //concatenate them togetehr
+    const capsWord = startOfWord + restOfWord
+    newArray.push(capsWord)
+
+  }
+  //join the array back into a string
+  return newArray.join(' ')
 }
+console.log(titleCase('the lord of the rings'))
+
+
+
+//return string
+
 
 // write a function that returns the number of vowels in a string case insensitive
 // 'y' should not be considered a vowel
