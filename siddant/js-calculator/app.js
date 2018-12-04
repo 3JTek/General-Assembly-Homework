@@ -42,7 +42,7 @@ while(calStatus){
       if(typeof num1 === 'number' && typeof num2 === 'number'){
         alert(Math.pow(num1, num2))
       }else{
-        alert('you didnt put a number')
+        alert('you have not entered a number please try again')
       }
     }else{
       alert('you may entered the wrong thing please use (sqrt) for square root or (power) for power')
@@ -58,25 +58,24 @@ while(calStatus){
       var num3 = (parseInt(prompt('please enter you how long is your mortage in years')))*12
       if(typeof num1 === 'number' && typeof num2 === 'number' && typeof num3 === 'number'){
         var monthly = num1 * num2 * (Math.pow(1 + num2, num3)) / (Math.pow(1 + num2, num3) - 1)
-        //console.log()
         alert('your montly mortage is '+monthly)
       }
 
 
     }else if(opers === 'bmi'){
-      opers = prompt('imperail or  metric system')
+      opers = prompt('imperial or  metric system')
       var bmi
       if(opers === 'metric'){
         num1 = parseFloat(prompt('weight in kg'))
         num2 = parseFloat(prompt('height in meter'))
         bmi = num1 / (Math.pow(num2, 2))
 
-      }else if(opers === 'imperail'){
+      }else if(opers === 'imperial'){
         num1 = parseFloat(prompt('weight in pound'))
         num2 = parseFloat(prompt('height in inches'))
         bmi = (num1 / (Math.pow(num2, 2)))*703
       }else{
-        alert('you may entered the wrong thing please use (metric) for metric or (imperail) for imperail')
+        alert('you may entered the wrong thing please use (metric) for metric or (imperial) for imperial')
       }
       if(typeof bmi !== 'number' ){
         alert('you have not entered a number please try again')
