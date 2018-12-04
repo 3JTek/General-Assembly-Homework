@@ -62,7 +62,7 @@ describe('orderStringAlphabetically', () => {
   })
 })
 
-xdescribe('numOfOccurances', () => {
+describe('numOfOccurances', () => {
   it('should return the number of occurances of each letter of a string', () => {
     expect(numOfOccurances('this is great')).to.deep.equal({ t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 })
   })
@@ -77,7 +77,7 @@ describe('titleCase', () => {
   })
 })
 
-xdescribe('numOfVowels', () => {
+describe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
@@ -86,7 +86,7 @@ xdescribe('numOfVowels', () => {
   })
 })
 
-xdescribe('frame', () => {
+describe('frame', () => {
   it('should frame a string in asterisks', () => {
     expect(frame('Rumplestiltskin')).to.equal('*******************\n* Rumplestiltskin *\n*******************')
     expect(frame('Hello Kitty')).to.equal('***************\n* Hello Kitty *\n***************')
