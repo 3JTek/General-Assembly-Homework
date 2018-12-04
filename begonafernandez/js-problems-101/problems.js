@@ -57,7 +57,7 @@ function titleCase(string) {
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
-
+  return string.match(/[aeiou]/g).length
 }
 
 // write a function that frames a string in asterisks (*)
