@@ -31,7 +31,7 @@ function palindromeCheck(string) {
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-
+  return string.toLowerCase().replace(/[\W_]/g, '').split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
