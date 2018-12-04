@@ -45,7 +45,11 @@ function numOfOccurances(string) {
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
-
+  var splitString = string.toLowerCase().split(' ')
+  for (var i = 0; i < splitString.length; i++) {
+    splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1)
+  }
+  return splitString.join(' ')
 }
 
 // write a function that returns the number of vowels in a string case insensitive
@@ -53,12 +57,9 @@ function titleCase(string) {
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
   let vowelsCount = 0
-  //turn the input into a string
-  let makeString = string.toString()
-  //loop through the string
+  const makeString = string.toString()
   for (let i = 0; i <= string.length - 1; i++) {
-  //if a vowel, add to vowel count
-    if (string.charAt(i) === "a" || string.charAt(i) === "e" || string.charAt(i) === "i" || string.charAt(i) === "o" || string.charAt(i) === "u") {
+    if (string.charAt(i) === 'a' || string.charAt(i) === 'e' || string.charAt(i) === 'i' || string.charAt(i) === 'o' || string.charAt(i) === 'u') {
       vowelsCount += 1
     }
   }

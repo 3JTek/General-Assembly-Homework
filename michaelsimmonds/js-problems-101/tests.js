@@ -71,7 +71,7 @@ describe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })
