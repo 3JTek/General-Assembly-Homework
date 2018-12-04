@@ -17,25 +17,31 @@ function celciusToFarenheit(celcius) {
 }
 
 // write a function that will reverse a number (eg. 456733 become 337654)
-function numberReverse(number) {
-  let len = str.length
-  let reverse = ''
+function numberReverse(n) {
+  n = n + ''
+  return parseFloat(n.split('').reverse().join(''))
+}
 
-  while(len--) reverse += str[len]
-  return reverse
-}
-}
 
 // write a function to check if a word or phrase is a palindrome returning a boolean
 // eg. palindromeCheck('dad') => true, palindrome('nonsense') => false
 function palindromeCheck(string) {
-
+  //Strip all formatting from the string
+  const plainText = /[\W_]/g
+  //Convert plainText to lower case
+  const lowerCase = string.toLowerCase().replace(plainText, '')
+  //Reverse string
+  const reverseString = lowerCase.split('').reverse().join('')
+  //Compare reverseString to lowerCase string
+  return reverseString === lowerCase
 }
 
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-
+  const plainText = /[\W_]/g
+  const lowerCase = string.toLowerCase().replace(plainText, '')
+  return lowerCase.split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
