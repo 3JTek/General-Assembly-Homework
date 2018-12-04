@@ -54,7 +54,6 @@ while(running) {
 
       secondNumber= parseFloat(secondNumber)
 
-
       answer = Math.pow(firstNumber, secondNumber)
       alert(firstNumber + ' to the power of ' + secondNumber + ' is ' + answer)
     }
