@@ -39,7 +39,7 @@ function orderStringAlphabetically(string) {
 function numOfOccurances(string) {
   const count = {}
   string.toLowerCase().split('').forEach(function(s) {
-    if (s === ' ') {
+    if (s !== ' ') {
       count[s] ? count[s]++ : count[s] = 1
     }
   })
