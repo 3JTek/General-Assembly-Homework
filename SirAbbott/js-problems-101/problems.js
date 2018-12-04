@@ -41,7 +41,9 @@ function palindromeCheck(string) {
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
+  // giv argument a value and replace characters with space, also lowercase string
   string = string.replace(/\s+/g, '').toLocaleLowerCase()
+  // return with a split, sort in order than rejoin
   return string.split('').sort().join('')
 }
 
@@ -52,9 +54,8 @@ function numOfOccurances(string) {
   const remove = /[\W_]/g
   // lowercase characters and remove empty space
   const replace = string.toLowerCase().replace(remove, '')
-
+  // make characters in to an array
   const array = replace.split('')
-  console.log(array)
   // Loop through the array and create an object where the key is the letter
   // and the count is the value
   // if there is no value then initialise with a 1, if not increase the count
@@ -70,15 +71,15 @@ function numOfOccurances(string) {
 
 function titleCase(string) {
   // split the string
-  const splitString = string.toLowerCase().split(' ')
+  const split = string.toLowerCase().split(' ')
   // loop through the new array
-  for (var i = 0; i < splitString.length; i++) {
-    // You do not need to check if i is larger than splitString length, as your for does that for you
+  for (var i = 0; i < split.length; i++) {
+    // You do not need to check if i is larger than split length, as your for does that for you
     // Assign it back to the array
-    splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1)
+    split[i] = split[i].charAt(0).toUpperCase() + split[i].substring(1)
   }
   // Directly return the joined string
-  return splitString.join(' ')
+  return split.join(' ')
 }
 
 // write a function that returns the number of vowels in a string case insensitive
@@ -96,5 +97,9 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
+  // make the width of the frame to be string + 4
+  const frameSize = string.length + 4
+
+  return `${'*'.repeat(frameSize)}\n* ${string} *\n${'*'.repeat(frameSize)}`
 
 }
