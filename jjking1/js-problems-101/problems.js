@@ -2,8 +2,8 @@
 
 // write a function that returns "Hello World!" if no argument is given, or "Hello <argument>!" otherwise
 // eg: hello() => "Hello World!"; hello("Mike") => "Hello Mike!"
-function hello(string) {
-
+function hello(string='World') {
+  return (`Hello ${string}!`)
 }
 
 // write a function that will calculate the area of a circle, given the radius
