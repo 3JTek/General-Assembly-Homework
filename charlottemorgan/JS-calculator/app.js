@@ -1,14 +1,13 @@
 console.log('JS loaded')
 
 var calculating = true
-var operator, firstNumber, secondNumber, answer
+var operator, firstNumber, secondNumber, answer, principal, interestRate, numberOfPayments
 
 while (calculating) {
 
-  var calcType = prompt('(a)dvanced or (b)asic')
+  var calcType = prompt('(a)dvanced or (b)asic or (m)ortgage')
 
   if (calcType === 'b') {
-
     operator = prompt('What would you like to do? +, -, *, / ')
     firstNumber = parseFloat(prompt('Enter the first number you would like to use'))
     secondNumber = parseFloat(prompt('Enter the second number you would like to use'))
@@ -22,11 +21,19 @@ while (calculating) {
   } else if (operator === 'p'){
     secondNumber = parseFloat(prompt('What is your second number'))
     answer = (Math.pow(firstNumber, secondNumber))
+  } else if (calcType === 'm') {
+    principal = parseFloat(prompt('What is the loan amount needed?'))
+    interestRate = parseFloat(prompt('What is the interest rate?')/ 100 / 12)
+    numberOfPayments = parseFloat(prompt('How many months are the payments spread over?') * 12)
+    var x = Math.pow(1 + interestRate, numberOfPayments)
+    answer = (principal * x * interestRate) / (x - 1)
   }
 
   calculating = confirm('Your answer is ' + answer + '\nPress ok to calculate again or cancel to exit')
 }
-
+//need to add interestRate input divisible by 100
+//then principal * new  declared value of interestRate
+//then divide that answer by numberOfPayments
 
 
 
