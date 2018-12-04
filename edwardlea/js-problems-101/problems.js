@@ -51,13 +51,12 @@ function numOfOccurances(string) {
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
-  let upperCase = 'Hello'
-  console.log(upperCase)
-  const splitString = string.toLowerCase().split(' ')
+  let upperCase = []
+  const splitString = string.split(' ')
   for(var i = 0 ; i < splitString.length ; i++){
-    console.log(splitString[i].charAt(0).toUpperCase())
+    upperCase.push(splitString[i].charAt(0).toUpperCase() + splitString[i].substr(1))
   }
-
+  return upperCase.join(' ')
 }
 
 // write a function that returns the number of vowels in a string case insensitive
