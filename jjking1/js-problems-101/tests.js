@@ -13,7 +13,7 @@ describe('hello', () => {
   })
 })
 
-xdescribe('areaOfCircle', () => {
+describe('areaOfCircle', () => {
   it('should find the area of a circle given a radius', () => {
     expect(areaOfCircle(4)).to.equal(50.26548245743669)
     expect(areaOfCircle(10)).to.equal(314.1592653589793)
@@ -21,7 +21,7 @@ xdescribe('areaOfCircle', () => {
   })
 })
 
-xdescribe('celciusToFarenheit', () => {
+describe('celciusToFarenheit', () => {
   it('should convert celcius to farenheit', () => {
     expect(celciusToFarenheit(0)).to.equal(32)
     expect(celciusToFarenheit(-40)).to.equal(-40)

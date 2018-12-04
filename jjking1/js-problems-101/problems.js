@@ -8,12 +8,12 @@ function hello(string='World') {
 
 // write a function that will calculate the area of a circle, given the radius
 function areaOfCircle(radius) {
-
+  return Math.PI * Math.pow(radius, 2)
 }
 
 // write a function to convert celcius to farenheit
 function celciusToFarenheit(celcius) {
-
+  return (celcius * 1.8) + 32
 }
 
 // write a function that will reverse a number (eg. 456733 become 337654)
