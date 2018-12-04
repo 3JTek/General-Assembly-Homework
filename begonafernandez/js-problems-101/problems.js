@@ -50,7 +50,7 @@ function numOfOccurances(string) {
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
-
+  return string.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ')
 }
 
 // write a function that returns the number of vowels in a string case insensitive

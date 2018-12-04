@@ -71,13 +71,13 @@ describe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })
 })
 
-xdescribe('numOfVowels', () => {
+describe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
