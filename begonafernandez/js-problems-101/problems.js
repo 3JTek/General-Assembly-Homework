@@ -8,7 +8,7 @@ function hello(string='World') {
 
 // write a function that will calculate the area of a circle, given the radius
 function areaOfCircle(radius) {
-
+  return  Math.PI * Math.pow(radius, 2)
 }
 
 // write a function to convert celcius to farenheit
