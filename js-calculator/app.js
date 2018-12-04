@@ -31,7 +31,7 @@ while(running) {
 
   //Advanced Math Calculator
   } else if (calcType === 'a') {
-    var advancedOperator = prompt('What would you like to calculate? Choose square (root) or (pow)er?')
+    var advancedOperator = prompt('What would you like to calculate? Choose square (root) or (pow)er.')
 
     //Square Root Calculator
     if (advancedOperator === 'root') {
@@ -109,21 +109,30 @@ while(running) {
 
     mpg = parseFloat(mpg)
 
-    var cost = prompt('What is the current price of a gallon petrol? Exclude any currency symbols.')
-
-    cost = parseFloat(cost)
-
     for(var i = 60; i < speed; i++) {
       mpg = mpg-2
     }
 
     if (mpg <=0) {
       alert('You are driving too fast. Please operate your vehicle with care!')
+      running = false
+      continue
+      //This should break the user out of the flow, to start again
     }
 
+    var cost = prompt('What is the current price of a gallon petrol? Exclude any currency symbols.')
+
+    cost = parseFloat(cost)
+
     var journeyTime = distance/speed
-    var journeyCost = distance*(cost*mpg)
+    var journeyCost = distance*(mpg/cost)
 
     alert('Your journey will take ' + journeyTime.toFixed(1) + ' hours and will cost £' + journeyCost.toFixed(2) + '.')
   }
+}
+
+// This should restart the calculator
+if (!running) {
+  confirm('Restart Calculator')
+  running = true
 }
