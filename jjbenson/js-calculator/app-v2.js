@@ -107,7 +107,8 @@ while(!exitCalc){
     while(!valueValid){
       var value = prompt(error + helper + promptText)
       valueString = value
-      value = value.toLowerCase()
+
+
       if(value===null){
         if(confirm(cancelMessage)){
           valueValid=true
@@ -125,6 +126,7 @@ while(!exitCalc){
           }
         }
       }else{
+        value = value.toLowerCase()
         console.log('case: '+state + ' value: '+value)
         switch(state){
           case 0:
