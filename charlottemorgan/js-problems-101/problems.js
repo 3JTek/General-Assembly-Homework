@@ -91,5 +91,10 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-
+  let sum = '****'
+  for(let i=0; i<string.length; i++) {
+    sum += '*'
+  }
+  const middleLine = ('* ' + string + ' *')
+  return sum + '\n'+ middleLine + '\n' + sum
 }
