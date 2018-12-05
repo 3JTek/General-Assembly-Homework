@@ -5,7 +5,7 @@
 // eg: [0, false, [], undefined, {}, NaN, 'Kevin'] => [0, [], {}, 'Kevin'];
 function removeBlank(array) {
   const emptyValue = [null, undefined,'', NaN, false]
-  return array.filter((el) => !emptyValue.includes(el))
+  return array.filter((element) => !emptyValue.includes(element))
 }
 
 // write a function to return a random element from an array
@@ -42,7 +42,9 @@ function mergeUnique(arr1, arr2) {
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-  Object.assign({}, ['a','b','c'])
+  const obj = {}
+  array.forEach(elem => obj[key] = elem)
+  return obj
 }
 
 // write a function to convert an object into an array of arrays containing key and value
@@ -56,11 +58,15 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-  if (n === 1) return [0,1]
-  var arr = fibonacci(n - 1)
-  arr.push( arr[n - 1] + arr[n - 2] )
-  return arr
+  const sequence = [0,1]
+  for (let i = 2; i <= n; i++) {
+    sequence.push(sequence[i-1] + sequence[i-2])
+  }
+  sequence.pop()
+  return sequence
 }
+
+
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
 // it should not return negative numbers
