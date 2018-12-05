@@ -10,7 +10,7 @@ function removeBlank(array) {
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
-  return array[Math.floor(Math.random()*array.length-1)]
+  return array[Math.floor(Math.random()*(array.length-1))]
 }
 
 // write a function that returns the second lowest and second highest number in an array
@@ -31,13 +31,6 @@ function coins(price) {
   let remainingPrice = price*100
   const coinArray = []
   const arrayOfCoins = [100, 50, 20, 10, 5, 2, 1]
-  // for(var i=0 ; i < arrayOfCoins.length ; i++){
-  //   while(remainingPrice>=arrayOfCoins[i]){
-  //     remainingPrice -= arrayOfCoins[i]
-  //     coinArray.push(arrayOfCoins[i])
-  //     console.log(remainingPrice)
-  //   }
-  // }
   arrayOfCoins.forEach(function(el){
     while(remainingPrice>=el){
       remainingPrice -= el
@@ -45,6 +38,8 @@ function coins(price) {
     }
   })
   return coinArray
+
+
 }
 
 // write a function to merge two arrays and remove duplicates
@@ -52,7 +47,6 @@ function coins(price) {
 function mergeUnique(arr1, arr2) {
   const array = arr1.concat(arr2)
   return array.filter((element,index) => array.indexOf(element) === index)
-
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
@@ -67,9 +61,10 @@ function arrayToObjects(array, key) {
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
-  const arr = object.map()
-  console.log(object.split(','))
-
+  let key = Object.keys(object)
+  //const value = Object.values(object)
+  key = key.map((name,index)=> [key[index], Object.values(object)[index]])
+  return key
 }
 
 // write a function to find the first n fibonacci numbers
@@ -82,7 +77,7 @@ function fibonacci(n) {
     if(i<2){
       sequence.push(i)
     }else{
-      sequence.push(sequence[i-2] + sequence[i-1])
+      sequence.push(sequence[i-1] + sequence[i-2])
     }
   }
   return sequence
@@ -93,6 +88,13 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
+  const numDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  const data = [date1.split('-'), date2.split('-')].sort()
+  const days = numDaysInMonth.slice(parseInt(data[0][1])-1, parseInt(data[1][1])-1).reduce((accum,elm) => accum+elm, 0)
+  const remaninDay = Math.abs(parseInt(data[0][2]) -   parseInt(data[1][2]))
+  const remaninYear = 365 * Math.abs(parseInt(data[0][0]) -   parseInt(data[1][0]))
+
+  return remaninYear+remaninDay+days
 
 }
 
