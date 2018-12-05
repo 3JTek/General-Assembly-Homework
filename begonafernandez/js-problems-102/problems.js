@@ -16,7 +16,12 @@ function randomElement(array) {
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
-
+  const sortedArray = array.sort()
+  return [sortedArray[1],sortedArray[array.length - 1] ]
+  //
+  // array.splice(array.indexOf( Math.max(...array)), 1)
+  // array.splice(array.indexOf( Math.min(...array)), 1)
+  // return [Math.min(...array), Math.max(...array)]
 }
 
 // write a function that will convert a price into coins needed to make up that price
