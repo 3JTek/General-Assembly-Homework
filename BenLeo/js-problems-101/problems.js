@@ -26,9 +26,9 @@ function numberReverse(n) {
 // write a function to check if a word or phrase is a palindrome returning a boolean
 // eg. palindromeCheck('dad') => true, palindrome('nonsense') => false
 function palindromeCheck(string) {
-  //Strip all formatting from the string
+  //Strip all non-word characters from the string
   const plainText = /[\W_]/g
-  //Convert plainText to lower case
+  //Convert string to lower case
   const lowerCase = string.toLowerCase().replace(plainText, '')
   //Reverse string
   const reverseString = lowerCase.split('').reverse().join('')
@@ -47,10 +47,10 @@ function orderStringAlphabetically(string) {
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
-// //   return string.split('').reduce((acc, char) => {
-// //     acc[char] = (acc[char] || 0) + 1
-// //     return acc
-// //   }, {})
+  return string.split('').reduce((acc, char) => {
+    acc[char] = (acc[char] || 0) + 1
+    return acc
+  }, {})
 }
 
 // write a function that capitalizes the first letter of each word
@@ -58,7 +58,7 @@ function numOfOccurances(string) {
 function titleCase(string) {
   var stringText = string.split(' ')
   for (var i = 0; i < stringText.length; i++) {
-    stringText[i] = stringText[i].charAt(0).toUpperCase() + stringText[i].substring(1)
+    stringText[i] = stringText[i].charAt(0).toUpperCase()
   }
   return stringText.join(' ')
 }
