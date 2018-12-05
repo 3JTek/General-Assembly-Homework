@@ -45,6 +45,7 @@ function arrayToObjects(array, key) {
   return array.map((element) => {
     const obj = {}
     obj[key] = element
+    return obj
   })
 }
 
