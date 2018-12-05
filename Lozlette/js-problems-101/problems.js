@@ -35,6 +35,7 @@ function palindromeCheck(string) {
 function orderStringAlphabetically(string) {
   const alphabetical = string.replace(/ /g, '').toLowerCase()
   return alphabetical.split('').sort().join('')
+  //split, sort alphabetically then join the string back together again.
 
 
 }
@@ -42,14 +43,32 @@ function orderStringAlphabetically(string) {
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
-  const freq = {}
-  string = string.lowerCase().split('').join()
-  for(let i = 0; i < string.length; i++) {
-    const currentLetter = string.charAt(i)
-    freq[currentLetter] = freq[currentLetter] + 1 || 1
-  }
-  return freq
+  const characterObj = {}
+  string.toLowerCase().replace(/ /g, '').split('').forEach(letter => {
+    if(characterObj[letter]){
+      characterObj[letter]+=1
+    } else {
+      characterObj[letter]=1
+    }
+  })
+  return characterObj
 }
+
+//globally replace all letters with empty string
+
+
+//    = string.toLowerCase().split('').join('')
+//
+//   for(let i = 0; i < string.length; i++){
+//     if(!characterObj.hasOwnProperty(string[i])){
+//       characterObj[string[i]] = 1
+//     }else{
+//       characterObj[string[i]] += 1
+//     }
+//   }
+//   return characterObj
+// }
+
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
