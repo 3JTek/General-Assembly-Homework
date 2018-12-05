@@ -49,16 +49,17 @@ function numOfOccurances(string) {
 
   var response ={}
   const newArray = string.replace(/\s/g,'').toLowerCase().split('')
-  newArray.forEach(function(element, index){
-    const nbOfOccurance = newArray.reduce(function(acc, letter) {
-      if(element === letter){
-        acc ++
-      }
-    })
-    response.element = nbOfOccurance
+
+  newArray.forEach(function(letter){
+    if(response[letter]){
+      response[letter] ++
+    } else{
+      response[letter] = 1
+    }
   })
   return response
 }
+
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
@@ -89,7 +90,7 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-  console.log(string.length)
+  (string.length)
   let newString = ''
   for(let i=1;i<=string.length + 4;i++){
     newString = newString + '*'
