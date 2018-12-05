@@ -4,14 +4,14 @@
 // It should handle complex data types eg: {}, [] etc.
 // eg: [0, false, [], undefined, {}, NaN, 'Kevin'] => [0, [], {}, 'Kevin'];
 function removeBlank(array) {
-  //loop through each array item
-  //Find falsy values
+  //use filter
   return array.filter(element => !!element || element === 0)
 }
 
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
+  //return array whose elements have been turned into a whole numbers using Math.floor and math.random to choose random elements.
   return array[Math.floor((Math.random()*array.length))]
 }
 
@@ -23,7 +23,7 @@ function secondLowestSecondHighest(array) {
   //const sortedArray = array.sort((a, b) => a - b))
   //find index[1] and array.length-1
 
-//return number at index 1 and second to last index of array
+//return number at index 1 and second to last index of array??
 }
 
 // write a function that will convert a price into coins needed to make up that price
@@ -44,7 +44,10 @@ function mergeUnique(arr1, arr2) {
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-  Object.assign({}, ['a','b','c'])
+  const newObject =  array.map(name => {
+    return {[key]: name}
+  })
+  return newObject
 }
 
 // write a function to convert an object into an array of arrays containing key and value
@@ -65,7 +68,11 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
-
+  //turn strings into arrays
+  const newDate1 = date1.split('-')
+  const newDate2 = date2.split('-')
+  //minus the number at 0 index of newDate2 from same of newDate1, and do the same for indexes 1 and 2 and return the values.
+  return ((newDate1[0] - newDate2[0]) * 365 + (newDate1[1] - newDate2[1]) * 31 + (newDate1[2] - newDate2[2]))
 }
 
 // write a function which returns the number of seconds between two times (in the same day)
