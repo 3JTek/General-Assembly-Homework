@@ -2,60 +2,38 @@
 /* eslint-disable no-extra-boolean-cast */
 
 
-function highestValue(array){
-  // A function which takes an array of numbers and returns the index of the highest value
-  //Go through the array
-  let store
-  //repeat
-  array.forEach(elem => {
-    //store first value
-    if (store === undefined) store = elem
-    //Compare the next value with the stored value. store the bigger value
-    if (elem > store){
-      store = elem
-    }
-  })
-  //output index of the stored value
-  return array.indexOf(store)
-}
-
-function lowestValue(array){
-  // A function which takes an array of numbers and returns the index of the lowest value
-  //Go through the array
-  let store
-  //repeat
-  array.forEach(elem => {
-    //store first value
-    if (store === undefined) store = elem
-    //Compare the next value with the stored value. store the smaller value
-    if (elem < store){
-      store = elem
-    }
-  })
-  //output index of the stored value
-  return array.indexOf(store)
-}
-
-
 // write a function to remove all empty values (null, undefined, '', NaN, false) EXCEPT 0 from an array.
 // It should handle complex data types eg: {}, [] etc.
 // eg: [0, false, [], undefined, {}, NaN, 'Kevin'] => [0, [], {}, 'Kevin'];
 function removeBlank(array) {
+
+  //create store to store non empty values
   const store = []
+
+  //for each element in array
   array.forEach((elem, index) => {
+
+    //If 0 store
     if(elem === 0)store.push(elem)
+
+    //If Truthy store
     if(!!elem) store.push(elem)
   })
+
+  //return array
   return store
 }
 
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
+
   //get length of arra
   const len = array.length
+
   //get random number from 0 to length
   const rdm = Math.floor(Math.random())*len
+
   // return item with index random
   return array[rdm]
 }
@@ -63,22 +41,32 @@ function randomElement(array) {
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
+
+  function highestValue(array){
+    const maxVal = Math.max(...array)
+    return array.indexOf(maxVal)
+  }
+
+  function lowestValue(array){
+    const maxVal = Math.min(...array)
+    return array.indexOf(maxVal)
+  }
+
+  //create arrays to hold
   const hiArr = array
   const loArr = array
   const store = []
 
-  //get highest value
-  // let index = highestValue(hiArr)
   //remove highest value from array
   hiArr.splice(highestValue(hiArr), 1)
-  //get highest value and store in array
+
+  //get the new highest value and store in array
   store.unshift(hiArr[highestValue(hiArr)])
 
-  //get lowest value
-  // index = lowestValue(loArr)
   //remove lowest value
   loArr.splice(lowestValue(loArr), 1)
-  //get lowest value and store in array
+
+  //get the new lowest value and store in array
   store.unshift(loArr[lowestValue(loArr)])
 
   return store
@@ -113,6 +101,8 @@ function coins(price) {
     //What is the remainder?
     leftToPay = leftToPay%coins[x]
   }
+
+  //Return array
   return store
 
 }
@@ -135,6 +125,8 @@ function mergeUnique(...args) {
 
     })
   })
+
+  //return array
   return store
 }
 
@@ -165,6 +157,7 @@ function arrayToObjects(array, key) {
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
+
   //Create array
   const store = []
 
@@ -190,11 +183,20 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
+  //Create store for accum
   const store = 0
+
+  //Create starting array of fibonacci
   const array = [0 , 1]
+
+  //loop from 2 to n
   for(let i=2;i<n;i++){
+
+    //Add previous 2 values and push into the array
     array.push(array[i-1]+ array[i-2])
   }
+
+  //Only return array of length n
   return array.slice(0,n)
 }
 
@@ -202,7 +204,6 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
-
 
   //get the first date in ms
   const date1MS = Date.parse(date1)
@@ -227,52 +228,67 @@ function daysBetween(date1, date2) {
 // throw an error if the time format is wrong
 function secondsBetween(time1, time2) {
 
+  //If the arguments don't contain two ':'s then throw Error
+  if(time1.split(':').length !== 3) throw Error('Invalid Format')
+  if(time2.split(':').length !== 3) throw Error('Invalid Format')
 
-  function isTwelveHour(string){
-    const lastCharacter = string.substr(string.length-2,string.length)
-    let result = false;
-    result = lastCharacter === 'am' ? 'am':false
-    result = lastCharacter === 'pm' ? 'pm':false
-    return result
+  //Convert 12 hour clock to 24hour clock
+  function convert12To24(time){
+
+    //Get the last 2 characters
+    const lastCharacter = time.substr(time.length-2,time.length)
+
+    //If it is 12hr clock, set is12hr to AM or PM otherwise, false
+    const is12hr = lastCharacter === 'am' ? 'am':lastCharacter === 'pm' ? 'pm': false
+
+    //If it is 12hour
+    if(is12hr){
+      //Remove last two characters and return array
+      time = time.split('').slice(0,7)
+
+      //if it is PM
+      if(is12hr === 'pm'){
+
+        //if PM add 12 hours
+        time[0] = parseInt(time[0])
+        time[0] += 12
+      }
+
+      //Join array back to time
+      time = time.join('')
+    }
+
+    //return time
+    return time
   }
 
-  const time1isTwelveHour = isTwelveHour(time1)
-  // console.log(time1isTwelveHour)
+  //Function to convert 12 hour or 24hour string to seconds
+  function convertToSeconds(string){
+    //Convert to 24hour
+    const time = convert12To24(string)
 
-  const time2isTwelveHour = isTwelveHour(time2)
-    // console.log(time2isTwelveHour)
+    //split into array of hours mis secondLowestSecondHighest
+    const timeArray = time.split(':')
 
-  //split into array of hours mis secondLowestSecondHighest
-  const time1Array = time1.split(':')
-  //convert to secs
-  //hours = 60 * 60
-  //if is 12 hour and is pm add 12 hours
-  if(time1isTwelveHour) {
-    time1Array[0] = parseInt(time1Array[0])
-    time1Array[0] += 12
-    //console.log(`${time1} : ${time1Array[0]}`)
+    //hrs to secs = 60*60
+    timeArray[0] = timeArray[0]*60*60
+
+    //mins to secs= 60
+    timeArray[1] = timeArray[1]*60
+
+    //secs
+    timeArray[2] = parseInt(timeArray[2])
+
+    //Add all secs together
+    const timeSecs = timeArray.reduce((acc,num) => acc+num,0)
+
+    //Return sum
+    return timeSecs
   }
-  console.log(`${time1} : ${time1Array[0]}`)
-  time1Array[0]=time1Array[0]*60*60
-  //mins = 60
-  time1Array[1]=time1Array[1]*60
-  //Add all secs together
-  const time1Secs = time1Array.reduce((acc,num) => acc+num,0)
 
+  //Find absolute difference between two times
+  const diff = Math.abs( convertToSeconds(time1) - convertToSeconds(time2) )
 
-  const time2Array = time2.split(':')
-  //convert to secs
-  //hours = 60 * 60
-  //if is 12 hour and is pm add 12 hours
-  if(time2isTwelveHour) time2Array[0]+=12
-  time2Array[0]=time2Array[0]*60*60
-  //mins = 60
-  time2Array[1]=time2Array[1]*60
-  //Add all secs together
-  const time2Secs = time2Array.reduce((acc,num) => acc+num,0)
-
-  const diff = Math.abs(time1Secs - time2Secs)
-
+  //return the difference
   return diff
-
 }

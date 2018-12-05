@@ -103,6 +103,7 @@ describe('secondsBetween', () => {
     expect(secondsBetween('7:30:00pm', '8:00:00pm')).to.equal(1800)
     expect(secondsBetween('17:30:00', '18:00:00')).to.equal(1800)
     expect(secondsBetween('5:30:00pm', '18:00:00')).to.equal(1800)
+    //expect(secondsBetween('12:00:00am', '0:30:00')).to.equal(1800)
   })
   it('should throw an error if time format is wrong', () => {
     expect(secondsBetween.bind(window, '1 o\'clock', '13-45-00')).to.throw(Error)
