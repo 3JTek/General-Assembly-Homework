@@ -4,20 +4,24 @@
 // It should handle complex data types eg: {}, [] etc.
 // eg: [0, false, [], undefined, {}, NaN, 'Kevin'] => [0, [], {}, 'Kevin'];
 function removeBlank(array) {
-
+  return array.filter(elem => !!elem || elem === 0)
 }
 
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
-
+  return array[Math.floor(Math.random()*array.length-1)]
 }
 
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
-
+  let newArr = array.sort((a, b) => a - b)
+  newArr = [newArr[1], newArr[newArr.length - 2]]
+  return newArr
 }
+
+
 
 // write a function that will convert a price into coins needed to make up that price
 // the coins available are 1, 2, 5, 10, 20, 50, 100
@@ -30,7 +34,10 @@ function coins(price) {
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
+  // const newArr = arr1.concat(arr2)
+  // return newArr.filter((el, index) => newArr.indexOf(el) === index)
 
+  return [...new Set(arr1.concat(arr2))]
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
