@@ -33,9 +33,9 @@ function palindromeCheck(string) {
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-  const alphabetical = string.split('').sort().join('')
-  return alphabetical.replace(/ /g, '')
-  return alphabetical.ignoreCase()
+  const alphabetical = string.replace(/ /g, '').toLowerCase()
+  return alphabetical.split('').sort().join('')
+
 
 }
 
@@ -43,6 +43,7 @@ function orderStringAlphabetically(string) {
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
   const freq = {}
+  string = string.lowerCase().split('').join()
   for(let i = 0; i < string.length; i++) {
     const currentLetter = string.charAt(i)
     freq[currentLetter] = freq[currentLetter] + 1 || 1
