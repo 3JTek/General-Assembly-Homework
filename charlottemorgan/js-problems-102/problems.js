@@ -37,16 +37,16 @@ function coins(price) {
   const coinOptions = [100, 50, 20, 10, 5, 2, 1]
   // turn price into penny amount
   let pennyAmount = price * 100
-  //running over coinOptions array and accumulating. changeWallet is the name accum and coin is the coin that we are currently on eg. the element in the array
+  //running over coinOptions array and accumulating. changeWallet is the name accum and coin is the coin that we are currently on in the loop eg. the element in the array
   return coinOptions.reduce((changeWallet, coin) => {
     // define variable coinAmount which divides the pennyAmount by the coin that we are on in the array and math.floor round it down to the nearest whole number.
     const coinAmount = Math.floor(pennyAmount / coin)
-    // pushing the coin its on into the accumulator for as many times as the result of coinAmount and then store in the array that many times
+    // pushing the coin(element) its on into the accumulator for as many times as the result of coinAmount and then store in the array that many times
     for (let i = 0; i < coinAmount; i++) {
       changeWallet.push(coin)
     }
-    //reduce runs over coinOptions regardless of pennyAmount
-    //this turns penny amount
+    //reduce runs over coinOptions regardless of pennyAmount, when there is a remainder and coins are still needed then the function will run again using the remainder as the new penny amount
+    //when pennyAmount is equal to zero then it will return the results of reduce which will be the array containing the coins that we need
     pennyAmount = pennyAmount % coin
     return changeWallet
   }, [])
