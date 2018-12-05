@@ -27,6 +27,7 @@ function secondLowestSecondHighest(array) {
 // the coins available are 1, 2, 5, 10, 20, 50, 100
 // the function should use the smallest number of coins possible
 // eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
+// HAD TIPS FROM ED...STILL TO UNDERSTAND HOW WORKS
 function coins(price) {
   let remainingPrice = price*100
   const coinArray = []
@@ -85,6 +86,9 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
+  const newDate1 = date1.split('-')
+  const newDate2 = date2.split('-')
+  return ((newDate1[0] - newDate2[0]) * 365 + (newDate1[1] - newDate2[1]) * 31 + (newDate1[2] - newDate2[2]))
 
 }
 
