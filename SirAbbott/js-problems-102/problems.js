@@ -33,7 +33,7 @@ function randomElement(array) {
 
 function secondLowestSecondHighest(array) {
 
-  const sortedArray = array.sort((a, b) => a - b)
+  const sortedArray = array.sort((el, i) => el - i)
   return [sortedArray[1], sortedArray[array.length - 2]]
 }
 
@@ -72,9 +72,15 @@ function mergeUnique(arr1, arr2) {
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
 
-
-
+  const newArray = array.map(name => {
+    return {
+      [key]: name
+    }
+  })
+  return newArray
 }
+
+
 
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
@@ -87,6 +93,10 @@ function objectToArray(object) {
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
 
+  if (n <= 1) {
+    return 1
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)

@@ -45,7 +45,7 @@ describe('mergeUnique', () => {
   })
 })
 
-xdescribe('arrayToObjects', () => {
+describe('arrayToObjects', () => {
   it('should convert an array of strings to an array of objects', () => {
     expect(arrayToObjects(['Paris', 'New York'], 'city')[0]).to.be.an('object')
   })
@@ -93,7 +93,7 @@ xdescribe('objectToArray', () => {
   })
 })
 
-xdescribe('fibonacci', () => {
+describe('fibonacci', () => {
   it('should return the first n fibonacci numbers', () => {
     expect(fibonacci(8)).to.deep.equal([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fibonacci(1)).to.deep.equal([0])
