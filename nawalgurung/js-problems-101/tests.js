@@ -4,7 +4,7 @@
 const chai  = window.chai
 const expect = chai.expect
 
-describe('hello', () => {
+xdescribe('hello', () => {
   it('should return "Hello World!" if no argument is passed', () => {
     expect(hello()).to.equal('Hello World!')
   })
@@ -13,7 +13,7 @@ describe('hello', () => {
   })
 })
 
-describe('areaOfCircle', () => {
+xdescribe('areaOfCircle', () => {
   it('should find the area of a circle given a radius', () => {
     expect(areaOfCircle(4)).to.equal(50.26548245743669)
     expect(areaOfCircle(10)).to.equal(314.1592653589793)
@@ -21,7 +21,7 @@ describe('areaOfCircle', () => {
   })
 })
 
-describe('celciusToFarenheit', () => {
+xdescribe('celciusToFarenheit', () => {
   it('should convert celcius to farenheit', () => {
     expect(celciusToFarenheit(0)).to.equal(32)
     expect(celciusToFarenheit(-40)).to.equal(-40)
@@ -29,7 +29,7 @@ describe('celciusToFarenheit', () => {
   })
 })
 
-describe('numberReverse', () => {
+xdescribe('numberReverse', () => {
   it('should reverse a number', () => {
     expect(numberReverse(123)).to.equal(321)
     expect(numberReverse(4001)).to.equal(1004)
@@ -39,7 +39,7 @@ describe('numberReverse', () => {
   })
 })
 
-describe('palindromeCheck', () => {
+xdescribe('palindromeCheck', () => {
   it('should check if a word is a palindrome', () => {
     expect(palindromeCheck('pop')).to.be.true
     expect(palindromeCheck('dog')).to.be.false
@@ -50,7 +50,7 @@ describe('palindromeCheck', () => {
   })
 })
 
-describe('orderStringAlphabetically', () => {
+xdescribe('orderStringAlphabetically', () => {
   it('should order a word alphabetically', () => {
     expect(orderStringAlphabetically('happy')).to.equal('ahppy')
   })
@@ -62,7 +62,7 @@ describe('orderStringAlphabetically', () => {
   })
 })
 
-xdescribe('numOfOccurances', () => {
+describe('numOfOccurances', () => {
   it('should return the number of occurances of each letter of a string', () => {
     expect(numOfOccurances('this is great')).to.deep.equal({ t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 })
   })
@@ -71,13 +71,13 @@ xdescribe('numOfOccurances', () => {
   })
 })
 
-describe('titleCase', () => {
+xdescribe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })
 })
 
-describe('numOfVowels', () => {
+xdescribe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
@@ -86,7 +86,7 @@ describe('numOfVowels', () => {
   })
 })
 
-describe('frame', () => {
+xdescribe('frame', () => {
   it('should frame a string in asterisks', () => {
     expect(frame('Rumplestiltskin')).to.equal('*******************\n* Rumplestiltskin *\n*******************')
     expect(frame('Hello Kitty')).to.equal('***************\n* Hello Kitty *\n***************')
