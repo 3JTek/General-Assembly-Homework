@@ -25,7 +25,7 @@ describe('secondLowestSecondHighest', () => {
   })
 })
 
-xdescribe('coins', () => {
+describe('coins', () => {
   it('should return the coins needed to make up the price supplied', () => {
     expect(coins(1.50)).to.deep.equal([100, 50])
   })
