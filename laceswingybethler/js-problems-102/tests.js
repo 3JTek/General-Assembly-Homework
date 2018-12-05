@@ -45,7 +45,7 @@ describe('mergeUnique', () => {
   })
 })
 
-xdescribe('arrayToObjects', () => {
+describe('arrayToObjects', () => {
   it('should convert an array of strings to an array of objects', () => {
     expect(arrayToObjects(['Paris', 'New York'], 'city')[0]).to.be.an('object')
   })

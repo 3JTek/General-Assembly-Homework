@@ -73,7 +73,7 @@ function mergeUnique(arr1, arr2) {
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-
+  console.log(array.map((el)=> {key:el}))
 }
 
 // write a function to convert an object into an array of arrays containing key and value
