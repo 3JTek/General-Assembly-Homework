@@ -10,12 +10,13 @@
 //return the array
 function removeBlank(array) {
   const emptyValues = [null, undefined, '', NaN, false, [], {}]
-  // return array.filter((ele) => !== elem inside[emptyValues]
-  return array.filter(function(ele) {
-    return !emptyValues.includes(ele)
-  })
+  return array.filter((el)=> !emptyValues.includes(el))
 }
-
+// const emptyValues = [null, undefined, '', NaN, false, [], {}]
+// // return array.filter((ele) => !== elem inside[emptyValues]
+// return array.filter(function(ele) {
+//   return !emptyValues.includes(ele)
+// })
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
@@ -31,11 +32,16 @@ function randomElement(array) {
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
+  // let newArray = array.map((el)=> parseInt(el))
+  array.sort((a,b) => a-b)
 
+  // array.sort()
+  // console.log(array)
+  return [array[1], array[array.length-2]]
 }
 //PSEUDO:
 //sort the array
-//return array[1] and array[array.length-2] (can use a array.filter)
+//return array[1] and array[array.length-2] (can use a array.filter?)
 
 
 // write a function that will convert a price into coins needed to make up that price
@@ -56,9 +62,13 @@ function coins(price) {
 
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
+// [1,2],[3,4]
 function mergeUnique(arr1, arr2) {
-
+  // const catArray = arr1.concat(arr2)
+  return arr1.concat(arr2).reduce((acc,el)=> acc.includes(el) ? acc : acc.concat(el), [])
 }
+
+//to remove duplicates, accumulate (el) then push if not found
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
@@ -87,6 +97,7 @@ function fibonacci(n) {
   for(let i=0;i<n;i++) {
     if(i<2){
       fibSeries.push(i)
+      console.log(fibSeries)
     }else {
       fibSeries.push(fibSeries[i-2] +fibSeries[i-1])
     }

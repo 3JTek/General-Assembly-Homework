@@ -19,7 +19,7 @@ describe('randomElement', () => {
   })
 })
 
-xdescribe('secondLowestSecondHighest', () => {
+describe('secondLowestSecondHighest', () => {
   it('should return the second highest and second lowest numbers of an array', () => {
     expect(secondLowestSecondHighest([99,2000,-93,40,-761115,11])).to.deep.equal([-93,99])
   })
@@ -35,7 +35,7 @@ xdescribe('coins', () => {
   })
 })
 
-xdescribe('mergeUnique', () => {
+describe('mergeUnique', () => {
   it('should merge two arrays', () => {
     expect(mergeUnique([1,2,3], [4,5,6])).to.deep.equal([1,2,3,4,5,6])
   })
