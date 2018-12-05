@@ -33,13 +33,20 @@ function secondLowestSecondHighest(array) {
 // the function should use the smallest number of coins possible
 // eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
 function coins(price) {
+  //create array containing coin options
   const coinOptions = [100, 50, 20, 10, 5, 2, 1]
+  // turn price into penny amount
   let pennyAmount = price * 100
+  //running over coinOptions array and accumulating. changeWallet is the name accum and coin is the coin that we are currently on eg. the element in the array
   return coinOptions.reduce((changeWallet, coin) => {
+    // define variable coinAmount which divides the pennyAmount by the coin that we are on in the array and math.floor round it down to the nearest whole number.
     const coinAmount = Math.floor(pennyAmount / coin)
+    // pushing the coin its on into the accumulator for as many times as the result of coinAmount and then store in the array that many times
     for (let i = 0; i < coinAmount; i++) {
       changeWallet.push(coin)
     }
+    //reduce runs over coinOptions regardless of pennyAmount
+    //this turns penny amount
     pennyAmount = pennyAmount % coin
     return changeWallet
   }, [])
@@ -76,8 +83,18 @@ function arrayToObjects(array, key) {
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
-  const objectArray = Object.keys(object).map(i => objectArray[i])
+  const keysArray = Object.keys(object)
+  const valuesArray = Object.values(object)
+  const newArray = []
+
+  for(let i = 0 ; i < keysArray.length ; i++){
+    // keysArray.forEach((el, ind) => newArray.push([keysArray[ind],valuesArray[ind]]))
+    // console.log(newArray)
+    newArray.push([keysArray[i],valuesArray[i]])
+  }
+  return newArray
 }
+
 
 // write a function to find the first n fibonacci numbers
 // the fibonacci sequence is a series of numbers, each number is the sum of the last two
@@ -96,13 +113,16 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
-  var date_diff_indays = function(date1, date2) {
-dt1 = new Date(date1);
-dt2 = new Date(date2);
-return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
-}
 
 }
+
+//   let dayCount = 0
+//   while(date1 >= date2) {
+//     dayCount++
+//     date1.setDate(date1.getDate() + 1)
+//   }
+//   return dayCount
+// }
 
 // write a function which returns the number of seconds between two times (in the same day)
 // times should be given as strings in the format "HH:MM:SS"
