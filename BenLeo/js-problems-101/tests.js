@@ -77,7 +77,7 @@ describe('titleCase', () => {
   })
 })
 
-xdescribe('numOfVowels', () => {
+describe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
