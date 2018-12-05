@@ -34,21 +34,25 @@ function coins(price) {
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
-  // const newArr = arr1.concat(arr2)
-  // return newArr.filter((el, index) => newArr.indexOf(el) === index)
+  const newArr = arr1.concat(arr2)
+  return newArr.filter((el, index) => newArr.indexOf(el) === index)
 
-  return [...new Set(arr1.concat(arr2))]
+  // return [...new Set(arr1.concat(arr2))]
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-
+  const newArray =  array.map(name => {
+    return {[key]: name}
+  })
+  return newArray
 }
 
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
+
 
 }
 
@@ -57,7 +61,12 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-
+  const sequence = [0,1]
+  for (let i = 2; i <= n; i++) {
+    sequence.push(sequence[i-1] + sequence[i-2])
+  }
+  sequence.pop()
+  return sequence
 }
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
