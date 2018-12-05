@@ -4,7 +4,7 @@
 const chai  = window.chai
 const expect = chai.expect
 
-xdescribe('hello', () => {
+describe('hello', () => {
   it('should return "Hello World!" if no argument is passed', () => {
     expect(hello()).to.equal('Hello World!')
   })
@@ -13,7 +13,7 @@ xdescribe('hello', () => {
   })
 })
 
-xdescribe('areaOfCircle', () => {
+describe('areaOfCircle', () => {
   it('should find the area of a circle given a radius', () => {
     expect(areaOfCircle(4)).to.equal(50.26548245743669)
     expect(areaOfCircle(10)).to.equal(314.1592653589793)
@@ -21,7 +21,7 @@ xdescribe('areaOfCircle', () => {
   })
 })
 
-xdescribe('celciusToFarenheit', () => {
+describe('celciusToFarenheit', () => {
   it('should convert celcius to farenheit', () => {
     expect(celciusToFarenheit(0)).to.equal(32)
     expect(celciusToFarenheit(-40)).to.equal(-40)
@@ -29,7 +29,7 @@ xdescribe('celciusToFarenheit', () => {
   })
 })
 
-xdescribe('numberReverse', () => {
+describe('numberReverse', () => {
   it('should reverse a number', () => {
     expect(numberReverse(123)).to.equal(321)
     expect(numberReverse(4001)).to.equal(1004)
@@ -39,7 +39,7 @@ xdescribe('numberReverse', () => {
   })
 })
 
-xdescribe('palindromeCheck', () => {
+describe('palindromeCheck', () => {
   it('should check if a word is a palindrome', () => {
     expect(palindromeCheck('pop')).to.be.true
     expect(palindromeCheck('dog')).to.be.false
@@ -50,7 +50,7 @@ xdescribe('palindromeCheck', () => {
   })
 })
 
-xdescribe('orderStringAlphabetically', () => {
+describe('orderStringAlphabetically', () => {
   it('should order a word alphabetically', () => {
     expect(orderStringAlphabetically('happy')).to.equal('ahppy')
   })
@@ -71,13 +71,13 @@ describe('numOfOccurances', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   it('should capitalize the first letter of each word', () => {
     expect(titleCase('this is it')).to.equal('This Is It')
   })
 })
 
-xdescribe('numOfVowels', () => {
+describe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
