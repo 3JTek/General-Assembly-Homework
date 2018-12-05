@@ -68,8 +68,8 @@ function numOfVowels(string) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-  // const = 'Rumplestiltskin'
-  // return 'Rumplestiltskin'.replace(/./g, '*')
-  // // 'Rumplestiltskin'.replace(/./g, '*')
+  const length = string.length+4
+  const frame = '*'.repeat(length)
+  return frame+'\n* '+string+' *\n'+frame
 
 }
