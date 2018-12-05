@@ -13,13 +13,13 @@ describe('removeBlank', () => {
   })
 })
 
-xdescribe('randomElement', () => {
+describe('randomElement', () => {
   it('should return a random element from an array', () => {
     expect(randomElement(['red', 'green', 'blue'])).to.be.oneOf(['red', 'green', 'blue'])
   })
 })
 
-describe('secondLowestSecondHighest', () => {
+xdescribe('secondLowestSecondHighest', () => {
   it('should return the second highest and second lowest numbers of an array', () => {
     expect(secondLowestSecondHighest([99,2000,-93,40,-761115,11])).to.deep.equal([-93,99])
   })
@@ -75,7 +75,7 @@ xdescribe('objectToArray', () => {
   })
 })
 
-xdescribe('fibonacci', () => {
+describe('fibonacci', () => {
   it('should return the first n fibonacci numbers', () => {
     expect(fibonacci(8)).to.deep.equal([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fibonacci(1)).to.deep.equal([0])
