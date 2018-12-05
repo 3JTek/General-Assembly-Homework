@@ -25,15 +25,15 @@ function numberReverse(number) {
 // write a function to check if a word or phrase is a palindrome returning a boolean
 // eg. palindromeCheck('dad') => true, palindrome('nonsense') => false
 function palindromeCheck(string) {
-  const anger8 = string.split('').reverse().join('')
-  return string.replace(/ /g,'') === anger8.replace(/ /g, '')
+  const check = string.split('').reverse().join('')
+  return string.replace(/ /g,'') === check.replace(/ /g, '')
 }
 
 // write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
-  const anger = string.replace(/ /g, '').toLowerCase()
-  return anger.split('').sort().join('')
+  const check = string.replace(/ /g, '').toLowerCase()
+  return check.split('').sort().join('')
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
@@ -55,7 +55,8 @@ function titleCase(string) {
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
-
+  const m = string.match(/[aeiou]/gi)
+  return m === null ? 0 : m.length
 }
 
 // write a function that frames a string in asterisks (*)
@@ -68,5 +69,4 @@ function frame(string) {
     str = str + '*'
   }
   return str + '\n* ' + string + ' *\n' + str
-
 }
