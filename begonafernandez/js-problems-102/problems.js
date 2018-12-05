@@ -18,10 +18,6 @@ function randomElement(array) {
 function secondLowestSecondHighest(array) {
   const sortedArray = array.sort()
   return [sortedArray[1],sortedArray[array.length - 1] ]
-  //
-  // array.splice(array.indexOf( Math.max(...array)), 1)
-  // array.splice(array.indexOf( Math.min(...array)), 1)
-  // return [Math.min(...array), Math.max(...array)]
 }
 
 // write a function that will convert a price into coins needed to make up that price
@@ -29,19 +25,27 @@ function secondLowestSecondHighest(array) {
 // the function should use the smallest number of coins possible
 // eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
 function coins(price) {
-
+  // const coins = []
+  // let rest
+  // let poundCoins = price / 100
+  // rest = price
+  //
+  //
 }
 
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
-
+  return arr1.concat(arr2.filter((element) => arr1.indexOf(element) < 0))
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-
+  return array.map((element) => {
+    const obj = {}
+    obj[key] = element
+  })
 }
 
 // write a function to convert an object into an array of arrays containing key and value
@@ -55,8 +59,14 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-
+  const sequence = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    sequence.push(sequence[i-1] + sequence[i-2])
+  }
+  sequence.pop()
+  return sequence
 }
+
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
 // it should not return negative numbers

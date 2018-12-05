@@ -35,7 +35,7 @@ xdescribe('coins', () => {
   })
 })
 
-xdescribe('mergeUnique', () => {
+describe('mergeUnique', () => {
   it('should merge two arrays', () => {
     expect(mergeUnique([1,2,3], [4,5,6])).to.deep.equal([1,2,3,4,5,6])
   })
@@ -75,7 +75,7 @@ xdescribe('objectToArray', () => {
   })
 })
 
-xdescribe('fibonacci', () => {
+describe('fibonacci', () => {
   it('should return the first n fibonacci numbers', () => {
     expect(fibonacci(8)).to.deep.equal([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fibonacci(1)).to.deep.equal([0])
