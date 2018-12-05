@@ -46,14 +46,18 @@ return string.replace(/\s/g,'').toLowerCase().split('').sort().join('')
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
-  // var response ={}
-  // const newArray = string.replace(/\s/g,'').toLowerCase().split('')
-  // myArray.reduce((product, num) => num === product++, 0)//0 is the initial value of "sum" called the accumulator
-  //
-  //   response[item] = string.match(re).index
-  // })
-  // console.log(response)
-  // return response
+
+  var response ={}
+  const newArray = string.replace(/\s/g,'').toLowerCase().split('')
+  newArray.forEach(function(element, index){
+    const nbOfOccurance = newArray.reduce(function(acc, letter) {
+      if(element === letter){
+        acc ++
+      }
+    })
+    response.element = nbOfOccurance
+  })
+  return response
 }
 
 // write a function that capitalizes the first letter of each word
