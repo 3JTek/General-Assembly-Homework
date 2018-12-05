@@ -37,12 +37,16 @@ function mergeUnique(arr1, arr2) {
   return arr1.concat(arr2.filter(function (item) {
     return arr1.indexOf(item) === -1
   }))
+
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-
+  const newArray = array.map(name => {
+    return {[key]: name }
+  })
+  return newArray
 }
 
 // write a function to convert an object into an array of arrays containing key and value
