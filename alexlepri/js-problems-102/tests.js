@@ -35,7 +35,7 @@ xdescribe('coins', () => {
   })
 })
 
-xdescribe('mergeUnique', () => {
+describe('mergeUnique', () => {
   it('should merge two arrays', () => {
     expect(mergeUnique([1,2,3], [4,5,6])).to.deep.equal([1,2,3,4,5,6])
   })

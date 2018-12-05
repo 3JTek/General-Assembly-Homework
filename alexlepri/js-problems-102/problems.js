@@ -34,7 +34,9 @@ function coins(price) {
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
-
+  return arr1.concat(arr2.filter(function (item) {
+    return arr1.indexOf(item) === -1
+  }))
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
