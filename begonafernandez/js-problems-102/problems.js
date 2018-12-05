@@ -4,7 +4,7 @@
 // It should handle complex data types eg: {}, [] etc.
 // eg: [0, false, [], undefined, {}, NaN, 'Kevin'] => [0, [], {}, 'Kevin'];
 function removeBlank(array) {
-
+  return array.filter((element) => element === 0 || !!element )
 }
 
 // write a function to return a random element from an array
