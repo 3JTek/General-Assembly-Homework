@@ -10,7 +10,7 @@ function removeBlank(array) {
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
-
+  return array[ Math.floor(Math.random() * array.length)]
 }
 
 // write a function that returns the second lowest and second highest number in an array
