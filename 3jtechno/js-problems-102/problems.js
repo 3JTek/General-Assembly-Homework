@@ -10,18 +10,13 @@ function removeBlank(array) {
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
 function randomElement(array) {
-  const randomNumber = [Math.floor(Math.random()*array.length)+1]
-  return array[randomNumber]
+  return array[Math.floor(Math.random()*array.length)+1]
 }
 
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
-  const newArray = []
-  array.sort((a, b) => a - b )
-  newArray.push(array[1])
-  newArray.push(array[array.length - 2])
-  return newArray
+  return array.sort((a, b) => a - b ).filter((elem, index, array) => index === 1 || index === array.length - 2)
 }
 
 // write a function that will convert a price into coins needed to make up that price
@@ -46,41 +41,19 @@ function coins(price) {
 // write a function to merge two arrays and remove duplicates
 //eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
-  const concArray = arr1.concat(arr2)
-  return concArray.filter((element, index, array) => {
-    return array.indexOf(element) === index
-  })
+  return arr1.concat(arr2).filter((element, index, array) => array.indexOf(element) === index)
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-  const newArray = []
-  array.forEach(element => {
-    const resultObject = {}
-    resultObject[key] = element
-    newArray.push(resultObject)
-  })
-  return newArray
+  return array.map((element, index, array) => new Object({city: element}))
 }
 
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
-  let myArray = []
-  const myNewArray = []
-  myArray = Object.keys(object)
-  console.log(myArray)
-  console.log(object[0])
-
-  myArray.forEach((el,index,array) => {
-    const subArray1 = []
-    subArray1.push(el)
-    subArray1.push(object[el])
-    myNewArray.push(subArray1)
-  })
-  console.log(myNewArray)
-  return myNewArray
+  return Object.keys(object).map(key => new Array(key, object[key]))
 }
 
 // write a function to find the first n fibonacci numbers
