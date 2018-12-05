@@ -51,7 +51,7 @@ function arrayToObjects(array, key) {
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
-
+  return Object.entries(object)
 }
 
 // write a function to find the first n fibonacci numbers
