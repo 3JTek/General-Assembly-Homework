@@ -6,12 +6,19 @@ font-family: 'Muli', sans-serif;
 header{
   display: flex;
   justify-content: center;
-  margin-bottom: 0;
 }
 
 img{
   height: 300px;
   width: auto;
+}
+
+.hidden{
+  display: none;
+}
+
+.show{
+  display: auto;
 }
 
 h1{
@@ -60,7 +67,7 @@ h1{
 }
 
 .column:hover{
-  opacity: 1
+  opacity: 1;
 }
 
 footer{

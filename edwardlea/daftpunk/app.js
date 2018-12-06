@@ -20,28 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-
-
   const audio = document.querySelector('audio')
   const sounder = document.querySelectorAll('.column')
 
-
   sounder.forEach(button => button.addEventListener('click', (e) => {
-    // const track = e.target.outerText
-    // console.log(object[track])
     audio.setAttribute('src', object[e.target.outerText])
     audio.play()
-    // audioFile.play()
-    // if(audio[e.childElementCount].paused()) {
-    //   audio[e.childElementCount].play()
-    // } else {
-    //   audio[e.childElementCount].pause()
-    //   audio[e.childElementCount].currentTime = 0
-    // }
   }))
-
-
-
 
 
 })
