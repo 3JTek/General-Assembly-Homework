@@ -1,16 +1,16 @@
 body{
-  background-color: black
-
+  background-color: black;
+font-family: 'Muli', sans-serif;
 }
 
 header{
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 
 img{
-  height: 200px;
+  height: 300px;
   width: auto;
 }
 
@@ -35,5 +35,34 @@ h1{
   vertical-align: middle;
   background-color: black;
   color: white;
-  margin: 2px
+  margin: 2px;
+  opacity: 0.5
+}
+
+.first>.column{
+  color: red;
+  border: 2px solid red;
+}
+
+.second>.column{
+  color: green;
+  border: 2px solid green;
+}
+
+.third>.column{
+  color: orange;
+  border: 2px solid orange;
+}
+
+.fourth>.column{
+  color: grey;
+  border: 2px solid grey;
+}
+
+.column:hover{
+  opacity: 1
+}
+
+footer{
+  height:100px;
 }
