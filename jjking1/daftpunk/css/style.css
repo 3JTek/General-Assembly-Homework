@@ -52,3 +52,11 @@ img{
   background-color: #B10F2E;
   color: white;
 }
+
+.btn:hover{
+  background-color: #011638;
+}
+
+#randomBtn:hover{
+  background-color: #011638;
+}
