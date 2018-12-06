@@ -1,6 +1,8 @@
 header {
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 img {
  margin-bottom: -75px;
@@ -16,7 +18,7 @@ div.soundboard {
   display: flex;
   width : 520px;
   height: 520px;
-  margin: 75px auto;
+  margin: 90px auto;
   flex-wrap: wrap;
   font-size: 40px;
 }
