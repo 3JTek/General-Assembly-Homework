@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+
+img.hero {
+  max-width: 30%;
+  margin: 20px auto;
+  display: block;
+}
+
+.grid-container {
+  width: 600px;
+  height: 400px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.grid-item {
+  width: 23%;
+  height: 23%;
+  border: 1px solid #ff00ff;
+  background-color: black;
+  color: white;
+}
