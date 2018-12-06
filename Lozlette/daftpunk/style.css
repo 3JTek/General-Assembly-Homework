@@ -1,6 +1,29 @@
-.container{
-  display: flex;
+body {
+  background-color: black;
 }
-.row {
-  flex-wrap;
+
+
+.container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+.column {
+  height:100px;
+  width: 100px;
+  background-color: black;
+  border: 1px solid grey;
+  margin: 5px;
+  display: flex;
+
+}
+header{
+  height: 200px;
+}
+button {
+  background-color: black;
+  color: red;
+  border-color: black;
+  align-items: center;
+  margin: auto;
 }
