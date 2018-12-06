@@ -27,8 +27,4 @@ button {
   color: white;
 }
 
-button:hover {
-  background-color: #191919;
-}
-
 button:focus {outline:0;}

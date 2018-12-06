@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
       buttons[i].style.opasity = 0.1
       buttons[i].style.backgroundPosition = 'center'
     })
+
+    buttons[i].addEventListener('mouseout', () => {
+      buttons[i].style.backgroundImage = 'none'
+    })
   }
-
-
 })
