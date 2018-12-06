@@ -92,13 +92,14 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-
-  if (n <= 1) {
-    return 1
+  let fibArray = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    fibArray.push(fibArray[i - 1] + fibArray[i - 2])
+    // return fibonacci(n - 1) + fibonacci(n - 2)
   }
-  return fibonacci(n - 1) + fibonacci(n - 2)
+  fibArray.pop()
+  return fibArray
 }
-
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
