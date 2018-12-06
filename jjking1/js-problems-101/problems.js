@@ -40,18 +40,16 @@ const numOfOccurances = (string) => {
   // form empty object
   const characterObj = {}
   // remove spaces and change case
-  string = string.toLowerCase().split(' ').join('')
-  for(let x =0; x<string.length; x++){
-    // checking if the  object has the property (of f, g, h, etc) and if it does, adding/setting 1 to the value of it
-    !characterObj.hasOwnProperty(string[x]) ? characterObj[string[x]] = 1 : characterObj[string[x]] += 1
-  }
-  console.log(characterObj)
+  string = string.toLowerCase().replace(/ /g,'').split('')
+  string.forEach(function(letter){
+    characterObj[letter] ? characterObj[letter]+=1 : characterObj[letter] = 1
+  })
   return characterObj
 }
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
-function titleCase(string) {
+const titleCase = (string) => {
   // separate each word into an array
   string = string.split(' ')
   // iterate through the words in the array
@@ -70,7 +68,7 @@ function titleCase(string) {
 // eg: numOfVowels('Yellow Submarine') => 6
 const numOfVowels = (string) => {
   // make regex, store matches in array
-  let vowels = string.match(/[aeiou]/gi)
+  const vowels = string.match(/[aeiou]/gi)
   // i ignores case, g makes sure to check for all possible matches,
   // length of array = number of vowels
   return vowels.length

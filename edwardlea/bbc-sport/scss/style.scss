@@ -21,26 +21,26 @@ a{
 
 .hero{
   display: none;
-}
-
-.hero.is-primary{
-  background-color: #ffd230;
-  .title {
-    color: black;
+  &.is-primary{
+    background-color: #ffd230;
+    .title {
+      color: black;
+    }
   }
 }
 
+
 .navbar{
   min-height: 0;
+  &.is-primary {
+    background-color: #ffd230;
+  }
+  &>.container{
+    min-height: 0;
+  }
+
 }
 
-.navbar.is-primary {
-  background-color: #ffd230;
-}
-
-.navbar>.container{
-  min-height: 0;
-}
 
 .navbar-brand{
   min-height: 0;

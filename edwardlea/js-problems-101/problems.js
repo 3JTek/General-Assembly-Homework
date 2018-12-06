@@ -53,8 +53,6 @@ function numOfOccurances(string) {
   return object
 }
 
-
-
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
