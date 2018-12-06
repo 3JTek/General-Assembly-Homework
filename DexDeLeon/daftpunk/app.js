@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.querySelectorAll('audio')
   const buttons = document.querySelectorAll('button.button')
+  const board = document.querySelector('div.buttons')
   console.log(audio, buttons)
 
   function playAudio(audio){
@@ -20,9 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     button.addEventListener('mousedown', () =>{
       button.style.background = 'radial-gradient(#832a25 35%, #0f0)'
-      button.style.textShadow = '1px 1px #fff'
+      button.style.textShadow = '1px 1px 3px #fff'
       button.style.fontSize = '1.8em'
-
     })
     button.addEventListener('mouseup', () =>{
       button.style.background = 'radial-gradient(#000 35%, #832a25)'
