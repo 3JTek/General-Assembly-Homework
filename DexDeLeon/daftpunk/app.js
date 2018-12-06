@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.querySelectorAll('audio')
   const buttons = document.querySelectorAll('button.button')
-  const board = document.querySelector('div.buttons')
   console.log(audio, buttons)
 
   function playAudio(audio){
