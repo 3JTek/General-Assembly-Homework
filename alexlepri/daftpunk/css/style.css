@@ -11,14 +11,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 25%;
 }
-
-/* header {
-  color: red;
-  text-align: center;
-  font-size: 150px;
-} */
 
 .flex-container {
   display: flex;
@@ -27,7 +21,7 @@ body {
   height: 500px;
   width: 500px;
   margin: auto;
-  border: 2px solid #555;
+
 }
 
 .flex-item {
@@ -35,8 +29,16 @@ body {
   height: 24%;
   border: 2px solid #555;
   justify-content: space-around;
+  margin-left: 5px;
+  border-radius: 15px;
 }
 
 button {
-  color: red;
+  color: yellow;
+  background-color: black;
+  font-size: 22px;
+  border: none;
+  top: 500px;
+  padding-top: 40%;
+  padding-left: 18%;
 }
