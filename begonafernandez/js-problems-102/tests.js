@@ -13,7 +13,7 @@ describe('removeBlank', () => {
   })
 })
 
-xdescribe('randomElement', () => {
+describe('randomElement', () => {
   it('should return a random element from an array', () => {
     expect(randomElement(['red', 'green', 'blue'])).to.be.oneOf(['red', 'green', 'blue'])
   })
@@ -25,7 +25,7 @@ describe('secondLowestSecondHighest', () => {
   })
 })
 
-xdescribe('coins', () => {
+describe('coins', () => {
   it('should return the coins needed to make up the price supplied', () => {
     expect(coins(1.50)).to.deep.equal([100, 50])
   })
