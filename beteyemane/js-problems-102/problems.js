@@ -7,7 +7,14 @@ function removeBlank(array) {
 //find falsey values
   return array.filter(element => !!element || element === 0)
 }
-
+//  return the array
+//    return array
+//  then find arrays
+//    .filter
+// that are not an elemtent
+//    (element => !!element
+// or if element is equal to zero
+//|| element === 0)}
 
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
@@ -42,8 +49,10 @@ function mergeUnique(arr1, arr2) {
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-//convert array of strings into objects
-  return
+  const newArray =  array.map(name => {
+    return {[key]: name}
+  })
+  return newArray
 }
 
 
@@ -58,16 +67,23 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-
+  const fib = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    fib.push(fib[i - 1] + fib[i - 2])
+  }
+  fib.pop()
+  return fib
 }
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
+  const newDate1 = date1.split('-')
+  const newDate2 = date2.split('-')
+  return ((newDate1[0] - newDate2[0]) * 365 + (newDate1[1] - newDate2[1]) * 31 + (newDate1[2] - newDate2[2]))
 
 }
-
 // write a function which returns the number of seconds between two times (in the same day)
 // times should be given as strings in the format "HH:MM:SS"
 // it should be able to handle 12-hour (7:35:00pm) and 24-hour (19:35:00) formats

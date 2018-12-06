@@ -19,7 +19,7 @@ describe('randomElement', () => {
   })
 })
 
-describe('secondLowestSecondHighest', () => {
+xdescribe('secondLowestSecondHighest', () => {
   it('should return the second highest and second lowest numbers of an array', () => {
     expect(secondLowestSecondHighest([99,2000,-93,40,-761115,11])).to.deep.equal([-93,99])
   })
@@ -35,7 +35,7 @@ xdescribe('coins', () => {
   })
 })
 
-describe('mergeUnique', () => {
+xdescribe('mergeUnique', () => {
   it('should merge two arrays', () => {
     expect(mergeUnique([1,2,3], [4,5,6])).to.deep.equal([1,2,3,4,5,6])
   })
@@ -45,7 +45,7 @@ describe('mergeUnique', () => {
   })
 })
 
-xdescribe('arrayToObjects', () => {
+describe('arrayToObjects', () => {
   it('should convert an array of strings to an array of objects', () => {
     expect(arrayToObjects(['Paris', 'New York'], 'city')[0]).to.be.an('object')
   })
@@ -75,7 +75,7 @@ xdescribe('objectToArray', () => {
   })
 })
 
-xdescribe('fibonacci', () => {
+describe('fibonacci', () => {
   it('should return the first n fibonacci numbers', () => {
     expect(fibonacci(8)).to.deep.equal([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fibonacci(1)).to.deep.equal([0])
@@ -83,7 +83,7 @@ xdescribe('fibonacci', () => {
   })
 })
 
-xdescribe('daysBetween', () => {
+describe('daysBetween', () => {
   it('should return the number of days between two dates', () => {
     expect(daysBetween('2017-02-01', '2017-01-01')).to.equal(31)
   })
