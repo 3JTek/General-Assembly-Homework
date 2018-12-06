@@ -1,0 +1,19 @@
+
+body {
+  background-color: black;
+}
+
+.soundboard {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 200px auto;
+  width: 500px;
+  height: 500px;
+  border: 1px solid grey;
+}
+
+button {
+  width: 125px;
+  height: 125px;
+  padding: 1px;
+}

@@ -20,6 +20,7 @@ function celciusToFarenheit(celcius) {
 // write a function that will reverse a number (eg. 456733 become 337654)
 function numberReverse(number) {
   number = number + ''
+  console.log(number)
   return parseFloat(number.split('').reverse().join(''))
 }
 
@@ -52,19 +53,31 @@ function orderStringAlphabetically(string) {
 function numOfOccurances(string) {
   // remove any unwanted characters
   const remove = /[\W_]/g
-  // lowercase characters and remove empty space
+  // lowercase characters and replace with empty space
   const replace = string.toLowerCase().replace(remove, '')
   // make characters in to an array
   const array = replace.split('')
   // Loop through the array and create an object where the key is the letter
   // and the count is the value
   // if there is no value then initialise with a 1, if not increase the count
+
   const result = array.reduce((obj, letter) => {
     obj[letter] = obj[letter] ? obj[letter] + 1 : 1
     return obj
   }, {})
   return result
 }
+// Mike Solution  ->
+// var occeobj  = {}
+//  .forEach (letter => {) ---> loop over the array and give back a letter (iterating)
+// if (occuranceobj[letter]) {
+//     occuranceobj[letter] += 1
+// } else {
+//    occuranceobj[letter] = 1
+// }
+// })
+// return occuranceobj
+
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
