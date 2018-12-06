@@ -13,14 +13,22 @@ img {
 }
 
 .column {
-  margin: 4px;
+  margin: 6px;
   flex: 1;
   text-align: center;
-  border: 1px solid black;
 }
 
 button {
   width: 100%;
   padding: 63px 0;
   font-size: 24px;
+  background-color: black;
+  border: 1px solid #323232;
+  color: white;
 }
+
+button:hover {
+  background-color: #191919;
+}
+
+button:focus {outline:0;}
