@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+background-color: black;
+}
+
+header {
+text-align: center;
+}
+.square {
+height: 150px;
+width: 150px;
+border: 1px solid grey;
+}
+
+.column1, .column2, .column3, .column4 {
+justify-content: center;
+display: flex;
+text-align: center;
+}
+
+button {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    color: white;
+}
