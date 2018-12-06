@@ -1,14 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const audio = document.querySelectorAll('audio')
-  const btn = document.querySelectorAll('button')
+  const tunes = document.querySelectorAll('audio')
+  const buttons = document.querySelectorAll('button')
 
-  btn.addEventListener('click', () => {
+  function playAudio (audio) {
     if(audio.paused) {
       audio.play()
     } else {
       audio.pause()
       audio.currentTime = 0
     }
+  }
+
+  buttons.forEach((button, i) => {
+    button.addEventListener('click',() => {
+      playAudio(tunes[i])
+
+    })
+
   })
 
 })
