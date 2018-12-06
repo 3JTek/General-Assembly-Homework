@@ -1,9 +1,14 @@
 .row {
-    display: flex;
-  
+  margin: 0 auto;
+  max-width: 58%;
+  display: flex;
 }
 
 .column {
-  padding: 30px;
+  margin: 4px;
+  padding: 63px 0;
   flex: 1;
+  text-align: center;
+  border: 1px solid black;
+  font-size: 24px;
 }
