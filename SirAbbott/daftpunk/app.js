@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function playMusic(e) {
     const lyrics = e.target.textContent
-    var newLyric = lyrics.toLowerCase().split('').join('')
+    var newLyric = lyrics.toLowerCase().split(' ').join('_')
     const song = document.querySelector('audio')
     song.src = './sounds/' + newLyric + '.wav'
+    console.log(newLyric)
     song.play()
   }
 
