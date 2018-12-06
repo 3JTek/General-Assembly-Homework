@@ -1,0 +1,39 @@
+body{
+  background-color: black
+
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+img{
+  height: 200px;
+  width: auto;
+}
+
+h1{
+  display: none;
+}
+
+.container{
+  width: 500px;
+  margin: auto
+}
+
+.row{
+  display: flex;
+
+}
+.column{
+  width: 125px;
+  text-align: center;
+  height: 125px;
+  line-height: 125px;
+  vertical-align: middle;
+  background-color: black;
+  color: white;
+  margin: 2px
+}
