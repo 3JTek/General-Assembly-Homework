@@ -25,24 +25,19 @@ function secondLowestSecondHighest(array) {
 // the function should use the smallest number of coins possible
 // eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
 function coins(price) {
-  const coins = []
-  const fullPrice =  price  * 100
-  const pounds = Math.floor(fullPrice/  100)
-  let rem = fullPrice % 100
-  const fifty = rem / 50
-  rem = rem % 50
+  const coins = [100, 50, 20, 20, 5, 2, 2]
+  let rem = price * 100
+  const numberOfCoins = []
 
+  coins.forEach(function(coin) {
+    const numberOfCoins = rem % coin
+    rem = rem - (coin * numberOfCoins)
 
-
-  for(let i = 0; i < pounds; i++) {
-    coins.push(100)
-  }
-
-  for(let i = 0; i < fifty; i++) {
-    coins.push(50)
-  }
-
-  return coins
+    for(let i = 0; i < numberOfCoins; i++) {
+      numberOfCoins.push(coin)
+    }
+  })
+  return numberOfCoins
 }
 
 // write a function to merge two arrays and remove duplicates
