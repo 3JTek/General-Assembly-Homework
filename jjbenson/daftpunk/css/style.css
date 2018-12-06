@@ -1,0 +1,51 @@
+/*
+Error: Invalid CSS after "  height": expected ";", was ": 200px,"
+        on line 15 of scss/style.scss
+
+10:   display: flex;
+11:   justify-content: center;
+12: }
+13: button {
+14:   width: 250px,
+15:   height: 200px,
+16: }
+
+Backtrace:
+scss/style.scss:15
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1308:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1238:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1233:in `tok!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:815:in `block in try_declaration'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1284:in `rethrow'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:820:in `try_declaration'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:743:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:708:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:697:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:689:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:681:in `ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:707:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:700:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  height\": expected \";\", was \": 200px,\"\A         on line 15 of scss/style.scss\A \A 10:   display: flex;\A 11:   justify-content: center;\A 12: }\A 13: button {\A 14:   width: 250px,\A 15:   height: 200px,\A 16: }"; }
