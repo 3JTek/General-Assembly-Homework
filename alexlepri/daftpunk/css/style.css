@@ -31,18 +31,12 @@ body {
 }
 
 .flex-item {
-  width: 25%;
-  height: 25%;
+  width: 24%;
+  height: 24%;
   border: 2px solid #555;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 button {
   color: red;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch; */
 }
