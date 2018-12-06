@@ -44,15 +44,15 @@ function secondLowestSecondHighest(array) {
 function coins(price) {
   price = price * 100
   const coinsAvailable = [100, 50, 20, 10, 5, 2, 1]
-  const newArray = []
+  const coinJar = []
   // while (newArray.reduce(((acc , el) => acc + el, 0)) <= max) {
   coinsAvailable.forEach(el => {
     while (price >= el) {
-      newArray.push(el)
+      coinJar.push(el)
       price = price - el
     }
   })
-  return newArray
+  return coinJar
 }
 
 
