@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       playAudio(audio[index])
     })
+    button.addEventListener('mousedown', () =>{
+      button.style.background = 'radial-gradient(#832a25 35%, #0f0)'
+      button.style.textShadow = '1px 1px #fff'
+      button.style.fontSize = '1.8em'
+
+    })
+    button.addEventListener('mouseup', () =>{
+      button.style.background = 'radial-gradient(#000 35%, #832a25)'
+      button.style.textShadow = 'none'
+      button.style.fontSize = '1em'
+    })
   })
 
 })

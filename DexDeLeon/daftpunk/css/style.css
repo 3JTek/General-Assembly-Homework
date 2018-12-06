@@ -36,6 +36,8 @@ button.button {
   text-align: center;
   align-items: center;
   font-weight: 800;
+  outline: none;
+  font-size: 1em;
 }
 
 button.first-row {
