@@ -88,7 +88,7 @@ function fibonacci(n) {
 function daysBetween(date1, date2) {
   const newDate1 = date1.split('-')
   const newDate2 = date2.split('-')
-  return ((newDate1[0] - newDate2[0]) * 365 + (newDate1[1] - newDate2[1]) * 31 + (newDate1[2] - newDate2[2]))
+  return (Math.abs((newDate1[0] - newDate2[0]) * 365 + (newDate1[1] - newDate2[1]) * 31 + (newDate1[2] - newDate2[2])))
 
 }
 
