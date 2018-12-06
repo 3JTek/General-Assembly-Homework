@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+img {
+ margin-bottom: -75px;
+}
+
+
+body {
+  background-color: black;
+}
+
+
+div.soundboard {
+  display: flex;
+  width : 520px;
+  height: 520px;
+  margin: 70px auto;
+  flex-wrap: wrap;
+  font-size: 40px;
+}
+button {
+  width: 125px;
+  height: 125px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  margin: 2px;
+}
+button:hover {
+  background: url('https://media3.giphy.com/media/1waYyLsm1Em0o/giphy.webp?cid=3640f6095c096b70767151735161a513');
+  background-size: contain;
+  background-size: cover;
+}
