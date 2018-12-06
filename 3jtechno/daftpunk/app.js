@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const buttons = document.querySelectorAll('button')
   buttons.forEach(button => {
-    console.log(button);
     button.addEventListener('click', playMusic)
   })
 
