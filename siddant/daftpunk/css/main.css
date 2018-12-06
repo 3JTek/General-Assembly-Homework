@@ -1,0 +1,39 @@
+body{
+  background-color: black;
+}
+.container{
+  width: 60%;
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+
+}
+
+.buttonBox{
+  width: auto;
+  height:450px;
+  background-color: red;
+
+}
+
+
+button{
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: black;
+  color: white;
+  font-size:  25px;
+  flex: wrap;
+
+}
+#logo{
+  width: auto;
+  height: 100px;
+  flex-wrap: wrap;
+
+}
+.buttonBox{
+
+}
