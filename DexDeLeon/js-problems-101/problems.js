@@ -54,18 +54,26 @@ function numOfOccurances(string) {
   // characters of string split into an array without spaces
   const characters = string.toLowerCase().split(' ').join('').split('')
 
+  // REGULAR EXPRESSION REPLACE
+  // .replace(/ /g, '')
+
   // for each character in the array...
-  for (let i=0;i<characters.length;i++){
+  characters.forEach((char) => {
+    // forEach can use arrow functions!
+
+
     // if the character is already present as a key in the object...
-    if (Object.keys(counter).includes(characters[i])){
+    if (Object.keys(counter).includes(char)){
       // ...add 1 to its value
-      counter[characters[i]] += 1
+
+      // Obj.key WILL NOT WORK HERE because the .key is recognised literally and not replaced by the current variable
+      counter[char] += 1
       // otherwise
     } else {
       // add the character as a key in the object and set its value to one (first occurance)
-      counter[characters[i]] = 1
+      counter[char] = 1
     }
-  }
+  })
   // return the object with the counts
   return counter
 }
