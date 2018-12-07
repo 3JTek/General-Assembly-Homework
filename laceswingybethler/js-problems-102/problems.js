@@ -50,8 +50,31 @@ function secondLowestSecondHighest(array) {
 // eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
 function coins(price) {
   const arrayOfCoins = [100, 50, 20, 10, 5, 2, 1]
-
+  let pennyAmount = price * 100
+  return coinOptions.reduce((changeWallet, coin)) => {
+  const coinAmount = Math.floor(pennyAmount/coin)
+  for (let i=0; i<coinAmount; i++) {
+    changeWallet.push(coin)
+  }
+  pennyAmount = pennyAmount%coinAmount
+  return changeWallet
+  }, [])
 }
+//EASIER TO UNDERSTAND CODE OPTION
+function coins(price) {
+  let pence = price * 100
+  const coins = [100, 50, 20, 10, 5, 2, 1]
+  const result = []
+
+  coins.forEach((coin) => {
+    while(pence - coin >=0) {
+      pence -=coin
+      result.push(coin)
+    }
+  })
+  return result
+}
+
 //PSEUDO METHOD - use forEach method if possible.
 //sort the coins from largest to smallest
 //loop through the coins (using an array method?)
@@ -104,6 +127,8 @@ function fibonacci(n) {
   }
   return fibSeries
 }
+//could we use a reduce for this?
+array.reduce((el, i) => , 0)
 
 //PSEUDO
 //create an array

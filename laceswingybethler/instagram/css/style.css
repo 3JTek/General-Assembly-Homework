@@ -18,7 +18,7 @@ body {
   margin: 50px 20px 20px 20px;
   background-color: #fafafa;
 }
-/* container has both columns in */
+/* container has both columns in - could replace this with main */
 .container {
   max-width: 800px;
   overflow: auto;
@@ -108,7 +108,7 @@ footer a {
 }
 
 
-
+/* mobile view */
 @media screen and (max-width: 700px) {
   .column:first-child {
     display: none;

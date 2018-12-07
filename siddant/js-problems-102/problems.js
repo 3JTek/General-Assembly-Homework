@@ -16,12 +16,18 @@ function randomElement(array) {
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
-  const arr = []
+  /*const arr = []
   arr.push(Math.min(...array.filter((element,index,arr ) => element !== parseFloat(Math.min(...array)))))
   arr.push(Math.max(...array.filter((element,index,arr ) => element !== parseFloat(Math.max(...array)))))
-  return arr
+  return arr*/
+  const orderedArray = array.sort((a,b) => {
+    return a - b
+  })
+  return [orderedArray[1], orderedArray[array.length-2]]
 
 }
+
+
 
 // write a function that will convert a price into coins needed to make up that price
 // the coins available are 1, 2, 5, 10, 20, 50, 100
@@ -29,16 +35,22 @@ function secondLowestSecondHighest(array) {
 // eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
 function coins(price) {
   let remainingPrice = price*100
-  const coinArray = []
+  //const coinArray = []
   const arrayOfCoins = [100, 50, 20, 10, 5, 2, 1]
-  arrayOfCoins.forEach(function(el){
+  /*arrayOfCoins.forEach(function(el){
     while(remainingPrice>=el){
       remainingPrice -= el
       coinArray.push(el)
     }
-  })
-  return coinArray
-
+  })*/
+  return arrayOfCoins.reduce((cahngeWallet, coin) =>{
+    const coinAmont = Math.floor(remainingPrice/coin)
+    for (let i = 0; i < coinAmont; i++) {
+      cahngeWallet.push(coin)
+    }
+    remainingPrice = remainingPrice % coin
+    return cahngeWallet
+  },[])
 
 }
 
@@ -46,7 +58,7 @@ function coins(price) {
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
   const array = arr1.concat(arr2)
-  return array.filter((element,index) => array.indexOf(element) === index)
+  return array.filter((element,index) =>  index === array.indexOf(element))
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
@@ -61,6 +73,7 @@ function arrayToObjects(array, key) {
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
+  //creates an array withe object key properties
   let key = Object.keys(object)
   //const value = Object.values(object)
   key = key.map((name,index)=> [key[index], Object.values(object)[index]])
@@ -74,14 +87,16 @@ function objectToArray(object) {
 function fibonacci(n) {
   const sequence = []
   for (let i = 0; i < n; i++) {
-    if(i<2){
-      sequence.push(i)
-    }else{
-      sequence.push(sequence[i-1] + sequence[i-2])
-    }
+    sequence.push(sequence[i-2] +sequence[i-1] || i )
   }
   return sequence
 
+
+  /*if(i<2){
+    sequence.push(i)
+  }else{
+    sequence.push(sequence[i-1] + sequence[i-2])
+  }*/
 }
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
@@ -93,7 +108,6 @@ function daysBetween(date1, date2) {
   const days = numDaysInMonth.slice(parseInt(data[0][1])-1, parseInt(data[1][1])-1).reduce((accum,elm) => accum+elm, 0)
   const remaninDay = Math.abs(parseInt(data[0][2]) -   parseInt(data[1][2]))
   const remaninYear = 365 * Math.abs(parseInt(data[0][0]) -   parseInt(data[1][0]))
-
   return remaninYear+remaninDay+days
 
 }

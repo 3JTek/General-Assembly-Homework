@@ -7,7 +7,7 @@ var solution
 var calculating = true
 while(calculating)  {
   var desiredCalc = prompt('What calculation are you after, pal? (m)ultiply, (d)ivide, (s)ubtract or (a)dd?')
-  //if none of the options, alert and loop back to start
+  //if press cancel break; if none of the options, alert and loop back to start
   if (desiredCalc === null) {
     break
   }
@@ -15,8 +15,6 @@ while(calculating)  {
     alert('Lo siento, me no entiendo. Try again.')
 
   } else {
-
-    //while validCalc = false {ask again and then update validCalc}
 
     //ask user for input 2 - firstNum
     var firstNum = prompt('Using what number to start?')
