@@ -1,0 +1,41 @@
+header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+img {
+ margin-bottom: -75px;
+}
+
+body {
+  background-color: black;
+}
+
+div.soundboard {
+  display: flex;
+  width : 520px;
+  height: 520px;
+  margin: 90px auto;
+  flex-wrap: wrap;
+  font-size: 40px;
+}
+
+button {
+  width: 125px;
+  height: 125px;
+  font-size: 20px;
+  background-color: black;
+  color: #A9A9A9;
+  margin: 2px;
+  font-weight: bold;
+  font-family: 'VT323', monospace;
+}
+
+button:hover {
+  background: url('https://media3.giphy.com/media/1waYyLsm1Em0o/giphy.webp?cid=3640f6095c096b70767151735161a513');
+  background-size: contain;
+  background-size: cover;
+  color: transparent;
+}
