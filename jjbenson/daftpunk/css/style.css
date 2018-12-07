@@ -3,12 +3,6 @@ body {
   background-color: #121212;
   color: #ededed; }
 
-header {
-  display: flex;
-  justify-content: center; }
-  header h1 {
-    display: none; }
-
 main {
   display: flex;
   justify-content: center;
@@ -17,15 +11,12 @@ main {
   height: 100vh;
   background-image: url("../images/helmet.jpg");
   background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  margin-top: 10px; }
+  background-position: center; }
 
 div.container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 90%;
+  width: 90%;
   height: 90%;
   justify-content: space-between;
   align-content: space-between; }
@@ -37,17 +28,17 @@ div.container {
   25% {
     background-color: rgba(18, 18, 18, 0.1);
     border: 1px dotted #ededed; } }
-@keyframes ones {
+@keyframes action1Anim {
   0%,100% {
     transform: rotate(0deg) scale(1); }
   25% {
     transform: rotate(20deg) scale(1.5); } }
-@keyframes twos {
+@keyframes action2Anim {
   0%,100% {
     transform: rotate(0deg) scale(1); }
   25% {
     transform: rotate(-20deg) scale(1.5); } }
-@keyframes threes {
+@keyframes action3Anim {
   0%,100% {
     transform: rotate(0deg) scale(1); }
   25% {
@@ -68,11 +59,11 @@ button {
     background-color: rgba(18, 18, 18, 0.1);
     border: 1px solid #ededed; }
     button.pressed.action0 {
-      animation: animateFrame 1s, ones 1s; }
+      animation: animateFrame 1s, action1Anim 1s; }
     button.pressed.action1 {
-      animation: animateFrame 1s, twos 1s; }
+      animation: animateFrame 1s, action2Anim 1s; }
     button.pressed.action2 {
-      animation: animateFrame 1s, threes 1s; }
+      animation: animateFrame 1s, action3Anim 1s; }
   button:hover {
     color: #ededed;
     text-shadow: 0 0 20px #ededed; }

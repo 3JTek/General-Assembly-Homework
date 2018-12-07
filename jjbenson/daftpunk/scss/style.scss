@@ -1,23 +1,11 @@
 @import ".vars";
 
-// font-family: 'VT323', monospace;
-// font-family: 'Raleway Dots', cursive;
-// font-family: 'Fredoka One', cursive;
-//font-family: 'Permanent Marker', cursive;
-
 body {
   box-sizing: border-box;
   background-color: $black;
   color:$white;
 }
-header {
-  display: flex;
-  justify-content: center;
 
-  h1 {
-    display:none
-  }
-}
 main {
   display: flex;
   justify-content: center;
@@ -28,15 +16,12 @@ main {
   background-image: url("../images/helmet.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
-  margin-top:10px
 }
 
 div.container{
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 90%;
+  width: 90%;
   height: 90%;
   justify-content: space-between;
   align-content: space-between;
@@ -54,7 +39,7 @@ div.container{
   }
 }
 
-@keyframes ones {
+@keyframes action1Anim {
   0%,100%{
     transform:rotate(0deg) scale(1);
   }
@@ -63,7 +48,7 @@ div.container{
   }
 }
 
-@keyframes twos {
+@keyframes action2Anim {
   0%,100%{
     transform:rotate(0deg) scale(1);
   }
@@ -72,7 +57,7 @@ div.container{
   }
 }
 
-@keyframes threes {
+@keyframes action3Anim {
   0%,100%{
     transform:rotate(0deg) scale(1);
   }
@@ -87,9 +72,6 @@ button {
   width: 24%;
   height: 24%;
 
-  //font-family: 'Raleway Dots', cursive;
-  //font-family: 'Fredoka One', cursive;
-  // font-family: 'VT323', monospace;
   font-family: 'Permanent Marker', cursive;
 
   font-size: 2em;
@@ -105,13 +87,13 @@ button {
     border: $border-thickness solid $white;
 
     &.action0{
-      animation: animateFrame 1s, ones 1s;
+      animation: animateFrame 1s, action1Anim 1s;
     }
     &.action1{
-      animation: animateFrame 1s, twos 1s;
+      animation: animateFrame 1s, action2Anim 1s;
     }
     &.action2{
-      animation: animateFrame 1s, threes 1s;
+      animation: animateFrame 1s, action3Anim 1s;
     }
   }
 
