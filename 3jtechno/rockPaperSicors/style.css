@@ -1,0 +1,33 @@
+*{
+  box-sizing: border-box;
+}
+main{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+.container{
+  width: 500px;
+  height: 300px;
+  border: 2px solid grey;
+}
+.top{
+  border: 2px solid grey;
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+}
+.bottom{
+  border: 2px solid grey;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}
+button{
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 15px;
+}
