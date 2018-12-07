@@ -46,23 +46,23 @@ document.addEventListener('DOMContentLoaded',() => {
       //play sound
       player.play()
 
-      //Stylin'
+      //For each button
       buttonArray.forEach(elem => {
-        //Remove pressed class from all other buttons
+        //Remove 'pressed' class from all other buttons
         elem.classList.remove('pressed')
       })
 
-      //Add pressed class to this button
+      //Add 'pressed' class to this button
       buttonArray[thisId].classList.add('pressed')
 
-      //Remove pressed class after 1 second
+      //Remove 'pressed' class after 1 second
       setTimeout(function(){
         buttonArray[thisId].classList.remove('pressed')
       }, 1000)
 
     })
 
-    //Add thi button to the main
+    //Add this button to the main
     container.appendChild(button)
 
     // //Push button into buttonArray
