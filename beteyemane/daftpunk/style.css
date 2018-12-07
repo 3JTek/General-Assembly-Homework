@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("https://wallpaperlayer.com/img/2015/10/daft-punk-wallpaper-2104-2259-hd-wallpapers.jpg");
+background-size: cover;
+background-position: center;
+}
+
+header {
+text-align: center;
+}
+
+button {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  background-size: contain;
+  font-family: 'Righteous', cursive;
+  font-size:20px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-image: url("https://media.giphy.com/media/lrIAlkASMniSs/giphy.gif");
+  color: transparent;
+}
+
+.column1, .column2, .column3, .column4 {
+justify-content: center;
+display: flex;
+text-align: center;
+}
+
+.column1 {
+margin-top: 30px;
+}
+
+.column4 {
+margin-bottom: 60px;
+}
+
+.square {
+height: 150px;
+width: 150px;
+border: 0.5px solid grey;
+}
