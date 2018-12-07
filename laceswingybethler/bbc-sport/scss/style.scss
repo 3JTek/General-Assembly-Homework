@@ -4,13 +4,17 @@
 }
 
 header {
-    // padding: 0;
+    padding: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     .navbar{
+      //parent tells child how to work!
+      flex-wrap: wrap;
       .navbar-brand {
-        //the below code should make it wrap - why doesn't it wrap?
-        flex-wrap: wrap;
+
         flex-grow:1;
-        display: block;
+        width: 100%;
+
         }
       .navbar-menu{
         border-top: 1px solid black;
@@ -28,8 +32,7 @@ header {
       }
     }
   }
-
-
+ho
 a {
   color: black;
 }

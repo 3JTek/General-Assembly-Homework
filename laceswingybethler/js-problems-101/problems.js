@@ -55,9 +55,10 @@ console.log(orderStringAlphabetically('Javascript is cool'))
 function numOfOccurances(string) {
   objectForCount = {}
   // make string into an Array
-  const myStringArray = string.toLowerCase().split(' ').join('').split('')
+  const myStringArray = string.toLowerCase().split(' ').join('').split('') // can also do the above using REGEX:
   //for each item in the array, create a property
-  for (var i = 0; i < myStringArray.length; i++) {
+  for (var i = 0; i < myStringArray.length; i++) {  // .forEach(letter ...)
+
     const letter = myStringArray[i]
     // if the item is not new increase the value by 1
     if (letter in objectForCount) {
@@ -72,6 +73,21 @@ function numOfOccurances(string) {
 }
 console.log(numOfOccurances('This is great'))
 
+//NEATER SOLUTION
+function numOfOccurances(string) {
+  const occurancesObj = {}
+  string.toLowerCase().replace(/ /g,'').split.forEach(letter => {
+    if(occurancesObj[letter]) {
+      occurancesObj[letter] +=1
+    }else {
+      occurancesObj[letter] =1
+    }
+  })
+return occurancesObj
+}
+console.log(numOfOccurances('Javascript is cool'))
+
+
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
@@ -81,7 +97,6 @@ function titleCase(string) {
   //for each wordd
   for (i=0; i<words.length; i++) {
     const word = words[i]
-
     //get the first letter and make it uppercase
     const startOfWord = word[0].toUpperCase()
     //create a new string with the remaining letters
@@ -89,7 +104,6 @@ function titleCase(string) {
     //concatenate them togetehr
     const capsWord = startOfWord + restOfWord
     newArray.push(capsWord)
-
   }
   //join the array back into a string
   return newArray.join(' ')
