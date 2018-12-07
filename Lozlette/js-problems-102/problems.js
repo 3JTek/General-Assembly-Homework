@@ -21,7 +21,7 @@ function randomElement(array) {
 function secondLowestSecondHighest(array) {
 //put array in ascending order
   //const sortedArray = array.sort((a, b) => a - b))
-  //find index[1] and array.length-1
+  //find index[1] and array.length-1 of sortedArray
 
 //return number at index 1 and second to last index of array??
 }
@@ -61,7 +61,12 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-
+  const fib = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    fib.push(fib[i - 1] + fib[i - 2])
+  }
+  fib.pop()
+  return fib
 }
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
