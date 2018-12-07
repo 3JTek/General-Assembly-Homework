@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // now realising that I could've used a loop to create all the audio tags in the HTML with the createElement function
   const audio = document.querySelectorAll('audio')
+
   const buttons = document.querySelectorAll('button.button')
   console.log(audio, buttons)
 
