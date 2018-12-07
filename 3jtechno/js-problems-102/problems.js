@@ -62,10 +62,7 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-  const newArray = (new Array(n)).fill(1)
-  newArray.forEach((element, index, array) => {
-    newArray[index] = array[index - 2] + array[index - 1] || index
-  })
+  const newArray = (new Array(n)).fill(1).forEach((element, index, array) => array[index] = array[index - 2] + array[index - 1] || index)
   return newArray
 }
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
