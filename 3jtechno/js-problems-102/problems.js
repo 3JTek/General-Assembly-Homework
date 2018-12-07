@@ -42,12 +42,13 @@ function coins(price) {
 //eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
   return arr1.concat(arr2).filter((element, index, array) => array.indexOf(element) === index)
+  //return Array.from(new Set(concat(arr1, arr2))
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-  return array.map((element, index, array) => new Object({city: element}))
+  return array.map((element, index, array) => new Object({[key]: element}))
 }
 
 // write a function to convert an object into an array of arrays containing key and value
@@ -61,21 +62,17 @@ function objectToArray(object) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-  const array = [0,1,1]
-  if(n < 4){
-    return array.splice(0,n)
-  }
-  for(let i =3; i<n; i++){
-    array.push(array[i-2]+array[i-1])
-  }
-  return array
+  const newArray = (new Array(n)).fill(1)
+  newArray.forEach((element, index, array) => {
+    newArray[index] = array[index - 2] + array[index - 1] || index
+  })
+  return newArray
 }
-
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
-
+  return Math.abs((new Date(date1) - new Date(date2))/1000/60/60/24)
 }
 
 // write a function which returns the number of seconds between two times (in the same day)
