@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded',() => {
     const button = document.createElement('button')
 
     //Set the text of the button
-    button.innerText = wordsArr[i]
-
+    button.innerHTML = '<div class=\'text\'>'+wordsArr[i]+'</div>'
     //set the button id and data-id
     button.id='button'+i
     button.dataset.id = i

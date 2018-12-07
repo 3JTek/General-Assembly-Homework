@@ -71,5 +71,7 @@ button {
     outline: 0;
     color: #ededed;
     text-shadow: 0 0 20px #ededed; }
+  button div {
+    transform: rotate(-7deg); }
 
 /*# sourceMappingURL=style.css.map */
