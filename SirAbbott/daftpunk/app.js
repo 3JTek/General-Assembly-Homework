@@ -1,20 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  console.log('hello')
-
-  const buttons = document.querySelectorAll('button')
-
-  function playMusic(e) {
+  function playAudio(e) {
     const lyrics = e.target.textContent
     var wordToWav = lyrics.toLowerCase().split(' ').join('_')
     const song = document.querySelector('audio')
     song.src = './sounds/' + wordToWav + '.wav'
-    console.log(wordToWav)
     song.play()
   }
 
+  const buttons = document.querySelectorAll('button')
+
   buttons.forEach(button => {
-    button.addEventListener('click', playMusic)
+    button.addEventListener('click', playAudio)
   })
 
 })

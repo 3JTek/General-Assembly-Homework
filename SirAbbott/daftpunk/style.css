@@ -17,7 +17,7 @@ img {
   width: 518px;
   height: 518px;
   border: 1px solid red ;
-
+  padding: 2px;
 }
 
 button {
@@ -26,7 +26,7 @@ button {
   margin: 2px;
   font-size: 18px;
   color: transparent;
-  background-color: transparent;
+  background-color: black;
 }
 
 button:hover {
