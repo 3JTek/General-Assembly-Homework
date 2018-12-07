@@ -83,7 +83,7 @@ describe('fibonacci', () => {
   })
 })
 
-xdescribe('daysBetween', () => {
+describe('daysBetween', () => {
   it('should return the number of days between two dates', () => {
     expect(daysBetween('2017-02-01', '2017-01-01')).to.equal(31)
   })
@@ -92,7 +92,7 @@ xdescribe('daysBetween', () => {
   })
 })
 
-xdescribe('secondsBetween', () => {
+describe('secondsBetween', () => {
   it('should return the number of seconds between to times', () => {
     expect(secondsBetween('12:00:00', '12:00:01')).to.equal(1)
   })

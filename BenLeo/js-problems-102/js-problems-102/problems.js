@@ -32,11 +32,10 @@ function coins(price) {
   let remainingPrice = price*100
   const coinArray = []
   const arrayOfCoins = [100, 50, 20, 10, 5, 2, 1]
-
-  arrayOfCoins.forEach(function(el){
-    while(remainingPrice>=el){
-      remainingPrice -= el
-      coinArray.push(el)
+  arrayOfCoins.forEach(function(element){
+    while(remainingPrice>=element){
+      remainingPrice -= element
+      coinArray.push(element)
     }
   })
   return coinArray
@@ -45,8 +44,8 @@ function coins(price) {
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
-  const concArray = arr1.concat(arr2)
-  return concArray.filter((element, index, array) => {
+  const arr3 = arr1.concat(arr2)
+  return arr3.filter((element, index, array) => {
     return array.indexOf(element) === index
   })
 }
@@ -97,7 +96,7 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
-
+  return Math.abs(new Date(date1) - new Date(date2)) / 1000 / 60 / 60 / 24
 }
 
 // write a function which returns the number of seconds between two times (in the same day)
@@ -105,5 +104,26 @@ function daysBetween(date1, date2) {
 // it should be able to handle 12-hour (7:35:00pm) and 24-hour (19:35:00) formats
 // throw an error if the time format is wrong
 function secondsBetween(time1, time2) {
+  function getMoment(str) {
 
+    if(!str.match(/[0-9]{1,2}:[0-9]{2}:[0-9]{2}(am|pm)?/)) {
+      throw new Error('Invalid time format')
+    }
+
+    const info = []
+    str.split(':').forEach((t, i, array) => {
+      if(t.match(/pm/)) info[0] += 12
+      info[i] = parseFloat(t)
+    })
+
+    const moment = new Date()
+    moment.setHours(info[0])
+    moment.setMinutes(info[1])
+    moment.setSeconds(info[2])
+    moment.setMilliseconds(0)
+
+    return moment
+  }
+
+  return Math.abs(getMoment(time1) - getMoment(time2)) / 1000
 }
