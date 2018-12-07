@@ -1,0 +1,75 @@
+body {
+  box-sizing: border-box;
+  background-color: #121212;
+  color: #ededed; }
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/helmet.jpg");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+div.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 90%;
+  justify-content: space-between;
+  align-content: space-between; }
+
+@keyframes animateFrame {
+  0%, 100% {
+    background-color: rgba(18, 18, 18, 0.99);
+    border: 1px dotted #f6201d; }
+  25% {
+    background-color: rgba(18, 18, 18, 0.1);
+    border: 1px dotted #ededed; } }
+@keyframes action1Anim {
+  0%,100% {
+    transform: rotate(0deg) scale(1); }
+  25% {
+    transform: rotate(20deg) scale(1.5); } }
+@keyframes action2Anim {
+  0%,100% {
+    transform: rotate(0deg) scale(1); }
+  25% {
+    transform: rotate(-20deg) scale(1.5); } }
+@keyframes action3Anim {
+  0%,100% {
+    transform: rotate(0deg) scale(1); }
+  25% {
+    transform: rotate(-30deg) scale(1.5); } }
+button {
+  user-select: none;
+  width: 24%;
+  height: 24%;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2em;
+  font-weight: 400;
+  color: #f6201d;
+  background-color: rgba(18, 18, 18, 0.99);
+  border: 1px dotted #f6201d;
+  border-radius: 0px; }
+  button.pressed {
+    color: #ededed;
+    background-color: rgba(18, 18, 18, 0.1);
+    border: 1px solid #ededed; }
+    button.pressed.action0 {
+      animation: animateFrame 1s, action1Anim 1s; }
+    button.pressed.action1 {
+      animation: animateFrame 1s, action2Anim 1s; }
+    button.pressed.action2 {
+      animation: animateFrame 1s, action3Anim 1s; }
+  button:hover {
+    color: #ededed;
+    text-shadow: 0 0 20px #ededed; }
+  button:focus {
+    outline: 0;
+    color: #ededed;
+    text-shadow: 0 0 20px #ededed; }
+
+/*# sourceMappingURL=style.css.map */
