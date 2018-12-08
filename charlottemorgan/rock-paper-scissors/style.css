@@ -1,0 +1,30 @@
+header {
+  text-align: center;
+  margin: 50px;
+}
+
+
+.container {
+  display: flex;
+  border: 2px solid black;
+  height: 500px;
+  width: 500px;
+  margin: 70px auto;
+}
+
+.main-buttons {
+  display: flex;
+align-items: center;
+}
+
+.computer .user {
+  display: flex;
+  
+}
+
+.random-button {
+  display: flex;
+  align-items: center;
+
+
+}
