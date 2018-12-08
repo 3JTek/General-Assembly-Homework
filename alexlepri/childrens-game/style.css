@@ -2,16 +2,6 @@
   box-sizing: border-box;
 }
 
-/* img {
-  position: relative;
-  width: 100%;
-  margin: auto;
-  margin-right: 50px;
-  padding-left: 100px;
-  padding-right: 100px
-  height: 330px;
-  border-radius: 400px;
-} */
 iframe {
   width: 100%;
 }
@@ -19,7 +9,6 @@ iframe {
 section {
 width: 60%;
 margin: auto;
-border: 2px solid black;
 }
 
 .header h1 {
@@ -27,20 +16,31 @@ text-align: center;
 margin-bottom: 0;
 }
 
-.computeChoice .yourChoice h2 {
-  margin: 20px;
-}
-
 .yourChoice {
 border: 2px solid #555;
-margin-right: 20px;
+margin-top: 20px;
 background-color: red;
 margin-right: 20px;
-margin-bottom: 30px;
+margin-bottom: 0;
 text-align: center;
 border-radius: 15px;
 margin-left: 20px;
 color: white;
+width: 70%;
+margin-left: 130px;
+}
+
+.vs {
+  text-align: center;
+  width: 50%;
+}
+
+.vs h3 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: 420px;
 }
 
 .computerChoice{
@@ -53,10 +53,20 @@ text-align: center;
 border-radius: 15px;
 margin-left: 20px;
 color: white;
+width: 70%;
+margin-left: 130px;
+}
+
+.computerChoice h {
+  margin-bottom: 0;
 }
 
 button {
-padding: 5%;
+padding: 2%;
+justify-content: space-around;
+flex-grow: 1;
+margin-right: 5px;
+padding-top: 10px;
 }
 
 .choice {
@@ -67,10 +77,8 @@ padding: 20px;
 
 .btn {
  border-radius: 40px;
-}
-
-.target p {
- text-align: center;
+ background-color: red;
+ color: white;
 }
 
 main {
@@ -79,6 +87,7 @@ main {
 
 .select p {
   text-align: center;
+  margin: 0;
   text-decoration: underline;
 }
 
@@ -86,4 +95,31 @@ main {
   margin-bottom: 20px;
   text-align: center;
   text-decoration: underline;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  background-color: red;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+button.winner {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 25px;
+}
+
+p {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
 }
