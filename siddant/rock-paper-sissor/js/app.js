@@ -3,11 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.btn')
   const status = document.querySelector('#outcome')
   let rand = 0
-  //const arrayOption = ['rock', 'paper','siccior']
+  const winCondition = [[0, 1]]
+  //const arrayOption = ['rock', 'paper','c']
 
   const logic = function(e){
     rand = Math.floor(Math.random()*3)
-    console.log(rand)
+    console.log(`computer choice ${rand}, your ${e.target.id}` )
+    //winCondition.some(elemnt => )
+    console.log(`${winCondition[0].toString() === [rand, e.target.id].toString()}`)
+    if(rand === parseInt(e.target.id)){
+      status.value = 'its a draw'
+    }else if(winCondition[0].toString() === [rand, e.target.id].toString()){
+      status.value = 'some one won'
+
+    }
     //status.value = arrayOption[rand]
     // if((rand - parseInt(e.target.id))){
     //   status.value = 'its a draw'
