@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-//
+  //getting scores from HTML
   const userSpan = document.getElementById('user-score')
   const compSpan = document.getElementById('comp-score')
-//
-  const scoreboard = document.querySelector('.scoreboard')
+  //result
   const result = document.querySelector('#result > p')
   //buttons
   const rock = document.getElementById('r')
@@ -26,20 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return 'Scissors'
   }
 
-
   function win(user, comp) {
     userScore++
     userSpan.innerHTML= userScore
     compSpan.innerHTML = compScore
-    result.innerHTML = convertToWord(user) + ' beats ' + convertToWord(comp) + '. You win!'
+    result.innerHTML = `${convertToWord(user)} beats ${convertToWord(comp)}. You win!`
   }
 
-  function lose() {
-    console.log('Youve lost!')
+  function lose(user, comp) {
+    compScore++
+    userSpan.innerHTML= userScore
+    compSpan.innerHTML = compScore
+    result.innerHTML = `${convertToWord(comp)} beats ${convertToWord(user)}. Computer wins!`
   }
 
-  function draw() {
-    console.log('Its a draw')
+  function draw(user, comp) {
+    result.innerHTML = `You chose ${convertToWord(user)} & computer chose ${convertToWord(comp)}. It's a draw!`
   }
 
   function game (userChoice) {
@@ -62,27 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
         break
     }
   }
+
   game()
 
   function main () {
-
-    rock.addEventListener('click', function () {
-      game('r')
-    })
-
-    paper.addEventListener('click', function () {
-      game('p')
-    })
-
-    scissors.addEventListener('click', function () {
-      game('s')
-    })
+    rock.addEventListener('click', () => game('r'))
+    paper.addEventListener('click', () => game('p'))
+    scissors.addEventListener('click', () => game('s'))
   }
 
-
   main()
-
-
-
+  // 
+  // function gameOver () {
+  //
+  // }
 
 })
