@@ -3,26 +3,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.btn')
   const status = document.querySelector('#outcome')
   let rand = 0
-  const winCondition = [[0, 1]]
-  //const arrayOption = ['rock', 'paper','c']
-
+  const computerCondition = [[1, 0],[2,1],[0,2]]
+  const arrayOption = ['rock', 'paper','scissor']
+  //rock beat siccior  = [0,2]
+  //sissicor beats paper = [2,1]
+  //paper beats rock = [1,0]
   const logic = function(e){
     rand = Math.floor(Math.random()*3)
-    console.log(`computer choice ${rand}, your ${e.target.id}` )
     //winCondition.some(elemnt => )
-    console.log(`${winCondition[0].toString() === [rand, e.target.id].toString()}`)
+
     if(rand === parseInt(e.target.id)){
-      status.value = 'its a draw'
-    }else if(winCondition[0].toString() === [rand, e.target.id].toString()){
-      status.value = 'some one won'
+      console.log('it\'s a draw')
+      console.log(`computer choice ${arrayOption[rand]}, your ${arrayOption[e.target.id]}` )
+
+    }else if(computerCondition.some(elem => elem.toString() === [rand, e.target.id].toString())){
+      console.log('computer won')
+      console.log(`computer choice ${arrayOption[rand]}, your ${arrayOption[e.target.id]}` )
+    }else{
+      console.log('you won')
+      console.log(`computer choice ${arrayOption[rand]}, your ${arrayOption[e.target.id]}` )
 
     }
-    //status.value = arrayOption[rand]
-    // if((rand - parseInt(e.target.id))){
-    //   status.value = 'its a draw'
-    // }else{
-    //   console.log(parseInt(e.target.id) - rand)
-    // }
+
 
   }
 
