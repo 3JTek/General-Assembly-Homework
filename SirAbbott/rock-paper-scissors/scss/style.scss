@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../boxingring.jpg");
+  background-size: cover;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 75%;
+
+    h1 {
+      color: white;
+    }
+
+    form {
+      label {
+        color: white;
+      }
+    }
+
+    #result {
+      margin-top: 30px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+  }
+}
