@@ -9,12 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   //find the form for the user input from the html
   const playerTwo = document.getElementById('Player-2')
   console.log('playerTwo')
+  //find the result input from the html
   const resultValue = document.getElementById('result')
-  //array with possible outcomes
+  //find the reset button in the html
+  const resetButton = document.getElementById('reset-button')
+  console.log('resetButton')
+
+  //array with possible options
   const options = ['Rock', 'Paper', 'Scissors']
 
   // get the button.value to fill player one form when clicked.
-
   function compareValues(option1, option2) {
     if (option1 === option2) {
       return resultValue.value = 'You have tied!'

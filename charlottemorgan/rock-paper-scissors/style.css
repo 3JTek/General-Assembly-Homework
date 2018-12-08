@@ -1,8 +1,8 @@
 body {
   background-image: url('https://i.pinimg.com/originals/4f/88/2a/4f882a25f66b3088c459428e9acdff81.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
-
 
 header {
   text-align: center;
@@ -10,7 +10,6 @@ header {
   font-family: 'Inconsolata', monospace;
   font-size: 27px;
 }
-
 
 .container {
   display: flex;
@@ -22,23 +21,24 @@ header {
   margin: 70px auto;
   font-family: 'Inconsolata', monospace;
 }
+
 form {
   margin:auto;
-
 }
+
 label {
   font-size: 25px;
   font-family: 'Inconsolata', monospace;
 }
+
 input {
   height: 75px;
   font-size: 20px;
   width: 100px;
   font-family: 'Inconsolata', monospace;
   background: transparent;
+}
 
-}
-}
 #Player-1 #Player-2 {
   margin-left: 75px;
   text-align: center;
@@ -54,6 +54,7 @@ input {
   height: 100px;
   text-align: center;
 }
+
 div.main-buttons {
   margin: auto;
 
@@ -63,18 +64,26 @@ div.main-buttons {
   padding: 20px;
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
-  background-color: #c8a2c8
-
+  background-color: #c8a2c8;
 }
+
 #paper {
   padding: 20px;
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
   background-color: #aaf0d1;
 }
+
 #scissors {
   padding: 20px;
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
   background-color: #ffb6c1;
+}
+
+div.reset-button button {
+  padding: 20px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  background-color: #28dfdb;
 }
