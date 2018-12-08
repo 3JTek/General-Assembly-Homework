@@ -1,30 +1,80 @@
+body {
+  background-image: url('https://i.pinimg.com/originals/4f/88/2a/4f882a25f66b3088c459428e9acdff81.jpg');
+  background-size: cover;
+}
+
+
 header {
   text-align: center;
   margin: 50px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 27px;
 }
 
 
 .container {
   display: flex;
-  border: 2px solid black;
-  height: 500px;
-  width: 500px;
-  margin: 70px auto;
-}
-
-.main-buttons {
-  display: flex;
-align-items: center;
-}
-
-.computer .user {
-  display: flex;
-  
-}
-
-.random-button {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  border: 2px dashed black;
+  height: 550px;
+  width: 550px;
+  margin: 70px auto;
+  font-family: 'Inconsolata', monospace;
+}
+form {
+  margin:auto;
 
+}
+label {
+  font-size: 25px;
+  font-family: 'Inconsolata', monospace;
+}
+input {
+  height: 75px;
+  font-size: 20px;
+  width: 100px;
+  font-family: 'Inconsolata', monospace;
+  background: transparent;
 
+}
+}
+#Player-1 #Player-2 {
+  margin-left: 75px;
+  text-align: center;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#result {
+  font-size: 30px;
+  font-family: 'Inconsolata', monospace;
+  width: 550px;
+  height: 100px;
+  text-align: center;
+}
+div.main-buttons {
+  margin: auto;
+
+}
+
+  #rock {
+  padding: 20px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  background-color: #c8a2c8
+
+}
+#paper {
+  padding: 20px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  background-color: #aaf0d1;
+}
+#scissors {
+  padding: 20px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  background-color: #ffb6c1;
 }

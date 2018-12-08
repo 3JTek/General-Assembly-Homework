@@ -11,38 +11,38 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('playerTwo')
   const resultValue = document.getElementById('result')
   //array with possible outcomes
-  const outcomes = ['rock', 'paper', 'scissors']
+  const options = ['Rock', 'Paper', 'Scissors']
 
   // get the button.value to fill player one form when clicked.
 
-  function compareValues(choice1, choice2) {
-    if (choice1 === choice2) {
-      return resultValue.value = 'The result is a tie!'
+  function compareValues(option1, option2) {
+    if (option1 === option2) {
+      return resultValue.value = 'You have tied!'
     }
 
-    if (choice1 === 'rock') {
-      if (choice2 === 'scissors') {
-        return resultValue.value = 'Player wins'
+    if (option1 === 'Rock') {
+      if (option2 === 'Scissors') {
+        return resultValue.value = 'Player wins yay!!!!'
       } else {
-        return resultValue.value = 'Computer wins'
+        return resultValue.value = 'Computer wins boooo!!!!'
       }
     }
-    if (choice1 === 'paper') {
-      if (choice2 === 'rock') {
-        return resultValue.value = 'Player wins'
+    if (option1 === 'Paper') {
+      if (option2 === 'Rock') {
+        return resultValue.value = 'Player wins yay!!!!'
       } else {
-        if (choice2 === 'scissors') {
-          return resultValue.value = 'Computer wins'
+        if (option2 === 'Scissors') {
+          return resultValue.value = 'Computer wins boooo!!!!'
         }
       }
     }
 
-    if (choice1 === 'scissors') {
-      if (choice2 === 'rock') {
-        return resultValue.value = 'Computer wins'
+    if (option1 === 'Scissors') {
+      if (option2 === 'Rock') {
+        return resultValue.value = 'Computer wins boooo!!!!'
       } else {
-        if (choice2 === 'paper') {
-          return resultValue.value = 'Player wins'
+        if (option2 === 'Paper') {
+          return resultValue.value = 'Player wins yay!!!!'
         }
       }
     }
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // make the value of playerOne equal to the value of the button
       playerOne.value = e.target.value
       // make the value of playerTwo equal to a random string in the outcomes array
-      playerTwo.value = outcomes[Math.floor(Math.random() * outcomes.length)]
+      playerTwo.value = options[Math.floor(Math.random() * options.length)]
       // call the funtion
       compareValues(playerOne.value, playerTwo.value)
     })
