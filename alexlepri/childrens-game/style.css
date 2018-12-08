@@ -1,3 +1,67 @@
 * {
   box-sizing: border-box;
 }
+
+section {
+width: 60%;
+margin: auto;
+border: 2px solid black;
+}
+
+.header{
+text-align: center;
+}
+
+.statusBox{
+display: flex
+}
+
+.status{
+width: 80%;
+margin: 20px 0;
+}
+
+.yourChoice{
+border: 2px solid #555;
+margin-right: 20px;
+background-color: red;
+margin-right: 20px;
+margin-bottom: 30px;
+text-align: center;
+border-radius: 15px;
+margin-left: 20px;
+color: white;
+}
+
+.computerChoice{
+border: 2px solid #555;
+margin-right: 20px;
+background-color: red;
+margin-right: 20px;
+margin-bottom: 30px;
+text-align: center;
+border-radius: 15px;
+margin-left: 20px;
+color: white;
+}
+
+button{
+padding: 5%;
+}
+.donate{
+display: flex;
+justify-content: space-around;
+padding: 20px;
+}
+
+.btn {
+ border-radius: 40px;
+}
+
+.target p {
+ text-align: center;
+}
+
+main {
+ padding-top: 200px;
+}
