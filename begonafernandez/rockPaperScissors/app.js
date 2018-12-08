@@ -14,12 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
     return choices[Math.floor(Math.random() * (3 - 1) + 1)]
   }
 
+  function winner(play1Choice, player2Choice) {
+    if(play1Choice === player2Choice) {
+      notification.innerText = 'There is a tie'
+    } else {
+      notification.innerText = 'Yay'
+    }
+  }
 
   buttons.forEach(button => {
     button.addEventListener('click', (e) => {
       player1.innerText = e.target.value
       player2.innerText = computerChoice()
-      
+      console.log(winner(player1.innerText, player2.innerText))
     })
   })
 })
