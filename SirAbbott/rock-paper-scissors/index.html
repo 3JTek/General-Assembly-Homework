@@ -10,34 +10,35 @@
 </head>
 
 <body>
+  <header>
+    <div class="form-container">
+      <div class="forms">
+        <form>
+          <input id="player1" type="text" name="player1" placeholder="PLAYER 1" value="">
+          <input id="result" type="text" name="result" value="">
+          <input id="player2" type="text" name="player2" placeholder="PLAYER 2" value="">
+        </form>
+      </div>
+    </div>
+  </header>
   <main>
-    <h1>ROCK PAPER SCISSORS</h1>
-    <div class="forms">
-      <form>
-        <label> Player 1
-          <input id="player1" type="text" name="player1" value="">
-        </label>
-        <label> Player 2
-          <input id="player2" type="text" name="player2" value="">
-        </label>
-      </form>
-    </div>
-    <input id="result" type="text" name="result" value="">
-    <h2>Select your fighter</h2>
-    <div class="buttons">
-      <button id="the-rock" type="button" name="button" value="rock">
-        rock
-      </button>
-      <button id="paper-boy" type="button" name="button" value="paper">
-        paper
-      </button>
-      <button id="scissorhands" type="button" name="button" value="scissors">
-        scissors
-      </button>
-      <audio src="punch.wav"></audio>
-    </div>
-    <div>
-      <button class="reset">RESET</button>
+    <div class='container'>
+      <h2>Select your fighter</h2>
+      <div class="buttons">
+        <button id="the-rock" type="button" name="button" value="rock">
+          rock
+        </button>
+        <button id="paper-boy" type="button" name="button" value="paper">
+          paper
+        </button>
+        <button id="scissorhands" type="button" name="button" value="scissors">
+          scissors
+        </button>
+        <audio src="punch.wav"></audio>
+      </div>
+      <div>
+        <button class="reset">RESET</button>
+      </div>
     </div>
   </main>
 </body>
