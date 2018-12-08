@@ -2,26 +2,36 @@
   box-sizing: border-box;
 }
 
+/* img {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  margin-right: 50px;
+  padding-left: 100px;
+  padding-right: 100px
+  height: 330px;
+  border-radius: 400px;
+} */
+iframe {
+  width: 100%;
+}
+
 section {
 width: 60%;
 margin: auto;
 border: 2px solid black;
 }
 
-.header{
+.header h1 {
 text-align: center;
+margin-bottom: 0;
 }
 
-.statusBox{
-display: flex
+.computeChoice .yourChoice h2 {
+  margin: 20px;
 }
 
-.status{
-width: 80%;
-margin: 20px 0;
-}
-
-.yourChoice{
+.yourChoice {
 border: 2px solid #555;
 margin-right: 20px;
 background-color: red;
@@ -45,10 +55,11 @@ margin-left: 20px;
 color: white;
 }
 
-button{
+button {
 padding: 5%;
 }
-.donate{
+
+.choice {
 display: flex;
 justify-content: space-around;
 padding: 20px;
@@ -63,5 +74,16 @@ padding: 20px;
 }
 
 main {
- padding-top: 200px;
+ padding-top: 0;
+}
+
+.select p {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.header aside {
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
 }
