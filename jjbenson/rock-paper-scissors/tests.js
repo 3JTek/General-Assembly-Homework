@@ -4,13 +4,13 @@
 const chai  = window.chai
 const expect = chai.expect
 
-describe('randomGenerator', () => {
+describe('getCPUWeapon', () => {
   it('should randomly return a string of \'rock\', \'paper\' or \'scissors\'', () => {
-    expect(randomGenerator()).to.be.a('string')
+    expect(getCPUWeapon()).to.be.a('string')
   })
 
   it('should return either \'rock\', \'paper\' or \'scissors\'', () => {
-    expect(randomGenerator()).to.be.oneOf(['rock', 'paper', 'scissors'])
+    expect(getCPUWeapon()).to.be.oneOf(['rock', 'paper', 'scissors'])
   })
 })
 
@@ -25,18 +25,18 @@ describe('beats', () => {
   })
 })
 
-describe('winner', () => {
+describe('whoWins', () => {
   it('should return a number', () => {
-    expect(winner('rock','paper')).to.be.a('number')
+    expect(whoWins('rock','paper')).to.be.a('number')
   })
 
   it('it should return wether the cpu (0) or player (1) is the winner', () => {
-    expect(winner('rock','paper')).to.deep.equal(1)
-    expect(winner('paper','scissors')).to.deep.equal(1)
-    expect(winner('scissors','rock')).to.deep.equal(1)
+    expect(whoWins('rock','paper')).to.deep.equal(1)
+    expect(whoWins('paper','scissors')).to.deep.equal(1)
+    expect(whoWins('scissors','rock')).to.deep.equal(1)
 
-    expect(winner('paper','rock')).to.deep.equal(0)
-    expect(winner('scissors','paper')).to.deep.equal(0)
-    expect(winner('rock','scissors')).to.deep.equal(0)
+    expect(whoWins('paper','rock')).to.deep.equal(0)
+    expect(whoWins('scissors','paper')).to.deep.equal(0)
+    expect(whoWins('rock','scissors')).to.deep.equal(0)
   })
 })
