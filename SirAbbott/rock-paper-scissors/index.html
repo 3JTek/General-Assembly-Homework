@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <link rel="stylesheet" href="./css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <script src="app.js" charset="utf-8"></script>
 
 <head>
@@ -22,19 +23,21 @@
       </form>
     </div>
     <input id="result" type="text" name="result" value="">
+    <h2>Select your fighter</h2>
     <div class="buttons">
-      <button type="button" name="button" value="rock">
+      <button id="the-rock" type="button" name="button" value="rock">
         rock
       </button>
-      <button type="button" name="button" value="paper">
+      <button id="paper-boy" type="button" name="button" value="paper">
         paper
       </button>
-      <button type="button" name="button" value="scissors">
+      <button id="scissorhands" type="button" name="button" value="scissors">
         scissors
       </button>
+      <audio src="punch.wav"></audio>
     </div>
     <div>
-      <button>Reset</button>
+      <button class="reset">RESET</button>
     </div>
   </main>
 </body>

@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../boxingring.jpg");
+  background: url("https://i.kinja-img.com/gawker-media/image/upload/s--nVySH6r7--/c_fill,f_auto,fl_progressive,g_center,h_675,q_80,w_1200/ongxcqkezqobasbk7wtv.jpg");
   background-size: cover;
 
   main {
@@ -27,8 +27,50 @@ body {
       margin-top: 30px;
     }
 
+    h2 {
+      color: #faff00;
+      font-family: 'Press Start 2P', cursive;
+      text-shadow: -1px -1px 0 #0414ef, 1px -1px 0 #0414ef, -1px 1px 0 #0414ef, 1px 1px 0 #0414ef;
+      font-size: 30px;
+    }
+
     .buttons {
-      margin-top: 30px;
+      button {
+        width: 200px;
+        height: 200px;
+        color: transparent;
+        margin: 30px;
+        border: none;
+
+        &:hover {
+          border: 6px #0414ef solid;
+        }
+      }
+    }
+
+    .reset {
+      width: 100px;
+      height: 50px;
+      background: transparent;
+      border: none;
+      font-size: 30px;
+      font-weight: 400;
+      color: white;
     }
   }
+}
+
+#the-rock {
+  background: url("../rock.gif");
+  background-size: cover;
+}
+
+#paper-boy {
+  background: url("../paper.gif");
+  background-size: cover;
+}
+
+#scissorhands {
+  background: url("../scissor.gif");
+  background-size: cover;
 }

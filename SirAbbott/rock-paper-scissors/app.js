@@ -6,11 +6,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const playerTwo = document.getElementById('player2')
   const resultValue = document.getElementById('result')
   const outcomes = ['rock', 'paper', 'scissors']
+  const punch = document.querySelector('audio')
+  const resetButton = document.querySelector('.reset')
   // get the button.value to fill player one form when clicked.
+
 
   function compareValues(choice1, choice2) {
     if (choice1 === choice2) {
-      return resultValue.value = 'The result is a tie!'
+      return resultValue.value = 'Draw muthafucka'
     }
 
     if (choice1 === 'rock') {
@@ -43,18 +46,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
   //For each button
   buttonArr.forEach(button => {
     //Add click event
     button.addEventListener('click', e => {
-      console.log(e.target.value)
+      punch.play()
       // player one value is the value of my target button
       playerOne.value = e.target.value
       // player two value is equal to a random string in my outcomes array
       playerTwo.value = outcomes[Math.floor(Math.random() * outcomes.length)]
+
       // call the funtion
       compareValues(playerOne.value, playerTwo.value)
 
     })
   })
+
+  resetButton.addEventListener('click', function() {
+
+    playerOne.value = ''
+    playerTwo.value = ''
+    resultValue.value = ''
+
+  })
+
 })
