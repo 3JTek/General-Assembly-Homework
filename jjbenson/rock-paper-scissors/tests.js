@@ -16,24 +16,27 @@ describe('randomGenerator', () => {
 
 describe('beats', () => {
   it('should return an array', () => {
-    expect(beats()).to.be.a('array')
+    expect(beats('rock')).to.be.a('array')
   })
-
   it('it should return who it beats', () => {
-    expect(beats('rock')).to.deeply.equal('scissors')
-    expect(beats('paper')).to.deeply.equal('rock')
-    expect(beats('scissors')).to.deeply.equal('paper')
+    expect(beats('rock')).to.deep.equal(['scissors'])
+    expect(beats('paper')).to.deep.equal(['rock'])
+    expect(beats('scissors')).to.deep.equal(['paper'])
   })
 })
 
 describe('winner', () => {
   it('should return a number', () => {
-    expect(beats()).to.be.a('number')
+    expect(winner('rock','paper')).to.be.a('number')
   })
 
   it('it should return wether the cpu (0) or player (1) is the winner', () => {
-    expect(winner('rock','paper')).to.deeply.equal(0)
-    expect(winner('paper','scissors')).to.deeply.equal(1)
-    expect(winner('scissors','rock')).to.deeply.equal(1)
+    expect(winner('rock','paper')).to.deep.equal(1)
+    expect(winner('paper','scissors')).to.deep.equal(1)
+    expect(winner('scissors','rock')).to.deep.equal(1)
+
+    expect(winner('paper','rock')).to.deep.equal(0)
+    expect(winner('scissors','paper')).to.deep.equal(0)
+    expect(winner('rock','scissors')).to.deep.equal(0)
   })
 })
