@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scissors = document.getElementById('s')
   const reset = document.querySelector('.reset')
   //scores
+
   let userScore = 0
   let compScore = 0
 
@@ -70,12 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
     rock.addEventListener('click', () => game('r'))
     paper.addEventListener('click', () => game('p'))
     scissors.addEventListener('click', () => game('s'))
+    reset.addEventListener('click', () => gameOver())
   }
 
   main()
-  // 
-  // function gameOver () {
-  //
-  // }
+
+  function gameOver () {
+    userScore = 0
+    compScore = 0
+    userSpan.innerHTML= userScore
+    compSpan.innerHTML = compScore
+    result.innerHTML = 'Make your Move!'
+  }
 
 })
