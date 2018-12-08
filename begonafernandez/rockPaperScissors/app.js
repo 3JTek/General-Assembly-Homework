@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function computerChoice() {
     const choices = ['rock', 'paper', 'scissors']
-    return choices[Math.floor(Math.random() * (3 - 1) + 1)]
+    return choices[Math.floor(Math.random() * (3))]
   }
 
   function winner(play1Choice, player2Choice) {
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', (e) => {
       player1.innerText = e.target.value
       player2.innerText = computerChoice()
+      console.log(computerChoice())
       console.log(winner(player1.innerText, player2.innerText))
     })
   })
