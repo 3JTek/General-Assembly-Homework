@@ -1,3 +1,83 @@
 body {
-  background-color: blue;
+  box-sizing: border-box;
+  //background-color: blue;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+main{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  width:800px;
+
+  border: 1px solid red;
+
+  .fight-box {
+    border: 1px solid blue;
+
+    max-width:800px;
+    width:100%;
+
+    .fight-box-top{
+      border: 1px solid green;
+      display: flex;
+      flex-direction: row-reverse;
+
+      button.reset-button{
+        color: white;
+        background-color: black;
+        height:4em;
+        padding:1em 2em 1em 2em;
+
+        &:focus{
+          outline: none;
+        }
+      }
+
+    }
+    .fight-box-middle{
+      border: 1px solid yellow;
+
+      display: flex;
+      img {
+        flex-grow: 4;
+        height:250px;
+        border: 1px solid red;
+
+      }
+
+      .vs-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+          flex-grow: 1;
+        p {
+          font-size: 2em;
+        }
+      }
+
+
+    }
+    .fight-box-bottom{
+      border: 1px solid orange;
+
+    }
+
+  }
+
+  button {
+    color: white;
+    background-color: black;
+    height:4em;
+    padding:1em 2em 1em 2em;
+
+    &:focus{
+      outline: none;
+    }
+  }
 }
