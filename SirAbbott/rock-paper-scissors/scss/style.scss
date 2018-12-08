@@ -96,6 +96,10 @@ body {
         &:hover {
           border: 6px #0414ef solid;
         }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
 
