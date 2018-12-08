@@ -39,8 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   scissors.addEventListener('click', () => {
     player1.innerHTML = 'PLAYER1: SCISSORS'
+    const randomResult = computer[Math.floor(Math.random()*computer.length)]
+    if (randomResult === 1) {
+      player2.innerHTML = 'PLAYER 2: ROCK'
+      winnerIs.innerHTML = 'PLAYER 2 WINS!'
+    } else if (randomResult === 2) {
+      player2.innerHTML = 'PLAYER 2: PAPER'
+      winnerIs.innerHTML = 'PLAYER 1 WINS!'
+    } else {
+      player2.innerHTML = 'PLAYER 2: SCISSORS'
+      winnerIs.innerHTML = 'IT\'S A DRAW!'
+    }
+
   })
   reset.addEventListener('click', () => {
-    console.log('reset')
+    window.location.reload(false)
   })
 })
