@@ -35,6 +35,10 @@
 
 }
 
+.playerlabel {
+  padding: 15px 0px;
+}
+
 body{
   margin: auto;
   font-family: sans-serif;
