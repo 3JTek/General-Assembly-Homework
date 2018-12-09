@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const rock = document.getElementById('r')
   const paper = document.getElementById('p')
   const scissors = document.getElementById('s')
+  const lizard = document.getElementById('l')
+  const spock = document.getElementById('x')
   const reset = document.querySelector('.reset')
   //scores
 
@@ -15,15 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let compScore = 0
 
   function getComputerChoice() {
-    const choices = ['r', 'p', 's']
-    const randomNo = Math.floor(Math.random() * 3)
+    const choices = ['r', 'p', 's', 'l', 'x']
+    const randomNo = Math.floor(Math.random() * 5)
     return choices[randomNo]
   }
 
   function convertToWord(letter) {
     if (letter === 'r') return 'Rock'
     if (letter === 'p') return 'Paper'
-    return 'Scissors'
+    if (letter === 's') return 'Scissors'
+    if (letter === 'l') return 'Lizard'
+    return 'Spock'
   }
 
   function win(user, comp) {
@@ -50,16 +54,32 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'rs':
       case 'pr':
       case 'sp':
+      case 'rl':
+      case 'lx':
+      case 'xs':
+      case 'sl':
+      case 'lp':
+      case 'px':
+      case 'xr':
         win(userChoice, computerChoice)
         break
       case 'rp':
       case 'ps':
       case 'sr':
+      case 'lr':
+      case 'xl':
+      case 'sx':
+      case 'ls':
+      case 'pl':
+      case 'xp':
+      case 'rx':
         lose(userChoice, computerChoice)
         break
       case 'rr':
       case 'pp':
       case 'ss':
+      case 'll':
+      case 'xx':
         draw(userChoice, computerChoice)
         break
     }
@@ -71,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     rock.addEventListener('click', () => game('r'))
     paper.addEventListener('click', () => game('p'))
     scissors.addEventListener('click', () => game('s'))
+    lizard.addEventListener('click', () => game('l'))
+    spock.addEventListener('click', () => game('x'))
     reset.addEventListener('click', () => gameOver())
   }
 
