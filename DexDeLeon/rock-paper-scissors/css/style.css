@@ -1,0 +1,2 @@
+h1,h2{text-align:center}div.container{display:flex;width:80%;margin:auto;justify-content:space-around}div#gameBoard{width:50%}div#gameBoard button{background:#f00;width:calc(100%/3);padding:2em}div#gameBoard #resetButton{width:100%}div.choice img{display:none}
+/*# sourceMappingURL=style.css.map */
