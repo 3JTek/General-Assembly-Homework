@@ -2,30 +2,39 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <div class="game-container">
+      <div class="p1-display">
+          <p>Player 1</p>
 
-    <div class="p1-display">
-        <p>Player 1</p>
-    </div>
+      </div>
 
-    <div class="buttons">
-      <button class="user-choice" id= "rock" name="button" value="rock">Rock</button>
-      <button class="user-choice" id= "paper" name="button" value="paper">Paper</button>
-      <button class="user-choice" id= "scissors" name="button" value="paper">Scissors</button>
-    </div>
+      <div class="middle-sec">
+        <div class="winner-display">
+          <p class='result'>Please choose Rock, Paper, or Scissors</p>
+        </div>
+        <div class="buttons">
+          <button class="user-choice" id= "rock" name="button" value="rock">Rock</button>
+          <button class="user-choice" id= "paper" name="button" value="paper">Paper</button>
+          <button class="user-choice" id= "scissors" name="button" value="paper">Scissors</button>
+        </div>
+        <button id="reset" type="button" name="button">Reset</button>
+      </div>
 
-    <div class="winner-display">
-      <p result>Please choose Rock, Paper, or Scissors</p>
-    </div>
-    
-    <button id="reset" type="button" name="button">Reset</button>
 
-    <div class="cpu-display">
-      <p>Opponent</p>
+
+
+
+      <div class="cpu-display">
+        <img src="https://image.shutterstock.com/image-vector/pixel-art-old-computer-260nw-1020414769.jpg" alt="Cpu image">
+        <p>Opponent</p>
+      </div>
+
     </div>
 
 
