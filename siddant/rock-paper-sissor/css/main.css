@@ -1,0 +1,37 @@
+*{
+  box-sizing: border-box;
+}
+
+button{
+  display:block;
+  margin: 0 auto;
+}
+.btn{
+  height: 100px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 50px ;
+}
+
+.btn:hover{
+  border-style: solid;
+  border-color: green;
+}
+#reset{
+  padding: 10px;
+  border-radius: 50px 20px;
+  height: 100px;
+  width: 250px;
+  font-size: 30px;
+}
+
+#reset:hover{
+  border-style: solid;
+  border-color: red;
+}
+
+.section{
+  border: 1px solid black;
+  margin-top:30px;
+
+}
