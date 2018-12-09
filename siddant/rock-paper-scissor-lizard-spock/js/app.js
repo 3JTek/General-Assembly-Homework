@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const option = document.querySelectorAll('.btn')
-  const reset = document.querySelectorAll('#reset')[0]
-  const content = document.querySelectorAll('p')
-
-
-  let rand = 0, total =0, playerWon=0, computerWon=0, winnerIndex=0, userIndex =0
-  const arrayOption = ['Rock', 'Paper','Scissor','Lizard','Spock',' ']
   //Game Rule: Winning Condition
   //rock beat siccior  = [0,2], rock beats lizard = [0, 3]
   //paper beats rock = [1,0] , paper beats spock = [1,4]
@@ -13,7 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   //lizard beats spock = [3,4], lizard beats paper = [3,1]
   //spock beats Rock = [4,0], spock beats scissor = [4,2]
   const computerCondition = [[0,2],[0,3],[1,0],[1,4],[2,3],[2,1],[3,4],[3,1],[4,0],[4,2]]
+  const arrayOption = ['Rock', 'Paper','Scissor','Lizard','Spock',' ']
   const explanation = ['smashes','crushes','covers','disproves','decapitates','cuts','poisons','eats','vaporizes','smashes', ' ']
+  const option = document.querySelectorAll('.btn')
+  const reset = document.querySelectorAll('#reset')[0]
+  const content = document.querySelectorAll('p')
+  let rand = 0, total =0, playerWon=0, computerWon=0, winnerIndex=0, userIndex =0
 
   //game display the Winner and explanation
   const display = function(e,outcome){
@@ -36,10 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //display the score board
   const displayScore =function(){
     content[6].innerText = playerWon
-    content[8].innerText = computerWon
-    content[10].innerText = total
-
-
+    content[8].innerText = total
+    content[10].innerText = computerWon
   }
 
   //Game logic
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //Event Listner
   option.forEach((option,index) => {
     option.addEventListener('click', logic)
-    console.log(index)
     option.style.backgroundImage = 'url(\'images/'+index+'.png\')'
     option.style.backgroundRepeat= 'no-repeat'
     option.style.backgroundSize = 'contain'
@@ -75,10 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayScore()
   })
 
-
-
   // setting the game
   display(5,' ')
   displayScore()
-
 })
