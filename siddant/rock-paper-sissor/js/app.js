@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
   option.forEach((option,index) => {
     option.addEventListener('click', logic)
     console.log(index)
+    option.style.backgroundImage = 'url(\'images/'+index+'.png\')'
+    option.style.backgroundRepeat= 'no-repeat'
+    option.style.backgroundSize = 'contain'
+    option.style.backgroundPosition= 'center'
   })
 
   reset.addEventListener('click', ()=> {
@@ -72,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 
+
+  // setting the game
   display(5,' ')
   displayScore()
 

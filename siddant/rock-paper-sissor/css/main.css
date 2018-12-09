@@ -33,5 +33,8 @@ button{
 .section{
   border: 1px solid black;
   margin-top:30px;
+}
 
+p{
+  font-size: 20px;
 }
