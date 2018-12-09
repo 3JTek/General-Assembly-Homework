@@ -10,16 +10,36 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  text-align: center;
 }
 
-.game-container{
-  width: 70%;
+.bot-container{
+  width: 55%;
   display: flex;
   justify-content: space-around;
   margin: 30% auto;
 }
 
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.winner-display{
+  font-size: 25px;
+}
+.user-choice{
+  width: 30%;
+}
+
 img{
   width: 100px;
   height: auto
+}
+
+#reset{
+  margin-top: 20px;
+  width: 50%;
+  display: block;
 }

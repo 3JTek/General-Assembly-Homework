@@ -4,7 +4,9 @@ const scissors = document.getElementById('scissors')
 const choices = ['rock', 'paper', 'scissors']
 const winnerDisplay = document.querySelector('.result')
 const resetBtn = document.querySelector('#reset')
-
+let userScoreDisplay = document.querySelector('#user-score')
+let cpuScoreDisplay = document.querySelector('#cpu-score')
+let userScore = 0, cpuScore =0
 
 // win conditions
 rock.addEventListener('click', () => {
@@ -36,10 +38,24 @@ resetBtn.addEventListener('click', () => reset())
 
 
 // result functions
-const youLose = () => winnerDisplay.innerHTML ='Cpu Wins'
-const youWin = () => winnerDisplay.innerHTML = 'You Win'
+const youLose = () => {
+  winnerDisplay.innerHTML ='You Lose!'
+  cpuScore += 1
+  cpuScoreDisplay.textContent = cpuScore
+}
+const youWin = () => {
+  winnerDisplay.innerHTML = 'You Win!'
+  userScore +=1
+  userScoreDisplay.textContent = userScore
+}
+
 const resultIsDraw = () => winnerDisplay.innerHTML = 'Draw! Nobody wins. Try Again'
-const reset = () => winnerDisplay.innerHTML = 'Please choose Rock, Paper, or Scissors'
+
+const reset = () => {
+  userScore = 0,
+  cpuScore = 0,
+  winnerDisplay.innerHTML = 'Please choose Rock, Paper, or Scissors'
+}
 const cpuRandom =() => {
   return choices[Math.ceil(Math.random()*choices.length-1)]
 }
