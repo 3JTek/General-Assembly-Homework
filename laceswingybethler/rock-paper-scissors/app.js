@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //if user loses, display youLose inside top img (innerHTML?)
   //if user clicks 'resetButton', clear top image
 
-  const weapons = document.querySelectorAll('button.weapon')
+
   const weaponOptions = [
     {name: 'rock',
       beats: 'scissors',
@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetButton = document.querySelector('button.reset')
   const arena = document.querySelector('img.arena')
   const arenaText = document.querySelector('h2.arenaText')
+  const weapons = document.querySelectorAll('button.weapon')
+
 
 
 
@@ -33,11 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return weaponOptions[Math.floor(Math.random()*3)]
   }
 
-
   weapons.forEach((weapon) => {
     weapon.addEventListener('click', (e) => {
       const play = computerPlay()
-
+      let btn = document.querySelector('button[name="'+e.target.name+'"]')
+      console.log(btn)
 
       arena.src = play.image
       console.log('computer played ' + play.name)
@@ -45,18 +47,29 @@ document.addEventListener('DOMContentLoaded', () => {
       // const userWeapon = e.target.name
       console.log('you played ' + e.target.name)
       if (play.name === e.target.name) {
-        arenaText.innerText = 'You drew'
+        arenaText.innerText = 'You played ' + e.target.name + '. You drew'
+        backToWhite()
+        btn.style.backgroundColor = 'orange'
       }else if (play.beats === e.target.name){
-        arenaText.innerText = 'You Lose!'
+        arenaText.innerText = 'You played ' + e.target.name + '. You Lose!'
+        backToWhite()
+        btn.style.backgroundColor = 'red'
       }else {
-        arenaText.innerText = 'You Win!'
+        arenaText.innerText = 'You played ' + e.target.name + '. You Win!'
+        backToWhite()
+        btn.style.backgroundColor = 'green'
       }
     })
   })
 
+  function backToWhite() {
+    return weapons.forEach((weapon) => weapon.style.backgroundColor = 'white')
+  }
 
-  //if computerPlay().name === weapon.name then draw
-  //if computerPlay().beats === weapon.name then user loses
-  //else user wins.
+  resetButton.addEventListener('click',() => {
+    arena.src = 'https://media.giphy.com/media/b0I9c0NXRMS1W/giphy.gif'
+    arenaText.innerText = 'I challenge you to a duel.'
+    backToWhite()
+  })
 
 })
