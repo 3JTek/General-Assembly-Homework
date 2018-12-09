@@ -4,24 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <script src="js/app.js" charset="utf-8"></script>
     <title>Rock Paper Scissors</title>
   </head>
   <body>
     <header>
       <h1>ROCK PAPER SCISSORS</h1>
+      <h2>with LIZARD SPOCK DLC</h2>
     </header>
     <main>
       <div class="container">
         <!-- DIV TO HOLD IMAGE FOR PLAYER'S CHOICE -->
-        <div class="player"><img src="" alt="Player's Choice"></div>
+        <div class="player choice">
+          <img src="" alt="Player's Choice">
+          <h3 class="player choiceLabel"></h3>
+        </div>
         <!-- JS WILL POPULATE THIS DIV WITH BUTTONS FOR THE GAME -->
         <div id="gameBoard">
           <!-- MESSAGE WILL BE UPDATED BASED ON GAMEPLAY FROM JS -->
+          <h3 id="actionMessage"></h3>
           <h2 id="message">Click on a button to begin!</h2>
         </div>
         <!-- DIV TO HOLD IMAGE FOR COMPUTER'S CHOICE -->
-        <div class="computer"><img src="" alt="Computer's Choice"></div>
+        <div class="computer choice">
+          <img src="" alt="Computer's Choice">
+          <h3 class="computer choiceLabel"></h3>
+        </div>
       </div>
     </main>
   </body>

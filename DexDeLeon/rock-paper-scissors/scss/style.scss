@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", monospace;
+}
+
 h1, h2 {
   text-align: center;
 }
@@ -9,6 +17,10 @@ div.container {
   justify-content: space-around;
 }
 
+div.choice {
+  width: 25%;
+}
+
 div#gameBoard {
   width: 50%;
 
@@ -16,6 +28,8 @@ div#gameBoard {
     background: #f00;
     width: calc(100%/3);
     padding: 2em;
+    outline: none;
+    cursor: pointer;
   }
   #resetButton {
     width: 100%;
@@ -25,6 +39,7 @@ div#gameBoard {
 div.choice {
 
   img {
+    width: 100%;
     display: none;
   }
 }
