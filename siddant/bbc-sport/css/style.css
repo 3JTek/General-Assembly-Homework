@@ -43,9 +43,6 @@ a.navbar-item.is-active{
 
 @media only screen and (max-width: 600px) {
 
-
-
-
   .is-hidden-desktop.is-hidden-widescreen{
     padding-left: 10px;
   }
