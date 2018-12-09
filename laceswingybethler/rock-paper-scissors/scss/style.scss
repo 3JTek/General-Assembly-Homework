@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 60%;
+  margin: 50px auto;
+  display: block;
+}
+
+.armoury {
+  text-align: center;
+  .reset {
+    margin: 20px;
+  }
+}
