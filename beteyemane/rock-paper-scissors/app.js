@@ -28,15 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function win(user, comp) {
     userScore++
-    userSpan.innerHTML= userScore
-    compSpan.innerHTML = compScore
+    userSpan.innerHTML= ' ' + userScore + ' '
+    compSpan.innerHTML = ' ' + compScore + ' '
     result.innerHTML = `You win! ${convertToWord(user)} beats ${convertToWord(comp)}. `
   }
 
   function lose(user, comp) {
     compScore++
-    userSpan.innerHTML= userScore
-    compSpan.innerHTML = compScore
+    userSpan.innerHTML= ' ' + userScore + ' '
+    compSpan.innerHTML = ' ' + compScore + ' '
     result.innerHTML = `Computer wins! ${convertToWord(comp)} beats ${convertToWord(user)}.`
   }
 
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
   main()
 
   function gameOver () {
-    userScore = 0
-    compScore = 0
+    userScore = 0 + ' '
+    compScore = ' ' + 0
     userSpan.innerHTML= userScore
     compSpan.innerHTML = compScore
-    result.innerHTML = 'Make your Move!'
+    result.innerHTML = 'Make your move!'
   }
 
 })
