@@ -24,22 +24,33 @@ div.choice {
   text-align: center;
 }
 
-div#gameBoard {
+div.center {
   width: 60%;
-  height: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  button {
-    width: calc(100%/3 - 5px);
-    font-family: $pixel;
-    padding: 2em;
-    outline: none;
-    margin: auto;
-    display: inline-block;
-    cursor: pointer;
-    border: double 1px #000;
-  }
-  #resetButton {
+  #gameBoard {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    button {
+      width: calc(100%/3);
+      font-family: $pixel;
+      padding: 2em;
+      outline: none;
+      margin: 2.5px auto;
+      display: inline-block;
+      cursor: pointer;
+      border: double #000;
+      flex-grow: 1;
+    }
+    #resetButton {
+      width: 100%;
+    }
   }
 }
 
