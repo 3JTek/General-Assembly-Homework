@@ -29,16 +29,12 @@ h1{
   text-align: center;
   border:2px solid black;
 }
-/* .small1{
-  height:30px;
-  margin:20px;
-  text-align: center;
+.button2, .button3 {
+  background-color: orange;
+  border-radius: 10px;
+
 }
-.small2{
-  height:30px;
-  margin:20px;
-  text-align: center;
-} */
+
 .buttons{
   display: flex;
   justify-content: space-around;
@@ -48,7 +44,7 @@ h1{
   height: 100px;
 }
 
-.button001{
+.button001, .button002{
   background-color:red;
   border-radius: 10px;
 
