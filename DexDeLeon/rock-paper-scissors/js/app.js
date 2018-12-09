@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         beats: ['rock', 'scissors'],
         image: 'images/spock.png',
         action: [
-          `Spock used disintigrate on the rock.${sprEf}`,
+          `Spock used disintegrate on the rock.${sprEf}`,
           `Spock used smash on the scissors.${sprEf}`,
           'The two Spocks exchange their ideas and logical observations...'
         ]
