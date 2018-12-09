@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.btn')
   const reset = document.querySelectorAll('#reset')[0]
 
-  let rand = 0, total =0, playerWon=0, computerWon=0, average=0, winner=0
+  let rand = 0, total =0, playerWon=0, computerWon=0, winnerIndex=0, userIndex =0
   const arrayOption = ['Rock', 'Paper','Scissor','Lizard','Spock']
   //Game Rule: Winning Condition
   //rock beat siccior  = [0,2], rock beats lizard = [0, 3]
@@ -20,41 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }else{
       computerCondition.forEach((element,index) => {
         if(element.toString() === e.toString()){
-          winner = index
-          return index
+          winnerIndex = index
         }
       })
-      console.log(`${outcome} Won, ${arrayOption[e[0]]} ${explanation[winner]} ${arrayOption[e[1]]}`)
+      console.log(`${outcome} Won, ${arrayOption[e[0]]} ${explanation[winnerIndex]} ${arrayOption[e[1]]}`)
     }
   }
 
   //display the score board
-  const displayScore =function(user, computer, total){
-    average =  playerWon / total
-    console.log(`The total outcome is You has won ${user} Games`)
-    console.log(`The Computer has won ${computer} Games`)
+  const displayScore =function(){
+    console.log(`The total outcome is You have won ${playerWon} Games`)
+    console.log(`The Computer have won ${computerWon} Games`)
     console.log(`The total game played is ${total}`)
-    if(isFinite(average)){
-      console.log(`Your Average win-rate is  ${average.toFixed(2)}`)
-    }else{
-      console.log(`Your Average win-rate is  ${0}`)
-    }
+    console.log(`The computer index ${rand}`)
+    console.log(`human index  ${userIndex}`)
+
   }
 
   //Game logic
   const logic = function(e){
     total++
     rand = Math.floor(Math.random()*5)
-    if(rand === parseInt(e.target.id)){
+    userIndex = parseInt(e.target.id)
+    console.log(`You Picked ${arrayOption[userIndex]} Computer Picked ${arrayOption[rand]} `)
+    if(rand === userIndex){
       display(rand, 'draw')
-    }else if(computerCondition.some(elem => elem.toString() === [rand, e.target.id].toString())){
+    }else if(computerCondition.some(elem => elem.toString() === [rand, userIndex].toString())){
       computerWon++
-      display([rand, e.target.id], 'Computer')
+      display([rand, userIndex], 'Computer')
     }else{
       playerWon++
-      display([e.target.id,rand], 'You')
+      display([userIndex,rand], 'You')
     }
-    displayScore(playerWon, computerWon, total)
+    displayScore()
   }
 
   //Event Listner
@@ -63,9 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   reset.addEventListener('click', ()=> {
-    console.log('hello')
-    console.log(`computer won ${computerWon}, your ${playerWon}, ${total} , ${average}`  )
-    total =0, playerWon=0, computerWon=0, average=0, winner=0
+    console.log(`computer won ${computerWon}, you Won ${playerWon}, ${total} `)
+    total =0, playerWon=0, computerWon=0, winnerIndex=0
   })
 
 })
