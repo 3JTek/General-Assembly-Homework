@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     actionMessage = document.querySelector('#actionMessage'),
     sprEf = '\nIt\'s super effective!',
 
-    check = function(choice, object, choices, action){
-      if (object.name === choices[choice].name) object.action = action[0]
-      else if (this.beats.includes(choices[choice].name)) object.action = action[1]
-      return
+    check = function(choice1, choice2){
+      return choice1.beats.includes(choice2.name)
+    },
+
+    getAction = function(choice1, choice2){
+      return choice1.name === choice2.name ? choice1.action[2] : choice1.action[choice1.beats.indexOf(choice2.name)]
     },
 
     choices = [
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: 'lizard',
         beats: ['paper', 'spock'],
-        image: 'images/scissors.png',
+        image: 'images/lizard.png',
         action: [
           `The lizard used devour on the paper.${sprEf}`,
           `The lizard used poison on Spock.${sprEf}`,
@@ -61,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         name: 'spock',
         beats: ['rock', 'scissors'],
-        image: 'images/scissors.png',
+        image: 'images/spock.png',
         action: [
           `Spock used disintigrate on the rock.${sprEf}`,
           `Spock used smash on the scissors.${sprEf}`,
@@ -69,8 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       }
     ]
-
-  let oppChoice = 0
 
   choices.forEach((choice, i) => {
     const button = document.createElement('button')
@@ -81,31 +81,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Each time the button is clicked
     button.addEventListener('click', function(){
 
+      // Assign that button's value as the player's choice
+      const plChoice = choices[i]
       // The computer makes a random choice
-      oppChoice = Math.floor(Math.random()*3)
+      const oppChoice = choices[Math.floor(Math.random()*3)]
 
       // Choices displayed
-      computerAction.innerText = `Computer chose ${choices[oppChoice].name.toUpperCase()}`
-      computerChoice.setAttribute('src', choices[oppChoice].image)
+      computerAction.innerText = `Computer chose ${oppChoice.name.toUpperCase()}`
+      computerChoice.setAttribute('src', oppChoice.image)
       computerChoice.style.display = 'block'
-      console.log(choices[oppChoice].image)
-      playerAction.innerText = `You chose ${choices[i].name.toUpperCase()}`
+
+      playerAction.innerText = `You chose ${plChoice.name.toUpperCase()}`
       playerChoice.setAttribute('src', choices[i].image)
       playerChoice.style.display = 'block'
 
-      // choices[oppChoice].check(i)
-      // ...otherwise use the object's check method to see if it is the winning choice
-      if (check(oppChoice)) {
-        message.innerText = 'You win 😄'
-        actionMessage.innerText = choices[i].action
-      } else if (choices[oppChoice].check(i)){
-        message.innerText = 'You lose ☹️'
-        actionMessage.innerText = choices[oppChoice].action
-
-        // If the choices are the same, then the game is a tie...
-      } else if (choices[i].name === choices[oppChoice].name){
+      // Check if the game is a tie
+      if (plChoice.name === oppChoice.name){
         message.innerText = 'It\'s a tie! 😕'
-        actionMessage.innerText = choices[i].action
+        actionMessage.innerText = getAction(plChoice, oppChoice)
+
+      // Check if the player's choice is the winning choice
+      } else if (check(plChoice, oppChoice)) {
+        // if it is the winner then display the appropriate messages
+        message.innerText = 'You win!! 😄'
+        actionMessage.innerText = getAction(plChoice, oppChoice)
+
+      } else if (check(oppChoice, plChoice)){
+        // otherwise, it's a losing choice, display the appropriate messages
+        message.innerText = 'You lose... 😭'
+        actionMessage.innerText = getAction(oppChoice, plChoice)
       }
     })
     gameBoard.append(button)

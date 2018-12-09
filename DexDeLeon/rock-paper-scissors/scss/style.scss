@@ -1,9 +1,11 @@
+$pixel: "Press Start 2P", monospace;
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Press Start 2P", monospace;
+  font-family: $pixel;
 }
 
 h1, h2 {
@@ -12,24 +14,29 @@ h1, h2 {
 
 div.container {
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 div.choice {
-  width: 25%;
+  width: 15%;
+  text-align: center;
 }
 
 div#gameBoard {
-  width: 50%;
+  width: 60%;
+  height: 500px;
 
   button {
-    background: #f00;
-    width: calc(100%/3);
+    width: calc(100%/3 - 5px);
+    font-family: $pixel;
     padding: 2em;
     outline: none;
+    margin: auto;
+    display: inline-block;
     cursor: pointer;
+    border: double 1px #000;
   }
   #resetButton {
     width: 100%;
