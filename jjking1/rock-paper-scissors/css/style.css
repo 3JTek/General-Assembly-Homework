@@ -3,6 +3,7 @@
 }
 body{
   font-family: 'Press Start 2P', cursive;
+  background-color: lightblue;
 }
 
 .middle-sec{
@@ -12,10 +13,22 @@ body{
   justify-content: space-around;
   text-align: center;
 }
+#scoreboard{
+  display: flex;
+  font-size: 55px;
+  font-weight: 700;
+}
 
 .top-container{
-  width: 55%;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10%;
+  margin-bottom: 20px;
 }
+
 .bot-container{
   width: 55%;
   display: flex;
@@ -32,8 +45,16 @@ body{
 .winner-display{
   font-size: 25px;
 }
-.user-choice{
+.options{
   width: 30%;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 20px;
+  border: 3px solid darkblue;
+}
+
+button{
+  background-color: lightblue;
 }
 
 img{
@@ -45,4 +66,9 @@ img{
   margin-top: 20px;
   width: 50%;
   display: block;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px;
+  border-radius: 20px;
+  border: 3px solid darkblue;
 }
