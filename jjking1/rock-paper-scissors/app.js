@@ -4,8 +4,8 @@ const scissors = document.getElementById('scissors')
 const choices = ['rock', 'paper', 'scissors']
 const winnerDisplay = document.querySelector('.result')
 const resetBtn = document.querySelector('#reset')
-let userScoreDisplay = document.querySelector('#user-score')
-let cpuScoreDisplay = document.querySelector('#cpu-score')
+const userScoreDisplay = document.querySelector('#user-score')
+const cpuScoreDisplay = document.querySelector('#cpu-score')
 let userScore = 0, cpuScore =0
 
 // win conditions
@@ -54,6 +54,8 @@ const resultIsDraw = () => winnerDisplay.innerHTML = 'Draw! Nobody wins. Try Aga
 const reset = () => {
   userScore = 0,
   cpuScore = 0,
+  userScoreDisplay.textContent = userScore
+  cpuScoreDisplay.textContent = cpuScore
   winnerDisplay.innerHTML = 'Please choose Rock, Paper, or Scissors'
 }
 const cpuRandom =() => {

@@ -13,11 +13,14 @@ body{
   text-align: center;
 }
 
+.top-container{
+  width: 55%;
+}
 .bot-container{
   width: 55%;
   display: flex;
   justify-content: space-around;
-  margin: 30% auto;
+  margin: auto;
 }
 
 .buttons{
