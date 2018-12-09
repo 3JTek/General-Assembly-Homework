@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   const players = ['cpu','player','draw']
-  const weaponsArr = ['rock','paper','scissors']
+  const weaponsArr = ['scissors','paper','rock','lizard','spock']
   const numWeapons = weaponsArr.length
 
   let game ={
@@ -24,6 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     cpuWeapon: '',
     playerHealth:10,
     cpuHealth:10,
+    playerHistory: [],
+    cpuHistory: [],
     winner: '',
     gameOver: 'false',
     images: {
@@ -39,7 +41,19 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     whatCanThisBeat: function(weapon){
       const beatsArr = []
-      beatsArr.push(weapon === 'rock'? 'scissors': weapon === 'scissors'? 'paper': 'rock')
+      //beatsArr.push(weapon === 'rock'? 'scissors': weapon === 'scissors'? 'paper': 'rock')
+
+      //const weaponIndex =weaponsArr.indexOf(weapon)
+      //const beatsIndex = weaponsArr.indexOf(beatsArr[0])//
+      const firstBeatsIndex = (weaponsArr.indexOf(weapon)+1)%weaponsArr.length
+      const secondBeatsIndex = (weaponsArr.indexOf(weapon)+3)%weaponsArr.length
+
+      //console.log(weapon)
+      beatsArr.push(weaponsArr[firstBeatsIndex])
+      beatsArr.push(weaponsArr[secondBeatsIndex])
+
+      console.log(weapon,beatsArr)
+
       return beatsArr
       /*
       console.log(`weapon:${weapon}`)
@@ -61,30 +75,30 @@ window.addEventListener('DOMContentLoaded', () => {
         theWinner = 2
       }else{
         //If the cpuWeapon 'beats' array contains the player weapon, return the CPU, else the player
-        theWinner =  this.whatCanThisBeat(this.cpuWeapon).includes(this.playerWeapon) ? 0: 1
+        theWinner =  this.whatCanThisBeat(this.playerWeapon).includes(this.cpuWeapon) ? 1: 0
       }
 
       this.winner = theWinner
       return theWinner
     },
     updateHealth: function(){
+      //WHATS HAPPENING HERE??
       if(this.winner === 0){
         //reduce players Health
         this.playerHealth--
+
+
       } else if(this.winner === 1){
         //reduce cpu health
         this.cpuHealth--
-      }else{
-
       }
-
-
     },
-    // whoWon: function(){
-    //   // game.cpuWeapon = this.getCPUWeapon()
-    //   //game.winner = this.whoWins(this.cpuWeapon,this.playerWeapon)
-    //   console.log(`CPU:${this.cpuWeapon} PLAYER:${this.playerWeapon} = ${players[this.winner]} `)
-    // },
+    logWeapons: function(){
+      this.playerHistory.unshift(this.playerWeapon)
+      this.cpuHistory.unshift(this.cpuWeapon)
+      this.playerHistoy = 8
+      this.cpuHistory = 8
+    },
     reset: function(){
       console.log('RESET GAME')
       this.cpuWeapon =  ''
@@ -92,7 +106,8 @@ window.addEventListener('DOMContentLoaded', () => {
       this.winner = ''
       this.cpuHealth = 10
       this.playerHealth = 10
-      updateDisplay()
+      //updateDisplay()
+      init()
       game.gameOver = 'false'
     }
   }
@@ -103,8 +118,28 @@ window.addEventListener('DOMContentLoaded', () => {
   //2 Scissors
   // 0 -> 1 -> 2 -> 0
 
+  function init(){
+
+    game.playerHealth = 10
+    game.cpuHealth = 10
 
 
+    playerImageWeapon.innerText = ''
+    playerWeaponText.innerText = ''
+
+    cpuImageWeapon.innerText = ''
+    cpuWeaponText.innerText = ''
+
+
+    playerHealth.innerText = game.playerHealth
+    cpuHealth.innerText = game.cpuHealth
+
+
+    resultText.innerText = 'Get ready to fight!'
+
+
+  }
+  init()
 
 
 
@@ -115,36 +150,43 @@ window.addEventListener('DOMContentLoaded', () => {
     //Update Images
     //playerImg.src = game.images[game.playerWeapon]
     //cpuImg.src = game.images[game.cpuWeapon]
-    if(game.gameOver==='false'){
-      playerImg.classList.add(game.playerWeapon)
-      setTimeout(function() {
-        playerImg.classList.remove(game.playerWeapon)
-      }, 150)
+    // if(game.gameOver==='false'){
+    playerImg.classList.add(game.playerWeapon)
+    setTimeout(function() {
+      playerImg.classList.remove(game.playerWeapon)
+    }, 150)
 
-      cpuImg.classList.add(game.cpuWeapon)
-      setTimeout(function() {
-        cpuImg.classList.remove(game.cpuWeapon)
-      }, 150)
-
-
-      playerImageWeapon.classList.add('active')
-      setTimeout(function() {
-        playerImageWeapon.classList.remove('active')
-      }, 500)
+    cpuImg.classList.add(game.cpuWeapon)
+    setTimeout(function() {
+      cpuImg.classList.remove(game.cpuWeapon)
+    }, 150)
 
 
+    playerImageWeapon.classList.add('active')
+    setTimeout(function() {
+      playerImageWeapon.classList.remove('active')
+    }, 500)
 
-      cpuImageWeapon.classList.add('active')
-      setTimeout(function() {
-        cpuImageWeapon.classList.remove('active')
-      }, 500)
-    }
-    
+
+
+    cpuImageWeapon.classList.add('active')
+    setTimeout(function() {
+      cpuImageWeapon.classList.remove('active')
+    }, 500)
+    // }
+
     playerImageWeapon.innerText = game.playerWeapon
-    playerWeaponText.innerText = game.playerWeapon
-
     cpuImageWeapon.innerText = game.cpuWeapon
-    cpuWeaponText.innerText = game.cpuWeapon
+
+
+    for(const i in game.playerHistory){
+      playerWeaponText.innerText += game.playerHistory[i]+'\n'
+      cpuWeaponText.innerText += game.cpuHistory[i]+'\n'
+    }
+
+    // playerWeaponText.innerText += game.playerWeapon+'\n'
+
+    // cpuWeaponText.innerText += game.cpuWeapon+'\n'
 
 
     playerHealth.innerText = game.playerHealth
@@ -157,14 +199,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Update text
     //If first fight
-    if(game.winner===''){
-      resultText.innerText = 'Get ready to fight!'
-    }else if(players[game.winner]=== 'draw'){
+    if(players[game.winner]=== 'draw'){
       //If draw
-      resultText.innerText = 'Great block!!'
-    }else{
-      //If not a draw display winner
-      resultText.innerText = players[game.winner] + ' landed a hit!!'
+      resultText.innerText = `${game.playerWeapon} and ${game.cpuWeapon} draw\nGreat block!!`
+    }else if(players[game.winner]===1){
+      //Payer Wins
+      resultText.innerText = `${game.playerWeapon} beats ${game.cpuWeapon}\nplayer1 landed a hit!!'`
+    }else {
+      //CPU wins
+      resultText.innerText = `${game.cpuWeapon} beats ${game.playerWeapon}\nCPU landed a hit!!'`
     }
 
     if(game.playerHealth === 0){
@@ -172,7 +215,7 @@ window.addEventListener('DOMContentLoaded', () => {
       console.log('CPU WINS!')
       resultText.innerText = 'You lose!'
     }else if (game.cpuHealth === 0){
-      game.gameOver = true;
+      game.gameOver = true
       console.log('PLAYER WINS!')
       resultText.innerText = 'player1 wins!'
     }
@@ -183,6 +226,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //get getCPUWeapon
     //
     game.getCPUWeapon()
+    game.logWeapons()
     game.whoWins()
     game.updateHealth()
     updateDisplay()
