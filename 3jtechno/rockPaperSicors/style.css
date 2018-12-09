@@ -8,20 +8,33 @@ main{
 }
 .container{
   width: 500px;
-  height: 300px;
+  height: 390px;
   border: 2px solid grey;
 }
 .top{
   border: 2px solid grey;
   max-width: 400px;
   margin: 30px auto;
-  text-align: center;
+  display: flex;
+}
+.left{
+  text-align: right;
+  border: 2px solid grey;
+  width:50%;
+}
+.right{
+  border: 2px solid grey;
+  width: 50%;
+}
+.right h2{
+margin-left: 20px
 }
 .bottom{
   border: 2px solid grey;
   max-width: 400px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin: 30px auto;
 }
 button{
@@ -30,4 +43,5 @@ button{
   background-color: transparent;
   border: 2px solid red;
   border-radius: 15px;
+  margin: 10px 0;
 }
