@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const rock = document.querySelector('.choice Rock')
   const paper = document.querySelector('.choice Paper')
   const scissors = document.querySelector('.choice Scissors')
-  const lizzard = document.querySelector('.choice Lizzard')
+  const lizard = document.querySelector('.choice Lizard')
   const spock = document.querySelector('.choice Spock')
   const player = document.querySelector('.yourChoice')
   const computer = document.querySelector('.computerChoice')
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   rock.addEventListener('click', () => {
     player.innerHTML = 'Player choose ROCK'
-    const randomChoice = computer[Math.floor(Math.random()*tray.lenght -1)]
+    const randomChoice = computer[Math.floor(Math.random()*tray.length -1)]
     if (randomChoice === 1) {
       computer.innerHTML = 'Computer choose Rock'
       theWinner.innerHTML = 'It\'s a Tie'
@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
       computer.innerHTML = 'Computer choose Scissors'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else if (randomChoice === 4) {
-      computer.innerHTML = 'Computer choose Lizzard'
+      computer.innerHTML = 'Computer choose Lizard'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else
-    computer.innerHTML = 'Computer choose Spock'
+      computer.innerHTML = 'Computer choose Spock'
     theWinner.innerHTML = 'You Lost!!!'
-  },
+  })
 
   scissors.addEventListener('click', () => {
     player.innerHTML = 'Player choose Scissors'
-    const randomChoice = computer[Math.floor(Math.random()*computer.lenght -1)]
-    if (randomChoice === 1) {
-      computer.innerHTML = 'Computer choose Rock'
+    const randomChoice = computer[Math.floor(Math.random()*computer.length -1)]
+    if (randomChoice === 3) {
+      computer.innerHTML = 'Computer choose Scissors'
       theWinner.innerHTML = 'It\'s a Tie'
     } else if (randomChoice === 2) {
       computer.innerHTML = 'Computer choose Paper'
@@ -42,17 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
       computer.innerHTML = 'Computer choose Scissors'
       theWinner.innerHTML = 'It\'s a Tie'
     } else if (randomChoice === 4) {
-      computer.innerHTML = 'Computer choose Lizzard'
+      computer.innerHTML = 'Computer choose Lizard'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else
-    computer.innerHTML = 'Computer choose Spock'
+      computer.innerHTML = 'Computer choose Spock'
     theWinner.innerHTML = 'You Lost!!!'
-  },
+  })
 
   paper.addEventListener('click', () => {
     player.innerHTML = 'Player choose ROCK'
-    const randomChoice = computer[Math.floor(Math.random()*computer.lenght -1)]
-    if (randomChoice === 1) {
+    const randomChoice = computer[Math.floor(Math.random()*computer.length -1)]
+    if (randomChoice === 2) {
       computer.innerHTML = 'Computer choose Rock'
       theWinner.innerHTML = 'It\'s a Tie'
     } else if (randomChoice === 2) {
@@ -62,17 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
       computer.innerHTML = 'Computer choose Scissors'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else if (randomChoice === 4) {
-      computer.innerHTML = 'Computer choose Lizzard'
+      computer.innerHTML = 'Computer choose Lizard'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else
-    computer.innerHTML = 'Computer choose Spock'
+      computer.innerHTML = 'Computer choose Spock'
     theWinner.innerHTML = 'You Lost!!!'
-  },
+  })
 
-  lizzard.addEventListener('click', () => {
+  lizard.addEventListener('click', () => {
     player.innerHTML = 'Player choose ROCK'
-    const randomChoice = computer[Math.floor(Math.random()*computer.lenght -1)]
-    if (randomChoice === 1) {
+    const randomChoice = computer[Math.floor(Math.random()*computer.length -1)]
+    if (randomChoice === 4) {
       computer.innerHTML = 'Computer choose Rock'
       theWinner.innerHTML = 'You Lost!!!'
     } else if (randomChoice === 2) {
@@ -82,16 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
       computer.innerHTML = 'Computer choose Scissors'
       theWinner.innerHTML = 'You Lost!!!'
     } else if (randomChoice === 4) {
-      computer.innerHTML = 'Computer choose Lizzard'
+      computer.innerHTML = 'Computer choose Lizard'
       theWinner.innerHTML = 'It\'s a Tie'
     } else
-    computer.innerHTML = 'Computer choose Spock'
+      computer.innerHTML = 'Computer choose Spock'
     theWinner.innerHTML = 'You Lost!!!'
-  },
+  })
 
   spock.addEventListener('click', () => {
     player.innerHTML = 'Player choose ROCK'
-    const randomChoice = computer[Math.floor(Math.random()*computer.lenght -1)]
+    const randomChoice = computer[Math.floor(Math.random()*computer.length -1)]
     if (randomChoice === 1) {
       computer.innerHTML = 'Computer choose Rock'
       theWinner.innerHTML = 'YOU WIN!!!'
@@ -102,11 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
       computer.innerHTML = 'Computer choose Scissors'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else if (randomChoice === 4) {
-      computer.innerHTML = 'Computer choose Lizzard'
+      computer.innerHTML = 'Computer choose Lizard'
       theWinner.innerHTML = 'YOU WIN!!!'
     } else {
       computer.innerHTML = 'Computer choose Spock'
       theWinner.innerHTML = 'It\'s a Tie'
     }
-  }
-}
+  })
+})
