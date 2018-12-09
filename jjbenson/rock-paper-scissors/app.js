@@ -4,14 +4,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   const buttonsArr = document.querySelectorAll('button')
+
+  const fighters = document.querySelector('.fighters')
+
   const playerImg = document.querySelector('.player-image')
   const cpuImg = document.querySelector('.cpu-image')
-  const playerHealth = document.querySelector('.player-health')
-  const cpuHealth = document.querySelector('.cpu-health')
+
+  // const playerHealth = document.querySelector('.player-health')
+  // const cpuHealth = document.querySelector('.cpu-health')
+
   const playerImageWeapon = document.querySelector('.player-image-weapon')
   const playerWeaponText = document.querySelector('.player-weapon-text')
+
   const cpuImageWeapon = document.querySelector('.cpu-image-weapon')
   const cpuWeaponText = document.querySelector('.cpu-weapon-text')
+
+  const playerHealthBar = document.querySelector('.player-health-bar-inner')
+  const cpuHealthBar = document.querySelector('.cpu-health-bar-inner')
+
+
   const resultText = document.querySelector('.result')
 
 
@@ -48,11 +59,9 @@ window.addEventListener('DOMContentLoaded', () => {
       const firstBeatsIndex = (weaponsArr.indexOf(weapon)+1)%weaponsArr.length
       const secondBeatsIndex = (weaponsArr.indexOf(weapon)+3)%weaponsArr.length
 
-      //console.log(weapon)
       beatsArr.push(weaponsArr[firstBeatsIndex])
       beatsArr.push(weaponsArr[secondBeatsIndex])
 
-      console.log(weapon,beatsArr)
 
       return beatsArr
       /*
@@ -94,10 +103,14 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     },
     logWeapons: function(){
+      const historyLen = 18
       this.playerHistory.unshift(this.playerWeapon)
       this.cpuHistory.unshift(this.cpuWeapon)
-      this.playerHistoy = 8
-      this.cpuHistory = 8
+      if(this.playerHistory.length>=historyLen){
+        this.playerHistory = this.playerHistory.splice(0,historyLen)
+        this.cpuHistory = this.cpuHistory.splice(0,historyLen)
+      }
+
     },
     reset: function(){
       console.log('RESET GAME')
@@ -131,12 +144,30 @@ window.addEventListener('DOMContentLoaded', () => {
     cpuWeaponText.innerText = ''
 
 
-    playerHealth.innerText = game.playerHealth
-    cpuHealth.innerText = game.cpuHealth
+    // playerHealth.innerText = game.playerHealth
+    // cpuHealth.innerText = game.cpuHealth
 
 
     resultText.innerText = 'Get ready to fight!'
 
+    game.playerHistory = []
+    game.cpuHistory = []
+
+    playerImg.className = 'player-image'
+    cpuImg.className = 'cpu-image'
+
+    playerHealthBar.style.width = '100%'
+    cpuHealthBar.style.width = '100%'
+
+    playerImg.classList.add('stance')
+    cpuImg.classList.add('stance')
+
+    playerImg.classList.remove('lose')
+    cpuImg.classList.remove('lose')
+
+      fighters.style.width = '100%'
+
+      fighters.style.left = 0
 
   }
   init()
@@ -151,72 +182,99 @@ window.addEventListener('DOMContentLoaded', () => {
     //playerImg.src = game.images[game.playerWeapon]
     //cpuImg.src = game.images[game.cpuWeapon]
     // if(game.gameOver==='false'){
+    fighters.style.width = '25%'
+
+    const timingArr = {
+      rock: 300,
+      paper: 500,
+      scissors: 500,
+      spock: 400,
+      lizard:500
+    }
+
+    //fighters.style.left = 'calc(33%)'//-(game.playerHealth-game.cpuHealth)
+    // let fightersLeft = fighters.style.left
+    // fightersLeft = fightersLeft
+    // console.log(fighters.style.left)
+    const fightersLeft = `${(game.playerHealth*20) - (game.cpuHealth*20)}px`
+    console.log(fightersLeft)
+    fighters.style.left = fightersLeft
+
+    console.log("HERE",game.winner)
     playerImg.classList.add(game.playerWeapon)
+    console.log(game.playerWeapon)
     setTimeout(function() {
       playerImg.classList.remove(game.playerWeapon)
-    }, 150)
+      //playerImg.classList.add('stance')
+
+    }, timingArr[game.playerWeapon])
 
     cpuImg.classList.add(game.cpuWeapon)
     setTimeout(function() {
       cpuImg.classList.remove(game.cpuWeapon)
-    }, 150)
+      //cpuImg.classList.add('stance')
+    }, timingArr[game.cpuWeapon])
 
-
-    playerImageWeapon.classList.add('active')
-    setTimeout(function() {
-      playerImageWeapon.classList.remove('active')
-    }, 500)
-
-
-
-    cpuImageWeapon.classList.add('active')
-    setTimeout(function() {
-      cpuImageWeapon.classList.remove('active')
-    }, 500)
+    // playerImageWeapon.classList.add('active')
+    // setTimeout(function() {
+    //   playerImageWeapon.classList.remove('active')
+    // }, 500)
+    //
+    //
+    //
+    // cpuImageWeapon.classList.add('active')
+    // setTimeout(function() {
+    //   cpuImageWeapon.classList.remove('active')
+    // }, 500)
     // }
 
     playerImageWeapon.innerText = game.playerWeapon
     cpuImageWeapon.innerText = game.cpuWeapon
 
+    let playerHistory = ''
+    let cpuHistory = ''
 
     for(const i in game.playerHistory){
-      playerWeaponText.innerText += game.playerHistory[i]+'\n'
-      cpuWeaponText.innerText += game.cpuHistory[i]+'\n'
+      playerHistory += `<p>${game.playerHistory[i]}</p>\n`
+      cpuHistory += `<p>${game.cpuHistory[i]}</p>\n`
     }
+
+    playerWeaponText.innerHTML = playerHistory
+    cpuWeaponText.innerHTML = cpuHistory
 
     // playerWeaponText.innerText += game.playerWeapon+'\n'
 
     // cpuWeaponText.innerText += game.cpuWeapon+'\n'
 
 
-    playerHealth.innerText = game.playerHealth
-    cpuHealth.innerText = game.cpuHealth
+    // playerHealth.innerText = game.playerHealth
+    // cpuHealth.innerText = game.cpuHealth
+
+    playerHealthBar.style.width = (game.playerHealth*10) + '%'
+    cpuHealthBar.style.width = (game.cpuHealth*10) + '%'
 
 
-
-
-    console.log(playerImageWeapon)
 
     //Update text
     //If first fight
     if(players[game.winner]=== 'draw'){
       //If draw
-      resultText.innerText = `${game.playerWeapon} and ${game.cpuWeapon} draw\nGreat block!!`
+      resultText.innerHTML = `<span class = 'player'>${game.playerWeapon}</span> and <span class = 'cpu'>${game.cpuWeapon}</span> draw<br>Great block!!`
     }else if(players[game.winner]===1){
       //Payer Wins
-      resultText.innerText = `${game.playerWeapon} beats ${game.cpuWeapon}\nplayer1 landed a hit!!'`
+      resultText.innerHTML = `<span class = 'player'>${game.playerWeapon}</span> beats <span class = 'cpu'>${game.cpuWeapon}</span><br>Player1 landed a hit!!'`
     }else {
       //CPU wins
-      resultText.innerText = `${game.cpuWeapon} beats ${game.playerWeapon}\nCPU landed a hit!!'`
+      resultText.innerHTML = `<span class = 'cpu'>${game.cpuWeapon}</span> beats <span class = 'player'>${game.playerWeapon}</span><br>CPU landed a hit!!'`
     }
 
     if(game.playerHealth === 0){
       game.gameOver = true
-      console.log('CPU WINS!')
       resultText.innerText = 'You lose!'
+      playerImg.classList.add('lose')
     }else if (game.cpuHealth === 0){
       game.gameOver = true
-      console.log('PLAYER WINS!')
+      cpuImg.classList.add('lose')
       resultText.innerText = 'player1 wins!'
     }
 
@@ -230,7 +288,7 @@ window.addEventListener('DOMContentLoaded', () => {
     game.whoWins()
     game.updateHealth()
     updateDisplay()
-    console.log(`CPU:${game.cpuWeapon} PLAYER:${game.playerWeapon} = ${players[game.winner]} `)
+    //console.log(`CPU:${game.cpuWeapon} PLAYER:${game.playerWeapon} = ${players[game.winner]} `)
   }
 
   //for every button add a click event
