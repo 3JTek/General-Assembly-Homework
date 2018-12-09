@@ -6,6 +6,9 @@ button{
   display:block;
   margin: 0 auto;
 }
+button:focus {
+  outline:0;
+}
 .btn{
   height: 100px;
   width: 150px;
