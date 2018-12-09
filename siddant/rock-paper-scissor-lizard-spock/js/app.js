@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const arrayOption = ['Rock', 'Paper','Scissor','Lizard','Spock',' ']
   const explanation = ['smashes','crushes','covers','disproves','decapitates','cuts','poisons','eats','vaporizes','smashes', ' ']
   const option = document.querySelectorAll('.btn')
-  const reset = document.querySelectorAll('#reset')[0]
+  const reset = document.querySelector('#reset')
   const content = document.querySelectorAll('p')
   let rand = 0, total =0, playerWon=0, computerWon=0, winnerIndex=0, userIndex =0
 
