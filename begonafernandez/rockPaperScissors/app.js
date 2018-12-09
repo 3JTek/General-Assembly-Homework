@@ -17,8 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function winner(play1Choice, player2Choice) {
     if(play1Choice === player2Choice) {
       notification.innerText = 'There is a tie'
+    } else if((play1Choice === 'rock' && player2Choice !== 'paper') ||
+              (play1Choice === 'paper' && player2Choice !== 'scissors') ||
+              (play1Choice ==='scissors' && player2Choice !== 'rock')){
+      notification.innerText =  'Player 1 wins'
     } else {
-      notification.innerText = 'Yay'
+      notification.innerText = 'Player 2 wins'
     }
   }
 
@@ -26,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', (e) => {
       player1.innerText = e.target.value
       player2.innerText = computerChoice()
-      console.log(computerChoice())
       console.log(winner(player1.innerText, player2.innerText))
     })
   })
