@@ -1,4 +1,4 @@
-.container-1{
+.scoreBoard{
   text-align: center;
   padding-bottom: 25px;
   border: 1px solid black;
@@ -26,7 +26,7 @@
   font-size: 2em;
 }
 
-.btn{
+.btn-div{
   text-align: center;
   padding: 40px;
   border-radius: 40px;
