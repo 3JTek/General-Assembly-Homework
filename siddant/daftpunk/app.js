@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.textContent = ''
       e.target.style.backgroundImage = 'url(\'gif/'+e.target.value+'.gif\')'
       e.target.style.backgroundRepeat= 'no-repeat'
-
       e.target.style.backgroundSize = 'contain'
     })
 
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   rand.addEventListener('click', () => {
     sound.setAttribute('src','sounds/'+musicButton[Math.floor(Math.random() * 16)].value+'.wav')
     sound.play()
-  }
-  )
+  })
 
 })

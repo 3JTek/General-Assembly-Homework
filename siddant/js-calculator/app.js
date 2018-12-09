@@ -51,7 +51,7 @@ while(calStatus){
     opers = prompt('what would you like to do (mortgage) Mortgage calculator or (BMI) BMI calculator or (trip calculator) Trip Calculator ')
     if(opers === 'mortgage'){
       num1 = parseFloat(prompt('please enter the total amount '))
-      //calculating the percentge is 6 / 100 === 0.06.  0.06 === 6%
+      //calculating the percentge is 6 / 100 === 0.06 ,  0.06 === 6%
       //calculating the monthly interest rate is interest rat devide by 12(months)
       num2 = (parseFloat(prompt('please enter the yearly interest rate'))/100)/12
       //to get the total amounths of months year Multiply 12(months in a year)
