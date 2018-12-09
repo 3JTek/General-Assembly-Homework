@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Assign that button's value as the player's choice
       const plChoice = choices[i]
       // The computer makes a random choice
-      const oppChoice = choices[Math.floor(Math.random()*3)]
+      const oppChoice = choices[Math.floor(Math.random()*5)]
 
       // Choices displayed
       computerAction.innerText = `Computer chose ${oppChoice.name.toUpperCase()}`
