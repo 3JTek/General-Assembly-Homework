@@ -21,9 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return choices[Math.floor(Math.random() * (3))]
   }
 
+  function setNotificationToRed() {
+    notification.classList.add('is-danger')
+  }
+
   function reset() {
     initialPlayerFields()
     initialGameStatus()
+    setNotificationToRed()
   }
 
   function winner(play1Choice, player2Choice) {
@@ -36,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       notification.innerText = 'Player 2 wins'
     }
+    notification.classList.remove('is-danger')
+    notification.classList.add('is-success')
   }
 
   reset()
