@@ -30,13 +30,14 @@ header h1 {
   text-align: center;
   color: #5822F6;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .scoreboard {
   width: 200px;
   margin: 5px auto;
   color: #5822F6;
-  font-size: 45px;
+  font-size: 65px;
   text-align: center;
   padding-bottom: 80px;
   position: relative;
