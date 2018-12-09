@@ -2,9 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Rock, Paper, Scissors</title>
+    <title>Games | Rock Paper Scissors</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="app.js" charset="utf-8"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://media.giphy.com/media/ox7IX1lrMzaaA/giphy.gif"/>
   </head>
   <body>
     <header>
@@ -12,10 +13,11 @@
     </header>
     <main>
 <!-- scoreboard -->
+      <p class="final">Final score</p>
       <div class="scoreboard">
-        <div id="user"class="badge">User</div>
-        <div id="comp" class="badge">Comp</div>
-        <span id="user-score">0</span>:<span id="comp-score">0</span>
+        <div id="user"class="badge">Player 1</div>
+        <span id="user-score">0 </span>-<span id="comp-score"> 0</span>
+        <div id="comp" class="badge">Computer</div>
       </div>
 <!-- result -->
       <div id="result">
@@ -24,18 +26,21 @@
 <!-- choices -->
       <div class="choices">
         <div id="r" class="choice">
-          <p>ROCK</p>
+          <img src="images/rock.png" width="60px" alt="Rock">
+          <p>Rock</p>
         </div>
         <div id="p" class="choice">
-          <p>PAPER</p>
+          <img src="images/paper.png" width="60px" alt="Paper">
+          <p>Paper</p>
         </div>
         <div id="s" class="choice">
-          <p>SCISSORS</p>
+          <img src="images/scissors.png" width="60px" alt="Scissors">
+          <p>Scissors</p>
         </div>
       <div>
-<!-- message -->
+<!-- reset -->
       <div class="reset">
-        <p>RESET</p>
+        <p>Reset game ↺</p>
       </div>
     </main>
   </body>

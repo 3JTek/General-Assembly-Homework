@@ -30,18 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
     userScore++
     userSpan.innerHTML= userScore
     compSpan.innerHTML = compScore
-    result.innerHTML = `${convertToWord(user)} beats ${convertToWord(comp)}. You win!`
+    result.innerHTML = `You win! ${convertToWord(user)} beats ${convertToWord(comp)}. `
   }
 
   function lose(user, comp) {
     compScore++
     userSpan.innerHTML= userScore
     compSpan.innerHTML = compScore
-    result.innerHTML = `${convertToWord(comp)} beats ${convertToWord(user)}. Computer wins!`
+    result.innerHTML = `Computer wins! ${convertToWord(comp)} beats ${convertToWord(user)}.`
   }
 
   function draw(user, comp) {
-    result.innerHTML = `You chose ${convertToWord(user)} & computer chose ${convertToWord(comp)}. It's a draw!`
+    result.innerHTML = `It's a draw! ${convertToWord(user)} equals ${convertToWord(comp)}.`
   }
 
   function game (userChoice) {
