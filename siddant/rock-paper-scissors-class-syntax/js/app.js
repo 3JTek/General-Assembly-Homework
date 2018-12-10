@@ -17,7 +17,7 @@ class RPS{
     this.choices.forEach(element  => {
       const button = document.createElement('button')
       button.textContent = element
-      button.setAttribute('class', 'choice')
+      button.classList.add('choice')
       game.insertBefore(button,this.resetBtn)
     })
 
