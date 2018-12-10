@@ -4,15 +4,13 @@ body {
 
 .gameContent {
   border: 1px solid black;
-  background-color: #ccc;
-}
-
+  background-image: url("http://www.flare3d.com/blog/wp-content/uploads/Duck-Hunt.png");
+  background-repeat: repeat-x;
+  
 button {
   width: 300px;
   height: 300px;
   margin: 12.5px;
   border: 1px solid black;
-  background: transparent;
-  color: black;
   padding: 0;
 }
