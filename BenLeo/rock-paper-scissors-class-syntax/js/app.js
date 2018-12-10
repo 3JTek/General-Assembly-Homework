@@ -1,16 +1,14 @@
 class RPS {
 
   constructor() {
-    console.log(this)
     // DOM ELEMENTS
-    this.buttons = document.querySelectorAll('button.choice')
     this.player1 = document.querySelector('.player1')
     this.player2 = document.querySelector('.player2')
     this.result = document.querySelector('.result')
-    this.resetBtn = document.querySelector('button.reset')
     this.makeChoice = this.makeChoice.bind(this)
     this.play = this.play.bind(this)
     this.reset = this.reset.bind(this)
+    this.gameDiv = document.querySelector('div.game')
 
     this.winConditions = {
       rock: 'scissors',
@@ -19,14 +17,27 @@ class RPS {
     }
     this.choices = Object.keys(this.winConditions)
 
+    //GENERATING INPUT BUTTONS VIA JS
+    this.buttons = this.choices.forEach(item => {
+      const button = document.createElement('button')
+      console.log(button)
+      button.innerText = item
+      button.setAttribute('class', 'choice')
+      this.gameDiv.appendChild(button)
+    })
+
+    this.resetBtn = document.createElement('button')
+    this.resetBtn.innerText = 'Reset'
+    this.gameDiv.appendChild(this.resetBtn)
+
     this.init()
   }
 
   init() {
 
     // EVENT LISTENERS
+    this.buttons = document.querySelectorAll('button.choice')
     this.buttons.forEach(button => button.addEventListener('click', this.play))
-
     this.resetBtn.addEventListener('click', this.reset)
   }
 
