@@ -1,10 +1,12 @@
 class RockPaperScissors {
 
-  constructor(winConditions, id){
+  constructor(winConditions, id, colours){
     //VARIABLES
     //Choices and what the choice beat as an object
     this.winConditions = winConditions
 
+    this.colours = colours || this.defaultColours()
+    console.log()
     this.id = id
 
     //An array of just the choices
@@ -26,6 +28,21 @@ class RockPaperScissors {
   }
 
   //FUNCTIONS
+
+  defaultColours(){
+    {
+      return {
+        background:'light-grey',
+        primary:'#f6201d',
+        secondary:'white',
+        win:'green',
+        lose:'red',
+        tie:'blue',
+        default:'grey'
+      }
+
+    }
+  }
   //COMPUTER choice
   makeChoice() {
     return this.choices[Math.floor(Math.random() * this.choices.length)]
@@ -51,9 +68,9 @@ class RockPaperScissors {
 
     //Set result text to winner
     this.result.textContent = this.findWinner(player1Choice, player2Choice)
-    this.result.style.backgroundColor = 'red'
-    if (this.result.textContent === 'You win') this.result.style.backgroundColor = 'green'
-    if(this.result.textContent === 'Tie') this.result.style.backgroundColor = 'blue'
+    this.result.style.backgroundColor = this.colours['lose']
+    if (this.result.textContent === 'You win') this.result.style.backgroundColor = this.colours['win']
+    if(this.result.textContent === 'Tie') this.result.style.backgroundColor = this.colours['tie']
   }
 
   //Reset text and bg-colour
@@ -61,7 +78,7 @@ class RockPaperScissors {
     this.player1.textContent = ''
     this.player2.textContent = ''
     this.result.textContent = ''
-    this.result.style.backgroundColor = 'grey'
+    this.result.style.backgroundColor = this.colours['default']
   }
 
   render(){
@@ -72,6 +89,9 @@ class RockPaperScissors {
 
     //Give class of id to differentiate it from any other boards
     gameBoard.classList.add(this.id)
+
+    gameBoard.style.backgroundColor = this.colours['background']
+    gameBoard.style.color = this.colours['primary']
 
     //Create text <p> insert html into it
     this.player1P = document.createElement('p')
@@ -97,6 +117,9 @@ class RockPaperScissors {
       //Add the text of the choice to the button
       newButton.innerText =   this.choices[i]
 
+      newButton.style.color = this.colours['primary']
+      newButton.style.backgroundColor = this.colours['secondary']
+
       //Add button to the game board
       gameBoard.append(newButton)
 
@@ -108,6 +131,10 @@ class RockPaperScissors {
     this.resetBtn  = document.createElement('button')
     //Add the reset button text
     this.resetBtn.innerText = 'Reset'
+
+    this.resetBtn.style.color = this.colours['primary']
+    this.resetBtn.style.backgroundColor = this.colours['secondary']
+
     //Add the reset button to the gameBoard
     gameBoard.append(this.resetBtn)
 
@@ -161,12 +188,32 @@ const rpslzcp = {
   peace: ['scissors','rock','spock']
 }
 
+const palette1 = {
+  background:'#CCB44A',
+  primary:'#FEFEFE',
+  secondary:'#FF9D00',
+  win:'#14CCC0',
+  lose:'#FF9D00',
+  tie:'#40D8FF',
+  default:'#99883D'
+}
+
+const palette2 = {
+  background:'#B24347',
+  primary:'#121212',
+  secondary:'#FFFD92',
+  win:'#FF797E',
+  lose:'#0082CC',
+  tie:'#4C8DB2',
+  default:'grey'
+}
+
 
 //On load make new RockPaperScissors
 window.addEventListener('DOMContentLoaded', () => {
 
   //Pass choices and id to constructor
   new RockPaperScissors(rps, 'rps')
-  new RockPaperScissors(rpslz, 'rpslz')
-  new RockPaperScissors(rpslzcp, 'rpslzcp')
+  new RockPaperScissors(rpslz, 'rpslz', palette1)
+  new RockPaperScissors(rpslzcp, 'rpslzcp',palette2)
 })
