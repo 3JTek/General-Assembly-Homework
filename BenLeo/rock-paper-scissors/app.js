@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const choices = ['rock', 'paper', 'scissors']
-
+  const choices = ['worm', 'pigeon', 'shotgun']
 
   const cpuChoice = choices[Math.floor((Math.random() * choices.length) + 0)]
-
-  console.log(cpuChoice)
 
   let userChoice
 
@@ -31,13 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. The result is a tie!')
     } else {
       switch(userChoice+cpuChoice){
-        case 'rockscissors': case 'scissorsrock':
-          return alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. Rock wins!')
-        case 'rockpaper': case 'paperrock':
-          return alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. Paper wins!')
-        default: return alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. Scissors wins!')
+        case 'wormshotgun': case 'shotgunworm':
+          return alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. Worm crawls inside the shotgun and jams it!')
+        case 'wormpigeon': case 'pigeonworm':
+          return alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. Pigeon eats the worm!')
+        default: return alert('You chose ' + userChoice + ' and your opponent chose ' + cpuChoice + '. Shotgun shoots the pigeon!')
       }
-
     }
   }
 })
