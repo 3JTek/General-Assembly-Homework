@@ -8,16 +8,14 @@ body {
   // flex-direction: column;
   header {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     height: 20vh;
-    width: 100%;
+    width: 80%;
 
     .health-bar-container {
-      width: 80%;
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
 
       .outer-bar-left {
         width: 35%;
@@ -55,12 +53,10 @@ body {
     }
 
     .form-container {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
       // margin: auto;
       .forms {
         width: 100%;
+        display: flex;
 
         #player1,
         #player2 {

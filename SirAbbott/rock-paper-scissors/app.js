@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const healthBarRight = document.querySelector('.inner-bar-right')
 
   // get the button.value to fill player one form when clicked.
-  let playing = true
+
   let playerOneScore = 100
   let playerTwoScore = 0
 
