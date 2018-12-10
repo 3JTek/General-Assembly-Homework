@@ -4,74 +4,64 @@ document.addEventListener('DOMContentLoaded', () => {
   const reset = document.getElementById('reset')
   const userSelected = document.getElementById('user-selected')
   const computerSelected = document.getElementById('computer-selected')
-  const result = document.getElementById('won')
+  const result = document.getElementById('result')
   const selections = document.querySelector('.row:nth-child(1)')
   const container = document.querySelector('.container')
 
+  // Options array
+  const rpsArray = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
 
-  const rpsArray = ['Rock', 'Paper', 'Scissors']
+  // User wins combination array
+  const userWins = ['RockScissors','PaperRock','ScissorsPaper', 'LizardSpock', 'SpockRock', 'LizardPaper', 'RockLizard', 'SpockScissors', 'PaperSpock', 'ScissorsLizard']
 
+  //In play variables
   let userInPlay = ''
   let computerInPlay = ''
 
-
+  // Computer selection function
   const randomSelection = function() {
-    return rpsArray[Math.floor(Math.random() * 3)]
+    return rpsArray[Math.floor(Math.random() * 5)]
   }
 
-  // function for checking who won
+  // Function for checking who won
   const playGame = function(e) {
-    // in plays
+    // user and computer choices
     userInPlay = e.target.value
     computerInPlay = randomSelection()
-
     // Update selected values in html
     userSelected.innerHTML = userInPlay
     computerSelected.innerHTML = computerInPlay
-
-    console.log(selections)
-
+    // Stlying of page to show results
     selections.className = 'first-row-show'
-    result.style.fontSize = '50px'
-
-    // game logic test
-    if((userInPlay === 'Rock' && computerInPlay === 'Scissors') || (userInPlay === 'Paper' && computerInPlay === 'Rock') || (userInPlay === 'Scissors' && computerInPlay === 'Paper')){
-      // user wins
-      result.innerHTML = `You won! ${userInPlay} beats ${computerInPlay}`
-
-    } else if((userInPlay === 'Rock' && computerInPlay === 'Rock') || (userInPlay === 'Paper' && computerInPlay === 'Paper') || (userInPlay === 'Scissors' && computerInPlay === 'Scissors')) {
-      // draw
+    // Game logic
+    if(userInPlay === computerInPlay){
+      // Draw result
       result.innerHTML = `It's a draw! ${userInPlay} draws ${computerInPlay}`
-
-
+    } else if(userWins.includes(userInPlay+computerInPlay)){
+      // User wins result
+      result.innerHTML = `You won! ${userInPlay} beats ${computerInPlay}`
     }else{
-      // computer wins
+      // Computer wins result
       result.innerHTML = `You lost! ${computerInPlay} beats ${userInPlay}`
-
     }
-
-
-
+    result.style.display = 'none'
+    setTimeout(function(){
+      result.style.display = 'flex'
+      result.style.fontSize = '60px'
+    }, 1500)
   }
-  // what did the user selected
-  // randomly select rps from array for computer selection
-  // carry out if state to understand who won
-  // based on result update user selected, computer selected and who won
 
-  // function to reset game
-
+  // Function to reset game
   const resetGame = function() {
     container.style.display ='none'
     result.innerHTML = 'Are you ready to play? Make your selection!'
+    result.style.fontSize = '80px'
     userSelected.innerHTML = ''
     computerSelected.innerHTML = ''
     selections.className = 'row'
-    result.style.fontSize = '80px'
     setTimeout(function(){
       container.style.display = 'flex'
     }, 1000)
-
-
   }
 
   // Event listener for rock, paper, scissors buttons
@@ -79,22 +69,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event listener for reset buttons
   reset.addEventListener('click', resetGame)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
