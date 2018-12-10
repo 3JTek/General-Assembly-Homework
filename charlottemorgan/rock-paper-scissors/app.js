@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JS loaded')
   // find the buttons from the html
-  const buttons = document.querySelectorAll('button')
+  const buttons = document.querySelectorAll('.main-buttons')
   console.log('buttons')
   //find the form for the computer input from the html
   const playerOne = document.getElementById('Player-1')
@@ -12,8 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
   //find the result input from the html
   const resultValue = document.getElementById('result')
   //find the reset button in the html
-  const resetButton = document.getElementById('reset-button')
+  const resetButton = document.querySelector('.reset-button')
   console.log('resetButton')
+
+
+  // // add event listener for reset button
+  // resetButton.addEventListener('click', reset)
+  //when button is clicked run function to clear values in the forms
+  function reset() {
+    // make the value of playerOne empty
+    playerOne.value = ''
+    // make the value of playerTwo empty
+    playerTwo.value = ''
+    // make the result empty
+    resultValue.value = ''
+
+  }
+
+  resetButton.addEventListener('click', reset)
+
 
   //array with possible options
   const options = ['Rock', 'Paper', 'Scissors']
