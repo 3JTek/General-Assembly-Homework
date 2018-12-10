@@ -37,20 +37,32 @@ function orderStringAlphabetically(string) {
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
+// function numOfOccurances(string) {
+//   const characterObj = {}
+//   string = string.toLowerCase().split(' ').join('')
+//
+//   for(let x =0; x<string.length; x++){
+//     if(!characterObj.hasOwnProperty(string[x])){
+//       characterObj[string[x]] = 1
+//     }else{
+//       characterObj[string[x]] += 1
+//     }
+//   }
+//   return characterObj
+// }
 function numOfOccurances(string) {
   const characterObj = {}
-  string = string.toLowerCase().split(' ').join('')
-  for(let x =0; x<string.length; x++){
-    if(!characterObj.hasOwnProperty(string[x])){
-      characterObj[string[x]] = 1
-
+  string.toLowerCase().replace(/ /g,'').split('').forEach(letter => {
+    if(characterObj[letter]){
+      characterObj[letter] +=1
+      //console.log(letter)
     }else{
-      characterObj[string[x]] += 1
+      characterObj[letter] =1
     }
-  }
+  })
   return characterObj
-
 }
+
 
 // write a function that capitalizes the first letter of each word
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
