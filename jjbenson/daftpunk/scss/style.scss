@@ -67,6 +67,7 @@ div.container{
 }
 
 
+
 button {
   user-select: none;
   width: 24%;
@@ -107,5 +108,9 @@ button {
     color:$white;
     text-shadow: 0 0 20px $white
 
+  }
+
+  div {
+    transform: rotate(-7deg);
   }
 }

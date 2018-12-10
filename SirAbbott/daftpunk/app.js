@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     song.play()
   }
 
+
+  const widthTest = document.querySelector('.soundboard')
+  console.log(widthTest.width)
+
   const buttons = document.querySelectorAll('button')
 
   buttons.forEach(button => {
