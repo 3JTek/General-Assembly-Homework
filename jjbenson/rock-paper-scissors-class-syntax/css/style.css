@@ -5,7 +5,7 @@
 body {
   font-family: 'Space Mono', monospace;
   text-align: center;
-  height:100vh;
+  /* height:100vh; */
   display:flex;
   flex-direction: column;
   justify-content: space-around;

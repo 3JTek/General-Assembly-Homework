@@ -83,7 +83,7 @@ class RockPaperScissors {
     this.player2P.innerHTML = 'Player 2 chose: <span class="player2"></span>'
     gameBoard.append(this.player2P)
 
-    //Create result text <p> 
+    //Create result text <p>
     this.result = document.createElement('p')
     this.result.classList.add('result')
     gameBoard.append(this.result)
@@ -151,6 +151,16 @@ const rpslz = {
   spock: ['rock','scissors']
 }
 
+const rpslzcp = {
+  scissors: ['paper','lizard','claw'],
+  paper: ['rock','spock','peace'],
+  rock: ['lizard','claw','scissors'],
+  lizard: ['spock','peace','paper'],
+  spock: ['claw','scissors','rock'],
+  claw: ['peace','paper','lizard'],
+  peace: ['scissors','rock','spock']
+}
+
 
 //On load make new RockPaperScissors
 window.addEventListener('DOMContentLoaded', () => {
@@ -158,4 +168,5 @@ window.addEventListener('DOMContentLoaded', () => {
   //Pass choices and id to constructor
   new RockPaperScissors(rps, 'rps')
   new RockPaperScissors(rpslz, 'rpslz')
+  new RockPaperScissors(rpslzcp, 'rpslzcp')
 })
