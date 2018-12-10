@@ -30,20 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
       displayScorePlayer2.innerText ++
     }
   }
-  function findWinnerOfGame(){
 
+  function findWinnerOfGame(){
     if(displayScorePlayer1.innerText >= nbOfThrows){
-      displayWhoWin.innerText = 'Player 1'
-      buttons.forEach(button => button.setAttribute('disabled','true'))
-      resetButton.removeAttribute('disabled')
-      return true
+      stopGame('Player 1')
     } else if (displayScorePlayer2.innerText >= nbOfThrows){
-      displayWhoWin.innerText = 'Player 2'
-      buttons.forEach(button => button.setAttribute('disabled','true'))
-      resetButton.removeAttribute('disabled')
-      return true
+      stopGame('Player 2')
     }
-    return false
+  }
+
+  function stopGame(winner){
+    displayWhoWin.innerText = winner
+    buttons.forEach(button => button.setAttribute('disabled','true'))
+    resetButton.removeAttribute('disabled')
   }
 
   function reset(){
@@ -70,7 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
   buttons.forEach(button => {
     button.addEventListener('click', play)
   })
+
   throwsSelection.addEventListener('change', changeNbThrows)
+
   resetButton.addEventListener('click', reset)
 
 })
