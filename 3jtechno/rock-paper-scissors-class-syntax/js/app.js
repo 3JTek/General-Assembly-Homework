@@ -1,22 +1,20 @@
 class RockPaperScissors{
   constructor(){
     const div = document.querySelector('.game')
-    this.button1 = document.createElement('button')
-    this.button1.className = 'choice'
-    this.button1.innerText = 'rock'
-    div.insertBefore(this.button1, div.childNodes[6])
+    this.buttons = {
+      rock: document.createElement('button'),
+      paper: document.createElement('button'),
+      scissors: document.createElement('button')
+    }
 
-    this.button2 = document.createElement('button')
-    this.button2.className = 'choice'
-    this.button2.innerText = 'paper'
-    div.insertBefore(this.button2, div.childNodes[7])
+    let i = 6
 
-    this.button3 = document.createElement('button')
-    this.button3.className = 'choice'
-    this.button3.innerText = 'scissors'
-    div.insertBefore(this.button3, div.childNodes[8])
-
-
+    for(const key in this.buttons){
+      this.buttons[key].innerText = key
+      this.buttons[key].className = 'choice'
+      div.insertBefore(this.buttons[key], div.childNodes[i])
+      i = i+ 1
+    }
 
     this.player1 = document.querySelector('.player1')
     this.player2 = document.querySelector('.player2')
