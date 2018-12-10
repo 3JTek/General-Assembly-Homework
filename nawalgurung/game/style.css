@@ -9,7 +9,9 @@ header > h1{
 
 .btn{
   border: none;
+  font-family: 'Bungee', cursive;
   background: #404040;
+  letter-spacing: 1px;
   color: white;
   font-weight: 100;
   padding: 10px 20px;
@@ -65,10 +67,9 @@ h2{
 }
 
 .playerlabel {
-  padding: 10px 0px;
-  margin-top: 30px;
+  margin-top: 5px;
   line-height: 40px;
-  display: inline;
+  display: inline block;
 
 }
 

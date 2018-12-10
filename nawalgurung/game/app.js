@@ -57,12 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     loseScore.innerHTML = userLoses
   }
 
-
   reset.addEventListener('click', () => {
     userScore = 0
     userLoses = 0
     winScore.innerHTML = userScore
     loseScore.innerHTML = userLoses
+    results.innerHTML = ''
+    user.innerHTML = ''
+    computer.innerHTML = ''
   })
   //create function to compare the user Choice with random selected rock paper scissors
   function compare(computerChoice, userChoice){
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         results.innerHTML ='Paper wins!'
         lose()
       } else {
-        results.innerHTML ='Rock wins!'
+        results.innerHTML =' User wins! <br> Rock smashes scissors!'
         win()
       }
     } else if(userChoice === 'Paper'){
