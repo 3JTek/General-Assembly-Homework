@@ -18,6 +18,21 @@ class RPS {
 
     this.play = this.play.bind(this)
 
+    this.reset = this.reset.bind(this)
+
+    // // GETTING DOM ELEMENTS
+    // const game = document.querySelector('div.game')
+    // //create the buttons
+    // this.rock = document.createElement('button.rock')
+    // this.paper = document.createElement('button.paper')
+    // this.scissors = document.createElement('button.scissors')
+    //
+    // //append the text areas to the main so they show up
+    // game.appendChild(this.rock)
+    // game.appendChild(this.paper)
+    // game.appendChild(this.scissors)
+
+
     // INITIALIZING THE EVENT LISTENERS
     this.init()
   }
@@ -50,8 +65,8 @@ class RPS {
   }
 
   reset() {
-    this.layer1.textContent = ''
-    this.layer2.textContent = ''
+    this.player1.textContent = ''
+    this.player2.textContent = ''
     this.result.textContent = ''
   }
 }
