@@ -3,31 +3,47 @@
 <head>
   <meta charset="utf-8">
   <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
   <main>
     <div class="container">
-      <div class="top">
+      <section class="top">
         <div class="left">
+          <h2>Players</h2>
           <h2>Player 1:</h2>
           <h2>Player 2:</h2>
-          <h2>Result:</h2>
+          <h2>Winner:</h2>
+        </div>
+        <div class="middle">
+          <h2>Results</h2>
+          <h2 id="player1Result">test</h2>
+          <h2 id="player2Result">test</h2>
         </div>
         <div class="right">
-          <h2 id="player1">test</h2>
-          <h2 id="player2">test</h2>
-          <h2 id="result">test</h2>
+          <h2>Scores</h2>
+          <h2 id="player1Score">0</h2>
+          <h2 id="player2Score">0</h2>
+          <h2 id="winner">0</h2>
         </div>
-      </div>
-      <div class="bottom">
+      </section>
+      <section class="controls">
+        <button disabled id="reset">RESET</button>
+        <p>Throws per game</p>
+        <select id="nbThrows">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+      </section>
+      <section class="bottom">
         <button id="0">ROCK</button>
         <button id="1">PAPER</button>
         <button id="2">SCISSORS</button>
         <button id="3">LIZARD</button>
         <button id="4">SPOKE</button>
-      </div>
+      </section>
     </div>
   </main>
 </body>

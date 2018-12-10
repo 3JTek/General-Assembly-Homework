@@ -7,34 +7,70 @@ document.addEventListener('DOMContentLoaded', () => {
     {name: 'lizard', beats: ['paper','spock']},
     {name: 'spoke', beats: ['scissors', 'rock']}
   ]
+  const displayChoicePlayer1 = document.getElementById('player1Result')
+  const displayChoicePlayer2 = document.getElementById('player2Result')
+  const displayScorePlayer1 = document.getElementById('player1Score')
+  const displayScorePlayer2 = document.getElementById('player2Score')
+  const displayWhoWin = document.getElementById('winner')
+  const buttons = document.querySelectorAll('.bottom button')
+  const throwsSelection = document.getElementById('nbThrows')
+  const resetButton = document.getElementById('reset')
 
-  const displayResults = document.querySelectorAll('.right h2')
-  const displayChoicePlayer1 = displayResults[0]
-  const displayChoicePlayer2 = displayResults[1]
-  const displayWhoWin = displayResults[2]
-  const buttons = document.querySelectorAll('button')
+  let nbOfThrows = throwsSelection.value
 
-  function findWinner(player1, player2){
-    console.log(player1.beats + player2.name);
+  function changeNbThrows(e){
+    nbOfThrows = e.target.value
+  }
 
+  function findWinnerofThrow(player1, player2){
     if(player1.name === player2.name){
-      displayWhoWin.innerText = 'Ties'
     } else if(player1.beats.includes(player2.name)){
-      displayWhoWin.innerText = 'Player 1 wins'
+      displayScorePlayer1.innerText ++
     } else{
-      displayWhoWin.innerText = 'Player 2 wins'
+      displayScorePlayer2.innerText ++
     }
   }
+  function findWinnerOfGame(){
+
+    if(displayScorePlayer1.innerText >= nbOfThrows){
+      displayWhoWin.innerText = 'Player 1'
+      buttons.forEach(button => button.setAttribute('disabled','true'))
+      resetButton.removeAttribute('disabled')
+      return true
+    } else if (displayScorePlayer2.innerText >= nbOfThrows){
+      displayWhoWin.innerText = 'Player 2'
+      buttons.forEach(button => button.setAttribute('disabled','true'))
+      resetButton.removeAttribute('disabled')
+      return true
+    }
+    return false
+  }
+
+  function reset(){
+    resetButton.setAttribute('disabled','true')
+    buttons.forEach(button => button.removeAttribute('disabled','false'))
+    throwsSelection.removeAttribute('disabled')
+    displayChoicePlayer1.innerText = ''
+    displayChoicePlayer2.innerText = ''
+    displayScorePlayer1.innerText = '0'
+    displayScorePlayer2.innerText = '0'
+    displayWhoWin.innerText = ''
+  }
+
   function play(e){
+    throwsSelection.setAttribute('disabled', 'true')
     const player2 = choices[Math.floor(Math.random()*5)]
     const player1 = choices[e.target.id]
     displayChoicePlayer1.innerText = player1.name
     displayChoicePlayer2.innerText = player2.name
-    findWinner(player1, player2)
+    findWinnerofThrow(player1, player2)
+    findWinnerOfGame()
   }
 
   buttons.forEach(button => {
     button.addEventListener('click', play)
   })
+  throwsSelection.addEventListener('change', changeNbThrows)
+  resetButton.addEventListener('click', reset)
 
 })
