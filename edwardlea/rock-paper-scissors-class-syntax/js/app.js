@@ -1,10 +1,29 @@
 class RPS{
   constructor(){
-    this.buttons = document.querySelectorAll('button.choice')
+
+    const game = document.querySelector('.game')
     this.player1 = document.querySelector('.player1')
     this.player2 = document.querySelector('.player2')
     this.result = document.querySelector('.result')
     this.resetBtn = document.querySelector('button.reset')
+
+    this.buttons = {
+      rock: document.createElement('button'),
+      paper: document.createElement('button'),
+      scissors: document.createElement('button')
+    }
+
+    for (const type in this.buttons) {
+      this.buttons[type].innerText = type
+      this.buttons[type].className = 'choice'
+      game.appendChild(this.buttons[type])
+    }
+
+    this.resetBtn = document.createElement('button')
+
+    this.resetBtn.innerText = 'Reset'
+
+    game.appendChild(this.resetBtn)
 
     this.winConditions = {
       rock: 'scissors',
@@ -21,7 +40,11 @@ class RPS{
   }
 
   init(){
-    this.buttons.forEach(button => button.addEventListener('click', this.play))
+
+    for(const type in this.buttons){
+      this.buttons[type].addEventListener('click', this.play)
+    }
+    // this.buttons.forEach(button => button.addEventListener('click', this.play))
     this.resetBtn.addEventListener('click', this.reset)
   }
 
