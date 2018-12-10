@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // step 1
   // player presses buttion and returns a value A.
-  const playerchoice = (bollocks) => {
-    playersoption = parseInt(bollocks.target.value)
+  const playerchoice = (locks) => {
+    playersoption = parseInt(locks.target.value)
     // step 2
     // players option gets displayed
-    document.getElementById('player1').innerHTML = bollocks.target.name
-    gethalchoice(bollocks)
+    document.getElementById('player1').innerHTML = locks.target.name
+    gethalchoice(locks)
   }
   buttons.forEach(button => button.addEventListener('click', playerchoice))
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // HAL picks number from random 0-2.
   function gethalchoice() {
     halChoice = halvariables[Math.floor(Math.random() * halvariables.length)]
-    // document.getElementById('halchoice1').innerHTML = shit.target.name
+    // document.getElementById('halchoice1').innerHTML = rits.target.name
     if (halChoice === 0) {
       document.getElementById('halchoice1').innerHTML = 'Rock'
     } else if (halChoice === 1) {
