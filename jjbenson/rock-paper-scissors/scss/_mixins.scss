@@ -1,24 +1,24 @@
-@mixin animation($params) {
-    -webkit-animation:$params;
-    -moz-animation:$params;
-    -ms-animation:$params;
-    animation:$params;
-}
-
-@mixin keyframes($name) {
-    @-webkit-keyframes $name { @content }
-    @-moz-keyframes    $name { @content }
-    @-ms-keyframes     $name { @content }
-    @keyframes         $name { @content }
-}
-
-@mixin anim($animName, $steps, $animNbr, $animParams){
-    .#{$animName} {
-        @content;
-        @include animation($animName steps($steps) $animParams);
-    }
-    @include keyframes($animName) {
-        from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
-        to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
-    }
-}
+// @mixin animation($params) {
+//     -webkit-animation:$params;
+//     -moz-animation:$params;
+//     -ms-animation:$params;
+//     animation:$params;
+// }
+//
+// @mixin keyframes($name) {
+//     @-webkit-keyframes $name { @content }
+//     @-moz-keyframes    $name { @content }
+//     @-ms-keyframes     $name { @content }
+//     @keyframes         $name { @content }
+// }
+//
+// @mixin anim($animName, $steps, $animNbr, $animParams){
+//     .#{$animName} {
+//         @content;
+//         @include animation($animName steps($steps) $animParams);
+//     }
+//     @include keyframes($animName) {
+//         from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+//         to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+//     }
+// }

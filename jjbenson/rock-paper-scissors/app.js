@@ -2,81 +2,90 @@
 //Comment this out for testing
 window.addEventListener('DOMContentLoaded', () => {
 
-
+  // create array to hold all button elements
   const buttonsArr = document.querySelectorAll('button')
 
+  //get the container elment of the two fighters
   const fighters = document.querySelector('.fighters')
 
+  //get the play and cpu image elements
   const playerImg = document.querySelector('.player-image')
   const cpuImg = document.querySelector('.cpu-image')
 
-  // const playerHealth = document.querySelector('.player-health')
-  // const cpuHealth = document.querySelector('.cpu-health')
-
-  const playerImageWeapon = document.querySelector('.player-image-weapon')
+  //Get the side box elements
   const playerWeaponText = document.querySelector('.player-weapon-text')
-
-  const cpuImageWeapon = document.querySelector('.cpu-image-weapon')
   const cpuWeaponText = document.querySelector('.cpu-weapon-text')
 
+  //These were for text that appears above the fighters, not used anymore
+  // const playerImageWeapon = document.querySelector('.player-image-weapon')
+  // const cpuImageWeapon = document.querySelector('.cpu-image-weapon')
+
+  //Get the health bar elements
   const playerHealthBar = document.querySelector('.player-health-bar-inner')
   const cpuHealthBar = document.querySelector('.cpu-health-bar-inner')
 
-
+  //Get the bottom result text element
   const resultText = document.querySelector('.result')
 
-
+  //Array of winners or draw
   const players = ['cpu','player','draw']
+
+  //Aarray of 'weapons'
   const weaponsArr = ['scissors','paper','rock','lizard','spock']
   const numWeapons = weaponsArr.length
 
+  //Game Object
   let game ={
+    //String of current weapons
     playerWeapon: '',
     cpuWeapon: '',
-    playerHealth:10,
-    cpuHealth:10,
+
+    //Number of current healths
+    playerHealth: 10,
+    cpuHealth: 10,
+
+    //Array to hold histories
     playerHistory: [],
     cpuHistory: [],
+
+    //Winner of the last combat
     winner: '',
+
+    //Is the game over? Used to disable the buttons
     gameOver: 'false',
-    images: {
-      rock: 'images/rock.png',
-      paper: 'images/paper.png',
-      scissors: 'images/scissors.png'
-    },
+
+    //
+    // images: {
+    //   rock: 'images/rock.png',
+    //   paper: 'images/paper.png',
+    //   scissors: 'images/scissors.png'
+    // },
+
+    //Function to randomly generate CPU weapon
     getCPUWeapon: function(){
       const index = Math.floor(Math.random()*numWeapons)
       game.cpuWeapon = weaponsArr[index]
 
       return weaponsArr[index]
     },
+
+    //Returns an array of weapons that the given weapon can beat
     whatCanThisBeat: function(weapon){
       const beatsArr = []
       //beatsArr.push(weapon === 'rock'? 'scissors': weapon === 'scissors'? 'paper': 'rock')
 
-      //const weaponIndex =weaponsArr.indexOf(weapon)
-      //const beatsIndex = weaponsArr.indexOf(beatsArr[0])//
-      const firstBeatsIndex = (weaponsArr.indexOf(weapon)+1)%weaponsArr.length
-      const secondBeatsIndex = (weaponsArr.indexOf(weapon)+3)%weaponsArr.length
+      //When each weapon is given an index, it can beat the weapon with an index one greater and three greater, wrapping around the total number of options.
+      const firstBeatsIndex = (weaponsArr.indexOf(weapon)+1)%numWeapons
+      const secondBeatsIndex = (weaponsArr.indexOf(weapon)+3)%numWeapons
 
       beatsArr.push(weaponsArr[firstBeatsIndex])
       beatsArr.push(weaponsArr[secondBeatsIndex])
 
-
       return beatsArr
-      /*
-      console.log(`weapon:${weapon}`)
-      const beatsArr = []
 
-      const weaponIndex = weaponsArr.indexOf(weapon)
-
-
-      //Every weapon beats the weapon with number one greater, except the last which wraps and defeats the first
-      const beatsIndex = (weaponIndex+1)%numWeapons
-      beatsArr.push(weaponsArr[beatsIndex])
-
-      return beatsArr*/
     },
+
+    //Returns the index of the winner, either 0:CPU, 1:Player 2:Draw
     whoWins: function(){
       let theWinner
       //If weapons are the same call a draw
@@ -90,28 +99,33 @@ window.addEventListener('DOMContentLoaded', () => {
       this.winner = theWinner
       return theWinner
     },
+    //Update the health of the CPU and Player
     updateHealth: function(){
-      //WHATS HAPPENING HERE??
+      //CPU wins
       if(this.winner === 0){
         //reduce players Health
         this.playerHealth--
-
-
       } else if(this.winner === 1){
         //reduce cpu health
         this.cpuHealth--
       }
     },
-    logWeapons: function(){
+    //Store the currnt weapons in their history Arrays and limit to a length of 18
+    weaponsHistory: function(){
       const historyLen = 18
+
+      //Add current weapon to front of array
       this.playerHistory.unshift(this.playerWeapon)
       this.cpuHistory.unshift(this.cpuWeapon)
+
+      //If too big, limit the size of the arrays
       if(this.playerHistory.length>=historyLen){
         this.playerHistory = this.playerHistory.splice(0,historyLen)
         this.cpuHistory = this.cpuHistory.splice(0,historyLen)
       }
 
     },
+    //Reset all variables
     reset: function(){
       console.log('RESET GAME')
       this.cpuWeapon =  ''
@@ -119,179 +133,182 @@ window.addEventListener('DOMContentLoaded', () => {
       this.winner = ''
       this.cpuHealth = 10
       this.playerHealth = 10
+      this.playerHistory = []
+      this.cpuHistory = []
       //updateDisplay()
       init()
       game.gameOver = 'false'
     }
   }
 
-
-  //0 rock
-  //1 Paper
-  //2 Scissors
-  // 0 -> 1 -> 2 -> 0
-
+  //Reset game display
   function init(){
-
-    game.playerHealth = 10
-    game.cpuHealth = 10
-
-
-    playerImageWeapon.innerText = ''
+    //Clear text
     playerWeaponText.innerText = ''
-
-    cpuImageWeapon.innerText = ''
     cpuWeaponText.innerText = ''
 
+    //Show starting text
+    resultText.innerHTML = 'Get ready to <span class = \'cpu\'>FIGHT!</span>'
 
-    // playerHealth.innerText = game.playerHealth
-    // cpuHealth.innerText = game.cpuHealth
-
-
-    resultText.innerText = 'Get ready to fight!'
-
-    game.playerHistory = []
-    game.cpuHistory = []
-
+    //Clear animation classes
     playerImg.className = 'player-image'
     cpuImg.className = 'cpu-image'
-
-    playerHealthBar.style.width = '100%'
-    cpuHealthBar.style.width = '100%'
 
     playerImg.classList.add('stance')
     cpuImg.classList.add('stance')
 
-    playerImg.classList.remove('lose')
-    cpuImg.classList.remove('lose')
+    //Reset health bars
+    playerHealthBar.style.width = '100%'
+    cpuHealthBar.style.width = '100%'
 
-      fighters.style.width = '100%'
 
-      fighters.style.left = 0
+
+    // playerImg.classList.remove('lose')
+    // cpuImg.classList.remove('lose')
+
+    //Send fighters back to the sides
+    fighters.style.width = '100%'
+
+    //recenter the fighters
+    fighters.style.left = 0
 
   }
+
+  //On load init
   init()
 
-
-
-
-
-
+  //Update the display!
   function updateDisplay(){
-    //Update Images
-    //playerImg.src = game.images[game.playerWeapon]
-    //cpuImg.src = game.images[game.cpuWeapon]
-    // if(game.gameOver==='false'){
+
+    //Bring fighters together
     fighters.style.width = '25%'
 
+    //Array of the lengths of the animations for the timeout call backs
     const timingArr = {
       rock: 300,
       paper: 500,
       scissors: 500,
       spock: 400,
-      lizard:500
+      lizard: 500
     }
 
-    //fighters.style.left = 'calc(33%)'//-(game.playerHealth-game.cpuHealth)
-    // let fightersLeft = fighters.style.left
-    // fightersLeft = fightersLeft
-    // console.log(fighters.style.left)
+    //Move the characters left or right depending on who is winning
     const fightersLeft = `${(game.playerHealth*20) - (game.cpuHealth*20)}px`
-    console.log(fightersLeft)
     fighters.style.left = fightersLeft
 
-    console.log("HERE",game.winner)
+    //Add weapon specific animiations
+
+    //Remove any old classes except 'player-image' and 'stance'
+    const playerClasses = playerImg.classList
+    console.log('James',playerClasses)
+    for(let i = 2; i<playerClasses.length; i++){
+      playerImg.classList.remove(playerClasses[i])
+    }
+
+    //Remove any old classes except 'cpu-image' and 'stance'
+    const cpuClasses = cpuImg.classList
+    console.log('cpu',cpuClasses)
+    for(let i = 2; i<cpuClasses.length; i++){
+      cpuImg.classList.remove(cpuClasses[i])
+    }
+
+    //Add weapon class for animation
     playerImg.classList.add(game.playerWeapon)
-    console.log(game.playerWeapon)
+
+    //Set timeout to remove animation class
     setTimeout(function() {
       playerImg.classList.remove(game.playerWeapon)
-      //playerImg.classList.add('stance')
 
     }, timingArr[game.playerWeapon])
 
+
+    //Add weapon class for animation
     cpuImg.classList.add(game.cpuWeapon)
+
+    //Set timeout to remove animation class
     setTimeout(function() {
       cpuImg.classList.remove(game.cpuWeapon)
-      //cpuImg.classList.add('stance')
     }, timingArr[game.cpuWeapon])
 
-    // playerImageWeapon.classList.add('active')
-    // setTimeout(function() {
-    //   playerImageWeapon.classList.remove('active')
-    // }, 500)
-    //
-    //
-    //
-    // cpuImageWeapon.classList.add('active')
-    // setTimeout(function() {
-    //   cpuImageWeapon.classList.remove('active')
-    // }, 500)
-    // }
-
-    playerImageWeapon.innerText = game.playerWeapon
-    cpuImageWeapon.innerText = game.cpuWeapon
-
+    //Create empty strings for history
     let playerHistory = ''
     let cpuHistory = ''
 
+    //For every entry in history arrays add a p tag on a new line
+    //P tag is used to style the first child i.e. current weapons
     for(const i in game.playerHistory){
       playerHistory += `<p>${game.playerHistory[i]}</p>\n`
       cpuHistory += `<p>${game.cpuHistory[i]}</p>\n`
     }
 
+    //Set the side bar text to show historys
     playerWeaponText.innerHTML = playerHistory
     cpuWeaponText.innerHTML = cpuHistory
 
-    // playerWeaponText.innerText += game.playerWeapon+'\n'
-
-    // cpuWeaponText.innerText += game.cpuWeapon+'\n'
-
-
-    // playerHealth.innerText = game.playerHealth
-    // cpuHealth.innerText = game.cpuHealth
-
+    //Update health bars
     playerHealthBar.style.width = (game.playerHealth*10) + '%'
     cpuHealthBar.style.width = (game.cpuHealth*10) + '%'
 
 
-
     //Update text
-    //If first fight
+    //If same weapon call a draw
     if(players[game.winner]=== 'draw'){
+
       //If draw
       resultText.innerHTML = `<span class = 'player'>${game.playerWeapon}</span> and <span class = 'cpu'>${game.cpuWeapon}</span> draw<br>Great block!!`
-    }else if(players[game.winner]===1){
+
+    }else if(players[game.winner]==='player'){
+
       //Payer Wins
-      resultText.innerHTML = `<span class = 'player'>${game.playerWeapon}</span> beats <span class = 'cpu'>${game.cpuWeapon}</span><br>Player1 landed a hit!!'`
+      resultText.innerHTML = `<span class = 'player'>${game.playerWeapon}</span> beats <span class = 'cpu'>${game.cpuWeapon}</span><br><span class = 'player'>Player1</span> landed a hit!!'`
+
     }else {
+
       //CPU wins
-      resultText.innerHTML = `<span class = 'cpu'>${game.cpuWeapon}</span> beats <span class = 'player'>${game.playerWeapon}</span><br>CPU landed a hit!!'`
+      resultText.innerHTML = `<span class = 'cpu'>${game.cpuWeapon}</span> beats <span class = 'player'>${game.playerWeapon}</span><br><span class = 'cpu'>CPU</span> landed a hit!!'`
+
     }
 
+    //If the player health reaches 0, show lose message and add lose class for kneel
     if(game.playerHealth === 0){
+
       game.gameOver = true
-      resultText.innerText = 'You lose!'
+      resultText.innerHTML = `<span class = 'cpu'>${game.cpuWeapon}</span> beats <span class = 'player'>${game.playerWeapon}</span><br><span class = 'cpu'>You lose!</span>`
+      
+      //Add lose animation
       playerImg.classList.add('lose')
+
     }else if (game.cpuHealth === 0){
+
+      //If the cpu health reaches 0, show lose message and add lose class for kneel
       game.gameOver = true
       cpuImg.classList.add('lose')
-      resultText.innerText = 'player1 wins!'
+      resultText.innerHTML= '<span class = \'player\'>Player1</span> wins!'
+
     }
 
   }
 
+  //Main game funciton
   function playGame(){
-    //get getCPUWeapon
-    //
+
+    //Generate cpu weapon
     game.getCPUWeapon()
-    game.logWeapons()
+
+    //Update histories
+    game.weaponsHistory()
+
+    //Work out who won
     game.whoWins()
+
+    //Update losers health
     game.updateHealth()
+
+    //Update the display
     updateDisplay()
-    //console.log(`CPU:${game.cpuWeapon} PLAYER:${game.playerWeapon} = ${players[game.winner]} `)
   }
 
-  //for every button add a click event
+  //For every button add a click event
   buttonsArr.forEach((button) => {
     button.addEventListener('click', (e)=>{
 
@@ -303,17 +320,17 @@ window.addEventListener('DOMContentLoaded', () => {
         game.reset()
         return
       }
+
+      //If the game isn't over, update the player weapon to this buttons value
       if(game.gameOver==='false'){
         //update player weapon
         game.playerWeapon = thisValue
 
+        //Run the main game function
         playGame()
       }
-
     })
   })
-
-
 
   //Comment this out for testing
 })

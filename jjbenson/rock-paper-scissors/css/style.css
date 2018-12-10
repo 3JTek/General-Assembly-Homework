@@ -2,8 +2,16 @@
   0% {
     background-position: 0px -640px;
     bottom: 0px; }
-  25% {
-    bottom: 112px; }
+  15% {
+    bottom: 0px; }
+  30% {
+    bottom: 120px; }
+  45% {
+    bottom: 110px; }
+  60% {
+    bottom: 80px; }
+  75% {
+    bottom: 40px; }
   100% {
     background-position: -490px -640px;
     bottom: 0px; } }
@@ -96,7 +104,8 @@ main {
     main .fight-box .fight-box-top {
       display: flex;
       justify-content: flex-end;
-      display: flex; }
+      display: flex;
+      padding: 20px 100px; }
     main .fight-box .fight-box-middle {
       display: flex;
       justify-content: space-between; }
@@ -106,6 +115,7 @@ main {
         main .fight-box .fight-box-middle .fight-box-middle-left .player-weapon-text {
           width: 100px; }
           main .fight-box .fight-box-middle .fight-box-middle-left .player-weapon-text p {
+            text-transform: capitalize;
             padding: 0;
             margin: 0;
             color: grey; }
@@ -117,6 +127,7 @@ main {
         main .fight-box .fight-box-middle .fight-box-middle-right .cpu-weapon-text {
           width: 100px; }
           main .fight-box .fight-box-middle .fight-box-middle-right .cpu-weapon-text p {
+            text-transform: capitalize;
             padding: 0;
             margin: 0;
             color: grey; }

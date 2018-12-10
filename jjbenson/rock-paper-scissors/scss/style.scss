@@ -30,8 +30,20 @@
     background-position:0px (-$spriteHeight * ($animNbr - 1));
     bottom:0px;
   }
-  25% {
-    bottom:112px;
+  15% {
+    bottom:0px;
+  }
+  30% {
+    bottom:120px;
+  }
+  45% {
+    bottom:110px;
+  }
+  60%{
+      bottom:80px;
+  }
+  75%{
+      bottom:40px;
   }
   100% {
     background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1));
@@ -129,7 +141,7 @@
 body {
   box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
-  //background-color: blue;
+  //background-color: $blue;
   width:100%;
   height: 100vh;
   display: flex;
@@ -161,7 +173,7 @@ main{
   }
 
   .fight-box {
-    // border: 1px solid blue;
+    // border: 1px solid $blue;
 
     max-width:800px;
     width:100%;
@@ -171,6 +183,7 @@ main{
       justify-content: flex-end;
       // border: 1px solid green;
       display: flex;
+      padding:20px 100px;
 
       button.reset-button{
         // color: white;
@@ -202,12 +215,13 @@ main{
           width:100px;
 
           p {
+            text-transform: capitalize;
             padding:0;
             margin:0;
 
-            color:grey;
+            color:$grey;
             &:first-child{
-              color:blue;
+              color:$blue;
             }
           }
 
@@ -222,11 +236,13 @@ main{
           width:100px;
 
           p {
+            text-transform: capitalize;
+            
             padding:0;
             margin:0;
-            color:grey;
+            color:$grey;
             &:first-child{
-              color:red;
+              color:$red;
             }
           }
 
@@ -243,10 +259,16 @@ main{
         $background-width:450px;
         $background-height:330px;
 
+        // $background-width:675px;
+        // $background-height:475px;
+
         width:$background-width;
         height:$background-height;
         background-image: url('../images/jet.jpg');
+        // background-size:contain;
         background-size:contain;
+
+
 
         .health-bars {
           width:100%;
@@ -259,7 +281,7 @@ main{
             .player-health-bar-inner{
               height:20px;
               width:100%;
-              background-color: yellow;
+              background-color: $yellow;
               transition: width 0.5s;
             }
           }
@@ -271,7 +293,7 @@ main{
               height:20px;
               width:100%;
               margin-left: auto;
-              background-color: yellow;
+              background-color: $yellow;
               transition: width 0.5s;
             }
           }
@@ -326,10 +348,10 @@ main{
             .player-image-weapon {
               display: none;
               position: relative;
-              top:0px;
-              left:50px;
+              top: 0px;
+              left: 50px;
               font-size: 1em;
-              color:blue;
+              color: $blue;
               &.active{
                 display: block;
                 animation: weaponTextAnim linear 0.5s, scaleWeapon linear 0.5s;
@@ -355,7 +377,7 @@ main{
               top:-80px;
               left:20px;
               font-size: 1em;
-              color:red;
+              color:$red;
 
               &.active{
                 display: block;
@@ -402,11 +424,11 @@ main{
         line-height: 1.5em;
         .cpu {
           text-transform: capitalize;
-          color:red;
+          color:$red;
         }
         .player {
           text-transform: capitalize;
-          color:blue;
+          color: $blue;
         }
       }
 
@@ -414,14 +436,5 @@ main{
 
   }
 
-  button {
-    // color: white;
-    // background-color: black;
-    // height:4em;
-    // padding:1em 2em 1em 2em;
 
-    &:focus{
-      // outline: none;
-    }
-  }
 }
