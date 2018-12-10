@@ -10,18 +10,18 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 30px;
+  /* padding: 30px; */
 }
 
 button {
-  width:30%;
+  /* width:30%; */
   font-family: 'Space Mono', monospace;
   background-color: white;
   border: 2px solid #f6201d;
   cursor: pointer;
   color: #f6201d;
   transition: all 0.2s ease;
-  padding: 6px 12px;
+  /* padding: 6px 12px; */
   margin:1px;
   outline: none !important;
 }
@@ -56,8 +56,11 @@ button:hover {
 
 .game {
   background-color: #dadada;
+  margin: 15px 0;
   padding: 30px;
   position: relative;
+  min-width: 300px;
+  max-width: 360px;
   width: 50%;
   /* left: 50%; */
   /* transform: translate(-50%, -50%); */
