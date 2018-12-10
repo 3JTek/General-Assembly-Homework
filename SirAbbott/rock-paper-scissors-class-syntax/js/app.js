@@ -13,15 +13,15 @@ class RPS {
     // this.input = document.createElement('textarea')
 
     this.buttons = {
-      rock: document.createElement('button'),
+      scissors: document.createElement('button'),
       paper: document.createElement('button'),
-      scissors: document.createElement('button')
+      rock: document.createElement('button')
     }
 
     for (const type in this.buttons) {
       this.buttons[type].innerText = type
       this.buttons[type].className = 'choice'
-      gameClass.appendChild(this.buttons[type])
+      gameClass.insertBefore(this.buttons[type], gameClass.childNodes[6])
     }
 
     this.winConditions = {
