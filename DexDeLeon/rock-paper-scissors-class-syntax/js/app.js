@@ -1,7 +1,10 @@
 class RPS {
   constructor(options) {
-    this.buttons = document.querySelectorAll('button.choice')
+
+    // ALL DOM ELEMENTS CONVERTED HERE
+    // this.buttons = document.querySelectorAll('button.choice')
     this.resetButton = document.querySelector('button.reset')
+    this.gameBoard = document.querySelector('div.game')
     this.player1 = document.querySelector('.player1')
     console.log(document.querySelector('.player1'))
     console.log(this.player1)
@@ -9,17 +12,41 @@ class RPS {
     this.result =  document.querySelector('.result')
     this.options = options
     this.choices = Object.keys(this.options)
+
+    // CREATE BUTTONS FROM THE CHOICES ARRAY TO BE APPENDED TO THE GAME BOARD
+    this.buttons = []
+    this.choices.forEach(choice => {
+      const button = document.createElement('button')
+      button.innerText = choice
+      button.setAttribute('class', 'choice')
+      this.buttons.push(button)
+      this.gameBoard.appendChild(button)
+    })
+
+    // CREATE RESET BUTTON AND APPEND TO GAME BOARD
+    const resetBtn = document.createElement('button')
+    resetBtn.innerText = 'Reset'
+    resetBtn.setAttribute('class', 'reset')
+    this.gameBoard.appendChild(resetBtn)
+    this.resetButton = resetBtn
+
+
+    // HAVE TO BIND this KEYWORD FOR THE FUNCTIONS TO WORK AS EXPECTED
     this.makeChoice = this.makeChoice.bind(this)
     this.play = this.play.bind(this)
     this.reset = this.reset.bind(this)
+
+    // RUN init()
     this.init()
   }
 
+  // ADDS THE EVENT LISTENERS
   init() {
     this.buttons.forEach(button => button.addEventListener('click', this.play))
     this.resetButton.addEventListener('click', this.reset)
   }
 
+  // ALL THE FUNCTIONS DECLARED AS METHODS OF THE RPS CLASS BELOW
   makeChoice () {
     return this.choices[Math.floor(Math.random() * this.choices.length)]
   }
@@ -46,8 +73,9 @@ class RPS {
   }
 }
 
-
+// ONCE DOM CONTENT HAS LOADED...
 document.addEventListener('DOMContentLoaded', () => {
+  // ...A NEW RPS CLASS IS CREATED BY PASSING THE OPTIONS OBJECT
   new RPS({
     rock: 'scissors',
     paper: 'rock',
@@ -56,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+
+// ORIGINAL CODE
 
 // // VARIABLES
 // let buttons
