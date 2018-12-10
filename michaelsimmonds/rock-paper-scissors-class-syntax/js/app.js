@@ -17,6 +17,8 @@ class RPS {
 
     this.play = this.play.bind(this)
 
+    this.reset = this.reset.bind(this)
+
     this.init()
   }
 
