@@ -1,0 +1,8 @@
+
+rock=0, paper=1, scissors=2
+
+if (a == b) ties++;
+else if ((a - b + 3) % 3 == 1) wins++;
+else losses++;
+
+http://jsfiddle.net/7a6RF/
