@@ -19,3 +19,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.gameDisplay {
+  display: flex;
+  justify-content: space-around;
+}

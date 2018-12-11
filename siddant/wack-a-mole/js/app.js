@@ -16,35 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
       option[rand].classList.remove('active')
     },850)
   }
-  //console.log(option[getRandom()])
-
 
   function countdown(){
     countDisplay.textContent = count
     count--
   }
 
-
-  const timerId = setInterval(() => {
-    activeMole()
-    countdown()
-  }, 1000)
-
-
   function userClicked(e){
     if(parseInt(e.target.id) === rand){
       console.log('well done')
       userscore++
+      e.target.removeEventListener('click', userClicked)
     }
     scoredisplay.innerText= `You Scored: ${userscore}`
     console.log(`score ${userscore}`)
   }
 
-  option.forEach(option => {
-    option.addEventListener('click', userClicked)
-  }
-  )
 
+  const timerId = setInterval(() => {
+    option.forEach(option => {
+      option.addEventListener('click', userClicked)
+    })
+    activeMole()
+    countdown()
+  }, 1000)
 
   setTimeout(() => {
     clearInterval(timerId)
