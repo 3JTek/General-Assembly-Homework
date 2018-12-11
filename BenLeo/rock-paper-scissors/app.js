@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const choices = ['worm', 'pigeon', 'shotgun']
-
   const cpuChoice = choices[Math.floor((Math.random() * choices.length) + 0)]
-
   let userChoice
-
   let playAgain
-
   const buttons = document.querySelectorAll('button')
 
   buttons.forEach(button => {
