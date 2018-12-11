@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const divs = document.querySelectorAll('.game div')
   const timeRemaining = 60
   let div = divs[0]
+  const image = document.querySelector('.mole')
 
 
   const timerId = setInterval(() => {
@@ -14,10 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if(timeRemaining === 0) clearInterval(timerId)
   }, 1000)
 
+  let count = 0
+  function setscore() {
+    count += 1
+    console.log(count)
+  }
 
-    .mole.addEventListener('click', () => {
-  
-    })
+  image.addEventListener('click', setscore())
 
 
 })
