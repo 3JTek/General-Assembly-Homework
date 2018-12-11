@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const countDisplay = document.querySelector('#countDisplay')
   const button = document.querySelector('button')
 
-  let rand = 0
+  let rand
   let userScore
-  let count = 59
+  let count
 
   function resetUserScore() {
     userScore = 0
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function stopGameAfter60s(game) {
     setTimeout(() => {
       clearInterval(game)
-    }, 6000)
+    }, 60000)
   }
 
   button.addEventListener('click', () =>  {
