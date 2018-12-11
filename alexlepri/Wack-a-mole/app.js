@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(timeRemaining === 0) clearInterval(timerId)
   }, 1000)
 
+
   const timeId = setInterval(() => {
     timeRemaining--
     timerScreen.innerHTML = timeRemaining
@@ -19,4 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log(document.querySelector('div.screen'))
 
+  const catchMe = document.querySelector('.mole')
+  const point = document.querySelector('div.score')
+  let count = 0
+  count = Math.add.text(5, 'Points: 0')
+  function scores () {
+    count += 10
+    count.setText('Points: ' +scores)
+}
 })
+catchMe.addEventListener('click',count)
