@@ -1,4 +1,12 @@
-.gameDisplay {
+.invite {
+  text-align: center;
+}
+
+.invite.hidden {
+  display: none;
+}
+
+.statusBar {
   display: flex;
   justify-content: space-around;
 }
