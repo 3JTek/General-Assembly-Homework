@@ -2,7 +2,11 @@
   height: 200px;
   width: 30%;
   margin-left:  10px;
-  margin-bottom:  10px
+  margin-bottom:  10px;
+}
+
+body{
+  background-color: lightblue;
 }
 
 .active{
@@ -19,4 +23,17 @@
 .wrapper{
   display: flex;
   flex-wrap: wrap;
+}
+
+button{
+  display: block;
+}
+
+.start-game{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
 }
