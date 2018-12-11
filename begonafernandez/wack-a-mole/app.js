@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`score ${userscore}`)
   }
 
-
   const timerId = setInterval(() => {
     option.forEach(option => {
       option.addEventListener('click', userClicked)

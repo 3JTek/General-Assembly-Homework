@@ -1,3 +1,13 @@
+.gameDisplay {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .moleholder{
   height: 200px;
   width: 30%;
@@ -14,8 +24,4 @@
 
 #countDisplay{
   display: inline-block;
-}
-.wrapper{
-  display: flex;
-  flex-wrap: wrap;
 }
