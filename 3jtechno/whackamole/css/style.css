@@ -1,0 +1,31 @@
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*"vh" means % of the view port*/
+  height: 100vh;
+}
+.start-button{
+  margin-top: 20px;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 550px;
+}
+.game-buttons {
+  border: 2px solid grey;
+  width: 25%;
+  height: 33%;
+  background-size: cover;
+}
+.game-buttons-24{
+  width: calc(25% /2);
+}
+.hidden {
+  display: none;
+}

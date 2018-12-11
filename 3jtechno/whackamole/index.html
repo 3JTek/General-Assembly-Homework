@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/app.js" charset="utf-8"></script>
+  <title>Whack a mole</title>
+</head>
+<body>
+  <main>
+    <div class="welcome-page">
+      <h1> Welcome to Whack-A-Fill!!!</h1>
+      <p>Select your difficulty</p>
+      <select>
+        <option disabled>Select Difficulty</option>
+        <option selected="selected" value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+      </select>
+      <button class="start-button">Start</button>
+    </div>
+    <div class="game-page hidden">
+      <div class="score">
+        Score
+      </div>
+      <div class="timer">
+        Timer
+      </div>
+      <div class="container">
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+      </div>
+      <div class="hard-game hidden">
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+        <button class="game-buttons" disabled></button>
+      </div>
+    </div>
+    </div>
+    <div class="game-over-page hidden">
+      <button class="play-again-button">Play Again?</button>
+    </div>
+  </main>
+</body>
+</html>
