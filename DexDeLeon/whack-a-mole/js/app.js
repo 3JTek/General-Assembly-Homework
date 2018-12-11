@@ -5,13 +5,20 @@ let grid,
   startBtn,
   mole,
   score = 0,
-  finalScore
+  finalScore,
+  audio
 
+// when a mole is clicked
 function clickMole() {
+  // increase and update score display
   score += 1
   scoreDisplay.innerText = score
+  // restart and play the squeak sound
+  audio.currentTime = 0
+  audio.play()
+  // animate the mole being hit
   mole.classList.add('rubberBand')
-  // prevents mashing mole and getting more than one point by removing event listener after point
+  // prevents mashing mole and getting more than one point by removing event listener after first click
   mole.removeEventListener('click', clickMole)
 }
 
@@ -69,13 +76,16 @@ function finalScoreFunc() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
+  // assign all variables when DOM has loaded
   grid = document.querySelectorAll('div.cell')
   timer = document.querySelector('#time')
   scoreDisplay = document.querySelector('#score')
   startScreen = document.querySelector('div.start')
   startBtn = document.querySelector('#startBtn')
   finalScore = document.createElement('div')
+  audio = document.querySelector('audio')
+
+  // Event listener to start button that runs the game code
   startBtn.addEventListener('click', startGame)
 
 })
