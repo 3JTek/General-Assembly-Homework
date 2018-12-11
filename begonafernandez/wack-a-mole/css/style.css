@@ -1,0 +1,21 @@
+.moleholder{
+  height: 200px;
+  width: 30%;
+  margin-left:  10px;
+  margin-bottom:  10px
+}
+
+.active{
+  background-image: url("../image/mole.jpg");
+  background-repeat: no-repeat;
+  background-size : contain;
+  background-position: center;
+}
+
+#countDisplay{
+  display: inline-block;
+}
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
