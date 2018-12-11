@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let rng = 0
   let playerScore = 0
   let timer = 10
+  let timerId
+  let moleTimer
 
   //SELECTIONS
   const passiveDivs = document.querySelectorAll('.passive')
@@ -12,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameboard = document.querySelector('.gameboard')
   const startGameSplash = document.querySelector('.startGame')
   const endGameSplash = document.querySelector('.endGame')
+  const finalScore = document.querySelector('#finalScore')
 
 
   //FUNCTIONS
@@ -32,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const endGame = function() {
-    clearInterval(timerStart)
+    clearInterval(timerId)
+    finalScore.innerText = playerScore
     gameboard.style.display = 'none'
     endGameSplash.style.display = 'block'
     timer = 10
@@ -53,21 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
   //   }
   // }
 
-  const timerLogic = function() {
+  //DELETE M E
+  // const timerLogic = function() {
+  //   timerDisplay.textContent = timer
+  //   if(timer > 0) {
+  //     timer --
+  //   } else if (timer === 0) {
+  //     endGame()
+  //     console.log('End of Game')
+  //   }
+  // }
+  //
+  // const timerStart = function() {
+  //   setInterval(timerLogic(), 1000)
+  // }
+
+  function countdown(){
+    timer--
     timerDisplay.textContent = timer
-    if(timer > 0) {
-      timer --
-    } else if (timer === 0) {
+    if(timer === 0) {
+      clearInterval(timerId)
+      clearInterval(moleTimer)
+      removeMole()
       endGame()
-      console.log('End of Game')
     }
   }
 
-  const timerStart = setInterval(timerLogic, 1000)
-
   const moleLogic = function () {
     addMole()
-    setInterval(() => {
+    moleTimer = setInterval(() => {
       removeMole()
       addMole()
     }, 1000)
@@ -75,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const init = function() {
     moleLogic()
-    timerStart
+    timerId = setInterval(countdown, 1000)
     gameboard.style.display = 'flex'
     startGameSplash.style.display = 'none'
     endGameSplash.style.display = 'none'
