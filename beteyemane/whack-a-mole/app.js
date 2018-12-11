@@ -6,7 +6,7 @@ function init () {
   const moleArray = document.querySelectorAll('div.mole')
   let randomMole
   let score = 0
-  let timer = 10
+  let timer = 60
   let randomMoleTimer
 
   const scoreBox = document.querySelector('#score')
@@ -17,11 +17,12 @@ function init () {
     if(randomMole !== undefined)randomMole.classList.remove('show')
 
     const randomNumber = Math.floor(Math.random()*9)
-    const randomTime = Math.floor(Math.random()*1500)+500
+    const randomTime = Math.floor(Math.random()*1000)+500
     randomMole = moleArray[randomNumber]
     randomMole.classList.add('show')
     randomMoleTimer =  setTimeout(loop,randomTime)
   }
+
 
   loop()
 
