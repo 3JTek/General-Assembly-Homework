@@ -7,7 +7,7 @@ function init () {
   const moleArray = document.querySelectorAll('div.mole')
   let randomMole
   let score = 0
-  let timer = 15
+  let timer = 10
   let randomMoleTimer
 
   const scoreBox = document.querySelector('#score')
@@ -19,7 +19,7 @@ function init () {
 
 
     const randomNumber = Math.floor(Math.random()*9)
-    const randomTime = Math.floor(Math.random()*1000)+250
+    const randomTime = Math.floor(Math.random()*1100)+250
     // console.log(randomNumber)
     randomMole = moleArray[randomNumber]
     // console.log(randomMole)
