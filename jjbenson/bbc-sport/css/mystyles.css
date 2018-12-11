@@ -4,11 +4,17 @@
 img {
   width: 100%; }
 
-div.line {
+nav div.line {
   height: 1rem;
   width: 1px;
   position: relative;
   left: 0.5rem;
+  background-color: #dbb830; }
+
+article .line {
+  display: inline-block;
+  height: 1rem;
+  width: 1px;
   background-color: #dbb830; }
 
 .section-nav {
@@ -53,15 +59,15 @@ h1.title:not(:last-child) {
   background-color: white;
   border: 0px solid black; }
 
-nav.navbar, nav.navbar-article {
+nav.navbar.main, nav.main.navbar-article {
   min-height: 0; }
-  nav.navbar .navbar-brand, nav.navbar-article .navbar-brand {
+  nav.navbar.main .navbar-brand, nav.main.navbar-article .navbar-brand {
     margin-left: 0 !important;
     align-items: center; }
 
-.navbar-menu.is-active .navbar-item, .is-active.navbar-menu-article .navbar-item, .navbar-menu.is-active .navbar-item-article, .is-active.navbar-menu-article .navbar-item-article {
+.main .navbar-menu.is-active .navbar-item, .main .is-active.navbar-menu-article .navbar-item, .main .navbar-menu.is-active .navbar-item-article, .main .is-active.navbar-menu-article .navbar-item-article {
   margin-top: 0; }
-  .navbar-menu.is-active .navbar-item:hover, .is-active.navbar-menu-article .navbar-item:hover, .navbar-menu.is-active .navbar-item-article:hover, .is-active.navbar-menu-article .navbar-item-article:hover, .navbar-menu.is-active .navbar-item.is-active, .is-active.navbar-menu-article .navbar-item.is-active, .navbar-menu.is-active .is-active.navbar-item-article, .is-active.navbar-menu-article .is-active.navbar-item-article {
+  .main .navbar-menu.is-active .navbar-item:hover, .main .is-active.navbar-menu-article .navbar-item:hover, .main .navbar-menu.is-active .navbar-item-article:hover, .main .is-active.navbar-menu-article .navbar-item-article:hover, .main .navbar-menu.is-active .navbar-item.is-active, .main .is-active.navbar-menu-article .navbar-item.is-active, .main .navbar-menu.is-active .is-active.navbar-item-article, .main .is-active.navbar-menu-article .is-active.navbar-item-article {
     background-color: #121212;
     color: #ffd637; }
 
@@ -129,7 +135,7 @@ footer {
   .section-nav {
     padding: 0; }
 
-  .line {
+  nav.line {
     display: none; } }
 @keyframes spinAround {
   from {

@@ -47,11 +47,17 @@ $footer-padding:3rem;
 img {
   width:100%;
 }
-div.line {
+nav div.line {
   height:1rem;
   width:1px;
   position: relative;
   left:$navbar-item-padding-h;
+  background-color: $dark-yellow;
+}
+article .line {
+  display:inline-block;
+  height:1rem;
+  width:1px;
   background-color: $dark-yellow;
 }
 .section-nav{
@@ -112,14 +118,14 @@ h1.title {
   background-color: white;
   border:0px solid black;
 }
-nav.navbar {
+nav.navbar.main {
   min-height:0;
   .navbar-brand{
     margin-left:0 !important;
     align-items: center;
   }
 }
-.navbar-menu{
+.main .navbar-menu{
   &.is-active{
     .navbar-item{
       margin-top:0;
@@ -200,7 +206,7 @@ footer {
   .section-nav {
     padding:0;
   }
-  .line{
+  nav.line{
     display: none;
   }
 }

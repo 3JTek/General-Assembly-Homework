@@ -4,7 +4,7 @@
 const chai  = window.chai
 const expect = chai.expect
 
-describe('removeBlank', () => {
+xdescribe('removeBlank', () => {
   it('should remove all empty values EXCEPT 0 from an array', () => {
     expect(removeBlank([0, NaN, undefined, false, '', null, 'Kevin'])).to.deep.equal([0, 'Kevin'])
   })
@@ -13,19 +13,20 @@ describe('removeBlank', () => {
   })
 })
 
-describe('randomElement', () => {
+xdescribe('randomElement', () => {
   it('should return a random element from an array', () => {
     expect(randomElement(['red', 'green', 'blue'])).to.be.oneOf(['red', 'green', 'blue'])
   })
 })
 
-describe('secondLowestSecondHighest', () => {
+xdescribe('secondLowestSecondHighest', () => {
   it('should return the second highest and second lowest numbers of an array', () => {
     expect(secondLowestSecondHighest([99,2000,-93,40,-761115,11])).to.deep.equal([-93,99])
+    expect(secondLowestSecondHighest([8.0,80,800])).to.deep.equal([80,80])
   })
 })
 
-describe('coins', () => {
+xdescribe('coins', () => {
   it('should return the coins needed to make up the price supplied', () => {
     expect(coins(1.50)).to.deep.equal([100, 50])
   })
@@ -35,7 +36,7 @@ describe('coins', () => {
   })
 })
 
-describe('mergeUnique', () => {
+xdescribe('mergeUnique', () => {
   it('should merge two arrays', () => {
     expect(mergeUnique([1,2,3], [4,5,6])).to.deep.equal([1,2,3,4,5,6])
   })
@@ -45,7 +46,7 @@ describe('mergeUnique', () => {
   })
 })
 
-describe('arrayToObjects', () => {
+xdescribe('arrayToObjects', () => {
   it('should convert an array of strings to an array of objects', () => {
     expect(arrayToObjects(['Paris', 'New York'], 'city')[0]).to.be.an('object')
   })
@@ -58,7 +59,7 @@ describe('arrayToObjects', () => {
   })
 })
 
-describe('objectToArray', () => {
+xdescribe('objectToArray', () => {
   it('should convert an object into an array', () => {
     expect(objectToArray({ name: 'Will Smith', dob: '15-09-1968' })).to.be.an('array')
   })
@@ -80,10 +81,11 @@ describe('fibonacci', () => {
     expect(fibonacci(8)).to.deep.equal([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fibonacci(1)).to.deep.equal([0])
     expect(fibonacci(50)).to.deep.equal([0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765,10946,17711,28657,46368,75025,121393,196418,317811,514229,832040,1346269,2178309,3524578,5702887,9227465,14930352,24157817,39088169,63245986,102334155,165580141,267914296,433494437,701408733,1134903170,1836311903,2971215073,4807526976,7778742049])
+    expect(fibonacci(1000000)).to.be.an('array')
   })
 })
 
-describe('daysBetween', () => {
+xdescribe('daysBetween', () => {
   it('should return the number of days between two dates', () => {
     expect(daysBetween('2017-02-01', '2017-01-01')).to.equal(31)
   })
@@ -92,7 +94,7 @@ describe('daysBetween', () => {
   })
 })
 
-describe('secondsBetween', () => {
+xdescribe('secondsBetween', () => {
   it('should return the number of seconds between to times', () => {
     expect(secondsBetween('12:00:00', '12:00:01')).to.equal(1)
   })
