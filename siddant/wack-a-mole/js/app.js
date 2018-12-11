@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.moleholder')
   const scoredisplay = document.querySelector('#score')
   const countDisplay = document.querySelector('#countDisplay')
+  const gamePlayagain = document.querySelector('#restartGame')
 
   let rand =0, userscore=0, count =59
 
@@ -32,16 +33,30 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`score ${userscore}`)
   }
 
+  function gameRestart(){
+    count =59
+    userscore=0
+    init()
+  }
 
-  const timerId = setInterval(() => {
-    option.forEach(option => {
-      option.addEventListener('click', userClicked)
-    })
-    activeMole()
-    countdown()
-  }, 1000)
+  function init(){
 
-  setTimeout(() => {
-    clearInterval(timerId)
-  },60000)
+    const timerId = setInterval(() => {
+      option.forEach(option => {
+        option.addEventListener('click', userClicked)
+      })
+      activeMole()
+      countdown()
+    }, 1000)
+
+    setTimeout(() => {
+      clearInterval(timerId)
+      gamePlayagain.style.display=''
+    },60000)
+  }
+
+
+  gamePlayagain.style.display='none'
+  gamePlayagain.addEventListener('click', gameRestart)
+  init()
 })
