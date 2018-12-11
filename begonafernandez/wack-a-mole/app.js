@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const countDisplay = document.querySelector('#countDisplay')
   const button = document.querySelector('button')
   const inviteSection = document.querySelector('.invite')
+  const statusBar = document.querySelector('.statusBar')
+  const gameSection = document.querySelector('.game')
 
   let rand
   let userScore
@@ -69,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   button.addEventListener('click', () =>  {
     inviteSection.classList.add('hidden')
+    statusBar.classList.remove('hidden')
+    gameSection.classList.remove('hidden')
     resetUserScore()
     resetTimer()
     const game = startGame()

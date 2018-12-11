@@ -11,6 +11,10 @@
   justify-content: space-around;
 }
 
+.statusBar.hidden, .game.hidden {
+  display: none;
+}
+
 .game{
   display: flex;
   flex-wrap: wrap;
