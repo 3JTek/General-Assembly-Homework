@@ -12,7 +12,9 @@
   background-position: center;
 }
 
-
+#countDisplay{
+  display: inline-block;
+}
 .wrapper{
   display: flex;
   flex-wrap: wrap;
