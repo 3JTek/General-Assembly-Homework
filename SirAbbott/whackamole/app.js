@@ -13,6 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
   let timeRemaining
   let speed
 
+  function init() {
+    switch (difficulty.value) {
+      case '1':
+        speed = 1200
+        break
+      case '2':
+        speed = 900
+        break
+      case '3':
+        speed = 650
+        break
+    }
+    welcomeDiv.classList.toggle('hidden')
+    gameDiv.classList.toggle('hidden')
+    score = 0
+    scoreDisplay.textContent = `Article ${score}`
+    timeRemaining = 60
+    countDown()
+    startGame()
+  }
+
   function hide(win = true) {
     btn.forEach(button => {
       button.style.backgroundImage = ''
@@ -20,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     if (win) {
       score++
-      scoreDisplay.textContent = `Your score is ${score}`
+      scoreDisplay.textContent = `Article ${score}`
     }
   }
 
@@ -45,28 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, speed)
   }
 
-
-  function init() {
-    switch (difficulty.value) {
-      case '1':
-        speed = 1200
-        break
-      case '2':
-        speed = 900
-        break
-      case '3':
-        speed = 650
-        break
-    }
-    welcomeDiv.classList.toggle('hidden')
-    gameDiv.classList.toggle('hidden')
-    score = 0
-    scoreDisplay.textContent = `Article ${score}`
-    timeRemaining = 60
-    countDown()
-    startGame()
-  }
-
   function restart() {
     welcomeDiv.classList.toggle('hidden')
     gameOverDiv.classList.toggle('hidden')
@@ -75,8 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
   btn.forEach(button => {
     button.addEventListener('click', hide)
   })
-
   startBtn.addEventListener('click', init)
-
   playAgainBtn.addEventListener('click', restart)
 })

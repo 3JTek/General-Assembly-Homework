@@ -1,3 +1,7 @@
+body {
+  font-family: 'Bungee', cursive;
+}
+
 main {
   background: url('https://upload.wikimedia.org/wikipedia/commons/a/ac/Europe_1815_map_en.png');
 
@@ -32,7 +36,7 @@ main {
   background-color: #01309A;
   font-size: 15px;
   color: white;
-  padding: 2px;
+  padding: 5px;
 }
 
 .start-button {
@@ -41,7 +45,6 @@ main {
   width: 100px;
   background: url('https://media3.giphy.com/media/l41YbYFrJYj30Zyco/giphy.gif?cid=3640f6095c1025194d635235514f3ea7');
   background-size: cover;
-
   color: white;
   border: none;
   text-transform: uppercase;
@@ -56,15 +59,20 @@ main {
   width: 80%;
 }
 
-.score, .timer {
+.score-timer {
   background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png');
-  width: 20%;
-  height:10%;
+  background-size: contain;
+  width: 15%;
+  height:15%;
   font-size: 30px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
+  color: white;
 }
 
+.timer {
+  color:#FFCD00;
+}
 
 
 
