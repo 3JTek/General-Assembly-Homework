@@ -9,6 +9,9 @@ main {
   color: #FFCD00;
 }
 
+span {
+  color: white;
+}
 .game {
   display: flex;
   justify-content: center;
@@ -23,6 +26,7 @@ main {
   align-items: center;
   height: 100vh;
 }
+
 .welcome-content {
   background-color: #01309A;
   text-align: center;
@@ -37,6 +41,8 @@ main {
   font-size: 15px;
   color: white;
   padding: 5px;
+  font-family: 'Bungee', cursive;
+
 }
 
 .start-button {
@@ -45,6 +51,7 @@ main {
   width: 100px;
   background: url('https://media3.giphy.com/media/l41YbYFrJYj30Zyco/giphy.gif?cid=3640f6095c1025194d635235514f3ea7');
   background-size: cover;
+  font-family: 'Bungee', cursive;
   color: white;
   border: none;
   text-transform: uppercase;
@@ -66,7 +73,7 @@ main {
   height:15%;
   font-size: 30px;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
   color: white;
 }
 
@@ -82,6 +89,7 @@ main {
   height: 35%;
   background: transparent;
   background-size: contain;
+  outline: none
 }
 
 .game-over {
@@ -101,6 +109,7 @@ main {
   background-size: cover;
   color: white;
   border: none;
+  font-family: 'Bungee', cursive;
 }
 
 .hidden {
