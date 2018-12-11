@@ -11,8 +11,13 @@ let showMoleTimer
 let hideMoleTimer
 let scoreBox = ''
 let timerScreen = ''
-let startButton = ''
+// let startButton = ''
 let playAgainButton = ''
+let mainMenuButton = ''
+
+let audio
+
+
 let increaseMolesButton
 let increaseSpeedButton
 let resetButton
@@ -38,7 +43,7 @@ function init () {
 
   startButtons = document.querySelectorAll('.start')
   playAgainButton = document.querySelector('.play-again')
-  resetButton = document.querySelector('.reset')
+  mainMenuButton = document.querySelector('.main-menu')
   increaseMolesButton = document.querySelector('.increaseMoles')
   increaseSpeedButton = document.querySelector('.increaseSpeed')
 
@@ -47,6 +52,8 @@ function init () {
   gameOverScore = document.querySelector('#gameOverScore')
 
   main = document.querySelector('main')
+
+  audio = document.querySelector('audio')
 
 
   //Clear timers
@@ -72,9 +79,9 @@ function init () {
 
 
   playAgainButton.addEventListener('click',playAgainClick)
-  increaseMolesButton.addEventListener('click',increaseTheMoles)
-  increaseSpeedButton.addEventListener('click',increaseTheSpeed)
-  resetButton.addEventListener('click',resetClick)
+  // increaseMolesButton.addEventListener('click',increaseTheMoles)
+  // increaseSpeedButton.addEventListener('click',increaseTheSpeed)
+  mainMenuButton.addEventListener('click', mainMenu)
 
   showSplash()
 
@@ -93,7 +100,7 @@ function makeMoles(x,y){
   for(let i=0;i<x*y;i++){
     const mole = document.createElement('div')
     mole.classList.add('mole')
-    mole.id = 'mole'+ifor
+    mole.id = 'mole'+i
     mole.style.width = ((100/x)-1)+'%'
     mole.style.height = ((100/y)-1)+'%'
     mole.addEventListener('click', moleClick)
@@ -102,27 +109,26 @@ function makeMoles(x,y){
   }
 }
 
-function resetClick(){
-  moleShowTime = 750
-  moleHideTime = 1000
-  molesX = 2
-  molesY = 2
-  maxMoles = 2
+function mainMenu(){
+  hideGameOver()
   init()
-  startGame()
+  // startGame()
 }
 
 function moleClick(e){
   score +=1
   scoreBox.innerHTML = score
   e.currentTarget.classList.remove('show')
+  audio.pause()
+  audio.currentTime = 0
+  audio.play()
 }
 
 function easy(){
   console.log('easy')
   molesX = 3
   molesY = 3
-  maxMoles = 3
+  maxMoles = 1
   removeGameBoard()
   makeMoles(molesX,molesY)
   startGame()
@@ -132,7 +138,7 @@ function medium(){
 
   molesX = 4
   molesY = 4
-  maxMoles = 4
+  maxMoles = 2
   removeGameBoard()
   makeMoles(molesX,molesY)
   startGame()
@@ -142,7 +148,7 @@ function hard(){
 
   molesX = 5
   molesY = 5
-  maxMoles = 5
+  maxMoles = 3
   removeGameBoard()
   makeMoles(molesX,molesY)
   startGame()

@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="app.js" charset="utf-8"></script>
   <title>Whack-a-mole</title>
 </head>
 <body>
   <header>
-    <h1>Whack-A-Mole</h1>
     <h2>Score:
       <span id="score">0</span>
     </h2>
+    <h1>Whack-A-Mole</h1>
+
     <h2>Timer:
       <span id="timer">10</span>
     </h2>
@@ -20,7 +22,7 @@
   <main>
     <div class="container splash">
       <div class="splash">
-          <p>Play the game yo!</p>
+          <p>Whack Some Moles!</p>
           <div class="buttons">
             <button class='start easy'>Easy</button>
             <button class='start medium'>Medium</button>
@@ -35,9 +37,9 @@
         <p>Your score was <span id="gameOverScore"></span></p>
         <div class="buttons">
           <button class='play-again'>Play Again</button>
-          <button class='increaseMoles'>Increase The Moles!</button>
-          <button class='increaseSpeed'>Increase The Speed!</button>
-          <button class='reset'>Reset</button>
+          <!-- <button class='increaseMoles'>Increase The Moles!</button>
+          <button class='increaseSpeed'>Increase The Speed!</button> -->
+          <button class='main-menu'>Return To Menu</button>
         </div>
 
       </div>
@@ -55,5 +57,8 @@
     </div> -->
 
   </main>
+  <audio src="assets/hit.mp3">
+
+  </audio>
 </body>
 </html>
