@@ -5,7 +5,7 @@ class RPS {
     this.player1 = document.querySelector('.player1')
     this.player2 = document.querySelector('.player2')
     this.result = document.querySelector('.result')
-    this.makeChoice = this.makeChoice.bind(this)
+    // this.makeChoice = this.makeChoice.bind(this)
     this.play = this.play.bind(this)
     this.reset = this.reset.bind(this)
     this.gameDiv = document.querySelector('div.game')
