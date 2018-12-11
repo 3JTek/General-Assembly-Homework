@@ -44,9 +44,10 @@ function orderStringAlphabetically(string) {
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
+//use .replace(/ /g,'') to remove spaces
 function numOfOccurances(string) {
   const counter = {}  //empty object
-  const characters = string.toLocaleLowerCase().split(' ').join('').split('')
+  const characters = string.toLocaleLowerCase().replace(/ /g,'').split('') //creates an array of all the characters in lower case without spaces 
   for (let i=0;i<characters.length;i++){
     if (Object.keys(counter).includes(characters[i])) {
       counter[characters[i]] += 1
