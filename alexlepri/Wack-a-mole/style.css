@@ -1,0 +1,22 @@
+* {
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+}
+
+.game {
+
+  display: flex;
+  /* border: 1px solid black; */
+  flex-wrap: wrap;
+  height: 80vh;
+  width: 80vh;
+}
+
+.game div {
+  width: calc(100%/4);
+}
+
+.mole {
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/28/animal-158236__340.png");
+  background-size: cover;
+}
