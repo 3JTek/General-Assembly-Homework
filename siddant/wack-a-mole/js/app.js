@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.moleholder')
-  const scoredisplay = document.querySelector('#score')
+  const scoredisplay = document.querySelectorAll('.score')
   const countDisplay = document.querySelector('#countDisplay')
   const gamePlayagain = document.querySelector('#restartGame')
   const gameStart = document.querySelector('#gameStart')
-
+  const gameOver = document.querySelector('.gameOver')
   const gameStartBord = document.querySelector('.gamestart')
   const gameBoard = document.querySelector('.gameboard')
 
@@ -33,20 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
       userscore++
       e.target.removeEventListener('click', userClicked)
     }
-    scoredisplay.innerText= `${userscore}`
+    scoredisplay[0].innerText= `${userscore}`
   }
 
   function gameRestart(){
+    gameOver.style.display='none'
     count =59
     userscore=0
-    scoredisplay.innerText= `${userscore}`
+    scoredisplay[0].innerText= `${userscore}`
     init()
   }
 
   function init(){
     gameStartBord.style.display='none'
     gameStart.style.display='none'
-    gamePlayagain.style.display='none'
     gameBoard.style.display='flex'
     const timerId = setInterval(() => {
       option.forEach(option => {
@@ -58,15 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       clearInterval(timerId)
-      gamePlayagain.style.display=''
       gameBoard.style.display='none'
+      gameOver.style.display=''
+      console.log(userscore)
+      scoredisplay[1].innerText= ` ${userscore}`
+
+      //scoredisplay.innerText= `${userscore}`
 
     },60000)
+    //60000
   }
 
 
-  gamePlayagain.style.display='none'
-  console.log(gameBoard)
+  gameOver.style.display='none'
   gameBoard.style.display='none'
   gamePlayagain.addEventListener('click', gameRestart)
   gameStart.addEventListener('click', init)

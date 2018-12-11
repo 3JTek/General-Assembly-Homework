@@ -2,27 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Whack a Mole</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/app.js" charset="utf-8"></script>
   </head>
   <body>
     <main>
       <section class="wrapper">
-        <div class="gamestart" >
-          <div>
-            <h1>Whack a mole</h1>
-            <button id='gameStart'> play</button>
-          </div>
+
+        <div class="gamestart">
+        <div class="headingholder">
+          <h1>Whack a mole</h1>
+          <h2>press start to play the game</h2>
         </div>
-      </section>
+        <div class="buttonholder">
+          <button id='gameStart'>Start</button>
+        </div>
+      </div>
 
 
-      <section class="wrapper">
-        <div class="gameboard" >
-          <p>You Scored:<span  id="score"></span></p>
-          <p>Time Remaining: <span id="countDisplay">60</span></p>
-          <button id='restartGame'> reset</button>
+      <div class="gameboard" >
+        <div id="showScore">
+        <p>You Scored:<span  class="score"></span></p>
+        <p>Time Remaining: <span id="countDisplay">60</span></p>
+        </div>
+        <div id="moleshow">
           <div class="moleholder" id="0">
           </div>
           <div class="moleholder" id="1">
@@ -41,18 +46,21 @@
           </div>
           <div class="moleholder" id="8">
           </div>
+      </div>
+      </div>
+
+      <div class="gameOver" >
+        <div class="headingholder">
+          <h1>Game OVer</h1>
+          <p>You Scored:<span  class="score"></span></p>
+          <h2>press reset to play the game again</h2>
         </div>
-      </section>
+        <div class="buttonholder">
+          <button id='restartGame'> reset</button>
+        </div>
+      </div>
 
-
-            <section class="wrapper">
-              <div class="gameresult" >
-                <div>
-                  <p>You Scored:<span  id="score"></span></p>
-                  <p>Time Remaining: <span id="countDisplay">60</span></p>
-                </div>
-              </div>
-            </section>
+    </section>
 
 
 

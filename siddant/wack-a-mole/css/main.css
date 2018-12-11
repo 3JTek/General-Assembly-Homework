@@ -1,38 +1,96 @@
-.gameboard, .gamestart{
+*{
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.wrapper{
+  width: 900px;
+  display: flex;
+  margin: 0 auto;
+}
+
+button{
+  height: 80px;
+  width: 250px;
+  color: black;
+  font-size: 16px;
+}
+
+
+#showScore{
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly;
+
+}
+
+#moleshow{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+.gameboard{
+   display: flex;
+  flex-wrap: wrap;
+  /*display: none;*/
+  width: 100%;
+
 }
 
 .moleholder{
   height: 200px;
-  width: 30%;
+  width: 32%;
   margin-left:  10px;
   margin-bottom:  10px;
-  background-color: red;
+  background-color: white;
 }
 
  .active{
-  background-image: url("../image/mole.jpg");
+  background-image: url("../image/mole.png");
   background-repeat: no-repeat;
   background-size : contain;
   background-position: center;
 }
 
- #countDisplay{
-  display: inline-block;
+.gamestart{
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  background-image: url("../image/mole2.gif");
+  background-repeat: no-repeat;
+  background-size : contain;
+  background-position: center;
+  color: white;
+
 }
+
+
+
+.gameOver{
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  background-image: url("../image/mole.gif");
+  background-repeat: no-repeat;
+  background-size : contain;
+  background-position: center;
+  color: white;
+}
+
+.headingholder{
+  width: 100%;
+  text-align: center;
+  margin-top: 350px;
+}
+
+.buttonholder{
+  width: 100%;
+  text-align: center;
+
+}
+
+
 .wrapper{
   display: flex;
   flex-wrap: wrap;
-}
-
-.gameDisplay {
-  display: flex;
-  justify-content: space-around;
-}
-
-.gameboard{
-  display: flex;
-  background-color: blue;
-
 }
