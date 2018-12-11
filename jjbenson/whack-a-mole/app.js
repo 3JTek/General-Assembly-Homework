@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',() => init())
 
 let moleArray =[]
+let startButtons = []
 // let randomMole
 let score
 let timer
@@ -35,7 +36,7 @@ function init () {
   scoreBox = document.querySelector('#score')
   timerScreen = document.querySelector('#timer')
 
-  startButton = document.querySelector('.start')
+  startButtons = document.querySelectorAll('.start')
   playAgainButton = document.querySelector('.play-again')
   resetButton = document.querySelector('.reset')
   increaseMolesButton = document.querySelector('.increaseMoles')
@@ -47,6 +48,8 @@ function init () {
 
   main = document.querySelector('main')
 
+
+  //Clear timers
   timerArray.forEach((elem)=>{
     clearInterval(elem)
   })
@@ -55,14 +58,18 @@ function init () {
   //Reset variables
   reset()
 
-  //RENDER
-  removeGameBoard()
 
-  makeMoles(molesX,molesY)
 
 
   //EVENT LISTENERS
-  startButton.addEventListener('click',startClick)
+  // startButtons.forEach((button)=>{
+  //   button.addEventListener('click',startClick)
+  // })
+
+  startButtons[0].addEventListener('click',easy)
+  startButtons[1].addEventListener('click',medium)
+  startButtons[2].addEventListener('click',hard)
+
 
   playAgainButton.addEventListener('click',playAgainClick)
   increaseMolesButton.addEventListener('click',increaseTheMoles)
@@ -70,6 +77,8 @@ function init () {
   resetButton.addEventListener('click',resetClick)
 
   showSplash()
+
+
 
 }
 function removeGameBoard(){
@@ -84,7 +93,7 @@ function makeMoles(x,y){
   for(let i=0;i<x*y;i++){
     const mole = document.createElement('div')
     mole.classList.add('mole')
-    mole.id = 'mole'+i
+    mole.id = 'mole'+ifor
     mole.style.width = ((100/x)-1)+'%'
     mole.style.height = ((100/y)-1)+'%'
     mole.addEventListener('click', moleClick)
@@ -109,12 +118,45 @@ function moleClick(e){
   e.currentTarget.classList.remove('show')
 }
 
+function easy(){
+  console.log('easy')
+  molesX = 3
+  molesY = 3
+  maxMoles = 3
+  removeGameBoard()
+  makeMoles(molesX,molesY)
+  startGame()
+}
+function medium(){
+  console.log('medium')
+
+  molesX = 4
+  molesY = 4
+  maxMoles = 4
+  removeGameBoard()
+  makeMoles(molesX,molesY)
+  startGame()
+}
+function hard(){
+  console.log('hard')
+
+  molesX = 5
+  molesY = 5
+  maxMoles = 5
+  removeGameBoard()
+  makeMoles(molesX,molesY)
+  startGame()
+}
+
 function playAgainClick(){
 
   init()
   startGame()
 }
 function startClick(){
+  //RENDER
+  removeGameBoard()
+  makeMoles(molesX,molesY)
   startGame()
 }
 function reset(){

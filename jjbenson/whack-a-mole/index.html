@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="app.js" charset="utf-8"></script>
   <title>Whack-a-mole</title>
 </head>
@@ -19,22 +20,26 @@
   <main>
     <div class="container splash">
       <div class="splash">
-        <div class="">
           <p>Play the game yo!</p>
-        </div>
-        <button class='start'>Start Game</button>
+          <div class="buttons">
+            <button class='start easy'>Easy</button>
+            <button class='start medium'>Medium</button>
+            <button class='start hard'>Hard</button>
+          </div>
+
       </div>
     </div>
     <div class="container gameOver">
       <div class="splash">
-        <div class="">
-          <p>It's over!</p>
-          <p>Your score was <span id="gameOverScore"></span></p>
+        <p>It's over!</p>
+        <p>Your score was <span id="gameOverScore"></span></p>
+        <div class="buttons">
+          <button class='play-again'>Play Again</button>
+          <button class='increaseMoles'>Increase The Moles!</button>
+          <button class='increaseSpeed'>Increase The Speed!</button>
+          <button class='reset'>Reset</button>
         </div>
-        <button class='play-again'>Play Again</button>
-        <button class='increaseMoles'>Increase The Moles!</button>
-        <button class='increaseSpeed'>Increase The Speed!</button>
-        <button class='reset'>Reset</button>
+
       </div>
     </div>
     <!-- <div class="container gameBoard">

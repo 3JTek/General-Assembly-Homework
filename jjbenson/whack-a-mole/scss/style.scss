@@ -1,5 +1,6 @@
 body {
   height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -17,43 +18,52 @@ main {
   max-height: 900px;
   width: 80%;
   height: 80%;
+  border-radius: 25px;
+  border:1px solid black;
   // display: flex;
-  &.splash{
-    display: flex;
-    background-color: blue;
+  button{
+    font-size: 1em;
+    padding:10px;
+
+    border-radius: 5px;
+    border:1px solid black;
+  }
+  p{
+    margin : 0;
+  }
+
+
+  &.splash, &.gameOver{
+    // background-color: blue;
+
 
     justify-content: center;
     align-items: center;
 
     .splash{
-      width:50%;
-      height:50%;
+      font-size: 2em;
+      padding:20px;
+      text-align: center;
+      width:75%;
+      height:75%;
       background-color: grey;
-      display: flex;
+        display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
-      div{
-        text-align: center;
-        width:90%;
-        height:90%;
-      }
-      button{
-        width:80px;
-        height:20px
-      }
+
+      border-radius: 25px;
+      border:1px solid black;
     }
   }
-  &.gameOver{
-    background-color: blue;
+  &.splash{
 
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
+  }
+  &.gameOver{
+    display: none;
   }
   &.gameBoard{
     background-color: green;
-
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
@@ -65,8 +75,7 @@ main {
 
 div.mole {
 
-  
-  background-color: blue;
+  // background-color: blue;
   pointer-events: none;
 
 

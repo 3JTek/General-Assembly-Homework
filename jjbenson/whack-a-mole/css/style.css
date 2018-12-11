@@ -1,5 +1,6 @@
 body {
-  height: 100vh; }
+  height: 100vh;
+  font-family: 'Roboto', sans-serif; }
 
 main {
   width: 100%;
@@ -13,32 +14,34 @@ main {
   max-width: 900px;
   max-height: 900px;
   width: 80%;
-  height: 80%; }
-  .container.splash {
-    display: flex;
-    background-color: blue;
+  height: 80%;
+  border-radius: 25px;
+  border: 1px solid black; }
+  .container button {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black; }
+  .container p {
+    margin: 0; }
+  .container.splash, .container.gameOver {
     justify-content: center;
     align-items: center; }
-    .container.splash .splash {
-      width: 50%;
-      height: 50%;
+    .container.splash .splash, .container.gameOver .splash {
+      font-size: 2em;
+      padding: 20px;
+      text-align: center;
+      width: 75%;
+      height: 75%;
       background-color: grey;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-      .container.splash .splash div {
-        text-align: center;
-        width: 90%;
-        height: 90%; }
-      .container.splash .splash button {
-        width: 80px;
-        height: 20px; }
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 25px;
+      border: 1px solid black; }
   .container.gameOver {
-    background-color: blue;
-    justify-content: center;
-    align-items: center;
-    background-color: blue; }
+    display: none; }
   .container.gameBoard {
     background-color: green;
     flex-wrap: wrap;
@@ -46,7 +49,6 @@ main {
     align-content: space-between; }
 
 div.mole {
-  background-color: blue;
   pointer-events: none; }
   div.mole.show {
     background-color: red;
