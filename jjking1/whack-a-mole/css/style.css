@@ -6,7 +6,7 @@
 }
 
 .active{
-  background-image: url("../image/mole.jpg");
+  background-image: url("./mole.jpg");
   background-repeat: no-repeat;
   background-size : contain;
   background-position: center;
