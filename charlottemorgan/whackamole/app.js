@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
       hide(false)
       const choices = Math.floor(Math.random() * 12)
-      btn[choices].style.backgroundImage = 'url("https://i.pinimg.com/736x/de/5f/7b/de5f7b027fd2e73634898b40b6b8cc13--flower-beard-time-magazine.jpg")'
+      btn[choices].style.backgroundImage = 'url("https://media1.fdncms.com/inlander/imager/u/original/2475698/tapped-out-hacks.png")'
       btn[choices].removeAttribute('disabled')
     }, speed)
   }
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomeDiv.classList.toggle('hidden')
     gameDiv.classList.toggle('hidden')
     score = 0
-    scoreDisplay.textContent = `Your score is ${score}`
+    scoreDisplay.textContent = `CURRENT SCORE ${score}`
     timeRemaining = 100
     countDown()
     startGame()

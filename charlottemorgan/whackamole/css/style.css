@@ -1,10 +1,25 @@
-
+body {
+  background-image: url('https://superawesomevectors.com/wp-content/uploads/2014/03/free-vector-donut-drawing-800x565.jpg');
+  background-repeat: repeat;
+  background-size: 10%;
+}
 .welcome {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
+  width: 50vh;
+  margin: auto;
+  margin-top: 150px;
   background-color: blue;
+  background: url('https://media1.giphy.com/media/vdbrUjzrUEGly/giphy.gif?cid=3640f6095c100bb1765572754140d1a9');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.img {
+  margin-top: 50px;
+text-align: center;
 }
 
 .container {
@@ -12,11 +27,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .game-buttons {
-  border: 2px solid grey;
+  border: none;
+  background: transparent;
   width: 25%;
   height: 33%;
   background-size: cover;
@@ -27,4 +43,11 @@
 
 .hidden {
   display: none;
+}
+
+.score {
+  font-family: sans-serif;
+  font-size: 30px;
+  color: #F1FF30;
+  font-weight: bolder;
 }
