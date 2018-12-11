@@ -43,35 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     playerScore = 0
   }
 
-  // const timerStart = function(){
-  //   timerDisplay.textContent = timer
-  //   timer --
-  //   if(timer >= 0) {
-  //     setTimeout(() => {
-  //       clearInterval()
-  //     }, 1000)
-  //   }
-  //   if(timer===0) {
-  //     endGame()
-  //     console.log('End of Game')
-  //   }
-  // }
-
-  //DELETE M E
-  // const timerLogic = function() {
-  //   timerDisplay.textContent = timer
-  //   if(timer > 0) {
-  //     timer --
-  //   } else if (timer === 0) {
-  //     endGame()
-  //     console.log('End of Game')
-  //   }
-  // }
-  //
-  // const timerStart = function() {
-  //   setInterval(timerLogic(), 1000)
-  // }
-
   function countdown(){
     timer--
     timerDisplay.textContent = timer
