@@ -1,0 +1,55 @@
+body {
+  height: 100vh; }
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0px; }
+
+.container {
+  display: none;
+  max-width: 900px;
+  max-height: 900px;
+  width: 80%;
+  height: 80%; }
+  .container.splash {
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+    align-items: center; }
+    .container.splash .splash {
+      width: 50%;
+      height: 50%;
+      background-color: grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .container.splash .splash div {
+        text-align: center;
+        width: 90%;
+        height: 90%; }
+      .container.splash .splash button {
+        width: 80px;
+        height: 20px; }
+  .container.gameOver {
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    background-color: blue; }
+  .container.gameBoard {
+    background-color: green;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between; }
+
+div.mole {
+  background-color: blue;
+  pointer-events: none; }
+  div.mole.show {
+    background-color: red;
+    pointer-events: auto; }
+
+/*# sourceMappingURL=style.css.map */
