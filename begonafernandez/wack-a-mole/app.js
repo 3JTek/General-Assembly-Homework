@@ -2,14 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.moleholder')
   const scoredisplay = document.querySelector('#score')
   const countDisplay = document.querySelector('#countDisplay')
+  const button = document.querySelector('button')
 
-  let rand =0, userscore=0, count =59
+  let rand = 0
+  let userScore
+  let count = 59
+
+  function resetUserScore() {
+    userScore = 0
+    scoredisplay.innerText= `${userScore}`
+  }
+
+  function resetTimer() {
+    count = 59
+    countDisplay.textContent = 60
+  }
+
 
   function getRandom(){
     return Math.floor( Math.random() * option.length)
   }
 
-  function activeMole(){
+  function setActiveMole(){
     rand = getRandom()
     option[rand].classList.add('active')
     setTimeout(() => {
@@ -17,30 +31,45 @@ document.addEventListener('DOMContentLoaded', () => {
     },850)
   }
 
+  function setScore(e){
+    if(parseInt(e.target.id) === rand){
+      userScore++
+      e.target.removeEventListener('click', setScore)
+    }
+    scoredisplay.innerText= `${userScore}`
+  }
+
+  function userClick() {
+    option.forEach(option => {
+      option.addEventListener('click', setScore)
+    })
+  }
+
   function countdown(){
     countDisplay.textContent = count
     count--
   }
 
-  function userClicked(e){
-    if(parseInt(e.target.id) === rand){
-      console.log('well done')
-      userscore++
-      e.target.removeEventListener('click', userClicked)
-    }
-    scoredisplay.innerText= `You Scored: ${userscore}`
-    console.log(`score ${userscore}`)
+  function gameTick() {
+    setActiveMole()
+    userClick()
+    countdown()
   }
 
-  const timerId = setInterval(() => {
-    option.forEach(option => {
-      option.addEventListener('click', userClicked)
-    })
-    activeMole()
-    countdown()
-  }, 1000)
+  function startGame() {
+    return setInterval(gameTick, 1000)
+  }
 
-  setTimeout(() => {
-    clearInterval(timerId)
-  },60000)
+  function stopGameAfter60s(game) {
+    setTimeout(() => {
+      clearInterval(game)
+    }, 6000)
+  }
+
+  button.addEventListener('click', () =>  {
+    resetUserScore()
+    resetTimer()
+    const game = startGame()
+    stopGameAfter60s(game)
+  })
 })
