@@ -11,38 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if(timeRemaining === 0) clearInterval(timerId)
   }, 1000)
 
-  // const timer = document.querySelector('#timer')
-
-
   const timeId = setInterval(() => {
     timeRemaining--
     timerScreen.innerHTML = timeRemaining
-    if(timeRemaining === 0) {
-      clearInterval(timerId)
-    }
+    if(timeRemaining === 0) clearInterval(timeId)
   }, 1000)
 
   console.log(document.querySelector('div.screen'))
 
 })
-// const timer = document.querySelector('#timer')
-// const timerScreen = document.querySelector('#timer .screen')
-//
-//
-// const timeId = setInterval(() => {
-//   timeRemaining--
-//   timerScreen.innerHTML = timeRemaining
-//
-//   function decrementTimer() {
-//     const timerId = setInterval(() => {
-//       timer--
-//       timerScreen.innerHTML = timer
-//       if (timer ===0){
-//         clearInterval(randomMoleTimer)
-//         clearInterval(timerId)
-//       }
-//     },1000)
-//
-//     decrementTimer()
-//   // }
-// })
