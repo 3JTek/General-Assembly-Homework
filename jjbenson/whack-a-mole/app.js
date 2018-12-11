@@ -1,30 +1,11 @@
 document.addEventListener('DOMContentLoaded',() => init())
-//
-// class gameBoard{
-//   constructor(){
-//
-//
-//     this.render()
-//   }
-//   render(){
-//
-//     this.gameBoard = document.createElement(div)
-//     this.gameBoard
-//
-//       this.init()
-//   }
-//   init(){
-//
-//
-//   }
-// }
 
 let moleArray =[]
-let randomMole
+// let randomMole
 let score
 let timer
 let timerId
-let timerArray = []
+const timerArray = []
 let showMoleTimer
 let hideMoleTimer
 let scoreBox = ''
@@ -43,13 +24,14 @@ let molesX = 2
 let molesY = 2
 let moleShowTime = 750
 let moleHideTime = 1000
-let maxMoles = 2
+let maxMoles = 1
 
 function init () {
 
-  reset()
+  //variables
 
-  // moleArray = document.querySelectorAll('div.mole')
+
+  //GET DOM ELEMENTS
   scoreBox = document.querySelector('#score')
   timerScreen = document.querySelector('#timer')
 
@@ -68,18 +50,19 @@ function init () {
   timerArray.forEach((elem)=>{
     clearInterval(elem)
   })
-  // clearInterval(showMoleTimer)
-  // clearInterval(hideMoleTimer)
-  clearInterval(timerId)
-  scoreBox.innerHTML = score
 
 
+  //Reset variables
+  reset()
+
+  //RENDER
   removeGameBoard()
 
   makeMoles(molesX,molesY)
 
+
+  //EVENT LISTENERS
   startButton.addEventListener('click',startClick)
-  // })
 
   playAgainButton.addEventListener('click',playAgainClick)
   increaseMolesButton.addEventListener('click',increaseTheMoles)
@@ -132,12 +115,13 @@ function playAgainClick(){
   startGame()
 }
 function startClick(){
-  // reset()
   startGame()
 }
 function reset(){
   score = 0
+  scoreBox.innerHTML = score
   timer = 10
+  timerScreen.innerHTML = timer
   score = 0
   moleArray = []
 
@@ -168,7 +152,6 @@ function hideSplash(){
 
 function showGameOver(){
   gameOver.style.display = 'flex'
-  // gameBoard.style.display = 'none'
   gameOverScore.innerText = score
 }
 function hideGameOver(){
@@ -190,7 +173,7 @@ function startGame(){
   hideGameOver()
   showGameBoard()
   for(let i=0;i<maxMoles;i++){
-      showMole()
+    showMole()
   }
 
   decrementTimer()
@@ -198,12 +181,9 @@ function startGame(){
 
 
 function showMole(){
-  console.log("showMole")
   const randomNumber = Math.floor(Math.random()*(moleArray.length-1))
- const randomTime = Math.floor(Math.random()*moleShowTime)+moleShowTime/2
-  // console.log(randomNumber,moleArray)
+  const randomTime = Math.floor(Math.random()*moleShowTime)+moleShowTime/2
   const mole = moleArray[randomNumber]
-  // console.log(mole)
 
   mole.classList.add('show')
 
@@ -229,12 +209,11 @@ function decrementTimer() {
       timerArray.forEach((elem)=>{
         clearInterval(elem)
       })
-      // clearInterval(showMoleTimer)
-      // clearInterval(hideMoleTimer)
       clearInterval(timerId)
       hideGameBoard()
       showGameOver()
     }
   },1000)
+
 
 }
