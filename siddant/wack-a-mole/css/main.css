@@ -1,0 +1,14 @@
+.moleholder{
+  background-color: red;
+  height: 200px;
+  width: 30%;
+  margin-left:  10px;
+  margin-bottom:  10px
+
+}
+
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
