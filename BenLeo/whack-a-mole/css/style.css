@@ -12,7 +12,18 @@ body {
   height: 50px;
 }
 
+.countdown {
+  border: 2px solid black;
+  width: 100px;
+  height: 50px;
+}
+
 main {
+  display: flex;
+  justify-content: center;
+}
+
+header {
   display: flex;
   justify-content: center;
 }
@@ -26,7 +37,7 @@ main {
 
 .gameboard {
   width: 600px;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
 }
 
@@ -34,4 +45,9 @@ main {
   border: 1px solid #ccc;
   height: 200px;
   width: 200px;
+}
+
+.endGame {
+  display: none;
+  border: 2px solid black
 }

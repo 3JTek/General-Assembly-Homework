@@ -13,10 +13,15 @@
     </div>
     <h1>Whack-a-Mole</h1>
     <div class="countdown">
-
+      <span id="timer">00</span>
     </div>
   </header>
   <main>
+    <div class="startGame">
+      <p>Welcome to Whack-A-Mole</p>
+      <p>Click on as many moles as you can in the time limit!</p>
+      <button>Play</button>
+    </div>
     <div class="gameboard">
 
       <div class="passive" id="0">
@@ -46,6 +51,11 @@
       <div class="passive" id="8">
 
       </div>
+    </div>
+    <div class="endGame">
+      <p>Time is Up!</p>
+      <p> You scored <span id='finalScore'></span></p>
+      <button>Play again</button>
     </div>
 
   </main>
