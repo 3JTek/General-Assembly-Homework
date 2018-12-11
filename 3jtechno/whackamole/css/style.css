@@ -17,14 +17,21 @@
   flex-wrap: wrap;
   height: 550px;
 }
-.game-buttons {
+.game-buttons-12 {
   border: 2px solid grey;
   width: 25%;
-  height: 33%;
   background-size: cover;
 }
 .game-buttons-24{
   width: calc(25% /2);
+  border: 2px solid grey;
+  background-size: cover;
+}
+.game-over-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 .hidden {
   display: none;
