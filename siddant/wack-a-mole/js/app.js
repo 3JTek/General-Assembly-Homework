@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.floor( Math.random() * option.length)
   }
   getRandom()
-
-  console.log(option[getRandom()])
+  option[getRandom()].classList.add('active')
+  //console.log(option[getRandom()])
 
 })
