@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const inviteSection = document.querySelector('.invite')
   const statusBar = document.querySelector('.statusBar')
   const gameSection = document.querySelector('.game')
+  const title = document.querySelector('h1')
+  const subtitle = document.querySelector('h2')
+
 
   let rand
   let userScore
@@ -31,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     option[rand].classList.add('active')
     setTimeout(() => {
       option[rand].classList.remove('active')
-    },850)
+    }, 750)
   }
 
   function setScore(e){
@@ -59,22 +62,36 @@ document.addEventListener('DOMContentLoaded', () => {
     countdown()
   }
 
+  function showGameBoard() {
+    inviteSection.classList.add('hidden')
+    statusBar.classList.remove('hidden')
+    gameSection.classList.remove('hidden')
+  }
+
+
+  function showScoreBoard() {
+    statusBar.classList.add('hidden')
+    gameSection.classList.add('hidden')
+    inviteSection.classList.remove('hidden')
+    title.innerText = `Your score is ${userScore}`
+    subtitle.innerText = 'Do you want to replay'
+  }
+
   function startGame() {
+    showGameBoard()
+    resetUserScore()
+    resetTimer()
     return setInterval(gameTick, 1000)
   }
 
   function stopGameAfter60s(game) {
     setTimeout(() => {
       clearInterval(game)
+      showScoreBoard()
     }, 60000)
   }
 
   button.addEventListener('click', () =>  {
-    inviteSection.classList.add('hidden')
-    statusBar.classList.remove('hidden')
-    gameSection.classList.remove('hidden')
-    resetUserScore()
-    resetTimer()
     const game = startGame()
     stopGameAfter60s(game)
   })
