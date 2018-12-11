@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameDiv = document.querySelector('.game')
   const gameOverDiv = document.querySelector('.game-over')
   const playAgainBtn = document.querySelector('.play-again')
+  const difficulty = document.querySelector('select')
   let score = 0
-  let timeRemaining = 10
+  let timeRemaining
+  let speed
 
   function hide(win = true) {
     btn.forEach(button => {
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function countDown() {
-    timer.textContent = timeRemaining
+    timer.textContent = `${timeRemaining} days until Brexit`
     timeRemaining--
     if (timeRemaining >= 0) {
       setTimeout(countDown, 1000)
@@ -34,19 +36,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  setInterval(() => {
-    hide(false)
-    const choices = Math.floor(Math.random() * 12)
-    btn[choices].style.backgroundImage = 'url("https://i.pinimg.com/736x/de/5f/7b/de5f7b027fd2e73634898b40b6b8cc13--flower-beard-time-magazine.jpg")'
-    btn[choices].removeAttribute('disabled')
-  }, 1500)
+  function startGame() {
+    setInterval(() => {
+      hide(false)
+      const choices = Math.floor(Math.random() * 12)
+      btn[choices].style.backgroundImage = 'url("http://www.stickpng.com/assets/images/584be1992623fb7bc0d058ae.png")'
+      btn[choices].removeAttribute('disabled')
+    }, speed)
+  }
+
 
   function init() {
+    switch (difficulty.value) {
+      case '1':
+        speed = 1200
+        break
+      case '2':
+        speed = 900
+        break
+      case '3':
+        speed = 650
+        break
+    }
     welcomeDiv.classList.toggle('hidden')
     gameDiv.classList.toggle('hidden')
     score = 0
-    timeRemaining = 10
+    scoreDisplay.textContent = `Article ${score}`
+    timeRemaining = 60
     countDown()
+    startGame()
+  }
+
+  function restart() {
+    welcomeDiv.classList.toggle('hidden')
+    gameOverDiv.classList.toggle('hidden')
   }
 
   btn.forEach(button => {
@@ -54,4 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   startBtn.addEventListener('click', init)
+
+  playAgainBtn.addEventListener('click', restart)
 })

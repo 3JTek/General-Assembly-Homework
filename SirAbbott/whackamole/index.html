@@ -5,14 +5,28 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="./css/style.css">
   <script src="app.js" charset="utf-8"></script>
-  <title>Whack a mole</title>
+  <title>Whack a May</title>
 </head>
 
 <body>
   <main>
     <div class="welcome">
-      <h1> Welcome to Whack-A-Fill!!!</h1>
-      <button class="start-button">Start</button>
+      <div class="welcome-content">
+        <h1> Welcome to Whack-A-May</h1>
+        <h2>Get to Article 50 to stop her!!</h2>
+        <p>Please Select your Brexit</p>
+        <div>
+          <select default=1 class="choose-difficulty" name="difficulty">
+            <option selected="selected" disabled value="">Select Difficulty</option>
+            <option value="1">Soft Brexit</option>
+            <option value="2">WTF is Brexit</option>
+            <option value="3">Hard Brexit</option>
+          </select>
+        </div>
+        <div>
+          <button class="start-button">Start</button>
+        </div>
+      </div>
     </div>
     <div class="game hidden">
       <div class="score">
@@ -23,6 +37,7 @@
       </div>
 
       <div class="container">
+
         <button class="game-buttons" disabled type="button" name="button"></button>
         <button class="game-buttons" disabled type="button" name="button"></button>
         <button class="game-buttons" disabled type="button" name="button"></button>
@@ -35,11 +50,16 @@
         <button class="game-buttons" disabled type="button" name="button"></button>
         <button class="game-buttons" disabled type="button" name="button"></button>
         <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+
       </div>
     </div>
 
     <div class="game-over hidden">
-      <button class="play-again">Play Again?</button>
+      <h1> WE LOST, SHE WON.</h1>
+      <button class="play-again">Try again</button>
     </div>
   </main>
 </body>
