@@ -1,18 +1,24 @@
+.gameboard, .gamestart{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .moleholder{
   height: 200px;
   width: 30%;
   margin-left:  10px;
-  margin-bottom:  10px
+  margin-bottom:  10px;
+  background-color: red;
 }
 
-.active{
+ .active{
   background-image: url("../image/mole.jpg");
   background-repeat: no-repeat;
   background-size : contain;
   background-position: center;
 }
 
-#countDisplay{
+ #countDisplay{
   display: inline-block;
 }
 .wrapper{
@@ -23,4 +29,10 @@
 .gameDisplay {
   display: flex;
   justify-content: space-around;
+}
+
+.gameboard{
+  display: flex;
+  background-color: blue;
+
 }

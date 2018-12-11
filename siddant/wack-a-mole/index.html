@@ -8,31 +8,54 @@
   </head>
   <body>
     <main>
-      <section class='gameDisplay'>
-        <p id="score">You Scored:</p>
-        <p>Time Remaining: <span id="countDisplay">60</span></p>
-        <button id='restartGame'> reset</button>
-      </section>
       <section class="wrapper">
-        <div class="moleholder" id="0">
-        </div>
-        <div class="moleholder" id="1">
-        </div>
-        <div class="moleholder" id="2">
-        </div>
-        <div class="moleholder" id="3">
-        </div>
-        <div class="moleholder" id="4">
-        </div>
-        <div class="moleholder" id="5">
-        </div>
-        <div class="moleholder" id="6">
-        </div>
-        <div class="moleholder" id="7">
-        </div>
-        <div class="moleholder" id="8">
+        <div class="gamestart" >
+          <div>
+            <h1>Whack a mole</h1>
+            <button id='gameStart'> play</button>
+          </div>
         </div>
       </section>
+
+
+      <section class="wrapper">
+        <div class="gameboard" >
+          <p>You Scored:<span  id="score"></span></p>
+          <p>Time Remaining: <span id="countDisplay">60</span></p>
+          <button id='restartGame'> reset</button>
+          <div class="moleholder" id="0">
+          </div>
+          <div class="moleholder" id="1">
+          </div>
+          <div class="moleholder" id="2">
+          </div>
+          <div class="moleholder" id="3">
+          </div>
+          <div class="moleholder" id="4">
+          </div>
+          <div class="moleholder" id="5">
+          </div>
+          <div class="moleholder" id="6">
+          </div>
+          <div class="moleholder" id="7">
+          </div>
+          <div class="moleholder" id="8">
+          </div>
+        </div>
+      </section>
+
+
+            <section class="wrapper">
+              <div class="gameresult" >
+                <div>
+                  <p>You Scored:<span  id="score"></span></p>
+                  <p>Time Remaining: <span id="countDisplay">60</span></p>
+                </div>
+              </div>
+            </section>
+
+
+
     </main>
   </body>
 </html>

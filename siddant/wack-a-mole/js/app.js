@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoredisplay = document.querySelector('#score')
   const countDisplay = document.querySelector('#countDisplay')
   const gamePlayagain = document.querySelector('#restartGame')
+  const gameStart = document.querySelector('#gameStart')
+
+  const gameStartBord = document.querySelector('.gamestart')
+  const gameBoard = document.querySelector('.gameboard')
 
   let rand =0, userscore=0, count =59
 
@@ -15,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     option[rand].classList.add('active')
     setTimeout(() => {
       option[rand].classList.remove('active')
-    },850)
+    },750)
   }
 
   function countdown(){
@@ -29,18 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
       userscore++
       e.target.removeEventListener('click', userClicked)
     }
-    scoredisplay.innerText= `You Scored: ${userscore}`
-    console.log(`score ${userscore}`)
+    scoredisplay.innerText= `${userscore}`
   }
 
   function gameRestart(){
     count =59
     userscore=0
+    scoredisplay.innerText= `${userscore}`
     init()
   }
 
   function init(){
-
+    gameStartBord.style.display='none'
+    gameStart.style.display='none'
+    gamePlayagain.style.display='none'
+    gameBoard.style.display='flex'
     const timerId = setInterval(() => {
       option.forEach(option => {
         option.addEventListener('click', userClicked)
@@ -52,11 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       clearInterval(timerId)
       gamePlayagain.style.display=''
+      gameBoard.style.display='none'
+
     },60000)
   }
 
 
   gamePlayagain.style.display='none'
+  console.log(gameBoard)
+  gameBoard.style.display='none'
   gamePlayagain.addEventListener('click', gameRestart)
-  init()
+  gameStart.addEventListener('click', init)
+
+
 })
