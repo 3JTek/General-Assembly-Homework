@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="app.js" charset="utf-8"></script>
+  <title>Whack a mole</title>
+</head>
+
+<body>
+  <main>
+    <div class="welcome">
+      <h1> Welcome to Whack-A-Fill!!!</h1>
+      <p>Select your difficulty</p>
+      <select default=0 class="" name="">
+        <option selected="selected" disabled value="">Select Difficulty</option>
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+      </select>
+      <button class="start-button">Start</button>
+    </div>
+    <div class="game hidden">
+      <div class="score">
+        Score
+      </div>
+      <div class="timer">
+        Timer
+      </div>
+
+      <div class="container">
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+      </div>
+    </div>
+
+    <div class="game-over hidden">
+      <button class="play-again">Play Again?</button>
+    </div>
+  </main>
+</body>
+
+</html>
