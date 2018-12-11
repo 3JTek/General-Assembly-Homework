@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   //RANDOM NUMBER GENERATOR
-  let rng
+  let rng = 0
   let playerScore = 0
   let timer = 10
 
@@ -32,39 +32,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const endGame = function() {
+    clearInterval(timerStart)
     gameboard.style.display = 'none'
     endGameSplash.style.display = 'block'
+    timer = 10
+    playerScore = 0
   }
 
-  const timerStart = function(){
+  // const timerStart = function(){
+  //   timerDisplay.textContent = timer
+  //   timer --
+  //   if(timer >= 0) {
+  //     setTimeout(() => {
+  //       clearInterval()
+  //     }, 1000)
+  //   }
+  //   if(timer===0) {
+  //     endGame()
+  //     console.log('End of Game')
+  //   }
+  // }
+
+  const timerLogic = function() {
     timerDisplay.textContent = timer
-    timer --
-    if(timer >= 0) {
-      setTimeout(() => {
-        timerStart()
-      }, 1000)
-    }
-    if(timer===0) {
+    if(timer > 0) {
+      timer --
+    } else if (timer === 0) {
       endGame()
       console.log('End of Game')
     }
   }
 
-  const init = function() {
+  const timerStart = setInterval(timerLogic, 1000)
+
+  const moleLogic = function () {
     addMole()
-    timerStart()
+    setInterval(() => {
+      removeMole()
+      addMole()
+    }, 1000)
+  }
+
+  const init = function() {
+    moleLogic()
+    timerStart
     gameboard.style.display = 'flex'
     startGameSplash.style.display = 'none'
     endGameSplash.style.display = 'none'
   }
-
-  //PROBABLY WRAP THIS IN ANOTHER FUNCTION
-
-  setInterval(() => {
-    removeMole()
-    addMole()
-  }, 1000)
-
   //LISTENERS
   passiveDivs.forEach((div) => div.addEventListener('click', iterateScore))
   buttons.forEach(button => button.addEventListener('click', init))
