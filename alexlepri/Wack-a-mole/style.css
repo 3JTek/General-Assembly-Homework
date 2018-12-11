@@ -2,21 +2,137 @@
   /* border: 1px solid black; */
   box-sizing: border-box;
 }
-
-.game {
-
-  display: flex;
+ .game {
+   display: flex;
   /* border: 1px solid black; */
   flex-wrap: wrap;
   height: 80vh;
   width: 80vh;
 }
-
-.game div {
+ .game div {
   width: calc(100%/4);
+  border: 1px solid black;
+}
+ .mole {
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/28/animal-158236__340.png");
+  background-size: contain;
 }
 
-.mole {
-  background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/28/animal-158236__340.png");
-  background-size: cover;
+#countdown .screen {
+  border: 3px solid black;
+  float: right;
+  width: 25px;
+  height: 25px;
+  padding: 100px;
 }
+
+.screen {
+ width: 154px;
+ height: 42px;
+ background-color: #444;
+ background-image: linear-gradient(300deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.5) 10%, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+ border-radius: 4px;
+ margin: auto;
+ position: relative;
+ top: 75px;
+ text-align: right;
+ font-family: 'PT Mono', monospace;
+ color: #fff;
+ line-height: 42px;
+ font-size: 32px;
+ padding: 5px 8px;
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=PT+Mono);
+
+#timer, #watch {
+ background-color: #333;
+ border-radius: 200px;
+ height: 200px;
+ width: 200px;
+ position: relative;
+ margin: 30px auto;
+ margin-top: -400px;
+
+}
+
+#timer button, #watch button {
+ width: 30px;
+ height: 15px;
+ border: none;
+ position: absolute;
+ top: 5px;
+ cursor: pointer;
+ outline: none;
+}
+
+#watch button {
+ width: 15px;
+ height: 30px;
+ right: -13px;
+ top: 86px;
+}
+
+#watch button:active {
+ width: 5px;
+ right: -10px;
+}
+
+#timer button:active {
+ top: 9px;
+ height: 12px;
+}
+
+#startStop {
+ background-color: black;
+ transform: rotate(-35deg);
+ left: 25px;
+}
+
+#startStop:active {
+ left: 27px;
+ cursor:pointer;
+}
+
+.screen {
+ width: 154px;
+ height: 42px;
+ background-color: #444;
+ background-image: linear-gradient(300deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.5) 10%, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+ border-radius: 4px;
+ margin: auto;
+ position: relative;
+ top: 75px;
+ text-align: right;
+ font-family: 'PT Mono', monospace;
+ color: #fff;
+ line-height: 42px;
+ font-size: 32px;
+ padding: 5px 8px;
+}
+
+#timer .screen {
+ text-align: center;
+}
+
+#timer.ringing {
+ animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+ 10%, 90% {
+   transform: translateX(-1px);
+ }
+
+ 20%, 80% {
+   transform: translateX(2px);
+ }
+
+ 30%, 50%, 70% {
+   transform: translateX(-4px);
+ }
+
+ 40%, 60% {
+   transform: translateX(4px);
+ }
+} */
