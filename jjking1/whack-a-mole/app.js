@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const option = document.querySelectorAll('.moleholder')
-  const scoredisplay = document.querySelector('#score')
+  const scoreDisplay = document.querySelector('#score')
   const countDisplay = document.querySelector('#countDisplay')
+  const startBtn = document.querySelector('#start-button')
+
 
   let rand =0, userscore=0, count =59
 
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     option[rand].classList.add('active')
     setTimeout(() => {
       option[rand].classList.remove('active')
-    },850)
+    },750)
   }
 
   function countdown(){
@@ -24,24 +26,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function userClicked(e){
     if(parseInt(e.target.id) === rand){
-      console.log('well done')
       userscore++
       e.target.removeEventListener('click', userClicked)
     }
-    scoredisplay.innerText= `You Scored: ${userscore}`
-    console.log(`score ${userscore}`)
+    scoreDisplay.innerText= userscore
   }
 
+  function resetScoreAndTimer(){
+    count = 59
+    countDisplay.textContent = 60
+    userscore = 0
+    scoreDisplay.textContent = 0
+  }
 
-  const timerId = setInterval(() => {
-    option.forEach(option => {
-      option.addEventListener('click', userClicked)
-    })
-    activeMole()
-    countdown()
-  }, 1000)
+  function init(){
+    resetScoreAndTimer()
+    const timerId = setInterval(() => {
+      option.forEach(option => {
+        option.addEventListener('click', userClicked)
+      })
+      activeMole()
+      countdown()
+    }, 1000)
 
-  setTimeout(() => {
-    clearInterval(timerId)
-  },60000)
+    setTimeout(() => {
+      clearInterval(timerId)
+      startBtn.style.display='inline'
+    },60000)
+
+  }
+
+  startBtn.addEventListener('click', () => {
+    init()
+    startBtn.style.display='none'
+
+
+  })
 })
