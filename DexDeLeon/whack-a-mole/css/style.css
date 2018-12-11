@@ -1,9 +1,16 @@
 * {
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
-  background-color: #3F69AA;
+  background-image: url('https://get.pxhere.com/photo/grass-plant-field-lawn-meadow-leaf-flower-land-summer-moss-green-pasture-soil-turf-grassland-vegetation-shrub-yard-grass-land-green-grass-flowering-plant-grass-field-grass-family-land-plant-1173902.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: top;
+  margin: 0;
+  font-family: Courier, monospace;
 }
 
 .start {
@@ -20,12 +27,21 @@ body {
 }
 
 .start button {
+  background: #8c1823;
+  color: #ff0;
+  border-radius: 10px;
   height: 100px;
+  width: 300px;
+  font-size: 2em;
+  font-family: inherit;
+  font-weight: 800;
 }
 
 
 header {
   height: 100px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
   display: flex;
 }
 
@@ -33,8 +49,6 @@ header div {
   height: 100%;
   width: 50%;
   font-size: 30px;
-  color: white;
-  font-family: Courier, monospace;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,4 +75,15 @@ header div {
 .finalScore {
   font-size: 3em;
   color: white;
+}
+
+@media only screen and (max-width: 600px){
+  header{
+    flex-direction: column-reverse;
+  }
+
+  header div {
+    width: 100%;
+    font-size: 2em;
+  }
 }
