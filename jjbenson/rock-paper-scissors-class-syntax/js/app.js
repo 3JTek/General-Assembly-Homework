@@ -202,9 +202,9 @@ const palette2 = {
   background:'#B24347',
   primary:'#121212',
   secondary:'#FFFD92',
-  win:'#FF797E',
-  lose:'#0082CC',
-  tie:'#4C8DB2',
+  win:'#0082CC',
+  lose:'#FF797E',
+  tie:'#4C8DB2 ',
   default:'grey'
 }
 
