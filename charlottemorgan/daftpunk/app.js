@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('js loaded')
-  //find the squares that in the grid
+  //find the squares that are in the grid. We do this by using a querySelectorAll to find all the buttons in the HMTL
   const buttons = document.querySelectorAll('button')
   // play the sound with the corresponding id.
   // This function finds the audio tag in the html and then gives the audio source to the button using its id. First we are creating a variable 'song' to find the tag in the html using the querySelector. Then we are telling it the source using the id which matches the song name in the html which is where we use the target. Then we are telling it to play the song

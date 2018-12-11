@@ -44,26 +44,42 @@ function orderStringAlphabetically(string) {
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
 
-  //string lowercase remove spaces and create an array of letters
-  const array = string.toLowerCase().split(' ').join('').split('')
 
-  //empty object to store into later
-  const object = {}
 
-  //for every letter in the array...
-  for(const i in array){
+  const occurancesObj={}
+  const array = string.toLowerCase().replace(/ /g,'').split('').forEach(letter =>{
+    if(occurancesObj[letter]){
+      occurancesObj[letter] += 1
+    }else{
+      occurancesObj[letter] = 1
+    }
+  })
+  return occurancesObj
 
-    //remove  any letters that match this letter
-    const result = array.filter(char => char !== array[i])
 
-    // work out how many were removed
-    const count = array.length - result.length
 
-    //create a property of this letter and store how many of it there were
-    object[array[i]]=count
-  }
-
-  return object
+  // //string lowercase remove spaces and create an array of letters
+  // const array = string.toLowerCase().split(' ').join('').split('')
+  //
+  // //empty object to store into later
+  // const object = {}
+  //
+  // //for every letter in the array...
+  // for(const i in array){
+  //
+  //   //!!WRONGremove any letters that match this letter!!
+  //   //Result Array is array without char
+  //   //Original array is not changed
+  //   const result = array.filter(char => char !== array[i])
+  //
+  //   // work out how many were removed
+  //   const count = array.length - result.length
+  //
+  //   //create a property of this letter and store how many of it there were
+  //   object[array[i]]=count
+  // }
+  //
+  // return object
 }
 
 // write a function that capitalizes the first letter of each word

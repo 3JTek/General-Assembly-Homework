@@ -3,13 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const message = document.getElementById('message'),
     gameBoard = document.getElementById('gameBoard'),
     reset = document.createElement('button'),
-    reloadPage = () => window.location.reload(),
     playerAction = document.querySelector('h3.player.choiceLabel'),
     playerChoice = document.querySelector('div.player.choice img'),
     computerAction = document.querySelector('h3.computer.choiceLabel'),
     computerChoice = document.querySelector('div.computer.choice img'),
     actionMessage = document.querySelector('#actionMessage'),
     sprEf = '\nIt\'s super effective!',
+
+    reloadPage = () => {
+      playerAction.innerText = ''
+      playerChoice.style.display = 'none'
+      computerAction.innerText = ''
+      computerChoice.style.display = 'none'
+      actionMessage.innerText = ''
+      message.innerText = 'Click on a button to begin!'
+    },
 
     check = function(choice1, choice2){
       return choice1.beats.includes(choice2.name)
