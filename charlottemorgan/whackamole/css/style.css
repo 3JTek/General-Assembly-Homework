@@ -6,7 +6,7 @@ body {
 .welcome {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   height: 50vh;
   width: 50vh;
   margin: auto;
@@ -18,8 +18,10 @@ body {
 }
 
 .img {
-  margin-top: 50px;
+margin-top: 50px;
 text-align: center;
+
+
 }
 
 .container {
@@ -27,7 +29,7 @@ text-align: center;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 70vh;
 }
 
 .game-buttons {
@@ -47,7 +49,60 @@ text-align: center;
 
 .score {
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: 70px;
   color: #F1FF30;
   font-weight: bolder;
+}
+.timer {
+  font-family: sans-serif;
+  font-size: 100px;
+  color: #F1FF30;
+  font-weight: bolder;
+  text-align: right;
+}
+
+.drop-down {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 30px;
+}
+p {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.start-button {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+option {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.play-again{
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 60px;
+  margin:auto;
+  width: 50vh;
+  height: 50vh;
+  background-image: url('https://o.aolcdn.com/images/dims?quality=85&image_uri=http%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Fb386937631a1f03665c1d57289070898%2F203417456%2Fsimpsons.jpg&client=amp-blogside-v2&signature=3f1dc8adaa673efd190ae6f6b19a916b2d84ed7c');
+  /* background-repeat: no-repeat; */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.game-over {
+  width: 50vh;
+  height: 50vh;
 }

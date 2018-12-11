@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     if (win) {
       score++
-      scoreDisplay.textContent = `Your score is ${score}`
+      scoreDisplay.textContent = `SCORE ${score}`
     }
   }
 
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomeDiv.classList.toggle('hidden')
     gameDiv.classList.toggle('hidden')
     score = 0
-    scoreDisplay.textContent = `CURRENT SCORE ${score}`
-    timeRemaining = 100
+    scoreDisplay.textContent = `SCORE ${score}`
+    timeRemaining = 10
     countDown()
     startGame()
   }
