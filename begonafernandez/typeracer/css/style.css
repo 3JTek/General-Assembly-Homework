@@ -1,0 +1,10 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-example {
+  width: 400px;
+  height: 200px;
+  border: 1px solid black;
+}
