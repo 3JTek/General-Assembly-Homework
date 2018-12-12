@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./js/data.js" charset="utf-8"></script>
-    <script src="./js/app.js" charset="utf-8"></script>
-    <title>Typeracer</title>
-  </head>
-  <body>
-    <main>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/data.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+  <title>Typeracer</title>
+</head>
+<body>
+  <header>
+    <h1>Literary TypeRace</h1>
+  </header>
+  <main>
+    <section class='scoreBoard'>
       <div class="word-count">
-
+        <p>Words: <span>0</span></p>
       </div>
       <div class="wpm-display">
-
+        <p><span>0</span> WPM</p>
       </div>
+    </section>
+    <section class="game">
       <div class="text-example">=
       </div>
       <div>
-        <textarea autofocus name="name" rows="8" cols="80"></textarea>
+        <textarea autofocus placeholder="Please type here"name="name" rows="8" cols="80"></textarea>
       </div>
-    </main>
-  </body>
+    </section>
+  </main>
+</body>
 </html>
