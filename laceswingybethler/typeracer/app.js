@@ -7,25 +7,34 @@ $(() =>  {
   const $wpm = $('.wpm')
   const $resetBtn =$('.resetBtn')
 
+  let firstTime = true
+
   playGame()
   function playGame(){
+
     let wordCount = 0
     let i = 0
     const textSamples = samples[Math.floor(Math.random() * samples.length)]
     $text.text(textSamples)
-
+    console.log('playGame called with i = ' + i)
     //add event listener for key up, only type if input matches text
-    $input.on('keydown', (e) => {
-      if(i === 1) startTimer()
-      if(e.key === textSamples.charAt(i)) {
-        i++
-        wordCounter(e)
-        $wordcount.text(`Your word count is ${wordCount}`)
-        calculateWpm()
-      } else {
-        e.preventDefault()
-      }
-    })
+    if (firstTime){
+      firstTime = false
+      $input.on('keydown', (e) => {
+        console.log(i)
+        if(i === 1) startTimer()
+        if(e.key === textSamples.charAt(i)) {
+          console.log('good work!')
+          i++
+          wordCounter(e)
+          $wordcount.text(`Your word count is ${wordCount}`)
+          calculateWpm()
+        } else {
+          console.log('wrong!')
+          e.preventDefault()
+        }
+      })
+    }
 
     function wordCounter(e) {
       if(e.key === ' ') wordCount++
@@ -49,7 +58,7 @@ $(() =>  {
     function startTimer(){
       const timerId = setInterval(() => {
         timePassed++
-        console.log(timePassed)
+        // console.log(timePassed)
       }, 1000)
     }
   }
