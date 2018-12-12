@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded',() => init())
 
 function init () {
-
   //Get array of the buttons
   const moleArray = document.querySelectorAll('div.mole')
+  const startButton = document.querySelectorAll('button#start')
+  const finished = document.querySelector('.finished')
+  console.log(startButton)
+
   let randomMole
   let score = 0
   let timer = 60
@@ -11,7 +14,7 @@ function init () {
 
   const scoreBox = document.querySelector('#score')
   const timerScreen = document.querySelector('#timer')
-
+  const userScore =document.querySelector('.user-score')
 
   function loop(){
     if(randomMole !== undefined)randomMole.classList.remove('show')
@@ -22,7 +25,6 @@ function init () {
     randomMole.classList.add('show')
     randomMoleTimer =  setTimeout(loop,randomTime)
   }
-
 
   loop()
 
@@ -42,12 +44,18 @@ function init () {
       if (timer ===0){
         clearInterval(randomMoleTimer)
         clearInterval(timerId)
+        gameOver()
       }
     },1000)
   }
 
   decrementTimer()
 
-
+  function gameOver () {
+    // score = 0
+    // scoreBox.innerHTML = score
+    userScore.innerHTML = score
+    finished.style.display = 'flex'
+  }
 
 }
