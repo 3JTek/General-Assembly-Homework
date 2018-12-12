@@ -65,8 +65,8 @@ div.mole {
 
 @media screen and (max-width: 600px) {
   body {
-    background-color: olive; } }
-@media screen and (max-width: 600px) {
+    background-color: olive; }
+
   .container.splash {
     width: 100%;
     height: 100%;
