@@ -1,25 +1,71 @@
-body {
-  font-size: 2em;
+*{
+  box-sizing: border-box;
+  font-family: 'Special Elite', cursive;
 }
+
+body {
+  font-size: 16px;
+  color: #1F2421;
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+  color: #1F2421;
+  font-size: 60px;
+}
+
+header>div{
+  text-align: center;
+  background-color: #1F2421;
+  color: white;
+  font-family: serif;
+}
+p{
+  font-size: 25px;
+}
+
+.score{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
 main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  max-width: 700px;
+  margin: auto;
+  height: 500px;
+}
 
+.sample-text-box{
+  padding: 30px;
+  text-align: center;
 }
 
 textarea{
   font-size: 1em;
   width:100%;
-
+  height: 100px;
 }
 
 .win {
-  background-color: green;
+  background-color: #56a84f;
 }
 
 .lose{
-  background-color: red;
+  background-color: #c9613e;
+  color: white;
+}
 
+button{
+  width: 100px;
+  height: 50px;
+  background-color: #1F2421;
+  border: none;
+  color: white;
+  font-size: 16px;
 }

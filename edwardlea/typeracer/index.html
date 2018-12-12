@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Typo-Racer</title>
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="data.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
@@ -10,24 +11,30 @@
 </head>
 <body>
   <header>
-    <div class="word-count-box">
-      0
+    <h1>Typo-Racer</h1>
+    <div class="score">
+      <div>
+        <p>Word Count</p>
+        <p class="word-count-box"></p>
+      </div>
+      <div>
+        <p>Words per Minute</p>
+        <p class="wpm-box"></p>
+      </div>
+      <div>
+        <p>Time Remaining</p>
+        <p class="count-down"></p>
+      </div>
     </div>
-    <div class="wpm-box">
-      0
-    </div>
-    <div class="count-down">
-
-    </div>
-
   </header>
   <main>
-    <textarea class="sample-text-box" readonly>
-      Sample Text
-    </textarea>
-    <textarea class="input-text-box" autofocus></textarea>
-    <button class='reset-button'>Reset</button>
+    <div class="sample-text-box" readonly>
+      Welcome to typo-racer!<br>
+      Type the text correctly before the timer runs out!<br>
+      Press play to begin!!!
+    </div>
+    <textarea class="input-text-box"></textarea>
+    <button class='play-button' autofocus>Play</button>
   </main>
-
 </body>
 </html>
