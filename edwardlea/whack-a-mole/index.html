@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Whack-A-Mole</title>
+  <script src="app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="score">
+      <p>Score</p>
+      <span id="playerScore"></span>
+    </div>
+    <h1>Whack-a-Mole</h1>
+    <div class="countdown">
+      <p>Time</p>
+      <span id="timer"></span>
+    </div>
+  </header>
+  <main>
+    <div class="startGame">
+      <p>Welcome to Whack-A-Mole</p>
+      <p>Click on as many moles as you can in the time limit!</p>
+      <button>Play</button>
+    </div>
+    <div class="gameboard">
+
+      <div class="passive" id="0">
+
+      </div>
+      <div class="passive" id="1">
+
+      </div>
+      <div class="passive" id="2">
+
+      </div>
+      <div class="passive" id="3">
+
+      </div>
+      <div class="passive" id="4">
+
+      </div>
+      <div class="passive" id="5">
+
+      </div>
+      <div class="passive" id="6">
+
+      </div>
+      <div class="passive" id="7">
+
+      </div>
+      <div class="passive" id="8">
+
+      </div>
+    </div>
+    <div class="endGame">
+      <p>Time is Up!</p>
+      <p> You scored <span id='finalScore'></span></p>
+      <button>Play again</button>
+    </div>
+
+  </main>
+</body>
+</html>
