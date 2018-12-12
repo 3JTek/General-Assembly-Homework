@@ -3,7 +3,7 @@ $(() => {
   const $textarea = $('textarea')
   const $wordCount = $('.word-count span')
   const $wpmDisplay = $('.wpm-display span')
-  const $timerDisplay = $('.timer')
+  const $timerDisplay = $('.timer span')
 
   let wordCount = 0
   let i = 0
@@ -18,11 +18,17 @@ $(() => {
 
   function startTimer(){
     if (i === 1) {
-      setInterval(() => {
-        timePassed--
+      return setInterval(() => {
         $timerDisplay.text(timePassed)
+        timePassed--
       },1000)
     }
+  }
+
+  function stopGameAfter60s(game) {
+    setTimeout(() => {
+      clearInterval(game)
+    }, 6000)
   }
 
   function calculateWpm(wordCount){
@@ -51,9 +57,10 @@ $(() => {
 
   function playTypeRacer() {
     $textarea.on('keydown', (e) => {
-      startTimer()
+      const game = startTimer()
       showOnlyCorrectCharacters(e)
       updateScoreBoardOnWordCompletion(e)
+      stopGameAfter60s(game)
     })
   }
 
