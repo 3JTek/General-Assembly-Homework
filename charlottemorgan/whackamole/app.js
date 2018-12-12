@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, speed)
   }
 
-
   function init() {
     switch (difficulty.value) {
       case '1':
@@ -58,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         speed = 500
         break
     }
-    console.log('speed', speed)
+
     welcomeDiv.classList.toggle('hidden')
     gameDiv.classList.toggle('hidden')
     score = 0
     scoreDisplay.textContent = `SCORE ${score}`
-    timeRemaining = 100
+    timeRemaining = 10
     countDown()
     startGame()
   }

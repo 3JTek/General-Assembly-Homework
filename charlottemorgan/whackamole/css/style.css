@@ -6,7 +6,7 @@ body {
 
 .welcome {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-end;
   height: 50vh;
   width: 50vh;
@@ -72,12 +72,14 @@ div.timer {
   font-size: 30px;
 }
 
-p {
+span {
   font-family: sans-serif;
   color: #F1FF30;
   font-weight: bolder;
   font-size: 40px;
   margin: 0;
+  display: block;
+  width: 100%;
 }
 
 .start-button {
