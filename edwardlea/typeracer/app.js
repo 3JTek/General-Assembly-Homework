@@ -3,15 +3,16 @@ $(() => {
   const $sampleTextBox = $('.sample-text-box')
   const $inputTextBox = $('.input-text-box')
   const $wordCountBox = $('.word-count-box')
+  const $resetButton = $('.reset-button')
   const $wpmBox = $('.wpm-box')
   let startTime
-  let index = 0
-  let wordCount = 0
-  const currentSample = samples[Math.floor(Math.random()*samples.length)]
+  let index
+  let wordCount
+  let currentSample
 
 
 
-  $sampleTextBox.text(currentSample)
+
 
   $inputTextBox.on('keydown', e => {
     if(startTime === undefined) startTime = new Date()
@@ -25,6 +26,21 @@ $(() => {
     }
   })
 
+  function init(){
+    index = 0
+    wordCount = 0
+    startTime = undefined
+    currentSample = samples[Math.floor(Math.random()*samples.length)]
+    $sampleTextBox.text(currentSample)
+    $inputTextBox.val('')
+    console.log($inputTextBox)
+
+  }
+
+  $resetButton.on('click', init)
+
+
+
   function incWordCount(e){
     if(e.key === ' '){
       $wordCountBox.text(++wordCount)
@@ -37,6 +53,7 @@ $(() => {
     }
     console.log(wordCount)
   }
+
 
 
 
