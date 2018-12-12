@@ -4,6 +4,8 @@ $(() => {
   const $textbox = $('.textbox')
   const $type = $('.type')
   let i = 0
+  let hitCount = 0
+  const $wordCount = $('.word-count')
   // console.log($randomText)
   // textbox LINK to sample texts array to show
   function getRandom() {
@@ -19,4 +21,23 @@ $(() => {
     if (e.key === textToType.charAt(i)) i++
     else e.preventDefault()
   })
+
+  function hits () {
+    document.body.onkeyup = function(e) {
+      if( e.keyCode === 32 ) {
+        return hitCount++
+      }
+    }
+    }
+$wordCount.text = hitCount
+  console.log(hitCount)
+  // var renderHits = function() {
+  // hitElement.innerHTML = hits;
+  // }
+  //
+  // var resetHits = function() {
+  // hits = 0;
+  // renderHits();
+
+
 })
