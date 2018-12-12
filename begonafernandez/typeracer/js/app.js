@@ -28,7 +28,8 @@ $(() => {
   function stopGameAfter60s(game) {
     setTimeout(() => {
       clearInterval(game)
-    }, 6000)
+      $textarea.prop('disabled', true)
+    }, 60000)
   }
 
   function calculateWpm(wordCount){
