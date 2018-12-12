@@ -1,4 +1,16 @@
+body {
+  font-size: 2em;
+}
 main{
   display: flex;
-  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+textarea{
+  font-size: 1em;
+  width:100%;
+
 }
