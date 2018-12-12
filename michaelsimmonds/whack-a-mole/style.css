@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3F69AA;
+}
+
+.start {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.start button {
+  height: 100px;
+}
+
+
+header {
+  height: 100px;
+  display: flex;
+}
+
+header div {
+  height: 100%;
+  width: 50%;
+  font-size: 30px;
+  color: white;
+  font-family: Courier, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: calc(100%/3);
+  height: 200px;
+}
+
+.cell.mole {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRG-RBbS1j2RfkA8Fgj-t3XTU1oReZaidUxGhOa5LZQ-qr4vl');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.finalScore {
+  font-size: 3em;
+  color: white;
+  font-family: Courier, monospace;
+}
+
+#startBtn {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  border-radius: 50%;
+  font-family: Courier, monospace;
+  font-size: 16px;
+  outline: none;
+}
