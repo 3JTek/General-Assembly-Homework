@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2em;
+  background-image: url("http://www.mardavespares.com/includes/templates/TIC/images/background-blue-curb.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header {
+  font-family: 'Racing Sans One', cursive;
+  color: white;
+}
+
+h1 {
+text-align: center;
+margin: 5px 0;
+}
+
+.game-elements {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gameboard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea{
+  font-family: 'Racing Sans One', cursive;
+  background-color: rgba(255, 255, 255,0.5);
+  text-align: left;
+  font-size: 1em;
+  width: 45%;
+  margin: 25px 15px;
+}
+
+.win {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.lose{
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.play-button {
+  font-size: 1em;
+  font-family: 'Racing Sans One', cursive;
+  color: white;
+  border: 3px solid white;
+  background-color: transparent;
+  padding: 10px;
+}
