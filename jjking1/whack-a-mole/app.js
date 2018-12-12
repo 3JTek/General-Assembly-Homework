@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('#start-button')
   const startDisplay = document.querySelector('.start-game')
   const resultDisplay = document.querySelector('#result-display')
-
-
-
   let rand =0, userScore=0, count =59
   // choosing a random mole
   function getRandom(){
@@ -38,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     scoreDisplay.innerText= userScore
   }
-
   // reset the count and score for new game
   function resetScoreAndTimer(){
     count = 59
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     userScore = 0
     scoreDisplay.textContent = 0
   }
-
   // running the game
   function init(){
     resetScoreAndTimer()
@@ -57,21 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
       activeMole()
       countdown()
     }, 1000)
-
     // ending the game
     setTimeout(() => {
       clearInterval(timerId)
       startDisplay.style.display='flex'
       resultDisplay.innerText = `You scored ${userScore}. Play Again?`
     },60000)
-
   }
-
   // beginning the game
   startBtn.addEventListener('click', () => {
     init()
     startDisplay.style.display='none'
-
-
   })
 })
