@@ -17,6 +17,7 @@
 .mole {
  background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/28/animal-158236__340.png");
  background-size: contain;
+ background-repeat: no-repeat;
 }
 
 /* #countdown .screen {
