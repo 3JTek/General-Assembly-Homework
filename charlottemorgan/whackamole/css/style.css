@@ -1,0 +1,118 @@
+body {
+  background-image: url('https://superawesomevectors.com/wp-content/uploads/2014/03/free-vector-donut-drawing-800x565.jpg');
+  background-repeat: repeat;
+  background-size: 10%;
+}
+
+.welcome {
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-end;
+  height: 50vh;
+  width: 50vh;
+  margin: auto;
+  margin-top: 150px;
+  background-color: blue;
+  background: url('https://media1.giphy.com/media/vdbrUjzrUEGly/giphy.gif?cid=3640f6095c100bb1765572754140d1a9');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.img {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.game-buttons {
+  border: none;
+  background: transparent;
+  width: 25%;
+  height: 33%;
+  background-size: cover;
+}
+.game-buttons-24{
+  width: calc(25% /2);
+}
+
+.hidden {
+  display: none;
+}
+
+div.score {
+  font-family: sans-serif;
+  font-size: 70px;
+  color: #F1FF30;
+  font-weight: bolder;
+  width: 50vh;
+  float: left;
+}
+
+div.timer {
+  font-family: sans-serif;
+  font-size: 100px;
+  color: #F1FF30;
+  font-weight: bolder;
+  float: right;
+  width: 20vh;
+
+}
+
+.drop-down {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+span {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 40px;
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+
+.start-button {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+option {
+  font-family: sans-serif;
+  color: #F1FF30;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.play-again{
+  font-family: sans-serif;
+  color: black;
+  font-weight: bolder;
+  font-size: 60px;
+  margin:auto;
+  width: 50vh;
+  height: 50vh;
+  background-image: url('https://o.aolcdn.com/images/dims?quality=85&image_uri=http%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Fb386937631a1f03665c1d57289070898%2F203417456%2Fsimpsons.jpg&client=amp-blogside-v2&signature=3f1dc8adaa673efd190ae6f6b19a916b2d84ed7c');
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.game-over {
+  width: 50vh;
+  height: 50vh;
+  margin: auto;
+  margin-top: 150px;
+}
