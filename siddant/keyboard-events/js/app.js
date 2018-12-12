@@ -7,7 +7,8 @@ $(() => {
   const $wpm = $('div.wpm')
   const $wpmDisp = $wpm.find('span')
   const $reset = $('.resetBtn')
-  const $timeRemaning = $('.timeRemaning')
+  const $timeRemaningHolder = $('.timeRemaning')
+  const $timeRemaning = $timeRemaningHolder.find('span')
 
   let timerId
   let textToType, text = ''
@@ -85,7 +86,6 @@ $(() => {
 
 
   $reset.on('click', reset)
-
   $reset.hide()
   generateText()
   $timeRemaning.text(timeRemaining)

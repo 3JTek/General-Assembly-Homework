@@ -2,23 +2,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Type Racer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/data.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <main>
       <section>
         <div class="container">
-          <div class="displayinformation">
+          <h1>Type Racer</h1>
+          <div class="displayInformation">
             <div class="word-count">Word Count: <span></span></div>
             <div class="wpm">Words per Minute: <span></span></div>
-            <div class="timeRemaning"></div>
+            <div class="timeRemaning">Secodnds Remaning: <span></span></div>
           </div>
 
-          <div class="displayinformation">
-            <textarea id='example'></textarea>
+          <div class="gameBoard">
+            <textarea id='example'   readonly></textarea>
             <textarea id='userInput' autofocus></textarea>
           </div>
           <div class="buttonHolder">
