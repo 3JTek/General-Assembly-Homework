@@ -4,7 +4,7 @@ body {
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  height:100vh;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,12 +13,10 @@ body {
 
 }
 header {
-  // height:50px;
   background-color: $primary;
   color: $white;
   display:flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   padding:0 20px;
   h1{
@@ -44,7 +42,6 @@ header {
     }
   }
   button {
-    // padding:10px 80px;
     font-size: 1.5em;
     width:100%;
     color: $white;
@@ -52,18 +49,12 @@ header {
     border: 1px solid $black;
     border-radius: 5px;
     margin-bottom: 8px;
-    // box-shadow: 0px 4px 2px -2px $grey;
     outline: none;
     &:hover{
       background-color: $orange;
-      // box-shadow: px 0px #888888;
-      // transform: translate(2px, 2px);
     }
     &:active{
       background-color: $green;
-
-      // box-shadow: 0px 0px $grey;
-      // transform: translate(0px, 4px);
     }
 
   }
@@ -77,27 +68,26 @@ main{
   justify-content: flex-start;
   padding:40px;
 
-
   .text-container{
     display: flex;
     justify-content: space-around;
     width:100%
   }
-  .results-text-box{
-    overflow: scroll;
-  }
+  //
+  // .results-text-box{
+  //   overflow: scroll;
+  // }
+
   .sample-text-box, .input-text-box, .results-text-box{
     text-align:justify;
     width: 100%;
     min-height: 9em;
     padding:8px;
     margin:4px;
-
-
     border: 1px solid $primary;
     background-color: $white;
     color: $black;
-
+    overflow: scroll;
     .good{
       background-color: $green;
     }
@@ -105,16 +95,10 @@ main{
       background-color: $red;
     }
 
-
   }
-
-
-
-
 }
 
 textarea{
   font-size: 1em;
   width:100%;
-
 }

@@ -2,7 +2,7 @@ body {
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -59,8 +59,6 @@ main {
     display: flex;
     justify-content: space-around;
     width: 100%; }
-  main .results-text-box {
-    overflow: scroll; }
   main .sample-text-box, main .input-text-box, main .results-text-box {
     text-align: justify;
     width: 100%;
@@ -69,7 +67,8 @@ main {
     margin: 4px;
     border: 1px solid #121212;
     background-color: #fefefe;
-    color: #121212; }
+    color: #121212;
+    overflow: scroll; }
     main .sample-text-box .good, main .input-text-box .good, main .results-text-box .good {
       background-color: #4EDF47; }
     main .sample-text-box .bad, main .input-text-box .bad, main .results-text-box .bad {
