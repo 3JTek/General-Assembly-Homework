@@ -4,7 +4,7 @@ $(() => {
   const $example = $('#example')
   const $wordCount = $('.word-count')
   const $wordCountDisp = $wordCount.find('span')
-  const $wpm = $('div.wpm')
+  const $wpm = $('.wpm')
   const $wpmDisp = $wpm.find('span')
   const $reset = $('.resetBtn')
   const $timeRemaningHolder = $('.timeRemaning')
@@ -12,9 +12,7 @@ $(() => {
 
   let timerId
   let textToType, text = ''
-  let i = 0, wordcount = 0, time = 0, wpm = 0, timeRemaining = 5, gameStart = false
-
-
+  let i = 0, wordcount = 0, time = 0, wpm = 0, timeRemaining = 60, gameStart = false
 
   function generateText() {
     textToType =  samples[Math.floor(Math.random() * samples.length)]
@@ -34,6 +32,8 @@ $(() => {
       clearInterval(timerId)
       $reset.show()
       gameStart = false
+      $example.css('border-color','red')
+
     }
   }
 
@@ -54,14 +54,22 @@ $(() => {
     i = 0
     $textarea.val('')
     time=0
-    timeRemaining = 5
+    timeRemaining = 60
     $reset.hide()
     text = ''
     generateText()
     $example.val(textToType)
     gameStart = true
     $timeRemaning.text(timeRemaining)
+    $example.css('border-color','')
+  }
 
+  function gameSetup(){
+    $reset.hide()
+    generateText()
+    $timeRemaning.text(timeRemaining)
+    $example.val(textToType)
+    gameStart = true
   }
 
 
@@ -75,21 +83,16 @@ $(() => {
       }
       i++
       text += e.key
+      $(e.target).css('border-color','green')
     }else{
       e.preventDefault()
+      $(e.target).css('border-color','red')
     }
-    if (i === 1) {
+    if (i === 1 && gameStart === true) {
       startTime()
     }
   })
 
-
-
   $reset.on('click', reset)
-  $reset.hide()
-  generateText()
-  $timeRemaning.text(timeRemaining)
-  $example.val(textToType)
-  gameStart = true
-
+  gameSetup()
 })

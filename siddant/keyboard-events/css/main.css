@@ -29,12 +29,19 @@ h1{
 textarea{
   display: block;
   width: 80%;
-  height: 200px;
+  height: 250px;
   margin: 15px auto;
   font-size: 20px;
   resize: none;
-
 }
+
+textarea:focus {
+    outline: none;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px  #888888;
+}
+
+
 .buttonHolder{
   width: 100%;
   text-align: center;
