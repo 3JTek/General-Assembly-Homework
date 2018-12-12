@@ -1,0 +1,93 @@
+@import '_vars';
+
+body {
+  font-size: 1em;
+  box-sizing: border-box;
+}
+header {
+  // height:50px;
+  background-color: $primary;
+  color: $white;
+  display:flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  h1{
+    font-size: 2em;
+  }
+}
+main{
+  font-size: 1.2em;
+  background-color: $secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:40px;
+
+  &.win {
+    background-color: $green;
+  }
+  &.lose{
+    background-color: $red;
+
+  }
+
+  .text-container{
+    display: flex;
+      justify-content: space-around;
+      width:100%
+  }
+  .sample-text-box, .input-text-box, .results-text-box{
+    text-align:justify;
+    max-width: 100%;
+    width: 100%;
+    min-height: 9em;
+    height: auto;
+    padding:8px;
+
+
+    border: 1px solid $primary;
+    background-color: $white;
+    color: $black;
+
+    .good{
+      background-color: $green;
+    }
+    .bad{
+      background-color: $red;
+    }
+
+
+  }
+
+
+  button {
+    padding:10px 80px;
+    font-size: 2em;
+    color: $white;
+    margin: 10px;
+    background-color: $primary;
+    border: 1px solid $primary;
+    border-radius: 5px;
+    box-shadow: 0px 4px 2px -2px $grey;
+    outline: none;
+    &:hover{
+      background-color: $primary-dark;
+      // box-shadow: px 0px #888888;
+      // transform: translate(2px, 2px);
+    }
+    &:active{
+      box-shadow: 0px 0px $grey;
+      transform: translate(0px, 4px);
+    }
+
+  }
+
+}
+
+textarea{
+  font-size: 1em;
+  width:100%;
+
+}
