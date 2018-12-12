@@ -14,6 +14,9 @@ button{
   width: 250px;
   color: black;
   font-size: 16px;
+  background-color: Transparent;
+  color: white;
+  outline: none;
 }
 
 

@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function gameRestart(){
+
     gameOver.style.display='none'
     count =59
     userscore=0
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function init(){
+
     gameStartBord.style.display='none'
     gameStart.style.display='none'
     gameBoard.style.display='flex'
@@ -70,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gameOver.style.display=''
       console.log(userscore)
       scoredisplay[1].innerText= ` ${userscore}`
-
     },60000)
   }
 
@@ -79,7 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gameOver.style.display='none'
   gameBoard.style.display='none'
+  //console.log(opening1)
+  //opening1.play()
+  countDisplay.textContent = '60 s'
   resetBtn.addEventListener('click', gameRestart)
   gameStart.addEventListener('click', init)
-  countDisplay.textContent = '60 s'
+
+
 })
