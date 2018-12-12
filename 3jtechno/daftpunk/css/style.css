@@ -1,0 +1,17 @@
+.container{
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px
+}
+button{
+  width: 100px;
+  height: 100px;
+  background-size:contain;
+  font-weight: 700;
+  font-size: 18px;
+  color: #cf5042
+}
+.lyricsHidden{
+  color: transparent
+}

@@ -1,0 +1,35 @@
+
+body {
+  background-color: black;
+
+}
+
+img {
+  display: block;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.soundboard {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 70px auto;
+  width: 518px;
+  height: 518px;
+  border: 1px solid red ;
+  padding: 2px;
+}
+
+button {
+  width: 125px;
+  height: 125px;
+  margin: 2px;
+  font-size: 18px;
+  color: transparent;
+  background-color: black;
+}
+
+button:hover {
+  background: url(https://media1.giphy.com/media/etjjDkzmBbsLS/giphy.gif?cid=3640f6095c096b823134745351391e33);
+  background-size: cover;
+}

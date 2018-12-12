@@ -1,0 +1,109 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+*{
+  box-sizing: border-box;
+}
+body, input {
+  font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+}
+
+button {
+  background-color: #3897f0;
+  color: white;
+  border: 1px solid #e6e6e6;
+  padding: 0px 41px;
+  margin: 10px;
+}
+
+main {
+margin: auto;
+  max-width: 800px;
+  overflow: auto;
+}
+
+h3 {
+  color: #999;
+}
+
+h4 {
+  color: #999;
+  margin: 6px;
+}
+
+span {
+  font-weight: bolder;
+}
+
+.mobile {
+  float: left;
+  width: 50%;
+
+}
+input {
+  display:block;
+}
+
+.desktop {
+  float: left;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  width: 50%;
+}
+
+section {
+  text-align:left;
+}
+
+form > * {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 38px;
+}
+
+.container {
+  border: 1px solid #e6e6e6;
+  margin: 5px 0;
+}
+
+aside {
+  margin: 7px;
+  color: #999;
+}
+.desktop aside {
+  color: black;
+}
+
+article {
+  color: #999;
+}
+
+nav p {
+  text-align: right;
+}
+
+@media screen and (max-width: 900px) {
+    main section {
+      width: 50%;
+      text-align: center;
+    }
+    .mobile {
+      float: left;
+      display: none;
+    }
+    main section:nth-child(3) {
+      width: 100%
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    main section {
+    width: 100%
+    float: none;
+    text-align: center;
+  }
+}

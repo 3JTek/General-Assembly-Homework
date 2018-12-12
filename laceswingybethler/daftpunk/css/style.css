@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  background-image: linear-gradient(red, #ff00ff, black);
+}
+
+.flex {
+  display: flex;
+}
+
+img.hero {
+  max-width: 30%;
+  margin: 20px auto;
+  display: block;
+  border-radius: 100%;
+}
+
+.grid-container {
+  width: 600px;
+  height: 400px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.grid-item {
+  width: 23%;
+  height: 23%;
+  border: 1px double #ff00ff;
+  background-color: black;
+  color: white;
+  font-weight: 800;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/000/180/376/original/retro-vintage-80s-geometric-style-abstract-background-illustration-vector.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

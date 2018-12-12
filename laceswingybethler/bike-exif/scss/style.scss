@@ -1,0 +1,114 @@
+ $branding: #CE2026;
+ $line: 1px solid lightgrey;
+//always add the top 2
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.flex {
+  display:flex;
+}
+
+aside {
+  color: darkgrey;
+  text-transform: uppercase;
+}
+
+button {
+  border: $line;
+  padding: 15px 30px;
+  align-self: flex-end;
+  margin: 0 20px;
+  background-color: white;
+
+}
+
+
+
+//in scss start from the top
+
+header {
+  nav {
+    margin: 20px 0;
+    padding: 10px;
+    border-top: $line;
+    border-bottom: $line;
+  }
+  & a {
+    margin-right: 20px;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+
+  }
+  & a:last-child {
+    margin-left: auto;
+    color: $branding;
+  }
+
+}
+main {
+  & .column:first-child {
+    flex-direction: column;
+    & article {
+      border-bottom: $line;
+      margin: 20px;
+      padding: 10px 0 20px 0;
+      div {
+        margin-left: 20px;
+        padding: 0;
+         h2 {
+          margin: 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  & .column:last-child {
+    form {
+      padding: 10px;
+      input {
+        width: 100%;
+      }
+      ::placeholder {
+        color: white;
+      }
+    }
+    .searchbox {
+      border: $line;
+    }
+    .subscribe {
+      background-color: $branding;
+      color: white;
+      input {
+        background: $branding;
+        border: none;
+        border-bottom: 2px solid white;
+        padding: 10px;
+        }
+        // how do I get the button to float to the right?
+        & [type=email] {
+          width: 75%;
+        }
+      button {
+        background-color: $branding;
+        width: 25%;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: lightgrey;
+  text-align: center;
+  padding: 20px; 
+  nav {
+    justify-content: space-around;
+  }
+}

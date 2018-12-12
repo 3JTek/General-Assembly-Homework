@@ -1,0 +1,71 @@
+/*background color = #fafafa*/
+/*button blue = */
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  background: #fafafa;
+}
+
+main {
+  overflow:auto;
+}
+main section {
+  float: left;
+  width: 50%;
+  overflow:auto;
+  text-align: center;
+  border: 1500px solid #fafafa;
+  background: #fafafa;
+  border: 10px;
+}
+.containers{
+  max-width: 900px;
+  margin:auto;
+  overflow:auto;
+}
+  button{
+    background-color: #3897f0;
+  }
+logo{
+  float:left;
+  margin:auto;
+  padding: 1000px;
+  border-radius: 200px;
+  border: solid black 10px;
+}
+  sign up{
+    float:left;
+    margin: auto;
+  }
+  section{
+    width: auto;
+    float:left;
+    margin:0;
+    border: 200px;
+  }
+  aside{
+  text-align: center;
+  }
+  footer{
+    padding: 30px;
+    overflow: auto;
+    margin:auto;
+  }
+  footer nav{
+    float: left;
+    margin: auto;
+    text-align: right;
+  }
+  footer div{
+    float: right;
+    text-align: right;
+  }
+
+@media screen and (max-width: 600px) {
+  body{
+    background-color: red;
+  }
+}

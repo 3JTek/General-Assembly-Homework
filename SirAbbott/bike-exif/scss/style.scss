@@ -1,0 +1,206 @@
+$bikeRed: #ce1f26;
+$textColor: #6a6667;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding-top: 30px;
+  margin: 0;
+  color: $textColor;
+  font-weight: 600;
+}
+
+// This is for all inputs on the page
+input {
+  -webkit-appearance: none;
+}
+
+header {
+  max-width: 1100px;
+  margin: auto;
+
+  img {
+    padding: 20px 0;
+  }
+
+  h1 {
+    display: none;
+  }
+  nav {
+    display: flex;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    margin-top: 20px;
+  }
+  a {
+    padding: 3px 8px;
+    text-decoration: none;
+    color: $textColor;
+  }
+  #shop {
+    margin-left: auto;
+    color: $bikeRed;
+  }
+}
+
+main {
+  display: flex;
+  max-width: 1100px;
+  margin: auto;
+
+  .left-main {
+    width: 70%;
+    padding-top: 30px;
+    padding-right: 20px;
+    p {
+      padding-right: 5px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    hr {
+      margin-bottom: 15px;
+    }
+    .small {
+      display: flex;
+      flex-direction: row;
+      padding: 20px 20px 20px 0;
+      border-top: 1px solid grey;
+      border-bottom: 1px solid grey;
+    }
+    .small-text {
+      padding-left: 20px;
+    }
+    h2 {
+      text-transform: uppercase;
+      color: black;
+    }
+
+    #next {
+      margin: 50px 0;
+      text-decoration: none;
+      text-align: right;
+      text-transform: uppercase;
+      a {
+        color: $textColor;
+        display: inline-block;
+        border: 1px solid black;
+        padding: 20px 30px;
+        background: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .right-main {
+    width: 30%;
+    padding: 30px 0 0 20px;
+
+    .module {
+      margin-bottom: 10px;
+      // <div class="module search">
+      &.search {
+        form {
+          // // https://stackoverflow.com/questions/15314407/how-to-add-button-inside-input
+          // /* This bit sets up the horizontal layout */
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          /* This bit draws the box around it */
+          border: 1px solid grey;
+          padding: 5px;
+          width: 100%;
+          input[type="text"] {
+            /* Tell the input to use all the available space */
+            flex-grow: 1;
+            padding: 5px;
+            /* And hide the input's outline, so the form looks like the outline */
+            border: none;
+            width: 80%;
+          }
+
+          button {
+            /* Just a little styling to make it pretty */
+            border: 1px solid grey;
+            background: transparent;
+            color: $textColor;
+          }
+        }
+      }
+      &.subscribe {
+        background-color: $bikeRed;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        form {
+          input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #fff;
+            padding: 10px;
+            display: flex;
+
+            &::placeholder {
+              color: #fff;
+              font-size: 15px;
+            }
+          }
+          button {
+            flex-grow: 1;
+            background: transparent;
+            color: white;
+            border-style: none;
+            text-transform: uppercase;
+            font-size: 15px;
+            text-align: right;
+            padding: 10px 0 10px 0;
+          }
+        }
+      }
+      &.categories {
+        h3 {
+          text-transform: uppercase;
+          color: black;
+        }
+        ul {
+          padding: 0px;
+          li {
+            display: inline-block;
+            border: 1px solid #000;
+            padding: 6px 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  background-color: #eaede6;
+  img {
+    padding-bottom: 20px;
+  }
+  nav {
+    padding-top: 15px;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      color: $textColor;
+    }
+  }
+  p {
+    text-transform: uppercase;
+  }
+}
