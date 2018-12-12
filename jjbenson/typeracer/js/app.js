@@ -17,7 +17,7 @@ let timerRemaining
 let timerId
 let letterCorrect
 
-const gameLength = 30
+const gameLength = 60
 
 function init(){
 
