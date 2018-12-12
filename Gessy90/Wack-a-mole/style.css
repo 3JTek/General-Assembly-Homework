@@ -1,0 +1,43 @@
+* {
+ /* border: 1px solid black; */
+ box-sizing: border-box;
+}
+.game {
+  display: flex;
+ /* border: 1px solid black; */
+ flex-wrap: wrap;
+ height: 80vh;
+ width: 80vh;
+}
+.game div {
+ width: calc(100%/4);
+ border: 1px solid black;
+}
+.mole {
+ background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/28/animal-158236__340.png");
+ background-size: contain;
+}
+
+#countdown .screen {
+ border: 3px solid black;
+ float: right;
+ width: 25px;
+ height: 25px;
+ padding: 100px;
+}
+
+.screen {
+width: 154px;
+height: 42px;
+background-color: dodgerblue;
+border-radius: 25px;
+margin: auto;
+position: relative;
+top: 75px;
+text-align: center;
+
+color: #fff;
+line-height: 42px;
+font-size: 32px;
+padding: 5px 8px;
+}
