@@ -63,4 +63,36 @@ div.mole {
     background-repeat: no-repeat;
     pointer-events: auto; }
 
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive; } }
+@media screen and (max-width: 600px) {
+  .container.splash {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start; }
+    .container.splash .splash {
+      width: 100%;
+      height: 70%; }
+
+  .container button {
+    font-size: 0.6em; }
+
+  .container.gameBoard {
+    width: 100%;
+    height: 70%;
+    align-items: flex-start; }
+    .container.gameBoard .splash {
+      width: 100%;
+      height: 70%; }
+
+  .container.gameOver {
+    width: 100%;
+    height: 70%;
+    align-items: flex-start; }
+    .container.gameOver .splash {
+      width: 100%;
+      height: 70%;
+      font-size: 1em; } }
+
 /*# sourceMappingURL=style.css.map */

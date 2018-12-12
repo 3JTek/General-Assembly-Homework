@@ -4,7 +4,6 @@ let moleArray =[]
 let startButtons = []
 let score
 let timer
-let timerId
 const timerArray = []
 let showMoleTimer
 let hideMoleTimer
@@ -43,9 +42,6 @@ function init () {
   audio = document.querySelector('audio')
 
 
-  //Clear timers
-  //clearAllTimers()
-
   //Reset variables
   reset()
 
@@ -61,15 +57,23 @@ function init () {
   showSplash()
 
 }
+
+//PREPARE GAME (Maybe better as a state machine?)
 function removeGameBoard(){
   if(gameBoard!== undefined) gameBoard.remove()
 }
+
 function makeMoles(x,y){
+  //Get the board
   gameBoard = document.createElement('div')
   gameBoard.classList.add('container')
   gameBoard.classList.add('gameBoard')
+  //Stick the board in the main
   main.append(gameBoard)
+
+  //For the columns * the width
   for(let i=0;i<x*y;i++){
+    // Create new mole
     const mole = document.createElement('div')
     mole.classList.add('mole')
     mole.id = 'mole'+i
@@ -85,7 +89,6 @@ function clearAllTimers(){
   timerArray.forEach((elem)=>{
     clearInterval(elem)
   })
-  // clearInterval(timerId)
 }
 
 function mainMenu(){
@@ -102,19 +105,6 @@ function moleClick(e){
   audio.play()
 }
 
-function setGameSize(size,maxMoleNum){
-  molesX = molesY = size
-  maxMoles = maxMoleNum
-  prepareGame()
-}
-
-function prepareGame(){
-  reset()
-  removeGameBoard()
-  makeMoles(molesX,molesY)
-  startGame()
-}
-
 function reset(){
   score = 0
   scoreBox.innerHTML = score
@@ -124,38 +114,49 @@ function reset(){
   moleArray = []
 }
 
-function showSplash(){
-  splashScreen.style.display = 'flex'
-}
-function hideSplash(){
-  splashScreen.style.display = 'none'
-}
-
-function showGameOver(){
-  gameOver.style.display = 'flex'
-  gameOverScore.innerText = score
-  clearAllTimers()
-}
-function hideGameOver(){
-  gameOver.style.display = 'none'
+function prepareGame(){
+  reset()
+  removeGameBoard()
+  makeMoles(molesX,molesY)
+  startGame()
 }
 
-function hideGameBoard(){
-  gameBoard.style.display = 'none'
+function setGameSize(size,maxMoleNum){
+  molesX = molesY = size
+  maxMoles = maxMoleNum
+  prepareGame()
 }
-function showGameBoard(){
-  gameBoard.style.display = 'flex'
-}
-
 function startGame(){
   hideSplash()
   hideGameOver()
   showGameBoard()
   for(let i=0;i<maxMoles;i++){
+    //Start mole timers
     showMole()
   }
-  // decrementTimer()
   stopWatchTimer()
+}
+
+
+function gameOverFunc(){
+  timerArray.forEach((elem)=>{
+    clearInterval(elem)
+  })
+  // clearInterval(timerId)
+  hideGameBoard()
+  showGameOver()
+}
+
+//TIMERS
+function stopWatchTimer(){
+  //Decrease timer
+  timer--
+  timerScreen.innerHTML = timer
+  if(timer>0){
+    setTimeout(()=>stopWatchTimer(),1000)
+  }else{
+    gameOverFunc()
+  }
 }
 
 function showMole(){
@@ -177,29 +178,29 @@ function removeMole(mole){
   timerArray.push(hideMoleTimer)
 }
 
-function gameOverFunc(){
-  timerArray.forEach((elem)=>{
-    clearInterval(elem)
-  })
-  // clearInterval(timerId)
-  hideGameBoard()
-  showGameOver()
+//Show and Hide screens
+function showSplash(){
+  splashScreen.style.display = 'flex'
 }
-function stopWatchTimer(){
 
-  timer--
-  timerScreen.innerHTML = timer
-  if(timer>0){
-    setTimeout(()=>stopWatchTimer(),1000)
-  }else{
-    gameOverFunc()
-  }
+function hideSplash(){
+  splashScreen.style.display = 'none'
 }
-// function decrementTimer() {
-//   timerId = setInterval(() => {
-//     console.log('decrementTimer',timerId)
-//     timer--
-//     timerScreen.innerHTML = timer
-//     if (timer <= 0)gameOverFunc()
-//   },1000)
-// }
+
+function showGameOver(){
+  gameOver.style.display = 'flex'
+  gameOverScore.innerText = score
+  clearAllTimers()
+}
+
+function hideGameOver(){
+  gameOver.style.display = 'none'
+}
+
+function hideGameBoard(){
+  gameBoard.style.display = 'none'
+}
+
+function showGameBoard(){
+  gameBoard.style.display = 'flex'
+}
