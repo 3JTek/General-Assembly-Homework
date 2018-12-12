@@ -16,19 +16,10 @@ $(() => {
   init()
 
   function startTimer(){
-    timePassed = 0
     setInterval(() => {
       timePassed++
-      console.log(timePassed)
     },1000)
 
-  }
-  function resetCount(){
-    count = 0
-    i = 0
-    timePassed =0
-    wpm =0
-    $textarea.val('')
   }
 
 
@@ -69,12 +60,12 @@ $(() => {
   //
   // $resetBtn.on('click', reset)
 
-
-
-
-
-
-
-
+  // function resetCount(){
+  //   count = 0
+  //   i = 0
+  //   timePassed =0
+  //   wpm =0
+  //   $textarea.val('')
+  // }
 
 })
