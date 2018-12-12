@@ -1,0 +1,17 @@
+/* body {
+  max-width: 900px;
+} */
+
+.container {
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+
+}
+
+textarea {
+  height: 400px;
+  width:600px;
+  margin:auto;
+}
