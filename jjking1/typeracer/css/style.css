@@ -22,5 +22,10 @@ body{
 }
 
 textarea{
-  width: 100%
+  width: 100%;
+  font-size: 16px;
+  font-family: sans-serif;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
 }
