@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
   const grid = document.querySelectorAll('div.cell')
@@ -6,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.querySelector('#score')
   const startScreen = document.querySelector('div.start')
   const startBtn = document.querySelector('#startBtn')
+  const finalScore = document.createElement('div')
   let mole
 
   let score = 0
   const clickMole = function() {
     score += 1
     scoreDisplay.innerText = score
+    mole.classList.add('mole-image')
     // prevents mashing mole and getting more than one point by removing event listener after point
     mole.removeEventListener('click', clickMole)
   }
@@ -43,13 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 800)
     }, 1000)
 
-
     // countdown
-    let timeRemaining = 11
+    let timeRemaining = 10
     const countdown = setInterval(() => {
-      timer.innerText = timeRemaining - 1
+      timer.innerText = timeRemaining
       timeRemaining--
-      if (timeRemaining === 0) {
+      if (timeRemaining < 0) {
         // stops timer and moles appearing at the same moment
         clearInterval(countdown)
         clearInterval(timerId)
@@ -60,9 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000)
   }
 
-  const finalScore = document.createElement('div')
-
-
   startBtn.addEventListener('click', startGame)
-
 })
