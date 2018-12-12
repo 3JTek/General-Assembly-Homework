@@ -10,7 +10,7 @@ let $textarea,
   wordcount = 0,
   time = 0,
   wpm = 0,
-  timeRemaining = 1,
+  timeRemaining = 60,
   timerId,
   textToType,
   $timeRemainingDisp
@@ -43,7 +43,7 @@ function reset() {
   i = 0
   $textarea.val('')
   time=0
-  timeRemaining = 10
+  timeRemaining = 60
   $reset.hide()
   $textarea.removeAttr('disabled')
   generateText()
