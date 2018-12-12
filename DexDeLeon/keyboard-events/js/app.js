@@ -10,7 +10,7 @@ let $textarea,
   wordcount = 0,
   time = 0,
   wpm = 0,
-  timeRemaining = 10,
+  timeRemaining = 1,
   timerId,
   textToType,
   $timeRemainingDisp

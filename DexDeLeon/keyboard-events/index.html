@@ -9,14 +9,23 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="word-count">Word Count: <span></span></div>
-    <div class="wpm">Words per Minute: <span></span></div>
-    <div class="time-remaining">Time Remaining: <span></span></div>
 
-    <p id='example'></p>
-    <textarea autofocus></textarea>
+    <header>
+      <h1>Typing Speed Test</h1>
 
-    <button type="button" name="button" class='resetBtn'>Reset</button>
+      <div class="stats">
+        <div class="word-count">Word Count: <span></span></div>
+        <div class="wpm">Words per Minute: <span></span></div>
+        <div class="time-remaining">Time Remaining: <span></span></div>
+      </div>
+
+    </header>
+
+    <div class="container">
+      <p id='example'></p>
+      <textarea autofocus></textarea>
+      <button type="button" name="button" class='resetBtn'>Reset</button>
+    </div>
 
   </body>
 </html>
