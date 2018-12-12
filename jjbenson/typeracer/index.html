@@ -6,29 +6,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/data.js" charset="utf-8"></script>
   <script src="js/app.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cantarell:700i|Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <h1>Typo-Racer!!!</h1>
-    <div class="">
-      <div class="word-count-box">
-        0
+    <div class="info-bar">
+      <div class="">
+        Word count: <span class="word-count-box">0</span>
       </div>
-      <div class="wpm-box">
-        0
+      <div class="">
+        Words/Minute: <span class="wpm-box">0</span>
       </div>
-      <div class="count-down">
-        99
+      <div class="">
+        Time Remaining: <span class="count-down">99</span>s
       </div>
     </div>
+    <button class='play-button'>Play</button>
 
 
   </header>
   <main>
-    <div class="all-letters">
-
-    </div>
     <div class="text-container">
       <div class="sample-text-box">
         Welcome to typo-racer!
@@ -37,12 +36,11 @@
       </div>
 
       <div class="results-text-box">
-  
+
       </div>
       <textarea class="input-text-box" autofocus wrap="hard"></textarea>
     </div>
 
-    <button class='play-button'>Play</button>
   </main>
 
 </body>

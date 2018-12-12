@@ -11,7 +11,7 @@ const samples = [
   'Hunt and peck (two-fingered typing), also known as Eagle Finger, is a common form of typing in which the typist presses each key individually. Instead of relying on the memorized position of keys, the typist must find each key by sight. Use of this method may also prevent the typist from being able to see what has been typed without glancing away from the keys. Although good accuracy may be achieved, any typing errors that are made may not be noticed immediately due to the user not looking at the screen.'
 ]
 
-let letterAcuracy = {
+let letterAccuracy = {
   a: {good: 0,total: 0},
   b: {good: 0,total: 0},
   d: {good: 0,total: 0},

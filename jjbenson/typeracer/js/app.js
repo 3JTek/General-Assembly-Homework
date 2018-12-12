@@ -3,6 +3,7 @@ $(()=>init())
 let $main
 let $sampleTextBox
 let $resultsTextBox
+let $infoBar
 let $inputTextBox
 let $wordCountBox
 let $playButton
@@ -17,13 +18,14 @@ let timerId
 let letterCorrect
 
 
-const gameLength = 6
+const gameLength = 30
 
 function init(){
 
   //Get DOM elementss
   $main = $('main')
   $sampleTextBox = $('.sample-text-box')
+  $infoBar = $('.info-bar')
   $resultsTextBox = $('.results-text-box')
   $inputTextBox = $('.input-text-box')
   $wordCountBox = $('.word-count-box')
@@ -36,6 +38,7 @@ function init(){
   $inputTextBox.on('keydown', gameLogic)
 
 
+
   //Reset Variables
   resetVariables()
 
@@ -44,7 +47,7 @@ function init(){
 function checkForWin() {
   if(currentSample.length === index){
     //Game Won!!!
-    $main.addClass('win')
+    $infoBar.addClass('win')
     gameOver()
     // $resultsTextBox.show()
     // //Win set text to Play Again
@@ -64,20 +67,21 @@ function gameLogic(e) {
   const letter = e.key.toLowerCase()
   const targetLetter = currentSample[index].charAt(6)
   const targetLetterLower = targetLetter.toLowerCase()
-
+  console.log(targetLetter)
+  console.log(index,currentSample[index])
   if(e.key === targetLetter && timerRemaining>0) {
 
     console.log('timerRemaining',timerRemaining)
-
+    console.log('letterCorrect',letterCorrect)
     if(letterCorrect){
 
       $sampleTextBox.children().eq(index).addClass('good')
 
-      if(letterAcuracy[letter]){
+      if(letterAccuracy[letter]){
 
-        letterAcuracy[letter]['good']++
-        letterAcuracy[letter]['total']++
-        //console.log(letter, (letterAcuracy[letter]['good']/ letterAcuracy[letter]['total'])*100+'%')
+        letterAccuracy[letter]['good']++
+        letterAccuracy[letter]['total']++
+        //console.log(letter, (letterAccuracy[letter]['good']/ letterAccuracy[letter]['total'])*100+'%')
       }
     }else{
       $sampleTextBox.children().eq(index).addClass('bad')
@@ -93,7 +97,7 @@ function gameLogic(e) {
     if(e.key !== 'Shift' && timerRemaining>0){
       //Every wrong attempt decreases accuracy
       letterCorrect = false
-      letterAcuracy[targetLetterLower] && letterAcuracy[targetLetterLower]['total']++
+      letterAccuracy[targetLetterLower] && letterAccuracy[targetLetterLower]['total']++
     }
 
   }
@@ -104,10 +108,10 @@ function gameOver(){
   $playButton.text('Play Again')
   $resultsTextBox.show()
 
-  results = Object.keys(letterAcuracy)
+  results = Object.keys(letterAccuracy)
     .map(elem=>{
-      if (!isNaN(letterAcuracy[elem]['good']/letterAcuracy[elem]['total']))
-        return `${elem}: ${(letterAcuracy[elem]['good']/letterAcuracy[elem]['total'])*100}%`
+      if (!isNaN(letterAccuracy[elem]['good']/letterAccuracy[elem]['total']))
+        return `${elem}: ${Math.round((letterAccuracy[elem]['good']/letterAccuracy[elem]['total'])*100)}%`
     })
     .filter(elem => !!elem)
     .map((elem)=>`<div>${elem}</div>`)
@@ -118,7 +122,7 @@ function gameOver(){
 function timer(){
   timerId = setTimeout(timer, 1000)
   if(timerRemaining === 0) {
-    $main.addClass('lose')
+    $infoBar.addClass('lose')
     gameOver()
     //disable text field
   }
@@ -134,8 +138,8 @@ function resetVariables(){
   letterCorrect = true
   startTime = undefined
 
-  currentSample = samples[Math.floor(Math.random()*samples.length)]
-  currentSample = currentSample.split('').map((letter)=> `<span>${letter}</span>`)
+  // currentSample = samples[Math.floor(Math.random()*samples.length)]
+  // currentSample = currentSample.split('').map((letter)=> `<span>${letter}</span>`)
 
   $wordCountBox.text(wordCount)
   $wpmBox.text('0')
@@ -143,16 +147,19 @@ function resetVariables(){
 
   $resultsTextBox.hide()
 
-  $sampleTextBox.html(currentSample)
+
 
   $inputTextBox.val('')
   $inputTextBox.show()
 
-  $main.removeClass('win')
-  $main.removeClass('lose')
+  $infoBar.removeClass('win')
+  $infoBar.removeClass('lose')
 }
 
 function playGame(){
+  currentSample = samples[Math.floor(Math.random()*samples.length)]
+  currentSample = currentSample.split('').map((letter)=> `<span>${letter}</span>`)
+  $sampleTextBox.html(currentSample)
   resetVariables()
   clearInterval(timerId)
   timer()

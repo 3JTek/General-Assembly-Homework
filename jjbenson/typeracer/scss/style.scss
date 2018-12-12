@@ -2,7 +2,15 @@
 
 body {
   font-size: 1em;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $secondary;
+  margin:0px
+
 }
 header {
   // height:50px;
@@ -12,8 +20,52 @@ header {
   flex-direction: column;
   // justify-content: center;
   align-items: center;
+  padding:0 20px;
   h1{
+    font-family: 'Cantarell', sans-serif;
     font-size: 2em;
+  }
+  .info-bar{
+    display:flex;
+    justify-content: space-between;
+    background-color: $white;
+    color:$black;
+    margin: 8px 0;
+    border-radius: 5px;
+    width:100%;
+    &.win {
+      background-color: $green;
+    }
+    &.lose{
+      background-color: $red;
+    }
+    div {
+      margin:10px;
+    }
+  }
+  button {
+    // padding:10px 80px;
+    font-size: 1.5em;
+    width:100%;
+    color: $white;
+    background-color: $blue;
+    border: 1px solid $black;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    // box-shadow: 0px 4px 2px -2px $grey;
+    outline: none;
+    &:hover{
+      background-color: $orange;
+      // box-shadow: px 0px #888888;
+      // transform: translate(2px, 2px);
+    }
+    &:active{
+      background-color: $green;
+
+      // box-shadow: 0px 0px $grey;
+      // transform: translate(0px, 4px);
+    }
+
   }
 }
 main{
@@ -22,29 +74,24 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding:40px;
 
-  &.win {
-    background-color: $green;
-  }
-  &.lose{
-    background-color: $red;
-
-  }
 
   .text-container{
     display: flex;
-      justify-content: space-around;
-      width:100%
+    justify-content: space-around;
+    width:100%
+  }
+  .results-text-box{
+    overflow: scroll;
   }
   .sample-text-box, .input-text-box, .results-text-box{
     text-align:justify;
-    max-width: 100%;
     width: 100%;
     min-height: 9em;
-    height: auto;
     padding:8px;
+    margin:4px;
 
 
     border: 1px solid $primary;
@@ -62,27 +109,7 @@ main{
   }
 
 
-  button {
-    padding:10px 80px;
-    font-size: 2em;
-    color: $white;
-    margin: 10px;
-    background-color: $primary;
-    border: 1px solid $primary;
-    border-radius: 5px;
-    box-shadow: 0px 4px 2px -2px $grey;
-    outline: none;
-    &:hover{
-      background-color: $primary-dark;
-      // box-shadow: px 0px #888888;
-      // transform: translate(2px, 2px);
-    }
-    &:active{
-      box-shadow: 0px 0px $grey;
-      transform: translate(0px, 4px);
-    }
 
-  }
 
 }
 
