@@ -10,14 +10,14 @@ $(() => {
   $sampleTextBox.text(currentSample)
 
   $inputTextBox.on('keypress', e => {
-    // console.log(e.key)
-    // if(e.key === currentSample.charAt(index)) {
-    //   index++
-    // } else {
-    e.preventDefault()
-    // }
+    console.log(e.key)
+    if(e.key === currentSample.charAt(index)) {
+      index++
+    } else {
+      e.preventDefault()
+    }
   })
-  
+
 
 
 
