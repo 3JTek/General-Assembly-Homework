@@ -14,3 +14,12 @@ textarea{
   width:100%;
 
 }
+
+.win {
+  background-color: green;
+}
+
+.lose{
+  background-color: red;
+
+}
