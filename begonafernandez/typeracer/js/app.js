@@ -7,7 +7,7 @@ $(() => {
 
   let wordCount = 0
   let i = 0
-  let timePassed = 60
+  let timePassed = 59
   let wpm = 0
   let sampleText
 
@@ -33,7 +33,7 @@ $(() => {
   }
 
   function calculateWpm(wordCount){
-    wpm = Math.round((wordCount / timePassed) * 60)
+    wpm = Math.round((wordCount / (60 - timePassed)) * 60)
     if (wpm < 1000)$wpmDisplay.text(wpm)
   }
 
