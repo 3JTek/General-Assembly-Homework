@@ -23,7 +23,9 @@ $(() => {
       i++
       wordCounter(e)
       $wordcount.text(`Your word count is ${wordCount}`)
-    } else { e.preventDefault()
+      calculateWpm()
+    } else {
+      e.preventDefault()
     }
   })
 
@@ -31,6 +33,28 @@ $(() => {
     if(e.key === ' ') wordCount++
     return wordCount
   }
+
+  //calculate wpm
+  // start timer on key down
+  //wpm = number of words counted at given time divided by current time * (60 * 1000)
+  let timePassed = 0
+  let wpm = 0
+  function calculateWpm() {
+    console.log(wordCount, timePassed)
+    wpm = Math.round((wordCount/timePassed) * 60)
+    console.log(wpm)
+    return wpm
+  }
+
+
+  function startTimer(){
+    const timerId = setInterval(() => {
+      timePassed++
+      console.log(timePassed)
+    }, 1000)
+  }
+  startTimer()
+
 
 
 
