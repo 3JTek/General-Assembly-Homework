@@ -1,4 +1,4 @@
-const samples = ['fait vite vite']
+const samples = ['Write few words']
 
 
 // [
