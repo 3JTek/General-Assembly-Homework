@@ -6,60 +6,72 @@ $(() =>  {
   const $wordcount = $('.word-count')
   const $wpm = $('.wpm')
   const $resetBtn =$('.resetBtn')
+  const $startBtn = $('.startBtn')
+  let timerId
+  let timePassed = 0
+  let wordsPerMinute = 0
+  let wordCount = 0
+  let gameStarted
 
-  playGame()
-  function playGame(){
-    let wordCount = 0
-    let i = 0
-    const textSamples = samples[Math.floor(Math.random() * samples.length)]
-    $text.text(textSamples)
+  function wordCounter(e) {
+    if(e.key === ' ') wordCount++
+    return wordCount
+  }
 
-    //add event listener for key up, only type if input matches text
-    $input.on('keydown', (e) => {
-      if(i === 1) startTimer()
-      if(e.key === textSamples.charAt(i)) {
-        i++
-        wordCounter(e)
-        $wordcount.text(`Your word count is ${wordCount}`)
-        calculateWpm()
-      } else {
-        e.preventDefault()
-      }
-    })
-
-    function wordCounter(e) {
-      if(e.key === ' ') wordCount++
-      return wordCount
-    }
-
-    //calculate wpm
-    // start timer on key down
-    //wpm = number of words counted at given time divided by current time * (60 * 1000)
-    let timePassed = 0
-    let wordsPerMinute = 0
-    function calculateWpm() {
-      wordsPerMinute = Math.round((wordCount/timePassed) * 60)
-      if(wordCount > 1){
-        return $wpm.text(`Your typing speed is ${wordsPerMinute} WPM`)
-      }else {
-        return ('')
-      }
-    }
-
-    function startTimer(){
-      const timerId = setInterval(() => {
-        timePassed++
-        console.log(timePassed)
-      }, 1000)
+  function calculateWpm() {
+    wordsPerMinute = Math.round((wordCount/timePassed) * 60)
+    if(wordCount > 1){
+      return $wpm.text(`Your typing speed is ${wordsPerMinute} WPM`)
+    }else {
+      return ('')
     }
   }
-  function reset(e) {
+
+  function startTimer(){
+    timerId = setInterval(() => {
+      timePassed++
+      console.log(timePassed)
+    }, 1000)
+  }
+  function playGame(){
+    if (gameStarted) {
+      console.log('game started')
+      let i = 0
+      const textSamples = samples[Math.floor(Math.random() * samples.length)]
+      $text.text(textSamples)
+
+      $input.on('keydown', (e) => {
+        if(e.key === textSamples.charAt(i)) {
+          i++
+          wordCounter(e)
+          $wordcount.text(`Your word count is ${wordCount}`)
+          calculateWpm()
+        } else {
+          e.preventDefault()
+        }
+      })
+    }else {
+      return null
+    }
+  }
+  function startGame() {
+    gameStarted = true
+    startTimer()
+    playGame()
+  }
+
+  function reset() {
     $input.val('')
     $wordcount.text('Your word count is')
     $wpm.text('Your typing speed is WPM')
-    playGame()
+    timePassed = 0
+    clearInterval(timerId)
+    gameStarted = false
+    $input.off()
   }
+  $startBtn.on('click', startGame)
   $resetBtn.on('click', reset)
+
 
 
 })
