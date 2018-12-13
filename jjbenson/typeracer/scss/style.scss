@@ -61,6 +61,7 @@ header {
     border-radius: 5px;
     margin-bottom: 8px;
     outline: none;
+    text-shadow: 0px -1px $grey;
     &:hover{
       background-color: $orange;
     }
