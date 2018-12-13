@@ -12,7 +12,7 @@ let wordCount
 let currentSample
 let timerRemaining
 let timerId
-const gameLength = 10
+const gameLength = 60
 
 function init(){
 
