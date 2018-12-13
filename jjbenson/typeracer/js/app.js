@@ -17,7 +17,7 @@ let timerRemaining
 let timerId
 let letterCorrect
 
-const gameLength = 60
+const gameLength = 6
 
 function init(){
 
@@ -149,10 +149,11 @@ function gameOver(){
     //Filter out empty elements
     .filter(elem => !!elem)
     //Wrap in a div tag
-    .map((elem)=>`<div>${elem}</div>`)
+    .map((elem)=>`<div>${elem}</div>`).join('')
 
   //Set the html of the results box (this works even though results is an array!)
-  $resultsTextBox.html(results)
+  const header = '<h2>Accuracy Results</h2>'
+  $resultsTextBox.html(header + results)
 }
 
 //Countdown timer

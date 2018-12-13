@@ -46,6 +46,15 @@ header {
       background-color: #FFAF4E; }
     header button:active {
       background-color: #4EDF47; }
+    header button:after {
+      content: '';
+      position: absolute;
+      border-radius: 5px 5px 0 0;
+      margin-top: -1px;
+      left: 21px;
+      width: calc(100% - 42px);
+      height: 0.7em;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)); }
 
 main {
   font-size: 1.2em;
@@ -73,6 +82,10 @@ main {
       background-color: #4EDF47; }
     main .sample-text-box .bad, main .input-text-box .bad, main .results-text-box .bad {
       background-color: #FF4B44; }
+    main .sample-text-box h2, main .input-text-box h2, main .results-text-box h2 {
+      margin: 4px;
+      text-align: center;
+      text-decoration: underline; }
 
 textarea {
   font-size: 1em;
