@@ -1,0 +1,133 @@
+@import '_vars';
+
+body {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $secondary;
+  margin:0px
+
+}
+header {
+  background-color: $primary;
+  // background-image: linear-gradient($green-dark,$green);
+  color: $white;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding:0 20px;
+
+  // &:after{
+  //   content:'';
+  //   position:absolute;
+  //   // top: 2px;
+  //   // left: 2px;
+  //   width:100%;
+  //   height:15%;
+  //   background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.2));
+  // }
+  h1{
+    font-family: 'Cantarell', sans-serif;
+    font-size: 2em;
+  }
+  .info-bar{
+    display:flex;
+    justify-content: space-between;
+    background-color: $white;
+    color:$black;
+    margin: 8px 0;
+    border-radius: 5px;
+    width:100%;
+    &.win {
+      background-color: $green;
+    }
+    &.lose{
+      background-color: $red;
+    }
+    div {
+      margin:10px;
+    }
+  }
+  button {
+    font-size: 1.5em;
+    width:100%;
+    color: $white;
+    background-color: $blue;
+    border: 1px solid $black;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    outline: none;
+    text-shadow: 0px -1px $grey;
+    &:hover{
+      background-color: $orange;
+    }
+    &:active{
+      background-color: $green;
+    }
+    &:after{
+      content:'';
+      position:absolute;
+       // top: 0px;
+       // transform: rotate(30deg);
+      border-radius: 5px 5px 0 0;
+      margin-top:-1px;
+      left: 21px;
+      width: calc(100% - 42px);
+      height:0.7em;
+      background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.2));
+    }
+
+  }
+}
+main{
+  font-size: 1.2em;
+  background-color: $secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding:40px;
+
+  .text-container{
+    display: flex;
+    justify-content: space-around;
+    width:100%
+  }
+  //
+  // .results-text-box{
+  //   overflow: scroll;
+  // }
+
+  .sample-text-box, .input-text-box, .results-text-box{
+    text-align:justify;
+    width: 100%;
+    min-height: 9em;
+    padding:8px;
+    margin:4px;
+    border: 1px solid $primary;
+    background-color: $white;
+    color: $black;
+    overflow: scroll;
+    .good{
+      background-color: $green;
+    }
+    .bad{
+      background-color: $red;
+    }
+    h2{
+      margin:4px;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+  }
+}
+
+textarea{
+  font-size: 1em;
+  width:100%;
+}

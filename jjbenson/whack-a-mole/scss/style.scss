@@ -21,14 +21,12 @@ main {
 }
 
 .container {
-  //background-color: yellow;
   display: none;
   max-width: 900px;
   max-height: 900px;
   width: 80%;
   height: 80%;
 
-  // display: flex;
   button{
     font-family: 'Luckiest Guy', cursive;
     font-size: 1em;
@@ -44,8 +42,6 @@ main {
 
 
   &.splash, &.gameOver{
-    // background-color: blue;
-
 
     justify-content: center;
     align-items: center;
@@ -64,7 +60,6 @@ main {
 
       border-radius: 25px;
       border:1px solid black;
-
 
     }
   }
@@ -87,9 +82,7 @@ main {
 
 div.mole {
 
-  // background-color: blue;
   pointer-events: none;
-  // background-image: url('images/mole.png');
 
   &.show {
 
@@ -105,9 +98,6 @@ div.mole {
   body {
     background-color: olive;
   }
-}
-@media screen and (max-width: 600px) {
-
 
   .container.splash {
     width:100%;
