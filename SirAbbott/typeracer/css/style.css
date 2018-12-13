@@ -1,0 +1,13 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text-example {
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+}
