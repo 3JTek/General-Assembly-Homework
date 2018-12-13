@@ -86,7 +86,7 @@ describe('numOfVowels', () => {
   })
 })
 
-xdescribe('frame', () => {
+describe('frame', () => {
   it('should frame a string in asterisks', () => {
     expect(frame('Rumplestiltskin')).to.equal('*******************\n* Rumplestiltskin *\n*******************')
     expect(frame('Hello Kitty')).to.equal('***************\n* Hello Kitty *\n***************')
