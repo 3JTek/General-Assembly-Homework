@@ -28,9 +28,6 @@ function init(){
   $playButton.on('click', playGame)
   $inputTextBox.on('keydown', gameLogic)
 
-  // //First game set text to play
-  // $playButton.text('Play')
-
   //Reset Variables
   resetVariables()
 
@@ -90,8 +87,6 @@ function resetVariables(){
 
 function playGame(){
   resetVariables()
-
-  //
   startTime = undefined
   currentSample = samples[Math.floor(Math.random()*samples.length)]
   $sampleTextBox.text(currentSample)
