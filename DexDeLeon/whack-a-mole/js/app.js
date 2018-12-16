@@ -1,91 +1,107 @@
-let grid,
-  timer,
-  scoreDisplay,
-  startScreen,
-  startBtn,
-  mole,
-  score = 0,
-  finalScore,
-  audio
+class WhackAMole{
+  constructor(){
+    // VARIABLES
+    this.grid = document.querySelectorAll('div.cell')
+    this.timer = document.querySelector('#time')
+    this.scoreDisplay = document.querySelector('#score')
+    this.startScreen = document.querySelector('div.start')
+    this.startBtn = document.querySelector('#startBtn')
+    this.finalScore = document.createElement('div')
+    this.audio = document.querySelector('audio')
+    this.mole
+    this.score = 0
 
-// when a mole is clicked
-function clickMole() {
-  // increase and update score display
-  score += 1
-  scoreDisplay.innerText = score
-  // restart and play the squeak sound
-  audio.currentTime = 0
-  audio.play()
-  // animate the mole being hit
-  mole.classList.add('rubberBand')
-  // prevents mashing mole and getting more than one point by removing event listener after first click
-  mole.removeEventListener('click', clickMole)
-}
+    // BIND THIS FOR FUNCTIONS
+    this.clickMole = this.clickMole.bind(this)
+    this.hideButton = this.hideButton.bind(this)
+    this.reset = this.reset.bind(this)
+    this.displayMole = this.displayMole.bind(this)
+    this.hideMole = this.hideMole.bind(this)
+    this.startGame = this.startGame.bind(this)
+    this.finalScoreFunc = this.finalScoreFunc.bind(this)
 
-function hideButton() {
-  score = 0
-  scoreDisplay.innerText = score
-  startScreen.style.display = 'none'
-}
+    // INITIALISE WITH EVENT LISTENER ON START BUTTON
+    this.init()
+  }
 
-function reset(countdown, timerId){
-  clearInterval(countdown)
-  clearInterval(timerId)
-  finalScoreFunc()
-  startBtn.innerText = 'Play again'
-  startScreen.style.display = 'flex'
+  init(){
+    this.startBtn.addEventListener('click', this.startGame)
+  }
 
-}
-// puts mole class onto random div
-function displayMole(randomNum){
-  grid[randomNum].classList.toggle('mole')
-  mole = document.querySelector('.mole')
-  mole.addEventListener('click', clickMole)
-}
+  // puts mole class onto random div
+  displayMole(randomNum){
+    this.grid[randomNum].classList.toggle('mole')
+    this.mole = document.querySelector('.mole')
+    this.mole.addEventListener('click', this.clickMole)
+  }
 
-function hideMole(randomNum){
-  mole.classList.remove('rubberBand')
-  mole.removeEventListener('click', clickMole)
-  grid[randomNum].classList.toggle('mole')
-}
+  hideMole(randomNum){
+    this.mole.classList.remove('rubberBand')
+    this.mole.removeEventListener('click', this.clickMole)
+    this.grid[randomNum].classList.toggle('mole')
+  }
 
-// generates mole to randomly appear and disappear around the grid
-function startGame(){
-  hideButton()
-  const timerId = setInterval(() => {
-    const randomNum = Math.floor(Math.random() * 9)
-    displayMole(randomNum)
-    setTimeout(() => hideMole(randomNum), 750)
-  }, 1000)
-  // countdown
-  let timeRemaining = 60
-  const countdown = setInterval(() => {
-    timer.innerText = timeRemaining
-    timeRemaining--
-    if (timeRemaining === 0) {
-      // stops timer and moles appearing at the same moment
-      setTimeout(() => reset(countdown, timerId), 1000)
-    }
-  }, 1000)
-}
+  // when a mole is clicked
+  clickMole() {
+    // increase and update score display
+    this.score += 1
+    this.scoreDisplay.innerText = this.score
+    // restart and play the squeak sound
+    this.audio.currentTime = 0
+    this.audio.play()
+    // animate the mole being hit
+    this.mole.classList.add('rubberBand')
+    // prevents mashing mole and getting more than one point by removing event listener after first click
+    this.mole.removeEventListener('click', this.clickMole)
+  }
 
-function finalScoreFunc() {
-  finalScore.innerText = `You scored ${score}!`
-  finalScore.classList.add('finalScore')
-  startScreen.append(finalScore)
+  hideButton() {
+    this.score = 0
+    this.scoreDisplay.innerText = this.score
+    this.startScreen.style.display = 'none'
+  }
+
+  reset(countdown, timerId){
+    clearInterval(countdown)
+    clearInterval(timerId)
+    this.finalScoreFunc()
+    this.startBtn.innerText = 'Play again'
+    this.startScreen.style.display = 'flex'
+
+  }
+
+  // generates mole to randomly appear and disappear around the grid
+  startGame(){
+    this.hideButton()
+    const timerId = setInterval(() => {
+      const randomNum = Math.floor(Math.random() * 9)
+      this.displayMole(randomNum)
+      setTimeout(() => this.hideMole(randomNum), 750)
+    }, 1000)
+    // countdown
+    let timeRemaining = 60
+    const countdown = setInterval(() => {
+      this.timer.innerText = timeRemaining
+      timeRemaining--
+      if (timeRemaining === 0) {
+        // stops timer and moles appearing at the same moment
+        setTimeout(() => this.reset(countdown, timerId), 1000)
+      }
+    }, 1000)
+  }
+
+  finalScoreFunc() {
+    this.finalScore.innerText = `You scored ${this.score}!`
+    this.finalScore.classList.add('finalScore')
+    this.startScreen.append(this.finalScore)
+  }
+
+
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // assign all variables when DOM has loaded
-  grid = document.querySelectorAll('div.cell')
-  timer = document.querySelector('#time')
-  scoreDisplay = document.querySelector('#score')
-  startScreen = document.querySelector('div.start')
-  startBtn = document.querySelector('#startBtn')
-  finalScore = document.createElement('div')
-  audio = document.querySelector('audio')
 
-  // Event listener to start button that runs the game code
-  startBtn.addEventListener('click', startGame)
+  new WhackAMole()
 
 })
