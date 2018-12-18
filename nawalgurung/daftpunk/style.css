@@ -1,15 +1,19 @@
 body{
-  background-color: white;
+  background-color: black;
+  background-image: url("https://i.pinimg.com/736x/6c/58/4d/6c584dc9452e9c4f942b1efe0c6fa6ce--fan-poster-poster-art.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 .grid{
-  width: 35%;
+  width: 500px;
   height: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   /* justify-content: space-between; */
   border: 1px solid red;
-  margin: auto;
+  margin: 60px auto;
 }
 
 .grid > div{
@@ -17,65 +21,34 @@ body{
 }
 
 .btn {
-  background-color: grey;
-  color: white;
-  font-size: 15px;
-  /* border: none; */
   height: 80px;
-  width: 80px;
+  width: 90px;
+  font-size: 13px;
+  padding: 5px;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Monoton', cursive;
+  transition: all 0.7s;
+  background-color: Transparent;
 }
 
-
-/* .box-1{
-
+.playing{
+  transform: scale(1.1);
+  outline-color: yellow;
+  box-shadow: 0 0 10px #ffc600;
 }
 
-.box-2{
-
+.btn:hover {
+  background-image: url('https://media0.giphy.com/media/BVFUSWbwywZd6/200w.gif');
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
 }
 
-.box-3{
-
-
+@media only screen and (max-width: 512px){
+  .grid {
+    width: 350px;
+    height: 600px;
+  }
 }
-
-.box-4{
-
-}
-
-.box-5{
-
-}
-.box-6{
-  ;
-}
-.box-7{
-  ;
-}
-.box-8{
-  ;
-}
-.box-9{
-  ;
-}
-.box-10{
-  ;
-}
-.box-11{
-  ;
-}
-.box-12{
-  ;
-}
-.box-13{
-  ;
-}
-.box-14{
-  ;
-}
-.box-15{
-  ;
-}
-.box-16{
-  ;
-} */
