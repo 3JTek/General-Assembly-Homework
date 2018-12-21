@@ -1,6 +1,9 @@
 class WhackAMole{
-  constructor(){
+  constructor(gridSize, gameSpeed, gameDuration){
     // VARIABLES
+    this.gridSize = gridSize
+    this.gameSpeed = gameSpeed
+    this.gameDuration = gameDuration
     this.grid
     this.timer = document.querySelector('#time')
     this.scoreDisplay = document.querySelector('#score')
@@ -25,10 +28,14 @@ class WhackAMole{
   }
 
   init(){
-    for(let i=0;i<9;i++){
+    for(let i=0;i<this.gridSize;i++){
       const cell = document.createElement('div')
       cell.classList.add('cell', 'animated')
+      cell.style.width = `calc(100%/${Math.sqrt(this.gridSize)})`
+      cell.style.height = `calc(100%/${Math.sqrt(this.gridSize)})`
       document.querySelector('.container').append(cell)
+      // document.querySelectorAll('div.cell').forEach(cell => {
+      // })
       console.log(i)
     }
     this.grid = document.querySelectorAll('div.cell')
@@ -82,20 +89,20 @@ class WhackAMole{
   startGame(){
     this.hideButton()
     const timerId = setInterval(() => {
-      const randomNum = Math.floor(Math.random() * 9)
+      const randomNum = Math.floor(Math.random() * this.gridSize)
       this.displayMole(randomNum)
-      setTimeout(() => this.hideMole(randomNum), 750)
-    }, 1000)
+      setTimeout(() => this.hideMole(randomNum), this.gameSpeed-250)
+    }, this.gameSpeed)
     // countdown
-    let timeRemaining = 60
+    let timeRemaining = this.gameDuration
     const countdown = setInterval(() => {
       this.timer.innerText = timeRemaining
       timeRemaining--
       if (timeRemaining === 0) {
         // stops timer and moles appearing at the same moment
-        setTimeout(() => this.reset(countdown, timerId), 1000)
+        setTimeout(() => this.reset(countdown, timerId), this.gameSpeed)
       }
-    }, 1000)
+    }, this.gameSpeed)
   }
 
   finalScoreFunc() {
@@ -110,6 +117,6 @@ class WhackAMole{
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  new WhackAMole()
+  new WhackAMole(16, 1000, 60)
 
 })
