@@ -1,7 +1,7 @@
 class WhackAMole{
   constructor(){
     // VARIABLES
-    this.grid = document.querySelectorAll('div.cell')
+    this.grid
     this.timer = document.querySelector('#time')
     this.scoreDisplay = document.querySelector('#score')
     this.startScreen = document.querySelector('div.start')
@@ -20,11 +20,19 @@ class WhackAMole{
     this.startGame = this.startGame.bind(this)
     this.finalScoreFunc = this.finalScoreFunc.bind(this)
 
-    // INITIALISE WITH EVENT LISTENER ON START BUTTON
+    // INITIALISE WITH EVENT LISTENER ON START BUTTON AND CREATE GAME GRID
     this.init()
   }
 
   init(){
+    for(let i=0;i<9;i++){
+      const cell = document.createElement('div')
+      cell.classList.add('cell', 'animated')
+      document.querySelector('.container').append(cell)
+      console.log(i)
+    }
+    this.grid = document.querySelectorAll('div.cell')
+
     this.startBtn.addEventListener('click', this.startGame)
   }
 
