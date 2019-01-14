@@ -1,0 +1,27 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+.countries {
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.countries div {
+  margin: 5px;
+  max-width: 20%;
+  border: 1px solid #ccc;
+}
+
+.countries div>* {
+  padding: 0 5px;
+  margin:  5px 0;
+
+}
+
+.countries div img {
+  width: 190px;
+  height: 130px;
+}

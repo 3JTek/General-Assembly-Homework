@@ -14,9 +14,11 @@ $(() => {
         // console.log(country.nativeName)
         // console.log(country.flag)
         $countries.append(`
-          <h4>${country.name}</h4>
-          <h5>${country.nativeName}</h5>
-          <img src="${country.flag}" alt="${country.name}" />
+          <div>
+            <h4>${country.name}</h4>
+            <h5>${country.nativeName}</h5>
+            <img src="${country.flag}" alt="${country.name}" />
+          </div>
           `)
       })
     })
