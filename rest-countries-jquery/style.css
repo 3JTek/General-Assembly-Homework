@@ -1,10 +1,11 @@
 
 
 img {
-  width: 100px;
-  height: 80px;
+  width: 160px;
+  height: 110px;
   display: block;
   margin: auto;
+  padding-bottom: 10px;
 }
 
 .countries {
@@ -14,9 +15,8 @@ img {
 }
 
 .countries > div {
-  width: 24%;
+  width: 20%;
   border: 1px solid grey;
   margin: 10px;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
