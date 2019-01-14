@@ -1,4 +1,6 @@
-function showAllCountries($countries) {
+let $countries
+
+function showAllCountries() {
   $.ajax({
     method: 'GET',
     url: 'https://restcountries.eu/rest/v2/all'
@@ -15,8 +17,8 @@ function showAllCountries($countries) {
 }
 
 $(() => {
-  const $countries = $('.countries')
+  $countries = $('.countries')
 
-  showAllCountries($countries)
+  showAllCountries()
 
 })
