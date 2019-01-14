@@ -15,8 +15,8 @@ $(() =>{
           $flags.append(`
           <div>
           <h4>${flag.name}</h4>
-          <p>${flag.nativeName}</p>
-          <img src="${flag.flag}" alt${flag.name}"/>
+          <small>${flag.nativeName}</small>
+          <a target="_blank" href="https://www.britannica.com/place/${flag.name}"><img src="${flag.flag}" alt${flag.name}"/></a>
           </div>
           `)
         })
