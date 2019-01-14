@@ -1,89 +1,60 @@
 $(()=>init())
 
-
 function init(){
-  console.log('jquery loaded')
+  //Get DOM Elephants
   const baseURL ='https://restcountries.eu/rest/v2'
   const $container = $('.container')
   const $regions = $('.regions')
   const $search = $('.search')
 
+  function request(typeUrl, init=false){
+    function element(name,nativeName,flag){
+      return `<a href="https://en.wikipedia.org/wiki/${name}" class = "tile" id="${name}">
+                <h3>${name}</h3>
+                <h4>${nativeName}</h4>
+                <img src=${flag} alt="${name}"/>
+              </a>`
+    }
 
-  function element(name,nativeName,flag){
-    return `<div class = "tile">
-      <h3>${name}</h3>
-      <h4>${nativeName}</h4>
-      <img src=${flag} alt="${name}"/>
-      </div>`
-  }
-  function request(typeUrl){
-    $container.empty()
     $.ajax({
       method: 'GET',
       url: baseURL+'/'+typeUrl
-
     }).then(countries => {
-      countries.forEach(country => {
-        $container.append(element(country.name,country.nativeName,country.flag))
-      })
+      //Hide all countries (this is empty when called by init)
+      $container.children('a').hide()
+      //If first call, build country tiles
+      if(init){
+        countries.forEach(country => {
+          //Append the country element to the container
+          $container.append(element(country.name,country.nativeName,country.flag))
+        })
+
+      }else if(typeUrl === 'all'){
+        //Show all countries
+        $container.children('a').show()
+
+      }else{
+        countries.forEach(country => {
+          //Show selected countries
+          $container.find('#'+country.name).show()
+        })
+      }
     })
   }
-  function getCountries(){
-    request('all')
-    // $container.empty()
-    //
-    // $.ajax({
-    //   method: 'GET',
-    //   url: baseURL+'/all'
-    //
-    // }).then(countries => {
-    //   countries.forEach(country => {
-    //     $container.append(element(country.name,country.nativeName,country.flag))
-    //   })
-    // })
-  }
 
-  function filterRegions(e){
-    console.log(e.target.value)
-    $container.empty()
-
-    let regionUrl = 'region/'+e.target.value
-
-    if(e.target.value === 'all') regionUrl = baseURL+'all'
-
-    request(regionUrl)
-
-    // $.ajax({
-    //   method: 'GET',
-    //   url: regionUrl
-    //
-    // }).then(countries => {
-    //   countries.forEach(country => {
-    //     $container.append(element(country.name,country.nativeName,country.flag))
-    //   })
-    // })
-  }
-
-
-  function searchCountry(e){
-
-    const searchURL = 'name/'+e.target.value
-
+  function updateCountries(e,type){
+    //Value of input or select
+    const val = e.target.value
+    let searchURL = type+'/'+val
+    //If val is empty or all selected, show all
+    if(val === '' || val === 'all') searchURL = 'all'
     request(searchURL)
-    //
-    // $.ajax({
-    //   method: 'GET',
-    //   url: searchURL
-    //
-    // }).then(countries => {
-    //   countries.forEach(country => {
-    //     $container.append(element(country.name,country.nativeName,country.flag))
-    //   })
-    // })
   }
 
-  getCountries()
-  $regions.on('change',filterRegions)
-  $search.on('keydown',searchCountry)
+  //Add event listeners
+  $regions.on('change',(e)=>updateCountries(e,'region'))
+  $search.on('keyup',(e)=>updateCountries(e,'name'))
 
+  //Trigger initial request
+  request('all',true)
 }

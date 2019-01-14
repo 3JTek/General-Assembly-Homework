@@ -16,14 +16,12 @@ header,footer{
   background: #333;
   color: white;
 }
-footer{
-  position: fixed;
-  top:100%;
-}
+
 input, select {
-  font-size: 1.5em;
-  height:1.5em;
+  font-size: 1.2em;
+  height:1.2em;
   border-radius: 5px;
+  margin: 0 20px;
 }
 
 input {
@@ -33,6 +31,10 @@ input {
 main{
   width:100%;
 }
+
+h3{
+  text-decoration: underline;
+}
 .container{
   display: flex;
   flex-wrap: wrap;
@@ -41,12 +43,23 @@ main{
 .tile{
   background-color: white;
   border: 1px solid black;
-
   padding: 10px;
   margin:10px;
   width:20%;
-
   box-shadow: 5px 5px 2px 2px #666;
+  transition: all 250ms;
+}
+.tile:hover{
+  border: 1px solid dodgerblue;
+  cursor: pointer;
+  outline: none;
+  transform: translate(-1px, -4px);
+  box-shadow: 6px 9px 2px 2px #666;
+
+}
+a.tile{
+  color:black;
+  text-decoration: none;
 }
 img{
   width:100%;
