@@ -5,7 +5,7 @@
 $(() => {
 
   const $container = $('.container')
-  const $form = $('.form')
+  const $form = $('#drop')
 
 
   $.ajax({
@@ -14,15 +14,18 @@ $(() => {
   })
     .then(data => {
       data.forEach(country => $container.append(`
-        <div>
-          <h3>${country.name}</h3>
-          <h4>${country.nativeName}</h4>
-          <img src="${country.flag}" />
-        </div>
+      <div>
+      <h3>${country.name}</h3>
+      <h5>${country.nativeName}</h5>
+      <img src="${country.flag}" />
+      </div>
       `))
     })
 
-  
+
+
+
+  // $form.on('change',(e => flags(e.target.name))
 
 
 })

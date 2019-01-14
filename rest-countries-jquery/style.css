@@ -3,15 +3,31 @@ body {
 }
 
 img {
-  weight: 100px;
+  weight: 80px;
   height: 80px;
   display: flex;
-  /* margin: 0; */
-  border: 1px solid black
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+div .container {
+  display: flex
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between
+  margin-top: 45px
+}
+
+.container > div {
+  width: 18%;
+  margin: 10px;
+  /* border: 1px solid black; */
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin-top: 5px
 }
