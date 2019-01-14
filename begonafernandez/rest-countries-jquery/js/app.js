@@ -3,6 +3,14 @@ let $dropdownMenu
 let $input
 const baseUrl = 'https://restcountries.eu/rest/v2/'
 
+function showCountry(country) {
+  $countries.append(`<div>
+    <div class="name">${country.name}</div>
+    <div class="nativeName">${country.nativeName}</div>
+    <img src='${country.flag}'/>
+  </div>`)
+}
+
 function showcountriesByRegion(option) {
   const regions = [ 'africa', 'americas', 'asia', 'europe', 'oceania']
   let pathSegment
@@ -17,16 +25,16 @@ function showcountriesByRegion(option) {
   $.ajax({
     method: 'GET',
     url: baseUrl + pathSegment + option
-
   })
-    .then(countries => countries.forEach(country => {
-      $countries.append(`<div>
-        <div class="name">${country.name}</div>
-        <div class="nativeName">${country.nativeName}</div>
-        <img src='${country.flag}'/>
-      </div>`)
+    .then(countries => countries.forEach(showCountry))
+}
 
-    }))
+function showSearchedCountry(name) {
+  $.ajax({
+    method: 'GET',
+    url: baseUrl + 'name/' + name
+  })
+    .then(countries => countries.forEach(showCountry))
 }
 
 
@@ -44,7 +52,8 @@ $(() => {
   })
 
   $input.on('change', function() {
-    console.log($(this).val())
+    $countries.empty()
+    showSearchedCountry($(this).val())
   })
 
 
