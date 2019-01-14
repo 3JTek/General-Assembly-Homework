@@ -1,10 +1,19 @@
+*{
+ font-family: sans-serif;
+}
+
+h1{
+  color: white;
+  background: grey;
+}
+
 .container{
   max-width: 1000px;
   margin: auto;
 }
 
 img{
-  width: 200px;
+  width: 98%;
 }
 
 .search-area{
