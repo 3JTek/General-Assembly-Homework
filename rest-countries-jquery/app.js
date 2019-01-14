@@ -5,6 +5,8 @@
 $(() => {
 
   const $container = $('.container')
+  const $form = $('.form')
+
 
   $.ajax({
     method: 'GET',
@@ -13,11 +15,14 @@ $(() => {
     .then(data => {
       data.forEach(country => $container.append(`
         <div>
-          <h4>${country.name}</h4>
+          <h3>${country.name}</h3>
+          <h4>${country.nativeName}</h4>
           <img src="${country.flag}" />
         </div>
       `))
     })
+
+  
 
 
 })
