@@ -3,6 +3,7 @@ $(() => {
   const $countries = $('.countries')
   const $region = $('.region')
   const $searchBox = $('.search')
+  const $nativeName = $('native')
   console.log($region)
 
 
@@ -18,6 +19,7 @@ $(() => {
           $countries.append(`
             <div class="country">
               <h4>${country.name}</h4>
+              <small class="native">${country.nativeName}</small>
               <img src="${country.flag}" alt = "${country.name}" />
 
             </div>
