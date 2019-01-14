@@ -1,7 +1,7 @@
 $(() => {
   const $countries = $('.countries')
   const $filterCountries = $('form select')
-
+  const $searchBar = $('input')
 
   function getCountries(variable){
     $countries.empty()
@@ -19,17 +19,12 @@ $(() => {
           <small>${country.nativeName}</small>
           <img src="${country.flag}" atl="${country.name}" />
           </div>
-
           `)
         })
       })
   }
-
-
-  getCountries('all')
-
+  
   $filterCountries.change(e => getCountries(e.target.value))
-
-
-  //https://restcountries.eu/rest/v2/all
+  $searchBar.on( 'input', e => getCountries(`name/${e.target.value.toLowerCase()}`))
+  getCountries('all')
 })

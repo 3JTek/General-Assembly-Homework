@@ -1,7 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+
 .countries{
   display: flex;
   flex-wrap: wrap;
 }
 img{
-  width: 300px;
+  width: 96%;
+}
+
+.countries > div{
+  width: 22%;
+  border: 1px grey solid;
+  margin: 10px 10px;
+  padding: 10px;
+}
+.container{
+  width: 85%;
+  margin: 0 auto;
+}
+
+select, input {
+  font-size: 15px;
+  border-radius: 10px;
+  margin: 10px 10px;
+  width: 30%;
+}
+.form{
+  width: 100%;
+}
+form{
+  margin: 0 auto;
 }
