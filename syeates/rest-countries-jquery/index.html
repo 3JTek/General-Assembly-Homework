@@ -8,19 +8,17 @@
   <title></title>
 </head>
 <body>
-  <div class="Search">
-    <select>
-      <option value="all">All</option>
-      <option value="africa">Africa</option>
-      <option value="americas">Americas</option>
-      <option value="asia">Asia</option>
-      <option value="europe">Europe</option>
-      <option value="oceania">Oceania</option>
-    </select>
-    <form action="/action_page.php">
-    <input type="text" placeholder="Search for Country"><br>
-    </form>
-  </div>
-  <div class="countries"></div>
+  <form class="filter-form" action="index.html" method="post">
+   <select class="searchRegion">
+     <option value="All" selected="selected">All</option>
+     <option value="Africa">Africa</option>
+     <option value="Americas">Americas</option>
+     <option value="Asia">Asia</option>
+     <option value="Europe">Europe</option>
+     <option value="Oceania">Oceania</option>
+   </select>
+   <input type="text" class="searchName" placeholder="Search">
+   </form>
+   <div class="countries"></div>
 </body>
 </html>

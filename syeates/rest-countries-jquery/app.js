@@ -1,27 +1,39 @@
 $(() =>{
 
-  const countries =$('.countries')
+  const $countries = $('.countries')
+  const $region = $('.searchRegion')
+  const $searchBox = $('.searchName')
 
 
-  function getCountries(){
-
-    countries.empty()
-
+  function getCountries(where) {
+    $countries.empty()
     $.ajax({
       method: 'GET',
-      url: 'https://restcountries.eu/rest/v2/all'
+      url: `https://restcountries.eu/rest/v2/${where}`
     })
       .then(countries => {
-        countries.forEach(contry => {
+        countries.forEach(country => {
           $countries.append(`
-        <div>
-        <h4>${contry.name}</h4>
-        <h4>${contry.name}</h4>
-        <img src="${contry.image}" alt${contry.name}" />
-        </div>
-        `)
+          <div class="country">
+          <h4>${country.name}</h4>
+          <small class="native">${country.nativeName}</small>
+          <img src="${country.flag}" alt = "${country.name}" />
+          </div>
+          `)
         })
       })
   }
+
+  function dropMenu(e) {
+    console.log(`${e.target.value}`)
+    getCountries(`region/${e.target.value}`)
+  }
+  function search(e) {
+    console.log(`${e.target.value}`)
+    getCountries(`name/${e.target.value}`)
+  }
+  getCountries('all')
+  $region.on('change', dropMenu)
+  $searchBox.on('input', search)
 
 })
