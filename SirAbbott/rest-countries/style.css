@@ -1,6 +1,17 @@
 
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 select {
-  align-content: center;
+  height: 40px;
+  width: 80px;
+  align-items: center;
+}
+
+input {
+  width: 20%;
 }
 
 .flags {
