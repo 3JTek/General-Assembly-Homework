@@ -7,23 +7,31 @@ function init(){
   const $container = $('.container')
   const $regions = $('.regions')
   const $search = $('.search')
+  const $bar = $('.bar')
   let $tiles
 
   function request(typeUrl, init=false){
+    //Fake progress bar!
+    $bar.addClass('load').css('opacity','1')
+    setTimeout(function () {
+      $bar.removeClass('load').css('opacity','0')
+    }, 1250)
+
     function element(name,nativeName,flag,code){
-      return `<a href="https://en.wikipedia.org/wiki/${name}" class = "tile" id="${code} target="_blank">
-                <div class="info">
-                  <h3>${name}</h3>
-                  <h4>${nativeName}</h4>
-                </div>
-                <img src=${flag} alt="${name}"/>
-              </a>`
+      return `<a href="https://en.wikipedia.org/wiki/${name}" class = "tile" id="${code}">
+  <div class="info">
+    <h3>${name}</h3>
+    <h4>${nativeName}</h4>
+  </div>
+  <img src=${flag} alt="${name}"/>
+</a>`
     }
 
     $.ajax({
       method: 'GET',
       url: baseURL+'/'+typeUrl
     }).then(countries => {
+
 
       //If first call, build country tiles
       //Append the country element to the container
@@ -48,7 +56,7 @@ function init(){
         //Add a little animation
         setTimeout(function () {
           $thisCountry.css('opacity','1')
-        },(delay*i))
+        },200+(delay*i))
       })
     })
   }
