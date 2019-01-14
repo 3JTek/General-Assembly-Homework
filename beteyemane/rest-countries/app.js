@@ -1,19 +1,34 @@
 $(() =>{
 
   const $flags =$('.flags')
+  const $dropDown = $('select')
+  const $search =$('.search')
 
-  $.ajax({
-    method: 'GET',
-    url: 'https://restcountries.eu/rest/v2/all'
-  })
-    .then(flags => {
-      flags.forEach(flag => {
-        $flags.append(`
-        <div>
-        <h4>${flag.name}</h4>
-        <img src="${flag.flag}" alt${flag.name}" />
-        </div>
-        `)
-      })
+  function getFlags(item) {
+    $flags.empty()
+    $.ajax({
+      method: 'GET',
+      url: `https://restcountries.eu/rest/v2/${item}`
     })
+      .then(flags => {
+        flags.forEach(flag => {
+          $flags.append(`
+          <div>
+          <h4>${flag.name}</h4>
+          <p>${flag.nativeName}</p>
+          <img src="${flag.flag}" alt${flag.name}" />
+          </div>
+          `)
+        })
+      })
+  }
+
+  getFlags('all')
+
+  $dropDown.on('change', (e) => {
+    getFlags(e.target.value)
+  })
+  // $search.on('keyup', (e) => {
+  //   getFlags(e.target.value)
+  // })
 })
