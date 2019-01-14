@@ -1,0 +1,23 @@
+
+ .flags {
+   display: flex;
+   flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  justify-content: space-around;
+ }
+
+.flags > div {
+  width: 20%;
+  border: 2px grey solid;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.imageDiv {
+  width: 100%;
+}
+
+.flags img {
+  width: 80%;
+}
