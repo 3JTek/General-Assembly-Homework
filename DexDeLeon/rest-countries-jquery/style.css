@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+div.countries {
+  display: flex;
+  width: 85vw;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  text-align: center;
+}
+
+div.countries > div {
+  width: 22%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 1% 0;
+  padding: 1%;
+  transition: border 0.1s ease;
+}
+
+div.countries > div:hover {
+  border: 2px solid #555;
+}
+
+div.flagDiv {
+  width: 100%;
+}
+
+div.flagDiv img {
+  width: 100%;
+}
