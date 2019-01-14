@@ -2,6 +2,7 @@ $(() => {
 
 const $flags = $('.flag-grid')
 const $menu = $('.menu')
+const $search = $('input')
 
   function getFlags(choice){
     $flags.empty()
@@ -26,8 +27,11 @@ const $menu = $('.menu')
 
 getFlags('all')
 
+$search.on('keyup', e => {
+  getFlags(`name/${e.target.value}`)
+})
+
 $menu.on('change', e => {
-  console.log(e.target.value)
   getFlags(e.target.value)
 })
 
