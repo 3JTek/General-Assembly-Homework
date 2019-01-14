@@ -10,8 +10,8 @@ $(() => {
       flags.forEach(flag => {
         $flags.append(`
           <div>
-            <h4>${flag.name}</h4>
-            <h4>${flag.nativeName}</h4>
+            <h3>${flag.name}</h3>
+            <h5>${flag.nativeName}</h5>
             <img src='${flag.flag}' alt='${flag.name}'>
           </div>
         `)
