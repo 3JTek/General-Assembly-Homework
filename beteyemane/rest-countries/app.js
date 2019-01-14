@@ -16,7 +16,7 @@ $(() =>{
           <div>
           <h4>${flag.name}</h4>
           <p>${flag.nativeName}</p>
-          <img src="${flag.flag}" alt${flag.name}" />
+          <img src="${flag.flag}" alt${flag.name}"/>
           </div>
           `)
         })
@@ -28,7 +28,11 @@ $(() =>{
   $dropDown.on('change', (e) => {
     getFlags(e.target.value)
   })
-  // $search.on('keyup', (e) => {
-  //   getFlags(e.target.value)
-  // })
+  $search.on('input', (e) => {
+    if(e.target.value === '') {
+      getFlags('all')
+    } else {
+      getFlags(`name/${e.target.value}`)
+    }
+  })
 })

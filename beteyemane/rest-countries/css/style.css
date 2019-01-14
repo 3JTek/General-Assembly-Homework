@@ -5,15 +5,31 @@ body {
 }
 
 body > div {
-  display: flex;
   flex-wrap: wrap;
+  display: flex;
 }
 
 .flags div img {
-  width: 200px;
   margin: 8px;
+  width: 80%;
 }
 
 select {
   margin-top: 20px;
+}
+
+.flags div {
+  border: 0.1px solid #d3d3d3;
+  margin: 10px;
+  text-align: center;
+  width: 22%;
+}
+
+.flags div:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  cursor: pointer;
+}
+
+.search, select {
+  font-size: 15px;
 }
