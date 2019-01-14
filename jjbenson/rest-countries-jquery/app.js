@@ -1,17 +1,21 @@
 $(()=>init())
 
 function init(){
-  //Get DOM Elephants
+  //Get DOM elements
+  const delay = 50
   const baseURL ='https://restcountries.eu/rest/v2'
   const $container = $('.container')
   const $regions = $('.regions')
   const $search = $('.search')
+  let $tiles
 
   function request(typeUrl, init=false){
-    function element(name,nativeName,flag){
-      return `<a href="https://en.wikipedia.org/wiki/${name}" class = "tile" id="${name}">
-                <h3>${name}</h3>
-                <h4>${nativeName}</h4>
+    function element(name,nativeName,flag,code){
+      return `<a href="https://en.wikipedia.org/wiki/${name}" class = "tile" id="${code} target="_blank">
+                <div class="info">
+                  <h3>${name}</h3>
+                  <h4>${nativeName}</h4>
+                </div>
                 <img src=${flag} alt="${name}"/>
               </a>`
     }
@@ -20,25 +24,32 @@ function init(){
       method: 'GET',
       url: baseURL+'/'+typeUrl
     }).then(countries => {
-      //Hide all countries (this is empty when called by init)
-      $container.children('a').hide()
+
       //If first call, build country tiles
-      if(init){
-        countries.forEach(country => {
-          //Append the country element to the container
-          $container.append(element(country.name,country.nativeName,country.flag))
-        })
-
-      }else if(typeUrl === 'all'){
-        //Show all countries
-        $container.children('a').show()
-
-      }else{
-        countries.forEach(country => {
-          //Show selected countries
-          $container.find('#'+country.name).show()
-        })
+      //Append the country element to the container
+      if(init) {
+        countries.forEach(country =>$container
+          .append(element(country.name,country.nativeName,country.flag,country.alpha3Code)))
+        $tiles = $container.children('a')
+        return
       }
+
+      //Hide all countries
+      $tiles.hide().css('opacity','0')
+
+      //Show all countries
+      if(typeUrl === 'all')$tiles.show().css('opacity','1')
+
+      // Else show filtered countries
+      else countries.forEach((country,i) => {
+        const $thisCountry = $tiles.filter('#'+country.alpha3Code)
+
+        $thisCountry.show()
+        //Add a little animation
+        setTimeout(function () {
+          $thisCountry.css('opacity','1')
+        },(delay*i))
+      })
     })
   }
 

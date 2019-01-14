@@ -34,34 +34,52 @@ main{
 
 h3{
   text-decoration: underline;
+  margin:0;
+}
+h4{
+  margin:0;
+
 }
 .container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-start;
 }
 .tile{
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  text-align: center;
+  background-color: #fbfbfe;
   border: 1px solid black;
   padding: 10px;
   margin:10px;
   width:20%;
-  box-shadow: 5px 5px 2px 2px #666;
-  transition: all 250ms;
+  min-height:250px;
+  box-shadow: 0px 0px 0px 0px #999;
+  transition: all 1000ms, transform 250ms,box-shadow 250ms;
+
 }
+
 .tile:hover{
   border: 1px solid dodgerblue;
   cursor: pointer;
   outline: none;
-  transform: translate(-1px, -4px);
-  box-shadow: 6px 9px 2px 2px #666;
+  transform: translate(0px, -4px);
+  box-shadow: 0px 4px 2px 2px #999;
 
 }
 a.tile{
   color:black;
   text-decoration: none;
+  border-radius: 4px;
+}
+.tile > .info{
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 img{
   width:100%;
-  border:1px solid grey;
+    box-shadow: 2px 2px 1px 1px #999;
 }
