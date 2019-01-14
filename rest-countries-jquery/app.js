@@ -33,6 +33,7 @@ $(() =>{
 
       .then(countries =>
         countries.forEach(country => {
+          console.log('this bit working too')
           $countries.append(`
           <div>
           <h3>${country.name}</h3>
