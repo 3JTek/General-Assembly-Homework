@@ -1,9 +1,16 @@
 let $countries
+let $dropdownMenu
 
-function showAllCountries() {
+function showAllCountries(option) {
+  let pathSegment
+  if (option !== 'all') {
+    pathSegment = 'region/'
+  } else {
+    pathSegment = ''
+  }
   $.ajax({
     method: 'GET',
-    url: 'https://restcountries.eu/rest/v2/all'
+    url: 'https://restcountries.eu/rest/v2/' + pathSegment + option
 
   })
     .then(countries => countries.forEach(country => {
@@ -16,9 +23,20 @@ function showAllCountries() {
     }))
 }
 
+
 $(() => {
   $countries = $('.countries')
+  $dropdownMenu = $('.dropdown')
 
-  showAllCountries()
+  showAllCountries('all')
+
+
+  $dropdownMenu.on('change', function() {
+    console.log($(this).val())
+    $countries.empty()
+    showAllCountries($(this).val())
+  })
+
+
 
 })

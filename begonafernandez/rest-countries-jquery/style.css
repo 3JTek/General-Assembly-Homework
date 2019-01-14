@@ -1,8 +1,11 @@
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .countries {
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .countries > div {
