@@ -5,27 +5,33 @@
 $(() => {
 
   const $container = $('.container')
-  const $form = $('#drop')
+  const $form = $('#dropdown')
 
+  function getCountries(choice) {
+    $container.empty()
 
-  $.ajax({
-    method: 'GET',
-    url: 'https://restcountries.eu/rest/v2/all'
-  })
-    .then(data => {
-      data.forEach(country => $container.append(`
-      <div>
-      <h3>${country.name}</h3>
-      <h5>${country.nativeName}</h5>
-      <img src="${country.flag}" />
-      </div>
-      `))
+    $.ajax({
+      method: 'GET',
+      url: `https://restcountries.eu/rest/v2/${choice}`
     })
+      .then(data => {
+        data.forEach(country => {
+          $container.append(`
+          <div>
+          <h3>${country.name}</h3>
+          <h5>${country.nativeName}</h5>
+          <img src="${country.flag}" />
+          </div>
+          `)
 
+        })
+      })
+  }
 
+  getCountries('all')
 
-
-  // $form.on('change',(e => flags(e.target.name))
-
+  $form.on('change', e => {
+    getCountries(e.target.value)
+  })
 
 })
