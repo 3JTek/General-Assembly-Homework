@@ -1,0 +1,10 @@
+.Search{
+  display: flex;
+  justify-content: center;
+}
+
+.countries{
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+}
