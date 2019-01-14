@@ -1,10 +1,10 @@
 let $countries
 let $dropdownMenu
+let $input
+const baseUrl = 'https://restcountries.eu/rest/v2/'
 
-function showAllCountries(option) {
+function showcountriesByRegion(option) {
   const regions = [ 'africa', 'americas', 'asia', 'europe', 'oceania']
-
-  console.log(regions.indexOf(option))
   let pathSegment
   if (regions.indexOf(option) > -1) {
     pathSegment = 'region/'
@@ -16,7 +16,7 @@ function showAllCountries(option) {
 
   $.ajax({
     method: 'GET',
-    url: 'https://restcountries.eu/rest/v2/' + pathSegment + option
+    url: baseUrl + pathSegment + option
 
   })
     .then(countries => countries.forEach(country => {
@@ -33,13 +33,18 @@ function showAllCountries(option) {
 $(() => {
   $countries = $('.countries')
   $dropdownMenu = $('.dropdown')
+  $input = $('input')
 
-  showAllCountries('all')
+  showcountriesByRegion('all')
 
 
   $dropdownMenu.on('change', function() {
     $countries.empty()
-    showAllCountries($(this).val())
+    showcountriesByRegion($(this).val())
+  })
+
+  $input.on('change', function() {
+    console.log($(this).val())
   })
 
 
