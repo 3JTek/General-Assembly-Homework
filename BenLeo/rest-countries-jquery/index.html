@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <form id="geoDropdown">
+      <select name="geos" onchange="$('#geoDropdown').submit()">
+        <option value="all">All</option>
+        <option value="africa">Africa</option>
+        <option value="americas">Americas</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+    </form>
     <div class="countries"></div>
   </body>
 </html>

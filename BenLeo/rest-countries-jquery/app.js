@@ -1,8 +1,9 @@
-//Grab objects' name, nativeName, flag
+//Grab objects' name, nativeName, flag, region
 
 $(() => {
 
   const $countries = $('.countries')
+  const $geoDropdownForm = $('#geoDropdown')
 
   $.ajax({
     method: 'GET',
@@ -22,4 +23,12 @@ $(() => {
           `)
       })
     })
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log('Form submitted')
+  }
+
+  $geoDropdownForm.on('submit', handleSubmit)
+
 })
