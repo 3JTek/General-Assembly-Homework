@@ -1,0 +1,23 @@
+
+select {
+  align-content: center;
+}
+
+.flags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+
+}
+
+.flags div {
+  border: 2px solid grey;
+  width: 20%;
+  margin: 20px;
+}
+.flags img {
+  width: 80%;
+  height: 200px;
+  margin: 10px;
+}
