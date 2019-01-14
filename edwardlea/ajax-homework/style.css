@@ -1,0 +1,32 @@
+.container{
+  max-width: 1000px;
+  margin: auto;
+}
+
+img{
+  width: 200px;
+}
+
+.search-area{
+  display: flex;
+}
+
+.search-area > form, select{
+  margin: 5px;
+}
+
+.flags{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.flags > div{
+  width: 20%;
+  border: 1px grey solid;
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
