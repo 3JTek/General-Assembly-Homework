@@ -23,7 +23,7 @@ div .container {
 .container > div {
   width: 18%;
   margin: 10px;
-  /* border: 1px solid black; */
+  border-top: 1px solid black;
   justify-content: center;
   align-items: center;
 }
