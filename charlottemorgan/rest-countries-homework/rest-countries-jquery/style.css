@@ -21,3 +21,11 @@
 .flags img {
   width: 80%;
 }
+ .regions {
+   margin-left: 100px;
+   font-size: 18px;
+ }
+
+ .input {
+   font-size: 30px;
+ }
