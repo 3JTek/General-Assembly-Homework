@@ -3,6 +3,10 @@ main {
   margin: 0 auto;
 }
 
+.search {
+  padding-bottom: 10px;
+}
+
 .countries {
   display: flex;
   flex-wrap: wrap;

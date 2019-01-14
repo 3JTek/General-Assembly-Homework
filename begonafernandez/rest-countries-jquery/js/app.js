@@ -2,12 +2,18 @@ let $countries
 let $dropdownMenu
 
 function showAllCountries(option) {
+  const regions = [ 'africa', 'americas', 'asia', 'europe', 'oceania']
+
+  console.log(regions.indexOf(option))
   let pathSegment
-  if (option !== 'all') {
+  if (regions.indexOf(option) > -1) {
     pathSegment = 'region/'
-  } else {
+  } else  if (option === 'all'){
     pathSegment = ''
+  } else {
+    pathSegment = 'regionalbloc/'
   }
+
   $.ajax({
     method: 'GET',
     url: 'https://restcountries.eu/rest/v2/' + pathSegment + option
@@ -32,7 +38,6 @@ $(() => {
 
 
   $dropdownMenu.on('change', function() {
-    console.log($(this).val())
     $countries.empty()
     showAllCountries($(this).val())
   })
