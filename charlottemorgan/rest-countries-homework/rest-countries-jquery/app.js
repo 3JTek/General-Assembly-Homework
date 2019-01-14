@@ -23,10 +23,14 @@ $(() => {
 
 
   function flagByRegion(e) {
+    let regionURL = `https://restcountries.eu/rest/v2/region/${e.target.value}`
+    if (e.target.value === 'all') {
+      regionURL = 'https://restcountries.eu/rest/v2/all'
+    }
     $flags.empty()
     $.ajax({
       method: 'GET',
-      url: `https://restcountries.eu/rest/v2/region/${e.target.value}`
+      url: regionURL
     })
       .then(flags => {
         console.log(flags)
