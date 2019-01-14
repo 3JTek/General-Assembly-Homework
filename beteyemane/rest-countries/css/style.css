@@ -1,0 +1,19 @@
+body {
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+body > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flags div img {
+  width: 200px;
+  margin: 8px;
+}
+
+select {
+  margin-top: 20px;
+}
