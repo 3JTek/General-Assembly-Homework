@@ -25,6 +25,7 @@ const $menu = $('.menu')
 
 
 getFlags('all')
+
 $menu.on('change', e => {
   console.log(e.target.value)
   getFlags(e.target.value)
