@@ -1,3 +1,5 @@
+/* global samples */
+
 $(() => {
   const $textExample = $('.text-example')
   const $textarea = $('textarea')

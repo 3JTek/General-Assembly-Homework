@@ -1,0 +1,23 @@
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.countries > div {
+  width: 20%;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+img {
+  max-height: 90px;
+  display: block;
+  margin: 10px auto;
+}

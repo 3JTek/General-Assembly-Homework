@@ -53,6 +53,7 @@ function titleCase(string) {
   return string.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ')
 }
 
+
 // write a function that returns the number of vowels in a string case insensitive
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
