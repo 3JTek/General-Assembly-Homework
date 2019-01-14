@@ -46,9 +46,11 @@ $(() => {
   const $textbox = $('.textbox')
   const $type = $('.type')
   const $wordCount = $('.word-count')
-  const $wpm = $('.wordsPerMinute')
+  // const $wpm = $('.wordsPerMinute')
   let i = 0
   let counts = 0
+
+
   function getRandom() {
     return randomText[Math.floor(Math.random() * randomText.length)]
   }
@@ -64,4 +66,10 @@ $(() => {
       } else e.preventDefault()
     }
   })
+
+
+  //WPM
+  // count how many words('counts') in one minute
+  //When timer runs to zero, log number of words.
+  //Put number of words as text into 'wordsPerMinute' span with .text.
 })
