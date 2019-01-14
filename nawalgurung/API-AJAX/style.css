@@ -1,0 +1,17 @@
+div img{
+  width: 100%;
+}
+
+
+.flagsdiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 0px;
+}
+
+.flagsdiv div{
+  width: 20%;
+  border: 1px solid black;
+  margin: 8px;
+}
