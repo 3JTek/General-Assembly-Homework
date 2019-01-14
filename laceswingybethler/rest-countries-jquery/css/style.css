@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.country {
+  width: 20%;
+  justify-content: space-around;
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 10px;
+}
+
+img {
+  max-width: 150px;
+}
+
+.countries {
+  display: flex;
+  flex-flow: wrap;
+  margin: 10px auto;
+}
+
+form {
+  margin: 10px auto;
+}
