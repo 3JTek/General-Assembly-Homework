@@ -5,6 +5,24 @@ $white:#FDFDFD;
 $grey:#999;
 $shadow: $black;
 $blue:#1A5A92;
+$orange: orange;
+$green: green;
+$red: red;
+
+$bakerloo: #B36305;
+$central: #E32017;
+$circle: #FFD300;
+$district: #00782A;
+$hammersmith-city: #F3A9BB;
+$jubilee: #A0A5A9;
+$metropolitan: #9B0056;
+$northern: #000000;
+$piccadilly: #003688;
+$victoria: #0098D4;
+$waterloo-city: #95CDBA;
+$overground: #EE7C0E;
+$dlr: #00A4A7;
+$tram: #84B817;
 
 $h-padding:20px;
 
@@ -12,38 +30,255 @@ body {
   background: $blue;
   font-family: 'Open Sans', sans-serif;
   color: white;
+  margin:0;
 }
 
 header{
-  padding-left: $h-padding;
-  padding-right: $h-padding;
-  h1{
-    margin:0;
+  display: column;
+  justify-content: space-between;
+  h1, p{
+    margin:0 40px 0 40px;
+  }
+  p{
+    position: relative;
+    z-index: 10;
+    text-align: right;
+  }
+
+  .progress{
+    @keyframes load1{
+      0%{width:0%}
+      50%{
+        width:100%;
+        opacity:1;
+      }
+      100%{
+        width:100%;
+        opacity:0
+      }
+    }
+    @keyframes load2{
+      0%{width:0%}
+      50%{
+        width:100%;
+        opacity:1;
+      }
+      100%{
+        width:100%;
+        opacity:0
+      }
+    }
+
+    background-color: $grey;
+    height:1.5em;
+    width:0%;
+    margin-top: -22px;
+    animation: load1 2s;
+    &.load{
+      animation: load2 2s;
+    }
   }
 }
 .container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding:$h-padding 10px;
+  align-items: center;
+  padding:4px 10px;
 }
 .line{
+  max-width: 350px;
+  width:100%;
   color: $black;
   background: $white;
-  padding:20px;
   box-shadow: 4px 4px 2px 2px $shadow;
-  border-bottom: 1px solid $grey;
 
   &:first-child{
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    .band{
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
   }
   &:last-child{
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .band{
+    height:15px;
+    width:100%;
   }
 
-  h2,h3{
-    margin:0;
+  //TUBE COLOURS
+  &.bakerloo{.band{background-color: $bakerloo;} }
+  &.central{.band{background-color: $central;} }
+  &.circle{.band{background-color: $circle;} }
+  &.district{.band{background-color: $district;} }
+  &.hammersmith-city{.band{background-color: $hammersmith-city;} }
+  &.jubilee{.band{background-color: $jubilee;} }
+  &.metropolitan{.band{background-color: $metropolitan;} }
+  &.northern{.band{background-color: $northern;} }
+  &.piccadilly{.band{background-color: $piccadilly;} }
+  &.victoria{.band{background-color: $victoria;} }
+  &.waterloo-city{.band{background-color: $waterloo-city;} }
+  &.london-overground{.band{background-color: $overground;} }
+  &.dlr{.band{background-color: $dlr;} }
+  &.tram{.band{background-color: $tram;} }
+
+  h2{
+    margin: 2px 20px 8px 20px;
   }
+  h3 {
+    margin: 2px 20px 18px 20px;
+    font-style: italic;
+    padding-left: 20px;
+  }
+
+  p{
+    font-size: 0.6em;
+  }
+
+  //DISRUPTION SEVERITY
+  //Service Closed
+  &.severity20{
+    h3:after{
+      color: $red;
+      content: " X"
+    }
+  }
+  //Information
+  &.severity19{
+    h3:after{
+      color: $blue;
+      content: " !"
+    }
+  }
+  //No issues reported
+  &.severity18{
+    h3:after{
+      color: $green;
+      content: " ✓"
+    }
+  }
+  //Issues reported
+  &.severity17{
+    h3:after{
+      color: $blue;
+      content: " !"
+    }
+  }
+  //Not running
+  &.severity16{
+    h3:after{
+      color: $red;
+      content: " X"
+    }
+  }
+  //Diverted
+  &.severity15{
+    h3:after{
+      color: $orange;
+      content: " !"
+    }
+  }
+  //Change of frequency
+  &.severity14{
+    h3:after{
+      color: $blue;
+      content: " !"
+    }
+  }
+  //No step-free access
+  &.severity13{
+    h3:after{
+      color: $blue;
+      content: " !"
+    }
+  }
+  //Exit Only
+  &.severity12{
+    h3:after{
+      color: $blue;
+      content: " !"
+    }
+  }
+  //Part Closed
+  &.severity11{
+    h3:after{
+      color: $orange;
+      content: " X"
+    }
+  }
+  //Good service
+  &.severity10{
+    h3:after{
+      color: $green;
+      // content: " \2713"
+      content: " ✓"
+    }
+  }
+  //Minor Delays
+  &.severity9{
+    h3:after{
+      color: $orange;
+      content: " ✓"
+    }
+  }
+  //Bus Service
+  &.severity8{
+    h3:after{
+      color: $orange;
+      content: " !"
+    }
+  }
+  //Reduced Service
+  &.severity7{
+    h3:after{
+      color: $orange;
+      content: " !"
+    }
+  }
+  //Severe delays
+  &.severity6{
+    h3:after{
+      color: $red;
+      content: " !"
+    }
+  }
+  //Part-closure
+  &.severity5{
+    h3:after{
+      color: $orange;
+      content: " !"
+    }
+  }
+  //Planned-closure
+  &.severity4{
+    h3:after{
+      color: $orange;
+      content: " !"
+    }
+  }
+  //Part-suspended
+  &.severity3{
+    h3:after{
+      color: $orange;
+      content: " !"
+    }
+  }
+  //Suspended
+  &.severity2{
+    h3:after{
+      color: $red;
+      content: " !"
+    }
+  }
+  //Closed
+  &.severity1{
+    h3:after{
+      color: $red;
+      content: " X"
+    }
+  }
+
 }
