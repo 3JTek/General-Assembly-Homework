@@ -3,17 +3,17 @@
   font-family: 'Hammersmith One', sans-serif;
 }
  header {
-   background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Underground.svg/1200px-Underground.svg.png');
+   background-image: url('https://seeklogo.com/images/L/London_Underground-logo-6224267975-seeklogo.com.png');
    background-size: contain;
    background-repeat: no-repeat;
-   height: 150px;
-   width: 150px;
+   height: 200px;
+   width: 200px;
    margin: auto;
-   margin-top: 10px;
+   margin-top: 35px;
  }
 
 body{
-  background: white;
+  background: #113B92;
   margin: 0;
   color: white;
 }
@@ -29,61 +29,68 @@ h1 {
   padding-top: 20px;
 }
 
+h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
 div {
-  margin: 10px;
+  margin: 5px;
 }
 
 #piccadilly {
   background: #2905a1;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #victoria {
   background: #00a3e0;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #waterloo-city {
   background: #7dd1b8;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #bakerloo {
   background: #B36305;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #central {
   background: #E32017;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #circle {
   background: #FFD300;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #district {
   background: #00782A;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #hammersmith-city {
   background: #F3A9BB;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #jubilee {
   background: #A0A5A9;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #metropolitan {
   background: #9B0056;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 #northern {
   background: #000000;
-  border: 2px solid black;
+  border: 2px solid white;
 }
