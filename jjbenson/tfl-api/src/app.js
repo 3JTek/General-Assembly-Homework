@@ -1,11 +1,12 @@
 import $ from 'jquery'
 import './style.scss'
 
+const updateInterval = 5*1000*60
 let lineData = []
 let minCounter = 0
 let minutes
-const tubeData =[]
-const otherData =[]
+let tubeData =[]
+let otherData =[]
 const $container = $('.container')
 const $mins = $('#mins')
 const $progress = $('.progress')
@@ -30,8 +31,13 @@ function updateMinutes(){
 function loadData(){
   //Toggle class on progress bar
   $progress.toggleClass('load')
+
+  //API get request
   $.get('https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tram/status')
     .then(data => {
+      //Clear the arrays
+      tubeData=[], otherData=[]
+
       //Put tube data in one array, others in a different one
       data.forEach((line) => line.modeName ==='tube'? tubeData.push(line): otherData.push(line) )
 
@@ -52,7 +58,7 @@ function loadData(){
         clearTimeout(updateTimer)
         //Load the new data
         loadData()
-      }, 5*1000*60)
+      }, updateInterval)
     } )
 }
 //Build the html element as a string
@@ -61,7 +67,6 @@ function element(line){
   <div class='line severity${line.lineStatuses[0].statusSeverity} ${line.id}'>
     <div class="band"></div>
     <h2>${line.name}</h2>
-    <i></i>
     <h3 class="">${line.lineStatuses[0].statusSeverityDescription}</h3>
     `
   //If this has a disruption description, display it
