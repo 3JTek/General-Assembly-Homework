@@ -21,4 +21,5 @@ $(() => {
       })
   }
   $form.change(e => getCountries(e.target.value))
+  getCountries('all')
 })
