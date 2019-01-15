@@ -70,7 +70,7 @@ function init(){
     const group = $selected.closest('optgroup').attr('value')
     console.log(group)
     if(group==='continent') type = 'region'
-    if(group==='regionalBlock') type = 'regionalbloc'
+    if(group==='regionalBloc') type = 'regionalbloc'
     let searchURL = type+'/'+val
     //If val is empty or all selected, show all
     if(val === '' || val === 'all') searchURL = 'all'
