@@ -2,9 +2,15 @@
  font-family: sans-serif;
 }
 
+body{
+  margin: 0;
+}
+
 h1{
   color: white;
   background: grey;
+  margin: 0;
+  padding: 20px;
 }
 
 .container{
@@ -18,14 +24,19 @@ img{
 
 .search-area{
   display: flex;
+  justify-content: space-between;
 }
 
-.search-area > form, select{
+.search-area > form input, select{
   margin: 5px;
+  width: 100px;
+  height: 30px;
+  padding: 0;
 }
 
 .flags{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 1000px;
   margin: auto;
