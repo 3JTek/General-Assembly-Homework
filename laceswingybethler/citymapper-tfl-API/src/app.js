@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import './style.scss'
 
 const $lines = $('.tube-lines')
 let lines = []
@@ -11,6 +12,11 @@ function getData() {
     })
 }
 
+//run every 5 minutes
+setInterval(function() {
+  getData()
+  console.log('gettin new data')
+}, 30000)
 
 
 
@@ -24,3 +30,5 @@ function displayLines() {
     `)
   })
 }
+
+getData()
