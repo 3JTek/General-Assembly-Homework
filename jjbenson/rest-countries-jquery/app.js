@@ -64,13 +64,13 @@ function init(){
 
   function updateCountries(e,type){
     //Value of input or select
-
-    const $selected = $('select option:selected')
+    if(type==='region'){
+      const $selected = $('select option:selected')
+      const group = $selected.closest('optgroup').attr('value')
+      if(group==='continent') type = 'region'
+      if(group==='regionalBloc') type = 'regionalbloc'
+    }
     const val = e.target.value
-    const group = $selected.closest('optgroup').attr('value')
-    console.log(group)
-    if(group==='continent') type = 'region'
-    if(group==='regionalBloc') type = 'regionalbloc'
     let searchURL = type+'/'+val
     //If val is empty or all selected, show all
     if(val === '' || val === 'all') searchURL = 'all'
