@@ -6,7 +6,7 @@ $(() => {
   const suffix = 'all'
 
   function getRegion(e) {
-    console.dir(e)
+    if (e.target.value === 'all') getFlags(`${e.target.value}`)
     getFlags(`region/${e.target.value}`)
   }
 
