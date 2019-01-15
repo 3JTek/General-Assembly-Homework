@@ -23,8 +23,12 @@ $(() => {
         })
       })
   }
-  
+
   $filterCountries.change(e => getCountries(e.target.value))
-  $searchBar.on( 'input', e => getCountries(`name/${e.target.value.toLowerCase()}`))
+  $searchBar.on( 'input', e =>{
+    if(e.target.value === '')getCountries('all')
+    else getCountries(`name/${e.target.value.toLowerCase()}`)
+    $filterCountries.val('all')
+  })
   getCountries('all')
 })
