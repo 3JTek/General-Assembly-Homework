@@ -15,3 +15,8 @@ div img{
   border: 1px solid black;
   margin: 8px;
 }
+
+.changeForms{
+  display: flex;
+  margin-left: 80px;
+}
