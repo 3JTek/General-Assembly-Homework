@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flags Of The World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Flags Of The World</h1>
+      <select class="regions" name="regions">
+        <optgroup value= "continent" label="Continent">
+          <option value="all" selected>All</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </optgroup>
+        <optgroup value= "regionalBloc" label="Regional Bloc">
+          <option value="EU">EU</option>
+          <option value="EFTA">EFTA</option>
+          <option value="CARICOM">CARICOM</option>
+          <option value="USAN">USAN</option>
+          <option value="EEU">EEU</option>
+          <option value="AL">AL</option>
+          <option value="ASEAN">ASEAN</option>
+          <option value="CAIS">CAIS</option>
+          <option value="CEFTA">CEFTA</option>
+          <option value="NAFTA">NAFTA</option>
+          <option value="SAARC">SAARC</option>
+        </optgroup>
+      </select>
+      <input class="search" type="text" name="search" placeholder=" Search">
+      <button class="reverse">↕</button>
+    </header>
+    <main>
+      <div class="bar">
+      </div>
+      <div class="container"></div>
+    </main>
+  </body>
+</html>
