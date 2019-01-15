@@ -80,8 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gameOver.style.display='none'
   gameBoard.style.display='none'
-  //console.log(opening1)
-  //opening1.play()
   countDisplay.textContent = '60 s'
   resetBtn.addEventListener('click', gameRestart)
   gameStart.addEventListener('click', init)
