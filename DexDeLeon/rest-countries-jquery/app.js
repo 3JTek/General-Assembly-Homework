@@ -1,13 +1,13 @@
 $(() => {
   const $countries = $('div.countries')
   const $select = $('select.regions')
+  const $search = $('.filters input')
 
-
-  function getFlags(region){
+  function getFlags(query){
     $countries.empty()
     $.ajax({
       method: 'GET',
-      url: `https://restcountries.eu/rest/v2/${region}`
+      url: `https://restcountries.eu/rest/v2/${query}`
     })
       .then(countries => {
         countries.forEach(country => {
@@ -30,6 +30,14 @@ $(() => {
 
   $select.on('change', (e) => {
     getFlags(e.target.value)
+  })
+
+
+  // Typing quickly causes issues
+  $search.on('input', (e) => {
+    console.log(e.target.value)
+    if(e.target.value !== '') getFlags(`name/${e.target.value}`)
+    else getFlags('all')
   })
 
 })

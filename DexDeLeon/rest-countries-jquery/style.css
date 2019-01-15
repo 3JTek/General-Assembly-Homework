@@ -21,13 +21,14 @@ div.countries > a {
   border-radius: 10px;
   margin: 1% 0;
   padding: 1%;
-  transition: border 0.1s ease;
+  transition: border 0.1s ease, background 0.1s ease;
   text-decoration: none;
   color: inherit;
 }
 
 div.countries > a:hover {
   border: 2px solid #555;
+  background: #ccc;
 }
 
 div.flagDiv {
@@ -36,4 +37,27 @@ div.flagDiv {
 
 div.flagDiv img {
   width: 100%;
+}
+
+div.filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  align-items: center;
+}
+
+input {
+  background-image: url(search.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  background-color: #efefef;
+  height: 40%;
+  width: 30%;
+}
+
+select {
+  width: 25%;
+  height: 40%;
 }
