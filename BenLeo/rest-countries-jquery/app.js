@@ -16,9 +16,6 @@ $(() => {
     })
       .then(countries => {
         countries.forEach(country => {
-          // console.log(country.name)
-          // console.log(country.nativeName)
-          // console.log(country.flag)
           if(selectedGeo === 'all' || selectedGeo === country.region) {
             $countries.append(`
               <div>
