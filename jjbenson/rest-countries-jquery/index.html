@@ -12,15 +12,30 @@
     <header>
       <h1>Flags Of The World</h1>
       <select class="regions" name="regions">
-        <option value="all" selected>All</option>
-        <option value="africa">Africa</option>
-        <option value="americas">Americas</option>
-        <option value="asia">Asia</option>
-        <option value="europe">Europe</option>
-        <option value="oceania">Oceania</option>
+        <optgroup value= "continent" label="Continent">
+          <option value="all" selected>All</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </optgroup>
+        <optgroup value= "regionalBlock" label="Regional Block">
+          <option value="EU">EU</option>
+          <option value="EFTA">EFTA</option>
+          <option value="CARICOM">CARICOM</option>
+          <option value="USAN">USAN</option>
+          <option value="EEU">EEU</option>
+          <option value="AL">AL</option>
+          <option value="ASEAN">ASEAN</option>
+          <option value="CAIS">CAIS</option>
+          <option value="CEFTA">CEFTA</option>
+          <option value="NAFTA">NAFTA</option>
+          <option value="SAARC">SAARC</option>
+        </optgroup>
       </select>
       <input class="search" type="text" name="search" placeholder=" Search">
-
+      <button class="reverse">↕</button>
     </header>
     <main>
       <div class="bar">

@@ -8,6 +8,7 @@ function init(){
   const $regions = $('.regions')
   const $search = $('.search')
   const $bar = $('.bar')
+  const $reverse = $('.reverse')
   let $tiles
 
   function request(typeUrl, init=false){
@@ -63,7 +64,13 @@ function init(){
 
   function updateCountries(e,type){
     //Value of input or select
+
+    const $selected = $('select option:selected')
     const val = e.target.value
+    const group = $selected.closest('optgroup').attr('value')
+    console.log(group)
+    if(group==='continent') type = 'region'
+    if(group==='regionalBlock') type = 'regionalbloc'
     let searchURL = type+'/'+val
     //If val is empty or all selected, show all
     if(val === '' || val === 'all') searchURL = 'all'
@@ -73,6 +80,7 @@ function init(){
   //Add event listeners
   $regions.on('change',(e)=>updateCountries(e,'region'))
   $search.on('keyup',(e)=>updateCountries(e,'name'))
+  $reverse.on('click',()=>$container.toggleClass('reverse'))
 
   //Trigger initial request
   request('all',true)
