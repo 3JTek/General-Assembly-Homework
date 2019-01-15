@@ -12,15 +12,20 @@ h1{
   color: rgb(0,25,168);
 }
 
-h3{
-  color: rgb(0,25,168);
+
+
+.line-status , .delayed-lines {
+
+  > div{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+  }
 }
 
-.line-status > div{
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
+h3{
+  color: rgb(0,25,168);
 }
 
 .bakerloo{

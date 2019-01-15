@@ -22,7 +22,7 @@ function getLineStatus(){
 
 function filterDelayed(){
   delayedLines = tubeData.filter(line => {
-    line.lineStatuses[0].statusSeverityDescription === 'Minor Delays' || line.lineStatuses[0].statusSeverityDescription === 'Major Delays'
+    return line.lineStatuses[0].statusSeverityDescription === 'Minor Delays' || line.lineStatuses[0].statusSeverityDescription === 'Major Delays'
   })
   console.log(delayedLines)
 }
