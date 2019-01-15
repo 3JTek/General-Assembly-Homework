@@ -26,4 +26,10 @@ function displayTubeLines() {
   })
 }
 
+
+setInterval(function(){
+  console.log('works')
+  getStatus()
+}, 300000)
+
 getStatus()
