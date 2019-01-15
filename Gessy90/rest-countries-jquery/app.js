@@ -4,6 +4,7 @@ $(() => {
 
   function getCountries(variable){
     console.log(variable)
+    $container.empty()
     $.ajax({
       method: 'GET',
       url: `https://restcountries.eu/rest/v2/${variable}`
@@ -20,6 +21,9 @@ $(() => {
         })
       })
   }
-  $form.change(e => getCountries(e.target.value))
   getCountries('all')
+
+  $form.on('change', e => {
+    getCountries(e.target.value)
+  })
 })
