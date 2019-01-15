@@ -2,14 +2,12 @@ import $ from 'jquery'
 import './style.css'
 
 const $tubeDisp = $('.tubeLines')
-
 let lines = []
 
 function getStatus() {
   $.get('https://api.tfl.gov.uk/line/mode/tube/status')
     .then(data => {
       lines = data
-      console.log(lines)
       displayTubeLines()
     })
 }
@@ -26,9 +24,7 @@ function displayTubeLines() {
   })
 }
 
-
 setInterval(function(){
-  console.log('works')
   getStatus()
 }, 300000)
 
