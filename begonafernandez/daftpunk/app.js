@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
       audios[i].play()
     })
 
-    buttons[i].addEventListener('mouseover', () => {
-      buttons[i].style.backgroundImage = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6s-iFgevdwUrZp-F-mErKuZqa1HAj8sPYJE_LyLB4cb9ZzQoi'
-      buttons[i].style.opasity = 0.1
-      buttons[i].style.backgroundPosition = 'center'
+    buttons[i].addEventListener('mouseover', (e) => {
+      e.target.style.backgroundImage = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6s-iFgevdwUrZp-F-mErKuZqa1HAj8sPYJE_LyLB4cb9ZzQoi'
+      e.target.style.opasity = 0.1
+      e.target.style.backgroundPosition = 'center'
     })
 
-    buttons[i].addEventListener('mouseout', () => {
-      buttons[i].style.backgroundImage = 'none'
+    buttons[i].addEventListener('mouseout', (e) => {
+      e.target.style.backgroundImage = 'none'
     })
   }
 })

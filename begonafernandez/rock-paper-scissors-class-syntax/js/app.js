@@ -1,5 +1,22 @@
 class RockPaperScissors {
   constructor() {
+
+    const game = document.querySelector('.game')
+    this.rock = document.createElement('button')
+    this.rock.className = 'choice'
+    this.rock.innerText = 'rock'
+    game.appendChild(this.rock)
+
+    this.paper = document.createElement('button')
+    this.paper.className = 'choice'
+    this.paper.innerText = 'paper'
+    game.appendChild(this.paper)
+
+    this.scissors = document.createElement('button')
+    this.scissors.className = 'choice'
+    this.scissors.innerText = 'scissors'
+    game.appendChild(this.scissors)
+
     this.buttons = document.querySelectorAll('button.choice')
     this.player1 = document.querySelector('.player1')
     this.player2 = document.querySelector('.player2')
