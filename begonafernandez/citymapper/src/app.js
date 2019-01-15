@@ -5,6 +5,7 @@ $(()=>{
 
   let tubeLines
   const $lines = $('.lines')
+  const $sort = $('select')
 
   function displayTubeLines() {
     $lines.empty()
@@ -18,6 +19,22 @@ $(()=>{
     })
   }
 
+  function handleSort({target: { value }}) {
+    const [sortBy, direction] = value.split('|')
+    tubeLines.sort((a, b) => {
+      if (direction === 'asc') {
+        if(a[sortBy] < b[sortBy]) return -1
+        if(a[sortBy] > b[sortBy]) return 1
+        return 0
+      } else {
+        if(a[sortBy] > b[sortBy]) return -1
+        if(a[sortBy] < b[sortBy]) return 1
+        return 0
+      }
+    })
+    displayTubeLines()
+  }
+
   $.ajax({
     method: 'GET',
     url: 'https://api.tfl.gov.uk/line/mode/tube/status'
@@ -27,4 +44,5 @@ $(()=>{
       displayTubeLines()
     })
 
+  $sort.on('change', handleSort)
 })
