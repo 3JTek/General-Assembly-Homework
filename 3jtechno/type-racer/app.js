@@ -35,15 +35,15 @@ $(() => {
       //Prevent the textArea to display the letter typed
       e.preventDefault()
     }
+  }
+  function checkIfFinish(){
     //If it is the last character, prompt the user to play again
     if(characterNb === $textarea1.val().length - 1){
       //Hack, delay the prompt to allow the last character to be displayed
-      setTimeout(() => {
-        restart = prompt(wordPerMin + promptText) === 'y'? true:false
-        if(restart){
-          initialiseGame()
-        }
-      },500)
+      restart = prompt(wordPerMin + promptText) === 'y'? true:false
+      if(restart){
+        initialiseGame()
+      }
     }
   }
   function initialiseGame(){
@@ -55,7 +55,7 @@ $(() => {
     $textarea2.val('')
   }
 
-  $textarea2.on('keydown', checkLetterTyped)
+  $textarea2.on('keydown', checkLetterTyped).on('keyup', checkIfFinish)
 
   initialiseGame()
 })
