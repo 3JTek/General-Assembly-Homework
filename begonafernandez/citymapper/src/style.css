@@ -32,3 +32,34 @@ h1 {
   color: grey;
   font-size: 20px;
 }
+
+#bakerloo {
+  color: #894e24;
+}
+#central {
+  color: #dc241f;
+}
+#circle {
+  color: #ffce00;
+}
+#district {
+  color: #007324;
+}
+#hammersmith {
+  color: #d898af;
+}
+#jubilee {
+  color: #697278;
+}
+#metropolitan {
+  color: #760956;
+}
+#piccadilly {
+  color: #0007ab;
+}
+#victoria {
+  color: #009fe4;
+}
+#waterloo {
+  color: #72d0bd;
+}

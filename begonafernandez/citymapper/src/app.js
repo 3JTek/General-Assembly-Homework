@@ -10,7 +10,7 @@ $(()=>{
     $lines.empty()
     tubeLines.forEach(tubeLine => {
       $lines.append(`
-        <div>
+        <div id='${tubeLine.name.split(' ')[0].toLocaleLowerCase()}'>
           <div class='lineName'>${tubeLine.name}</div>
           <div class='status'>${tubeLine.lineStatuses[0].statusSeverityDescription}</div>
         </div>
