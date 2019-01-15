@@ -12,10 +12,7 @@ h1{
   color: rgb(0,25,168);
 }
 
-
-
 .line-status , .delayed-lines {
-
   > div{
     color: white;
     display: flex;
@@ -26,6 +23,10 @@ h1{
 
 h3{
   color: rgb(0,25,168);
+}
+
+h3.delayed-lines-title.no-delays{
+  display: none;
 }
 
 .bakerloo{
