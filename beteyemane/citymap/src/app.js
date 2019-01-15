@@ -4,6 +4,7 @@ import './style.css'
 const $lines =$('.lines')
 
 function getLine() {
+  $lines.empty()
   $.ajax({
     method: 'GET',
     url: 'https://api.tfl.gov.uk/line/mode/tube/status'
@@ -11,9 +12,9 @@ function getLine() {
     .then(line => {
       line.forEach(line => {
         $lines.append(`
-          <div>
+          <div class="columns">
           <h3>${line.name}</h3>
-          <small>${line.lineStatuses[0].statusSeverityDescription}</small>
+          <p>${line.lineStatuses[0].statusSeverityDescription}</p>
           </div>
           `)
       })
@@ -24,4 +25,4 @@ getLine()
 
 setTimeout(function(){
   getLine()
-}, 3000)
+}, 30000)
