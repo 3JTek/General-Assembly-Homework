@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+div .container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  flex-direction: row
+}
+
+.container > div {
+  width: 18%;
+  margin: 40px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  box-shadow: 5px 10px #888888;
+
+}
+
+header {
+  text-align: center;
+  color: red;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: 140px
+}
+
+.bakerloo{
+  background-color: 	#996633;
+}
+
+.central {
+  background-color: red
+}
+
+.victoria {
+  background-color: dodgerblue
+}
+
+.circle {
+  background-color: yellow
+}
+
+.district {
+  background-color: green
+}
+
+.metropolitan {
+  background-color: purple
+}
+
+.waterloo-city {
+  background-color: #283070
+}
+
+.hammersmith-city {
+  background-color: pink
+}
+
+.jubilee {
+  background-color: grey
+}
+
+.northern {
+  background-color: black
+}
+
+.piccadilly {
+  background-color: blue
+}
