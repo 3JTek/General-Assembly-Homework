@@ -11,8 +11,8 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.js$/, loader: 'babel-loader',exclude: /node_modules/ }
-      {test: /\.css$/, loader: ['style-loader', 'css-loader'] }
+      {test: /\.js$/, loader: 'babel-loader',exclude: /node_modules/ },
+      {test: /\.css$/, loader: ['style-loader', 'css-loader'] },
       {test: /\.s(c|a)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] }
     ]
   },
@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin: ({
+    new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
