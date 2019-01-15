@@ -2,16 +2,19 @@
 body {
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-direction: column;
 }
 select {
   height: 40px;
   width: 80px;
-  align-items: center;
+  margin: auto;
 }
 
 input {
+  height: 80px;
   width: 20%;
+  margin: auto;
 }
 
 .flags {

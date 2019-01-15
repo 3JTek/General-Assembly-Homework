@@ -16,7 +16,7 @@ $(() => {
       $flags.append(`
       <div>
       <h2>${flag.name}</h4>
-      <h4>${flag.nativeName}></h4>
+      <h4>${flag.nativeName}</h4>
       <img src="${flag.flag}" alt="${flag.name}"
       </div>`)
     })
@@ -35,9 +35,14 @@ $(() => {
   }
 
   function searchFilter(e) {
+    let searchValue = `https://restcountries.eu/rest/v2/name/${e.target.value}`
+    if (e.target.value === '') {
+      searchValue = 'https://restcountries.eu/rest/v2/all'
+    }
+    $flags.empty()
     $.ajax({
       method: 'GET',
-      url: `https://restcountries.eu/rest/v2/name/${e.target.value}`
+      url: searchValue
     }).then(flags => appendTodivs(flags))
   }
 
