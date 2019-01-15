@@ -14,7 +14,9 @@ function getData(){
       $tubeStatusInfo.append(`
       <div>
       <h2>${status.name}</h2>
-      <h3>${status.lineStatuses[0].statusSeverityDescription}</h3>`)
+      <h3>${status.lineStatuses[0].statusSeverityDescription}</h3>
+      </div>
+      `)
     }))
   setTimeout(getData, 30000)
 }
