@@ -2,6 +2,7 @@ import $ from 'jquery'
 import './style.scss'
 
 const $status = $('.status')
+const $info = $('#info')
 let service = []
 
 function getData(){
@@ -16,12 +17,14 @@ function getData(){
 }
 
 function displayData(){
+  const time = new Date()
   $status.empty()
+  $info.text(`last updated: ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}` )
   service.forEach(data => {
     $status.append(`
       <div>
-        <h2>${data.name}</h2>
-        <h4>${data.lineStatuses[0].statusSeverityDescription}</h4>
+        <h2 id="${data.id}">${data.name}</h2>
+        <p>${data.lineStatuses[0].statusSeverityDescription}</p>
       </div>
     `)
     console.log(data)

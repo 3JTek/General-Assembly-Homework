@@ -1,0 +1,71 @@
+*{
+  box-sizing: border-box;
+  color: #505050;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  color: white;
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+#info{
+  color: white;
+  text-align: center;
+  font-size: 20px;
+
+}
+.container{
+  background-color: #659EC7;
+  width: 70%;
+  margin: 0 auto;
+
+}
+.status{
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  div{
+    border-bottom: 1px solid #505050;
+  }
+  h2{
+    font-size: 30px;
+  }
+  p{
+    font-size: 20px;
+  }
+}
+
+#bakerloo{
+  color: 	#B36305;
+}
+#central{
+  color: 	#E32017;
+}
+#circle{
+  color: 	#FFD300;
+}
+#district{
+  color: 	#00782A;
+}
+#hammersmith-city{
+  color: 	#F3A9BB;
+}
+#jubilee{
+  color: 	#A0A5A9;
+}
+#metropolitan{
+  color: 	#9B0056;
+}
+#northern{
+  color: 	#000000;
+}
+#piccadilly{
+  color: 	#003688;
+}
+#victoria{
+  color: 	#0098D4;
+}
