@@ -22,19 +22,24 @@ $(() => {
       })
     })
 
-
   function flagByRegion(e) {
+    $flags.empty()
     let regionURL = `https://restcountries.eu/rest/v2/region/${e.target.value}`
     if (e.target.value === 'all') {
       regionURL = 'https://restcountries.eu/rest/v2/all'
     }
-    $flags.empty()
+    if (e.target.value === 'eu' ||
+        e.target.value === 'nafta' ||
+        e.target.value === 'usan' ||
+        e.target.value === 'pu' ||
+        e.target.value === 'caricom') {
+      regionURL = `https://restcountries.eu/rest/v2/regionalbloc/${e.target.value}`
+    }
     $.ajax({
       method: 'GET',
       url: regionURL
     })
       .then(flags => {
-        console.log(flags)
         flags.forEach(flag => {
           $flags.append(`
             <div>
