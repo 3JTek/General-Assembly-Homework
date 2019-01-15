@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import './style.sass'
+import './style.scss'
 
 let tflApiData = []
 const $lines = $('.lines')
@@ -10,6 +10,7 @@ function getApiData() {
     url: 'https://api.tfl.gov.uk/line/mode/tube/status'
   })
     .then(data => {
+      console.log('Data Updated')
       tflApiData = data
       drawLines()
     })
@@ -17,7 +18,6 @@ function getApiData() {
 
 function drawLines() {
   $lines.empty()
-  console.log(tflApiData)
   tflApiData.forEach(line => {
     $lines.append(`
       <div>
@@ -26,7 +26,7 @@ function drawLines() {
       </div>
       `)
   })
-  setTimeout(getApiData(), 300000)
+  setTimeout(getApiData, 300000)
 }
 
 getApiData()
