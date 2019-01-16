@@ -9,6 +9,7 @@ class About extends React.Component{
             <div className="col-sm-12">
               <h2>About</h2>
               {console.log(this.props.information)}
+              {this.props.information.text.map((data,index) => <p key={index}> {data}</p>)}
             </div>
           </div>
         </div>

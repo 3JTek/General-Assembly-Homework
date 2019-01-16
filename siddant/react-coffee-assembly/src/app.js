@@ -5,6 +5,7 @@ import Header from './components/Header.js'
 import Gallery from './components/Gallery.js'
 import Menu from './components/Menu.js'
 import About from './components/About.js'
+import Footer from './components/Footer.js'
 
 
 import 'normalize-scss'
@@ -54,6 +55,7 @@ class App extends React.Component {
           <Menu data={this.state.menus}/>
           <About information={this.state.about} />
         </main>
+        <Footer data={this.state.footer}/>
       </div>
     )
   }
