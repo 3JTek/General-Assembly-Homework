@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gameDiv.classList.toggle('hidden')
     score = 0
     scoreDisplay.textContent = `Article ${score}`
-    timeRemaining = 60
+    timeRemaining = 30
     countDown()
     startGame()
   }
