@@ -5,6 +5,12 @@ import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
 
+import Header from './components/Header.js'
+import Gallery from './components/Gallery.js'
+import Menu from './components/Menu.js'
+import About from './components/About.js'
+import Footer from './components/Footer.js'
+
 class App extends React.Component {
 
   constructor() {
@@ -38,7 +44,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Coffee Assembly</h1>
+      <Header />
+      <main>
+        <section id="hero"><h1>Coffee Assembly</h1></section>
+        <Gallery />
+        <Menu links={this.state.menus.links} text={this.state.menus.text} />
+        <About text={this.state.about.text}/>
+      </main>
+      <Footer text={this.state.footer.text}/>
       </div>
     )
   }
