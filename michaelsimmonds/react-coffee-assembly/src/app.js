@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Gallery from './components/Gallery'
 import Menus from './components/Menus'
 import About from './components/About'
+import Footer from './components/Footer'
 
 class App extends React.Component {
 
@@ -50,9 +51,9 @@ class App extends React.Component {
           </section>
           <Gallery/>
           <Menus menuInfo={this.state.menus.text} menuLinks={this.state.menus.links}/>
-          <About/>
+          <About aboutInfo={this.state.about.text}/>
         </main>
-
+        <Footer aboutFooter={this.state.footer.text}/>
       </div>
     )
   }
