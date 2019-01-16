@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import NavHeader from './components/NavHeader'
 import Main from './components/Main'
+import Footer from './components/Footer'
 
 import 'normalize-scss'
 import 'bootstrap-css-only'
@@ -49,7 +50,8 @@ class App extends React.Component {
     return (
       <div>
         <NavHeader links={this.state.nav}/>
-        <Main about={this.state.about} menus={this.state.menus} />
+        <Main about={this.state.about} menus={this.state.menus}/>
+        <Footer footer={this.state.footer}/>
       </div>
     )
   }

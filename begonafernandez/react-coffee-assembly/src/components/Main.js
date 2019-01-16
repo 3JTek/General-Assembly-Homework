@@ -12,7 +12,7 @@ class Main extends React.Component {
         <Hero />
         <Gallery />
         <Menus menus={this.props.menus}/>
-        <About about={this.props.about.text}/>
+        <About about={this.props.about}/>
       </main>
     )
   }

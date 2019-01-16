@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Menus = ({ menus }) => {
-  var { text, links } = menus
+  const { text, links } = menus
   return(
     <section id="menus">
       <div className="container">
