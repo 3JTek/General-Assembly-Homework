@@ -16,7 +16,7 @@ function displayTubeLines() {
   $tubeDisp.empty()
   lines.forEach(line => {
     $tubeDisp.append(`
-      <div>
+      <div id="${line.id}">
         <h2>${line.name}</h2>
         <h3>${line.lineStatuses[0].statusSeverityDescription}</h3>
       </div>
