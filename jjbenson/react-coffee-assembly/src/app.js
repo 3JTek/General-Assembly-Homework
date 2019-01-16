@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+//Import style
 import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
 
+//Import Components
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
@@ -12,6 +14,7 @@ import Menus from './components/Menus'
 import About from './components/About'
 import Footer from './components/Footer'
 
+//Main App component
 class App extends React.Component {
 
   constructor() {
@@ -20,11 +23,11 @@ class App extends React.Component {
     this.state = {
       header: {
         navbar: [
-          {nav: 'Location',link: '#location'},
-          {nav: 'About',link: '#about'},
-          {nav: 'Menu',link: '#menus'},
-          {nav: 'Gallery',link: '#gallery'},
-          {nav: 'Home',link: '#hero'}
+          {content: 'Location',link: '#location'},
+          {content: 'About',link: '#about'},
+          {content: 'Menu',link: '#menus'},
+          {content: 'Gallery',link: '#gallery'},
+          {content: 'Home',link: '#hero'}
         ]
       },
       hero: {
@@ -41,9 +44,9 @@ class App extends React.Component {
       menus: {
         title: 'Menu',
         links: [
-          {menu: 'Breakfast',link: 'assets/menus/menu.pdf'},
-          {menu: 'Brunch',link: 'assets/menus/menu.pdf'},
-          {menu: 'All Day',link: 'assets/menus/menu.pdf'}
+          {content: 'Breakfast',link: 'assets/menus/menu.pdf'},
+          {content: 'Brunch',link: 'assets/menus/menu.pdf'},
+          {content: 'All Day',link: 'assets/menus/menu.pdf'}
         ],
         text: [
           'We start early, with a breakfast menu including juices, pastries, pancakes, all kinds of eggs and freshly-roasted coffee. At 11.30am, we switch to our all-day menu.',
@@ -68,6 +71,8 @@ class App extends React.Component {
     const {header, hero, about, menus, gallery, footer} = this.state
     return (
       <div>
+        {/*All functional components except Gallery just for fun
+        All given data from App state*/}
         <Header {...header}/>
         <main>
           <Hero {...hero}/>
