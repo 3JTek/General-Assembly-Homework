@@ -2,10 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import NavHeader from './components/NavHeader'
-import Hero from './components/Hero'
-import Gallery from './components/Gallery'
-import Menus from './components/Menus'
-import About from './components/About'
+import Main from './components/Main'
 
 import 'normalize-scss'
 import 'bootstrap-css-only'
@@ -52,12 +49,7 @@ class App extends React.Component {
     return (
       <div>
         <NavHeader links={this.state.nav}/>
-        <main>
-          <Hero />
-          <Gallery />
-          <Menus menus={this.state.menus}/>
-          <About about={this.state.about.text}/>
-        </main>
+        <Main about={this.state.about} menus={this.state.menus} />
       </div>
     )
   }
