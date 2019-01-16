@@ -5,6 +5,9 @@ const $container = $('.container')
 
 
 function getData() {
+  $container.empty()
+
+
   $.ajax({
     method: 'GET',
     url: 'https://api.tfl.gov.uk/line/mode/tube/status'
@@ -21,8 +24,6 @@ function getData() {
       })
     })
   setTimeout(getData, 300000)
-  console.log(getData)
 
 }
-
 getData()
