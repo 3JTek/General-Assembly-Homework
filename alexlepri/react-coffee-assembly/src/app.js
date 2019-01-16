@@ -1,6 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import Menu from './components/Menu'
+import Footer from './components/Footer'
+import About from './components/About'
+
+
 import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
@@ -31,15 +39,25 @@ class App extends React.Component {
       },
       footer: {
         text: '© General Assembly 2017'
-      }
+      },
+
+      navLinks: ['Home', 'Menu', 'Gallery', 'About', 'Location' ]
+
     }
   }
+
 
   render() {
     return (
       <div>
-        <h1>Coffee Assembly</h1>
+        <Header navLinks={this.state.navLinks} />
+        <Hero />
+        <Gallery />
+        <Menu links={this.state.menus.links} text={this.state.menus.text}/>
+        <About about={this.state.about.text} />
+        <Footer footer={this.state.footer} />
       </div>
+
     )
   }
 }
@@ -47,4 +65,5 @@ class App extends React.Component {
 ReactDOM.render(
   <App />,
   document.getElementById('root')
+
 )

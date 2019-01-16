@@ -2,7 +2,7 @@
 
 # Coffee Assembly
 
-Using the `starter-code` provided turn the design provided into a React application. 
+Using the `starter-code` provided turn the design provided into a React application.
 
 ![Coffee Assembly](https://user-images.githubusercontent.com/12997768/31618359-a34ff65a-b289-11e7-9e5f-26b22a681cfd.jpg)
 
