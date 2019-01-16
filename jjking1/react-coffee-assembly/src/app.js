@@ -44,14 +44,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <Header />
-      <main>
-        <section id="hero"><h1>Coffee Assembly</h1></section>
-        <Gallery />
-        <Menu links={this.state.menus.links} text={this.state.menus.text} />
-        <About text={this.state.about.text}/>
-      </main>
-      <Footer text={this.state.footer.text}/>
+        <Header />
+        <main>
+          <section id="hero"><h1>Coffee Assembly</h1></section>
+          <Gallery />
+          <Menu links={this.state.menus.links} text={this.state.menus.text} />
+          <About text={this.state.about.text}/>
+        </main>
+        <Footer text={this.state.footer.text}/>
       </div>
     )
   }
