@@ -1,0 +1,93 @@
+main {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  background: #1a5a92;
+  padding-bottom: 10px;
+}
+
+.top {
+  display: flex;
+}
+
+h1 {
+  font-size: 40px;
+  padding: 32px 46px 0px 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  color: white;
+}
+
+select {
+  width: 20%;
+  display: block;
+  margin: 50px auto 0 auto;
+}
+
+.lines {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 30px auto;
+  background: white;
+}
+
+.lines > div {
+  padding: 20px;
+  border-bottom:  1px solid lightgrey;
+}
+
+.status {
+  color: grey;
+  font-size: 20px;
+}
+
+#bakerloo {
+  color: #894e24;
+}
+#central {
+  color: #dc241f;
+}
+#circle {
+  color: #ffce00;
+}
+#district {
+  color: #007324;
+}
+#hammersmith {
+  color: #d898af;
+}
+#jubilee {
+  color: #697278;
+}
+#metropolitan {
+  color: #760956;
+}
+#piccadilly {
+  color: #0007ab;
+}
+#victoria {
+  color: #009fe4;
+}
+#waterloo {
+  color: #72d0bd;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    max-width: 380px;
+  }
+
+  .lines {
+    max-width: 350px;
+  }
+
+  h1 {
+    padding: 20px 20px 0px 10px;
+  }
+
+  select {
+    padding: 12px auto 0 auto;
+  }
+}
