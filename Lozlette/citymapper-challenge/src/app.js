@@ -18,7 +18,7 @@ function getData(){
       </div>
       `)
     }))
-  setTimeout(getData, 30000)
+  setTimeout(getData, 300000)
 }
 
 
