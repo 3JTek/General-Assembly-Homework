@@ -8,6 +8,7 @@ import './scss/style.scss'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
+import Menu from './components/Menu'
 
 class App extends React.Component {
 
@@ -58,6 +59,7 @@ class App extends React.Component {
         <main>
           <Hero />
           <Gallery gallery={this.state.gallery} />
+          <Menu menus={this.state.menus} />
         </main>
       </div>
     )
