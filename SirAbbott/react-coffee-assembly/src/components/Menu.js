@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Menu = (props) => {
-  const {links, text} = props.data
+  console.log('MENU', props)
+  const {links, text} = props
   return(
     <section id="menus">
       <div className="container">

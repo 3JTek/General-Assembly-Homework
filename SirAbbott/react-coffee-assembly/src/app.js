@@ -5,6 +5,10 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
 import Menu from './components/Menu'
+import About from './components/About'
+import Footer from './components/Footer'
+
+
 
 
 import 'normalize-scss'
@@ -42,14 +46,19 @@ class App extends React.Component {
   }
 
   render() {
+    const {menus, about, footer} = this.state
     return (
       <div>
         <Header />
         <main>
           <Hero />
           <Gallery />
-          <Menu data={this.state.menus}/>
+          <Menu {...menus}/>
+          <About {...about}/>
         </main>
+        <footer>
+          <Footer {...footer}/>
+        </footer>
       </div>
     )
   }
