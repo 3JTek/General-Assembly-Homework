@@ -32,7 +32,8 @@ $(()=>{
         return 0
       }
     })
-    displayTubeLines()
+    setInterval(displayTubeLines(), 5000)
+
   }
 
   $.ajax({
