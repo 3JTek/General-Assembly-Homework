@@ -1,7 +1,6 @@
 import React from 'react'
 
 const About = ({ about }) => {
-  console.log(about)
   return (
     <section id="about">
       <div className="container">

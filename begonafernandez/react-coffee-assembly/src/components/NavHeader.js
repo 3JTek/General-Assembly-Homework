@@ -1,11 +1,12 @@
 import React from 'react'
 
-const NavHeader = (props) => {
+const NavHeader = ({ links }) => {
+  const linksR = links.reverse()
   return (
     <header>
       <nav className='container'>
         <ul>
-          {props.links.map(link => <li key={link}><a href={'#' + link}>{link}</a></li>)}
+          {linksR.map(link => <li key={link}><a href={'#' + link}>{link}</a></li>)}
         </ul>
       </nav>
     </header>
