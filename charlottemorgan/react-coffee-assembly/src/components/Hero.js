@@ -5,7 +5,6 @@ const Hero = () => {
     <main>
       <section id="hero">
         <h1>Coffee Assembly</h1>
-        <img src='/assets/hero-image.jpg'/>
       </section>
     </main>
   )

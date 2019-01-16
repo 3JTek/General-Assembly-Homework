@@ -7,6 +7,7 @@ import './scss/style.scss'
 
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import Gallery from './components/Gallery'
 
 class App extends React.Component {
 
@@ -43,6 +44,7 @@ class App extends React.Component {
       <div>
         <Nav />
         <Hero />
+        <Gallery />
       </div>
     )
   }
