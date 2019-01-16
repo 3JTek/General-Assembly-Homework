@@ -1,6 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import Menu from './components/Menu'
+import About from './components/About'
+import Footer from './components/Footer'
+
+
 import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
@@ -36,9 +44,15 @@ class App extends React.Component {
   }
 
   render() {
+    const { about, menus, footer } = this.state
     return (
       <div>
-        <h1>Coffee Assembly</h1>
+        <Header />
+        <Hero />
+        <Gallery />
+        <Menu {...menus}/>
+        <About {...about}/>
+        <Footer {...footer}/>
       </div>
     )
   }
