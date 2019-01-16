@@ -42,16 +42,17 @@ class App extends React.Component {
   }
 
   render() {
+    const {menus, footer, about} = this.state
     return (
       <div>
         <Header />
         <main>
           <section id="hero"><h1>Coffee Assembly</h1></section>
           <Gallery />
-          <Menu links={this.state.menus.links} text={this.state.menus.text} />
-          <About text={this.state.about.text}/>
+          <Menu {...menus} />
+          <About {...about}/>
         </main>
-        <Footer text={this.state.footer.text}/>
+        <Footer {...footer}/>
       </div>
     )
   }

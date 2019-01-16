@@ -6,8 +6,10 @@ const About = ({text}) => {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
+
             <h2>About</h2>
-            <p>{text}</p>
+            {text.map((sentence, i) => <p key={i}>{sentence} </p>)}
+            
           </div>
         </div>
       </div>
