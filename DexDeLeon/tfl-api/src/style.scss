@@ -5,18 +5,18 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }
 
 .container {
   width: 90vw;
-  height: 100vh;
+  height: 150vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
   div {
-    text-align: center;
     border: 2px solid #333;
     margin: 1%;
     border-radius: 10px;
@@ -32,7 +32,7 @@ body {
 
     h2,
     p {
-      height: 45%;
+      height: 40%;
       color: black;
       margin: 0 auto;
       width: 100%;
