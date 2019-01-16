@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Button from './Button'
+
 class Header extends React.Component{
   constructor(){
     super()
@@ -28,13 +30,13 @@ class Header extends React.Component{
       ]
     }
   }
-    
+
   render(){
     return(
       <header>
         <nav className="container">
           <ul>
-            {this.state.links.map(({url, text}, i) => <li key={i}><a href={url}>{text}</a></li>)}
+            {this.state.links.map(({url, text}, i) => <li key={i}><Button url={url} text={text} target="_blank"/></li>)}
           </ul>
         </nav>
       </header>
