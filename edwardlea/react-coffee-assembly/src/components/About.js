@@ -1,18 +1,37 @@
 import React from 'react'
 
-const About = (props) => {
-  return(
-    <section id="about">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12">
-            <h2>About</h2>
-            {props.text.map((text,i) => <p key={i}>{text}</p>)}
+
+class About extends React.Component {
+  render(){
+    const {text} = this.props.text
+    return(
+      <section id="about">
+        <div className="container">
+          <div className="row"> 
+            <div className="col-sm-12">
+              <h2>About</h2>
+              {text.map((para,i) => <p key={i}>{para}</p>)}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
+      </section>
+    )
+  }
 }
+
+// const About = (props) => {
+//   return(
+//     <section id="about">
+//       <div className="container">
+//         <div className="row">
+//           <div className="col-sm-12">
+//             <h2>About</h2>
+//             {props.text.map((text,i) => <p key={i}>{text}</p>)}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
 
 export default About

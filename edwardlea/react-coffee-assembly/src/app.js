@@ -55,14 +55,14 @@ class App extends React.Component {
     const {about, menus, footer, header} = this.state
     return (
       <div>
-        <Header  {...header}/>
+        <Header {...header}/>
         <main>
           <Hero />
           <Gallery />
           <Menu {...menus}/>
-          <About {...about}/>
-          <Footer {...footer}/>
+          <About text={about}/>
         </main>
+        <Footer {...footer}/>
       </div>
     )
   }

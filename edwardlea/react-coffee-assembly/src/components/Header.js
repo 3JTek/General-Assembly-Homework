@@ -8,7 +8,7 @@ const Header = (props) => {
         <ul>
           {props.nav.map((item,i) =>
             <li key={i}>
-              <a href={'"#'+item.toLowerCase()+'"'}>{item}</a>
+              <a href={'#' + item.toLowerCase()}>{item}</a>
             </li>)}
         </ul>
       </nav>
