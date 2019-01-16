@@ -5,6 +5,7 @@ import NavHeader from './components/NavHeader'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
 import Menus from './components/Menus'
+import About from './components/About'
 
 import 'normalize-scss'
 import 'bootstrap-css-only'
@@ -55,6 +56,7 @@ class App extends React.Component {
           <Hero />
           <Gallery />
           <Menus menus={this.state.menus}/>
+          <About about={this.state.about}/>
         </main>
       </div>
     )
