@@ -2,7 +2,9 @@ import $ from 'jquery'
 import './style.scss'
 
 const $tubeDiv = $('.tubeDiv')
+const $currentTime = $('.current-time')
 let lines =[]
+
 
 function getData(){
   $.get('https://api.tfl.gov.uk/line/mode/tube/status')
@@ -15,6 +17,8 @@ function getData(){
 
 function displayTubeLines(){
   $tubeDiv.empty()
+  const time = new Date
+  $currentTime.text(`Last updated: ${time.getHours()}:${time.getMinutes()}`)
   lines.forEach(line => {
     $tubeDiv.append(`
         <div id ="${line.id}">
