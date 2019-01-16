@@ -18,14 +18,20 @@ class App extends React.Component {
     super()
 
     this.state = {
-      header: [
-        {nav: 'Location',link: '#location'},
-        {nav: 'About',link: '#about'},
-        {nav: 'Menu',link: '#menus'},
-        {nav: 'Gallery',link: '#gallery'},
-        {nav: 'Home',link: '#hero'}
-      ],
+      header: {
+        navbar: [
+          {nav: 'Location',link: '#location'},
+          {nav: 'About',link: '#about'},
+          {nav: 'Menu',link: '#menus'},
+          {nav: 'Gallery',link: '#gallery'},
+          {nav: 'Home',link: '#hero'}
+        ]
+      },
+      hero: {
+        text: 'Coffee Assembly'
+      },
       about: {
+        title: 'About',
         text: [
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus magna id quam euismod, quis consectetur augue malesuada. Aenean et libero elementum, consequat eros in, vehicula risus. Phasellus imperdiet pretium massa, ut tincidunt neque mollis sed',
           'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce nibh lectus, maximus in condimentum sit amet, imperdiet vel metus. Vivamus rhoncus massa eu nisi ultrices consequat. Cras at porttitor quam. Pellentesque feugiat elit odio, vel mattis arcu ullamcorper eget. Vestibulum vitae viverra mauris, porta pharetra nulla. Donec ipsum mauris, malesuada ac facilisis viverra, faucibus id libero. Mauris nec ipsum sit amet elit luctus pulvinar interdum a urna.',
@@ -33,6 +39,7 @@ class App extends React.Component {
         ]
       },
       menus: {
+        title: 'Menu',
         links: [
           {menu: 'Breakfast',link: 'assets/menus/menu.pdf'},
           {menu: 'Brunch',link: 'assets/menus/menu.pdf'},
@@ -44,6 +51,7 @@ class App extends React.Component {
         ]
       },
       gallery: {
+        title: 'Gallery',
         images: [
           'image-one',
           'image-two',
@@ -57,18 +65,17 @@ class App extends React.Component {
   }
 
   render() {
-    const {header, about, menus, gallery, footer} = this.state
+    const {header, hero, about, menus, gallery, footer} = this.state
     return (
       <div>
         <Header {...header}/>
         <main>
-          <Hero />
+          <Hero {...hero}/>
           <Gallery {...gallery}/>
           <Menus {...menus}/>
           <About {...about} />
         </main>
         <Footer {...footer}/>
-
       </div>
     )
   }

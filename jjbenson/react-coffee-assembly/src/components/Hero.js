@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Hero = ()=>{
+const Hero = ({text})=>{
   return (
     <section id="hero">
-      <h1>Coffee Assembly</h1>
+      <h1>{text}</h1>
     </section>
   )
 }

@@ -6,11 +6,7 @@ const Header = ({ navbar })=>{
     <header>
       <nav className="container">
         <ul>
-          <li><a href="#location">Location</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menus">Menu</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#hero">Home</a></li>
+          {navbar.map((el,i) => <li key={i}><a href={el.link}>{el.nav}</a></li>)}
         </ul>
       </nav>
     </header>

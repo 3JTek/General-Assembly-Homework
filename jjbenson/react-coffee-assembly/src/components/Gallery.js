@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Gallery = ({images})=>{
-  console.log(images)
+const Gallery = ({title, images})=>{
+  console.log(title, images)
   return (
     <section id="gallery">
       <div className="container">
-        <h2>Gallery</h2>
+        <h2>{title}</h2>
         <div className="row">
           {images.map((el,i) =>
             <div key={i} className="col-sm-4">
