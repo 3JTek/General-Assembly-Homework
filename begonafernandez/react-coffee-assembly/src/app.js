@@ -56,7 +56,7 @@ class App extends React.Component {
           <Hero />
           <Gallery />
           <Menus menus={this.state.menus}/>
-          <About about={this.state.about}/>
+          <About about={this.state.about.text}/>
         </main>
       </div>
     )
