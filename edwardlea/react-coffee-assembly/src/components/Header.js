@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Header = () => {
+const Header = (props) => {
+  console.log(props)
   return(
     <header>
       <nav className="container">
         <ul>
-          <li><a href="#location">Location</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menus">Menu</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#hero">Home</a></li>
+          {props.nav.map((item,i) =>
+            <li key={i}>
+              <a href={'"#'+item.toLowerCase()+'"'}>{item}</a>
+            </li>)}
         </ul>
       </nav>
     </header>

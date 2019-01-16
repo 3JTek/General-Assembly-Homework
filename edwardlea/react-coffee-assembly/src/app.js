@@ -18,6 +18,15 @@ class App extends React.Component {
     super()
 
     this.state = {
+      header: {
+        nav: [
+          'Home',
+          'Gallery',
+          'Menu',
+          'About',
+          'Location'
+        ]
+      },
       about: {
         text: [
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus magna id quam euismod, quis consectetur augue malesuada. Aenean et libero elementum, consequat eros in, vehicula risus. Phasellus imperdiet pretium massa, ut tincidunt neque mollis sed',
@@ -43,10 +52,10 @@ class App extends React.Component {
   }
 
   render() {
-    const {about, menus, footer} = this.state
+    const {about, menus, footer, header} = this.state
     return (
       <div>
-        <Header />
+        <Header  {...header}/>
         <main>
           <Hero />
           <Gallery />
@@ -54,7 +63,6 @@ class App extends React.Component {
           <About {...about}/>
           <Footer {...footer}/>
         </main>
-
       </div>
     )
   }

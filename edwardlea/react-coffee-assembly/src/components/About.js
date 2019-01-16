@@ -1,7 +1,6 @@
 import React from 'react'
 
 const About = (props) => {
-  console.log(props)
   return(
     <section id="about">
       <div className="container">
