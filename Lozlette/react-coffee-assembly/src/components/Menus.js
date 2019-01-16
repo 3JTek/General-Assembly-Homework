@@ -10,8 +10,8 @@ class Menu extends React.Component {
               <h2>Menu</h2>
               {this.props.menu.text.map((data, i) => <p key={i}>
                 {data}</p>)}
-              {this.props.menu.links.map((data, i) => <div key={i}>
-                <a href="">{data}</a></div>)}
+              {this.props.menu.links.map((data, i) =>
+                <a key={i} href="#">{data}</a>)}
             </div>
           </div>
         </div>
