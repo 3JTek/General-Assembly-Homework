@@ -17,11 +17,14 @@ body{
 
 .tubeDiv{
   text-align: center;
+  background-color: #F2F2F2;
+  border: 2px solid white;
+  width: 70%;
+  margin: auto;
 }
 
 .tubeDiv div{
-  width: 40%;
-  border: 1px ridge grey;
+  width: 50%;
   border-radius: 10px;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   padding: 10px;
