@@ -28,15 +28,16 @@ class WhackAMole{
   }
 
   init(){
+    // Initial display of remaining time
+    this.timer.innerText = this.gameDuration
+
+    // Create the game grid and apply appropriate width and height to cells depending on gridSize
     for(let i=0;i<this.gridSize;i++){
       const cell = document.createElement('div')
       cell.classList.add('cell', 'animated')
       cell.style.width = `calc(100%/${Math.sqrt(this.gridSize)})`
       cell.style.height = `calc(100%/${Math.sqrt(this.gridSize)})`
       document.querySelector('.container').append(cell)
-      // document.querySelectorAll('div.cell').forEach(cell => {
-      // })
-      console.log(i)
     }
     this.grid = document.querySelectorAll('div.cell')
 
