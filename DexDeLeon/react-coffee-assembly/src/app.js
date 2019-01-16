@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
+import Header from './components/Header'
 
 class App extends React.Component {
 
@@ -11,6 +12,13 @@ class App extends React.Component {
     super()
 
     this.state = {
+      nav: [
+        'Home',
+        'Gallery',
+        'Menu',
+        'About',
+        'Location'
+      ],
       about: {
         text: [
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus magna id quam euismod, quis consectetur augue malesuada. Aenean et libero elementum, consequat eros in, vehicula risus. Phasellus imperdiet pretium massa, ut tincidunt neque mollis sed',
@@ -37,9 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Coffee Assembly</h1>
-      </div>
+      <Header nav={this.state.nav} />
     )
   }
 }
