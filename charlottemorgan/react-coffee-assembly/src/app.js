@@ -5,6 +5,8 @@ import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
 
+import Nav from './components/Nav'
+
 class App extends React.Component {
 
   constructor() {
@@ -39,6 +41,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Coffee Assembly</h1>
+        <Nav />
       </div>
     )
   }
