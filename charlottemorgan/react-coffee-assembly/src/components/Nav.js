@@ -13,7 +13,7 @@ class Nav extends React.Component {
       <header>
         <nav className="container">
           <ul>
-            {this.state.nav.map((item, nav) => <li id={item}key={nav}>{item}<a href="#{item}">{item}</a></li>)}
+            {this.state.nav.map((item, nav) => <li id={item}key={nav}><a href="#{item}">{item}</a></li>)}
           </ul>
         </nav>
       </header>
