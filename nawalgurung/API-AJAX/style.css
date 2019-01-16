@@ -2,7 +2,6 @@ div img{
   width: 100%;
 }
 
-
 .flagsdiv{
   display: flex;
   flex-wrap: wrap;
@@ -14,9 +13,10 @@ div img{
   width: 20%;
   border: 1px solid black;
   margin: 8px;
+  padding: 10px;
 }
 
 .changeForms{
   display: flex;
-  margin-left: 80px;
+  margin-left: 130px;
 }
