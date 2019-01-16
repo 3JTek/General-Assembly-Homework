@@ -1,18 +1,12 @@
 import React from 'react'
 
 class Header extends React.Component{
-  constructor(){
-    super()
-    this.state = {
-      nav: ['HOME','GALLERY', 'MENU','ABOUT','LOCATION']
-    }
-  }
   render(){
     return(
       <header>
-        <nav className={this.props.navigationName}>
+        <nav className='container'>
           <ul>
-            {this.state.nav.map((data,index) => <li key={index} ><a href="#{data}"> {data}</a></li>)}
+            {this.props.navLinks.map((data,index) => <li key={index} ><a href={'#'+ data.toLowerCase()}> {data}</a></li>)}
           </ul>
         </nav>
       </header>

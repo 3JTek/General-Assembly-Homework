@@ -36,6 +36,15 @@ class App extends React.Component {
           'On weekends we serve brunch until 4pm.'
         ]
       },
+      nav: {
+        links: [
+          'Location',
+          'About',
+          'Menu',
+          'Gallery',
+          'Home'
+        ]
+      },
       footer: {
         text: '© General Assembly 2017'
       }
@@ -46,7 +55,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Coffee Assembly</h1>
-        <Header navigationName="container" />
+        <Header navLinks={this.state.nav.links}/>
         <main>
           <section id="hero">
             <h1>Coffee Assembly</h1>
