@@ -6,11 +6,15 @@ import 'bootstrap-css-only'
 import './scss/style.scss'
 
 import Header from './components/Header'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import Menu from './components/Menu'
+import About from './components/About'
 
 class App extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       about: {
@@ -41,7 +45,11 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <Hero />
         <h1>Coffee Assembly</h1>
+        <Gallery />
+        <Menu menus={this.state.menus}/>
+        <About about={this.state.about}/>
       </div>
     )
   }
