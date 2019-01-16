@@ -2,9 +2,9 @@ import React from 'react'
 
 class About extends React.Component {
   render() {
-    
-    const texts = this.props.about.text
-    //const {[texts]} = this.props.about
+
+    //const texts = this.props.about.text
+    const {text} = this.props.about
 
     return(
       <section id='about'>
@@ -12,7 +12,7 @@ class About extends React.Component {
           <div className='row'>
             <div className='col-sm-12'>
               <h2>About</h2>
-              {texts.map((para, i)=>
+              {text.map((para, i)=>
                 <p key={i}>
                   {para}
                 </p>

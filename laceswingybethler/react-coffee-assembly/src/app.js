@@ -52,7 +52,7 @@ class App extends React.Component {
         <main>
           <Hero />
           <Gallery />
-          <Menus />
+          <Menus atags={this.state.menus.links}/>
           <About about={this.state.about} />
         </main>
         <footer>
