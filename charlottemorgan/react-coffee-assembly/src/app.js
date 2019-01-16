@@ -8,11 +8,12 @@ import './scss/style.scss'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
+import Menu from './components/Menu'
 
 class App extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       about: {
@@ -45,6 +46,7 @@ class App extends React.Component {
         <Nav />
         <Hero />
         <Gallery />
+        <Menu menus={this.state.menus} />
       </div>
     )
   }
