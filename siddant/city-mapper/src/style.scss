@@ -20,7 +20,9 @@ h1{
   background-color: #659EC7;
   width: 70%;
   margin: 0 auto;
-
+  -webkit-box-shadow: 3px 5px 20px -2px rgba(0,0,0,0.63);
+  -moz-box-shadow: 3px 5px 20px -2px rgba(0,0,0,0.63);
+  box-shadow: 3px 5px 20px -2px rgba(0,0,0,0.63);
 }
 .status{
   background-color: white;
@@ -28,9 +30,8 @@ h1{
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
-  div{
-    border-bottom: 1px solid #505050;
-  }
+  color: #505050;
+
   h2{
     font-size: 30px;
   }
@@ -40,32 +41,35 @@ h1{
 }
 
 #bakerloo{
-  color: 	#B36305;
+  border-top: 10px solid 	#B36305;
 }
 #central{
-  color: 	#E32017;
+  border-top: 10px solid 	#E32017;
 }
 #circle{
-  color: 	#FFD300;
+  border-top: 10px solid 	#FFD300;
 }
 #district{
-  color: 	#00782A;
+  border-top: 10px solid 	#00782A;
 }
 #hammersmith-city{
-  color: 	#F3A9BB;
+  border-top: 10px solid 	#F3A9BB;
 }
 #jubilee{
-  color: 	#A0A5A9;
+  border-top: 10px solid 	#A0A5A9;
 }
 #metropolitan{
-  color: 	#9B0056;
+  border-top: 10px solid 	#9B0056;
 }
 #northern{
-  color: 	#000000;
+  border-top: 10px solid 	#000000;
 }
 #piccadilly{
-  color: 	#003688;
+  border-top: 10px solid 	#003688;
 }
 #victoria{
-  color: 	#0098D4;
+  border-top: 10px solid 	#0098D4;
+}
+#waterloo-city{
+  border-top: 10px solid 	#95CDBA;
 }

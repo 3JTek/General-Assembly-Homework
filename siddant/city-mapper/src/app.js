@@ -22,12 +22,11 @@ function displayData(){
   $info.text(`last updated: ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}` )
   service.forEach(data => {
     $status.append(`
-      <div>
-        <h2 id="${data.id}">${data.name}</h2>
+      <div id="${data.id}">
+        <h2>${data.name}</h2>
         <p>${data.lineStatuses[0].statusSeverityDescription}</p>
       </div>
     `)
-    console.log(data)
   })
   setTimeout(getData, 300000)
 }
