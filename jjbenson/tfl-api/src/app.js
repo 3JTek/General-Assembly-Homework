@@ -85,6 +85,15 @@ function element(line){
 function showData(){
   //Remove old elements
   $container.empty()
+
+  //Sort by disruption severity
+  // const sortBy = line.lineStatuses[0].statusSeverity
+  lineData.sort((a, b) => {
+    if(a.lineStatuses[0].statusSeverity < b.lineStatuses[0].statusSeverity) return -1
+    if(a.lineStatuses[0].statusSeverity > b.lineStatuses[0].statusSeverity) return 1
+    return 0
+  })
+
   //Populate with new elements
   lineData.forEach((line)=>{
     $container.append(element(line))

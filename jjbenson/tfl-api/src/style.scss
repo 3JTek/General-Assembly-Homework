@@ -1,30 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:500,400,300");
+@import '_vars','_mixins';
 
-$black:#111;
-$white:#FDFDFD;
-$grey:#999;
-$shadow: $black;
-$blue:#1A5A92;
-$orange: orange;
-$green: green;
-$red: red;
-
-$bakerloo: #B36305;
-$central: #E32017;
-$circle: #FFD300;
-$district: #00782A;
-$hammersmith-city: #F3A9BB;
-$jubilee: #A0A5A9;
-$metropolitan: #9B0056;
-$northern: #000000;
-$piccadilly: #003688;
-$victoria: #0098D4;
-$waterloo-city: #95CDBA;
-$overground: #EE7C0E;
-$dlr: #00A4A7;
-$tram: #84B817;
-
-$h-padding:20px;
+// @media only screen and (min-width: 660px) {
+//   body {
+//     display:flex;
+//   }
+// }
 
 body {
   background: $blue;
@@ -33,40 +14,46 @@ body {
   margin:0;
 }
 
+main {
+  width: 100%;
+  height:100vh;
+  padding-top:100px;
+  display: flex;
+  justify-content: center;
+}
+
+// @media only screen and (min-width:660px){
+//   main {
+//     justify-content: center;
+//   }
+// }
+
 header{
   display: column;
   justify-content: space-between;
+  min-width: 290px;
+  width:100%;
+  height:80px;
+  position: fixed;
+  top:0;
+  background: $blue;
+  // background: linear-gradient(to bottom, rgba($blue,1) 85%,rgba($blue,0) 100%);
+
   h1, p{
     margin:0 40px 0 40px;
   }
   p{
     position: relative;
     z-index: 10;
-    text-align: right;
+    // text-align: left;
   }
 
   .progress{
     @keyframes load1{
-      0%{width:0%}
-      50%{
-        width:100%;
-        opacity:1;
-      }
-      100%{
-        width:100%;
-        opacity:0
-      }
+      @include loadAnim;
     }
     @keyframes load2{
-      0%{width:0%}
-      50%{
-        width:100%;
-        opacity:1;
-      }
-      100%{
-        width:100%;
-        opacity:0
-      }
+      @include loadAnim;
     }
 
     background-color: $grey;
@@ -79,6 +66,14 @@ header{
     }
   }
 }
+// @media only screen and (min-width:660px){
+//   header {
+//     position: fixed;
+//     top:0;
+//     background-color: grey;
+//   }
+//
+// }
 .container{
   display: flex;
   flex-direction: column;
@@ -110,20 +105,20 @@ header{
   }
 
   //TUBE COLOURS
-  &.bakerloo{.band{background-color: $bakerloo;} }
-  &.central{.band{background-color: $central;} }
-  &.circle{.band{background-color: $circle;} }
-  &.district{.band{background-color: $district;} }
-  &.hammersmith-city{.band{background-color: $hammersmith-city;} }
-  &.jubilee{.band{background-color: $jubilee;} }
-  &.metropolitan{.band{background-color: $metropolitan;} }
-  &.northern{.band{background-color: $northern;} }
-  &.piccadilly{.band{background-color: $piccadilly;} }
-  &.victoria{.band{background-color: $victoria;} }
-  &.waterloo-city{.band{background-color: $waterloo-city;} }
-  &.london-overground{.band{background-color: $overground;} }
-  &.dlr{.band{background-color: $dlr;} }
-  &.tram{.band{background-color: $tram;} }
+  &.bakerloo{ @include lineColour($bakerloo); }
+  &.central{@include lineColour($central); }
+  &.circle{@include lineColour($circle); }
+  &.district{@include lineColour($district); }
+  &.hammersmith-city{@include lineColour($hammersmith-city); }
+  &.jubilee{@include lineColour($jubilee); }
+  &.metropolitan{@include lineColour($metropolitan); }
+  &.northern{@include lineColour($northern); }
+  &.piccadilly{@include lineColour($piccadilly); }
+  &.victoria{@include lineColour($victoria); }
+  &.waterloo-city{@include lineColour($waterloo-city); }
+  &.london-overground{@include lineColour($overground); }
+  &.dlr{@include lineColour($dlr); }
+  &.tram{@include lineColour($tram); }
 
   h2{
     margin: 2px 20px 8px 20px;
@@ -135,150 +130,90 @@ header{
   }
 
   p{
+    margin: 2px 20px 18px 20px;
     font-size: 0.6em;
   }
 
   //DISRUPTION SEVERITY
   //Service Closed
   &.severity20{
-    h3:after{
-      color: $red;
-      content: " X"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Information
   &.severity19{
-    h3:after{
-      color: $blue;
-      content: " !"
-    }
+    @include severity($blue,$white,$white,"!")
   }
   //No issues reported
   &.severity18{
-    h3:after{
-      color: $green;
-      content: " ✓"
-    }
+    @include severity($white,$black,$green,"✓")
   }
   //Issues reported
   &.severity17{
-    h3:after{
-      color: $blue;
-      content: " !"
-    }
+    @include severity($blue,$white,$white,"!")
   }
   //Not running
   &.severity16{
-    h3:after{
-      color: $red;
-      content: " X"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Diverted
   &.severity15{
-    h3:after{
-      color: $orange;
-      content: " !"
-    }
+    @include severity($orange,$white,$white,"!")
   }
   //Change of frequency
   &.severity14{
-    h3:after{
-      color: $blue;
-      content: " !"
-    }
+      @include severity($blue,$white,$white,"!")
   }
   //No step-free access
   &.severity13{
-    h3:after{
-      color: $blue;
-      content: " !"
-    }
+      @include severity($blue,$white,$white,"!")
   }
   //Exit Only
   &.severity12{
-    h3:after{
-      color: $blue;
-      content: " !"
-    }
+    @include severity($blue,$white,$white,"!")
   }
   //Part Closed
   &.severity11{
-    h3:after{
-      color: $orange;
-      content: " X"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Good service
   &.severity10{
-    h3:after{
-      color: $green;
-      // content: " \2713"
-      content: " ✓"
-    }
+    @include severity($white,$black,$green,"✓")
   }
   //Minor Delays
   &.severity9{
-    h3:after{
-      color: $orange;
-      content: " ✓"
-    }
+    @include severity($orange,$white,$white,"✓")
   }
   //Bus Service
   &.severity8{
-    h3:after{
-      color: $orange;
-      content: " !"
-    }
+    @include severity($orange,$white,$white,"!")
   }
   //Reduced Service
   &.severity7{
-    h3:after{
-      color: $orange;
-      content: " !"
-    }
+    @include severity($orange,$white,$white,"!")
   }
   //Severe delays
   &.severity6{
-    h3:after{
-      color: $red;
-      content: " !"
-    }
+    @include severity($red,$white,$white,"!")
   }
   //Part-closure
   &.severity5{
-    h3:after{
-      color: $orange;
-      content: " !"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Planned-closure
   &.severity4{
-    h3:after{
-      color: $orange;
-      content: " !"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Part-suspended
   &.severity3{
-    h3:after{
-      color: $orange;
-      content: " !"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Suspended
   &.severity2{
-    h3:after{
-      color: $red;
-      content: " !"
-    }
+    @include severity($red,$white,$white,"X")
   }
   //Closed
   &.severity1{
-    h3:after{
-      color: $red;
-      content: " X"
-    }
+    @include severity($red,$white,$white,"X")
   }
 
 }
