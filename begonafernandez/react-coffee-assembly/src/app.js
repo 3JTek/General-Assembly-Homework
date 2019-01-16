@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import NavHeader from './components/NavHeader'
+import Hero from './components/Hero'
 
 import 'normalize-scss'
 import 'bootstrap-css-only'
@@ -46,7 +47,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <NavHeader links={this.state.nav}/>
+      <div>
+        <NavHeader links={this.state.nav}/>
+        <main>
+          <Hero />
+        </main>
+      </div>
     )
   }
 }
