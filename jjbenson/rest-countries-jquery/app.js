@@ -67,8 +67,7 @@ function init(){
     if(type==='region'){
       const $selected = $('select option:selected')
       const group = $selected.closest('optgroup').attr('value')
-      if(group==='continent') type = 'region'
-      if(group==='regionalBloc') type = 'regionalbloc'
+      type = group
     }
     const val = e.target.value
     let searchURL = type+'/'+val
