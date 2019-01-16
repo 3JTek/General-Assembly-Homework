@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom'
 import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
+
 import Header from './components/Header'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
 
 class App extends React.Component {
 
@@ -18,6 +21,11 @@ class App extends React.Component {
         'Menu',
         'About',
         'Location'
+      ],
+      gallery: [
+        'one',
+        'two',
+        'three'
       ],
       about: {
         text: [
@@ -45,7 +53,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <Header nav={this.state.nav} />
+      <div>
+        <Header nav={this.state.nav} />
+        <main>
+          <Hero />
+          <Gallery gallery={this.state.gallery} />
+        </main>
+      </div>
     )
   }
 }
