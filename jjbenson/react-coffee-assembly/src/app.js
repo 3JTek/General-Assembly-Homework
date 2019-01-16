@@ -5,12 +5,26 @@ import 'normalize-scss'
 import 'bootstrap-css-only'
 import './scss/style.scss'
 
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import Menus from './components/Menus'
+import About from './components/About'
+import Footer from './components/Footer'
+
 class App extends React.Component {
 
   constructor() {
     super()
 
     this.state = {
+      header: [
+        {nav: 'Location',link: '#location'},
+        {nav: 'About',link: '#about'},
+        {nav: 'Menu',link: '#menus'},
+        {nav: 'Gallery',link: '#gallery'},
+        {nav: 'Home',link: '#hero'}
+      ],
       about: {
         text: [
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus magna id quam euismod, quis consectetur augue malesuada. Aenean et libero elementum, consequat eros in, vehicula risus. Phasellus imperdiet pretium massa, ut tincidunt neque mollis sed',
@@ -20,13 +34,20 @@ class App extends React.Component {
       },
       menus: {
         links: [
-          'Breakfast',
-          'Brunch',
-          'All Day'
+          {menu: 'Breakfast',link: 'assets/menus/menu.pdf'},
+          {menu: 'Brunch',link: 'assets/menus/menu.pdf'},
+          {menu: 'All Day',link: 'assets/menus/menu.pdf'}
         ],
         text: [
           'We start early, with a breakfast menu including juices, pastries, pancakes, all kinds of eggs and freshly-roasted coffee. At 11.30am, we switch to our all-day menu.',
           'On weekends we serve brunch until 4pm.'
+        ]
+      },
+      gallery: {
+        images: [
+          'image-one',
+          'image-two',
+          'image-three'
         ]
       },
       footer: {
@@ -36,9 +57,18 @@ class App extends React.Component {
   }
 
   render() {
+    const {header, about, menus, gallery, footer} = this.state
     return (
       <div>
-        <h1>Coffee Assembly</h1>
+        <Header {...header}/>
+        <main>
+          <Hero />
+          <Gallery {...gallery}/>
+          <Menus {...menus}/>
+          <About {...about} />
+        </main>
+        <Footer {...footer}/>
+
       </div>
     )
   }
