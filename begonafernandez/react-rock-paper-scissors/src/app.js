@@ -41,8 +41,10 @@ class App extends React.Component {
       } else {
         winner = 'Computer win'
       }
+    } else {
+      winner = 'Go ahead.Try your luck'
     }
-    
+
     return winner
   }
 
@@ -51,7 +53,7 @@ class App extends React.Component {
     return(
       <main>
         <h1>Rock Paper Scissors</h1>
-        <h2>{this.findWinner()}</h2>
+        <h3>{this.findWinner()}</h3>
         <PlayerBoard
           type={'Computer'}
           move={this.state.computerMove}/>
