@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Alerts = (props) => {
+const Alerts = () => {
 
   return (
     <div>
       <div>
-        <p className="Winner">{THE WINNER IS}</p>
+        <p className="Winner">{Winner}</p>
       </div>
       <div>
         <p className="Player1">{PLAYER ONE CHOICE}</p>
