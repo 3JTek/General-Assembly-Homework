@@ -18,6 +18,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
+      nav: ['Location', 'About', 'Menu', 'Gallery', 'Home'],
       about: {
         text: [
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus magna id quam euismod, quis consectetur augue malesuada. Aenean et libero elementum, consequat eros in, vehicula risus. Phasellus imperdiet pretium massa, ut tincidunt neque mollis sed',
@@ -45,7 +46,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav nav={this.state.nav}/>
         <main>
           <Hero />
           <Gallery />
