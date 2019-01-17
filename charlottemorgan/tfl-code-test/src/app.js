@@ -25,6 +25,5 @@ function getTrainInfo(lines){
 
 getAPI()
 setInterval(()=>{
-  console.log('Im working')
   getAPI()
 }, 300000)
