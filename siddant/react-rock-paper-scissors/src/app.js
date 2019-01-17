@@ -78,12 +78,11 @@ class App extends React.Component{
           restEvent={this.reset}
         />
         <Display
-          display={{...this.state.display}}
+          {...this.state.display}
         />
       </div>
     )
   }
 }
-
 
 ReactDom.render(<App  />, document.querySelector('#root'))

@@ -1,13 +1,13 @@
 import React from 'react'
 
 
-const Button = (props) =>{
+const Button = ({player, computer, winner, playerWon, computerWon}) =>{
   return(
     <div>
-      <p>Player chose: <span>{props.display.player}</span> <span>{props.display.playerWon}</span></p>
-      <p>Computer chose: <span>{props.display.computer}</span> <span>{props.display.computerWon}</span></p>
-      <h2>{props.display.winner}</h2>
-      {console.log(props)}
+      {console.log(computerWon)}
+      <p>Player chose: <span>{player}</span> Player Wins:<span>{playerWon}</span></p>
+      <p>Computer chose: <span>{computer}</span> Computer Wins:<span>{computerWon}</span></p>
+      <h2>{winner}</h2>
     </div>
 
   )
