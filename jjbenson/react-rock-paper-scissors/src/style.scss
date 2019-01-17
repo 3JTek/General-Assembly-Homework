@@ -17,6 +17,10 @@ header{
   width:100%;
   display: flex;
   justify-content: center;
+  h1{
+    color:grey;
+    text-transform: uppercase;
+  }
 }
 main{
   // background-color: white;

@@ -73,7 +73,7 @@ class App extends React.Component{
     return(
       <div className="container">
         <header>
-          <h1>Rock, Paper, Scissors</h1>
+          <h1>Rock Paper Scissors</h1>
         </header>
         <main>
           <div className='choices'>
