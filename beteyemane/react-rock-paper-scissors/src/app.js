@@ -7,36 +7,45 @@ class App extends React.Component {
     super()
     this.state = {
       wins: {
-        rock: 'scissors',
-        paper: 'rock',
-        scissors: 'paper'
+        Rock: 'Scissors',
+        Paper: 'Rock',
+        Scissors: 'Paper'
       },
 
       computerChoice: '',
-      playersChoice: ''
+      playersChoice: '',
+      outcomes: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.findWinner = this.findWinner.bind(this)
     this.choices = Object.keys(this.state.wins)
-    console.log(this.choices)
 
   }
 
   handleSubmit(e) {
-    const random = this.choices[Math.floor(Math.random() * 3)]
-    this.setState({computerChoice: random})
-    this.setState({playersChoice: e.target.value})
+    const computer = this.choices[Math.floor(Math.random() * 3)]
+    console.log(computer)
+    const player = e.target.value
+    console.log(player)
+    const winner = this.findWinner(player, computer)
+    console.log(winner)
     e.preventDefault()
-    console.log(e.target.value)
-    console.log(random)
+  }
+
+  findWinner(player, computer) {
+    if(player === computer) return 'Tie'
+    if(this.state.wins[player] === computer) return 'Win'
+    return 'Lose'
   }
 
   render() {
     return (
       <div>
         <Buttons handleSubmit={this.handleSubmit}/>
-        <h1>Players Choice: {this.state.playersChoice}</h1>
-        <h1>Computers Choice: {this.state.computerChoice}</h1>
+        <h1>Players Choice: {this.player}</h1>
+        <h1>Computers Choice: {this.state.computer}</h1>
+        <h1>Outcome: {this.state.winner}</h1>
       </div>
     )
   }
