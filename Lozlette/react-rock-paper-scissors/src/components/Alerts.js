@@ -1,18 +1,18 @@
 import React from 'react'
 
-const Alerts = () => {
+const Alerts = (player1Choice, player2Choice, {makeChoice, findWinner}) => {
 
   return (
     <div>
       <div>
-        <p className="Winner">{Winner}</p>
+        <p className="Winner">{findWinner(player1Choice, player2Choice)}</p>
       </div>
       <div>
-        <p className="Player1">{PLAYER ONE CHOICE}</p>
+        <p className="Player1">{}</p>
       </div>
 
       <div>
-        <p className="Player2">{PLAYER TWO CHOICE}</p>
+        <p className="Player2">{makeChoice}</p>
       </div>
     </div>
   )

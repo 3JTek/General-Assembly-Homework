@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 
 import './style.scss'
 import Buttons from './components/Buttons'
+import Alerts from './components/Alerts'
 
 
 class App extends React.Component {
@@ -19,9 +20,9 @@ class App extends React.Component {
       }
     }
 
-    this.choices = Object.keys(this.winConditions)
+    this.choices = Object.keys(this.state.winConditions)
 
-
+    console.log(this.choices)
 
 
     this.makeChoice = this.makeChoice.bind(this)
@@ -36,27 +37,21 @@ class App extends React.Component {
   }
 
   makeChoice() {
-    const randomChoice = this.choices[Math.floor(Math.random() * this.choices.length)]
-    console.log(randomChoice)
+    return this.choices[Math.floor(Math.random() * this.choices.length)]
   }
 
   clickButton(){
     console.log('working')
+
   }
 
-  play(e) {
-
-    const player1Choice = e.target.textContent
-    const player2Choice = this.makeChoice()
-
-    this.result.textContent = this.findWinner(player1Choice, player2Choice)
-  }
 
 
   render(){
     return (
       <div>
-        <Buttons clickButton={this.clickButton} makeChoice={this.makeChoice} findWinner={this.findWinner}/>
+        <Buttons clickButton={this.clickButton} />
+        <Alerts makeChoice={this.makeChoice} findWinner={this.findWinner} />
       </div>
     )
   }

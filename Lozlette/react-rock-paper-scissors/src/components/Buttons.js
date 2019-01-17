@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Buttons = ({clickButton, makeChoice}) => {
+const Buttons = ({clickButton}) => {
 
   return (
     <div>
 
-      <button onClick={clickButton, makeChoice}>Rock</button>
-      <button onClick={clickButton, makeChoice}>Paper</button>
-      <button onClick={clickButton, makeChoice}>Scissors</button>
+      <button onClick={clickButton}>Rock</button>
+      <button onClick={clickButton}>Paper</button>
+      <button onClick={clickButton}>Scissors</button>
     </div>
   )
 }
