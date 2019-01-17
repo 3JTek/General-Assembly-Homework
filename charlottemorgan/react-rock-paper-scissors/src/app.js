@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Choices from './component/Choices'
+import Winner from './component/Winner'
+import Buttons from './component/Buttons'
 
 class App extends React.Component {
   constructor(){
@@ -53,29 +56,18 @@ class App extends React.Component {
     }
   }
 
-
-
-
   render(){
     return(
       <div>
         <div>
           <h1> Rock, Paper, Scissors</h1>
         </div>
-        <div className="player">
-          <h2>Player Choice: {this.state.playerChoice}</h2>
-        </div>
-        <div className="computer">
-          <h2>Computer Choice: {this.state.computerChoice}</h2>
-        </div>
-        <div>
-          <button value="rock" onClick={this.handleChoice}>Rock</button>
-          <button value="paper" onClick={this.handleChoice}>Paper</button>
-          <button value="scissors" onClick={this.handleChoice}>Scissors</button>
-        </div>
-        <div className="winner">
-          <h2>Winner: {this.state.winner}</h2>
-        </div>
+        <Choices
+          playerChoice={this.state.playerChoice}
+          computerChoice={this.state.computerChoice}
+        />
+        <Buttons handleChoice={this.handleChoice}/>
+        <Winner winner={this.state.winner} />
       </div>
     )
 
