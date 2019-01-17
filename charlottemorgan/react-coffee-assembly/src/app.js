@@ -46,10 +46,12 @@ class App extends React.Component {
     return (
       <div>
         <Nav />
-        <Hero />
-        <Gallery />
-        <Menu menus={this.state.menus} />
-        <About about={this.state.about}/>
+        <main>
+          <Hero />
+          <Gallery />
+          <Menu menus={this.state.menus} />
+          <About about={this.state.about}/>
+        </main>
         <Footer footer={this.state.footer}/>
       </div>
     )
