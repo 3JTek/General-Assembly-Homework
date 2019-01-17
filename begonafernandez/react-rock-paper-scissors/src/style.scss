@@ -12,7 +12,11 @@ main {
   .playerBoard {
     display: flex;
     justify-content: center;
-    margin: 30px;
+    margin: 10px;
+    align-items: center;
+    > div {
+      width: 70px;
+    }
     .playerMove {
       height: 80px;
       width: 80px;
