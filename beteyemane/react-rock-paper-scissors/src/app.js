@@ -26,11 +26,14 @@ class App extends React.Component {
   handleSubmit(e) {
     const computer = this.choices[Math.floor(Math.random() * 3)]
     console.log(computer)
+    this.setState({computer})
     const player = e.target.value
     console.log(player)
+    this.setState({player})
     const winner = this.findWinner(player, computer)
     console.log(winner)
     e.preventDefault()
+    this.setState({outcome: winner})
   }
 
   findWinner(player, computer) {
@@ -43,9 +46,9 @@ class App extends React.Component {
     return (
       <div>
         <Buttons handleSubmit={this.handleSubmit}/>
-        <h1>Players Choice: {this.player}</h1>
+        <h1>Players Choice: {this.state.player}</h1>
         <h1>Computers Choice: {this.state.computer}</h1>
-        <h1>Outcome: {this.state.winner}</h1>
+        <h1>Outcome: {this.state.outcome}</h1>
       </div>
     )
   }
