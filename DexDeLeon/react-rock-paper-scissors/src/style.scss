@@ -49,6 +49,12 @@ div.center {
       border: double #000;
       border-radius: 5px;
       flex-grow: 1;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+
+      &:hover{
+        background: #ccc;
+        box-shadow: 1px 1px 1px #000;
+      }
     }
     #resetButton {
       width: 100%;

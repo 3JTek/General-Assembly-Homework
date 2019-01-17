@@ -37,11 +37,14 @@ class App extends React.Component{
         index: 0,
         message: '',
         image: ''
-      }
+      },
+      text: 'Click a button to start!'
     }
     this.handleClick = this.handleClick.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
+  // METHODS *******************************************************************
 
   getRandom(){
     return Math.floor(Math.random() * this.state.options.length)
@@ -71,6 +74,28 @@ class App extends React.Component{
     }
   }
 
+  reset(){
+    const playerInit = {
+      choice: '',
+      index: 0,
+      message: '',
+      image: ''
+    }
+
+    const cpuInit = {
+      choice: '',
+      index: 0,
+      message: '',
+      image: ''
+    }
+
+    this.setState({
+      player: playerInit,
+      cpu: cpuInit,
+      text: 'Click a button to start!!'
+    })
+  }
+
   handleClick(e){
     const playerChoice = {
       choice: e.target.value,
@@ -82,12 +107,11 @@ class App extends React.Component{
       cpu: this.cpuChoice()
     },
     () => {
-      console.log('player: ', this.state.player)
-      console.log('cpu: ', this.state.cpu)
-      console.log(this.getWinner())
+      this.setState({text: this.getWinner()})
     })
   }
-  // METHODS ******************
+
+  // RENDER ********************************************************************
 
   render(){
     return (
@@ -102,12 +126,12 @@ class App extends React.Component{
               message={this.state.player.message}
             />
             <div className="center">
+              <h2 id="message">{this.state.text}</h2>
               <GameBoard
                 options={this.state.options}
                 handleClick={this.handleClick}
+                reset={this.reset}
               />
-              <h1 id="player">Player: {this.state.player.choice}</h1>
-              <h1 id="cpu">CPU: {this.state.cpu.choice}</h1>
             </div>
             <Choice
               id="computer"

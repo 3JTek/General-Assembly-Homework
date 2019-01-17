@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GameBoard = ({ options, handleClick }) => {
+const GameBoard = ({ options, handleClick, reset }) => {
   return (
     <div id="gameBoard">
       {options.map((option, index) =>
@@ -8,6 +8,7 @@ const GameBoard = ({ options, handleClick }) => {
           {option.name.toUpperCase()}
         </button>
       )}
+      <button id="resetButton" onClick={reset}>Reset</button>
     </div>
   )
 }
