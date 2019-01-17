@@ -21,7 +21,9 @@ class App extends React.Component {
     }
 
     this.choices = Object.keys(this.state.winConditions)
-
+    this.player2Choice = this.makeChoice()
+    this.player1Choice = this.clickButton()
+    this.winner = this.findWinner(this.player1Choice, this.player2Choice)
     console.log(this.choices)
 
 
@@ -41,7 +43,7 @@ class App extends React.Component {
   }
 
   clickButton(){
-    console.log('working')
+    console.log(this.player2Choice, this.player1Choice, this.winner)
 
   }
 
