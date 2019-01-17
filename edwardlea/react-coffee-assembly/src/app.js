@@ -21,7 +21,7 @@ class App extends React.Component {
         nav: [
           'Home',
           'Gallery',
-          'Menu',
+          'Menus',
           'About',
           'Location'
         ]
