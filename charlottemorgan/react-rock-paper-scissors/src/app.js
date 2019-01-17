@@ -11,27 +11,42 @@ class App extends React.Component {
     this.state = {
       computerChoice: '',
       playerChoice: '',
-      winner: '',
       options: [
         'rock',
         'paper',
         'scissors'
-      ]
+      ],
+      winConditions: {
+        rock: 'scissors',
+        paper: 'rock',
+        scissors: 'paper'
+      }
     }
 
     this.handleChoice = this.handleChoice.bind(this)
-
+    this.computerChoice = this.computerChoice.bind(this)
+    this.winLogic = this.winLogic.bind(this)
 
   }
 
   handleChoice(e){
     console.log(e.target.value)
-    this.computerChoice()
+    console.log(this.computerChoice())
+    this.setState({playerChoice: e.target.value})
+    this.setState({computerChoice: this.computerChoice()})
+    console.log(this.winLogic())
   }
 
   computerChoice(){
-    console.log(this.state.options[Math.floor(Math.random() * (this.state.options.length))])
+    return this.state.options[Math.floor(Math.random() * (this.state.options.length))]
   }
+
+  winLogic() {
+    if(this.state.playerChoice === this.state.computerChoice) return 'Tie'
+    if(this.state.winConditions[this.state.playerChoice] === this.state.computerChoice) return 'You win'
+    return 'You lose'
+  }
+
 
 
   render() {
@@ -42,12 +57,10 @@ class App extends React.Component {
         </div>
         <div>
           <button value="rock" onClick={this.handleChoice}>Rock</button>
-          <button value="promaper" onClick={this.handleChoice}>Paper</button>
+          <button value="paper" onClick={this.handleChoice}>Paper</button>
           <button value="scissors" onClick={this.handleChoice}>Scissors</button>
         </div>
       </div>
-
-
 
     )
   }
