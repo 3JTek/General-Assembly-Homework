@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Buttons from './components/Buttons'
+import Display from './components/Display'
 import './style.scss'
 
 class App extends React.Component {
@@ -32,50 +33,38 @@ class App extends React.Component {
 
   handleChoice(e) {
     this.setState({playerChoice: e.target.value, computerChoice: this.computerChoice()}, () => {
-      console.log(this.state.playerChoice)
-      console.log(this.state.computerChoice)
-      console.log(this.winnerLogic())
       this.setState({winner: this.winnerLogic()})
+
     })
   }
 
   computerChoice(){
     return this.state.options[Math.floor(Math.random() * (this.state.options.length))]
-
   }
 
   resetGame(){
-    console.log('reset')
     this.setState({playerChoice: null, computerChoice: null, winner: null})
   }
 
   winnerLogic() {
-    if(this.state.computerChoice){
-      if(this.state.playerChoice === this.state.computerChoice) return 'It\'s Tie'
-      if(this.state.winConditions[this.state.playerChoice] === this.state.computerChoice) return 'You beat the computer'
-      return 'You lost unfortunately'
-    }
+    if(this.state.playerChoice === this.state.computerChoice) return 'It\'s Tie'
+    if(this.state.winConditions[this.state.playerChoice] === this.state.computerChoice) return 'You beat the computer'
+    return 'You lost unfortunately'
+
   }
 
   render(){
     return(
       <div className="container">
+        <h1>Rock, Paper, Scissors</h1>
         <div className="display">
-          <h1>Rock, Paper, Scissors</h1>
-          <h2>Player picked {this.state.playerChoice}</h2>
-          <h2>Computer picked {this.state.computerChoice}</h2>
-          <h2>{this.state.winner}</h2>
+          <Display {...this.state}/>
         </div>
-
         <Buttons handleChoice={this.handleChoice} resetGame={this.resetGame}/>
-
       </div>
     )
-
   }
 }
-
-
 
 ReactDOM.render(
   <App />,
