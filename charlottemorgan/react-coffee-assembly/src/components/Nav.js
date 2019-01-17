@@ -30,7 +30,7 @@ const Nav = (props) => {
     <header>
       <nav className="container">
         <ul>
-          {props.nav.map((item, i) => <li id={item}key={i}><a href="#{item}">{item}</a></li>)}
+          {props.nav.map((item, i) => <li id={item}key={i}><a href={'#'+ item.toLowerCase()}>{item}</a></li>)}
         </ul>
       </nav>
     </header>
