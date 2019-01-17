@@ -7,10 +7,11 @@ body {
 * {
   font-family: inherit;
 }
-
 // Typography
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 0;
@@ -20,7 +21,6 @@ a {
   color: #141414;
   text-decoration: none!important;
 }
-
 // Header
 
 header {
@@ -31,25 +31,30 @@ header {
   z-index: 2;
   height: 40px;
   background-color: #141414;
+
   nav {
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
+
       li {
         display: inline-block;
         float: right;
         margin-left: 20px;
         line-height: 40px;
+
         &:last-of-type {
           margin-left: 0;
         }
+
         a {
           color: white;
           letter-spacing: 1px;
           text-transform: uppercase;
           font-weight: bold;
           position: relative;
+
           &:after {
             content: "";
             height: 2px;
@@ -61,8 +66,10 @@ header {
             opacity: 0;
             transition: opacity 0.2s ease;
           }
+
           &:hover {
             color: white;
+
             &:after {
               opacity: 1;
             }
@@ -72,20 +79,22 @@ header {
     }
   }
 }
-
 // Sections
 
 section {
   text-align: center;
+
   h2 {
     font-size: 28px;
   }
+
   .container {
     padding-top: 80px;
     padding-bottom: 80px;
     position: relative;
     border-bottom: 2px solid #c99124;
   }
+
   &:last-of-type {
     .container {
       border-bottom: 0;
@@ -95,10 +104,11 @@ section {
 
 #hero {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/images/hero-image.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/assets/images/hero-image.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
+
   h1 {
     font-size: 36px;
     position: absolute;
@@ -113,19 +123,23 @@ section {
   .image {
     background-position: center;
     background-size: cover;
+
     &:after {
       content: "";
       padding-bottom: 100%;
       display: block;
     }
+
     &.image-one {
-      background-image: url('/assets/image-one.jpg');
+      background-image: url("/assets/images/image-one.jpg");
     }
+
     &.image-two {
-      background-image: url('/assets/image-two.jpg');
+      background-image: url("/assets/images/image-two.jpg");
     }
+
     &.image-three {
-      background-image: url('/assets/image-three.jpg');
+      background-image: url("/assets/images/image-three.jpg");
     }
   }
 }
@@ -140,6 +154,7 @@ section {
     font-weight: bold;
     color: #c99124;
     display: inline-block;
+
     &:hover {
       border-style: dotted;
     }
@@ -151,6 +166,7 @@ footer {
   padding: 5px;
   text-align: center;
   color: white;
+
   p {
     margin: 0;
   }
