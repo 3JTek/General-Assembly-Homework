@@ -42,6 +42,7 @@ class App extends React.Component {
     } else {
       this.winner = 'You lose'
     }
+    console.log('function working')
   }
 
   makeChoice() {
@@ -51,7 +52,7 @@ class App extends React.Component {
   clickButton(){
     this.player1Choice = 'Rock'
     console.log('rock')
-    console.log(this.findWinner())
+    this.findWinner()
   }
 
   clickButton2(){
