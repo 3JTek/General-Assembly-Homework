@@ -36,14 +36,13 @@ class App extends React.Component {
     if (this.state.computerMove && this.state.humanMove) {
       if (this.state.computerMove === this.state.humanMove) {
         winner ='Tie'
-      }
-      if (this.state.moves[this.state.humanMove] === this.state.computerMove) {
+      } else if (this.state.moves[this.state.humanMove] === this.state.computerMove) {
         winner = 'You win'
       } else {
         winner = 'Computer win'
       }
     }
-    console.log('human', this.state.moves[this.state.humanMove], 'computer', this.state.computerMove)
+    
     return winner
   }
 
