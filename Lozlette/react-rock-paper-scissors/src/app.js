@@ -14,28 +14,34 @@ class App extends React.Component {
 
     this.state = {
       winConditions: {
-        Rock: 'scissors',
-        Paper: 'rock',
-        Scissors: 'paper'
+        Rock: 'Scissors',
+        Paper: 'Rock',
+        Scissors: 'Paper'
       }
     }
 
     this.choices = Object.keys(this.state.winConditions)
     this.player2Choice = this.makeChoice()
-    this.player1Choice = this.clickButton()
-    this.winner = this.findWinner(this.player1Choice, this.player2Choice)
+    this.player1Choice = ''
+    this.winner = ''
     console.log(this.choices)
 
 
     this.makeChoice = this.makeChoice.bind(this)
     this.clickButton = this.clickButton.bind(this)
+    this.clickButton2 = this.clickButton2.bind(this)
+    this.clickButton3 = this.clickButton3.bind(this)
     this.findWinner = this.findWinner.bind(this)
   }
 
-  findWinner(player1Choice, player2Choice) {
-    if(player1Choice === player2Choice) return 'Tie'
-    if(this.winConditions[player1Choice] === player2Choice) return 'You win'
-    return 'You lose'
+  findWinner() {
+    if(this.player1Choice === this.player2Choice){
+      this.winner = 'Tie'
+    } else if (this.winConditions[this.player1Choice] === this.player2Choice) {
+      this.winner = 'You win!'
+    } else {
+      this.winner = 'You lose'
+    }
   }
 
   makeChoice() {
@@ -43,17 +49,27 @@ class App extends React.Component {
   }
 
   clickButton(){
-    console.log(this.player2Choice, this.player1Choice, this.winner)
-
+    this.player1Choice = 'Rock'
+    console.log('rock')
+    console.log(this.findWinner())
   }
 
+  clickButton2(){
+    this.player1Choice = 'Paper'
+    console.log('paper')
+  }
+
+  clickButton3(){
+    this.player1Choice = 'Scissors'
+    console.log('scissors')
+  }
 
 
   render(){
     return (
       <div>
-        <Buttons clickButton={this.clickButton} />
-        <Alerts makeChoice={this.makeChoice} findWinner={this.findWinner} />
+        <Buttons clickButton={this.clickButton} clickButton2={this.clickButton2} clickButton3={this.clickButton3}/>
+        <Alerts winner={this.winner} player1Choice={this.player1Choice} player2Choice={this.player2Choice}/>
       </div>
     )
   }

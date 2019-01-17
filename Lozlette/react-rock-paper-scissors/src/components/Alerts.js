@@ -5,7 +5,7 @@ const Alerts = (props) => {
   return (
     <div>
       <div>
-        <p className="Winner">{}</p>
+        <p className="Winner">{props.winner}</p>
       </div>
       <div>
         <p className="Player1">{props.player1Choice}</p>
