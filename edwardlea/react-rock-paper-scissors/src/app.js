@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Buttons from './components/Buttons'
+import './style.scss'
 
 class App extends React.Component {
   constructor(){
@@ -25,6 +27,7 @@ class App extends React.Component {
     this.computerChoice = this.computerChoice.bind(this)
     this.handleChoice = this.handleChoice.bind(this)
     this.winnerLogic = this.winnerLogic.bind(this)
+    this.resetGame = this.resetGame.bind(this)
   }
 
   handleChoice(e) {
@@ -32,7 +35,7 @@ class App extends React.Component {
       console.log(this.state.playerChoice)
       console.log(this.state.computerChoice)
       console.log(this.winnerLogic())
-
+      this.setState({winner: this.winnerLogic()})
     })
   }
 
@@ -41,36 +44,35 @@ class App extends React.Component {
 
   }
 
+  resetGame(){
+    console.log('reset')
+    this.setState({playerChoice: null, computerChoice: null, winner: null})
+  }
 
   winnerLogic() {
     if(this.state.computerChoice){
-      if(this.state.playerChoice === this.state.computerChoice) return 'Tie'
-      if(this.state.winConditions[this.state.playerChoice] === this.state.computerChoice) return 'You win'
-      return 'You lose'
+      if(this.state.playerChoice === this.state.computerChoice) return 'It\'s Tie'
+      if(this.state.winConditions[this.state.playerChoice] === this.state.computerChoice) return 'You beat the computer'
+      return 'You lost unfortunately'
     }
   }
 
-
-
-
   render(){
     return(
-      <div>
-        <div>
-          <h1> Rock, Paper, Scissors</h1>
-          <h2></h2>
+      <div className="container">
+        <div className="display">
+          <h1>Rock, Paper, Scissors</h1>
+          <h2>Player picked {this.state.playerChoice}</h2>
+          <h2>Computer picked {this.state.computerChoice}</h2>
+          <h2>{this.state.winner}</h2>
         </div>
-        <div>
-          <button value="rock" onClick={this.handleChoice}>Rock</button>
-          <button value="paper" onClick={this.handleChoice}>Paper</button>
-          <button value="scissors" onClick={this.handleChoice}>Scissors</button>
 
-        </div>
+        <Buttons handleChoice={this.handleChoice} resetGame={this.resetGame}/>
+
       </div>
     )
 
   }
-
 }
 
 

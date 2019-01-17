@@ -1,1 +1,52 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Amatic SC', arial;
 
+}
+
+
+
+.container{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  background-color: #49A078;
+  padding: 20px;
+   .display{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+}
+
+.buttons{
+ display: flex;
+ justify-content: space-around;
+
+
+}
+
+button{
+  font-family: 'Amatic SC', arial;
+  font-size: 30px;
+  background-color: #1F2421;
+  color: #DCE1DE;
+  border: 0;
+  opacity: 0.7;
+}
+
+button:hover{
+  opacity: 1;
+}
+
+
+#reset{
+  height: 50px;
+  width: 300px;
+}
