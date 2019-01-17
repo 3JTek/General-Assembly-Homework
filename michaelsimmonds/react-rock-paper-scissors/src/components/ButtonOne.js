@@ -3,12 +3,11 @@ import React from 'react'
 const ButtonOne = ({handleClick}) => {
   return (
     <form>
-      <button value='rock' onClick={handleClick}>Rock</button>
-      <button value='paper' onClick={handleClick}>Paper</button>
-      <button value='scissors' onClick={handleClick}>Scissors</button>
+      <button value='Rock' onClick={handleClick}>Rock</button>
+      <button value='Paper' onClick={handleClick}>Paper</button>
+      <button value='Scissors' onClick={handleClick}>Scissors</button>
     </form>
   )
 }
-
 
 export default ButtonOne

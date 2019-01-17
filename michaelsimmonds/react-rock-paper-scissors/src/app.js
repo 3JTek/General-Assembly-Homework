@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './style.scss'
 
 import ButtonOne from './components/ButtonOne.js'
 
@@ -9,9 +10,9 @@ class App extends React.Component {
 
     this.state = {
       win: {
-        rock: 'scissors',
-        paper: 'rock',
-        scissors: 'paper'
+        Rock: 'Scissors',
+        Paper: 'Rock',
+        Scissors: 'Paper'
       },
       player: '',
       comp: '',
@@ -27,19 +28,17 @@ class App extends React.Component {
   handleClick(e) {
     e.preventDefault()
     const player = e.target.value
-    console.log(player)
     this.setState({ player: player})
     const comp = this.choices[Math.floor(Math.random() * this.choices.length)]
-    console.log(comp)
     this.setState({ comp: comp})
-    const winner = this.winnerLogic(player, comp)
-    console.log(winner)
+    const result = this.winnerLogic(player, comp)
+    this.setState({ outcome: result})
   }
 
   winnerLogic(player, comp) {
-    if(player === comp) return 'tie'
-    if(this.state.win[player] === comp) return 'win'
-    else return 'lose'
+    if(player === comp) return 'You drew'
+    if(this.state.win[player] === comp) return 'You won'
+    else return 'You lost'
   }
 
 
@@ -51,6 +50,7 @@ class App extends React.Component {
         <h2>{this.state.player}</h2>
         <h1>Computer Chooses:</h1>
         <h2>{this.state.comp}</h2>
+        <h1>{this.state.outcome}</h1>
       </div>
     )
   }
