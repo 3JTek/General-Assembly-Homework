@@ -5,7 +5,7 @@ const Header = (props) => {
     <header>
       <nav className="container">
         <ul>
-          {props.nav.map((link, index) =>
+          {props.nav.reverse().map((link, index) =>
             <li key={index}>
               <a href={'#' + link.toLowerCase()}>{link}</a>
             </li>
