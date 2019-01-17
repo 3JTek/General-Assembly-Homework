@@ -5,17 +5,15 @@ import Gallery from './Gallery'
 import Menus from './Menus'
 import About from './About'
 
-class Main extends React.Component {
-  render() {
-    return (
-      <main>
-        <Hero />
-        <Gallery />
-        <Menus menus={this.props.menus}/>
-        <About about={this.props.about}/>
-      </main>
-    )
-  }
+const Main = (props) => {
+  return (
+    <main>
+      <Hero />
+      <Gallery />
+      <Menus menus={props.menus}/>
+      <About about={props.about}/>
+    </main>
+  )
 }
 
 export default Main
