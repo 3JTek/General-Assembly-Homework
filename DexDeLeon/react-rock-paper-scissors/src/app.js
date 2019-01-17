@@ -50,7 +50,12 @@ class App extends React.Component{
   cpuChoice(){
     const i = this.getRandom()
     const choice = this.state.options[i].name
-    return {choice: choice, index: i, image: `assets/images/${choice}.png`}
+    return {
+      choice: choice,
+      index: i,
+      image: `assets/images/${choice}.png`,
+      message: `Computer chose ${choice.toUpperCase()}!`
+    }
   }
 
   getWinner(){
@@ -70,7 +75,9 @@ class App extends React.Component{
     const playerChoice = {
       choice: e.target.value,
       index: e.target.dataset.id,
-      image: `assets/images/${e.target.value}.png`}
+      image: `assets/images/${e.target.value}.png`,
+      message: 'You chose ' + e.target.value.toUpperCase() + '!'
+    }
     this.setState({player: playerChoice,
       cpu: this.cpuChoice()
     },
@@ -102,7 +109,12 @@ class App extends React.Component{
               <h1 id="player">Player: {this.state.player.choice}</h1>
               <h1 id="cpu">CPU: {this.state.cpu.choice}</h1>
             </div>
-            <div className="computer choice"></div>
+            <Choice
+              id="computer"
+              image={this.state.cpu.image}
+              choice={this.state.cpu.choice}
+              message={this.state.cpu.message}
+            />
           </div>
         </main>
       </div>
