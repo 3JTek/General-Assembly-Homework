@@ -15,7 +15,7 @@ class App extends React.Component {
       },
       player: '',
       comp: ''
-    },
+    }
     this.choices = Object.keys(this.state.win)
     console.log(this.choices)
 
@@ -27,11 +27,8 @@ class App extends React.Component {
     e.preventDefault()
     console.log(e.target.value)
     this.setState({ player: e.target.value})
-    // console.log({player})
-
-
-    // const randNum = Math.floor(Math.random() * this.state.win.length)
-    // console.log(randNum)
+    const rand = this.choices[Math.floor(Math.random() * this.choices.length)]
+    this.setState({ comp: rand })
   }
 
 
@@ -48,6 +45,7 @@ class App extends React.Component {
       <div>
         <ButtonOne handleClick={this.handleClick}/>
         <h1> {this.state.player} </h1>
+        <h1> {this.state.comp} </h1>
       </div>
     )
   }
