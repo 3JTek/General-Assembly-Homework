@@ -1,12 +1,10 @@
 import React from 'react'
 
 
-const Button = ({handelEvent, restEvent}) =>{
+const Button = ({handelEvent, restEvent, choices}) =>{
   return(
     <div>
-      <button onClick={handelEvent}>rock</button>
-      <button onClick={handelEvent}>paper</button>
-      <button onClick={handelEvent}>scissors</button>
+      {choices.map((elemnr,index) => <button key={index} onClick={handelEvent}>{elemnr}</button>)}
       <button onClick={restEvent}>Reset</button>
 
     </div>

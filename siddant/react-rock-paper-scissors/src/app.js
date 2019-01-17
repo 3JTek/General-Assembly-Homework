@@ -9,25 +9,24 @@ import './style.scss'
 class App extends React.Component{
   constructor(){
     super()
-
     this.state = {
       winConditions: {
         rock: ['scissors'],
         paper: ['rock'],
         scissors: ['paper']
-
-
       },
-      player: '',
-      computer: '',
-      display: '',
-      playerWon: 0,
-      computerWon: 0,
-      choices: ['rock', 'paper', 'scissors']
+      display: {
+        player: '',
+        computer: '',
+        winner: '',
+        playerWon: 0,
+        computerWon: 0
+      },
+
+      choices: ['rock', 'paper', 'scissors'] //Object.keys(this.winConditions)
     }
     this.handelEvent = this.handelEvent.bind(this)
     this.reset = this.reset.bind(this)
-
   }
 
   makeChoice() {
@@ -37,23 +36,36 @@ class App extends React.Component{
   handelEvent(e){
     const computer = this.makeChoice()
     const player = e.target.textContent
-    const winner = this.findWinner(computer, player)  
-    this.setState({computer: computer, player: player, display: winner, playerWon: 0, computerWon: 0})
-
+    const winner = this.findWinner(computer, player)
+    this.setState({display: {
+      computer: computer,
+      player: player,
+      winner: winner[1],
+      playerWon: winner[0],
+      computerWon: winner[2]
+    } })
   }
 
   findWinner(computer, player) {
-    //const player = this.state.player
-    //const computer = this.state.computer
-    if(player === computer) return `${player} Tie ${computer}`
+    let playerWin = this.state.display.playerWon
+    let computerWin = this.state.display.computerWon
+    if(player === computer) return [playerWin,`${player} Tie ${computer}`,computerWin]
     if(this.state.winConditions[player][0] === computer || this.state.winConditions[player][1] === computer){
-      return `${player} beat ${computer}`
+      playerWin+=1
+      return [playerWin,`${player} beat ${computer}`,computerWin]
     }
-    return `${computer} beat ${player}`
+    computerWin+=1
+    return [playerWin,`${computer} beat ${player}`,computerWin]
   }
 
   reset(){
-    this.setState({computer: '', player: '', display: '', playerWon: 0, computerWon: 0})
+    this.setState({display: {
+      computer: '',
+      player: '',
+      winner: '',
+      playerWon: 0,
+      computerWon: 0
+    } })
   }
 
   render(){
@@ -61,15 +73,12 @@ class App extends React.Component{
       <div className="game">
         <h1>Rock Paper Siccior</h1>
         <Button
+          choices={this.state.choices}
           handelEvent={this.handelEvent}
           restEvent={this.reset}
         />
         <Display
-          display={this.state.display}
-          player={this.state.player}
-          computer={this.state.computer}
-          playerWon={this.state.playerWon}
-          computerWon={this.state.computerWon}
+          display={{...this.state.display}}
         />
       </div>
     )
