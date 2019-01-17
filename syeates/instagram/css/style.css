@@ -1,0 +1,112 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+
+main {
+  overflow: auto;
+}
+
+footer {
+  border: 1px solid #e6e6e6;
+  overflow: auto;
+  margin: auto;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+li{
+  display: inline;
+  color: #003569;
+}
+a{
+  color: #003569;
+}
+p{
+        text-align: center;
+        color: #999;
+  }
+
+
+button {
+  background-color: #3897f0;
+  color: white;
+  font-weight: bolder;
+  font-size: 15px;
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  font-weight: bolder;
+  font-size: 15px;
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.right{
+  border: 1px solid #e6e6e6;
+  background-color: white;
+  margin: 5px;
+  padding: 10px;
+
+
+}
+
+.phones {
+margin: auto;
+padding: 10px;
+height: 580px;
+display: inline-block
+}
+.googleapple {
+display: inline
+}
+
+@media screen and (max-width: 900px) {
+  main section {
+    width: 50%;
+  }
+  main section:nth-child(3) {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main section {
+    float: none;
+    width: 100%;
+  }

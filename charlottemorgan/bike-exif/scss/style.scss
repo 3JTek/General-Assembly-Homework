@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+body,
+input {
+  font-family: proxima-nova, sans-serif;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+header {
+  h1 {
+    display: none;
+  }
+  #logo {
+    padding-bottom: 20px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    a {
+      padding: 10px 10px 10px 0;
+      text-decoration: none;
+      color: grey;
+    }
+  }
+  #shop {
+    margin-left: auto;
+    color: red;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.left-main {
+  width: 70%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  .small {
+    display: flex;
+    border-top: 2px solid grey;
+    padding: 30px 20px 20px 20px;
+  }
+  .small-text {
+    padding-left: 20px;
+  }
+  .big {
+    padding-bottom: 15px;
+  }
+  button {
+    align-self: flex-end;
+    width: 50px;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  h5 {
+    color: #999;
+    text-transform: uppercase;
+  }
+}
+input {
+  width: 100%;
+}
+
+.right-main {
+  width: 30%;
+  padding-top: 10px;
+  text-align: center;
+  justify-content: space-between;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  form {
+    background-color: red;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #fff;
+      padding: 10px;
+
+      &::placeholder {
+        color: #fff;
+        font-size: 15px;
+      }
+    }
+  }
+  button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 10px;
+    width: 45%;
+    padding: 5px;
+  }
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    padding: 15px;
+    margin: 0;
+  }
+}
+
+footer {
+  padding: 20px;
+  margin-top: 10px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e4e4e2;
+}
+nav a {
+  text-decoration: none;
+  color: #003569;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+p {
+  margin: 0;
+}

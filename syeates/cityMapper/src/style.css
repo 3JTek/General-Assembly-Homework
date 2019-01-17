@@ -1,0 +1,17 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+
+}
+
+.line{
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  justify-content: center;
+  max-width: 200px
+}

@@ -1,0 +1,18 @@
+body{
+  width: 60%;
+  margin: auto;
+}
+
+.flag-grid{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flag-grid div{
+  width: 150px;
+}
+
+img{
+  width: 100%;
+}

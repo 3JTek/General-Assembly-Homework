@@ -1,0 +1,440 @@
+@import "_vars";
+@import "_mixins";
+
+// /* punch */
+// @include anim($animName:punch, $steps:3, $animNbr:3, $animParams:.15s infinite);
+// /* kick */
+// @include anim($animName:kick, $steps:5, $animNbr:7, $animParams:.5s infinite);
+// /* hadoken */
+// @include anim($animName:hadoken, $steps:4, $animNbr:1, $animParams:.5s infinite);
+//
+// @include anim($animName:stance, $steps:4, $animNbr:2, $animParams:.5s infinite);
+//
+// /* hadoken - must be declared AFTER .stance */
+// @include anim($animName:hadoken, $steps:4, $animNbr:1, $animParams:.5s infinite);
+//
+// /* walking */
+// @include anim($animName:walk, $steps:5, $animNbr:4, $animParams:.5s infinite);
+//
+// /* jump */
+// @include anim($animName:jump, $steps:7, $animNbr:9, $animParams:1s infinite) {
+//   transition:bottom .5s cubic-bezier(0.990, 0.005, 0.000, 0.420);
+//   bottom:0px;
+//   &.down { bottom:70px; }
+// }
+
+@keyframes jump {
+  $animNbr : 9;
+  $steps : 7;
+  0% {
+    background-position:0px (-$spriteHeight * ($animNbr - 1));
+    bottom:0px;
+  }
+  15% {
+    bottom:0px;
+  }
+  30% {
+    bottom:120px;
+  }
+  45% {
+    bottom:110px;
+  }
+  60%{
+      bottom:80px;
+  }
+  75%{
+      bottom:40px;
+  }
+  100% {
+    background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1));
+    bottom:0px;
+  }
+
+}
+
+@keyframes walking {
+  $animNbr : 4;
+  $steps : 5;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+
+@keyframes kneel {
+  $animNbr : 10;
+  $steps : 1;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+
+@keyframes stance {
+  $animNbr : 2;
+  $steps : 4;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+
+@keyframes hadoken {
+  $animNbr : 1;
+  $steps : 4;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+
+
+
+@keyframes punch {
+  $animNbr : 3;
+  $steps : 3;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+/* kick */
+@keyframes kick {
+  $animNbr : 7;
+  $steps : 5;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+/* reverse kick */
+@keyframes reversekick {
+  $animNbr : 8;
+  $steps : 5;
+  from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+  to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+}
+@keyframes scaleWeapon {
+  0% {
+    transform: scale(1);// rotate(30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);//rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes weaponTextAnim {
+  0% {
+    left:60px;
+    top:0px;
+  }
+  100% {
+    left:80px;
+    top:-100px;
+  }
+}
+
+@keyframes cpuWeaponTextAnim {
+
+  //  top:-80px;
+  // left:20px;
+  0% {
+    left:20px;
+    top:-80px;
+  }
+  100% {
+    left:-80px;
+    top:-180px;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  //background-color: $blue;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  color: white
+}
+
+main{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  width:800px;
+
+  // border: 1px solid red;
+
+  button {
+    color: black;
+    background-color: white;
+    font-family: 'Press Start 2P', cursive;
+    height:4em;
+    padding:1em 2em 1em 2em;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .fight-box {
+    // border: 1px solid $blue;
+
+    max-width:800px;
+    width:100%;
+
+    .fight-box-top{
+      display: flex;
+      justify-content: flex-end;
+      // border: 1px solid green;
+      display: flex;
+      padding:20px 100px;
+
+      button.reset-button{
+        // color: white;
+        // background-color: black;
+        // height:4em;
+        // padding:1em 2em 1em 2em;
+
+        &:focus{
+          // outline: none;
+        }
+      }
+
+    }
+
+    .fight-box-middle{
+      // border: 1px solid yellow;
+      //position:relative;
+      // top:0;
+
+      // margin:0  auto;
+      display: flex;
+      justify-content: space-between;
+
+      .fight-box-middle-left{
+        flex-grow: 1;
+        padding: 1em;
+        // border: 1px solid white;
+        .player-weapon-text{
+          width:100px;
+
+          p {
+            text-transform: capitalize;
+            padding:0;
+            margin:0;
+
+            color:$grey;
+            &:first-child{
+              color:$blue;
+            }
+          }
+
+        }
+
+      }
+      .fight-box-middle-right {
+        flex-grow: 1;
+        padding: 1em;
+
+        .cpu-weapon-text{
+          width:100px;
+
+          p {
+            text-transform: capitalize;
+            
+            padding:0;
+            margin:0;
+            color:$grey;
+            &:first-child{
+              color:$red;
+            }
+          }
+
+        }
+
+      }
+
+      .fight-box-middle-middle{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        $background-width:450px;
+        $background-height:330px;
+
+        // $background-width:675px;
+        // $background-height:475px;
+
+        width:$background-width;
+        height:$background-height;
+        background-image: url('../images/jet.jpg');
+        // background-size:contain;
+        background-size:contain;
+
+
+
+        .health-bars {
+          width:100%;
+          display: flex;
+          justify-content: space-between;
+          // border:2px solid pink;
+          .player-health-bar-outer{
+            width:50%;
+            background-color: black;
+            .player-health-bar-inner{
+              height:20px;
+              width:100%;
+              background-color: $yellow;
+              transition: width 0.5s;
+            }
+          }
+          .cpu-health-bar-outer{
+            width:50%;
+            background-color: black;
+
+            .cpu-health-bar-inner{
+              height:20px;
+              width:100%;
+              margin-left: auto;
+              background-color: $yellow;
+              transition: width 0.5s;
+            }
+          }
+        }
+        .fighters{
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          width:100%;
+          transition: width 0.5s, left 0.1s;
+
+          .player-image, .cpu-image {
+            position: relative;
+            &.stance{
+              animation: stance steps(4) 0.4s infinite;
+            }
+            &.rock {
+              animation: punch steps(3) 0.3s infinite;
+            }
+            &.paper {
+              animation: kick steps(5) 0.5s infinite;
+            }
+            &.scissors {
+              animation: reversekick steps(5) 0.5s infinite;
+            }
+            &.spock {
+              animation: hadoken steps(4) 0.4s infinite;
+            }
+
+            &.lizard{
+
+              //transition:bottom .5s cubic-bezier(0.990, 0.005, 0.000, 0.420);
+              animation: jump steps(7) 0.5s infinite;
+            }
+
+            &.lose {
+              animation: kneel steps(1) 0.4s infinite;
+            }
+
+            &.walking {
+              animation: walking steps(5) 0.5s infinite;
+            }
+          }
+
+
+
+
+          .player{
+            display: flex;
+            flex-direction: column-reverse;
+
+            .player-image-weapon {
+              display: none;
+              position: relative;
+              top: 0px;
+              left: 50px;
+              font-size: 1em;
+              color: $blue;
+              &.active{
+                display: block;
+                animation: weaponTextAnim linear 0.5s, scaleWeapon linear 0.5s;
+              }
+            }
+            .player-image {
+              width:$spriteWidth; height:$spriteHeight; /* exactly the size of an image in our sprite */
+              background-image:url('../images/sprite.png');
+
+
+
+            }
+          }
+          .cpu{
+            align-self: flex-end;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+            .cpu-image-weapon {
+              align-self: flex-end;
+              display: none;
+              position: relative;
+              top:-80px;
+              left:20px;
+              font-size: 1em;
+              color:$red;
+
+              &.active{
+                display: block;
+                animation: cpuWeaponTextAnim linear 0.5s, scaleWeapon linear 0.5s;
+              }
+
+            }
+            .cpu-image{
+
+              width:$spriteWidth; height:$spriteHeight; /* exactly the size of an image in our sprite */
+              background-image:url('../images/sprite.png');
+
+              transform:scaleX(-1);
+
+            }
+          }
+        }
+
+      }
+
+
+
+
+
+
+      .vs-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        p {
+          font-size: 2em;
+        }
+      }
+
+
+    }
+    .fight-box-bottom{
+      padding:1em;
+      text-align: center;
+      height:5em;
+      // border: 1px solid orange;
+      .result {
+        line-height: 1.5em;
+        .cpu {
+          text-transform: capitalize;
+          color:$red;
+        }
+        .player {
+          text-transform: capitalize;
+          color: $blue;
+        }
+      }
+
+    }
+
+  }
+
+
+}

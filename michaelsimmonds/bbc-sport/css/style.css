@@ -1,0 +1,45 @@
+.navbar {
+  display: block;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  border-bottom: 1px grey solid;
+}
+
+.navbar-item {
+  border-right: 1px grey solid;
+}
+
+.navbar-item:last-child {
+  border-right: none;
+}
+
+.sport {
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+}
+
+.section {
+  padding-top: 20px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}

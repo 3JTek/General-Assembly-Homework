@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+
+.scoreBoard {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid yellowgreen;
+  background-color: yellowgreen;
+}
+
+.game > div {
+  margin: 35px;
+  text-align: justify;
+}
+
+.text-example {
+  height: 180px;
+  font-size: 18px;
+}
+
+textarea {
+  width: 95%;
+  height: 150px;
+  resize: none;
+  font-size: 14px;
+  padding: 14px;
+  color: dimgrey;
+
+}

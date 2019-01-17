@@ -1,0 +1,17 @@
+.container{
+  width: 60%;
+  margin: auto;
+  height: 100vh;
+}
+textarea{
+  width: 100%;
+  display: block;
+  height: 200px;
+  margin: 10px 0;
+}
+p:first-of-type{
+  float: left;
+}
+p:last-of-type{
+  float: right;
+}
