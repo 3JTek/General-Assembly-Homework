@@ -13,7 +13,6 @@ import About from './components/About'
 import Footer from './components/Footer'
 
 class App extends React.Component {
-
   constructor() {
     super()
 
