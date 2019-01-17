@@ -15,15 +15,23 @@ class App extends React.Component{
       options: [
         {
           name: 'rock',
-          beats: 'scissors'
+          beats: ['scissors', 'lizard']
         },
         {
           name: 'paper',
-          beats: 'rock'
+          beats: ['rock', 'spock']
         },
         {
           name: 'scissors',
-          beats: 'paper'
+          beats: ['paper', 'lizard']
+        },
+        {
+          name: 'lizard',
+          beats: ['paper', 'spock']
+        },
+        {
+          name: 'spock',
+          beats: ['rock', 'scissors']
         }
       ],
       player: {
@@ -67,9 +75,9 @@ class App extends React.Component{
 
     if (cpu.choice === player.choice){
       return 'It\'s a tie!'
-    } else if(this.state.options[player.index].beats === cpu.choice){
+    } else if(this.state.options[player.index].beats.includes(cpu.choice)){
       return 'You Win!'
-    } else if(player.choice === this.state.options[cpu.index].beats){
+    } else if(this.state.options[cpu.index].beats.includes(player.choice)){
       return 'You Lose!'
     }
   }
