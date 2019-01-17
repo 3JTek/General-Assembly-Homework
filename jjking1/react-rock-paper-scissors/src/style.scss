@@ -1,1 +1,30 @@
+*{
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: sans-serif;
+}
 
+body{
+  display: flex;
+  justify-content: center;
+}
+
+#root{
+  margin: auto;
+  button{
+    height: 60px;
+    width: 100px;
+    font-size: 15px;
+  }
+
+}
+
+.display{
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reset{
+  margin-top: 20px;
+  margin-left: 30%;
+}

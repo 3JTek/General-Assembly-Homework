@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import ChoicesButtons from './components/ChoicesButtons'
 import Display from './components/Display'
 
+import './style.scss'
+
 class App extends React.Component{
   constructor(){
     super()
@@ -15,13 +17,14 @@ class App extends React.Component{
         scissors: 'paper'
       },
       currentResult: '',
-      userChoice: 'Your Choice',
-      cpuChoice: 'Cpu Choice',
+      userChoice: '',
+      cpuChoice: '',
       cpuScore: 0,
       userScore: 0
       }
 
     this.handleCombat = this.handleCombat.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
 
@@ -44,6 +47,15 @@ class App extends React.Component{
     })
   }
 
+  reset(){
+    this.setState({
+      currentResult: '',
+      userChoice: 'Your Choice',
+      cpuChoice: 'Cpu Choice',
+      cpuScore: 0,
+      userScore: 0
+    })
+  }
 
 
 
@@ -61,6 +73,7 @@ class App extends React.Component{
         }
         <ChoicesButtons
           handleCombat={this.handleCombat}
+          reset={this.reset}
         />
       </div>
     )

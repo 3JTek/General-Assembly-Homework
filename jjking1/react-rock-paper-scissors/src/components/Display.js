@@ -5,12 +5,12 @@ const Display = (props) => {
   console.log(props)
   const {currentResult, userChoice, cpuChoice, cpuScore, userScore } = props
   return (
-    <div>
+    <div className='display'>
       <p> {currentResult}</p>
-      <p> {userChoice} </p>
-      <p> {cpuChoice} </p>
-      <p> {userScore} </p>
-      <p> {cpuScore} </p>
+      <p> You chose {userChoice} </p>
+      <p> Opponent Chose {cpuChoice} </p>
+      <p> Your Score: {userScore} </p>
+      <p> Opponent Score: {cpuScore} </p>
     </div>
   )
 }
