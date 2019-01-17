@@ -1,1 +1,55 @@
 
+main{
+  width: 600px;
+  margin: 0 auto;
+  background: grey;
+  text-align: center;
+  color: white;
+  .playerBoard {
+    display: flex;
+    justify-content: center;
+    .playerMove {
+      height: 100px;
+      width: 100px;
+      background: url("/assets/question.png");
+      background-size: 80px;
+      background-repeat: no-repeat;
+      &#paper {
+        background: url("/assets/paper.png");
+        background-size: 80px;
+        background-repeat: no-repeat;
+      }
+      &#rock {
+        background: url("/assets/rock.png");
+        background-size: 80px;
+        background-repeat: no-repeat;
+      }
+      &#scissors {
+        background: url("/assets/scissors.png");
+        background-size: 80px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .console {
+    padding: 10px;
+    border: 1px solid lightgrey;
+    background: lightgrey;
+    color: black;
+    .weapons {
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+      .weapon {
+        margin: 10px;
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 15px;
+        background: white;
+      }
+    }
+    img {
+      height: 80px;
+    }
+  }
+}
