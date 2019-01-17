@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 import Button from './components/Button.js'
+import Display from './components/Display.js'
 
 import './style.scss'
 
@@ -11,47 +12,64 @@ class App extends React.Component{
 
     this.state = {
       winConditions: {
-        rock: ['scissors','lizard'],
-        paper: ['rock', 'spock'],
-        scissors: ['paper','lizard'],
-        lizard: ['paper','spock'],
-        spock: ['rock', 'scissor']
+        rock: ['scissors'],
+        paper: ['rock'],
+        scissors: ['paper']
+
+
       },
       player: '',
-      computer: ''
+      computer: '',
+      display: '',
+      playerWon: 0,
+      computerWon: 0,
+      choices: ['rock', 'paper', 'scissors']
     }
     this.handelEvent = this.handelEvent.bind(this)
-    this.makeChoice = this.makeChoice.bind(this)
-    this.findWinner = this.findWinner.bind(this)
+    this.reset = this.reset.bind(this)
 
   }
 
   makeChoice() {
-    const choices = Object.keys(this.state.winConditions)
-    return choices[Math.floor(Math.random() * choices.length)]
+    return this.state.choices[Math.floor(Math.random() * this.state.choices.length)]
   }
 
   handelEvent(e){
-    const eventValue = e.target.textContent
-    this.setState({computer: this.makeChoice()})
-    this.setState({player: eventValue})
-    console.log(this.findWinner())
+    const computer = this.makeChoice()
+    const player = e.target.textContent
+    const winner = this.findWinner(computer, player)  
+    this.setState({computer: computer, player: player, display: winner, playerWon: 0, computerWon: 0})
+
   }
 
-  findWinner() {
-    const player = this.state.player
-    const computer = this.state.computer
-    if(player === computer) return 'Tie'
-    if(this.state.winConditions[player][0] === computer || this.state.winConditions[player][1] === computer) return 'You win'
-    return 'You lose'
+  findWinner(computer, player) {
+    //const player = this.state.player
+    //const computer = this.state.computer
+    if(player === computer) return `${player} Tie ${computer}`
+    if(this.state.winConditions[player][0] === computer || this.state.winConditions[player][1] === computer){
+      return `${player} beat ${computer}`
+    }
+    return `${computer} beat ${player}`
+  }
+
+  reset(){
+    this.setState({computer: '', player: '', display: '', playerWon: 0, computerWon: 0})
   }
 
   render(){
     return(
-      <div>
+      <div className="game">
         <h1>Rock Paper Siccior</h1>
         <Button
           handelEvent={this.handelEvent}
+          restEvent={this.reset}
+        />
+        <Display
+          display={this.state.display}
+          player={this.state.player}
+          computer={this.state.computer}
+          playerWon={this.state.playerWon}
+          computerWon={this.state.computerWon}
         />
       </div>
     )
