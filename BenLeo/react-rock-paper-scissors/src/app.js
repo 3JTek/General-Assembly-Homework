@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Buttons from './components/Buttons'
+import DrawResults from './components/DrawResults'
 
 class App extends React.Component {
   constructor() {
@@ -49,11 +50,12 @@ class App extends React.Component {
           moves={this.state.moves}
           handleClick={this.handleClick}
         />
-        <h1 id="player">Player Choice: {this.state.playerChoice}</h1>
-        <h1 id="cpu">Computer Choice: {this.state.cpuChoice}</h1>
-        <h1 id="winner">{this.state.winnerText}</h1>
 
-
+        <DrawResults
+          playerChoice={this.state.playerChoice}
+          cpuChoice={this.state.cpuChoice}
+          winnerText={this.state.winnerText}
+        />
       </div>
     )
   }
