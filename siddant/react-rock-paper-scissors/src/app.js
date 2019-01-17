@@ -10,28 +10,40 @@ class App extends React.Component{
     super()
 
     this.state = {
-      //rock: ['scissors','lizard'],
-      //paper: ['rock', 'spock'],
-      //scissors: ['paper','lizard'],
-      //lizard: ['paper','spock'],
-      //spock: ['rock', 'scissor']
+      winConditions: {
+        rock: ['scissors','lizard'],
+        paper: ['rock', 'spock'],
+        scissors: ['paper','lizard'],
+        lizard: ['paper','spock'],
+        spock: ['rock', 'scissor']
+      },
       player: '',
       computer: ''
     }
     this.handelEvent = this.handelEvent.bind(this)
     this.makeChoice = this.makeChoice.bind(this)
+    this.findWinner = this.findWinner.bind(this)
 
   }
 
   makeChoice() {
-    return Math.floor(Math.random() * 5)
+    const choices = Object.keys(this.state.winConditions)
+    return choices[Math.floor(Math.random() * choices.length)]
   }
 
   handelEvent(e){
     const eventValue = e.target.textContent
-    console.log(eventValue)
-    console.log(this.makeChoice())
+    this.setState({computer: this.makeChoice()})
     this.setState({player: eventValue})
+    console.log(this.findWinner())
+  }
+
+  findWinner() {
+    const player = this.state.player
+    const computer = this.state.computer
+    if(player === computer) return 'Tie'
+    if(this.state.winConditions[player][0] === computer || this.state.winConditions[player][1] === computer) return 'You win'
+    return 'You lose'
   }
 
   render(){
