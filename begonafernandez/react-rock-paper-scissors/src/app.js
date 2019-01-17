@@ -42,7 +42,7 @@ class App extends React.Component {
         winner = 'Computer win'
       }
     } else {
-      winner = 'Go ahead.Try your luck'
+      winner = 'Go ahead. Try your luck'
     }
 
     return winner
