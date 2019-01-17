@@ -8,25 +8,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      moves: [
-        {
-          name: 'rock',
-          wins: 'scissors',
-          loses: 'paper'
-        },
-
-        {
-          name: 'paper',
-          wins: 'rock',
-          loses: 'scissors'
-        },
-
-        {
-          name: 'scissors',
-          wins: 'paper',
-          loses: 'rock'
-        }
-      ],
+      moves: ['rock', 'paper', 'scissors'],
       winConditions: {
         rock: 'scissors',
         paper: 'rock',
@@ -50,7 +32,7 @@ class App extends React.Component {
 
   makeCpuChoice() {
     const nextCpuChoice = this.state.moves[Math.floor((Math.random() * this.state.moves.length))]
-    this.setState({ cpuChoice: nextCpuChoice.name}, () => {
+    this.setState({ cpuChoice: nextCpuChoice}, () => {
       this.checkForWin()
     })
   }

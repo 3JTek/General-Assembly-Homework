@@ -6,7 +6,7 @@ const Buttons = ({moves, handleClick}) => {
       {moves.map((move, index) => <button
         key={index}
         onClick={handleClick}
-      >{move.name}</button>)}
+      >{move}</button>)}
     </div>
   )
 }
