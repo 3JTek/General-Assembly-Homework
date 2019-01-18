@@ -12,6 +12,7 @@ class App extends React.Component{
     super()
     const sprEf = '\nIt\'s super effective!'
     this.state = {
+      // This array doesn't need to live in state, should be in the constructor
       options: [
         {
           name: 'rock',
@@ -59,6 +60,7 @@ class App extends React.Component{
           ]
         }
       ],
+      // State should be used only for elements to be displayed on the DOM
       player: {
         choice: '',
         index: 0,
@@ -101,6 +103,7 @@ class App extends React.Component{
     const cpu = this.state.cpu
     const player = this.state.player
 
+    // DO LOGIC BEFORE SETTING STATE SO YOU ONLY HAVE TO RENDER ONCE
     if (cpu.choice === player.choice){
       this.setState({
         action: this.state.options[player.index].action[2]
