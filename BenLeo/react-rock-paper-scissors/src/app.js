@@ -9,11 +9,13 @@ class App extends React.Component {
     super()
 
     this.state = {
-      moves: ['rock', 'paper', 'scissors'],
+      moves: ['rock', 'paper', 'scissors', 'lizard', 'spock'],
       winConditions: {
-        rock: 'scissors',
-        paper: 'rock',
-        scissors: 'paper'
+        rock: 'scissors, lizard',
+        paper: 'rock, spock',
+        scissors: 'paper, lizard',
+        lizard: 'paper, spock',
+        spock: 'scissors, rock'
       },
       playerChoice: '',
       cpuChoice: '',
@@ -27,8 +29,8 @@ class App extends React.Component {
 
   checkForWin() {
     if(this.state.playerChoice === this.state.cpuChoice) return this.setState({ winnerText: 'The result is a tie' })
-    if(this.state.winConditions[this.state.playerChoice] === this.state.cpuChoice) return this.setState({ winnerText: 'You win!' })
-    if(this.state.winConditions[this.state.cpuChoice] === this.state.playerChoice) return this.setState({ winnerText: 'You lose!' })
+    if(this.state.winConditions[this.state.playerChoice].includes(this.state.cpuChoice)) return this.setState({ winnerText: 'You win!' })
+    if(this.state.winConditions[this.state.cpuChoice].includes(this.state.playerChoice)) return this.setState({ winnerText: 'You lose!' })
   }
 
   makeCpuChoice() {
