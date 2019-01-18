@@ -1,49 +1,42 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './scss/style.scss'
+import './style.scss'
 
-import TaskForm from './components/TaskForm'
+import Buttons from './components/Buttons'
 
-class App extends React.Component {
+
+ class App extends React.Component {
   constructor(){
     super()
+   }
 
-    this.state ={
-      todos: [{task: 'make a todo app'}],
-      newTask: ''
-    }
-    this.handleChange = this.handleChange.bind(this)
+
+  winCheck(e) {
+      console.log(e.target.value)
+    if(player1Choice === player2Choice) return 'Tie'
+    if(this.winConditions[player1Choice] === player2Choice) return 'You win'
+    return 'You lose'
+    this.setState({e.target.value})
   }
 
-  handleChange(e){
-    console.log(e.target.value)
-    this.setState({newTask: e.target.value})
+
+  clickHandle(e){
+    console.log(click click.)
   }
 
-  handleSubmit(e){
-    e.preventDefault()
-    const task = { task: this.state.newTask}
-    const newTodos = [...this.state.todos, task]
-    this.setState({ todos: newTodos, newTask: ''})
-  }
-
-  render() {
+   render(){
     return (
       <main>
-        <h1>You have 1 thing(s) to do!</h1>
-        <ul>
-          {this.state.todos.map((todo, index) => <li key={index}>{todo.task}</li>)}
-        </ul>
-
-        <TaskForm
-          handleChange={this.handleChange}
-          newTask={this.state.newtask}
-        />
+        <div>
+          <Buttons clickHandle={this.clickHandle} />
+         </div>
       </main>
     )
   }
 }
+
+
 
 ReactDOM.render(
   <App />,
