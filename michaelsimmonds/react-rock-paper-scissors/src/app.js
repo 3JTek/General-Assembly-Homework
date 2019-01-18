@@ -22,6 +22,8 @@ class App extends React.Component {
 
     this.handleClick = this.handleClick.bind(this)
     this.winnerLogic = this.winnerLogic.bind(this)
+    this.reset = this.reset.bind(this)
+
   }
 
 
@@ -39,6 +41,14 @@ class App extends React.Component {
     if(player === comp) return 'You drew'
     if(this.state.win[player] === comp) return 'You won'
     else return 'You lost'
+  }
+
+  reset(){
+    this.setState({
+      player: '',
+      comp: '',
+      outcome: ''
+    })
   }
 
 
