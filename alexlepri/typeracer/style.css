@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 600px;
+  margin: auto;
+  background-image: url("https://cdn.hipwallpaper.com/i/59/2/ilsqkF.jpg");
+  position: relative;
+}
+
+header {
+  border: 1px solid black;
+  margin-top: 100px;
+  padding-top: 10px;
+  border-radius: 25px;
+}
+textarea {
+  width: 100%;
+  height: 300px;
+}
+.text {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 20px;
+  height: 200px;
+
+}
+
+.input {
+  border: 1px solid black;
+  margin-top: 33px;
+  height: 200px;
+}

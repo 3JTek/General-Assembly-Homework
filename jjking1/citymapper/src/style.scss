@@ -1,0 +1,77 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Aleo', serif;
+}
+
+.bakerloo{
+  color: 	#996633;
+}
+.district{
+  color: 	#006633;
+}
+.circle{
+  color: 	#FFD300;
+}
+.northern{
+  color: 	#000000;
+}
+.metropolitan{
+  color: #9B0056;
+}
+.piccadilly{
+  color: #000099;
+}
+.victoria{
+  color: #0099CC
+}
+
+.jubilee{
+  color: #868F98;
+}
+
+.central{
+  color:	#CC3333;
+}
+.hammersmith-city{
+  color: #CC9999;
+}
+
+.waterloo-city{
+  color:	#66CCCC;
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c9d7ed;
+  .container{
+    background-color: white;
+    margin-top: 2%;
+    border-radius: 20px;
+    padding: 12px;
+    width: 30%;
+    border: 4px solid black;
+    >:first-child{
+      border-bottom: none;
+    }
+    .status{
+      color: #09c45a;
+    }
+    div{
+      border-bottom: 2px solid black;
+      h2{
+        font-size: 19px;
+        font-weight: 700;
+      }
+      div:last-child{
+        border-bottom: none;
+      }
+    }
+    div div{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

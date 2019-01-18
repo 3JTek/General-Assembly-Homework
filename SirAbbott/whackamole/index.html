@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="app.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <title>Whack a May</title>
+</head>
+
+<body>
+  <main>
+    <div class="welcome">
+      <div class="welcome-content">
+        <h1> Welcome to <span>Whack-A-May</span></h1>
+        <h2>Get to Article 50 to stop her!!</h2>
+        <div>
+          <select default=1 class="choose-difficulty" name="difficulty">
+            <option selected="selected" disabled value="">Select your Brexit</option>
+            <option value="1">Soft Brexit</option>
+            <option value="2">Brexit</option>
+            <option value="3">Hard Brexit</option>
+          </select>
+        </div>
+        <div>
+          <button class="start-button">Start</button>
+        </div>
+      </div>
+    </div>
+    <div class="game hidden">
+      <div class="score-timer">
+        <div class="score">
+          Score
+        </div>
+        <div class="timer">
+          Timer
+        </div>
+      </div>
+
+      <div class="container">
+
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+        <button class="game-buttons" disabled type="button" name="button"></button>
+
+      </div>
+    </div>
+
+    <div class="game-over hidden">
+      <h1> WE LOST, SHE WON.</h1>
+      <button class="play-again">Try again</button>
+    </div>
+  </main>
+</body>
+
+</html>

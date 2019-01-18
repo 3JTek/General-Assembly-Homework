@@ -1,0 +1,79 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Courier, monospace;
+}
+
+header {
+  height: 15vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+div.stats {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: flex-start;
+}
+
+p#example {
+  border: solid 2px #555;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 45%;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1em
+}
+
+textarea:focus {
+  outline: 0;
+  box-shadow: 0px 2px 20px #000;
+}
+
+textarea:disabled {
+  background: #999;
+  transition: background 0.5s ease;
+}
+
+button {
+  width: 20%;
+  margin: 20px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  align-self: center;
+  background: radial-gradient(#ccc, #555);
+  font-family: inherit;
+  font-size: 1.3em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: radial-gradient(#555, #ccc);
+  color: #fff;
+  border: solid 2px #000;
+}

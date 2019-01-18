@@ -1,0 +1,36 @@
+* {
+  box-sizing: content-box;
+}
+
+body {
+  background-color: black;
+}
+H1 {
+ color: red
+}
+.center {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 30%;
+
+
+ul. {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+li {
+  width: 23%;
+  height: 23%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}

@@ -1,0 +1,33 @@
+body {
+  background-color: black;
+  text-align: center;
+}
+
+header {
+  margin: 0;
+}
+
+h1 {
+  visibility: hidden;
+}
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+
+button {
+  width: 100px;
+  margin: 12.5px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 15px 0;
+}

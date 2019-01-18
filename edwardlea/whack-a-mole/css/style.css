@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-image: url("http://www.flare3d.com/blog/wp-content/uploads/Duck-Hunt.png");
+  background-repeat: repeat-x;
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  /* border: 2px solid black; */
+  width: 100px;
+  height: 50px;
+}
+
+.countdown {
+  /* border: 2px solid black; */
+  width: 100px;
+  height: 50px;
+}
+
+main {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.activeMole {
+  /* background-color: red; */
+  background-image: url("../images/mole.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.gameboard {
+  width: 600px;
+  display: none;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+.gameboard > div {
+  /* border: 1px solid #ccc; */
+  height: 200px;
+  width: 200px;
+}
+
+.startGame {
+  border: 5px solid white;
+  background-color: transparent;
+  padding: 20px;
+  width: 300px;
+}
+
+.endGame {
+  display: none;
+  border: 5px solid white;
+  background-color: transparent;
+  padding: 20px;
+  width: 300px;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  border: 5px solid white;
+  background-color: transparent;
+  padding: 10px;
+}

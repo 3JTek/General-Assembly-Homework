@@ -1,0 +1,145 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+main {
+  overflow: auto;
+  margin: 0 20px;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+}
+
+section {
+  width: 50%;
+  float: left;
+  padding: 15px;
+  text-align: center;
+}
+
+.form {
+  border: solid 1px #e6e6e6;
+  padding: 15px 0;
+  text-align: center;
+  color: #999;
+  font-weight: bold;
+  background-color: white;
+}
+
+.form input {
+  width: 70%;
+}
+
+.form div {
+  margin: 5px 0;
+}
+
+.form button {
+  width: 70%;
+  background-color: #3897f0;
+  color: white;
+  margin: 10px 0;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.form p {
+  padding: 5px 0;
+  margin: 0;
+}
+
+.log-in {
+  border: solid 1px #e6e6e6;
+  padding: 15px;
+  text-align: center;
+  margin: 10px 0;
+  color: black;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  margin: 3px 0;
+}
+
+footer {
+  background-color: #fafafa;
+}
+
+footer li {
+  float: left;
+  padding: 0 5px;
+  color: #003569;
+  list-style-type: none;
+}
+
+footer span {
+  float: right;
+  color: #999;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .desktop-left {
+    display: none;
+  }
+
+  .desktop-right {
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .input .buttom {
+    padding: 30px;
+  }
+
+.form button {
+  width: 90%;
+}
+
+.form input {
+  width: 90%;
+  border: solid 1px #e6e6e6;
+}
+
+footer{
+  text-align: center;
+}
+
+footer nav {
+  float: inherit;
+  width: 90%;
+  padding: 0;
+  margin: 0 5px;
+  overflow: auto;
+}
+
+footer ul {
+  text-align: center;
+}
+
+footer span {
+  float: inherit;
+  margin: 20px;
+}
+}
