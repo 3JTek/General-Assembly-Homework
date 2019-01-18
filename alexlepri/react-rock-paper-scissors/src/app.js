@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
 
       <div>
-        <Button handleClick={this.handleClick} />
+        <Button handleClick={this.handleClick} reset={this.reset} />
 
       </div>
     )

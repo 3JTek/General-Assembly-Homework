@@ -11,6 +11,10 @@ const Button = ({handleClick}) => {
       <button onClick={handleClick} value='paper'>Paper</button>
       <button onClick={handleClick} value='scissors'>Scissors</button>
 
+
+      <div>
+        <button className='reset' onClick={handleClick} value='reset'>Reset</button>
+      </div>
     </div>
   )
 }
