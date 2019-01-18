@@ -32,15 +32,18 @@ class App extends React.Component {
     this.clickButton2 = this.clickButton2.bind(this)
     this.clickButton3 = this.clickButton3.bind(this)
     this.findWinner = this.findWinner.bind(this)
-    this.play = this.play.bind(this)
+    this.play = this.play.bind()
   }
 
   findWinner() {
     if(this.player1Choice === this.player2Choice){
+      console.log('tie')
       this.winner = 'Tie'
     } else if (this.winConditions[this.player1Choice] === this.player2Choice) {
+      console.log('you win')
       this.winner = 'You win!'
     } else {
+      console.log('you lose')
       this.winner = 'You lose'
     }
     console.log('function working')
