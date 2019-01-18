@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  padding: 6px;
+
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  text-align: center;
+}
+
+button {
+  font-size: 20px;
+  font-family: 'Space Mono', monospace;
+  background-color: white;
+  border: 2px solid #7D83FF;
+  cursor: pointer;
+  color: #7D83FF;
+  padding: 6px 12px;
+  margin: 20px 10px;
+}
+
+p {
+  margin: 10px 10px 10px;
+
+}
+
+p span {
+  font-weight: bold;
+}
+
+.result{
+  height: 90px;
+
+}
+
+button:last-of-type {
+  width: 50%;
+  margin: 30px auto;
+  display: block;
+}
+
+button:hover {
+  background-color: #565656;
+  color: white;
+}
+button:focus {
+  outline:0;
+}
+
+.game {
+  background-color: #D4DCFF;
+  width: 50%;
+  margin: 0 auto;
+  height: 450px;
+  border-radius: 25px;
+  -webkit-box-shadow: -4px -9px 67px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px -9px 67px -4px rgba(0,0,0,0.75);
+  box-shadow: -4px -9px 67px -4px rgba(0,0,0,0.75);
+}
