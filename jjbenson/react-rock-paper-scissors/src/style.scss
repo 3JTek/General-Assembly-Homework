@@ -10,7 +10,6 @@ body{
 .container{
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   height:100vh;
 }
 header{
@@ -23,8 +22,6 @@ header{
   }
 }
 main{
-  // background-color: white;
-  // color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,6 +31,7 @@ $paper:"https://pbs.twimg.com/profile_images/419287485978771456/A4yxogzd_400x400
 $scissors:"https://vignette.wikia.nocookie.net/p__/images/6/61/JD_as_Acissorhamds.jpeg/revision/latest?cb=20160323144628&path-prefix=protagonist";
 $lizard:"https://pbs.twimg.com/profile_images/920085988826865664/kdPpDGka.jpg";
 $rock:"https://images-na.ssl-images-amazon.com/images/I/61rpTtCgjvL._AC_UL320_SR226,320_.jpg";
+
   .choices{
     display: flex;
     justify-content: space-around;
@@ -93,8 +91,6 @@ $rock:"https://images-na.ssl-images-amazon.com/images/I/61rpTtCgjvL._AC_UL320_SR
   .buttonHolder{
     display: flex;
     flex-direction: column;
-    // margin-top: 1em;
-    // padding:20px;
     button {
       display: inline-block;
       border: none;
@@ -121,7 +117,6 @@ $rock:"https://images-na.ssl-images-amazon.com/images/I/61rpTtCgjvL._AC_UL320_SR
       outline-offset: -4px;
     }
   }
-
 }
 
 footer{
