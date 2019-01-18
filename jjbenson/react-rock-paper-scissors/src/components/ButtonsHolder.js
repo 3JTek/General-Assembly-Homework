@@ -7,7 +7,7 @@ const Buttons = ({choices, handleClick, handleReset }) => {
     <div className="buttonHolder">
       {/*choices.map(val => <Button key={val} handleClick={handleClick} value={val}/>)*/}
       {choices.map(val => <button key={val} onClick={handleClick} value={val}>{val}</button>)}
-      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleReset} className='reset'>Reset</button>
     </div>
   )
 }
