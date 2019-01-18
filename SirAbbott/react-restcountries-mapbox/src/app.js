@@ -6,23 +6,22 @@ import axios from 'axios'
 
 import Map from './components/Map'
 
-import mapboxgl from 'mapbox-gl'
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN
-
-import 'mapbox-gl/dist/mapbox-gl.css'
-
 class App extends React.Component {
 
   componentDidMount(){
-    this.map = new mapboxgl.Map({
-      container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/streets-v9'
-    })
+    axios.get('https://restcountries.eu/rest/v2/all')
+      .then(res => this.setState({ countries: res.data }))
+
   }
 
+
   render() {
+    if (!this.state) return null
+    console.log('STATE', ...this.state.countries)
     return (
-      <div className='map' ref={el => this.mapDiv = el}/>
+      <main>
+        <Map />
+      </main>
     )
   }
 }
