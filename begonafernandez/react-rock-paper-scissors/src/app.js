@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       humanMove: null,
       computerMove: null,
-      moves: {
+      windConditions: {
         paper: 'rock',
         rock: 'scissors',
         scissors: 'paper'
@@ -27,8 +27,7 @@ class App extends React.Component {
   }
 
   computerMove() {
-    const num = Math.floor(Math.random() * Math.floor(3))
-    this.setState({ computerMove: Object.keys(this.state.moves)[num] })
+    this.setState({ computerMove: Object.keys(this.state.windConditions)[Math.floor(Math.random() * Math.floor(3))] })
   }
 
   findWinner() {
@@ -36,7 +35,7 @@ class App extends React.Component {
     if (this.state.computerMove && this.state.humanMove) {
       if (this.state.computerMove === this.state.humanMove) {
         winner ='Tie'
-      } else if (this.state.moves[this.state.humanMove] === this.state.computerMove) {
+      } else if (this.state.windConditions[this.state.humanMove] === this.state.computerMove) {
         winner = 'You win'
       } else {
         winner = 'Computer win'
