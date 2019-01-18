@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 
 import Map from './components/Map.js'
+import './scss/style.scss'
 
 class App extends React.Component {
   componentDidMount(){
@@ -24,7 +25,7 @@ class App extends React.Component {
     if(!this.state) return <p>hello</p>
     return (
       <Map
-        country={this.state.countries}
+        //country={this.state.countries}
 
       />
     )
