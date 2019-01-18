@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Buttons from './components/Buttons'
+import './style.scss'
 
 class App extends React.Component {
   constructor() {
@@ -25,30 +26,26 @@ class App extends React.Component {
 
   handleSubmit(e) {
     const computer = this.choices[Math.floor(Math.random() * 3)]
-    console.log(computer)
     this.setState({computer})
     const player = e.target.value
-    console.log(player)
     this.setState({player})
     const winner = this.findWinner(player, computer)
-    console.log(winner)
-    e.preventDefault()
     this.setState({outcome: winner})
   }
 
   findWinner(player, computer) {
-    if(player === computer) return 'Tie'
-    if(this.state.wins[player] === computer) return 'Win'
-    return 'Lose'
+    if(player === computer) return 'It\'s a Tie!'
+    if(this.state.wins[player] === computer) return 'You win!'
+    return 'You lose :('
   }
 
   render() {
     return (
       <div>
         <Buttons handleSubmit={this.handleSubmit}/>
-        <h1>Players Choice: {this.state.player}</h1>
-        <h1>Computers Choice: {this.state.computer}</h1>
-        <h1>Outcome: {this.state.outcome}</h1>
+        <h1>You chose: {this.state.player}</h1>
+        <h1>Computer chose: {this.state.computer}</h1>
+        <h1>{this.state.outcome}</h1>
       </div>
     )
   }

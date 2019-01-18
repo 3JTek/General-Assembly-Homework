@@ -3,9 +3,12 @@ import React from 'react'
 const Buttons = ({handleSubmit}) => {
   return (
     <div>
-      <button onClick={handleSubmit} value="Rock">Rock</button>
-      <button onClick={handleSubmit} value="Paper">Paper</button>
-      <button onClick={handleSubmit} value="Scissors">Scissors</button>
+      <header>Rock Paper Scissors</header>
+      <main>
+        <button onClick={handleSubmit} value="Rock" className="choice" id="rock">Rock</button>
+        <button onClick={handleSubmit} value="Paper" className="choice" id="paper">Paper</button>
+        <button onClick={handleSubmit} value="Scissors" className="choice" id="scissors">Scissors</button>
+      </main>
     </div>
   )
 }
