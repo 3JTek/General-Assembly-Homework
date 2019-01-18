@@ -11,9 +11,11 @@ class App extends React.Component{
     super()
     this.state = {
       winConditions: {
-        rock: ['scissors'],
-        paper: ['rock'],
-        scissors: ['paper']
+        rock: ['scissors','lizard'],
+        paper: ['rock','spock'],
+        scissors: ['paper', 'lizard'],
+        lizard: ['spock', 'paper'],
+        spock: ['rock', 'scissor']
       },
       display: {
         player: '',
@@ -22,8 +24,8 @@ class App extends React.Component{
         playerWon: 0,
         computerWon: 0
       },
-
-      choices: ['rock', 'paper', 'scissors'] //Object.keys(this.winConditions)
+      //choices: Object.keys(this.state.winConditions)
+      choices: ['rock', 'paper', 'scissors','lizard','spock'] //Object.keys(this.winConditions)
     }
     this.handelEvent = this.handelEvent.bind(this)
     this.reset = this.reset.bind(this)
@@ -52,10 +54,10 @@ class App extends React.Component{
     if(player === computer) return [playerWin,`${player} Tie ${computer}`,computerWin]
     if(this.state.winConditions[player][0] === computer || this.state.winConditions[player][1] === computer){
       playerWin+=1
-      return [playerWin,`${player} beat ${computer}`,computerWin]
+      return [playerWin,`player won ${player} beat ${computer}`,computerWin]
     }
     computerWin+=1
-    return [playerWin,`${computer} beat ${player}`,computerWin]
+    return [playerWin,`computer won ${computer} beat ${player}`,computerWin]
   }
 
   reset(){
@@ -71,7 +73,7 @@ class App extends React.Component{
   render(){
     return(
       <div className="game">
-        <h1>Rock Paper Siccior</h1>
+        <h1>Rock Paper Siccior Lizard Spock</h1>
         <Button
           choices={this.state.choices}
           handelEvent={this.handelEvent}

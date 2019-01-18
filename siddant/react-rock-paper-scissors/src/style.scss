@@ -1,6 +1,7 @@
-
 * {
   box-sizing: border-box;
+  padding: 6px;
+
 }
 
 body {
@@ -9,50 +10,51 @@ body {
 }
 
 button {
+  font-size: 20px;
   font-family: 'Space Mono', monospace;
   background-color: white;
-  border: 2px solid #f6201d;
+  border: 2px solid #7D83FF;
   cursor: pointer;
-  color: #f6201d;
-  transition: all 0.2s ease;
+  color: #7D83FF;
   padding: 6px 12px;
-  outline: none !important;
+  margin: 20px 10px;
 }
 
 p {
-  margin: 0 0 20px;
+  margin: 10px 10px 10px;
+
 }
 
 p span {
   font-weight: bold;
 }
 
-p.result  {
-  background-color: #f6201d;
-  color: white;
-  padding: 8px 12px;
-  height: 34px;
-  border-radius: 4px;
+.result{
+  height: 90px;
+
 }
 
 button:last-of-type {
-  width: 100%;
-  clear: left;
-  margin-top: 20px;
+  width: 50%;
+  margin: 30px auto;
   display: block;
 }
 
 button:hover {
-  background-color: #f6201d;
+  background-color: #565656;
   color: white;
+}
+button:focus {
+  outline:0;
 }
 
 .game {
-  background-color: #dadada;
-  padding: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 4px;
+  background-color: #D4DCFF;
+  width: 50%;
+  margin: 0 auto;
+  height: 450px;
+  border-radius: 25px;
+  -webkit-box-shadow: -4px -9px 67px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px -9px 67px -4px rgba(0,0,0,0.75);
+  box-shadow: -4px -9px 67px -4px rgba(0,0,0,0.75);
 }
