@@ -1,0 +1,28 @@
+body {
+  background-color: #738290;
+  display: flex;
+  justify-content: center;
+  font-family: 'Baloo Tamma', cursive;
+}
+h1{
+  text-align: center;
+  font-size: 50px;
+}
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 75px;
+}
+
+button {
+  font-family: inherit;
+  font-size: 30px;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  margin: 10px;
+  color: #FFEDE1;
+}
+.buttons {
+  text-align: center;
+}
