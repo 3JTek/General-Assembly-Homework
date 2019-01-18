@@ -25,7 +25,7 @@ class App extends React.Component {
 
   handleClick(e){
     // console.log('im a button')
-    const choices = ['rock','paper','scissors']//Object.keys(this.winConditions)
+    const choices = ['rock','paper','scissors']
     const computer = choices[Math.floor(Math.random() * choices.length)]
 
     if(e.target.value === computer) //console.log( 'Tie')
@@ -41,7 +41,6 @@ class App extends React.Component {
 
       <div>
         <Button handleClick={this.handleClick} reset={this.reset} />
-
       </div>
     )
   }
