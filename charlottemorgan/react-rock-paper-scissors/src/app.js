@@ -54,7 +54,7 @@ class App extends React.Component {
 
   render(){
     return(
-      <div className="main">
+      <div>
         <div>
           <h1> Rock, Paper, Scissors</h1>
         </div>
@@ -70,8 +70,6 @@ class App extends React.Component {
   }
 
 }
-
-
 
 ReactDOM.render(
   <App />,
