@@ -32,6 +32,7 @@ class App extends React.Component {
     this.clickButton2 = this.clickButton2.bind(this)
     this.clickButton3 = this.clickButton3.bind(this)
     this.findWinner = this.findWinner.bind(this)
+    this.play = this.play.bind(this)
   }
 
   findWinner() {
@@ -52,19 +53,25 @@ class App extends React.Component {
   clickButton(){
     this.player1Choice = 'Rock'
     console.log('rock')
-    this.findWinner()
+    this.play()
   }
 
   clickButton2(){
     this.player1Choice = 'Paper'
     console.log('paper')
+    this.play()
   }
 
   clickButton3(){
     this.player1Choice = 'Scissors'
     console.log('scissors')
+    this.play()
   }
 
+  play(){
+    this.makeChoice()
+    this.findWinner()
+  }
 
   render(){
     return (
