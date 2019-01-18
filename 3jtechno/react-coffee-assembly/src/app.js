@@ -49,7 +49,7 @@ class App extends React.Component {
           <section id="hero">
             <h1>Coffee Assembly</h1></section>
           <Gallery/>
-          <Menus data={this.state.menus}/>
+          <Menus {...this.state.menus}/>
           <About data={this.state.about.text}/>
         </main>
         <Footer text={this.state.footer.text}/>
