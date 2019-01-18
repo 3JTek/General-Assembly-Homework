@@ -7,28 +7,44 @@ import './style.scss'
 class App extends React.Component {
   constructor(){
     super()
-    this.state= {
-      newChoices: ''
+
+
+    this.state = {
+      winConditions: {
+        rock: 'scissors',
+        paper: 'rock',
+        scissors: 'paper'
+      },
+      computer: '',
+      player: ''
     }
+
+    this.handleClick = this.handleClick.bind(this)
+
   }
 
-  handleClick(){
-    console.log('im a button')
+  handleClick(e){
+    // console.log('im a button')
+    const choices = ['rock','paper','scissors']//Object.keys(this.winConditions)
+    const computer = choices[Math.floor(Math.random() * choices.length)]
+
+    if(e.target.value === computer) //console.log( 'Tie')
+      if(this.state.player === computer) //console.log( 'You win')
+        //console.log( 'You lose')
+        this.setState({ player: e.target.value, computer: computer })
   }
 
 
-  render(){
+
+  render() {
     return (
-      <main>
-        <div>
-          <Button handleClick={this.handleClick} />
 
-        </div>
-      </main>
+      <div>
+        <Button handleClick={this.handleClick} />
+
+      </div>
     )
   }
 }
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+
+ReactDOM.render(<App />, document.getElementById('root'))
