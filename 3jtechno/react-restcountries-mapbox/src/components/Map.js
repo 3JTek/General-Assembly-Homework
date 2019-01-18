@@ -27,8 +27,8 @@ class Map extends React.Component{
     console.log('after funciton');
 
     this.countriesWithCoord.forEach(country => {
-      const markerDOM = document.createElement('div')
-      markerDOM.style.backgroundImage = `url(${country.flag})`
+      const markerDOM = document.createElement('img')
+      markerDOM.setAttribute("src", `${country.flag}`) 
       const marker = new mapboxgl.Marker(markerDOM)
         .setLngLat(country.latlng.reverse())
         .addTo(map)
