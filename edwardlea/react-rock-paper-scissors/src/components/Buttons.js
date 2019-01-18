@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Buttons = ({handleChoice, resetGame}) => {
+const Buttons = ({ handleChoice, resetGame }) => {
   return (
     <div className="buttons">
       <div>

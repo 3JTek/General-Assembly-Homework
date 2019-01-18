@@ -33,8 +33,7 @@ class App extends React.Component {
 
   handleChoice(e) {
     this.setState({playerChoice: e.target.value, computerChoice: this.computerChoice()}, () => {
-      this.setState({winner: this.winnerLogic()})
-
+      this.setState({ winner: this.winnerLogic() })
     })
   }
 
@@ -42,15 +41,14 @@ class App extends React.Component {
     return this.state.options[Math.floor(Math.random() * (this.state.options.length))]
   }
 
-  resetGame(){
-    this.setState({playerChoice: null, computerChoice: null, winner: null})
-  }
-
   winnerLogic() {
     if(this.state.playerChoice === this.state.computerChoice) return 'It\'s Tie'
     if(this.state.winConditions[this.state.playerChoice] === this.state.computerChoice) return 'You beat the computer'
     return 'You lost unfortunately'
+  }
 
+  resetGame(){
+    this.setState({ playerChoice: null, computerChoice: null, winner: null })
   }
 
   render(){
