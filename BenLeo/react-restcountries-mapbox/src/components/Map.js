@@ -13,17 +13,18 @@ class Map extends React.Component {
       style: 'mapbox://styles/mapbox/streets-v9'
     })
 
-    // this.props.markers.map(marker => {
-    //
-    //   const nbBikes = marker.additionalProperties.find(property => property.key === 'NbBikes').value
-    //
-    //   const markerElement = document.createElement('DIV')
-    //   markerElement.className = 'custom-marker'
-    //   markerElement.textContent = nbBikes
-    //   return new mapboxgl.Marker(markerElement)
-    //     .setLngLat({ lat: marker.lat, lng: marker.lon })
-    //     .addTo(this.map)
-    // })
+    this.props.markers.map(marker => {
+
+      const latlng = marker.find(property => property.key === 'latlng').value
+
+      console.log(latlng)
+
+      // const markerElement = document.createElement('DIV')
+      // markerElement.className = 'custom-marker'
+      // return new mapboxgl.Marker(markerElement)
+      //   .setLngLat({ lat: marker.lat, lng: marker.lon })
+      //   .addTo(this.map)
+    })
   }
 
   render() {
