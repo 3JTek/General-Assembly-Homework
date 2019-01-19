@@ -1,24 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-import mapboxgl from 'mapbox-gl'
-mapboxgl.accessToken = process.env.mapboxToken 
-import 'mapbox-gl/dist/mapbox-gl.css'
+import Map from './components/Map'
 
 import './scss/style.scss'
-
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 class App extends React.Component {
-  componentDidMount() {
-    this.map = new mapboxgl.Map({
-      container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/streets-v9'
-    })
 
-  }
   render() {
     return (
-      <div className="map" ref={el => this.mapDiv = el}/>
+      <main>
+        <Map />
+      </main>
     )
   }
 }
