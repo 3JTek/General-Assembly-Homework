@@ -15,8 +15,7 @@ class App extends React.Component {
     this.state = {
       mapDisplay: {
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 1,
-        countries: []
+        zoom: 1
       }
     }
   }
