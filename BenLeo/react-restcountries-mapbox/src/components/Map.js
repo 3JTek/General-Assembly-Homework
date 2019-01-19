@@ -14,14 +14,18 @@ class Map extends React.Component {
     })
 
     this.props.countries.map(country => {
-      return new mapboxgl.Marker()
+
+      const markerElement = document.createElement('DIV')
+      markerElement.className = 'custom-marker'
+      markerElement.style.backgroundImage = 'url(' + country.flag + ')'
+
+      return new mapboxgl.Marker(markerElement)
         .setLngLat({lat: country.latlng[0], lng: country.latlng[1]})
         .addTo(this.map)
     })
   }
 
   render() {
-    console.log(this.props.countries)
     return (
       <div className="map" ref={el => this.mapDiv = el} />
     )
