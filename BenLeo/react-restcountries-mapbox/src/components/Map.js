@@ -13,21 +13,15 @@ class Map extends React.Component {
       style: 'mapbox://styles/mapbox/streets-v9'
     })
 
-    // this.props.markers.map(marker => {
-    //
-    //   const latlng = marker.additionalProperties.find(property => property.key === 'latlng').value
-    //
-    //   console.log(latlng)
-
-      // const markerElement = document.createElement('DIV')
-      // markerElement.className = 'custom-marker'
-      // return new mapboxgl.Marker(markerElement)
-      //   .setLngLat({ lat: marker.lat, lng: marker.lon })
-      //   .addTo(this.map)
-    // })
+    this.props.countries.map(country => {
+      return new mapboxgl.Marker()
+        .setLngLat({lat: country.latlng[0], lng: country.latlng[1]})
+        .addTo(this.map)
+    })
   }
 
   render() {
+    console.log(this.props.countries)
     return (
       <div className="map" ref={el => this.mapDiv = el} />
     )

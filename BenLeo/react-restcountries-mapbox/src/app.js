@@ -18,17 +18,15 @@ class App extends React.Component {
 
 
   filterCountries(res) {
-    console.log(res.data)
     const filteredArr = res.data.filter(country => country.latlng.length > 0)
-    console.log(filteredArr)
-    this.setState(filteredArr)
+    this.setState({countries: filteredArr})
   }
 
   render() {
     if (!this.state) return null
     return (
       <Map
-        markers={this.state.countries}
+        countries={this.state.countries}
       />
     )
   }
