@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Map from './components/Map'
+
 import axios from 'axios'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -14,8 +16,9 @@ class App extends React.Component {
   }
 
   render() {
+    if (!this.state) return null
     return (
-      <h1>Hello World!</h1>
+      <Map />
     )
   }
 }
