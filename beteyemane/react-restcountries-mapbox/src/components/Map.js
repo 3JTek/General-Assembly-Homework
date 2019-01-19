@@ -12,11 +12,14 @@ class Map extends React.Component {
     })
   }
 
+
+
   render() {
     return(
       <div className="map" ref={el => this.mapDiv = el}/>
 
     )
   }
+
 }
 export default Map
