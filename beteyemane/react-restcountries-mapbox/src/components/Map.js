@@ -10,9 +10,13 @@ class Map extends React.Component {
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v9'
     })
+
+    const updatedCountries = this.props.countries.filter(function(country) {
+      if(country.latlng.length !== 0)
+        return true
+    })
+    console.log(updatedCountries)
   }
-
-
 
   render() {
     return(

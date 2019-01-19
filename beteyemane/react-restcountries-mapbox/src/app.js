@@ -14,17 +14,11 @@ class App extends React.Component {
   }
 
   render() {
-    if(!this.state) {
-      return null
-    } else {
-      this.state.data.filter(function(dat) {
-        if(dat.latlng.length !== 0)
-          console.log(dat.latlng)
-      })
-    }
+    if(!this.state) return null
+
     return (
       <main>
-        <Map />
+        <Map countries={this.state.data}/>
       </main>
     )
   }
