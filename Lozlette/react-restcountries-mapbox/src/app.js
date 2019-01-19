@@ -19,9 +19,18 @@ class App extends React.Component {
   }
 
   render() {
+    if(!this.state) return null
+    console.log(this.state)
 
-
-
+    let latLng
+    const data = Object.values(this.state)
+    console.log(data)
+    if (data){
+      for (let i = 0; i < data.length; i++) {
+        latLng = [data[i].latlng]
+      }
+    }
+    console.log(latLng)
 
     // if (Object.value(countries)){
     //   for (let i = 0; i < Object.value(this.state).length; i++) {
@@ -31,16 +40,9 @@ class App extends React.Component {
 
 
 
-    //
-    // if (this.state.data){
-    //   for (let i = 0; i < this.state.data.length; i++) {
-    //     console.log(this.state.data[i].latlng)
-    //   }
-    // }
 
-    console.log(this.state)
-    // const data = Array.from(this.state)
-    // console.log(data)
+
+
 
 
     return (
