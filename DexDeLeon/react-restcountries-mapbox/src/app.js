@@ -11,7 +11,7 @@ class App extends React.Component {
 
   componentDidMount(){
     axios.get('https://restcountries.eu/rest/v2/all')
-      .then(countries => console.log(countries))
+      .then(countries => this.setState({ countries }))
   }
 
   render() {
