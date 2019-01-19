@@ -13,16 +13,16 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('https://restcountries.eu/rest/v2/all?fields=name;latlng')
       // .then(res => this.filterCountries(res))
-      .then(res => this.setState({countries: res.data}))
+      .then(res => this.filterCountries(res))
   }
 
 
-  // filterCountries(res) {
-  //   console.log(res.data)
-  //   const filteredArr = res.data.filter(country => country.latlng === false)
-  //   console.log(filteredArr)
-  //   this.setState(filteredArr)
-  // }
+  filterCountries(res) {
+    console.log(res.data)
+    const filteredArr = res.data.filter(country => country.latlng.length > 0)
+    console.log(filteredArr)
+    this.setState(filteredArr)
+  }
 
   render() {
     if (!this.state) return null
