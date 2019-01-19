@@ -22,11 +22,10 @@ class App extends React.Component {
       } )
   }
   render() {
-    if(!this.state) return <p>hello</p>
+    if(!this.state) return <p>Loading...</p>
     return (
       <Map
-        //country={this.state.countries}
-
+        country={this.state.countries}
       />
     )
   }

@@ -11,17 +11,18 @@ class Map extends React.Component{
       center: {lng: -0.118092, lat: 51.509865},
       zoom: 5
     })
-    // this.props.markers.map(marker => {
-    //   const markerElement = document.createElement('DIV')
-    //   const nBikes = marker.additionalProperties.find(property =>  property.key === 'NbBikes').value
-    //   const filteredArr =
-    //   markerElement.className ='custom-marker'
-    //   markerElement.textContent=nBikes
-    //
-    //   return new mapboxgl.Marker(markerElement)
-    //     .setLngLat({lat: marker.lat, lng: marker.lon})
-    //     .addTo(this.map)
-    // })
+    this.props.country.filter(country => country.location.length !== 0)
+      .map(country => {
+        const markerElement = document.createElement('DIV')
+        markerElement.className ='custom-marker'
+        markerElement.style.backgroundImage = `url(${country.flag})`
+        markerElement.style.backgroundSize = 'contain'
+        markerElement.style.backgroundRepeat = 'no-repeat'
+        return new mapboxgl.Marker(markerElement)
+          .setLngLat({lat: country.location[0], lng: country.location[1]})
+          .addTo(this.map)
+      })
+
   }
   render(){
     return(
@@ -30,9 +31,7 @@ class Map extends React.Component{
   }
 
   //United States Minor Outlying Islands ,
-  //  <div>
-  //   {this.props.country.filter(country => country.location.length !== 0).map((country, index) => <p key={index}> {country.name} | {country.location[0]}, {country.location[1]} </p>)}
-  // </div>
+
 
 }
 
