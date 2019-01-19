@@ -17,11 +17,21 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state){
-      for (let i = 0; i < this.state.data.length; i++) {
-        console.log(this.state.data[i].latlng)
-      }
-    }
+    //
+    // if (Object.value(countries)){
+    //   for (let i = 0; i < Object.value(this.state).length; i++) {
+    //     console.log(Object.value(this.state)[i].latlng)
+    //   }
+    // }
+
+
+
+
+    // if (this.state.data){
+    //   for (let i = 0; i < this.state.data.length; i++) {
+    //     console.log(this.state.data[i].latlng)
+    //   }
+    // }
 
     console.log(this.state)
 
