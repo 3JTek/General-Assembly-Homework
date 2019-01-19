@@ -25,12 +25,12 @@ module.exports = {
     watchContentBase: true
   },
   plugins: [
+    new Dotenv(),
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
-    }),
-    new Dotenv()
+    })
   ]
 }
