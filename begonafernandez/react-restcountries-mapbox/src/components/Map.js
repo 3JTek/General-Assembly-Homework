@@ -8,7 +8,20 @@ class Map extends React.Component {
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v9',
-      zoom: 1
+      zoom: 2
+    })
+
+    const countryWithLatLong = this.props.markers.filter(country => country.latlng.length > 0)
+    countryWithLatLong.forEach(country => {
+      const markerElement = document.createElement('DIV')
+      markerElement.className = 'flag'
+      markerElement.style.backgroundImage = 'url(' + country.flag +')'
+      markerElement.style.backgroundPosition = 'center'
+      markerElement.style.backgroundSize = 'cover'
+
+      return new mapboxgl.Marker(markerElement)
+        .setLngLat({lat: country.latlng[0], lng: country.latlng[1]})
+        .addTo(this.map)
     })
   }
 
