@@ -19,17 +19,28 @@ class Map extends React.Component {
 
     filteredCountry.map(country =>{
       // console.log(country.flag)
-      const flagElement = document.createElement('IMG')
+      const flagElement = document.createElement('DIV')
       flagElement.className = 'custom-marker'
+      flagElement.style.backgroundImage = `url(${country.flag})`
+      flagElement.style.backgroundSize = 'contain'
+      flagElement.style.backgroundRepeat = 'no-repeat'
       flagElement.src = country.flag
+
+      const markerPopup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(`
+          <h3> ${country.name} </h3>
+          <img src = ${country.flag} width="70%" />
+          <p> <strong> Population: </strong> ${country.population} <br> ${country.nativeName}</p>
+          `
+        )
 
       return new mapboxgl.Marker(flagElement)
 
         .setLngLat({ lat: country.latlng[0], lng: country.latlng[1] })
+        .setPopup(markerPopup)
         .addTo(this.map)
     })
   }
-
 
 
   render() {

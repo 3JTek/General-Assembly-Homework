@@ -7,23 +7,28 @@ body {
 }
 
 .custom-marker {
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+  // color: white;
+  // font-size: 16px;
+  // font-weight: bold;
+  // width: 30px;
+  // height: 30px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  background-size: cover;
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // border-radius: 50%;
+  cursor: pointer;
 }
 
-.custom-marker:before {
-  // content: '';
-  position: absolute;
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
   width: 100%;
-  height: 100%;
-  background-color: red;
-  z-index: -1;
-  // border-radius: 50% 50% 0 50%;
-  // transform: rotate(45deg);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
