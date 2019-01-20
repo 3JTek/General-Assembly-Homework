@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import axios from 'axios'
+import Map from './components/Map'
+import './scss/style.scss'
 
 class App extends React.Component {
 
@@ -15,9 +17,10 @@ class App extends React.Component {
 
   render() {
     if(!this.state) return null
-    console.log(this.state.countries)
     return (
-      <h1>Hello World!</h1>
+      <Map
+        countries={this.state.countries}
+      />
     )
   }
 }
