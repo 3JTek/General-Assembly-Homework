@@ -14,21 +14,24 @@ class Map extends React.Component {
       zoom: this.props.zoom
     })
 
-    // this.props.markers.map(marker => {
-    //   const nbBikes = marker.additionalProperties.find(property => property.key === 'NbBikes').value
-    //   const markerElement = document.createElement('DIV')
-    //   markerElement.className = 'custom-marker'
-    //   markerElement.textContent = nbBikes
-    //
-    //   return new mapboxgl.Marker(markerElement)
-    //     .setLngLat({ lat: marker.lat, lng: marker.lon})
-    //     .addTo(this.map)
-    // })
+    this.props.markers.map(marker => {
+      if (marker.latlng.length === 2) {
+        const markerElement = document.createElement('DIV')
+        markerElement.className = 'custom-marker'
+
+
+        return new mapboxgl.Marker(markerElement)
+          .setLngLat({ lat: marker.latlng[0], lng: marker.latlng[1]})
+          .addTo(this.map)
+      }
+    })
+
   }
 
 
 
   render() {
+    console.log(this.props.markers[0].latlng)
     return (
       <div className="map" ref={el => this.mapDiv = el}/>  //this is shorthad for <div><div/>. this is javascript, not html
     )
