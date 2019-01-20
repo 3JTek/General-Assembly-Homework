@@ -11,6 +11,9 @@ class Map extends React.Component {
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v9'
     })
+
+
+
   }
 
   render() {
