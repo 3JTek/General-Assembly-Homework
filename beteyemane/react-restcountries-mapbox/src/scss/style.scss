@@ -9,5 +9,7 @@ body {
 .custom-marker {
   width: 75px;
   height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
