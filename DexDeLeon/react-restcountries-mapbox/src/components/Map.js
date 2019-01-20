@@ -21,13 +21,13 @@ class Map extends React.Component {
     })
 
     const filtered = this.props.countries.filter(country => country.latlng.length === 2)
-    console.log(filtered.map(country => country.latlng))
     return filtered.map(country => {
       const marker = document.createElement('div')
-      marker.className = 'marker'
+      marker.classList.add('marker', `${country.name.toLowerCase().split(' ').join('-')}`)
+      marker.innerHTML = `<img src='${country.flag}' alt='Flag of ${country.name}'>`
 
       const [ lat, lng ]  = country.latlng
-      return new mapboxgl.Marker()
+      return new mapboxgl.Marker(marker)
         .setLngLat([lng, lat])
         .addTo(this.map)
     })
