@@ -17,19 +17,24 @@ class Map extends React.Component {
     })
 
     updatedCountries.map(marker => {
-      const markerElement = document.createElement('DIV')
-      markerElement.className = 'custom-marker'
-      return new mapboxgl.Marker(markerElement)
+      const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`<h3>${marker.name}</h3><h4>${marker.nativeName}`)
+      const flags = document.createElement('DIV')
+      flags.className = 'custom-marker'
+      flags.style.backgroundImage = marker.flag
+      // console.log(marker.alpha3Code.toLowerCase())
+      console.log(marker)
+      return new mapboxgl.Marker(flags)
         .setLngLat({ lat: marker.latlng[0], lng: marker.latlng[1]})
         .addTo(this.map)
+        .setPopup(popup)
     })
   }
 
-
   render() {
     return(
-      <div className="map" ref={el => this.mapDiv = el}/>
-
+      <main>
+        <div className="map" ref={el => this.mapDiv = el}/>
+      </main>
     )
   }
 
