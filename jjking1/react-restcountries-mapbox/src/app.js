@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom'
 
 import axios from 'axios'
 import Map from './components/Map'
+import Header from './components/Header'
 import './scss/style.scss'
 
 class App extends React.Component {
+  constructor(){
+    super()
 
+    this.state = {
+      filter: 'all'
+    }
+
+    this.changeFilter = this.changeFilter.bind(this)
+  }
   componentDidMount(){
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(res => this.setState({
@@ -15,12 +24,24 @@ class App extends React.Component {
 
   }
 
+  changeFilter(e){
+    this.setState({
+      filter: e.target.value
+    })
+  }
+
   render() {
-    if(!this.state) return null
+    if(!this.state.countries) return null
     return (
-      <Map
-        countries={this.state.countries}
-      />
+      <div>
+        <Header
+            changeFilter={this.changeFilter}
+         />
+        <Map
+          countries={this.state.countries}
+          filter={this.state.filter}
+        />
+      </div>
     )
   }
 }
