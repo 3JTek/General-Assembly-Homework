@@ -10,15 +10,15 @@ import axios from 'axios'
 class App extends React.Component {
   componentDidMount() {
     axios.get('https://restcountries.eu/rest/v2/all')
-      .then(response => this.setState({data: response.data}))
+      .then(response => this.setState({countries: response.data}))
   }
 
   render() {
-    if(!this.state) return null
 
+    if(!this.state) return null
     return (
       <main>
-        <Map countries={this.state.data}/>
+        <Map countries={this.state.countries} markers={this.state.countries}/>
       </main>
     )
   }

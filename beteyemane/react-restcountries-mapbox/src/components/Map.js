@@ -12,11 +12,19 @@ class Map extends React.Component {
     })
 
     const updatedCountries = this.props.countries.filter(function(country) {
-      if(country.latlng.length !== 0)
-        return true
+      if(country.latlng.length === 2) return true
+
     })
-    console.log(updatedCountries)
+
+    updatedCountries.map(marker => {
+      const markerElement = document.createElement('DIV')
+      markerElement.className = 'custom-marker'
+      return new mapboxgl.Marker(markerElement)
+        .setLngLat({ lat: marker.latlng[0], lng: marker.latlng[1]})
+        .addTo(this.map)
+    })
   }
+
 
   render() {
     return(
