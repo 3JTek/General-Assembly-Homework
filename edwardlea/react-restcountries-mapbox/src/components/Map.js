@@ -16,7 +16,13 @@ class Map extends React.Component {
     })
 
     this.props.countries.filter(country => country.latlng.length === 2)
-      
+      .map(country =>{
+        
+
+        return new mapboxgl.Marker(marker)
+          .setLngLat([country.latlng[1], country.latlng[0]])
+          .addTo(this.map)
+          .setPopup(popup)
       })
   }
 
