@@ -15,21 +15,30 @@ class Map extends React.Component {
       zoom: this.props.zoom
     })
 
+    //FILTER COUNTRIES WITHOUT LOCATION DATA
+    const filteredCountries = this.props.countries.filter(country => country.latlng.length === 2)
+
+
     //MARKERS FROM RESTCOUNTRIES API DATA
-    this.props.countries.map(country => {
+    filteredCountries.map(country => {
 
       //FIND PROPERTIES: FLAG, NAME, AND LATLONG
       const flag = country.flag
       const name = country.name
       const latitude = country.latlng[0]
       const longitude = country.latlng[1]
-      console.log(flag, name ,latitude, longitude)
+      console.log(flag, name , longitude, latitude)
+
 
       //put flag into DIV
       const flagMarker = document.createElement('div')
       flagMarker.className = 'flag-marker'
       flagMarker.innerText = name
-      flagMarker.innerHTML = `<img src='${flag} alt = '${name} flag' />`
+      flagMarker.innerHTML = `<img src='${flag}' alt = '${name} flag' style='max-width: 55px' />`
+
+      return new mapboxgl.Marker(flagMarker)
+        .setLngLat({ lat: latitude, lng: longitude })
+        .addTo(this.map)
     })
 
   }
