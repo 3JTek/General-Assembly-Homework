@@ -6,12 +6,6 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
 
-  constructor(){
-    super()
-
-    this.map
-  }
-
   componentDidMount(){
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
@@ -19,6 +13,8 @@ class Map extends React.Component {
       zoom: this.props.zoom,
       center: this.props.center
     })
+
+
 
     const filtered = this.props.countries.filter(country => country.latlng.length === 2)
     return filtered.map(country => {
@@ -28,13 +24,13 @@ class Map extends React.Component {
       marker.classList.add('marker', `${countryClass}`)
       marker.innerHTML = `<img src='${country.flag}' alt='Flag of ${country.name}'>`
 
-      const popUp = new mapboxgl.Popup({offset: [0, -50], anchor: 'bottom'})
+      const popUp = new mapboxgl.Popup({offset: [0, -50], anchor: 'bottom', className: countryClass})
         .setHTML(`
             <h3>Country: ${country.name}</h3>
             <h3>Native Name: ${country.nativeName}</h3>
             <h4>Capital: ${country.capital}</h4>
+            <h4>Region: ${country.region}</h4>
             <h4>Population: ${country.population}</h4>
-
           `)
 
       const [ lat, lng ]  = country.latlng
