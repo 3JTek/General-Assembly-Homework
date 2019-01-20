@@ -19,6 +19,10 @@ class Map extends React.Component {
       .map(country =>{
         
 
+        const marker = document.createElement('img')
+        marker.setAttribute('src', country.flag)
+        marker.className ='marker'
+
         return new mapboxgl.Marker(marker)
           .setLngLat([country.latlng[1], country.latlng[0]])
           .addTo(this.map)
