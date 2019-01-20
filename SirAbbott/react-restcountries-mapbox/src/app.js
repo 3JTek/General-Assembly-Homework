@@ -11,16 +11,19 @@ class App extends React.Component {
   componentDidMount(){
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(res => this.setState({ countries: res.data }))
-
+      .catch( error => console.log(error))
   }
 
 
   render() {
     if (!this.state) return null
-    console.log('STATE', ...this.state.countries)
+    // const latlng = this.state.countries.map(country => country.latlng)
     return (
       <main>
-        <Map />
+        <Map
+          countries={this.state.countries}
+          center={{lat: 54.5260, lon: 15.2551}}
+          zoom={4}/>
       </main>
     )
   }
