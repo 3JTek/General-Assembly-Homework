@@ -17,7 +17,7 @@ class App extends React.Component {
 
   render() {
     if (!this.state) return null
-    // const latlng = this.state.countries.map(country => country.latlng)
+
     return (
       <main>
         <Map
