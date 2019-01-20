@@ -9,7 +9,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    axios.get('https://restcountries.eu/rest/v2/all?fields=flag;name;latlng')
+    axios.get('https://restcountries.eu/rest/v2/all?fields=flag;name;latlng;languages')
       .then(res => this.setState({ points: res.data }))
   }
 

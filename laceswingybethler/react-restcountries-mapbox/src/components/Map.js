@@ -27,7 +27,9 @@ class Map extends React.Component {
       const name = country.name
       const latitude = country.latlng[0]
       const longitude = country.latlng[1]
-      console.log(flag, name , longitude, latitude)
+      //dig out languages from key within object within array within object
+      const language = country.languages.map(lang => lang.name).join(',').split(',').join(', ')
+      //console.log(flag, name , longitude, latitude, language)
 
 
       //put flag into DIV
@@ -36,9 +38,18 @@ class Map extends React.Component {
       flagMarker.innerText = name
       flagMarker.innerHTML = `<img src='${flag}' alt = '${name} flag' style='max-width: 55px' />`
 
+
+      const popup = new mapboxgl.Popup({offset: 40})
+        .setHTML(`
+          <h4>${name}</h4>
+          <p>Language${+ country.languages.length > 1 ? 's':''}: <i>${language}</i></p>
+          `)
+
       return new mapboxgl.Marker(flagMarker)
         .setLngLat({ lat: latitude, lng: longitude })
         .addTo(this.map)
+        .setPopup(popup)
+
     })
 
   }
