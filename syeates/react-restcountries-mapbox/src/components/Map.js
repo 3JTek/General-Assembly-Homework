@@ -14,11 +14,12 @@ class Map extends React.Component {
       zoom: this.props.zoom
     })
 
-    // this.props.markers.map(marker => {
-    //   const nbBikes = marker.additionalProperties.find(property => property.key === 'NbBikes').value
-    //   const markerElement = document.createElement('DIV')
-    //   markerElement.className = 'custom-marker'
-    //   markerElement.textContent = nbBikes
+    const filtered = this.props.countries.filter(country => country.latlng.length === 2)
+
+    filtered.map(country => {
+      const flagElement = country.flag
+      const latitude = country.latlng[0]
+      const longitude = country.latlng[1]
 
       return new mapboxgl.Marker(flagElement)
         .setLngLat([longitude.lon, latitude.lat])
