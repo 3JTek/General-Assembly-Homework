@@ -27,7 +27,8 @@ class Map extends React.Component {
       marker.innerHTML = `<img src='${country.flag}' alt='Flag of ${country.name}'>`
 
       const [ lat, lng ]  = country.latlng
-      return new mapboxgl.Marker(marker)
+      // Offset property moves the marker 50px up
+      return new mapboxgl.Marker(marker, {offset: [0, -50]})
         .setLngLat([lng, lat])
         .addTo(this.map)
     })
