@@ -7,7 +7,18 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
 
+  componentDidMount(){
+    this.map = new mapboxgl.Map({
+      container: this.mapDiv,
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: this.props.center,
+      zoom: this.props.zoom
+    })
 
+    this.props.countries.filter(country => country.latlng.length === 2)
+      
+      })
+  }
 
   render() {
     return (
