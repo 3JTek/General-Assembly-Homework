@@ -36,7 +36,11 @@ class App extends React.Component {
     if(!this.state) return null
     return (
       <main>
-        
+        <Map
+          zoom={1}
+          center={{ lat: 51.512, lng: -0.0785}}
+          countries={this.state.countries}
+        />
       </main>
     )
   }
