@@ -22,7 +22,7 @@ class App extends React.Component {
           return {
             latlng: country.latlng,
             flag: country.flag,
-            name: name,
+            name: country.name,
             nativeName: country.nativeName
           }
         })

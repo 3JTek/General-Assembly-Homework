@@ -18,10 +18,14 @@ class Map extends React.Component {
     this.props.countries.filter(country => country.latlng.length === 2)
       .map(country =>{
         const popup = new mapboxgl.Popup({ offset: 25 })
-          .setText(`
-            Name: {country.nativeName} 
-            Native Country  ${country.nativeName}
+          .setHTML(`
+            <p> Name: ${country.name} </p>
+            <p> Native Country:  ${country.nativeName} </p>
             `)
+          // .setText(`
+          //   Name: ${country.name} \n
+          //   Native Country:  ${country.nativeName}
+          //   `)
 
         const marker = document.createElement('img')
         marker.setAttribute('src', country.flag)
