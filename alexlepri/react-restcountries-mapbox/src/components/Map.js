@@ -12,17 +12,26 @@ class Map extends React.Component {
   componentDidMount () {
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/outdoors-v10'
+      style: 'mapbox://styles/mapbox/satellite-v9',
+      zoom: this.props.zoom
     })
 
 
-    this.props.countries
+    const filtered = this.props.countries
       .filter(country => country.latlng.length === 2)
-      .map(country => {
-        return new mapboxgl.Marker()
-          .setLngLat({ lat: country.latlng[0], lng: country.latlng[1] })
-          .addTo(this.map)
-      })
+    filtered.map(country => {
+
+      const flag = country.flag
+
+      const flagMarker = document.createElement('div')
+      flagMarker.className = 'flag-marker'
+      flagMarker.innerHTML = `<img src='${flag}' style='width: 30px' />`
+
+
+      return new mapboxgl.Marker(flagMarker)
+        .setLngLat({ lat: country.latlng[0], lng: country.latlng[1] })
+        .addTo(this.map)
+    })
 
   }
 
