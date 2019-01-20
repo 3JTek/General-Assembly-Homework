@@ -11,20 +11,19 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('https://restcountries.eu/rest/v2/all')
-      .then(response => this.setState( {data: response.data }))
+      .then(response => this.setState( { country: response.data }))
+      .catch( error => console.log(error))
   }
 
   render() {
-    if(this.state.data){
-
-      for (let i = 0; i < this.state.data.length; i++) {
-        console.log(this.state.data[i].latlng)
-      }
-    }  return (
+    if(!this.state) return null
+    console.log(this.state.points)
+    return (
       <main>
-        <Map center={{ lat: 51.5, lng: -0.1 }}
+        <Map
+          center={{ lat: 51.5, lng: -0.1 }}
           zoom={12}
-          markers={this.state.points} />
+          {...this.state.country}/>
       </main>
     )
   }
