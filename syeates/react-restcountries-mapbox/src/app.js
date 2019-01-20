@@ -16,7 +16,7 @@ class App extends React.Component {
 
   render() {
     if(!this.state) return null
-    console.log(this.state.points[0])
+    console.log(this.state)
     return (
       <main>
         <Map
