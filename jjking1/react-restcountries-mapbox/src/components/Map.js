@@ -12,9 +12,11 @@ class Map extends React.Component{
 
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/streets-v9'
+      style: 'mapbox://styles/mapbox/streets-v9',
+      zoom: 1
     })
 
+     // generate initial map
     this.props.countries.filter(country => country.latlng.length > 1 ).map(country => {
            const img = document.createElement('img')
            img.src = `${country.flag}`
@@ -28,15 +30,18 @@ class Map extends React.Component{
   }
 
      componentDidUpdate(){
+       // remove markers
        this.markers.forEach(marker => marker.remove())
        this.markers = []
+
+       // filter out undesired countries
        let countries
        if(this.props.filter === 'all') countries = this.props.countries
          else{
-           console.log(this.map)
            countries = this.props.countries.filter(country => country.region === this.props.filter)
         }
 
+        // make markers for the desired countries
         countries.filter(country => country.latlng.length > 1 ).map(country => {
                const img = document.createElement('img')
                img.src = `${country.flag}`

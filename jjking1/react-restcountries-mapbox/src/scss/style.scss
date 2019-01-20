@@ -9,6 +9,21 @@ body{
 .header{
   height: 10vh;
   background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  h2{
+    color: white;
+    font-family: sans-serif;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+  }
+  select{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+  }
 }
 
 .map{

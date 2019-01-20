@@ -3,6 +3,7 @@ import React from 'react'
 const Header = ({ changeFilter }) => {
   return(
     <header className='header'>
+      <h2> Show Flags by Region </h2>
       <form>
         <select className="menu" onChange={changeFilter}>
           <option value="all">All</option>
