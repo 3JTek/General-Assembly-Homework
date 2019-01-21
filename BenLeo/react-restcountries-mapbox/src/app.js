@@ -12,7 +12,6 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('https://restcountries.eu/rest/v2/all?fields=name;flag;latlng')
-      // .then(res => this.filterCountries(res))
       .then(res => this.filterCountries(res))
   }
 
