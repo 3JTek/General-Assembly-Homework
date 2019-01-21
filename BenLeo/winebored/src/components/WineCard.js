@@ -17,7 +17,7 @@ const WineCard = ({ _id, name, origin, image, tastingNotes, grape, abv, price, u
         <div className="card-content">
           <div className="content">
             <p><strong>Origin:</strong> {origin}</p>
-            <p><strong>Price</strong> {price}</p>
+            <p><strong>Price: </strong>£{price}</p>
           </div>
         </div>
       </Link>
