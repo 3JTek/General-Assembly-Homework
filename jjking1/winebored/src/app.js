@@ -8,6 +8,7 @@ import Home from './components/Home'
 import WineIndex from './components/WineIndex'
 import WineShow from './components/WineShow'
 import Nav from './components/Nav'
+import Map from './components/Map'
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
 
 
           <Switch>
+            <Route path="/wines/:id/:location" component={Map}/>
             <Route path="/wines/:id" component={WineShow}/>
             <Route path="/wines" component={WineIndex}/>
             <Route path="/" component={Home}/>

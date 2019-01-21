@@ -2,7 +2,10 @@ import React from 'react'
 
 const Home = () => {
   return(
-    <h1 className="title is-1"> Home </h1>
+    <div className="container">
+      <h1 className="title is-1 "> Home </h1>
+      <h3 className="title is-3 "> Wines From Winebored </h3>
+    </div>
   )
 }
 

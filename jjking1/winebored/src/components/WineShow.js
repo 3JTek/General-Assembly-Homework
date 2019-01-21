@@ -1,5 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
+import Map from './Map'
 
 
 class WineShow extends React.Component{
@@ -17,7 +20,7 @@ class WineShow extends React.Component{
 
   render(){
     if(!this.state.wine) return <h1 className="title is-1"> Loading... </h1>
-    const {name, origin, user, grape, price, tastingNotes, location, image, abv} = this.state.wine
+    const {_id, name, origin, user, grape, price, tastingNotes, location, image, abv} = this.state.wine
     console.log(location)
     return(
       <section className="section">
@@ -43,6 +46,12 @@ class WineShow extends React.Component{
                   <li>Price: {price}</li>
                   <li>Grape: {grape}</li>
                 </ul>
+                <Link to={{
+                  pathname: `/wines/${_id}/${location}`,
+                  state: {
+                    coords: location,
+                    image: image
+                  }}}> View Origin Location on Map </Link>
               </div>
             </div>
           </div>
