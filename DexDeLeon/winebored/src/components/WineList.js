@@ -2,6 +2,8 @@ import React from 'react'
 
 import axios from 'axios'
 
+import WineCard from './WineCard'
+
 class WineList extends React.Component {
 
   constructor(){
@@ -25,21 +27,7 @@ class WineList extends React.Component {
         <div className="container columns is-multiline">
           {wines.map(wine =>
             <div className="column is-half" key={wine._id}>
-              <div className="card">
-                <div className="card-header">
-                  <h3 className="card-header-title">{wine.name}</h3>
-                </div>
-                <div className="card-image">
-                  <figure className="image">
-                    <img src={wine.image} alt={wine.name} />
-                  </figure>
-                </div>
-                <div className="card-content">
-                  <div className="content">
-                    {wine.tastingNotes}
-                  </div>
-                </div>
-              </div>
+              <WineCard {...wine} />
             </div>
           )}
         </div>
