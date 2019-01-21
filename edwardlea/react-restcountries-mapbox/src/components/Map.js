@@ -10,10 +10,19 @@ class Map extends React.Component {
   componentDidMount(){
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/streets-v9',
+      style: 'mapbox://styles/mapbox/light-v9',
       center: this.props.center,
       zoom: this.props.zoom
+
     })
+
+    this.map.addControl(new mapboxgl.NavigationControl())
+    this.map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }))
 
     this.props.countries.filter(country => country.latlng.length === 2)
       .map(country =>{
@@ -22,10 +31,6 @@ class Map extends React.Component {
             <p> Name: ${country.name} </p>
             <p> Native Country:  ${country.nativeName} </p>
             `)
-          // .setText(`
-          //   Name: ${country.name} \n
-          //   Native Country:  ${country.nativeName}
-          //   `)
 
         const marker = document.createElement('img')
         marker.setAttribute('src', country.flag)
