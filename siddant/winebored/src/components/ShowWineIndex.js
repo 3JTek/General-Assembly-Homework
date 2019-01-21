@@ -20,12 +20,16 @@ class ShowWineIndex extends React.Component {
   render(){
     return(
       <section className="section">
-        {this.state.wines.map(wine =>
-          <div key={wine._id}>
-            <WinesCard {...wine} />
+        <div className="container">
+          <div className="columns is-multiline">
+            {this.state.wines.map(wine =>
+              <div key={wine._id} className="column is-one-third">
+                <WinesCard {...wine} />
+              </div>
+            )
+            }
           </div>
-        )
-        }
+        </div>
       </section>
     )
   }

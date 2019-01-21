@@ -7,7 +7,6 @@ class WineShow extends React.Component {
     this.state = {}
   }
 
-
   componentDidMount(){
     axios.get(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({wines: res.data}))
@@ -15,16 +14,40 @@ class WineShow extends React.Component {
 
   render(){
     if(!this.state.wines) return null
-    const {name, origin, image, tastingNotes} = this.state.wines
+    const {name, origin, image, tastingNotes, price, grape} = this.state.wines
 
     return(
-      <div>
-        <h1>{name}</h1>
-        <p>{origin}</p>
-        <img src={image}/>
-        <p>{tastingNotes}</p>
-
-      </div>
+      <section className="section">
+        <div className="container">
+          <h1 className="title is-1">{name}</h1>
+          <hr />
+          <div className="columns">
+            <div className="column">
+              <figure className ="image">
+                <img src={image} alt={name} />
+              </figure>
+            </div>
+            <div className="column">
+              <div className="content">
+                <h4 className="title is-4">{origin}</h4>
+                <hr />
+                <p>£ {price}</p>
+                <hr />
+                <h4 className="title is-4">Tasting Notes</h4>
+                <p>{tastingNotes}</p>
+                <hr />
+                <h4 className="title is-4">Grape</h4>
+                <p>{grape}</p>
+                <hr />
+                <div className="control">
+                  <input className="input" type="number" value="0"   min="0"/>
+                  <button className="button is-primary">Add to Basket</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     )
   }
 }
