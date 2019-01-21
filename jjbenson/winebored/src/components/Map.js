@@ -22,6 +22,25 @@ class Map extends React.Component {
     this.setState({redirect: true, savedId: id})
   }
 
+  createMarkerElement(clickable,id){
+    const markerElement = document.createElement('DIV')
+    markerElement.className = 'custom-marker'
+
+    if(clickable === 'true'){
+      //Add the event listener
+      markerElement.addEventListener('click', ()=> this.handleClick(id))
+
+      //Bind the click even to this
+      this.handleClick = this.handleClick.bind(this)
+    }
+
+    //Create the pointer that can be rotated
+    const pointer = document.createElement('DIV')
+    pointer.className = 'pointer'
+    markerElement.appendChild(pointer)
+    return markerElement
+  }
+
   //When component mounts
   componentDidMount(){
 
@@ -38,24 +57,9 @@ class Map extends React.Component {
     })
 
     wines.map((wine)=>{
+      
+      const markerElement = this.createMarkerElement(clickable,wine._id)
 
-      const markerElement = document.createElement('DIV')
-      markerElement.className = 'custom-marker'
-
-      if(clickable === 'true'){
-        //Add the event listener
-        markerElement.addEventListener('click', ()=> this.handleClick(wine._id))
-
-        //Bind the click even to this
-        this.handleClick = this.handleClick.bind(this)
-      }
-
-      //Create the pointer that can be rotated
-      const pointer = document.createElement('DIV')
-      pointer.className = 'pointer'
-      markerElement.appendChild(pointer)
-
-      //Add the marker
       return new mapboxgl.Marker(markerElement)
         .setLngLat(wine.location)
         .addTo(this.map)

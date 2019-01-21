@@ -24,7 +24,6 @@ class App extends React.Component {
             <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={WinesIndex} />
             <Route path="/" component={Home} />
-
           </Switch>
           <Footer />
         </main>

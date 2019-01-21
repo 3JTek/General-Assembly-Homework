@@ -9,21 +9,27 @@ class WineShow extends React.Component{
     super()
     this.state = {}
   }
+
+  //Get country data from REST Countries (we only need the flag)
   getCountryData(){
     axios.get('https://restcountries.eu/rest/v2/name/'+this.state.wines[0].origin)
       .then(res => {
-        console.log(res.data[0].flag)
         this.setState( {countryData: res.data[0]})
       })
   }
-  componentDidMount(){
+
+  //Get data from WineBored
+  getWineData(){
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then( res =>{
         this.setState({ wines: [res.data]})
+        //Needs to be called after wines to get country name
         this.getCountryData()
       })
+  }
 
-
+  componentDidMount(){
+    this.getWineData()
   }
 
   render(){
@@ -59,12 +65,12 @@ class WineShow extends React.Component{
             </div>
           </article>
         </section>
+        {/*Add Map down here to make it full width*/}
         <Map
           zoom="8"
           wines={this.state.wines}
         />
       </div>
-
     )
   }
 }
