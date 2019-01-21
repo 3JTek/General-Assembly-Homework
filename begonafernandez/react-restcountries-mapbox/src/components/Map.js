@@ -12,13 +12,13 @@ class Map extends React.Component {
     })
 
 
-    const countryWithLatLong = this.props.markers.filter(country => country.latlng.length > 0)
-    countryWithLatLong.forEach(country => {
+    const countriesWithLatLong = this.props.markers.filter(country => country.latlng.length > 0)
+    countriesWithLatLong.forEach(country => {
       const markerElement = document.createElement('DIV')
       markerElement.className = 'flag'
       markerElement.style.backgroundImage = 'url(' + country.flag +')'
       markerElement.style.backgroundPosition = 'center'
-      markerElement.style.backgroundSize = 'cover'
+      markerElement.style.backgroundSize = 'contain'
       markerElement.style.backgroundRepeat = 'no-repeat'
 
       const popup = new mapboxgl.Popup()
