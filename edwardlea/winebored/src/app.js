@@ -10,6 +10,7 @@ import './style.scss'
 import 'bulma'
 
 import Home from './components/Home'
+import WinesIndex from './components/WinesIndex'
 
 class App extends React.Component {
   render() {
@@ -18,11 +19,11 @@ class App extends React.Component {
         <main>
           <nav>
             <Link to="/">Home</Link>
-            <Link to="/.cheeses">All Cheeses</Link>
-
+            <Link to="/wines">All Cheeses</Link>
           </nav>
           <Switch>
             <Route exact path="/" component={Home}></Route>
+            <Route exact path="/wines" component={WinesIndex}></Route>
           </Switch>
         </main>
       </BrowserRouter>

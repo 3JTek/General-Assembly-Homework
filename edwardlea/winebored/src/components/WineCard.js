@@ -1,0 +1,13 @@
+import React from 'react'
+
+const WineCard = () => {
+  return (
+    <section className="section">
+      <div className="container">
+        <h1>Home</h1>
+      </div>
+    </section>
+  )
+}
+
+export default WineCard
