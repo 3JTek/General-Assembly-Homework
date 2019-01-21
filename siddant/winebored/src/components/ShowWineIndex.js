@@ -1,11 +1,13 @@
 import React from 'react'
 import axios from 'axios'
 
+import WinesCard from './WinesCard'
+
+
 class ShowWineIndex extends React.Component {
 
   constructor(){
     super()
-
     this.state = {
       wines: []
     }
@@ -20,7 +22,7 @@ class ShowWineIndex extends React.Component {
       <section className="section">
         {this.state.wines.map(wine =>
           <div key={wine._id}>
-            <h4>{wine.name}</h4>
+            <WinesCard {...wine} />
           </div>
         )
         }
