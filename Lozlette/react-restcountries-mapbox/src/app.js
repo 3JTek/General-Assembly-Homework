@@ -55,8 +55,11 @@ class App extends React.Component {
     // )
 
     for (let i = 0; i < lnglatMapbox.length; i++){
-      filteredLngLat.push(lnglatMapbox[i].filter( Boolean ))
+      lnglatMapbox.filter(function(i){
+        filteredLngLat.push([i] !== [undefined, undefined] )
+      })
     }
+
 
     console.log(filteredLngLat)
 
