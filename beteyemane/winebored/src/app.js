@@ -7,6 +7,7 @@ import './style.scss'
 
 import Home from './components/Home'
 import WineboredsIndex from './components/WineboredsIndex'
+import WineboredsShow from './components/WineboredsShow'
 
 class App extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends React.Component {
             <Link to="/wineboreds">Wineboreds</Link>
           </nav>
           <Switch>
+            <Route path="/wineboreds/:id" component={WineboredsShow}/>
             <Route path="/wineboreds" component={WineboredsIndex}/>
             <Route path="/" component={Home}/>
           </Switch>
