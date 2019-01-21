@@ -3,7 +3,18 @@ import React from 'react'
 const Home = () => {
 
   return(
-    <h1>Welcome to Heaven</h1>
+    <section className="hero is-fullheight is-primary">
+      <div className="hero-body">
+        <div className="container">
+          <h1 className="title">
+            Welcome to Heaven
+          </h1>
+          <h2 className="subtitle">
+            Drink with moderation
+          </h2>
+        </div>
+      </div>
+    </section>
   )
 }
 

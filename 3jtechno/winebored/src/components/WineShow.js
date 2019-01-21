@@ -22,17 +22,37 @@ class WineShow extends React.Component{
     if(!this.state.wine) return false
     const {_id, name, image, origin, grape, price, tastingNotes, location} = this.state.wine
     return(
-      <div key={_id}>
-        <h1>{name}</h1>
-        <img src={image}/>
-        <p>{origin}</p>
-        <p>{grape}</p>
-        <p>{price}</p>
-        <p>{tastingNotes}</p>
-        <Map latlng={location}/>
-      </div>
+      <section className="section">
+        <div className="container">
+          <h1 className="title is-1">{name}</h1>
+          <h2 className="subtitle is-2">${price}</h2>
+          <hr />
+
+          <div className="columns">
+            <div className="column">
+              <figure className="image">
+                <img src={image} alt={name} />
+              </figure>
+            </div>
+
+            <div className="column">
+              <h4 className="title is-4">Tasting Notes</h4>
+              <p>{tastingNotes}</p>
+              <hr />
+            </div>
+
+            <div className="column">
+              <h4 className="title is-4">Origin: {origin}</h4>
+              <Map latlng={location}/>
+            </div>
+
+          </div>
+        </div>
+      </section>
     )
   }
 }
+
+
 
 export default WineShow

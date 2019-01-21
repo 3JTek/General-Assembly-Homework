@@ -1,16 +1,28 @@
-.marker{
-  width: 50px;
-  height: 50px;
-
-  overflow: hidden;
-  border-top-left-radius:5px 5px;
-  border-top-right-radius:5px 5px;
-  border-bottom-left-radius:5px 5px;
-  border-bottom-right-radius:5px 5px;
-  -moz-box-shadow: 0 1px 3px #FFBF00;
-  -webkit-box-shadow: 0 1px 3px #FFBF00;
-
-  background-color: #FFBF00;
-  position: relative;
-  border: 5px solid #FFBF00;
+.image{
+  height:300px;
+  background-size: cover;
+}
+.marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #89849b;
+  // position: absolute;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  // transform: rotate(-45deg) !important;
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+}
+.marker:after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: #2f2f2f;
+  position: absolute;
+  border-radius: 50%;
 }

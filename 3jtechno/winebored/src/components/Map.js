@@ -20,7 +20,6 @@ class Map extends React.Component{
 
   createMap(){
     //Create and Display MapBox
-    console.log(this.props);
     const {lat, lng} = this.props.latlng
     mapboxgl.accessToken = process.env.MAPBOX_TOKEN
     return new mapboxgl.Map({
