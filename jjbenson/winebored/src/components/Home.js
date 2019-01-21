@@ -32,6 +32,7 @@ class Home extends React.Component{
           zoom="0.7"
           center={ {lng: 60, lat: 10} }
           wines={this.state.wines}
+          clickable="true"
         />
       </div>
     )

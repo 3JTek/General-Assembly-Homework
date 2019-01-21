@@ -26,7 +26,7 @@ class Map extends React.Component {
   componentDidMount(){
 
     //Get variables
-    const {zoom, wines, center=wines[0].location } = this.props
+    const {zoom, wines, center=wines[0].location, clickable='false' } = this.props
 
 
     //Create a new map
@@ -42,11 +42,13 @@ class Map extends React.Component {
       const markerElement = document.createElement('DIV')
       markerElement.className = 'custom-marker'
 
-      //Add the event listener
-      markerElement.addEventListener('click', ()=> this.handleClick(wine._id))
+      if(clickable === 'true'){
+        //Add the event listener
+        markerElement.addEventListener('click', ()=> this.handleClick(wine._id))
 
-      //Bind the click even to this
-      this.handleClick = this.handleClick.bind(this)
+        //Bind the click even to this
+        this.handleClick = this.handleClick.bind(this)
+      }
 
       //Create the pointer that can be rotated
       const pointer = document.createElement('DIV')
