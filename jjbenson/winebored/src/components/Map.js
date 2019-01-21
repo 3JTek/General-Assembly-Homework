@@ -14,20 +14,24 @@ class Map extends React.Component {
   componentDidMount(){
 
     //Get variables
-    const {zoom, location} = this.props
+    const {zoom, wines, center=wines[0].location } = this.props
+
 
     //Create a new map
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v9',
-      center: location,
+      center: center,
       zoom: zoom
     })
 
-    //Add the marker
-    return new mapboxgl.Marker()
-      .setLngLat(location)
-      .addTo(this.map)
+    wines.map((wine)=>{
+
+      //Add the marker
+      return new mapboxgl.Marker()
+        .setLngLat(wine.location)
+        .addTo(this.map)
+    })
 
   }
 

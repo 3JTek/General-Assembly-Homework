@@ -10,7 +10,7 @@ class WineShow extends React.Component{
     this.state = {}
   }
   getCountryData(){
-    axios.get('https://restcountries.eu/rest/v2/name/'+this.state.wine.origin)
+    axios.get('https://restcountries.eu/rest/v2/name/'+this.state.wines[0].origin)
       .then(res => {
         console.log(res.data[0].flag)
         this.setState( {countryData: res.data[0]})
@@ -19,7 +19,7 @@ class WineShow extends React.Component{
   componentDidMount(){
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then( res =>{
-        this.setState({ wine: res.data})
+        this.setState({ wines: [res.data]})
         this.getCountryData()
       })
 
@@ -27,9 +27,9 @@ class WineShow extends React.Component{
   }
 
   render(){
-    if(!this.state.wine) return null
+    if(!this.state.wines) return null
     if(!this.state.countryData) return null
-    const { name, origin, image, tastingNotes, grape, abv, price} = this.state.wine
+    const { name, origin, image, tastingNotes, grape, abv, price} = this.state.wines[0]
     const { flag } = this.state.countryData
     return(
       <div>
@@ -61,7 +61,7 @@ class WineShow extends React.Component{
         </section>
         <Map
           zoom="8"
-          location={this.state.wine.location}
+          wines={this.state.wines}
         />
       </div>
 
