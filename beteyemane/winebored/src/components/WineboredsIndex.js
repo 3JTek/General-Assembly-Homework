@@ -22,10 +22,18 @@ class WineboredsIndex extends React.Component {
     console.log(this.state.wines)
     return (
       <div>
-        {this.state.wines.map(wine =>
-          <div key={wine._id}> {wine.name} {wine.origin}
+        <section className="section">
+          <div className="container">
+            <div className="column is-multiline">
+              {this.state.wines.map(wine =>
+                <div className="column is-one-quarter" key={wine._id}> {wine.name} {wine.origin}
+                  <div className="image" style={{backgroundImage: `url(${wine.image})`}}>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
-        )}
+        </section>
       </div>
     )
   }
