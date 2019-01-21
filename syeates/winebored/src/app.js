@@ -21,9 +21,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <nav>
-            <Link to ="/" >Homepage </Link>
-            <Link to="/wines" > Wine List</Link>
+          <nav className="level has-background-primary has-text-dark">
+            <Link to ="/" className="level-item has-text-dark	" >Homepage </Link>
+            <Link to="/wines" className="level-item has-text-dark	" > Wine List</Link>
           </nav>
           <Switch>
             <Route path="/wines/:id" component={WineShow} />

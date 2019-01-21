@@ -26,13 +26,13 @@ class WineShow extends React.Component {
 
           <div className="columns">
             <div className="column">
-              <figure className="image">
-                <img src={image} alt={name} />
+              <figure className="image is-2by3">
+                <img className="" src={image} alt={name} />
               </figure>
             </div>
 
             <div className="column">
-              <h4 className="title is-4">Tasting Notes</h4>
+              <h4 className="title is-2">Tasting Notes</h4>
               <p>{tastingNotes}</p>
               <hr />
             </div>
