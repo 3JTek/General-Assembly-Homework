@@ -64,24 +64,38 @@ class Map extends React.Component {
   }
 
   //Method to add a new marker where the ISS is
-  updateIss(){
+  updateIss(oldIssPos){
+
+    oldIssPos && oldIssPos.remove()
 
     const {lng, lat} = this.props.issData
 
     //Trigger the timeout to call this method again in 1 sec
-    setTimeout(()=>{
-      this.updateIss()
-    },1000)
 
     //Create a custom element to leave a trace of where the ISS has been
     const markerElement = document.createElement('DIV')
     markerElement.className = 'trace'
 
+    //Create a custom show where the ISS his
+    const issElement = document.createElement('DIV')
+    issElement.className = 'iss'
+
+
+    //Add the new marker
+    const issPos = new mapboxgl.Marker(issElement)
+      .setLngLat({lng, lat})
+      .addTo(this.map)
+
+    setTimeout(()=>{
+      this.updateIss(issPos)
+    },1000)
 
     //Add the new marker
     return new mapboxgl.Marker(markerElement)
       .setLngLat({lng, lat})
       .addTo(this.map)
+
+
   }
 
   render() {
