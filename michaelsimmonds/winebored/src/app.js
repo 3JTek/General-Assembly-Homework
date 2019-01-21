@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
 import Home from './components/Home'
 import WinesIndex from './components/WinesIndex'
+import WinesShow from './components/WinesShow'
 
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
           </nav>
 
           <Switch>
+            <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
             <Route path="/" component={Home}/>
           </Switch>
@@ -36,6 +38,3 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
-
-// <Route path="/wines/:id" Component={WinesShow}/>
-// <Route path="/wines" Component={WinesIndex}/>
