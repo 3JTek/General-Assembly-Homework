@@ -6,19 +6,19 @@ import './style.scss'
 
 import Home from './components/Home'
 import WineIndex from './components/WineIndex'
+import WineShow from './components/WineShow'
+import Nav from './components/Nav'
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <main>
-          <nav>
-            <Link to="/"> Home </Link>
-            <Link to="/wines"> All Wines </Link>
-          </nav>
+          <Nav />
 
 
           <Switch>
+            <Route path="/wines/:id" component={WineShow}/>
             <Route path="/wines" component={WineIndex}/>
             <Route path="/" component={Home}/>
           </Switch>

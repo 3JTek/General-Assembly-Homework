@@ -8,7 +8,9 @@ class WineIndex extends React.Component{
   constructor(){
     super()
 
-    this.state={}
+    this.state={
+      wines: []
+    }
   }
 
   componentDidMount(){
@@ -19,10 +21,9 @@ class WineIndex extends React.Component{
 
 
   render(){
-    if(!this.state.wines) return null
     return(
-      <section className="section">
-        <div className="container">
+      <section className="section columns">
+        <div className="container column is-6">
           <div className="columns is-multiline">
 
             {this.state.wines.map(wine =>
