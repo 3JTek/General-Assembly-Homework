@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import 'bulma'
 import './style.scss'
 
+import Header from './components/Header'
 import Home from './components/Home'
 import WinesIndex from './components/WinesIndex'
 import WinesShow from './components/WineShow'
@@ -14,10 +15,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/wines">Wines</Link>
-          </nav>
+          <Header/>
           <Switch>
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
