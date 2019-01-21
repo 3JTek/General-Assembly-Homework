@@ -2,6 +2,8 @@ import React from 'react'
 
 import axios from 'axios'
 
+import Map from './Map'
+
 class WineShow extends React.Component {
   constructor() {
     super()
@@ -15,7 +17,7 @@ class WineShow extends React.Component {
 
   render() {
     if(!this.state.wines) return null
-    const { name, origin, image, tastingNotes, grape, abv, price, user } = this.state.wines
+    const { location, name, origin, image, tastingNotes, grape, abv, price, user } = this.state.wines
     return(
       <section className="section">
         <div className="container">
@@ -45,7 +47,11 @@ class WineShow extends React.Component {
 
                 <h4 className="title is-4">Price</h4>
                 <p>£{price}</p>
+
+                <Map  location={location}/>
+
                 <hr />
+
                 <p><strong>Uploaded by:</strong> {user.username}</p>
               </div>
 
