@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:500,400,300");
+@import '_vars','_mixins';
+
+// @media only screen and (min-width: 660px) {
+//   body {
+//     display:flex;
+//   }
+// }
+
+body {
+  background: $blue;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin:0;
+}
+
+main {
+  width: 100%;
+  height:100vh;
+  padding-top:100px;
+  display: flex;
+  justify-content: center;
+}
+
+// @media only screen and (min-width:660px){
+//   main {
+//     justify-content: center;
+//   }
+// }
+
+header{
+  display: column;
+  justify-content: space-between;
+  min-width: 290px;
+  width:100%;
+  height:66px;
+  position: fixed;
+  top:0;
+  background: $blue;
+  // background: linear-gradient(to bottom, rgba($blue,1) 85%,rgba($blue,0) 100%);
+
+  h1, p{
+    margin:0 40px 0 40px;
+  }
+  p{
+    position: relative;
+    z-index: 10;
+    // text-align: left;
+  }
+
+  .progress{
+    @keyframes load1{
+      @include loadAnim;
+    }
+    @keyframes load2{
+      @include loadAnim;
+    }
+
+    background-color: $grey;
+    height:1.5em;
+    width:0%;
+    margin-top: -22px;
+    animation: load1 2s;
+    &.load{
+      animation: load2 2s;
+    }
+  }
+}
+// @media only screen and (min-width:660px){
+//   header {
+//     position: fixed;
+//     top:0;
+//     background-color: grey;
+//   }
+//
+// }
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:4px 10px;
+}
+.line{
+  max-width: 350px;
+  width:100%;
+  color: $black;
+  background: $white;
+  box-shadow: 4px 4px 2px 2px $shadow;
+
+  &:first-child{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    .band{
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+  &:last-child{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .band{
+    height:15px;
+    width:100%;
+  }
+
+  //TUBE COLOURS
+  &.bakerloo{ @include lineColour($bakerloo); }
+  &.central{@include lineColour($central); }
+  &.circle{@include lineColour($circle); }
+  &.district{@include lineColour($district); }
+  &.hammersmith-city{@include lineColour($hammersmith-city); }
+  &.jubilee{@include lineColour($jubilee); }
+  &.metropolitan{@include lineColour($metropolitan); }
+  &.northern{@include lineColour($northern); }
+  &.piccadilly{@include lineColour($piccadilly); }
+  &.victoria{@include lineColour($victoria); }
+  &.waterloo-city{@include lineColour($waterloo-city); }
+  &.london-overground{@include lineColour($overground); }
+  &.dlr{@include lineColour($dlr); }
+  &.tram{@include lineColour($tram); }
+
+  h2{
+    margin: 2px 20px 8px 20px;
+  }
+  h3 {
+    margin: 2px 20px 18px 20px;
+    font-style: italic;
+    padding-left: 20px;
+  }
+
+  p{
+    margin: 2px 20px 18px 20px;
+    font-size: 0.6em;
+  }
+
+  //DISRUPTION SEVERITY
+  //Service Closed
+  &.severity20{
+    @include severity($red,$white,$white,"X")
+  }
+  //Information
+  &.severity19{
+    @include severity($blue,$white,$white,"!")
+  }
+  //No issues reported
+  &.severity18{
+    @include severity($white,$black,$green,"✓")
+  }
+  //Issues reported
+  &.severity17{
+    @include severity($blue,$white,$white,"!")
+  }
+  //Not running
+  &.severity16{
+    @include severity($red,$white,$white,"X")
+  }
+  //Diverted
+  &.severity15{
+    @include severity($orange,$white,$white,"!")
+  }
+  //Change of frequency
+  &.severity14{
+      @include severity($blue,$white,$white,"!")
+  }
+  //No step-free access
+  &.severity13{
+      @include severity($blue,$white,$white,"!")
+  }
+  //Exit Only
+  &.severity12{
+    @include severity($blue,$white,$white,"!")
+  }
+  //Part Closed
+  &.severity11{
+    @include severity($red,$white,$white,"X")
+  }
+  //Good service
+  &.severity10{
+    @include severity($white,$black,$green,"✓")
+  }
+  //Minor Delays
+  &.severity9{
+    @include severity($orange,$white,$white,"✓")
+  }
+  //Bus Service
+  &.severity8{
+    @include severity($orange,$white,$white,"!")
+  }
+  //Reduced Service
+  &.severity7{
+    @include severity($orange,$white,$white,"!")
+  }
+  //Severe delays
+  &.severity6{
+    @include severity($red,$white,$white,"!")
+  }
+  //Part-closure
+  &.severity5{
+    @include severity($red,$white,$white,"X")
+  }
+  //Planned-closure
+  &.severity4{
+    @include severity($red,$white,$white,"X")
+  }
+  //Part-suspended
+  &.severity3{
+    @include severity($red,$white,$white,"X")
+  }
+  //Suspended
+  &.severity2{
+    @include severity($red,$white,$white,"X")
+  }
+  //Closed
+  &.severity1{
+    @include severity($red,$white,$white,"X")
+  }
+
+}
