@@ -21,6 +21,11 @@ class Map extends React.Component {
 
       return new mapboxgl.Marker(markerElement)
         .setLngLat({lat: country.latlng[0], lng: country.latlng[1]})
+        .setPopup(new mapboxgl.Popup({ offset: 25})
+          .setHTML(`
+            <img src="${country.flag}" alt="${country.name}" height="35" width="70" />
+            <h3>${country.name}</h3>
+            `))
         .addTo(this.map)
     })
   }
