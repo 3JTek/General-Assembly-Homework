@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from './Button'
 
-const Menus = ({data: {links}, data: {text}}) => {
+const Menus = ({text, links}) => {
   return(
     <section id="menus">
       <div className="container">

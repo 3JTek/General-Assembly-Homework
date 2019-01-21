@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+#map{
+  height: 100vh;
+}
+.mapboxgl-marker {
+  width:50px;
+  border-radius: 50%;
+  &:hover{
+    width: 300px;
+  }
+}
