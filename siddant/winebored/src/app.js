@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
 import Home from './components/Home'
 import ShowWineIndex from './components/ShowWineIndex'
+import WineShow from './components/WineShow'
 
 import './style.scss'
 
@@ -18,8 +19,9 @@ class App extends React.Component {
             <Link to="/wines">Wines</Link>
           </nav>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={ShowWineIndex} />
+            <Route exact path="/" component={Home} />
           </Switch>
         </main>
       </BrowserRouter>
