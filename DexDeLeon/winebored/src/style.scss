@@ -1,8 +1,9 @@
+$wineRed: #722f37;
 
 header{
 
   h1.title {
-    color: #722f37;
+    color: $wineRed;
   }
 
   nav.navbar {
@@ -18,18 +19,55 @@ header{
       color: #000;
 
       &:hover{
-        color: #722f37;
+        color: $wineRed;
       }
     }
   }
 }
 
-.hero {
+body {
   background-image: url('/assets/hero.jpg');
   background-size: cover;
-  background-position: right;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero {
 
   h1,h2 {
     color: #fff;
+  }
+}
+
+.section.wineList {
+  padding-top: 8%;
+
+  .container {
+    margin: auto;
+  }
+
+  div.card {
+    height: 100%;
+    border-radius: 10px;
+    transition: border 0.1s ease;
+
+    h3 {
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+
+    &:hover {
+      border: 5px solid $wineRed;
+
+      h3 {
+        background: $wineRed;
+        color: #ccc;
+      }
+    }
+  }
+
+  figure.image img {
+    margin: auto;
+    width: 30%;
+    padding: 2%;
   }
 }
