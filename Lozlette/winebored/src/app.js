@@ -16,9 +16,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/wines'>Wines Index</Link>
+          <nav className="links">
+            <Link to='/' className="link">Home</Link>
+            <Link to='/wines' className="link">Wines Index</Link>
           </nav>
           <Switch>
             <Route path="/wines/:id" component={WinesShow} />

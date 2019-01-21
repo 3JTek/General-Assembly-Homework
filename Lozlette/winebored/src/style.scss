@@ -2,7 +2,47 @@
   .image {
     height: 300px;
     background-position: center;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: contain;
   }
+}
+h1 {
+  font-family: serif;
+  text-align: center;
+}
+
+.links {
+  text-align: center;
+  padding: 30px;
+  .link {
+    font-family: serif;
+    font-size: 20px;
+    padding: 30px;
+    color: black;
+
+  }
+}
+
+.card-header-title {
+  font-family: serif;
+  color: black;
+}
+
+p {
+  font-family: serif;
+  color: black;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: serif;
+}
+
+figure.image {
+  display: flex;
+  justify-content: center;
+    img.large {
+      height: 300px;
+      width: 100px;
+    }
 }
