@@ -16,16 +16,30 @@ class WinesShow extends React.Component {
 
   render() {
     if (!this.state.wine) return null
-    const { name, origin, image, tastingNotes } = this.state.wine
+    const { name, grape, origin, price, image, tastingNotes, abv } = this.state.wine
     return (
       <section className='section'>
         <div className='container'>
-          <h1 className="title is-1">{name}</h1>
           <div className='columns'>
-            <div className='column is-half'>
+            <div className='column'>
               <figure className='image'>
                 <img src={image} alt={image}/>
               </figure>
+            </div>
+            <div className='column'>
+              <h1 className="title is-1">{name}</h1>
+              <h2 className="title is-2">{grape}</h2>
+              <div className="columns">
+                <div className="column ">
+                  <h4 className='title is-4'>Abv: {abv}%</h4>
+                </div>
+                <div className="column">
+                  <h4 className='title is-4'>{origin}</h4>
+                </div>
+              </div>
+              <p>{tastingNotes}</p>
+              <hr />
+              <h5 className="title is-5">£{price}</h5>
             </div>
           </div>
         </div>
