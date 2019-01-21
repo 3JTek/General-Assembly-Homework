@@ -11,16 +11,16 @@ class WineboardsShow extends React.Component {
 
   componentDidMount() {
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
-      .then(res => this.setState({wines: res.data}))
+      .then(res => this.setState({wine: res.data}))
   }
 
   render () {
-    if (!this.state.wines) return null
-    const { name, image } = this.state.wines
+    if (!this.state.wine) return null
+    const { name, image } = this.state.wine
     return(
       <section className="section">
         <div className='container'>
-          <h1 className="title is1">{name}</h1>
+          <h1 className="title is-size-2">{name}</h1>
           < hr/>
           <div className="columns">
             <div className="column">

@@ -8,6 +8,7 @@ import './style.scss'
 import Home from './components/Home'
 import WineboredsIndex from './components/WineboredsIndex'
 import WineboredsShow from './components/WineboredsShow'
+import Nav from './components/Nav'
 
 class App extends React.Component {
   constructor() {
@@ -22,8 +23,7 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/wineboreds">Wineboreds</Link>
+            <Nav />
           </nav>
           <Switch>
             <Route path="/wineboreds/:id" component={WineboredsShow}/>
