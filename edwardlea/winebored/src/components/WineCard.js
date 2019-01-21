@@ -1,12 +1,13 @@
 import React from 'react'
 
-const WineCard = () => {
+const WineCard = ({_id, name, image, origin, price}) => {
   return (
-    <section className="section">
-      <div className="container">
-        <h1>Home</h1>
+    <div className="card">
+      <div className="card-image">
+        <figure className="image" style={{ backgroundImage: `url(${image})`}}>
+        </figure>
       </div>
-    </section>
+    </div>
   )
 }
 
