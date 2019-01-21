@@ -1,6 +1,7 @@
 import React from 'react'
 
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import WineCard from './WineCard'
 
@@ -26,9 +27,9 @@ class WineList extends React.Component {
       <section className="section wineList">
         <div className="container columns is-multiline">
           {wines.map(wine =>
-            <div className="column is-half" key={wine._id}>
+            <Link to={`/wines/${wine._id}`} key={wine._id} className="column is-half">
               <WineCard {...wine} />
-            </div>
+            </Link>
           )}
         </div>
       </section>
