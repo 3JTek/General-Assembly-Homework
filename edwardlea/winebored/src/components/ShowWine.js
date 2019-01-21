@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import Map from './Map'
+
 class ShowWine extends React.Component {
   constructor(){
     super()
@@ -37,8 +39,13 @@ class ShowWine extends React.Component {
               <p> {tastingNotes}</p>
               <hr />
               <p> £{price}</p>
+              <hr />
+
               <div>
-                
+                <Map
+                  zoom={5}
+                  location={location}
+                />
               </div>
             </div>
           </div>
