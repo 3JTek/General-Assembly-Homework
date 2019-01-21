@@ -30,6 +30,21 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 100vh;
+
+  section {
+
+    .container.wineShow {
+      background: rgba(45, 18, 22, 0.6);
+      padding: 2%;
+      border-radius: 25px;
+
+      h1.title, h2.subtitle, h4.title, p {
+        color: #fff;
+    }
+
+    }
+  }
 }
 
 .hero {
@@ -39,7 +54,7 @@ body {
   }
 }
 
-.section.wineList {
+.section {
   padding-top: 8%;
 
   .container {
@@ -65,7 +80,12 @@ body {
     }
   }
 
-  figure.image img {
+  figure.image {
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  img {
     margin: auto;
     width: 30%;
     padding: 2%;

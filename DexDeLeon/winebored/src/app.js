@@ -9,6 +9,7 @@ import './style.scss'
 import Header from './components/Header'
 import Home from './components/Home'
 import WineList from './components/WineList'
+import WineShow from './components/WineShow'
 
 class App extends React.Component {
 
@@ -18,6 +19,7 @@ class App extends React.Component {
         <div>
           <Header />
           <Switch>
+            <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={WineList} />
             <Route path="/" component={Home} />
           </Switch>
