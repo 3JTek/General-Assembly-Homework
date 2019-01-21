@@ -1,0 +1,16 @@
+body {
+  margin: 0
+}
+
+.map {
+  height: 100vh
+}
+
+.custom-marker {
+  width: 60px;
+  height: 30px;
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
