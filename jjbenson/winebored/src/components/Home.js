@@ -30,7 +30,7 @@ class Home extends React.Component{
         </section>
         <Map className="homeMap"
           zoom="0.7"
-          center={ {lng: 0, lat: 10} }
+          center={ {lng: 60, lat: 10} }
           wines={this.state.wines}
         />
       </div>
