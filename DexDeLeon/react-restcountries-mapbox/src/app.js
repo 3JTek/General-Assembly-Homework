@@ -18,6 +18,7 @@ class App extends React.Component {
   componentDidMount(){
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(countries => this.setState({ countries: countries.data }))
+      .catch(error => this.setState({ error }))
   }
   //
   // selectHandler(e){

@@ -6,6 +6,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
 
+  // Map only needs to be a classical component for this method.
+  // Logic can be done in the main App component instead, before passing the data to be displayed to the Map component.
   componentDidMount(){
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
@@ -13,8 +15,9 @@ class Map extends React.Component {
       zoom: this.props.zoom,
       center: this.props.center
     })
+    // ^ Could store markers in an array in this object - markers: [] - in order to remove them later with the select filter.
 
-
+    // If logic is done in the main App component, and pass filtered countries to the Map component to render markers, then that might work with filtering the flag markers by region.
 
     const filtered = this.props.countries.filter(country => country.latlng.length === 2)
     return filtered.map(country => {
