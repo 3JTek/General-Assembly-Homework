@@ -1,5 +1,31 @@
 
+header{
+
+  nav.navbar {
+    background: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    width: 100%;
+
+    & div#navMenu{
+      background: transparent;
+    }
+
+    a.navbar-item {
+      color: #000;
+
+      &:hover{
+        color: #722f37;
+      }
+    }
+  }
+}
+
 .hero {
   background-image: url('/assets/hero.jpg');
   background-size: cover;
+  background-position: right;
+
+  h1,h2 {
+    color: #fff;
+  }
 }
