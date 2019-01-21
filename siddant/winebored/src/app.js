@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
 import Home from './components/Home'
-import ShowWine from './components/ShowWine'
+import ShowWineIndex from './components/ShowWineIndex'
 
 import './style.scss'
 
@@ -19,7 +19,7 @@ class App extends React.Component {
           </nav>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/wines" component={ShowWine} />
+            <Route path="/wines" component={ShowWineIndex} />
           </Switch>
         </main>
       </BrowserRouter>
