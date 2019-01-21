@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return(
-    null
+    <h1 className="title is-1">Wines</h1>
   )
 }
 
