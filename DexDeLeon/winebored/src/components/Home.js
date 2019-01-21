@@ -9,7 +9,7 @@ const Header = () => {
             WineBored
           </h1>
           <h2 className="subtitle is-3">
-            Somewhat bored of wine.
+            Somewhat bored of wine?
           </h2>
         </div>
       </div>

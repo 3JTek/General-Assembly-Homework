@@ -1,29 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import axios from 'axios'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import 'bulma'
 import './style.scss'
 
 import Header from './components/Header'
 import Home from './components/Home'
+import WineList from './components/WineList'
 
 class App extends React.Component {
-  constructor(){
-    super()
-
-    this.state = {
-      wines: []
-    }
-  }
-
-  componentDidMount(){
-    axios.get('https://winebored.herokuapp.com/wines')
-      .then(res => this.setState({ wines: res.data }))
-      .catch(error => console.error('ERROR', error))
-  }
 
   render() {
     return (
@@ -31,6 +18,7 @@ class App extends React.Component {
         <div>
           <Header />
           <Switch>
+            <Route path="/wines" component={WineList} />
             <Route path="/" component={Home} />
           </Switch>
 
