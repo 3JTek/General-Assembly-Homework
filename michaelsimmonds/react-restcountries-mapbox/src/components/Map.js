@@ -16,13 +16,11 @@ class Map extends React.Component {
 
     this.props.markers.map(marker => {
       if (marker.latlng.length === 2) {
-        const markerElement = document.createElement('DIV')
+        const markerElement = document.createElement('div')
         markerElement.className = 'custom-marker'
         markerElement.style.backgroundImage = `url(${marker.flag})`
         markerElement.style.backgroundSize = 'contain'
         markerElement.style.backgroundRepeat = 'no-repeat'
-        markerElement.src = marker.flag
-
 
         return new mapboxgl.Marker(markerElement)
           .setLngLat({ lat: marker.latlng[0], lng: marker.latlng[1]})

@@ -13,15 +13,8 @@ class App extends React.Component {
       .catch( error => console.log(error))
   }
 
-
   render() {
     if(!this.state) return null
-
-    // if(this.state.countries){
-    //   for (let i = 0; i < this.state.countries.length; i++) {
-    //     console.log(this.state.countries[i].latlng)
-    //   }
-    // }
 
     return (
       <main>
