@@ -17,8 +17,8 @@ const WineCard = ({ _id, name, origin, image, abv, price}) => {
         <div className="card-content">
           <div className="content">
             <p><strong>Origin:</strong> {origin}</p>
-            <p><strong>ABV:</strong> {abv}</p>
-            <p><strong>Price:</strong> {price}</p>
+            <p><strong>ABV:</strong> {abv}%</p>
+            <p><strong>Price:</strong> £{price}</p>
 
           </div>
         </div>
@@ -29,4 +29,4 @@ const WineCard = ({ _id, name, origin, image, abv, price}) => {
   )
 }
 
-export default WineCard 
+export default WineCard
