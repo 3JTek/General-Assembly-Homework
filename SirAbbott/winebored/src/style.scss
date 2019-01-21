@@ -5,10 +5,19 @@
 
 .card-image {
   .image {
+    margin-left: 90px;
     height: 400px;
     margin-top: 20px;
     background-color: center;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+}
+
+.show-image {
+  img {
+    padding-left: 100px;
+    height: 700px;
+    width: 320px;
   }
 }

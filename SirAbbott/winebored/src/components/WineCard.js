@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const WineCard = ({ _id, name, image, origin, user }) => {
+const WineCard = ({ _id, name, image, origin, price }) => {
 
   return (
 
@@ -16,7 +16,7 @@ const WineCard = ({ _id, name, image, origin, user }) => {
         </div>
         <div className="card-content">
           <div className="content">
-            <p><strong>Origin:</strong> {origin}</p>
+            <p><strong>Origin:</strong> {origin} - <strong>£{price}</strong></p>
           </div>
         </div>
       </Link>

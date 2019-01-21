@@ -25,9 +25,11 @@ class WinesShow extends React.Component {
           <hr />
           <div className="columns">
             <div className="column">
-              <figure className="image">
-                <img src={image} alt={name} />
-              </figure>
+              <div className="show-image">
+                <figure className="image">
+                  <img src={image} alt={name} />
+                </figure>
+              </div>
             </div>
             <div className="column">
               <p> <strong>{grape}</strong></p>
