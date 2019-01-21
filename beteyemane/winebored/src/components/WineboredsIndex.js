@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-class WineboredIndex extends React.Component {
+class WineboredsIndex extends React.Component {
   constructor() {
     super()
 
@@ -29,9 +29,6 @@ class WineboredIndex extends React.Component {
       </div>
     )
   }
-
-
-
 }
 
-export default WineboredIndex
+export default WineboredsIndex
