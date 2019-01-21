@@ -9,6 +9,11 @@ mapboxgl.accessToken = process.env.MAPBOX_TOKEN
 
 class Map extends React.Component {
 
+  //Click method for markers
+  handleClick(id){
+    //I would like to make this a <Link /> so page doesn't reload
+    window.location.href = `/wines/${id}`
+  }
 
   //When component mounts
   componentDidMount(){
@@ -27,8 +32,20 @@ class Map extends React.Component {
 
     wines.map((wine)=>{
 
+      const markerElement = document.createElement('DIV')
+      markerElement.className = 'custom-marker'
+      //Add the event listener
+      markerElement.addEventListener('click', ()=> this.handleClick(wine._id))
+      //Bind the click even to this
+      this.handleClick = this.handleClick.bind(this)
+
+
+      const pointer = document.createElement('DIV')
+      pointer.className = 'pointer'
+      markerElement.appendChild(pointer)
+
       //Add the marker
-      return new mapboxgl.Marker()
+      return new mapboxgl.Marker(markerElement)
         .setLngLat(wine.location)
         .addTo(this.map)
     })

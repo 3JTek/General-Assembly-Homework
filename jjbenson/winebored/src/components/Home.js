@@ -29,8 +29,8 @@ class Home extends React.Component{
           </div>
         </section>
         <Map className="homeMap"
-          zoom="0"
-          center={ {lng: 0, lat: 0} }
+          zoom="0.7"
+          center={ {lng: 0, lat: 10} }
           wines={this.state.wines}
         />
       </div>

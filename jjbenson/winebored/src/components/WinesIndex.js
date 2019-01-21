@@ -24,9 +24,8 @@ class WinesIndex extends React.Component{
     return(
       <section className="section">
         <div className="container">
-          <h1 className="title is-1">All da Wines!</h1>
+          <h1 className="title is-1">Wine List</h1>
           <hr />
-          <h2 className="title is-2">Choose!</h2>
           <div className="columns is-multiline">
             {
               this.state.wines.map((wine)=>

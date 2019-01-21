@@ -44,7 +44,7 @@ class Header extends React.Component{
                 Home
               </Link>
               <Link to="/wines" className="navbar-item">
-                Wine Index
+                Wine List
               </Link>
 
             </div>

@@ -5,8 +5,11 @@
 
 // Set your brand colors
 $purple: #8A4D76;
+$red: #d02323;
 $pink: #FA7C91;
 $brown: #757763;
+$blue: #75cff0;
+$green: #e2ecbd;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 
@@ -14,19 +17,23 @@ $beige-lighter: #EFF0EB;
 $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
+$primary: lighten($red, 20%);
+$link: $brown;
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: lighten($primary, 50%);
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
-$navbar-background-color: lighten($purple, 20%);
+$navbar-background-color: $primary;
 $navbar-item-color: white;
-$footer-background-color:$navbar-background-color;
+$navbar-item-background-color: darken($navbar-background-color, 20%);
+$footer-background-color: $primary;
+
+$navbar-item-img-max-height: 2em;
+$navbar-breakpoint: 600px;
 
 // Import only what you need from Bulma
 // @import "../node_modules/bulma/sass/utilities/_all.sass";
@@ -73,6 +80,7 @@ $footer-background-color:$navbar-background-color;
   min-height: 2em;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -85,7 +93,19 @@ hr{
 }
 
 .homeComp .map{
-  height: 300px;
+  height: 335px;
+}
+
+.custom-marker{
+  text-align: center;
+  .pointer{
+    content:"";
+    width:20px;
+    height:20px;
+    background-color: $red;
+    border-radius: 10px 10px 10px 0;
+    transform: rotateZ(-45deg);
+  }
 }
 
 main{
@@ -97,4 +117,5 @@ main{
 
 .footer{
   padding: 1em;
+  color:white;
 }
