@@ -15,7 +15,7 @@ const WineCard = ({ _id, name, image, origin }) => {
         </div>
 
         <div className="card-content">
-          <div ClassName="content">
+          <div className="content">
             <p>Origin:{origin}</p>
           </div>
         </div>
