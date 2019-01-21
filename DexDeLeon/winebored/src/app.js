@@ -2,9 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import axios from 'axios'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import 'bulma'
 import './style.scss'
+
+import Header from './components/Header'
+import Home from './components/Home'
 
 class App extends React.Component {
   constructor(){
@@ -23,16 +27,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <header>
-          <h1 className="title is-1">WineBored</h1>
-        </header>
-        <main>
-          {this.state.wines.map(wine =>
-            <h2 className="subtitle" key={wine._id}>{wine.name}</h2>
-          )}
-        </main>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
+
+        </div>
+      </BrowserRouter>
     )
   }
 }
