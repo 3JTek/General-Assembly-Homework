@@ -6,7 +6,8 @@ body {
 }
 .mapboxgl-marker {
   width:50px;
-}
-.my-class{
-
+  border-radius: 50%;
+  &:hover{
+    width: 300px;
+  }
 }

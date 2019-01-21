@@ -8,7 +8,6 @@ class Map extends React.Component{
   constructor(){
     super()
     this.state = {
-      countriesWithCoord: [],
       mapDOM: {}
     }
   }
@@ -18,22 +17,23 @@ class Map extends React.Component{
     mapboxgl.accessToken = process.env.MAPBOX_TOKEN
     return new mapboxgl.Map({
       container: this.mapDOMElement,
+      center: this.props.mapOptions.defaultCenter,
       style: this.props.mapOptions.style,
       zoom: this.props.mapOptions.zoom
     })
   }
 
-  filterCountries(){
+  filterImages(){
     // Remove countries that do not have coordinates
-    return this.props.countries.filter(country => {
-      return country.latlng.length === 2
+    return this.props.images.filter(image => {
+      return image.location.length !== null
     })
   }
 
-  createMarkup(countriesWithCoord, mapDOM){
-    countriesWithCoord.forEach(country => {
+  createMarkup(imagesWithCoord, mapDOM){
+    imagesWithCoord.forEach(image => {
       //Create Popup
-      const markerHeight = 15, markerRadius = 10, linearOffset = 25
+      const markerHeight = 75, markerRadius = 10, linearOffset = 25
       const popupOffsets = {
         'top': [0, 0],
         'top-left': [0,0],
@@ -44,14 +44,14 @@ class Map extends React.Component{
         'left': [markerRadius, (markerHeight - markerRadius) * -1],
         'right': [-markerRadius, (markerHeight - markerRadius) * -1]
       }
-      const popup = new mapboxgl.Popup({offset: popupOffsets, closeOnClick: false, closeButton: false})
-        .setHTML(country.name)
+      const popup = new mapboxgl.Popup({offset: popupOffsets, closeOnClick: true, closeButton: false})
+        .setHTML(image.location.name)
       //Create Marker and add Popup
       const markerDOM = document.createElement('img')
-      markerDOM.setAttribute('src', `${country.flag}`)
-      markerDOM.setAttribute('name', `${country.name}`)
+      markerDOM.setAttribute('src', `${image.images.low_resolution.url}`)
+      markerDOM.setAttribute('name', `${image.location.name}`)
       const marker = new mapboxgl.Marker(markerDOM)
-        .setLngLat(country.latlng.reverse())
+        .setLngLat([image.location.latitude, image.location.longitude].reverse())
         .setPopup(popup)
         .addTo(mapDOM)
     })
@@ -59,10 +59,10 @@ class Map extends React.Component{
 
   componentDidMount(){
     const mapDOM = this.createMap()
-    const countriesWithCoord = this.filterCountries()
-    this.createMarkup(countriesWithCoord, mapDOM)
+    const imagesWithCoord = this.filterImages()
+    this.createMarkup(imagesWithCoord, mapDOM)
     //
-    this.setState({mapDOM, countriesWithCoord })
+    this.setState({mapDOM, imagesWithCoord })
   }
 
   render(){

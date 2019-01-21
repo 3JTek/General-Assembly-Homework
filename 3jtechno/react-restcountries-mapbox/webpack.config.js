@@ -19,7 +19,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    port: 8000,
+    port: 8080,
     open: true,
     contentBase: './src',
     watchContentBase: true
