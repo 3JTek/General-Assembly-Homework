@@ -1,0 +1,35 @@
+.card-image{
+  .image{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 500px;
+  }
+}
+.image img {
+    display: block;
+    height: auto;
+    width: 30%;
+}
+.h1{
+  color: purple;
+  font-weight: bold;
+  font-size: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.h2{
+  color: red;
+  font-weight: bold;
+  font-size: 50px;
+}
+.h4{
+  color: blue;
+  font-size: 50px;
+}
+p{
+  font-weight: bold;
+  color:black;
+}
