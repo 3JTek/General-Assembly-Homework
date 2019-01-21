@@ -2,7 +2,14 @@ import React from 'react'
 
 import axios from 'axios'
 
+import Map from './Map'
+
 class WineShow extends React.Component{
+
+  constructor(){
+    super()
+    this.state = {}
+  }
 
   componentDidMount(){
     console.log(this.props)
@@ -12,14 +19,17 @@ class WineShow extends React.Component{
   }
 
   render(){
-    if(!this.state) return false
-    const {_id, name, image, origin, grape} = this.state.wine
+    if(!this.state.wine) return false
+    const {_id, name, image, origin, grape, price, tastingNotes, location} = this.state.wine
     return(
       <div key={_id}>
         <h1>{name}</h1>
         <img src={image}/>
         <p>{origin}</p>
         <p>{grape}</p>
+        <p>{price}</p>
+        <p>{tastingNotes}</p>
+        <Map latlng={location}/>
       </div>
     )
   }

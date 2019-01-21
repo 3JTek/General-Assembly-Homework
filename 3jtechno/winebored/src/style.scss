@@ -1,0 +1,16 @@
+.marker{
+  width: 50px;
+  height: 50px;
+
+  overflow: hidden;
+  border-top-left-radius:5px 5px;
+  border-top-right-radius:5px 5px;
+  border-bottom-left-radius:5px 5px;
+  border-bottom-right-radius:5px 5px;
+  -moz-box-shadow: 0 1px 3px #FFBF00;
+  -webkit-box-shadow: 0 1px 3px #FFBF00;
+
+  background-color: #FFBF00;
+  position: relative;
+  border: 5px solid #FFBF00;
+}

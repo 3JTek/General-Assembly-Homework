@@ -26,6 +26,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
+    "dotenv-webpack": "^1.7.0",
+    "mapbox": "^1.0.0-beta10",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1"
