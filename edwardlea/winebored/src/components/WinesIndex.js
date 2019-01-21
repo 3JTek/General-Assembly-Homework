@@ -26,7 +26,6 @@ class WinesIndex extends React.Component {
           <div className="columns is-multiline">
             {this.state.wines.map(wine =>
               <div className="column is-one-third" key={wine._id}>
-                <h4>{wine.name}</h4>
                 <WineCard {...wine} />
               </div>
             )}

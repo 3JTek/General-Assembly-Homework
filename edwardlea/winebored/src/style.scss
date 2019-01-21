@@ -1,6 +1,19 @@
 .image{
-  height: 300px;
+  padding:  50px;
+}
+
+.column > .image{
+  height: 500px;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-image{
+  .image{
+    height: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
