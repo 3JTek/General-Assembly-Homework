@@ -1,5 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Link, BrowserRouter, Route, Switch } from 'react-router-dom'
+import 'bulma'
+import './style.scss'
 
 class App extends React.Component {
   render() {
