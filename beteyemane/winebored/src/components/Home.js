@@ -1,18 +1,28 @@
 import React from 'react'
+// import Map from './Map'
 
-const Home = () => {
-  return (
+class Home extends React.Component {
+  constructor(){
+    super()
+    this.state = {}
+  }
 
-    <section className="hero is-light is-fullheight">
-      <div className="hero-body">
-        <div className="container">
-          <h1 className="title is-size-2">
-            Luxurious Wines
-          </h1>
+  render() {
+    return (
+
+      <section className="hero is-light is-fullheight">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title is-size-2">
+      Luxurious Wines
+            </h1>
+            <h2 className="subtitle is-size-4">
+      from all around the world
+            </h2>
+          </div>
         </div>
-      </div>
-    </section>
-  )
+      </section>
+    )
+  }
 }
-
 export default Home

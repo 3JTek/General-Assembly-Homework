@@ -5,7 +5,7 @@ const WineboredsCards = ({ _id, name, image, origin, grape, price, tastingNotes}
   return (
     <div className="card">
       <Link to={`/wines/${_id}`}>
-        <div className='card-header'>
+        <div className="card-header">
           <h4 className='card-header-title is-centered'>{name}</h4>
         </div>
 

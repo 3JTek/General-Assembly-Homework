@@ -1,22 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import 'bulma'
 import './style.scss'
 
 
 import Home from './components/Home'
 import WineboredsIndex from './components/WineboredsIndex'
-import WineboredsShow from './components/WineboredsShow'
+import WinesShow from './components/WinesShow'
 import Nav from './components/Nav'
 
 class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
 
-    }
-  }
 
   render() {
     return (
@@ -26,9 +21,9 @@ class App extends React.Component {
             <Nav />
           </nav>
           <Switch>
-            <Route path="/wineboreds/:id" component={WineboredsShow}/>
+            <Route path="/wines/:id" component={WinesShow}/>
             <Route path="/wineboreds" component={WineboredsIndex}/>
-            <Route path="/" component={Home}/>
+            <Route exact path="/" component={Home}/>
           </Switch>
         </main>
       </BrowserRouter>
