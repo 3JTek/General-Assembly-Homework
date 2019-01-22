@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import Auth from '../lib/Auth'
 
+import WineForm from './WineForm'
+
 class WineNew extends React.Component {
   constructor() {
     super()
@@ -18,10 +20,36 @@ class WineNew extends React.Component {
         price: ''
       }
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  handleChange({ target: {name, value }}) {
+    const data = {...this.state.data, [name]: value}
+    this.setState({ data })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    axios
+      .post('https://winebored.herokuapp.com/wines', this.state.data,
+        { headers: { Authorization: `Bearer ${Auth.getToken()}` } }
+      )
+      .then(() => this.props.history.push('/wines'))
+      .catch(err => alert(err.message))
+  }
+
   render() {
     return(
-      <h1>New Wine Page</h1>
+      <main className="section">
+        <div className="container">
+          <WineForm
+            data={this.state.data}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </div>
+      </main>
     )
   }
 }
