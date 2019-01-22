@@ -1,0 +1,34 @@
+.image{
+  padding: 50px;
+}
+
+.map{
+  height: 300px;
+
+  margin-top: 30px;
+}
+
+.column > .image{
+  height: 500px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-image{
+  .image{
+    height: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.buy-now{
+  display: flex;
+  justify-content: space-between;
+  p{
+    display: flex;
+    align-items: center;
+  }
+}
