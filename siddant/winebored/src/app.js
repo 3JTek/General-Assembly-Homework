@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
 import Home from './components/Home'
-import ShowWineIndex from './components/ShowWineIndex'
-import WineShow from './components/WineShow'
+import ShowWineIndex from './components/Wines/ShowWineIndex'
+import WineShow from './components/Wines/WineShow'
+
+import Register from './components/Auth/Register'
 
 import 'bulma'
 import './style.scss'
@@ -31,9 +33,7 @@ class App extends React.Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="buttons">
-                  <a className="button is-primary">
-                    <strong>Sign up</strong>
-                  </a>
+                  <Link className="navbar-item button is-primary" to="/register">Register</Link>
                   <a className="button is-light">
                     Log in
                   </a>
@@ -42,6 +42,7 @@ class App extends React.Component {
             </div>
           </nav>
           <Switch>
+            <Route path="/register" component={Register} />
             <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={ShowWineIndex} />
             <Route exact path="/" component={Home} />
