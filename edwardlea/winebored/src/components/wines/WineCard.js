@@ -19,7 +19,6 @@ const WineCard = ({_id, name, image, origin}) => {
         </div>
       </Link>
     </div>
-
   )
 }
 

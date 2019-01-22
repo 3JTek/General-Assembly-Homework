@@ -42,17 +42,6 @@ class WinesNew extends React.Component {
       .catch((err) => alert(err.message))
   }
 
-  // handleSubmit(e){
-  //   e.preventDefault()
-  //   axios
-  //     .post('https://cheesebored.herokuapp.com/cheeses',
-  //       this.state.data,
-  //       {headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-  //     .then(() => this.props.history.push('/cheeses'))
-  //     .catch((err) => alert(err.message))
-  // }
-
-
   render(){
     return(
       <WinesForm
@@ -63,9 +52,6 @@ class WinesNew extends React.Component {
       />
     )
   }
-
-
 }
-
 
 export default WinesNew

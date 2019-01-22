@@ -3,7 +3,6 @@ import axios from 'axios'
 
 import Auth from '../../lib/Auth'
 
-
 class Login extends React.Component {
   constructor(){
     super()
@@ -34,7 +33,6 @@ class Login extends React.Component {
       })
       .catch(err => alert(err.message))
   }
-
 
   render(){
     const { email, password } = this.state.data
@@ -74,13 +72,7 @@ class Login extends React.Component {
         </div>
       </main>
     )
-
   }
-
-
-
-
-
 }
 
 export default Login

@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-
 import {Link} from 'react-router-dom'
 
+import Auth from '../../lib/Auth'
 
 import Map from './Map'
 
@@ -13,14 +13,28 @@ class ShowWine extends React.Component {
     this.state = {
 
     }
+
+    this.deleteWine = this.deleteWine.bind(this)
   }
 
   componentDidMount(){
-    axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
+    axios.get(
+      `https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({wine: res.data}))
   }
 
-
+  deleteWine() {
+    console.log(this.state)
+    axios
+      .delete(
+        `https://winebored.herokuapp.com/wines/${this.state.wine._id}`,
+        {headers: {Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(() => {
+        this.props.history.push('/wines')
+        alert(`${this.state.wine.name} has been deleted`)
+      })
+      .catch((err) => alert(err.message))
+  }
 
   render(){
     if(!this.state.wine) return null
@@ -40,7 +54,7 @@ class ShowWine extends React.Component {
               <div className="edit-wines">
 
                 <Link  to={`/wines/${_id}/edit`}><button className="button is-dark">Edit</button></Link>
-                <button className="button is-dark">Delete</button>
+                <button onClick={this.deleteWine} className="button is-dark">Delete</button>
               </div>
             </div>
             <div className="column">
@@ -55,7 +69,6 @@ class ShowWine extends React.Component {
                 <p>Available on Amazon £{price} </p>
                 <button className="button is-dark">Buy it Now</button>
               </div>
-
               <div>
                 <Map
                   zoom={5}
@@ -68,8 +81,6 @@ class ShowWine extends React.Component {
       </section>
     )
   }
-
-
 }
 
 export default ShowWine

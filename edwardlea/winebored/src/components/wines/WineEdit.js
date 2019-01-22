@@ -49,9 +49,6 @@ class WineEdit extends React.Component {
       .catch((err) => alert(err.message))
   }
 
-
-
-
   render(){
     console.log(this.props)
     return(
@@ -63,9 +60,6 @@ class WineEdit extends React.Component {
       />
     )
   }
-
-
 }
-
 
 export default WineEdit

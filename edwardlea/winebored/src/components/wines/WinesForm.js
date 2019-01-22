@@ -96,9 +96,7 @@ const WinesForm = ({data, handleChange, handleSubmit, type}) => {
         </form>
       </div>
     </main>
-
   )
-
 }
 
 export default WinesForm
