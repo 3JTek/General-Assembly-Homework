@@ -18,34 +18,37 @@ class ShowWine extends React.Component {
   }
 
   render(){
-    console.log(this.props.match.params.id)
     if(!this.state.wine) return null
 
-    const {name, image, price, origin, tastingNotes, location} = this.state.wine
+    const {name, image, price, origin, tastingNotes, location, abv, grape} = this.state.wine
     return (
       <section className="section">
         <div className="container">
           <h1 className="title is-1">{name}</h1>
-          <h4 className="title is-4">From {origin}</h4>
+          <h4 className="title is-4">From {origin}  </h4>
           <div className="columns">
             <div className="column">
               <figure className="image" style={{ backgroundImage: `url(${image})`}}>
               </figure>
             </div>
             <div className="column">
-
               <h4 className="title is-4">Tasting Notes</h4>
               <hr />
               <p> {tastingNotes}</p>
               <hr />
-              <p> £{price}</p>
+              <p> Strength: {abv}%</p>
+              <p> Grape Variety: {grape}</p>
               <hr />
-
               <div>
                 <Map
                   zoom={5}
                   location={location}
                 />
+              </div>
+              <hr />
+              <div className="buy-now">
+                <p>Available on Amazon £{price} </p>
+                <button className="button is-dark">Buy it Now</button>
               </div>
             </div>
           </div>
