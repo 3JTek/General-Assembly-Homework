@@ -51,6 +51,9 @@ class NavBar extends React.Component {
             <Link className="navbar-item" to="/wines">
               Wines
             </Link>
+            <Link className="navbar-item" to="/register">
+              Register
+            </Link>
           </div>
         </div>
       </nav>
