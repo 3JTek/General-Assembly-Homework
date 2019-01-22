@@ -1,15 +1,24 @@
 import React from 'react'
 import Map from './Map'
+import axios from 'axios'
 
 class Home extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state = {}
+
+    this.state = {
+      wines: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get('https://winebored.herokuapp.com/wines')
+      .then(res => this.setState({wines: res.data}))
   }
 
   render() {
+    console.log(this.state.wines)
     return (
-
       <section className="hero is-light is-fullheight">
         <div className="hero-body">
           <div className="container">
