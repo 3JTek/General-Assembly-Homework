@@ -15,10 +15,19 @@ class Register extends React.Component{
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange() {
+  handleSubmit(e) {
+    e.preventDefault()
+    axios
+      .post('https://winebored.herokuapp.com/register/', this.state.data)
+      .then(() => this.props.history.push('/login'))
+  }
 
+  handleChange({target: {name, value}}) {
+    const data = {...this.state.data, [name]: value}
+    this.setState({ data })
   }
 
   render() {
@@ -73,3 +82,5 @@ class Register extends React.Component{
     )
   }
 }
+
+export default Register
