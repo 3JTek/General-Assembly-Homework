@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import Map from './Map'
+import Map from '../Map'
 
 class WineShow extends React.Component{
 
