@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -24,7 +25,11 @@ class WineShow extends React.Component{
     return(
       <section className="section">
         <div className="container">
+          <Link to={`/wines/edit/${_id}`}>
+            <div className="button is-primary">Edit</div>
+          </Link>
           <h1 className="title is-1">{name}</h1>
+          <h2 className="subtitle is-2">{grape}</h2>
           <h2 className="subtitle is-2">${price}</h2>
           <hr />
 
@@ -43,7 +48,7 @@ class WineShow extends React.Component{
 
             <div className="column">
               <h4 className="title is-4">Origin: {origin}</h4>
-              <Map latlng={location}/>
+              {location && <Map latlng={location} />}
             </div>
 
           </div>
