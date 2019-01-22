@@ -28,7 +28,7 @@ class WineIndex extends React.Component{
 
             {this.state.wines.map(wine =>
 
-                <div className="column is-full" key={wine._id}>
+                <div className="column is-half" key={wine._id}>
                     <WineCard {...wine} />
                 </div>
 

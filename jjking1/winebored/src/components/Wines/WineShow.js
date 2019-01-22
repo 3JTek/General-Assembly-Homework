@@ -31,7 +31,9 @@ class WineShow extends React.Component{
 
           <div className="columns">
             <div className="column" id="showImage">
+              <figure className="image">
                 <img src={image} alt={name}/>
+              </figure>
             </div>
 
             <div className="column">
@@ -46,12 +48,14 @@ class WineShow extends React.Component{
                   <li>Price: {price}</li>
                   <li>Grape: {grape}</li>
                 </ul>
-                <Link to={{
-                  pathname: `/wines/${_id}/location`,
-                  state: {
-                    coords: location,
-                    image: image
-                  }}}> View Origin Location on Map </Link>
+                {location &&
+                  <Link to={{
+                    pathname: `/wines/${_id}/location`,
+                    state: {
+                      coords: location,
+                      image: image
+                    }}}> View Origin Location on Map </Link>
+                  }
               </div>
             </div>
           </div>
