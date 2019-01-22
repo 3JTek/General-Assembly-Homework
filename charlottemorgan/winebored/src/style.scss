@@ -1,3 +1,10 @@
+body {
+  color: #F7FFF7;
+  font-family: 'Roboto', sans-serif;
+  background-color: #818AA3;
+  height: 100vh;
+}
+
 .card-image {
   .image {
     height: 300px;
@@ -24,4 +31,17 @@ font-size: 20px;
 
 h1 {
   margin-top: 250px;
+}
+
+.card {
+  background-color: #F7FFF7;
+  color: #818AA3;
+}
+
+.content {
+color: #818AA3;
+}
+
+h4.card-header-title {
+  color: #818AA3;
 }

@@ -21,7 +21,7 @@ class WinesShow extends React.Component {
     return(
       <section className="section">
         <div className="container">
-          <h1 className="title is-1">{name}</h1>
+          <h2 className="title is-1">{name}</h2>
           <hr />
 
           <div className="columns">
