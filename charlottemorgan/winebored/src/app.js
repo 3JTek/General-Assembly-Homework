@@ -19,7 +19,7 @@ class App extends React.Component {
 
           <nav>
             <Link to="/">Home </Link>
-            <Link to="/wines"> WinesIndex</Link>
+            <Link to="/wines"> Wines-Index</Link>
           </nav>
           <Switch>
             <Route path="/wines/:id" component={WinesShow} />

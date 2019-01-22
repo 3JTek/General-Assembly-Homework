@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-const WineCard = ({ _id, name, grape, image, origin, user }) => {
+const WineCard = ({ _id, name, grape, image, origin, abv }) => {
   return(
     <div className="card">
       <Link to={`/wines/${_id}`}>
@@ -16,7 +16,7 @@ const WineCard = ({ _id, name, grape, image, origin, user }) => {
         <div className="card-content">
           <div className="content">
             <p><strong>Origin: </strong>{origin}</p>
-            <p><strong>Uploaded by: </strong>{user.username}</p>
+            <p><strong>ABV: </strong>{abv}%</p>
             <p><strong>Grape: </strong>{grape}</p>
           </div>
         </div>

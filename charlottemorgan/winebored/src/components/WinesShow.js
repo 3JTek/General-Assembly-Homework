@@ -30,7 +30,8 @@ class WinesShow extends React.Component {
             </div>
 
             <div className="column">
-              <h4 className="title is-4">{origin}</h4>
+              <h4 className="title is-4">Origin</h4>
+              <p>{origin}</p>
               <hr />
 
               <h4 className="title is-4">Tasting Notes</h4>
