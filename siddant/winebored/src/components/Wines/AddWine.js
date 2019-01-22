@@ -49,6 +49,7 @@ class AddWine extends React.Component {
         data={this.state.data}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        header="Add New Wines"
       />
     )
   }

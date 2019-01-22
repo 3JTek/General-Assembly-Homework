@@ -7,6 +7,8 @@ import Home from './components/Home'
 import ShowWineIndex from './components/Wines/ShowWineIndex'
 import WineShow from './components/Wines/WineShow'
 import AddWine from './components/Wines/AddWine'
+import EditWine from './components/Wines/EditWine'
+
 
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
@@ -43,12 +45,13 @@ class App extends React.Component {
             </div>
           </nav>
           <Switch>
+            <Route path="/wines/edit/:id" component={EditWine} />
             <Route path="/wines/new" component={AddWine} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={ShowWineIndex} />
-            <Route exact path="/" component={Home} />
+            <Route path="/" component={Home} />
           </Switch>
         </main>
       </BrowserRouter>

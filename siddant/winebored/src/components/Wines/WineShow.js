@@ -17,10 +17,10 @@ class WineShow extends React.Component {
   }
 
   deleteWine(){
-    console.log(`Bearer ${Auth.getToken()}`)
+    console.log(this.props.match.params.id)
     axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.wines,
       {
-        headers: { Authorization: `Bearer ${Auth.getToken()}`}
+        headers: {Authorization: `Bearer ${Auth.getToken()}`}
       }
     )
       .then(() => this.props.history.push('/wines'))
@@ -53,11 +53,7 @@ class WineShow extends React.Component {
                 <hr />
                 <h4 className="title is-4">Grape</h4>
                 <p>{grape}</p>
-                <hr />
-                <div className="control">
-                  <button className="button is-danger" onClick={this.deleteWine}>Delete the Wine</button>
-                  <button className="button is-warning">Edit the Wine</button>
-                </div>
+
               </div>
             </div>
           </div>
