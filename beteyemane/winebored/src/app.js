@@ -9,6 +9,7 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import WineboredsIndex from './components/WineboredsIndex'
 import WinesShow from './components/WinesShow'
+import WineNew from './components/WineNew'
 import Nav from './components/Nav'
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
             <Nav />
           </nav>
           <Switch>
+            <Route path="/wines/new" component={WineNew}/>
             <Route path="/wines/login" component={Login}/>
             <Route path="/wines/register" component={Register}/>
             <Route path="/wines/:id" component={WinesShow}/>

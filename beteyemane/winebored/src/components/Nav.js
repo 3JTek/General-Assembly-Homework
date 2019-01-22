@@ -28,12 +28,14 @@ const Nav = () => {
               <Link to="/wines/register" className="button">
                 <strong>Register</strong>
               </Link>
+              <Link to="/wines/new" className="button">
+                <strong>Add Wine</strong>
+              </Link>
             </div>
           </div>
         </div>
       </div>
     </nav>
-
   )
 }
 

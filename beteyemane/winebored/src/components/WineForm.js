@@ -1,23 +1,96 @@
-// import React from 'react'
-// import axios from 'axios'
-//
-// const WineForm = () => {
-//   return(
-//     null
-//   )
-// }
-// export default WineForm
+import React from 'react'
+
+const WineForm = ({ data, handleChange, handleSubmit }) => {
+  return(
+    <form onSubmit={handleSubmit}>
+      <div className="field">
+        <label className="label">Name</label>
+        <div className="control">
+          <input
+            className="input"
+            placeholder="Name"
+            name="name"
+            onChange={handleChange}
+            value={data.name}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Origin</label>
+        <div className="control">
+          <input
+            className="input"
+            placeholder="Origin"
+            name="origin"
+            onChange={handleChange}
+            value={data.origin}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Image</label>
+        <div className="control">
+          <input
+            className="input"
+            placeholder="Image"
+            name="image"
+            onChange={handleChange}
+            value={data.image}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Tasting notes</label>
+        <div className="control">
+          <textarea
+            className="textarea"
+            placeholder="Tasting notes"
+            name="tastingNotes"
+            onChange={handleChange}
+            value={data.tastingNotes}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Grape</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="Grape"
+            name="grape"
+            onChange={handleChange}
+            value={data.grape}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">ABV</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="ABV"
+            name="abv"
+            onChange={handleChange}
+            value={data.abv}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">Price</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="Price"
+            name="price"
+            onChange={handleChange}
+            value={data.price}
+          />
+        </div>
+      </div>
+      <button className="button is-black">Submit</button>
+    </form>
+  )
+}
 
 
-//
-// class WineForm extends React.Component {
-//   constructor() {
-//     super()
-//     //
-//     // axios
-//     //   .get('https://winebored.herokuapp.com/wines')
-//     //   .then(res => this.SetState({wines: res.data}))
-//
-//   }
-// }
-// export default WineForm
+export default WineForm
