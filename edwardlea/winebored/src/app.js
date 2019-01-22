@@ -11,6 +11,7 @@ import NavBar from './components/NavBar'
 import WinesIndex from './components/wines/WinesIndex'
 import ShowWine from './components/wines/ShowWine'
 import Register from './components/auth/Register'
+import Login from './components/auth/Login'
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class App extends React.Component {
             <Route path="/wines/:id" component={ShowWine}></Route>
             <Route path="/wines" component={WinesIndex}></Route>
             <Route path="/register" component={Register}></Route>
+            <Route path="/login" component={Login}></Route>
             <Route exact path="/" component={Home}></Route>
           </Switch>
         </main>
