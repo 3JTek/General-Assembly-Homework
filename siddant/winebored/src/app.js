@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 import Home from './components/Home'
 import ShowWineIndex from './components/Wines/ShowWineIndex'
 import WineShow from './components/Wines/WineShow'
+import AddWine from './components/Wines/AddWine'
 
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
@@ -29,6 +30,8 @@ class App extends React.Component {
               <div className="navbar-start">
                 <Link className="navbar-item" to="/">Home</Link>
                 <Link className="navbar-item" to="/wines">Wines</Link>
+                <Link className="navbar-item" to="/wines/new">Add Wines</Link>
+
               </div>
             </div>
             <div className="navbar-end">
@@ -41,6 +44,7 @@ class App extends React.Component {
             </div>
           </nav>
           <Switch>
+            <Route path="/wines/new" component={AddWine} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/wines/:id" component={WineShow} />
