@@ -92,7 +92,7 @@ const WinesForm = ({data, handleChange, handleSubmit, type}) => {
               />
             </div>
           </div>
-          <button className="button is-dark"> Add Wine</button>
+          <button className="button is-dark"> {type} Wine</button>
         </form>
       </div>
     </main>
