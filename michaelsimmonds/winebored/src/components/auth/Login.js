@@ -29,7 +29,7 @@ class Login extends React.Component{
       .post('https://winebored.herokuapp.com/login', this.state.data)
       .then((res) => {
         Auth.setToken(res.data.token)
-        this.props.history.push('/cheeses')
+        this.props.history.push('/wines')
       })
       .catch(err => alert(err.message))
   }

@@ -3,7 +3,7 @@ import React from 'react'
 const WineForm = ({ data, handleChange, handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
-    
+
       <div className="field">
         <label className="label">Name</label>
         <div className="control">
@@ -13,19 +13,6 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
             name="name"
             onChange={handleChange}
             value={data.name}
-          />
-        </div>
-      </div>
-
-      <div className="field">
-        <label className="label">Image</label>
-        <div className="control">
-          <input
-            className="input"
-            placeholder="Image"
-            name="image"
-            onChange={handleChange}
-            value={data.image}
           />
         </div>
       </div>
@@ -44,6 +31,19 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       </div>
 
       <div className="field">
+        <label className="label">Image</label>
+        <div className="control">
+          <input
+            className="input"
+            placeholder="Image"
+            name="image"
+            onChange={handleChange}
+            value={data.image}
+          />
+        </div>
+      </div>
+
+      <div className="field">
         <label className="label">Tasting notes</label>
         <div className="control">
           <textarea
@@ -52,6 +52,58 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
             name="tastingNotes"
             onChange={handleChange}
             value={data.tastingNotes}
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label">Grape</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="Grape"
+            name="grape"
+            onChange={handleChange}
+            value={data.grape}
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label">Location</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="Location"
+            name="location"
+            onChange={handleChange}
+            value={data.location}
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label">ABV</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="ABV"
+            name="abv"
+            onChange={handleChange}
+            value={data.abv}
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label">Price</label>
+        <div className="control">
+          <textarea
+            className="input"
+            placeholder="Price"
+            name="price"
+            onChange={handleChange}
+            value={data.price}
           />
         </div>
       </div>

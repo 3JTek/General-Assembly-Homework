@@ -9,6 +9,7 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 import Home from './components/Home'
 import WinesIndex from './components/wines/WinesIndex'
 import WinesShow from './components/wines/WinesShow'
+import WinesNew from './components/wines/WinesNew'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
@@ -24,9 +25,11 @@ class App extends React.Component {
             <Link to="/wines">Wines</Link>
             <Link to="/register">Register</Link>
             <Link to="/login">Login</Link>
+            <Link to="/wines/new">Add Wine</Link>
           </nav>
 
           <Switch>
+            <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
             <Route path="/register" component={Register} />
