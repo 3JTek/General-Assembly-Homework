@@ -1,15 +1,30 @@
 import React from 'react'
 import axios from 'axios'
 
+import Auth from '../../lib/Auth'
+
+
 class WineShow extends React.Component {
   constructor(){
     super()
     this.state = {}
+    this.deleteWine = this.deleteWine.bind(this)
   }
 
   componentDidMount(){
     axios.get(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({wines: res.data}))
+  }
+
+  deleteWine(){
+    console.log(`Bearer ${Auth.getToken()}`)
+    axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.wines,
+      {
+        headers: { Authorization: `Bearer ${Auth.getToken()}`}
+      }
+    )
+      .then(() => this.props.history.push('/wines'))
+      .catch(err => alert(err.message))
   }
 
   render(){
@@ -40,8 +55,8 @@ class WineShow extends React.Component {
                 <p>{grape}</p>
                 <hr />
                 <div className="control">
-                  <input className="input" type="number" value="0"   min="0"/>
-                  <button className="button is-primary">Add to Basket</button>
+                  <button className="button is-danger" onClick={this.deleteWine}>Delete the Wine</button>
+                  <button className="button is-warning">Edit the Wine</button>
                 </div>
               </div>
             </div>

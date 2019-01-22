@@ -3,6 +3,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const WinesCard =  ({ _id, name, image, origin, user }) =>  {
+
   return (
     <div >
       <Link to={`/wines/${_id}`}>

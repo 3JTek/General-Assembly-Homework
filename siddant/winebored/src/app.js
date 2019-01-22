@@ -31,7 +31,6 @@ class App extends React.Component {
                 <Link className="navbar-item" to="/">Home</Link>
                 <Link className="navbar-item" to="/wines">Wines</Link>
                 <Link className="navbar-item" to="/wines/new">Add Wines</Link>
-
               </div>
             </div>
             <div className="navbar-end">
