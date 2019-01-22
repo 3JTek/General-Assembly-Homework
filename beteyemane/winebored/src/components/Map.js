@@ -6,7 +6,6 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
 
-
   componentDidMount() {
 
     this.map = new mapboxgl.Map({
