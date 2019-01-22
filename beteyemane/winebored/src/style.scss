@@ -14,17 +14,17 @@
 .card-content {
   height: 360px;
 }
-
-.image img {
-  width: 30%;
-}
-
-img {
-  margin: 0;
+.column{
+  img {
+    width: 30%;
+    margin-left:150px;
+  }
 
 }
 
-picture {
-  display: flex;
-  justify-content: center;
+
+
+.column {
+  width: 500px;
+
 }
