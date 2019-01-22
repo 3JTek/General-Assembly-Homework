@@ -25,6 +25,9 @@ const Nav = () => {
               <a className="button">
                 <strong>Login</strong>
               </a>
+              <Link to="/wines/register" className="button">
+                <strong>Register</strong>
+              </Link>
             </div>
           </div>
         </div>

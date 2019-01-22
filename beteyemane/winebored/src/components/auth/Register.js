@@ -1,6 +1,6 @@
 import React from 'React'
 import axios from 'axios'
-
+// import Auth from '../../lib/Auth'
 
 //you need a class component as you're getting data
 
@@ -16,15 +16,27 @@ class Register extends React.Component {
         passwordConfirmation: ''
       }
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleSubmit() {
-    axios.post('https://winebored.herokuapp.com/register', this.state.data)
-      .then(()=> this.props.history.push('/wineboreds'))
+  handleChange({target: {name, value}}) {
+    const data = {...this.state.data, [name]: value}
+    this.setState({ data })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log(this.state.data)
+    axios
+      .post('https://winebored.herokuapp.com/register', this.state.data)
+      .then(() => this.props.history.push('/wineboreds'))
+      .catch(err => alert(err.message))
   }
 
   render(){
-    const {username, email, password, passwordConfirmation} = this.state.data
+    const { username, email, password, passwordConfirmation } = this.state.data
     return (
       <main className="section">
         <div className="container">
