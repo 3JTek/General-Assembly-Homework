@@ -22,10 +22,10 @@ class App extends React.Component {
 
           <nav>
             <Link to="/">Home </Link>
-            <Link to="/wines"> Wines-Index</Link>
+            <Link to="/wines"> Wines</Link>
             <Link to="/register"> Register</Link>
             <Link to="/login"> Login</Link>
-            <Link to="/wines/new"> New Wine</Link>
+            <Link to="/wines/new"> Add Wine</Link>
           </nav>
           <Switch>
             <Route path="/wines/new" component={WinesNew} />

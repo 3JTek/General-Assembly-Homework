@@ -42,6 +42,7 @@ class Register extends React.Component {
             <div className="field">
               <label className="label">Username</label>
               <input
+                className="input"
                 name="username"
                 placeholder="Username"
                 value={username}
@@ -51,6 +52,7 @@ class Register extends React.Component {
             <div className="field">
               <label className="label">Email</label>
               <input
+                className="input"
                 name="email"
                 placeholder="Email"
                 value={email}
@@ -60,6 +62,7 @@ class Register extends React.Component {
             <div className="field">
               <label className="label">Password</label>
               <input
+                className="input"
                 name="password"
                 type="password"
                 placeholder="Password"
@@ -70,6 +73,7 @@ class Register extends React.Component {
             <div className="field">
               <label className="label">Confirm Password</label>
               <input
+                className="input"
                 name="passwordConfirmation"
                 type="password"
                 placeholder="Confirm Password"

@@ -4,6 +4,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
+        <h2 className="title">Add New Wine</h2>
         <label className="label">Name</label>
         <div className="control">
           <input
