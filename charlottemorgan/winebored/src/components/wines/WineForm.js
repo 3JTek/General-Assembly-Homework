@@ -1,10 +1,10 @@
 import React from 'react'
 
-const WineForm = ({ data, handleChange, handleSubmit }) => {
+const WineForm = ({ data, handleChange, handleSubmit, type }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
-        <h2 className="title">Add New Wine</h2>
+        <h2 className="title">{type}</h2>
         <label className="label">Name</label>
         <div className="control">
           <input

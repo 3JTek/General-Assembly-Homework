@@ -5,7 +5,7 @@ import Auth from '../../lib/Auth'
 
 import WineForm from './WineForm'
 
-class WinesNew extends React.Component {
+class WineEdit extends React.Component {
   constructor() {
     super()
 
@@ -20,9 +20,16 @@ class WinesNew extends React.Component {
         abv: ''
       }
     }
+
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  componentDidMount() {
+    axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
+      .then(res => this.setState({ data: res.data }))
+  }
+
 
   handleChange({ target: { name,value } }) {
     const data = {...this.state.data, [name]: value }
@@ -33,7 +40,7 @@ class WinesNew extends React.Component {
     e.preventDefault()
 
     axios
-      .post('https://winebored.herokuapp.com/wines',
+      .put(`https://winebored.herokuapp.com/wines/${this.state.data._id}`,
         this.state.data,
         { headers: { Authorization: `Bearer ${Auth.getToken()}`}})
       .then(() => this.props.history.push('/wines'))
@@ -45,7 +52,7 @@ class WinesNew extends React.Component {
       <main className="section">
         <div className="container">
           <WineForm
-            type="Add New Wine"
+            type="Edit Wine"
             data={this.state.data}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
@@ -59,4 +66,4 @@ class WinesNew extends React.Component {
 
 
 
-export default WinesNew
+export default WineEdit
