@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$red: #d02323;
+$pink: #FA7C91;
+$brown: #757763;
+$blue: #75cff0;
+$green: #e2ecbd;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: lighten($red, 20%);
+$link: $brown;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: lighten($primary, 50%);
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$navbar-background-color: $primary;
+$navbar-item-color: white;
+$navbar-item-background-color: darken($navbar-background-color, 20%);
+$footer-background-color: $primary;
+
+$navbar-item-img-max-height: 2em;
+$navbar-breakpoint: 600px;
+
+// Import only what you need from Bulma
+// @import "../node_modules/bulma/sass/utilities/_all.sass";
+// @import "../node_modules/bulma/sass/base/_all.sass";
+// @import "../node_modules/bulma/sass/elements/button.sass";
+// @import "../node_modules/bulma/sass/elements/container.sass";
+// @import "../node_modules/bulma/sass/elements/form.sass";
+// @import "../node_modules/bulma/sass/elements/title.sass";
+// @import "../node_modules/bulma/sass/components/navbar.sass";
+// @import "../node_modules/bulma/sass/layout/hero.sass";
+// @import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/bulma.sass";
+
+.card{
+  .card-header{
+    .card-header-title{
+      height: 4em;
+    }
+  }
+  .card-image {
+    .image {
+      height: 200px;
+      margin: 10px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.image img{
+  width:auto;
+  max-height: 200px;
+}
+.image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.level:not(:last-child){
+      margin-bottom: 0.5rem;
+    }
+.level-item{
+  min-height: 2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+hr{
+    margin: 0.5rem 0;
+}
+
+.map{
+  height:200px;
+}
+
+.homeComp .map{
+  height: 335px;
+}
+
+.custom-marker{
+  text-align: center;
+  .pointer{
+    content:"";
+    width:20px;
+    height:20px;
+    background-color: $red;
+    border-radius: 10px 10px 10px 0;
+    transform: rotateZ(-45deg);
+  }
+}
+
+main{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer{
+  padding: 1em;
+  color:white;
+}
