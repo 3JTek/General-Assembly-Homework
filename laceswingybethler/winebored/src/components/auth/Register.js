@@ -13,12 +13,29 @@ class Register extends React.Component {
         passwordConfirmation: ''
       }
     }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange( {target: { name, value }})
+  handleChange( {target: {name, value }}) {
+    console.log(this.state.data)
+    const data = {...this.state.data, [name]: value}
+    this.setState({data})
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log(this.state.data)
+    axios
+      .post('https://winebored.herokuapp.com/register', this.state.data)
+      .then(() => this.props.history.push('/wines'))
+      .catch(err => alert(err))
+
+  }
 
   render() {
-
+    const { username, email, password, passwordConfirmation} = this.state.data
     return (
       <main className="section">
         <div className="container">
@@ -43,7 +60,7 @@ class Register extends React.Component {
               />
             </div>
             <div className="field">
-              <label className="label">Email</label>
+              <label className="label">Password</label>
               <input
                 type="password"
                 name="password"

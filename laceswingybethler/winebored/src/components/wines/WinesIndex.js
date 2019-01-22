@@ -25,20 +25,14 @@ class WinesIndex extends React.Component{
             {this.state.wines.map(wine =>
               <div className='column is-one-quarter' key={wine._id}>
                 <WineCard {...wine} />
-
               </div>
             )}
 
           </div>
         </div>
       </section>
-
-
     )
   }
-
-
-
 }
 
 export default WinesIndex
