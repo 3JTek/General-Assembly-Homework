@@ -11,7 +11,8 @@ const Nav = () => {
                     <Link className="navbar-item has-text-white" to="/wines"> All Wines </Link>
                 </div>
                 <div className="navbar-end">
-                    <a className="navbar-item has-text-white" href="#">Login</a>
+                  <Link className="navbar-item has-text-white" to="/register">Register</Link>
+                  // <Link className="navbar-item has-text-white" to="/login">Login</Link>
                 </div>
               </div>
             </div>
