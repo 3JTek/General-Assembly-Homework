@@ -32,6 +32,7 @@ class NavBar extends React.Component {
           <div className="navbar-start">
             <Link to='/'className="navbar-item">Home</Link>
             <Link to='/wines'className="navbar-item">Wine List</Link>
+            <Link to='/wines/new'className="navbar-item">Create New Wine</Link>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">

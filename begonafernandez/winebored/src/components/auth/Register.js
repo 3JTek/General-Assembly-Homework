@@ -29,7 +29,7 @@ class Register extends React.Component{
 
     axios
       .post('https://winebored.herokuapp.com/register', this.state.data)
-      .then(() => this.props.history.push('/cheeses'))
+      .then(() => this.props.history.push('/wines'))
       .catch(err => alert(err.message))
   }
 
