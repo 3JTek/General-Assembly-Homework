@@ -20,7 +20,7 @@ class Register extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     axios
-      .post('https:winebored.herokuapp.com/wines', this.state.data)
+      .post('https:winebored.herokuapp.com/register', this.state.data)
       .then(() => this.props.history.push('/wines'))
       .catch(err => alert(err.message))
 
