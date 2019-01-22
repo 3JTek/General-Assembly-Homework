@@ -11,6 +11,7 @@ import Home from './components/Home'
 import WineList from './components/wines/WineList'
 import WineShow from './components/wines/WineShow'
 import Register from './components/auth/Register'
+import Login from './components/auth/Login'
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={WineList} />
             <Route path="/" component={Home} />

@@ -15,6 +15,15 @@ class Register extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+
+    axios.post('https://winebored.herokuapp.com/register', this.state.data)
+      .then(() => this.props.history.push('/wines'))
+      .catch(error => alert(error))
   }
 
   handleChange({ target: { name, value } }){
@@ -26,7 +35,7 @@ class Register extends React.Component {
     return (
       <main className="section">
         <div className="container">
-          <form>
+          <form onSubmit={this.handleSubmit}>
 
             <div className="field">
               <label className="label title is-4">Username</label>

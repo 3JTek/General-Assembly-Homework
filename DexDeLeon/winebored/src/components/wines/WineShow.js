@@ -42,7 +42,7 @@ class WineShow extends React.Component {
 
           <div className="columns">
 
-            <div className="column is-one-third">
+            <div className="column is-half">
               <figure className="image">
                 <img src={image} alt={name} />
               </figure>
