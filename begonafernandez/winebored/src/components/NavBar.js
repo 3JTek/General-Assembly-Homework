@@ -36,10 +36,10 @@ class NavBar extends React.Component {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="/" className="button is-link">
+                <Link to="/wines/register" className="button is-link">
                   <strong>Register</strong>
                 </Link>
-                <Link to="/" className="button is-light">
+                <Link to="/wines/login" className="button is-light">
                   Log in
                 </Link>
               </div>
