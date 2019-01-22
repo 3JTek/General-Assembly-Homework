@@ -3,7 +3,7 @@ class Auth{
     localStorage.setItem('token',token)
   }
   static getToken(){
-    localStorage.getItem('token')
+    return localStorage.getItem('token')
   }
 }
 

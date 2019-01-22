@@ -13,11 +13,14 @@ class Home extends React.Component{
   componentDidMount(){
     axios.get('https://winebored.herokuapp.com/wines')
       .then((res)=>{
+        console.log(res.data)
         this.setState({ wines: res.data})
       })
+      .catch((err)=>console.log(err.message))
   }
   render(){
     if(!this.state.wines) return null
+    console.log(this.state.wines)
     return(
       <div className="homeComp">
         <section className="section">

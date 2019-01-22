@@ -2,6 +2,8 @@ import React from 'react'
 
 import axios from 'axios'
 
+import Auth from '../../lib/Auth'
+
 class Login extends React.Component{
   constructor(){
     super()
@@ -14,6 +16,8 @@ class Login extends React.Component{
         passwordConfirmation: ''
       }
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange({target: { name, value }}){
@@ -21,14 +25,14 @@ class Login extends React.Component{
     this.setState({ data })
   }
 
-  handleSumbit(e){
+  handleSubmit(e){
     e.preventDefault()
     console.log('handleSubmit')
     axios
-      .post('https://winebored.herokuapp.com/register', this.state.data)
+      .post('https://winebored.herokuapp.com/login', this.state.data)
       .then((res)=> {
-        console.log(res)
-        this.props.history.push('/wines')
+        Auth.setToken(res.data.token)
+        this.props.history.push('/cheeses')
       })
       .catch((err)=> alert(err.message))
   }
@@ -37,7 +41,7 @@ class Login extends React.Component{
     return(
       <main className="section">
         <div className="container">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <h2 className="title"></h2>
             <div className="field">
               <div className="label">Email</div>
@@ -64,6 +68,7 @@ class Login extends React.Component{
                 />
               </div>
             </div>
+            <button className="button is-primary">Register</button>
           </form>
         </div>
       </main>

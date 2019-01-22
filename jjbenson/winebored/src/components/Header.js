@@ -46,6 +46,9 @@ class Header extends React.Component{
               <Link to="/wines" className="navbar-item">
                 Wine List
               </Link>
+              <Link to="/wines/new" className="navbar-item">
+                New Wine
+              </Link>
 
             </div>
 
