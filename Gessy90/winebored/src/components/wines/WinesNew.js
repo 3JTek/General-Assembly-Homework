@@ -15,7 +15,10 @@ class WinesNew extends React.Component{
         name: '',
         origin: '',
         image: '',
-        tastingNotes: ''
+        tastingNotes: '',
+        grape: '',
+        abv: '',
+        price: ''
       }
     }
     this.handleChange = this.handleChange.bind(this)
@@ -29,8 +32,9 @@ class WinesNew extends React.Component{
   handleSubmit(e){
     e.preventDefault()
 
-    axios.post('https://winebored.herokuapp.com/wines', this.state.data,
-      { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
+    axios
+      .post('https://winebored.herokuapp.com/wines', this.state.data,
+        { headers: { Authorization: `Bearer ${Auth.getToken()}` }})
       .then(() => this.props.history.push('/wines'))
       .catch(err => alert(err.message))
   }

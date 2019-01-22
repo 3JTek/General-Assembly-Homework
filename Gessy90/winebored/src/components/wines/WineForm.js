@@ -52,6 +52,46 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
         </div>
       </div>
 
+      <div className="field">
+        <label className="label">Grape</label>
+        <div className="control">
+          <textarea
+            className="textarea"
+            placeholder="Grape"
+            name="grape"
+            onChange={handleChange}
+            value={data.grape}
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label">ABV</label>
+        <div className="control">
+          <textarea
+            className="textarea"
+            placeholder="abv"
+            name="abv"
+            onChange={handleChange}
+            value={data.abv}
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label">Price</label>
+        <div className="control">
+          <textarea
+            className="textarea"
+            placeholder="Price"
+            name="price"
+            onChange={handleChange}
+            value={data.price}
+          />
+        </div>
+      </div>
+
+
       <button className="button is-primary">Submit</button>
     </form>
   )
