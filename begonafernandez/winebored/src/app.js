@@ -9,6 +9,7 @@ import Home from './components/Home'
 import WinesIndex from './components/wines/WinesIndex'
 import WinesShow from './components/wines/WinesShow'
 import NavBar from './components/NavBar'
+import Register from './components/auth/Register'
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
           <NavBar />
 
           <Switch>
+            <Route path='/wines/register' component={Register} />
             <Route path='/wines/:id' component={WinesShow} />
             <Route path='/wines' component={WinesIndex} />
             <Route path='/' component={Home} />
