@@ -47,7 +47,7 @@ class WineShow extends React.Component{
                   <li>Grape: {grape}</li>
                 </ul>
                 <Link to={{
-                  pathname: `/wines/${_id}/${location}`,
+                  pathname: `/wines/${_id}/location`,
                   state: {
                     coords: location,
                     image: image
