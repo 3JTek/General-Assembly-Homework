@@ -9,8 +9,8 @@ import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import WinesIndex from './components/Wines/WinesIndex'
 import WinesShow from './components/Wines/WinesShow'
-import Register from './components/auth/Register'
-import Login from './components/auth/Login'
+import Register from './components/Auth/Register'
+import Login from './components/Auth/Login'
 import WinesNew from './components/Wines/WinesNew'
 
 
@@ -20,11 +20,11 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <nav className="links">
-            <Link to='/' className="link">Home</Link>
-            <Link to='/wines' className="link">Wines Index</Link>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/wines/new">New Wine</Link>
+            <Link to="/" className="link">Home</Link>
+            <Link to="/wines" className="link">Wines Index</Link>
+            <Link to="/register" className="link">Register</Link>
+            <Link to="/login" className="link">Login</Link>
+            <Link to="/wines/new" className="link">New Wine</Link>
           </nav>
           <Switch>
             <Route path="/wines/new" component={WinesNew} />

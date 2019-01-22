@@ -23,9 +23,7 @@ class WinesIndex extends React.Component {
     return(
       <section className= "section">
         <div className= "container">
-
           <div className= "columns is-multiline">
-
             {this.state.wines.map(wine =>
               <div className="column is-one-quarter" key={wine._id}>
                 <WineCard {...wine} />
