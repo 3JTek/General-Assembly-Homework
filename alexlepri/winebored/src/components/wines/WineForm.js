@@ -70,7 +70,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       </div>
 
       <div className="field">
-        <label className="label">ABV</label>
+        <label className="label">ABV %</label>
         <div className="control">
           <input
             className="input"
@@ -83,7 +83,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       </div>
 
       <div className="field">
-        <label className="label">Price</label>
+        <label className="label"> £ Price </label>
         <div className="control">
           <input
             className="input"

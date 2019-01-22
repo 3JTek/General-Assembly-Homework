@@ -39,6 +39,7 @@ class Register extends React.Component {
   render() {
     const { username, email, password, passwordConfirmation } = this.state.data
     return (
+      
       <main className="section">
         <div className="container">
           <form onSubmit={this.handleSubmit}>
