@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import Auth from '../../lib/Auth'
+
 import {Link} from 'react-router-dom'
 
 class WinesShow extends React.Component {
@@ -9,12 +11,24 @@ class WinesShow extends React.Component {
     super()
 
     this.state = {}
+
+
+    this.deleteWine = this.deleteWine.bind(this)
   }
+
+
 
   componentDidMount() {
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({ wine: res.data }))
 
+  }
+
+  deleteWine(){
+    axios.delete(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`,
+      { headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(() => this.props.history.push('/wines'))
+      .catch(err => alert(err.message))
   }
 
   render() {
@@ -50,6 +64,7 @@ class WinesShow extends React.Component {
             </div>
           </div>
           <Link to={`/wines/${_id}/edit`}><button className="button is-dark">Edit</button></Link>
+          <button onClick={this.deleteWine} className="button is-dark">Delete</button>
         </div>
       </section>
     )
