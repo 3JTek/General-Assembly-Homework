@@ -10,7 +10,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
         <div className="control">
           <input
             className="input"
-            placeholder="Name"
+            placeholder="Wine Name"
             name="name"
             onChange={handleChange}
             value={data.name}
@@ -55,7 +55,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       </div>
 
       <div className="field">
-        <label className="label">Wine Price</label>
+        <label className="label">Price</label>
         <div className="control">
           <textarea
             type="number"
@@ -95,7 +95,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
         </div>
       </div>
 
-      <button className="button is-primary">Submit</button>
+      <button className="button is-info">Submit</button>
     </form>
   )
 }
