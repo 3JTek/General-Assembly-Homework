@@ -5,9 +5,9 @@ import './style.scss'
 import 'bulma'
 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
-import WinesIndex from './components/WinesIndex'
+import WinesIndex from './components/wines/WinesIndex'
 import Home from './components/Home'
-import WineShow from './components/WineShow'
+import WineShow from './components/wines/WineShow'
 
 class App extends React.Component {
   render() {
