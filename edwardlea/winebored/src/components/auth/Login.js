@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import Auth from '../../lib/Auth'
+
 
 class Login extends React.Component {
   constructor(){
@@ -25,7 +27,11 @@ class Login extends React.Component {
     e.preventDefault()
     axios
       .post('https://winebored.herokuapp.com/login', this.state.data)
-      .then(() => this.props.history.push('/wines'))
+      .then((res) => {
+        console.log(res)
+        Auth.setToken(res.data.token)
+        this.props.history.push('/wines')
+      })
       .catch(err => alert(err.message))
   }
 
@@ -63,7 +69,7 @@ class Login extends React.Component {
                 />
               </div>
             </div>
-            <button className="button is-dark">Register</button>
+            <button className="button is-dark">Login</button>
           </form>
         </div>
       </main>
