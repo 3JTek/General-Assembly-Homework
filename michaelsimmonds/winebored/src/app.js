@@ -7,8 +7,9 @@ import './style.scss'
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
 import Home from './components/Home'
-import WinesIndex from './components/WinesIndex'
-import WinesShow from './components/WinesShow'
+import WinesIndex from './components/wines/WinesIndex'
+import WinesShow from './components/wines/WinesShow'
+import Register from './components/auth/Register'
 
 
 class App extends React.Component {
@@ -20,11 +21,13 @@ class App extends React.Component {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/wines">Wines</Link>
+            <Link to="/register">Register</Link>
           </nav>
 
           <Switch>
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
+            <Route path='/register' component={Register} />
             <Route path="/" component={Home}/>
           </Switch>
 
