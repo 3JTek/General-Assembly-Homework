@@ -5,7 +5,7 @@ import WinesForm from './WinesForm'
 
 import Auth from '../../lib/Auth'
 
-class WinesNew extends React.Component {
+class WineEdit extends React.Component {
   constructor(){
     super()
 
@@ -25,6 +25,12 @@ class WinesNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidMount() {
+    axios
+      .get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
+      .then(res => this.setState({data: res.data}))
+  }
+
   handleChange({target: {name, value}}){
     const data = { ...this.state.data, [name]: value }
     this.setState({ data })
@@ -32,34 +38,28 @@ class WinesNew extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    console.log(this.state.data._id)
     console.log(this.state.data)
     console.log(Auth.getToken())
     axios
-      .post('https://winebored.herokuapp.com/wines',
+      .put(`https://winebored.herokuapp.com/wines/${this.state.data._id}`,
         this.state.data,
         {headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then(() => this.props.history.push('/wines'))
       .catch((err) => alert(err.message))
   }
 
-  // handleSubmit(e){
-  //   e.preventDefault()
-  //   axios
-  //     .post('https://cheesebored.herokuapp.com/cheeses',
-  //       this.state.data,
-  //       {headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-  //     .then(() => this.props.history.push('/cheeses'))
-  //     .catch((err) => alert(err.message))
-  // }
+
 
 
   render(){
+    console.log(this.props)
     return(
       <WinesForm
         data={this.state.data}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-        type="New"
+        type="Edit"
       />
     )
   }
@@ -68,4 +68,4 @@ class WinesNew extends React.Component {
 }
 
 
-export default WinesNew
+export default WineEdit

@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 
+import {Link} from 'react-router-dom'
+
+
 import Map from './Map'
 
 class ShowWine extends React.Component {
@@ -17,10 +20,14 @@ class ShowWine extends React.Component {
       .then(res => this.setState({wine: res.data}))
   }
 
+
+
   render(){
     if(!this.state.wine) return null
 
-    const {name, image, price, origin, tastingNotes, location, abv, grape} = this.state.wine
+    const {name, image, price, origin, tastingNotes, location, abv, grape, _id} = this.state.wine
+
+    console.log(this.state.wine)
     return (
       <section className="section">
         <div className="container">
@@ -30,6 +37,11 @@ class ShowWine extends React.Component {
             <div className="column">
               <figure className="image" style={{ backgroundImage: `url(${image})`}}>
               </figure>
+              <div className="edit-wines">
+
+                <Link  to={`/wines/${_id}/edit`}><button className="button is-dark">Edit</button></Link>
+                <button className="button is-dark">Delete</button>
+              </div>
             </div>
             <div className="column">
               <h4 className="title is-4">Tasting Notes</h4>
@@ -39,16 +51,16 @@ class ShowWine extends React.Component {
               <p> Strength: {abv}%</p>
               <p> Grape Variety: {grape}</p>
               <hr />
+              <div className="buy-now">
+                <p>Available on Amazon £{price} </p>
+                <button className="button is-dark">Buy it Now</button>
+              </div>
+
               <div>
                 <Map
                   zoom={5}
                   location={location}
                 />
-              </div>
-              <hr />
-              <div className="buy-now">
-                <p>Available on Amazon £{price} </p>
-                <button className="button is-dark">Buy it Now</button>
               </div>
             </div>
           </div>

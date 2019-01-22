@@ -1,11 +1,11 @@
 import React from 'react'
 
-const WinesForm = ({data, handleChange, handleSubmit}) => {
+const WinesForm = ({data, handleChange, handleSubmit, type}) => {
   return (
     <main className="section">
       <div className="container">
-        <form >
-          <h2 className="title is-2">Add New Wine</h2>
+        <form onSubmit={handleSubmit}>
+          <h2 className="title is-2">{type} Wine</h2>
           <div className="field">
             <div className="control">
               <label className="label">Name</label>
@@ -71,6 +71,7 @@ const WinesForm = ({data, handleChange, handleSubmit}) => {
               <label className="label">Abv</label>
               <input
                 name="abv"
+                type="number"
                 className="input"
                 value={data.abv}
                 placeholder="Abv"
@@ -83,6 +84,7 @@ const WinesForm = ({data, handleChange, handleSubmit}) => {
               <label className="label">Price</label>
               <input
                 name="price"
+                type="number"
                 className="input"
                 value={data.price}
                 placeholder="Price"
@@ -90,6 +92,7 @@ const WinesForm = ({data, handleChange, handleSubmit}) => {
               />
             </div>
           </div>
+          <button className="button is-dark"> Add Wine</button>
         </form>
       </div>
     </main>
