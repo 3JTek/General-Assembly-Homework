@@ -20,7 +20,7 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     axios
-      .post('https://cheesebored.herokuapp.com/login', this.state.data)
+      .post('https://winebored.herokuapp.com/login', this.state.data)
       .then((res) => {
         Auth.setToken(res.data.token)
         this.props.history.push('/wines')
