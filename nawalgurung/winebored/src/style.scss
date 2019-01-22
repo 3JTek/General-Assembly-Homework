@@ -1,3 +1,14 @@
+nav .links{
+  padding: 10px;
+  font-size: 1em;
+  color: white;
+
+  &:hover {
+    color: white;
+    background: rgba(255,255,255, 0.5);
+  }
+}
+
 .card-image{
   .image{
     height: 300px;
@@ -5,4 +16,8 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+}
+
+div.column.is-one-quarter{
+  margin: 0;
 }

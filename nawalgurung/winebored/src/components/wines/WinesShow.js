@@ -20,7 +20,7 @@ class WinesShow extends React.Component {
     if(!this.state.wines) return null
 
     const{ name, origin, image, tastingNotes } = this.state.wines
-
+    console.log(this.props)
     return (
       <section className="section">
         <div className="container">

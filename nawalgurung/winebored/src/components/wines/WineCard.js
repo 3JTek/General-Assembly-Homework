@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const WineCard = ({ _id, name, origin, image, user}) => {
   return (
-  // Link to will link to /wines/id of the clicked wine card
+  // Link to will link to /wines/:id of the clicked wine card
     <div className="card">
 
       <Link to={`/wines/${_id}`} >
