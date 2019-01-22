@@ -32,9 +32,13 @@ class WineNew extends React.Component{
   }
 
   handleChange({ target: { name, value }}){
-
-    const data = { ...this.state.data, [name]: value }
-
+    let data
+    if(name==='lat'||name==='lng') {
+      const location = {...this.state.data.location, [name]: value}
+      data = { ...this.state.data, location }
+    }else{
+      data = { ...this.state.data, [name]: value }
+    }
     this.setState({ data })
   }
 

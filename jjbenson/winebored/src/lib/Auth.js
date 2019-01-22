@@ -5,6 +5,9 @@ class Auth{
   static getToken(){
     return localStorage.getItem('token')
   }
+  static signOut(){
+    return localStorage.removeItem('token')
+  }
 }
 
 export default Auth

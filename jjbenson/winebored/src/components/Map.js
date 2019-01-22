@@ -59,7 +59,7 @@ class Map extends React.Component {
     wines.map((wine)=>{
       if(!wine.location) return
       const markerElement = this.createMarkerElement(clickable,wine._id)
-      console.log('wine.location',wine.location)
+      // console.log('wine.location',wine.location)
       return new mapboxgl.Marker(markerElement)
         .setLngLat(wine.location)
         .addTo(this.map)

@@ -31,7 +31,9 @@ class Login extends React.Component{
     axios
       .post('https://winebored.herokuapp.com/login', this.state.data)
       .then((res)=> {
-        Auth.setToken(res.data.token)
+        console.log(this.props)
+        this.props.handleLogIn(res.data.token)
+        // Auth.setToken(res.data.token)
         this.props.history.push('/cheeses')
       })
       .catch((err)=> alert(err.message))
@@ -68,7 +70,7 @@ class Login extends React.Component{
                 />
               </div>
             </div>
-            <button className="button is-primary">Register</button>
+            <button className="button is-primary">Log In</button>
           </form>
         </div>
       </main>

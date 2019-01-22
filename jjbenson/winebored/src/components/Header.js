@@ -2,6 +2,9 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
+// import Auth from '../lib/Auth'
+
+
 
 
 class Header extends React.Component{
@@ -22,6 +25,7 @@ class Header extends React.Component{
   }
 
   render(){
+    console.log('loggedIn',this.props.loggedIn)
     return(
       <header>
 
@@ -46,15 +50,19 @@ class Header extends React.Component{
               <Link to="/wines" className="navbar-item">
                 Wine List
               </Link>
+              {this.props.loggedIn &&
               <Link to="/wines/new" className="navbar-item">
                 New Wine
-              </Link>
+              </Link>}
+
 
             </div>
 
             <div className="navbar-end">
               <div className="navbar-item">
+                {!this.props.loggedIn &&
                 <div className="buttons">
+
                   <Link to="/register" className="button is-light">
                     <strong>Sign up</strong>
                   </Link>
@@ -62,6 +70,14 @@ class Header extends React.Component{
                     <strong>Log In</strong>
                   </Link>
                 </div>
+                }
+                {this.props.loggedIn &&
+                <div className="buttons">
+                  <button className="button is-light" onClick={this.props.handleLogout}>
+                    <strong>Log Out</strong>
+                  </button>
+                </div>
+                }
               </div>
             </div>
           </div>

@@ -14,7 +14,10 @@ class WineShow extends React.Component{
 
   constructor(){
     super()
-    this.state = {}
+    this.state = {
+      showMap: true
+    }
+
 
     this.handleDelete = this.handleDelete.bind(this)
     this.handleEdit = this.handleEdit.bind(this)
@@ -35,6 +38,7 @@ class WineShow extends React.Component{
   getCountryData(){
     axios.get('https://restcountries.eu/rest/v2/name/'+this.state.wines[0].origin)
       .then(res => {
+
         this.setState( {countryData: res.data[0]})
       })
       .catch((err)=>{
@@ -47,6 +51,9 @@ class WineShow extends React.Component{
   getWineData(){
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then( res =>{
+        if( (!res.data.location)||
+        (!res.data.location.lat)||
+        (!res.data.location.lng) )  this.setState({ wines: {showMap: false} })
         this.setState({ wines: [res.data]})
         //Needs to be called after wines to get country name
         this.getCountryData()
@@ -59,8 +66,11 @@ class WineShow extends React.Component{
   }
 
   render(){
-    if(!this.state.wines) return null
-    if(!this.state.countryData) return null
+    if((!this.state.wines)||
+    (!this.state.countryData) ) return null
+
+
+
     const { name, origin, image, tastingNotes, grape, abv, price} = this.state.wines[0]
     const { flag } = this.state.countryData
     return(
@@ -91,14 +101,18 @@ class WineShow extends React.Component{
               </div>
             </div>
           </article>
-          <button className="button" onClick={this.handleClick}>Edit</button>
-          <button className="button" onClick={this.handleDelete}>Delete</button>
+          {this.props.loggedIn &&
+          <div className="buttonStrip">
+            <a className="button" onClick={this.handleEdit}>Edit</a>
+            <a className="button" onClick={this.handleDelete}>Delete</a>
+          </div>
+          }
         </section>
         {/*Add Map down here to make it full width*/}
-        <Map
+        { this.state.showMap && <Map
           zoom="8"
           wines={this.state.wines}
-        />
+        />}
       </div>
     )
   }

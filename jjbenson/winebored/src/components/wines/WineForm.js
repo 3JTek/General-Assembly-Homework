@@ -1,8 +1,13 @@
 import React from 'react'
 
 const WineForm = ({ data, handleChange, handleSubmit }) => {
-  console.log(data.location.lng)
-  // const {lng,lat} = data.location
+  console.log(data.location)
+  let lng = 0
+  let lat = 0
+  if(data.location){
+    lng = data.location.lng
+    lat = data.location.lat
+  }
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -97,7 +102,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
             placeholder="Latitude"
             name="lat"
             onChange={handleChange}
-            value={data.lat}
+            value={lat}
           />
         </div>
         <label className="label">Location Lng</label>
@@ -107,12 +112,12 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
             placeholder="Longitude"
             name="lng"
             onChange={handleChange}
-            value={data.lng}
+            value={lng}
           />
         </div>
       </div>
 
-      <button className="button is-primary">Submit</button>
+      <button className="button is-primary">Save</button>
     </form>
   )
 }
