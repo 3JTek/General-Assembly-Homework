@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const WineCard = ({ _id, name, image, origin, user }) => {
   return (
     <div className="card">
-      <Link to={`/Wines/${_id}`}>
+      <Link to={`/wines/${_id}`}>
         <div className="card-header">
           <h4 className="card-header-title">{name}</h4>
         </div>
