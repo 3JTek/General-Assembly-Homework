@@ -1,6 +1,6 @@
 import React from 'react'
-
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 // import Map from '../Map'
 
@@ -23,6 +23,7 @@ class WineShow extends React.Component {
   render(){
     if(this.state.wine.length === 0) return null
     const {
+      _id,
       name,
       origin,
       image,
@@ -70,6 +71,13 @@ class WineShow extends React.Component {
               <h4 className="title is-5">Tasting Notes:</h4>
               <p>{tastingNotes}</p>
               <hr />
+
+              <Link
+                to={`/wines/${_id}/edit`}
+                className="button"
+              >
+              Edit
+              </Link>
             </div>
 
 
