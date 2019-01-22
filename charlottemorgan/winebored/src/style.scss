@@ -1,8 +1,9 @@
+
 body {
   color: #F7FFF7;
   font-family: 'Roboto', sans-serif;
   background-color: #818AA3;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .card-image {
@@ -36,6 +37,7 @@ h1 {
 .card {
   background-color: #F7FFF7;
   color: #818AA3;
+  height: 100%;
 }
 
 .content {
