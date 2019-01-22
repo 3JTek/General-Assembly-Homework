@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import Auth from '../../lib/Auth'
-import CheeseForm from './CheeseForm'
+import WineForm from './WineForm'
 
 class WinesNew extends React.Component {
   constructor() {
@@ -23,21 +23,23 @@ class WinesNew extends React.Component {
         price: ''
       }
     }
+
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange({ target: { name, value }}) {
+  handleChange( { target: { name, value }}) {
     const data = {... this.state.data, [name]: value }
     this.setState({ data })
   }
 
   handleSubmit(e) {
     e.preventDefault()
+    console.log(this.state.data)
     axios
       .post('https://winebored.herokuapp.com/wines', this.state.data, { headers: {Authorization: `Bearer ${Auth.getToken()}`
       }})
-      .then(() => this.props.history.push('./wines'))
+      .then(() => this.props.history.push('/wines'))
       .catch(err => alert(err.message))
   }
 
@@ -46,11 +48,12 @@ class WinesNew extends React.Component {
   render() {
     return(
       <main className="section">
-        <div clasName="container">
-          <CheeseForm
+        <div className="container">
+          <WineForm
             data={this.state.data}
             handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit} />
+            handleSubmit={this.handleSubmit}
+          />
         </div>
       </main>
     )
