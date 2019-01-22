@@ -7,21 +7,17 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
 
-  componentDidMount() {
-    this.map = new mapboxgl.Map({
-      container: this.mapDiv,
-      style: 'mapbox://styles/mapbox/streets-v9'
-    })
-
-    // const markerElement = document.createElement('DIV')
-    // return new mapboxgl.Marker(markerElement)
-    //   .setLngLat({lat: this.props.location.lat, lng: this.props.location.lng})
-    //   .addTo(this.map)
-  }
-
   render() {
+    const mapDiv = document.querySelector('.map')
+    if(!this.props) return null
     return (
-      <div className="map" ref={el => this.mapDiv = el} />
+      new mapboxgl.Map({
+        container: mapDiv,
+        style: 'mapbox://styles/mapbox/streets-v9',
+        //Placeholder Lat Long until Map works
+        center: { lat: 51.512, lng: -0.0785 },
+        zoom: 14
+      })
     )
   }
 }
