@@ -16,5 +16,15 @@
 }
 
 .image img {
-  width: 25%;
+  width: 30%;
+}
+
+img {
+  margin: 0;
+
+}
+
+picture {
+  display: flex;
+  justify-content: center;
 }
