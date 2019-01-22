@@ -27,10 +27,10 @@ class App extends React.Component {
             <Link to="/register"> Register</Link>
             <Link to="/login"> Login</Link>
             <Link to="/wines/new"> Add Wine</Link>
-            <Link to="/wines/:id"> Edit Wine</Link>
+            <Link to="/wines/:id"></Link>
           </nav>
           <Switch>
-            <Route path="/wines/:id" component={WineEdit} />
+            <Route path="/wines/:id/edit" component={WineEdit} />
             <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
