@@ -9,9 +9,9 @@ import './style.scss'
 
 
 
-import WinesIndex from './components/WinesIndex'
+import WinesIndex from './components/wines/WinesIndex'
 import Home from './components/Home'
-import WinesShow from './components/WinesShow'
+import WinesShow from './components/wines/WinesShow'
 
 
 class App extends React.Component {
