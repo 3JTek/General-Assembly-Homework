@@ -1,11 +1,11 @@
 class Auth{
   static setToken(token){
-    localStorage.setIteam('token', token)
+    localStorage.setItem('wineboredToken', token)
   }
 
   static getToken(){
-    return localStorage.getIteam('token')
+    return localStorage.getItem('wineboredToken')
   }
 }
 
-export default Auth 
+export default Auth
