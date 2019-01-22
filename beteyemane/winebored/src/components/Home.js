@@ -1,5 +1,5 @@
 import React from 'react'
-// import Map from './Map'
+import Map from './Map'
 
 class Home extends React.Component {
   constructor(){
@@ -19,6 +19,7 @@ class Home extends React.Component {
             <h2 className="subtitle is-size-4">
       from all around the world
             </h2>
+            <Map />
           </div>
         </div>
       </section>

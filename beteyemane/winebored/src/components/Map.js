@@ -14,11 +14,7 @@ class Map extends React.Component {
       style: 'mapbox://styles/mapbox/streets-v10',
       zoom: 2
     })
-    this.props.wines.map(wine => {
-      
-    })
   }
-
 
   render() {
     return(
