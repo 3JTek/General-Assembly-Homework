@@ -77,7 +77,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       </div>
       <div className="field">
         <label className="label">Tasting notes</label>
-        <div className="control">
+        <div className="control" id="textarea">
           <textarea
             className="textarea"
             placeholder="Tasting notes"

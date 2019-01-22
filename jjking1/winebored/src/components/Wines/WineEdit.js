@@ -1,26 +1,21 @@
 import React from 'react'
-
 import axios from 'axios'
+
 import Auth from '../../lib/Auth'
 import WineForm from './WineForm.js'
 
-class WineNew extends React.Component {
-  constructor() {
+
+class WineEdit extends React.Component{
+  constructor(){
     super()
 
-    this.state={
-      data:{
-        name:'',
-        origin: '' ,
-        image: '',
-        tastingNotes: '',
-        grape:'',
-        abv: '',
-        price: ''
-      }
-    }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+
+  }
+
+  componentDidMount(){
+    this.setState({ data: this.props.location.state.data })
   }
 
   handleChange({ target: { name, value } }){
@@ -32,7 +27,7 @@ class WineNew extends React.Component {
     e.preventDefault()
 
     axios
-      .post('https://winebored.herokuapp.com/wines',
+      .put(`https://winebored.herokuapp.com/wines/${this.state.data._id}`,
           this.state.data,
           { headers: { Authorization: `Bearer ${Auth.getToken()}` }})
       .then(() => this.props.history.push('/wines'))
@@ -40,9 +35,11 @@ class WineNew extends React.Component {
   }
 
   render(){
+    if(!this.state) return null
+    console.log(this.state.data)
     return(
       <main className="section">
-        <div className="container columns is-centered">
+        <div className="container">
           <WineForm
             data={this.state.data}
             handleChange={this.handleChange}
@@ -54,5 +51,4 @@ class WineNew extends React.Component {
   }
 }
 
-
-export default WineNew
+export default WineEdit

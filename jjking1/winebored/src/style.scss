@@ -6,6 +6,8 @@
   }
 }
 
+
+
 .card-image{
   .image{
     height: 300px;
@@ -18,6 +20,15 @@
 #showImage{
   display: flex;
   justify-content: center;
+}
+
+
+input.input{
+  width: 300px;
+}
+
+#textarea{
+  width: 500px;
 }
 
 a{

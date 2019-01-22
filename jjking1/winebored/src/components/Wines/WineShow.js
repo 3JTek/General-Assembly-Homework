@@ -21,7 +21,7 @@ class WineShow extends React.Component{
   render(){
     if(!this.state.wine) return <h1 className="title is-1"> Loading... </h1>
     const {_id, name, origin, user, grape, price, tastingNotes, location, image, abv} = this.state.wine
-    console.log(location)
+    console.log(name)
     return(
       <section className="section">
         <div className="container">
@@ -48,6 +48,13 @@ class WineShow extends React.Component{
                   <li>Price: {price}</li>
                   <li>Grape: {grape}</li>
                 </ul>
+                <Link to={{
+                  pathname: `/wines/${_id}/edit`,
+                  state: {
+                    data: this.state.wine
+                  }}}> Edit This Wine </Link>
+                  <hr />
+                  
                 {location &&
                   <Link to={{
                     pathname: `/wines/${_id}/location`,

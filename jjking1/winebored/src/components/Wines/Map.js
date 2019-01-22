@@ -36,6 +36,7 @@ class Map extends React.Component{
 
   render(){
     if(!this.props) return null
+    console.log('RAN MAP')
     return(
       <div className="map" ref={el => this.mapDiv = el}/>
     )
