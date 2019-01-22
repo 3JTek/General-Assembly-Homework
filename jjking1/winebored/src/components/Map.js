@@ -8,12 +8,13 @@ class Map extends React.Component{
 
   componentDidMount(){
     const coords = this.props.location.state.coords
+    console.log(coords)
     const image = this.props.location.state.image
 
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v9',
-      center: [coords.lat, coords.lng],
+      center: [coords.lng, coords.lat],
       zoom: 1
     })
 
