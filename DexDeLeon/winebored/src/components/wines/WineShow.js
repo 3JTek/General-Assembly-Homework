@@ -2,7 +2,7 @@ import React from 'react'
 
 import axios from 'axios'
 
-import Map from './Map'
+// import Map from '../Map'
 
 class WineShow extends React.Component {
 
@@ -27,12 +27,12 @@ class WineShow extends React.Component {
       origin,
       image,
       tastingNotes,
-      location,
+      // location,
       grape,
       abv,
       price
     } = this.state.wine
-    const {lat, lng} = location
+    // const {lat, lng} = location
     return (
       <section className="section">
         <div className="container wineShow">
@@ -42,7 +42,7 @@ class WineShow extends React.Component {
 
           <div className="columns">
 
-            <div className="column is-half">
+            <div className="column is-one-third">
               <figure className="image">
                 <img src={image} alt={name} />
               </figure>
@@ -51,10 +51,10 @@ class WineShow extends React.Component {
               </div>
             </div>
 
-            <Map
+            {/*<Map
               zoom={5}
               center={{lat, lng}}
-            />
+            />*/}
 
             <div className="column">
               <h4 className="title is-5">
