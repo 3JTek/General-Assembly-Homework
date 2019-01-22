@@ -11,6 +11,7 @@ import WinesIndex from './components/Wines/WinesIndex'
 import WinesShow from './components/Wines/WinesShow'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import WinesNew from './components/Wines/WinesNew'
 
 
 class App extends React.Component {
@@ -23,8 +24,10 @@ class App extends React.Component {
             <Link to='/wines' className="link">Wines Index</Link>
             <Link to="/register">Register</Link>
             <Link to="/login">Login</Link>
+            <Link to="/wines/new">New Wine</Link>
           </nav>
           <Switch>
+            <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
             <Route path="/register" component={Register} />
