@@ -35,7 +35,6 @@ class WinesIndex extends React.Component {
     )
   }
 
-
 }
 
 export default WinesIndex
