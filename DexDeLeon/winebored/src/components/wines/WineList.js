@@ -27,7 +27,7 @@ class WineList extends React.Component {
       <section className="section wineList">
         <div className="container columns is-multiline">
           {wines.map(wine =>
-            <Link to={`/wines/${wine._id}`} key={wine._id} className="column is-half">
+            <Link to={`/wines/${wine._id}`} key={wine._id} className="column is-one-third">
               <WineCard {...wine} />
             </Link>
           )}
