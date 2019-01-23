@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 // import Map from '../Map'
+import Auth from '../../Lib/Auth'
 
 class WineShow extends React.Component {
 
@@ -12,13 +13,27 @@ class WineShow extends React.Component {
     this.state = {
       wine: []
     }
+
+    this.deleteWine = this.deleteWine.bind(this)
   }
 
   componentDidMount(){
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({ wine: res.data }))
+      .catch(error => alert(error))
   }
 
+  deleteWine(){
+    axios.delete(
+      `https://winebored.herokuapp.com/wines/${this.state.wine._id}`,
+      { headers: { Authorization: `Bearer ${Auth.getToken()}`} }
+    )
+      .then(res => {
+        console.log(res)
+        this.props.history.push('/wines')
+      })
+      .catch(error => alert(error))
+  }
 
   render(){
     if(this.state.wine.length === 0) return null
@@ -77,10 +92,15 @@ class WineShow extends React.Component {
                   to={`/wines/${_id}/edit`}
                   className="button column is-4"
                 >
-                Edit
+                  Edit
                 </Link>
 
-                <a className="button is-danger column is-4">Delete</a>
+                <a
+                  className="button is-danger column is-4"
+                  onClick={this.deleteWine}
+                >
+                  Delete
+                </a>
               </div>
             </div>
 
