@@ -7,8 +7,12 @@ import './style.scss'
 import {BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import Home from './components/Home'
-import WinesIndex from './components/WinesIndex'
-import WinesShow from './components/WinesShow'
+import WinesIndex from './components/wines/WinesIndex'
+import WinesShow from './components/wines/WinesShow'
+import WinesNew from './components/wines/WinesNew'
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+
 
 class App extends React.Component {
   render() {
@@ -17,14 +21,20 @@ class App extends React.Component {
         <main>
 
           <nav>
-            <Link to ="/" >Homepage </Link>
-            <Link to="/wines" > Wine List</Link>
+            <Link to="/">Home</Link>
+            <Link to="/wines">Wines List</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/wines/new">Wine New</Link>
           </nav>
 
           <Switch>
+            <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
-            <Route exact path="/" component={Home} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/" component={Home} />
           </Switch>
         </main>
 
