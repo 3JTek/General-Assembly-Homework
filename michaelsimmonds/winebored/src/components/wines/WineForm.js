@@ -59,7 +59,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       <div className="field">
         <label className="label">Grape</label>
         <div className="control">
-          <textarea
+          <input
             className="input"
             placeholder="Grape"
             name="grape"
@@ -72,7 +72,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       <div className="field">
         <label className="label">Location</label>
         <div className="control">
-          <textarea
+          <input
             className="input"
             placeholder="Location"
             name="location"
@@ -85,7 +85,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       <div className="field">
         <label className="label">ABV</label>
         <div className="control">
-          <textarea
+          <input
             className="input"
             placeholder="ABV"
             name="abv"
@@ -98,7 +98,7 @@ const WineForm = ({ data, handleChange, handleSubmit }) => {
       <div className="field">
         <label className="label">Price</label>
         <div className="control">
-          <textarea
+          <input
             className="input"
             placeholder="Price"
             name="price"

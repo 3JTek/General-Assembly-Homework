@@ -20,12 +20,18 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
 
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/wines">Wines</Link>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/wines/new">Add Wine</Link>
+          <nav className="navbar is-primary">
+            <div className="container">
+              <div className="navbar-start">
+                <Link className="links" to="/"> Home </Link>
+                <Link className="links" to="/wines"> Wines </Link>
+                <Link className="links" to="/wines/new"> Add Wine </Link>
+              </div>
+              <div className="navbar-end">
+                <Link className="links" to="/login"> Login </Link>
+                <Link className="links" to="/register"> Register </Link>
+              </div>
+            </div>
           </nav>
 
           <Switch>
