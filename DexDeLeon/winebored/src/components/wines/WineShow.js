@@ -72,12 +72,16 @@ class WineShow extends React.Component {
               <p>{tastingNotes}</p>
               <hr />
 
-              <Link
-                to={`/wines/${_id}/edit`}
-                className="button"
-              >
-              Edit
-              </Link>
+              <div className="columns" id="buttons">
+                <Link
+                  to={`/wines/${_id}/edit`}
+                  className="button column is-4"
+                >
+                Edit
+                </Link>
+
+                <a className="button is-danger column is-4">Delete</a>
+              </div>
             </div>
 
 

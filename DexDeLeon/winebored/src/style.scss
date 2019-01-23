@@ -107,6 +107,19 @@ form {
   }
 }
 
+#buttons {
+  justify-content: space-around;
+
+  a, button {
+    display: flex;
+    tranition: border 0.13s ease;
+
+    &:hover {
+      border: 5px solid $wineRed
+    }
+  }
+}
+
 @media only screen and (max-width: 1087px){
 
   section.section {
