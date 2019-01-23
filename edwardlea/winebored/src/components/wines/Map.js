@@ -6,6 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
   componentDidMount(){
+    if(!this.props.location) return null
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/light-v9',

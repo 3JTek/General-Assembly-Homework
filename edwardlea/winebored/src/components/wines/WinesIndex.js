@@ -34,7 +34,6 @@ class WinesIndex extends React.Component {
       </section>
     )
   }
-
 }
 
 export default WinesIndex
