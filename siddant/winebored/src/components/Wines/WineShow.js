@@ -13,12 +13,11 @@ class WineShow extends React.Component {
 
   componentDidMount(){
     axios.get(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
-      .then(res => this.setState({wines: res.data}))
+      .then(res => this.setState({data: res.data}))
   }
 
   deleteWine(){
-    console.log(this.props.match.params.id)
-    axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.wines,
+    axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.data,
       {
         headers: {Authorization: `Bearer ${Auth.getToken()}`}
       }
@@ -28,8 +27,8 @@ class WineShow extends React.Component {
   }
 
   render(){
-    if(!this.state.wines) return null
-    const {name, origin, image, tastingNotes, price, grape} = this.state.wines
+    if(!this.state.data) return null
+    const {name, origin, image, tastingNotes, price, grape} = this.state.data
 
     return(
       <section className="section">
@@ -53,9 +52,10 @@ class WineShow extends React.Component {
                 <hr />
                 <h4 className="title is-4">Grape</h4>
                 <p>{grape}</p>
-
               </div>
             </div>
+            <button className="button is-primary" onClick={this.deleteWine}>Delete</button>
+
           </div>
         </div>
       </section>

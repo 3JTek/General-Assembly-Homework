@@ -25,8 +25,6 @@ class EditWine extends React.Component {
   componentDidMount(){
     axios.get(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({data: res.data}))
-    console.log(this.state)
-
   }
 
   handleChange({target: {name, value}}){
@@ -44,7 +42,7 @@ class EditWine extends React.Component {
         }
       )
       .then(() => this.props.history.push('/wines'))
-      .catch(err => console.log(err))
+      .catch(err => alert(err.message))
   }
 
   render(){
@@ -54,7 +52,6 @@ class EditWine extends React.Component {
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         header="Edit Wines"
-
       />
     )
   }

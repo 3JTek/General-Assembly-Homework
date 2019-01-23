@@ -3,7 +3,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const WinesCard =  ({ _id, name, image, origin, user }) =>  {
-
   return (
     <div >
       <div className="card">

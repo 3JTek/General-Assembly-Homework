@@ -31,8 +31,6 @@ class AddWine extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    //http://winebored.herokuapp.com/register
-    console.log(this.state.data)
     axios
       .post('http://winebored.herokuapp.com/wines', this.state.data,
         {
@@ -40,7 +38,7 @@ class AddWine extends React.Component {
         }
       )
       .then(() => this.props.history.push('/wines'))
-      .catch(err => console.log(err))
+      .catch(err => alert(err.message))
   }
 
   render(){

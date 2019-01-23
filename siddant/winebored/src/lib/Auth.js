@@ -1,10 +1,10 @@
 class Auth{
   static setToken(token){
-    localStorage.setItem('wineboredToken', token)
+    localStorage.setItem('token', token)
   }
 
   static getToken(){
-    return localStorage.getItem('wineboredToken')
+    return localStorage.getItem('token')
   }
 }
 

@@ -18,9 +18,6 @@ class ShowWineIndex extends React.Component {
       .then(res => this.setState({ wines: res.data }))
   }
 
-  deleteWine(){
-
-  }
   render(){
     return(
       <section className="section">
