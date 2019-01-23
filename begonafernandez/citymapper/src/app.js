@@ -32,18 +32,20 @@ $(()=>{
         return 0
       }
     })
-    setInterval(displayTubeLines(), 5000)
-
+    displayTubeLines()
   }
 
-  $.ajax({
-    method: 'GET',
-    url: 'https://api.tfl.gov.uk/line/mode/tube/status'
-  })
-    .then(lines => {
-      tubeLines = lines
-      displayTubeLines()
+  function getLines() {
+    $.ajax({
+      method: 'GET',
+      url: 'https://api.tfl.gov.uk/line/mode/tube/status'
     })
-
+      .then(lines => {
+        tubeLines = lines
+        displayTubeLines()
+      })
+  }
+  setInterval(getLines, 5000)
+  getLines()
   $sort.on('change', handleSort)
 })
