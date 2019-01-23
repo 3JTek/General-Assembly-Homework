@@ -14,7 +14,7 @@ class WinesIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https:winebored.herokuapp.com/wines')
+    axios.get('https://winebored.herokuapp.com/wines')
       .then(res => this.setState({ wines: res.data }))
 
   }

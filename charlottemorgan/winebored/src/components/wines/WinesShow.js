@@ -1,23 +1,36 @@
 import React from 'react'
 import axios from 'axios'
 
+import Auth from '../../lib/Auth'
+
+import {Link} from 'react-router-dom'
+
 class WinesShow extends React.Component {
 
   constructor() {
     super()
 
     this.state = {}
+
+    this.deleteWine = this.deleteWine.bind(this)
   }
 
   componentDidMount() {
-    axios.get(`https:winebored.herokuapp.com/wines/${this.props.match.params.id}`)
+    axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({ wine: res.data }))
 
   }
 
+  deleteWine(){
+    axios.delete(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`,
+      { headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(() => this.props.history.push('/wines'))
+      .catch(err => alert(err.message))
+  }
+
   render() {
     if(!this.state.wine) return null
-    const { name, origin, image, tastingNotes, price, grape } = this.state.wine
+    const { name, origin, image, tastingNotes, price, grape, _id } = this.state.wine
     return(
       <section className="section">
         <div className="container">
@@ -43,10 +56,12 @@ class WinesShow extends React.Component {
               <hr />
 
               <h4 className="title is-4">Price</h4>
-              <p>{price}</p>
+              <p>£{price}</p>
               <hr />
             </div>
           </div>
+          <Link to={`/wines/${_id}/edit`}><button className="button is-dark">Edit</button></Link>
+          <button onClick={this.deleteWine} className="button is-dark">Delete</button>
         </div>
       </section>
     )
