@@ -1,6 +1,7 @@
 import React from 'react'
 
 const WineForm = ({data, handleSubmit, handleChange}) => {
+  console.log(data)
   return(
     <form onSubmit={handleSubmit}>
       <h1 className="title is-1">New Wine</h1>

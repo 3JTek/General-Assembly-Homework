@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class WinesShow extends React.Component {
   constructor() {
@@ -19,6 +20,7 @@ class WinesShow extends React.Component {
     const { name, grape, origin, price, image, tastingNotes, abv } = this.state.wine
     return (
       <section className='section'>
+        <Link to={`/wines/edit/${this.state.wine._id}`}>Edit</Link>
         <div className='container'>
           <div className='columns'>
             <div className='column'>
