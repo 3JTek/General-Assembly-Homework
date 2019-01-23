@@ -122,7 +122,8 @@ form {
 
 @media only screen and (max-width: 1087px){
 
-  section.section {
+  section.section,
+  main.section {
     padding-top: 10%;
 
     .container.wineShow{
@@ -132,14 +133,16 @@ form {
 }
 @media only screen and (max-width: 768px){
 
-  section.section {
+  section.section,
+  main.section {
     padding-top: 12%;
   }
 }
 
 @media only screen and (max-width: 600px){
 
-  section.section {
+  section.section,
+  main.section {
     padding-top: 18%;
 
     .container.wineShow{
