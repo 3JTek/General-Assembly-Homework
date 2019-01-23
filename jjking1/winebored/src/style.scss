@@ -2,8 +2,11 @@
   height: 100vh;
   img{
     height: 60px;
+    max-height: 60px;
   }
 }
+
+
 
 .card-image{
   .image{
@@ -17,6 +20,15 @@
 #showImage{
   display: flex;
   justify-content: center;
+}
+
+
+input.input{
+  width: 300px;
+}
+
+#textarea{
+  width: 500px;
 }
 
 a{

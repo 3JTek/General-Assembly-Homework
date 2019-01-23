@@ -21,7 +21,7 @@ class WineShow extends React.Component{
   render(){
     if(!this.state.wine) return <h1 className="title is-1"> Loading... </h1>
     const {_id, name, origin, user, grape, price, tastingNotes, location, image, abv} = this.state.wine
-    console.log(location)
+    console.log(name)
     return(
       <section className="section">
         <div className="container">
@@ -31,7 +31,9 @@ class WineShow extends React.Component{
 
           <div className="columns">
             <div className="column" id="showImage">
+              <figure className="image">
                 <img src={image} alt={name}/>
+              </figure>
             </div>
 
             <div className="column">
@@ -47,11 +49,20 @@ class WineShow extends React.Component{
                   <li>Grape: {grape}</li>
                 </ul>
                 <Link to={{
-                  pathname: `/wines/${_id}/location`,
+                  pathname: `/wines/${_id}/edit`,
                   state: {
-                    coords: location,
-                    image: image
-                  }}}> View Origin Location on Map </Link>
+                    data: this.state.wine
+                  }}}> Edit This Wine </Link>
+                  <hr />
+                  
+                {location &&
+                  <Link to={{
+                    pathname: `/wines/${_id}/location`,
+                    state: {
+                      coords: location,
+                      image: image
+                    }}}> View Origin Location on Map </Link>
+                  }
               </div>
             </div>
           </div>
