@@ -27,10 +27,10 @@ class WinesIndex extends React.Component {
       <section className="section">
         <div className="container">
 
-          <div className="column is multiline">
+          <div className="columns is-multiline">
 
             {this.state.wines.map(wine =>
-              <div key={wine._id}>
+              <div className="column is-one-quarter" key={wine._id}>
                 <WineCard {...wine} />
               </div>
 

@@ -20,14 +20,14 @@ class WinesShow extends React.Component {
     if(!this.state.wines) return null
 
     const{ name, origin, image, tastingNotes } = this.state.wines
-
+    console.log(this.props)
     return (
       <section className="section">
         <div className="container">
           <h1 className="title is-1"> {name}</h1>
           <h2 className="subtitle is-2"> {origin}</h2>
           <hr />
-
+          <button>Edit</button>
           <div className="columns">
             <div className="column">
               <figure className="image">

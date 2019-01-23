@@ -2,9 +2,9 @@ import React from 'react'
 //destructor react-router-dom Link
 import { Link } from 'react-router-dom'
 
-const WineCard = ({ _id, name, origin, image, user}) => {
+const WineCard = ({ _id, name, price, origin, image, user}) => {
   return (
-  // Link to will link to /wines/id of the clicked wine card
+  // Link to will link to /wines/:id of the clicked wine card
     <div className="card">
 
       <Link to={`/wines/${_id}`} >
@@ -20,6 +20,7 @@ const WineCard = ({ _id, name, origin, image, user}) => {
           <div className="content">
             <p><strong>Origin:</strong>{origin}</p>
             <p><strong>Uploaded by:</strong>{user.username}</p>
+            <p><strong>Price: </strong>{price}</p>
           </div>
         </div>
       </Link>
