@@ -24,6 +24,7 @@ class Register extends React.Component {
       .then(() => this.props.history.push('/wines'))
       .catch(err => alert(err.message))
 
+
   }
 
 

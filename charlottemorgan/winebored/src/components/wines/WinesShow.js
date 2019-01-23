@@ -12,11 +12,8 @@ class WinesShow extends React.Component {
 
     this.state = {}
 
-
     this.deleteWine = this.deleteWine.bind(this)
   }
-
-
 
   componentDidMount() {
     axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
