@@ -6,6 +6,9 @@
     background-repeat: no-repeat;
   }
 }
+.section{
+  content: center;
+}
 .column{
   .image{
     img{
@@ -20,5 +23,9 @@
   .input{
     width: 230px;
     margin-right: 10px;
+  }
+  .textarea{
+    width: 230px;
+    
   }
 }

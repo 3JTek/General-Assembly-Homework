@@ -5,8 +5,9 @@ import {Link} from 'react-router-dom'
 const WinesCard =  ({ _id, name, image, origin, user }) =>  {
   return (
     <div >
-      <Link to={`/wines/${_id}`}>
-        <div className="card">
+      <div className="card">
+
+        <Link to={`/wines/${_id}`}>
           <div className="card-image">
             <figure className="image" style={{backgroundImage: `url(${image})`}} />
           </div>
@@ -19,9 +20,12 @@ const WinesCard =  ({ _id, name, image, origin, user }) =>  {
               <p>Uploaded by:<strong> {user.username}</strong></p>
             </div>
           </div>
+        </Link>
+        <div className="control">
+          <Link className="button is-danger" to={`/wines/edit/${_id}`}>Edit the Wine</Link>
         </div>
+      </div>
 
-      </Link>
     </div>
   )
 }

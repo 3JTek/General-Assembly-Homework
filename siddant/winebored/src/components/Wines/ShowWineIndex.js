@@ -17,6 +17,7 @@ class ShowWineIndex extends React.Component {
     axios.get('http://winebored.herokuapp.com/wines')
       .then(res => this.setState({ wines: res.data }))
   }
+
   render(){
     return(
       <section className="section">
@@ -24,7 +25,9 @@ class ShowWineIndex extends React.Component {
           <div className="columns is-multiline">
             {this.state.wines.map(wine =>
               <div key={wine._id} className="column is-one-third">
-                <WinesCard {...wine} />
+                <WinesCard
+                  {...wine}
+                />
               </div>
             )
             }

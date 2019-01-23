@@ -4,8 +4,14 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
 import Home from './components/Home'
-import ShowWineIndex from './components/ShowWineIndex'
-import WineShow from './components/WineShow'
+import ShowWineIndex from './components/Wines/ShowWineIndex'
+import WineShow from './components/Wines/WineShow'
+import AddWine from './components/Wines/AddWine'
+import EditWine from './components/Wines/EditWine'
+
+
+import Register from './components/Auth/Register'
+import Login from './components/Auth/Login'
 
 import 'bulma'
 import './style.scss'
@@ -26,25 +32,26 @@ class App extends React.Component {
               <div className="navbar-start">
                 <Link className="navbar-item" to="/">Home</Link>
                 <Link className="navbar-item" to="/wines">Wines</Link>
+                <Link className="navbar-item" to="/wines/new">Add Wines</Link>
               </div>
             </div>
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="buttons">
-                  <a className="button is-primary">
-                    <strong>Sign up</strong>
-                  </a>
-                  <a className="button is-light">
-                    Log in
-                  </a>
+                  <Link className="navbar-item button is-primary" to="/register">Register</Link>
+                  <Link className="navbar-item button is-light" to="/login">Log in</Link>
                 </div>
               </div>
             </div>
           </nav>
           <Switch>
+            <Route path="/wines/edit/:id" component={EditWine} />
+            <Route path="/wines/new" component={AddWine} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
             <Route path="/wines/:id" component={WineShow} />
             <Route path="/wines" component={ShowWineIndex} />
-            <Route exact path="/" component={Home} />
+            <Route path="/" component={Home} />
           </Switch>
         </main>
       </BrowserRouter>

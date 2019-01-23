@@ -1,20 +1,37 @@
 import React from 'react'
 import axios from 'axios'
 
+import Auth from '../../lib/Auth'
+
+
 class WineShow extends React.Component {
   constructor(){
     super()
     this.state = {}
+    this.deleteWine = this.deleteWine.bind(this)
   }
 
   componentDidMount(){
     axios.get(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
-      .then(res => this.setState({wines: res.data}))
+      .then(res => this.setState({data: res.data}))
+  }
+
+  deleteWine(){
+    axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`,
+      {
+        headers: {Authorization: `Bearer ${Auth.getToken()}`}
+      }
+    )
+      .then(() =>{
+        alert(`Wine ${this.state.data.name} deleted`)
+        this.props.history.push('/wines')
+      } )
+      .catch(err => alert(err.message))
   }
 
   render(){
-    if(!this.state.wines) return null
-    const {name, origin, image, tastingNotes, price, grape} = this.state.wines
+    if(!this.state.data) return null
+    const {name, origin, image, tastingNotes, price, grape} = this.state.data
 
     return(
       <section className="section">
@@ -38,13 +55,10 @@ class WineShow extends React.Component {
                 <hr />
                 <h4 className="title is-4">Grape</h4>
                 <p>{grape}</p>
-                <hr />
-                <div className="control">
-                  <input className="input" type="number" value="0"   min="0"/>
-                  <button className="button is-primary">Add to Basket</button>
-                </div>
               </div>
             </div>
+            <button className="button is-primary" onClick={this.deleteWine}>Delete</button>
+
           </div>
         </div>
       </section>
