@@ -37,7 +37,6 @@ class WinesShow extends React.Component {
               <div className="content">
                 <h4 className="title is-4">Tasting Notes</h4>
                 <p>{tastingNotes}</p>
-
               </div>
             </div>
           </div>
