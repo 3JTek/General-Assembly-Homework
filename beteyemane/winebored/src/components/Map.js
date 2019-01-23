@@ -16,6 +16,7 @@ class Map extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return(
       <main>
         <div className="map" ref={el => this.mapDiv = el}/>

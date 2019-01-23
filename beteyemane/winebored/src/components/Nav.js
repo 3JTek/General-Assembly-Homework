@@ -22,15 +22,20 @@ const Nav = () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button">
+              <Link to="/wines/login" className="button">
                 <strong>Login</strong>
-              </a>
+              </Link>
+              <Link to="/wines/register" className="button">
+                <strong>Register</strong>
+              </Link>
+              <Link to="/wines/new" className="button is-info">
+                <strong>Add a Wine</strong>
+              </Link>
             </div>
           </div>
         </div>
       </div>
     </nav>
-
   )
 }
 

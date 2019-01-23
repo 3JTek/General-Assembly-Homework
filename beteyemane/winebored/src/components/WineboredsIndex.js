@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import WineboredsCards from './WineboredsCards'
+import WineEdit from './WineEdit'
+
+// import { Link} from 'react-router-dom'
 
 class WineboredsIndex extends React.Component {
   constructor() {
@@ -24,6 +27,7 @@ class WineboredsIndex extends React.Component {
             {this.state.wines.map(wine =>
               <div className="column is-one-quarter" key={wine._id}>
                 <WineboredsCards {...wine}/>
+                <WineEdit location={location} />
               </div>
             )}
           </div>

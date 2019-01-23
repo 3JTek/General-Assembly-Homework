@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 
+import { Link } from 'react-router-dom'
+
+
 class WineboardsShow extends React.Component {
   constructor(){
     super()
@@ -30,12 +33,15 @@ class WineboardsShow extends React.Component {
             <div className="column">
               <h4 className="title is-4">Tasting Notes</h4>
               <p>{tastingNotes}</p>
+
               <hr />
               <h4 className="title is-4">Price</h4>
               <p>{price}</p>
               <hr />
+              <Link to="/wines/edit" className="is-size-5 button is-danger">
+                <strong>Edit</strong>
+              </Link>
             </div>
-
           </div>
         </div>
       </section>
