@@ -3,11 +3,11 @@ import axios from 'axios'
 
 import Auth from '../lib/Auth'
 
-import WineForm from  './WineForm'
+import WineForm from './WineForm'
 
-class WineNew extends React.Component {
-  constructor() {
-    super()
+class WineEdit extends React.Component {
+  constructor(props) {
+    super(props)
     this.state = {
       data: {
         name: '',
@@ -19,8 +19,18 @@ class WineNew extends React.Component {
         price: ''
       }
     }
+
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  formToEdit() {
+    axios
+      .get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.data)
+    console.log(this.props.match.params.id)
+      .then(res => {
+        this.setState({name: res.data.name})
+      })
   }
 
   handleChange({target: {name, value}}) {
@@ -39,7 +49,6 @@ class WineNew extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     return(
       <main className="section">
         <div className="container">
@@ -52,4 +61,4 @@ class WineNew extends React.Component {
     )
   }
 }
-export default WineNew
+export default WineEdit

@@ -63,7 +63,7 @@ class Login extends React.Component {
                 />
               </div>
             </div>
-            <button className="button is-info">Log In</button>
+            <button className="button is-black">Log In</button>
 
           </form>
         </div>

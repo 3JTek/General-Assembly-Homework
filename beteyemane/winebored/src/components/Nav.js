@@ -28,8 +28,8 @@ const Nav = () => {
               <Link to="/wines/register" className="button">
                 <strong>Register</strong>
               </Link>
-              <Link to="/wines/new" className="button">
-                <strong>Add Wine</strong>
+              <Link to="/wines/new" className="button is-info">
+                <strong>Add a Wine</strong>
               </Link>
             </div>
           </div>
