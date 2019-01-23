@@ -3,19 +3,19 @@ import axios from 'axios'
 
 import WineCard from './WineCard'
 
-class WineIndex extends React.Component {
+class WinesIndex extends React.Component {
 
   constructor() {
     super()
 
     this.state = {
-      Wines: []
+      wines: []
     }
   }
 
   componentDidMount() {
     axios.get('https://winebored.herokuapp.com/wines')
-      .then(res => this.setState({ Wines: res.data }))
+      .then(res => this.setState({ wines: res.data }))
   }
 
   render() {
@@ -23,7 +23,7 @@ class WineIndex extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns is-multiline">
-            {this.state.Wines.map(wine =>
+            {this.state.wines.map(wine =>
               <div className="column is-one-quarter" key={wine._id}>
                 <WineCard {...wine} />
               </div>
@@ -35,4 +35,4 @@ class WineIndex extends React.Component {
   }
 }
 
-export default WineIndex
+export default WinesIndex

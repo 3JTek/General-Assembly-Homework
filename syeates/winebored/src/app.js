@@ -1,41 +1,46 @@
-// Import the Language
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// Import the styling libraries
 import 'bulma'
 import './style.scss'
 
-// Import the navigation router witch contains switch
-import {BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
-// Import the components
 import Home from './components/Home'
-import WineIndex from './components/WineIndex'
-import WineShow from './components/WineShow'
+import WinesIndex from './components/wines/WinesIndex'
+import WinesShow from './components/wines/WinesShow'
+import WinesNew from './components/wines/WinesNew'
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
 
-// Structure of the page with the interchangeable components (switch) depends on the router-dom
+
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <main>
-          <nav className="level has-background-primary has-text-dark">
-            <Link to ="/" className="level-item has-text-dark	" >Homepage </Link>
-            <Link to="/wines" className="level-item has-text-dark	" > Wine List</Link>
+
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/wines">wines Index</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/wines/new">wine New</Link>
           </nav>
+
           <Switch>
-            <Route path="/wines/:id" component={WineShow} />
-            <Route path="/wines" component={WineIndex} />
-            <Route exact path="/" component={Home} />
+            <Route path="/wines/new" component={WinesNew} />
+            <Route path="/wines/:id" component={WinesShow} />
+            <Route path="/wines" component={WinesIndex} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/" component={Home} />
           </Switch>
         </main>
       </BrowserRouter>
     )
   }
 }
-
 
 ReactDOM.render(
   <App />,
