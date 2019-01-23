@@ -1,6 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import WinesEdit from './WinesEdit'
+
 class WineShow extends React.Component {
   constructor() {
     super()
@@ -43,7 +47,10 @@ class WineShow extends React.Component {
             </div>
           </div>
 
-
+          <Link to="/wines/edit"> Edit wine</Link>
+          <Switch>
+            <Route path="/wines/" component={WinesEdit} />
+          </Switch>
         </div>
       </section>
     )
