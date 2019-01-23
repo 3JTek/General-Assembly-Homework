@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import WineCard from './WineCard'
 
-class WineList extends React.Component {
+class WinesIndex extends React.Component {
 
   constructor(){
     super()
@@ -24,7 +24,7 @@ class WineList extends React.Component {
   render(){
     const wines = this.state.wines
     return(
-      <section className="section wineList">
+      <section className="section WinesIndex">
         <div className="container columns is-multiline">
           {wines.map(wine =>
             <Link to={`/wines/${wine._id}`} key={wine._id} className="column is-one-third">
@@ -38,4 +38,4 @@ class WineList extends React.Component {
 
 }
 
-export default WineList
+export default WinesIndex
