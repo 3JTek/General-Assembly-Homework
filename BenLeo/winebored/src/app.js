@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Home from './components/Home'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
-import WineIndex from './components/WineIndex'
+import WinesIndex from './components/WinesIndex'
 import WineNew from './components/WineNew'
 import WineShow from './components/WineShow'
 
@@ -30,7 +30,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/wines/new" component={WineNew} />
             <Route path="/wines/:id" component={WineShow} />
-            <Route path="/wines" component={WineIndex} />
+            <Route path="/wines" component={WinesIndex} />
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login} />
             <Route path="/" component={Home} />
