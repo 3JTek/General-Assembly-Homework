@@ -2,7 +2,7 @@ import React from 'react'
 
 import axios from 'axios'
 
-// import Map from './Map'
+import Map from './Map'
 
 class WineShow extends React.Component {
   constructor() {
@@ -48,11 +48,11 @@ class WineShow extends React.Component {
                 <h4 className="title is-4">Price</h4>
                 <p>£{price}</p>
 
-                {
-                // <div className="map">
-                //   <Map  location={location}/>
-                // </div>}
-                }
+
+                <div className="map">
+                  <Map location={location}/>
+                </div>
+
 
                 <hr />
 

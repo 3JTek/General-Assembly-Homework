@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import WineCard from './WineCard'
 
-class WineIndex extends React.Component {
+class WinesIndex extends React.Component {
 
   constructor() {
     super()
@@ -41,4 +41,4 @@ class WineIndex extends React.Component {
   }
 }
 
-export default WineIndex
+export default WinesIndex
