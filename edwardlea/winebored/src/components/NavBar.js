@@ -54,12 +54,18 @@ class NavBar extends React.Component {
             <Link className="navbar-item" to="/wines/new">
               Add Wine
             </Link>
-            <Link className="navbar-item" to="/register">
-              Register
-            </Link>
-            <Link className="navbar-item" to="/login">
-              Login
-            </Link>
+          </div>
+        </div>
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
+              <Link className="button is-dark" to="/register">
+                Register
+              </Link>
+              <Link className="button is-dark" to="/login">
+                Login
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
