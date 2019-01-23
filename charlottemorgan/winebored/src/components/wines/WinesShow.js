@@ -59,7 +59,7 @@ class WinesShow extends React.Component {
               <hr />
 
               <h4 className="title is-4">Price</h4>
-              <p>{price}</p>
+              <p>£{price}</p>
               <hr />
             </div>
           </div>
