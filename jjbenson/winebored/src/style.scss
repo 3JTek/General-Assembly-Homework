@@ -84,6 +84,17 @@ $navbar-breakpoint: 600px;
 }
 
 
+.buttonStrip{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  .button{
+    margin:10px;
+    background-color: $red;
+    color:white;
+  }
+}
+
 hr{
     margin: 0.5rem 0;
 }

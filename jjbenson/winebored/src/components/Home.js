@@ -3,6 +3,8 @@ import React from 'react'
 import Map from './Map'
 import axios from 'axios'
 
+
+
 class Home extends React.Component{
 
   constructor(){
@@ -13,11 +15,20 @@ class Home extends React.Component{
   componentDidMount(){
     axios.get('https://winebored.herokuapp.com/wines')
       .then((res)=>{
-        this.setState({ wines: res.data})
+        // console.log(res.data)
+        const wines = res.data.filter((wine)=> {
+          if(!wine.location) return false
+          if(!wine.location.lat) return false
+          if(!wine.location.lng) return false
+          return true
+        })
+        this.setState({ wines })
       })
+      .catch((err)=>console.log(err.message))
   }
   render(){
     if(!this.state.wines) return null
+    // console.log(this.state.wines)
     return(
       <div className="homeComp">
         <section className="section">

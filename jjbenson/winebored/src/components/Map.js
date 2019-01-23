@@ -57,9 +57,9 @@ class Map extends React.Component {
     })
 
     wines.map((wine)=>{
-      
+      if(!wine.location) return
       const markerElement = this.createMarkerElement(clickable,wine._id)
-
+      // console.log('wine.location',wine.location)
       return new mapboxgl.Marker(markerElement)
         .setLngLat(wine.location)
         .addTo(this.map)
@@ -69,6 +69,7 @@ class Map extends React.Component {
 
 
   render() {
+    // if(!this.state.wines)return null
     //If redirect true, go to the clicked page
     if (this.state.redirect) {
       return <Redirect push to={'/wines/'+this.state.savedId} />
