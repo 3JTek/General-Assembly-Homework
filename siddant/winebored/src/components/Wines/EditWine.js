@@ -40,7 +40,7 @@ class EditWine extends React.Component {
           headers: { Authorization: `Bearer ${Auth.getToken()}`}
         }
       )
-      .then(() => this.props.history.push('/wines'))
+      .then(() => this.props.history.push(`/wines/${this.props.match.params.id}`))
       .catch(err => alert(err.message))
   }
 
