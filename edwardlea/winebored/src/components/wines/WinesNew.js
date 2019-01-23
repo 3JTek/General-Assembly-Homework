@@ -38,7 +38,10 @@ class WinesNew extends React.Component {
       .post('https://winebored.herokuapp.com/wines',
         this.state.data,
         {headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-      .then(() => this.props.history.push('/wines'))
+      .then((res) => {
+        console.log(res)
+        this.props.history.push(`/wines/${res.data._id}`)
+      })
       .catch((err) => alert(err.message))
   }
 

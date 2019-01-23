@@ -45,7 +45,7 @@ class WineEdit extends React.Component {
       .put(`https://winebored.herokuapp.com/wines/${this.state.data._id}`,
         this.state.data,
         {headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-      .then(() => this.props.history.push('/wines'))
+      .then(() => this.props.history.push(`/wines/${this.state.data._id}`))
       .catch((err) => alert(err.message))
   }
 
