@@ -12,39 +12,38 @@ class App extends React.Component {
     this.state = {
       humanMove: null,
       computerMove: null,
-      windConditions: {
-        paper: 'rock',
-        rock: 'scissors',
-        scissors: 'paper'
-      }
+      result: 'Go ahead. Try your luck'
     }
+
+    this.windConditions = {
+      paper: 'rock',
+      rock: 'scissors',
+      scissors: 'paper'
+    }
+    
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(e) {
-    this.setState({ humanMove: e.target.id})
-    this.computerMove()
+    const computerMove = this.computerMove()
+    const result = this.findWinner()
+    this.setState({ humanMove: e.target.id, computerMove, result})
   }
 
   computerMove() {
-    this.setState({ computerMove: Object.keys(this.state.windConditions)[Math.floor(Math.random() * Math.floor(3))] })
+    return Object.keys(this.windConditions)[Math.floor(Math.random() * Math.floor(3))]
   }
 
   findWinner() {
-    let winner
     if (this.state.computerMove && this.state.humanMove) {
       if (this.state.computerMove === this.state.humanMove) {
-        winner ='Tie'
-      } else if (this.state.windConditions[this.state.humanMove] === this.state.computerMove) {
-        winner = 'You win'
+        return 'Tie'
+      } else if (this.windConditions[this.state.humanMove] === this.state.computerMove) {
+        return 'You win'
       } else {
-        winner = 'Computer win'
+        return 'Computer win'
       }
-    } else {
-      winner = 'Go ahead. Try your luck'
     }
-
-    return winner
   }
 
 
@@ -52,7 +51,7 @@ class App extends React.Component {
     return(
       <main>
         <h1>Rock Paper Scissors</h1>
-        <h3>{this.findWinner()}</h3>
+        <h3>{this.state.result}</h3>
         <PlayerBoard
           type={'Computer'}
           move={this.state.computerMove}/>
