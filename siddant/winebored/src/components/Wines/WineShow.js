@@ -17,12 +17,15 @@ class WineShow extends React.Component {
   }
 
   deleteWine(){
-    axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.data,
+    axios.delete(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`,
       {
         headers: {Authorization: `Bearer ${Auth.getToken()}`}
       }
     )
-      .then(() => this.props.history.push('/wines'))
+      .then(() =>{
+        alert(`Wine ${this.state.data.name} deleted`)
+        this.props.history.push('/wines')
+      } )
       .catch(err => alert(err.message))
   }
 

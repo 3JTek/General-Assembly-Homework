@@ -34,7 +34,6 @@ class EditWine extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    console.log(this.state.data)
     axios
       .put(`http://winebored.herokuapp.com/wines/${this.props.match.params.id}`, this.state.data,
         {
