@@ -8,7 +8,6 @@ import WineForm from './WineForm'
 class WinesEdit extends React.Component{
   constructor(){
     super()
-    this.id = ''
     this.state = {
       data: {
         name: '',
@@ -34,10 +33,11 @@ class WinesEdit extends React.Component{
       .then(res => this.setState({data: {...res.data}}))
   }
 
-
   handleChange({target: {name, value}}){
     if(name === 'lat' || name === 'lng'){
-      console.log(this.state.data.location)
+      const location = {...this.state.data.location, [name]: value}
+      const data = {...this.state.data, location }
+      this.setState({data})
     } else {
       this.setState({data: {...this.state.data, [name]: value}})
     }
@@ -48,18 +48,14 @@ class WinesEdit extends React.Component{
     axios.put(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`,
       this.state.data,
       {headers: {'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then(() => {
-        this.props.history.push('/wines')
-      })
+      .then(() => this.props.history.push('/wines'))
       .catch(err => console.log(err.message))
   }
 
   handleDelete(){
     axios.delete(`https://winebored.herokuapp.com/wines/${this.id}`,
       {headers: {'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then(() => {
-        this.props.history.push('/wines')
-      })
+      .then(() => this.props.history.push('/wines'))
       .catch(err => console.log(err.message))
   }
 

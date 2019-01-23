@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WineForm = ({data, handleChange, handleSubmit, handleDelete}) => {
+const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -95,7 +95,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete}) => {
             placeholder="Latitute"
             name="lat"
             onChange={handleChange}
-            value={data.location.lat}
+            value={data.location? data.location.lat:''}
           />
         </div>
       </div>
@@ -107,7 +107,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete}) => {
             placeholder="Longitude"
             name="lng"
             onChange={handleChange}
-            value={data.location.lng}
+            value={data.location? data.location.lng:''}
           />
         </div>
       </div>

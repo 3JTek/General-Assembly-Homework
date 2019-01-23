@@ -18,7 +18,8 @@ class WinesNew extends React.Component{
         price: '',
         tastingNotes: '',
         location: []
-      }
+      },
+      error: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,12 +38,20 @@ class WinesNew extends React.Component{
       .then(() => {
         this.props.history.push('/wines')
       })
-      .catch(err => console.log(err.message))
+      .catch(err => {
+        // console.dir(err)
+        this.setState({errors: err.response.data.errors})
+      } )
   }
 
   render(){
     return(
-      <WineForm data = {this.state.data}  handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+      <WineForm
+        data = {this.state.data}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        errors={this.state.errors}
+      />
     )
   }
 }

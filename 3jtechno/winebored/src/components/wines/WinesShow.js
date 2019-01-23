@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import Map from './Map'
 
-class WineShow extends React.Component{
+class WinesShow extends React.Component{
 
   constructor(){
     super()
@@ -60,4 +60,4 @@ class WineShow extends React.Component{
 
 
 
-export default WineShow
+export default WinesShow
