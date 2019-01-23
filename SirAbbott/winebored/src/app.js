@@ -7,8 +7,11 @@ import 'bulma'
 import './style.scss'
 
 import Home from './components/Home.js'
-import WinesIndex from './components/WinesIndex.js'
-import WinesShow from './components/WinesShow.js'
+import WinesIndex from './components/wines/WinesIndex.js'
+import WinesShow from './components/wines/WinesShow.js'
+import WinesNew from './components/wines/WinesNew.js'
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
 
 class App extends React.Component {
 
@@ -17,13 +20,19 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <nav className="nav">
-            <Link to="/">Home </Link>
-            <Link to="/wines"> Wines Index</Link>
+          <nav className="navbar is-primary">
+            <Link className="links" to="/">Home </Link>
+            <Link className="links" to="/wines"> Wines Index</Link>
+            <Link className="links" to="/wines/new">New Wine</Link>
+            <Link className="links" to="/register">Register</Link>
+            <Link className="links" to="/login">Log in</Link>
           </nav>
           <Switch>
+            <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route  exact path="/" component={ Home } />
           </Switch>
         </main>

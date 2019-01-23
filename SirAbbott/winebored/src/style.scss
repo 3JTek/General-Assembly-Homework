@@ -1,9 +1,20 @@
-.nav {
+.navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
   height: 50px;
+
+  .links {
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+  }
+
+  .links:hover {
+    color: red;
+  }
 }
 
 .card-image {
