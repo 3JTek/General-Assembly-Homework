@@ -25,7 +25,7 @@ class App extends React.Component {
     return (
 
       <main>
-        <Map countries={this.state.countries} zoom={1.5} />
+        <Map countries={this.state.countries} zoom={12} center={{ lat: 51.4975, lng: -0.1357 }} />
       </main>
 
     )
