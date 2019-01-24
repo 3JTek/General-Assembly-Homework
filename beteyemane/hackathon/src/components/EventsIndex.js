@@ -12,14 +12,19 @@ class EventsIndex extends React.Component {
     }
   }
 
-  // for(let i = 0; i < this.state.events.length)
-
   componentDidMount() {
-    axios.get('https://www.skiddle.com/api/v1/events/search/?api_key=0c64ae5cca7903c86353520198c58021')
+    axios.get('https://www.skiddle.com/api/v1/events/?api_key=0c64ae5cca7903c86353520198c58021')
       .then(response => this.setState({events: response.data.results}))
   }
 
+  filerTown() {
+    this.state.events.filer((event => event))
+    
+  }
+
   render() {
+    console.log(this.state.events[0])
+
     if(!this.state.events[0]) return null
 
     return (
@@ -27,7 +32,7 @@ class EventsIndex extends React.Component {
         <div className="container">
           <div className="columns is-multiline">
             {this.state.events.map((event, index) =>
-              <div className="column is-one-quarter" key={index}>
+              <div className="column is-one-half" key={index}>
                 <EventCard {...event}/>
               </div>)}
           </div>

@@ -37,11 +37,17 @@
 }
 
 .card {
-  height: 600px;
+  height: 700px;
+  width: 400px;
+  text-align: center;
 }
 
 .title-container {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.venue-title {
+
 }

@@ -4,6 +4,7 @@ import EventsIndex from './components/EventsIndex'
 import NavBar from './components/NavBar'
 import './style.scss'
 import Home from './components/Home'
+import EventsShow from './components/EventsShow'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
@@ -21,7 +22,8 @@ class App extends React.Component {
         <main>
           <NavBar />
           <Switch>
-            <Route path="/events" component={EventsIndex}/>
+            <Route path="/events/:id" component={EventsShow}/>
+            <Route path="/events/" component={EventsIndex}/>
             <Route path="/" component={Home}/>
           </Switch>
         </main>
