@@ -21,7 +21,6 @@ class EventsIndex extends React.Component {
 
   render() {
     if(!this.state.events[0]) return null
-    console.log(this.state.events.length)
 
     return (
       <main className="section">
