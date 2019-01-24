@@ -14,16 +14,35 @@ class Map extends React.Component {
       zoom: this.props.zoom
     })
 
+
+
     this.props.events.map(event => {
       const latitude = event.venue.latitude
       const longitude = event.venue.longitude
       const name = event.eventname
-      console.log(name, latitude, longitude)
+      const venue = event.venue.name
+      const desc = event.description
+      const image = event.imageurl
+      //console.log(name, venue, desc, latitude, longitude, image)
+
+
+
+      //add a popup
+
+      const popup = new mapboxgl.Popup({offset: 40})
+        .setHTML(`
+          <div class="event-image">
+            <img src="${image}" alt="${name}" />
+          </div>
+          <h4>${name}</h4>
+          <i>${venue}</i>
+          <p>${desc}</p>
+          `)
 
       return new mapboxgl.Marker()
         .setLngLat({ lat: latitude, lng: longitude })
         .addTo(this.map)
-        //.setPopup(popup)
+        .setPopup(popup)
 
     })
   }

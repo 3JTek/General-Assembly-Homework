@@ -6,6 +6,18 @@ body {
   height: 100vh;
 }
 
-h1 {
-  color: peachpuff;
-}
+.mapboxgl-popup {
+        max-width: 170px;
+        font: 9pt 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        & h4 {
+          margin: 5px 2px 2px 2px;
+          color: orange;
+        }
+        & p {
+          margin: 2px;
+        }
+        & .event-image {
+          display: flex;
+          justify-content: center;
+        }
+    }
