@@ -14,7 +14,6 @@ body{
 
 #search-bar{
   border-radius: 20px;
-
 }
 
 .movies-display{
@@ -36,6 +35,16 @@ body{
 .side-part{
   border: 2px solid black;
 }
+
+#search-bar{
+  outline: none;
+  background: none;
+  background-color: grey;
+  font-weight: 700;
+  font-size: 25px;
+  height: 55px;
+}
+
 
 .card{
   border-radius: 15px;

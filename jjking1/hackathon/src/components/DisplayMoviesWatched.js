@@ -7,7 +7,7 @@ const DisplayMoviesWatched = ({ movies }) => {
   return(
     <div className="columns is-multiline">
         {movies.map((movie,index) =>
-          <div className="column is-one-third" key={index}>
+          <div className="column is-3" key={index}>
             <MovieCard
               title={movie.Title}
               image={movie.Poster}

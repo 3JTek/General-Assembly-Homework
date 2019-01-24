@@ -53,7 +53,7 @@ class App extends React.Component {
   getMovie(e){
     this.setState({ searchText: '', possibleResults: []})
     axios
-      .get(`${baseUrl}?i=${e.target.id}${apiKey}`)
+      .get(`${baseUrl}?i=${e.currentTarget.id}${apiKey}`)
         .then(res => {
           this.setState({
             timeWatched: this.state.timeWatched + parseFloat(res.data.Runtime),
@@ -66,7 +66,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <main>
+      <main className="has-background-grey">
         <section className="section">
           <div className="container">
             <DisplayTime timeWatched={this.state.timeWatched} />
@@ -80,11 +80,10 @@ class App extends React.Component {
         </section>
 
         <section className="columns section">
-          <div className="column is-3 side-part"></div>
-          <div className="column is-6 middle-part">
+          <div className="column is-8 middle-part">
             <DisplayMoviesWatched movies={this.state.moviesWatched} />
           </div>
-          <div className="column is-3 side-part"></div>
+          <div className="column is-4 side-part"></div>
         </section>
 
       </main>
