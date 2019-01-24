@@ -8,10 +8,10 @@ const Home = () => {
   return(
     <section className="welcome-hero">
       <div className="container is-fluid">
-        <p className="line anim-typewriter">Welcome to Brain training. </p>
+        <p className="line anim-typewriter">Welcome to Brain training. Click below to play </p>
         <div>
           <hr />
-          <Link className="train-link" to="/game">Click here to train your brain</Link>
+          <Link className="train-link" to="/game">Train your brain</Link>
         </div>
       </div>
 

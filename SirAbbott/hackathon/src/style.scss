@@ -37,7 +37,7 @@ $control-radius-small: 0;
     top: 50%;
     width: 16em;
     margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    border-right: 2px solid black;
     font-size: 180%;
     text-align: center;
     white-space: nowrap;
@@ -54,12 +54,12 @@ $control-radius-small: 0;
     }
 
     to {
-      width: 16em;
+      width: 28em;
     }
   }
   @keyframes blinkTextCursor {
     from {
-      border-right-color: rgba(255, 255, 255, 0.75);
+      border-right-color: black;
     }
 
     to {
