@@ -45,6 +45,12 @@ body{
   height: 55px;
 }
 
+#top{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 
 .card{
   border-radius: 15px;
