@@ -22,7 +22,7 @@ class App extends React.Component {
 
           <Switch>
             <Route path="/events/:id" component={EventsShow} />
-            <Route path="/events" component={EventsIndex}>Events</Route>
+            <Route exact path="/events" component={EventsIndex}>Events</Route>
             <Route path="/" component={Home}>Home</Route>
           </Switch>
         </main>

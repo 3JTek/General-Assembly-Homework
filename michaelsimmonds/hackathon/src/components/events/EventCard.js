@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 // const initDate = this.state.event.results.date.split('-')
 // const sortedDate = initDate[2] + '/' + initDate[1] + '/' +  initDate[0]
 
-const EventCard = ({ id, date, eventname, venue, largeimageurl, entryprice}) => {
+const EventCard = ({ id, date, eventname, venue, largeimageurl}) => {
   return(
 
     <div className="card">
@@ -22,8 +22,9 @@ const EventCard = ({ id, date, eventname, venue, largeimageurl, entryprice}) => 
         <div className="card-content">
           <div className="content">
             <p>{date}</p>
-            <p>{venue.name}, {venue.address}, {venue.town}, {venue.postcode}</p>
-            <p>{entryprice}</p>
+            <p>{venue.name}</p>
+            <p>{venue.address}, {venue.town}</p>
+            <p>{venue.postcode}</p>
           </div>
         </div>
 
