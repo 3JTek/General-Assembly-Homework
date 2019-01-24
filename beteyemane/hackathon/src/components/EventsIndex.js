@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import EventCard from './EventCard'
 
+
 class EventsIndex extends React.Component {
   constructor() {
     super()
@@ -21,11 +22,13 @@ class EventsIndex extends React.Component {
     console.log('events.results', this.state.events)
 
     return (
-      <main>
-        <div>
-          {this.state.events.map((event, index) =>
-            <div key={index}> <EventCard {...event}/>
-            </div>)}
+      <main className="section">
+        <div className="container">
+          <div className="columns is-multiline">
+            {this.state.events.map((event, index) =>
+              <div className="column is-one-quarter" key={index}> <EventCard {...event}/>
+              </div>)}
+          </div>
         </div>
       </main>
     )
