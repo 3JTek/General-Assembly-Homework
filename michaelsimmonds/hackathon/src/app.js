@@ -6,18 +6,26 @@ import './style.scss'
 
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
+import Navbar from './components/Navbar'
 import Home from './components/Home'
 import EventsIndex from './components/events/EventsIndex'
+import EventsShow from './components/events/EventsShow'
+
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
 
-        <Switch>
-          <Route path="/events" component={EventsIndex}>Events</Route>
-          <Route path="/" component={Home}>Home</Route>
-        </Switch>
+        <main>
+          <Navbar />
+
+          <Switch>
+            <Route path="/events/:id" component={EventsShow} />
+            <Route path="/events" component={EventsIndex}>Events</Route>
+            <Route path="/" component={Home}>Home</Route>
+          </Switch>
+        </main>
 
       </BrowserRouter>
     )
