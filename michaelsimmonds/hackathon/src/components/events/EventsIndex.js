@@ -20,10 +20,6 @@ class EventsIndex extends React.Component {
 
   render () {
     if(!this.state.events.results) return null
-    console.log(this.state.events.results[1].date)
-
-    // console.log(sortedDate)
-
     return(
       <section className="section">
         <div className="container">
@@ -42,5 +38,3 @@ class EventsIndex extends React.Component {
 }
 
 export default EventsIndex
-
-// <h1>{this.state.events.results[index].eventname}</h1>

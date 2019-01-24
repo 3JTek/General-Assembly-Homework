@@ -20,9 +20,7 @@ class EventsShow extends React.Component {
       .catch(err => alert(err.message))
   }
 
-
   render() {
-    console.log(this.props)
     if (!this.state.event.results) return null
     const { eventname, link, description, entryprice, venue } = this.state.event.results
     const initDate = this.state.event.results.date.split('-')
@@ -36,7 +34,7 @@ class EventsShow extends React.Component {
             <div className="column">
               <Map
                 center={{ lat: 51.508, lng: -0.08 }}
-                zoom={10}
+                zoom={11}
                 markers={venue}
               />
             </div>

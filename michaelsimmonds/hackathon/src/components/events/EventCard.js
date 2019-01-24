@@ -1,20 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
-// const initDate = this.state.event.results.date.split('-')
-// const sortedDate = initDate[2] + '/' + initDate[1] + '/' +  initDate[0]
-
 const EventCard = ({ id, eventname, venue, date, largeimageurl}) => {
 
-  console.log({date})
   const initDate = date.split('-')
   const sortedDate = initDate[2] + '/' + initDate[1] + '/' +  initDate[0]
-  console.log(sortedDate)
-  // const sortedDate = initDate[2] + '/' + initDate[1] + '/' +  initDate[0]
 
   return(
-
     <div className="card">
       <Link to={`/events/${id}`}>
 
