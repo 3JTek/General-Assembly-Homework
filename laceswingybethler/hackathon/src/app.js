@@ -20,11 +20,12 @@ class App extends React.Component {
 
 
   render() {
-    //if (!this.state) return null
-    console.log(this.state)
+    if (!this.state) return null
+    //console.log(this.state)
     return (
       <main>
         <Map
+          events={this.state.events.results}
           center={{ lat: 51.5, lng: -0.07}}
           zoom={11}
         />

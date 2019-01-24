@@ -14,10 +14,18 @@ class Map extends React.Component {
       zoom: this.props.zoom
     })
 
+    this.props.events.map(event => {
+      const latitude = event.venue.latitude
+      console.log(latitude)
+    })
+
   }
 
 
   render() {
+    //console.log(this.props.events.results)
+
+
     return (
       <div className='map' ref={mapDiv => this.mapDiv = mapDiv} />
     )
