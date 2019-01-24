@@ -20,14 +20,14 @@ class EventsIndex extends React.Component {
 
   render () {
     if(!this.state.events.results) return null
-    console.log(this.state.events.results[0])
-    // const initDate = this.state.event.results.date.split('-')
-    // const sortedDate = initDate[2] + '/' + initDate[1] + '/' +  initDate[0]
+    console.log(this.state.events.results[1].date)
+
     // console.log(sortedDate)
+
     return(
       <section className="section">
         <div className="container">
-          <h1 className="title">Comedy Nights</h1>
+          <h1 className="title">Comedy Nights in London</h1>
           <div className="columns is-multiline">
             {this.state.events.results.map(event => (
               <div className="column is-one-quarter" key={event.id}>
