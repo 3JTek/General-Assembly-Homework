@@ -23,13 +23,17 @@ class Map extends React.Component {
       const venue = event.venue.name
       const desc = event.description
       const image = event.imageurl
-      //console.log(name, venue, desc, latitude, longitude, image)
+      //const type = event.venue.type
+      const type = event.EventCode.toLowerCase()
+
+      const link = event.link
+      console.log(type)
 
 
 
       //add a popup
 
-      const popup = new mapboxgl.Popup({offset: 40})
+      const popup = new mapboxgl.Popup({offset: 20})
         .setHTML(`
           <div class="event-image">
             <img src="${image}" alt="${name}" />
@@ -37,9 +41,15 @@ class Map extends React.Component {
           <h4>${name}</h4>
           <i>${venue}</i>
           <p>${desc}</p>
+          <a href="${link}">Get Ticket</a>
+          <a href="https://www.google.co.uk/maps"> Directions </a>
           `)
 
-      return new mapboxgl.Marker()
+      const markerElement = document.createElement('DIV')
+      markerElement.className = `${type}`
+
+
+      return new mapboxgl.Marker(markerElement)
         .setLngLat({ lat: latitude, lng: longitude })
         .addTo(this.map)
         .setPopup(popup)
