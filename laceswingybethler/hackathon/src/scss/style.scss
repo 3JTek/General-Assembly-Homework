@@ -34,6 +34,29 @@ body {
   }
 }
 
+.loader:empty {
+    background-image: url("https://cdn.dribbble.com/users/5976/screenshots/3928966/e_letter_mark_for_energy_events_logo_design_symbol_by_alex_tass.png");
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 30%;
+    height: 30%;
+    border: 1.5em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.5em solid #000000;
+    border-radius: 50%;
+    animation: load8 1s infinite linear;
+  }
+
+  @keyframes load8 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
 .map {
   height: 95vh;
 }
@@ -236,7 +259,7 @@ body {
       border-top: 17px solid $live;
     }
 
-// BARPUB = Bar/Pub event
+
     .barpub {
       position: absolute;
       top: 40%;
@@ -299,8 +322,6 @@ body {
       border: 10px solid transparent;
       border-top: 17px solid $theatre;
     }
-
-    // COMEDY = Comedy
 
     .comedy {
       position: absolute;

@@ -5,6 +5,7 @@ import axios from 'axios'
 import './scss/style.scss'
 import Map from './components/Map'
 import Key from './components/Key'
+import LoadingPage from './components/LoadingPage'
 
 
 
@@ -57,15 +58,18 @@ class App extends React.Component {
     console.log(this.state.events)
     //console.log(this.state.events.results.venue.name)
     return (
-      <main>
+      <div>
+        <LoadingPage />
+        <main>
 
-        <Map
-          events={this.state.events.results}
-          center={{ lat: this.state.userLat, lng: this.state.userLng}}
-          zoom={12}>
-          <Key />
-        </Map>
-      </main>
+          <Map
+            events={this.state.events.results}
+            center={{ lat: this.state.userLat, lng: this.state.userLng}}
+            zoom={12}>
+            <Key />
+          </Map>
+        </main>
+      </div>
     )
   }
 }
