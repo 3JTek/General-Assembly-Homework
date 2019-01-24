@@ -1,0 +1,150 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+body {
+  font-family: 'Patua One', sans-serif;
+}
+
+header.section {
+  padding: 1%;
+
+  h1{
+    text-align: center;
+  }
+}
+
+section.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+  div.hero-body {
+    background: linear-gradient(transparent 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.8) 90%);
+
+    h1{
+      font-size: 3em;
+    }
+  }
+}
+
+div.content {
+  font-size: 1.2em;
+}
+
+div.column.album {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+  }
+}
+
+form {
+
+  label.label{
+    font-size: 1.6em;
+  }
+
+  input.input {
+    font-family: inherit;
+    padding: 3% 2%;
+    font-size: 1.5em;
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+ul#searchResultList {
+  width: 100vw;
+
+  a li {
+    padding: 5%;
+    text-align: center;
+    transition: background 0.5s ease;
+    font-size: 2em;
+
+    &#a0 {
+      background-color: #CEEDDB;
+      color: #67597A;
+
+
+      &:hover {
+        background: #96ADA0;
+        color: darken(#67597A, 20%);
+      }
+    }
+
+    &#a1 {
+      background-color: #85BAA1;
+      color: #544E61;
+
+      &:hover{
+        background: #79AA93;
+        color: darken(#544E61, 20%);
+      }
+    }
+
+    &#a2 {
+      background-color: #6E8894;
+      color: darken(#6E8894, 50%);
+
+      &:hover {
+        background: #51636C;
+        color: lighten(#6E8894, 20%);
+      }
+    }
+
+    &#a3 {
+      background-color: #544E61;
+      color: #85BAA1;
+
+      &:hover {
+        background: #36323E;
+        color: lighten(#85BAA1, 20%);
+      }
+    }
+
+    &#a4 {
+      background-color: #67597A;
+      color: #CEEDDB;
+
+      &:hover {
+        background: #42394E;
+        color: lighten(#CEEDDB, 20%);
+      }
+    }
+  }
+
+}
+
+button.button,
+a.button {
+  font-family: inherit;
+  font-size: 1.4em;
+  display: block;
+  margin: auto;
+  padding: 0 5%;
+  background: #544E61;
+  color: #CEEDDB;
+  transition: background 0.5s ease;
+
+  &:hover {
+    background: darken(#544E61, 20%);
+    color: #fff;
+  }
+}
+
+a.button {
+  position: fixed;
+  top: 0;
+  display: flex;
+  border-radius: 0 0 25px 0;
+  z-index: 1;
+  border: none;
+}
