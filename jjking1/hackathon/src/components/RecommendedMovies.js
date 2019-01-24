@@ -4,15 +4,15 @@ import axios from 'axios'
 
 
 
-const RecommendedMovies = ({ id }) => {
-
-
-
-
+const RecommendedMovies = ({ movies }) => {
 
 
   return(
-    null
+      <div className="related-box columns is-multiline">
+      {movies.map((movie,index) =>
+        index < 6 &&
+            <img className="column is-5 related" key={index}  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>)}
+      </div>
   )
 }
 

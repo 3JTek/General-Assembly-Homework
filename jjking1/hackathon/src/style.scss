@@ -1,4 +1,12 @@
+.related{
+  height: 200px;
+}
 
+
+
+
+
+// ----------------------------------------------------------
 body{
   height: 100vh;
   background-color: darkgrey;
@@ -12,14 +20,12 @@ body{
   }
 }
 
+
 #search-bar{
   border-radius: 20px;
 }
 
-.movies-display{
-  margin-top: 5%;
-  position: absolute;
-}
+
 
 .movies-watched{
   height: 300px;
@@ -35,6 +41,8 @@ body{
 .side-part{
   border: 2px solid black;
 }
+
+
 
 #search-bar{
   outline: none;

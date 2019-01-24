@@ -63,16 +63,19 @@ class App extends React.Component {
             moviesWatched: [res.data, ...this.state.moviesWatched]
           })
         })
-        this.getRelatedMovies()
+        this.getRelatedMovies(e.currentTarget.id)
   }
 
-  getRelatedMovies(){
+  getRelatedMovies(id){
     if(this.state.moviesWatched.length < 1) return null
-    let id
-    console.log(this.state.moviesWatched[0].imdbID)
     axios
-      .get(`https://api.themoviedb.org/3/find/${this.state.moviesWatched[0].imdbID}?api_key=adfdea606b119c5d76189ff434738475&external_source=imdb_id`)
-        .then(res => id = res.data.movie_results[0].id)
+      .get(`https://api.themoviedb.org/3/find/${id}?api_key=adfdea606b119c5d76189ff434738475&external_source=imdb_id`)
+        .then(res => this.makeRecommendedRequest(res.data.movie_results[0].id))
+  }
+
+  makeRecommendedRequest(id){
+    axios.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=adfdea606b119c5d76189ff434738475`)
+      .then(res => this.setState({ relatedMovies: res.data.results}))
   }
 
   render() {
@@ -91,13 +94,13 @@ class App extends React.Component {
         </section>
 
         <section className="columns section">
-          <div className="column is-8 middle-part">
+          <div className="column is-9 middle-part">
             <DisplayMoviesWatched movies={this.state.moviesWatched} />
           </div>
-          <div className="column is-4 side-part">
-            {this.state.moviesWatched.length > 0 &&
+          <div className="column is-3 side-part">
+            {this.state.relatedMovies &&
             <RecommendedMovies
-              id={this.state.moviesWatched[0].imdbID}
+              movies={this.state.relatedMovies}
             />}
           </div>
         </section>
