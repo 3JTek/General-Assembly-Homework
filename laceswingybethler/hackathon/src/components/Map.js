@@ -63,7 +63,11 @@ class Map extends React.Component {
 
 
     return (
-      <div className='map' ref={mapDiv => this.mapDiv = mapDiv} />
+      <div>
+        <div className='map' ref={mapDiv => this.mapDiv = mapDiv}></div>
+        <div>{this.props.children}</div>
+      </div>
+
     )
   }
 }
