@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import EventCard from './EventCard'
 
 class EventsIndex extends React.Component {
   constructor() {
@@ -23,12 +24,7 @@ class EventsIndex extends React.Component {
       <main>
         <div>
           {this.state.events.map((event, index) =>
-            <div key={index}> <h1> {event.eventname} </h1>
-              <h2>{event.venue.name}</h2>
-              <img src={event.imageurl} alt={event.eventname} />
-              <h3>{event.date}</h3>
-              <h4> Time: {event.openingtimes.doorsopen} - {event.openingtimes.doorsclose}</h4>
-              <h3>{event.description}</h3>
+            <div key={index}> <EventCard {...event}/>
             </div>)}
         </div>
       </main>
