@@ -2,7 +2,7 @@ import React from 'react'
 
 import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken = process.env.MAPBOX_TOKEN
-//import 'mapbox-gl/dist/mapbox-gl.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 class Map extends React.Component {
 
@@ -16,9 +16,16 @@ class Map extends React.Component {
 
     this.props.events.map(event => {
       const latitude = event.venue.latitude
-      console.log(latitude)
-    })
+      const longitude = event.venue.longitude
+      const name = event.eventname
+      console.log(name, latitude, longitude)
 
+      return new mapboxgl.Marker()
+        .setLngLat({ lat: latitude, lng: longitude })
+        .addTo(this.map)
+        //.setPopup(popup)
+
+    })
   }
 
 

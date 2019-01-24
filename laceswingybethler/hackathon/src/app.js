@@ -21,7 +21,8 @@ class App extends React.Component {
 
   render() {
     if (!this.state) return null
-    //console.log(this.state)
+    //console.log(this.state.events)
+    //console.log(this.state.events.results.venue.name)
     return (
       <main>
         <Map
