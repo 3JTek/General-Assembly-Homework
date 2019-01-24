@@ -18,6 +18,7 @@ const EventCard = ({ eventname, description, venue, largeimageurl, date, opening
           <h3>{description}</h3>
           <h3>{date}</h3>
           <h4> Time: {openingtimes.doorsopen} - {openingtimes.doorsclose}</h4>
+          <h4> location: {venue.town} </h4>
         </div>
       </div>
     </div>
