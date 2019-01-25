@@ -14,8 +14,9 @@ $live: cyan;
 $food: green;
 
 body {
-  margin: 0;
-  font-family: sans-serif;
+ margin: 0;
+ font-family: sans-serif;
+ background-color: #D87146
 }
 
 .mapboxgl-popup {
@@ -34,17 +35,24 @@ body {
   }
 }
 
+button {
+  border-radius: 7px;
+}
+
 .loader:empty {
-    background-image: url("https://cdn.dribbble.com/users/5976/screenshots/3928966/e_letter_mark_for_energy_events_logo_design_symbol_by_alex_tass.png");
+    background-image: url("https://user-images.githubusercontent.com/44749113/51740891-3ac55800-208d-11e9-8bf8-02d4a5cf31e7.png");
+    background-size: contain;
     position: absolute;
-    top: calc(50% - 4em);
-    left: calc(50% - 4em);
-    width: 30%;
-    height: 30%;
-    border: 1.5em solid rgba(0, 0, 0, 0.2);
-    border-left: 1.5em solid #000000;
-    border-radius: 50%;
-    animation: load8 1s infinite linear;
+    top: calc(50% - 15em);
+    left: calc(50% - 10em);
+    width: 20em;
+    height: 20em;
+    border: 1.5em solid orange;
+    border-left: 1.5em solid dodgerblue;
+    border-radius: 80%;
+    border-right: 1.5em solid dodgerblue;
+    animation: load8 3s infinite linear;
+    // transition: width 2s;
   }
 
   @keyframes load8 {
@@ -61,11 +69,22 @@ body {
   height: 95vh;
 }
 
+.home {
+  height: 5vh;
+  // background-color: #ffd699;
+  justify-content: space-between;
+
+
+}
+
+
 .key {
   height: 5vh;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
+  background-color: #343332;
+
   & .subkey {
     // height: 20px;
     // width: 20px;
@@ -73,6 +92,9 @@ body {
     flex-grow: 1;
     text-align: center;
     padding: 1vh;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid black;
   }
   & .key-fest {
     background-color: $fest;

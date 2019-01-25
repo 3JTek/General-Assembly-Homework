@@ -3,18 +3,19 @@ class Key extends React.Component {
   render() {
     return (
       <div className='key'>
-        <div className='subkey key-fest'>fest</div>
-        <div className='subkey key-dates'>date</div>
-        <div className='subkey key-theatre'>theatre</div>
-        <div className='subkey key-comedy'>comedy</div>
-        <div className='subkey key-exhib'>exhib/art</div>
-        <div className='subkey key-edu'>edu/conf</div>
-        <div className='subkey key-barpub'>bar/club</div>
-        <div className='subkey key-club'>club</div>
-        <div className='subkey key-lgb'>lgb</div>
-        <div className='subkey key-health'>health</div>
-        <div className='subkey key-live'>live</div>
-        <div className='subkey key-food'>food</div>
+
+        <div className='subkey key-fest'>Fest</div>
+        <div className='subkey key-dates'>Date</div>
+        <div className='subkey key-theatre'>Theatre</div>
+        <div className='subkey key-comedy'>Comedy</div>
+        <div className='subkey key-exhib'>Exhib/Art</div>
+        <div className='subkey key-edu'>Edu/Conf</div>
+        <div className='subkey key-barpub'>Bar/Club</div>
+        <div className='subkey key-lgb'>LGB</div>
+        <div className='subkey key-health'>Health</div>
+        <div className='subkey key-live'>Live</div>
+        <div className='subkey key-food'>Food</div>
+
       </div>
     )
   }

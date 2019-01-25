@@ -16,6 +16,7 @@ class LoadingPage extends React.Component {
 
   componentDidMount() {
 
+
     setTimeout(() => this.setState({ loading: true }), 3000 )
 
   }
