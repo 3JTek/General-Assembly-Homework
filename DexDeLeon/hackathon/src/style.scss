@@ -33,10 +33,15 @@ div.content {
   font-size: 1.2em;
 }
 
-div.column.album {
+a.column.album {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: background 0.5s ease;
+
+  &:hover {
+    background: #ccc;
+  }
 
   img {
     width: 100%;
@@ -124,8 +129,18 @@ ul#searchResultList {
 
 }
 
+#trackListing {
+  font-size: 30px;
+
+  & li {
+    border-bottom: 2px solid #CEEDDB;
+    padding: 1% 0;
+  }
+}
+
 button.button,
-a.button {
+a.button,
+.musicButton {
   font-family: inherit;
   font-size: 1.4em;
   display: block;
@@ -139,6 +154,11 @@ a.button {
     background: darken(#544E61, 20%);
     color: #fff;
   }
+}
+
+.musicButton {
+  font-size: 1em;
+  text-align: center;
 }
 
 a.button {

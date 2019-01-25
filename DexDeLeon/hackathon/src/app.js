@@ -11,6 +11,7 @@ const musixKey = process.env.MUSIX_KEY
 
 import Home from './components/Home'
 import ArtistShow from './components/ArtistShow'
+import AlbumShow from './components/AlbumShow'
 
 class App extends React.Component {
 
@@ -26,7 +27,8 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <Switch>
-            <Route path="/results/:artist" component={ArtistShow} />
+            <Route path="/:artist/:album" component={AlbumShow} />
+            <Route path="/:artist" component={ArtistShow} />
             <Route exact path="/" component={Home} />
           </Switch>
         </main>

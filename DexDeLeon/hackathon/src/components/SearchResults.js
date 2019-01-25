@@ -5,7 +5,7 @@ const SearchResults = (props) => {
   return (
     <ul id="searchResultList">
       {props.artists.map((artist, i) =>
-        <Link key={artist.artist.artist_id} to={`/results/${artist.artist.artist_name}`}>
+        <Link key={artist.artist.artist_id} to={`/${artist.artist.artist_name}`}>
           <li id={`a${i}`}>{artist.artist.artist_name}</li>
         </Link>
       )}

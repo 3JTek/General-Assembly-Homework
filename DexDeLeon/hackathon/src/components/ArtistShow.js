@@ -58,12 +58,12 @@ class ArtistShow extends React.Component {
             <h2 className="title">Top Albums</h2>
             <div className="columns is-multiline">
               {this.state.albums.map((album, index) =>
-                <div key={index} className="column is-one-third album">
+                <Link key={index} to={`/${this.title}/${album.mbid}`} className="column is-one-third album">
                   <h2 className="subtitle is-3">{album.name}</h2>
                   <div className="albumDiv">
                     <img src={album.image[3]['#text']} alt={album.name} />
                   </div>
-                </div>
+                </Link>
               )}
             </div>
           </div>
@@ -73,7 +73,7 @@ class ArtistShow extends React.Component {
         </div>
         <ul id="searchResultList">
           {this.state.artistInfo.artist.similar.artist.map((artist, i) =>
-            <Link key={i} to={`/results/${artist.name}`} onClick={this.getData}>
+            <Link key={i} to={`/${artist.name}`} onClick={this.getData}>
               <li id={`a${i}`}>{artist.name}</li>
             </Link>
           )}
