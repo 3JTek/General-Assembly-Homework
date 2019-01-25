@@ -5,26 +5,20 @@ const NavBar = () => {
   return (
 
     <nav className="navbar is-white" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <Link to="/" className="navbar-item is-size-5 button">
+      <div className="navbar-start">
+        <div className="navbar-item">
+        <div className="buttons">
+          <Link to="/" className="button is-black">
           Home
           </Link>
-          <Link to="/events" className="navbar-item is-size-5 button">
+          <Link to="/events" className="button is-black">
         Events
           </Link>
         </div>
         <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
             </div>
           </div>
-        </div>
-      </div>
+          </div>
     </nav>
   )
 }

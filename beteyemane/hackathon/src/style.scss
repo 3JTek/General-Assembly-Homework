@@ -150,3 +150,7 @@ option {
   font-size: 20px;
   color: black;
 }
+
+.buttons:not(:last-child) {
+  margin-bottom: 0;
+}
