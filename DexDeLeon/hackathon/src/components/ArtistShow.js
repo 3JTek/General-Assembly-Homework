@@ -42,7 +42,7 @@ class ArtistShow extends React.Component {
         <header>
           <Link to="/" className="button">Search again</Link>
         </header>
-        <section className="hero is-medium" style={
+        <section className="hero is-large" style={
           { backgroundImage: `url(${this.state.artistInfo.artist.image[3]['#text']})`}
         }>
           <div className="hero-body">
@@ -55,6 +55,7 @@ class ArtistShow extends React.Component {
           <div className="container">
             <h2 className="title">Artist Bio</h2>
             <div className="content">{this.killATag()}</div>
+            <h2 className="title">Top Albums</h2>
             <div className="columns is-multiline">
               {this.state.albums.map((album, index) =>
                 <div key={index} className="column is-one-third album">

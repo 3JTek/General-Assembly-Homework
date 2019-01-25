@@ -19,8 +19,11 @@ class Home extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.search?apikey=${musixKey}&q_artist=${this.state.search}`)
-      .then(res => this.setState({ artists: res.data.message.body.artist_list.slice(0, 5) }))
+    if(e.target.value !== ''){
+      axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.search?apikey=${musixKey}&q_artist=${this.state.search}`)
+        .then(res => this.setState({ artists: res.data.message.body.artist_list.slice(0, 5) }))
+        .catch(error => alert(error))
+    }
   }
 
   handleChange({ target: { value } }) {
@@ -32,7 +35,7 @@ class Home extends React.Component {
     return(
       <div>
         <header className="section">
-          <h1 className="title">search</h1>
+          <h1 className="title">Project CD</h1>
         </header>
         <div className="section">
           <div className="container">
@@ -43,7 +46,7 @@ class Home extends React.Component {
                   <input
                     className="input"
                     name="query"
-                    placeholder="search"
+                    placeholder="Please enter an artist name..."
                     onChange={this.handleChange}
                   />
                 </div>
