@@ -30,6 +30,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.getMovie = this.getMovie.bind(this)
     this.getRelatedMovies = this.getRelatedMovies.bind(this)
+    this.getId = this.getId.bind(this)
   }
 
   componentDidUpdate(){
@@ -53,17 +54,20 @@ class App extends React.Component {
   }
 
 
-  getMovie(e){
+  getMovie(imdb, e){
+    let imdbID
+    if(e) imdbID = e.currentTarget.id
+    if(imdb) imdbID = imdb
     this.setState({ searchText: '', possibleResults: []})
     axios
-      .get(`${baseUrl}?i=${e.currentTarget.id}${apiKey}`)
+      .get(`${baseUrl}?i=${imdbID}${apiKey}`)
         .then(res => {
           this.setState({
             timeWatched: this.state.timeWatched + parseFloat(res.data.Runtime),
             moviesWatched: [res.data, ...this.state.moviesWatched]
           })
         })
-        this.getRelatedMovies(e.currentTarget.id)
+        this.getRelatedMovies(imdbID)
   }
 
   getRelatedMovies(id){
@@ -77,6 +81,12 @@ class App extends React.Component {
     axios.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=adfdea606b119c5d76189ff434738475`)
       .then(res => this.setState({ relatedMovies: res.data.results}))
   }
+
+  getId(id){
+    axios.get(`http://api.themoviedb.org/3/movie/${id}?api_key=adfdea606b119c5d76189ff434738475`)
+      .then(res => this.getMovie(res.data.imdb_id))
+  }
+
 
   render() {
     return (
@@ -97,9 +107,11 @@ class App extends React.Component {
           <div className="column is-9 middle-part">
             <DisplayMoviesWatched movies={this.state.moviesWatched} />
           </div>
+
           <div className="column is-3 side-part">
             {this.state.relatedMovies &&
             <RecommendedMovies
+              getId={this.getId}
               movies={this.state.relatedMovies}
             />}
           </div>

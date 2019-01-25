@@ -15,7 +15,7 @@ const SearchBar = ({ searchText, handleChange, possibleResults, getMovie }) => {
           possibleResults.map((possibleResult,index) =>
           <div
             className="column is-8 search-result"
-            onClick={getMovie}
+            onClick={(e) => getMovie(undefined, e)}
             key={index}
             id={possibleResult.imdbID}>
             <span>{possibleResult.Title}</span>
