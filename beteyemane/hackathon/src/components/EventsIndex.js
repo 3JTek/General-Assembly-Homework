@@ -8,23 +8,22 @@ class EventsIndex extends React.Component {
     super()
 
     this.state = {
-      events: []
+      events: [],
+      weather: []
     }
   }
+
 
   componentDidMount() {
     axios.get('https://www.skiddle.com/api/v1/events/?api_key=0c64ae5cca7903c86353520198c58021')
       .then(response => this.setState({events: response.data.results}))
+
+    // axios.get('http://api.weatherunlocked.com/api/current/uk.nw103dl?app_id=e1d52047&app_key=f661656492325936d90c42a2a8485541')
+    //   .then(response => this.setState({weather: response}))
   }
 
-  filerTown() {
-    this.state.events.filer((event => event))
-    
-  }
 
   render() {
-    console.log(this.state.events[0])
-
     if(!this.state.events[0]) return null
 
     return (
