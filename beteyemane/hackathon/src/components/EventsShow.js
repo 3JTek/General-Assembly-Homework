@@ -20,6 +20,7 @@ class EventsShow extends React.Component {
 
 
   render(){
+
     const { eventname, date, description, largeimageurl, entryprice } = this.state.events
     return(
       <section className="section">

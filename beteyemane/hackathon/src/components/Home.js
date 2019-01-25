@@ -33,8 +33,12 @@ class Home extends React.Component {
 
   render() {
     if(!this.state.events[0]) return null
-    console.log(this.state.search)
+    // console.log(this.state.search)
+
+    const town = this.state.events.filter(event => event.venue.town)
+    console.log(town)
     return (
+
       <section className="hero is-primary is-fullheight">
         <div className="background">
           <div className="container">
@@ -53,7 +57,7 @@ class Home extends React.Component {
                   {this.state.events.map((event, index) => <option key={index}
                   >{event.venue.town}</option>)}
                 </select>
-                <Link to="/events/:town" className="button">Search</Link>
+                <Link to={`/events/${town}`} className="button">Search</Link>
               </div>
             </div>
           </div>

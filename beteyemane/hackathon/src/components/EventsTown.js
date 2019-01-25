@@ -14,7 +14,7 @@ class EventsTown extends React.Component {
   }
   //get location data with params
   componentDidMount() {
-    axios.get('https://www.skiddle.com/api/v1/events/search/?api_key=0c64ae5cca7903c86353520198c58021')
+    axios.get(`https://www.skiddle.com/api/v1/${this.props.match.params.town}/?api_key=0c64ae5cca7903c86353520198c58021`)
       .then(response => this.setState({events: response.data.results}))
 
 
@@ -22,8 +22,13 @@ class EventsTown extends React.Component {
     // filter the Location and //match value with town
   }
 
+  filteredLocation() {
+    const location = this.state.events.filter(event => event.venue.town)
+    console.log(location)
+  }
+
   render() {
-    {this.state.events.filter(event => console.log(event.venue.town))}
+    // {this.state.events.filter(event => console.log(event.venue.town))}
     return (
       null
     )

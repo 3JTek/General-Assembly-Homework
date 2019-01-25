@@ -4,7 +4,7 @@ const EventCard = ({ id, eventname, description, venue, largeimageurl, date, ope
 
   return (
     <div className="card">
-      <Link to={`/events/${id}`}>
+      <Link to={`/events/${venue.town}/${id}`}>
         <div className="card-header">
           <h1 className="card-header-title title is-4"> {eventname} </h1>
         </div>
