@@ -27,7 +27,7 @@ class BrainTraining extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://opentdb.com/api.php?amount=20&category=${this.props.category}&difficulty=${this.props.difficulty}&type=multiple&encode=url3986`)
+    axios.get(`https://opentdb.com/api.php?amount=2&category=${this.props.category}&difficulty=${this.props.difficulty}&type=multiple&encode=url3986`)
       .then(res => this.setState({ questions: res.data.results }))
 
   }
@@ -88,10 +88,10 @@ class BrainTraining extends React.Component {
 
     if(!this.state.questions.length && !this.state.gameOver) return null
     if (this.state.gameOver) return(
-      <div>
+      <div className="gameover-screen">
         <h2>Game Over</h2>
-        <h3>Thanks for playing! Your score is {this.state.score}</h3>
-        <Link to="/"> Play Again </Link>
+        <h3><strong>Your score was {this.state.score}</strong></h3>
+        <Link className="play-again" to="/"> Play Again </Link>
       </div>
     )
     this.createAnswers()
