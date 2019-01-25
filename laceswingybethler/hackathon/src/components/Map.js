@@ -13,6 +13,7 @@ class Map extends React.Component {
       style: 'mapbox://styles/mapbox/dark-v9',
       center: this.props.center,
       zoom: this.props.zoom
+
     })
 
 
@@ -43,8 +44,10 @@ class Map extends React.Component {
           <i>${venue}</i>
           <p>${desc}</p>
           <a href="${link}">Get Ticket</a>
-          <a href="https://www.google.co.uk/maps"> Directions </a>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=${this.props.userLat},${this.props.userLng}&destination=${latitude},${longitude}"> Directions </a>
           `)
+
+
 
       const markerElement = document.createElement('DIV')
       markerElement.className = `${type}`

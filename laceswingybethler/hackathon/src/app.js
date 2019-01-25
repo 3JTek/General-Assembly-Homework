@@ -11,17 +11,6 @@ import LoadingPage from './components/LoadingPage'
 
 class App extends React.Component {
 
-
-  constructor() {
-    super()
-    // this.state = {
-    //   userLat: '',
-    //   userLng: ''
-    // }
-
-  }
-
-
   componentDidMount() {
     //test for presence of geolocation
     if ('geolocation' in navigator) {
@@ -31,6 +20,7 @@ class App extends React.Component {
         this.getEvents(latitude, longitude)
         //this.setState({ userLat: latitude, userLng: longitude })
         console.log(pos.coords)
+
       })
     } else {
       alert('oh no!')
@@ -38,6 +28,7 @@ class App extends React.Component {
       //set state of userLat and userLng // set latitude and longitude
     }
   }
+
 
 
   getEvents(latitude, longitude) {
@@ -48,8 +39,6 @@ class App extends React.Component {
 
       .then(res => this.setState({ events: res.data, userLat: latitude, userLng: longitude}))
   }
-
-  //{{ baseURL  }}&latitude=51.5153&longitude=0.0723&radius=10&order=distance&description=1&minDate=2019-01-23&maxDate=2019-01-25
 
 
   render() {
@@ -65,7 +54,9 @@ class App extends React.Component {
           <Map
             events={this.state.events.results}
             center={{ lat: this.state.userLat, lng: this.state.userLng}}
-            zoom={12}>
+            zoom={12}
+            userLat={this.state.userLat}
+            userLng={this.state.userLng}>
             <Key />
           </Map>
         </main>
