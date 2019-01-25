@@ -1,9 +1,7 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
-
 import axios from 'axios'
-
+import GameOver from './GameOver'
 
 import '../style.scss'
 
@@ -89,9 +87,7 @@ class BrainTraining extends React.Component {
     if(!this.state.questions.length && !this.state.gameOver) return null
     if (this.state.gameOver) return(
       <div className="gameover-screen">
-        <h2>Game Over</h2>
-        <h3><strong>Your score was {this.state.score}</strong></h3>
-        <Link className="play-again" to="/"> Play Again </Link>
+        <GameOver score={this.state.score} />
       </div>
     )
     this.createAnswers()

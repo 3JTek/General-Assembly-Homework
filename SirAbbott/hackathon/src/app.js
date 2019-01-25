@@ -8,6 +8,7 @@ import './style.scss'
 import Game from './components/Game'
 import Home from './components/Home'
 import Navbar from './components/common/Navbar'
+import GameOver from './components/GameOver'
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
         <main>
           <Navbar />
           <Switch>
+            <Route path="/game/gameover" component={GameOver} />
             <Route path="/game" component={Game} />
             <Route path="/" component={Home} />
           </Switch>
