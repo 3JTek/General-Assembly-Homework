@@ -18,12 +18,12 @@ class EventsTown extends React.Component {
       .then(response => this.setState({events: response.data.results}))
 
 
-    //filter the Location and //match value with town
-    // this.state.events.filter(event => console.log(event))
+
+    // filter the Location and //match value with town
   }
 
-
   render() {
+    {this.state.events.filter(event => console.log(event.venue.town))}
     return (
       null
     )
