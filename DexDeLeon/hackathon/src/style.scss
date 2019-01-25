@@ -6,6 +6,18 @@ body {
   font-family: 'Patua One', sans-serif;
 }
 
+header {
+
+  a#homeButton {
+    position: fixed;
+    top: 0;
+    display: flex;
+    border-radius: 0 0 25px 0;
+    z-index: 1;
+    border: none;
+  }
+}
+
 header.section {
   padding: 1%;
 
@@ -40,7 +52,7 @@ a.column.album {
   transition: background 0.5s ease;
 
   &:hover {
-    background: #ccc;
+    background: lighten(#544E61, 30%);
   }
 
   img {
@@ -161,11 +173,15 @@ a.button,
   text-align: center;
 }
 
-a.button {
-  position: fixed;
-  top: 0;
-  display: flex;
-  border-radius: 0 0 25px 0;
-  z-index: 1;
-  border: none;
+.section.album-undefined {
+  padding: 30vh 0;
+
+  div.columns {
+    height: 20vh;
+
+    a.column {
+      padding: 3%;
+      display: flex;
+    }
+  }
 }

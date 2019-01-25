@@ -40,7 +40,7 @@ class ArtistShow extends React.Component {
     return(
       <div>
         <header>
-          <Link to="/" className="button">Search again</Link>
+          <Link to="/" className="button" id="homeButton">Search again</Link>
         </header>
         <section className="hero is-large" style={
           { backgroundImage: `url(${this.state.artistInfo.artist.image[3]['#text']})`}
