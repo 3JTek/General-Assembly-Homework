@@ -13,8 +13,7 @@ class Key extends React.Component {
         <div className='subkey key-exhib'>exhib/art</div>
         <div className='subkey key-edu'>edu/conf</div>
         <div className='subkey key-barpub'>bar/club</div>
-        <div className='subkey key-club'>club</div>
-        <div className='subkey key-lgb'>lgb</div>
+        <div className='subkey key-lgb'>lgbt</div>
         <div className='subkey key-health'>health</div>
         <div className='subkey key-live'>live</div>
         <div className='subkey key-food'>food</div>

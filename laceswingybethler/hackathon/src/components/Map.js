@@ -43,8 +43,8 @@ class Map extends React.Component {
           <h4>${name}</h4>
           <i>${venue}</i>
           <p>${desc}</p>
-          <a href="${link}">Get Ticket</a>
-          <a href="https://www.google.com/maps/dir/?api=1&origin=${this.props.userLat},${this.props.userLng}&destination=${latitude},${longitude}"> Directions </a>
+          <a href="${link}" target="_blank">Get Ticket</a>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=${this.props.userLat},${this.props.userLng}&destination=${latitude},${longitude}" target="_blank" > Directions </a>
           `)
 
 

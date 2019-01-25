@@ -1,3 +1,6 @@
+$brand: #D87146;
+$brand2: #FFFEFA;
+
 $fest: blue;
 $date: #ff00ff;
 $theatre: purple;
@@ -5,17 +8,18 @@ $comedy: red;
 $exhib: white;
 $arts: white;
 $edu: yellow;
-$barpub: black;
-$club: black;
-$lgb: orange;
+$barpub: orange;
+$club: orange;
+$lgb: violet;
 $conf: grey;
-$health: violet;
+$health: cornflowerblue;
 $live: cyan;
 $food: green;
 
 body {
   margin: 0;
   font-family: sans-serif;
+  background-color: #D87146
 }
 
 .mapboxgl-popup {
@@ -35,16 +39,17 @@ body {
 }
 
 .loader:empty {
-    background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/24/110614-UK-London-map-748x561.jpg");
+    background-image: url("https://user-images.githubusercontent.com/44749113/51740891-3ac55800-208d-11e9-8bf8-02d4a5cf31e7.png");
+    background-size: contain;
     position: absolute;
     top: calc(50% - 15em);
     left: calc(50% - 10em);
     width: 20em;
     height: 20em;
-    border: 1.5em solid orange;
-    border-left: 1.5em solid dodgerblue;
+    border: 1.5em solid #FB332E;
+    border-left: 1.5em solid #FFFEFA;
     border-radius: 80%;
-    border-right: 1.5em solid dodgerblue;
+    border-right: 1.5em solid #FFFEFA;
     animation: load8 2s infinite linear;
     // transition: width 2s;
   }
@@ -60,6 +65,9 @@ body {
 
 .map {
   height: 95vh;
+  @media screen and (max-width: 650px) {
+    height:90vh;
+  }
 }
 
 .key {
@@ -67,13 +75,21 @@ body {
   background-color: transparent;
   display: flex;
   justify-content: space-between;
+  background-color: #343332;
+  @media screen and (max-width: 650px) {
+    height:10vh;
+    flex-wrap: wrap;
+  }
   & .subkey {
-    // height: 20px;
-    // width: 20px;
-    // border-radius: 100%;
+    border-radius: 10px;
+    margin: 2px;
     flex-grow: 1;
     text-align: center;
     padding: 1vh;
+    @media screen and (max-width: 650px) {
+      height:2vh;
+      flex-wrap: wrap;
+    }
   }
   & .key-fest {
     background-color: $fest;
@@ -81,6 +97,7 @@ body {
   }
   & .key-dates {
     background-color: $date;
+    color: white;
   }
   & .key-theatre {
     background-color: $theatre;
