@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import Loading from './Loading'
+
 const lastFmKey = process.env.LASTFM_KEY
 
 class ArtistShow extends React.Component {
@@ -36,7 +38,7 @@ class ArtistShow extends React.Component {
   }
 
   render() {
-    if(Object.keys(this.state.artistInfo).length === 0) return null
+    if(Object.keys(this.state.artistInfo).length === 0) return <Loading />
     return(
       <div>
         <header>

@@ -30,7 +30,7 @@ section.hero {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: 50% 35%;
+  background-position: 50% 20%;
 
   div.hero-body {
     background: linear-gradient(transparent 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.8) 90%);
@@ -184,4 +184,24 @@ a.button,
       display: flex;
     }
   }
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
+}
+
+div#loading {
+  width: 200px;
+  height: 200px;
+  margin: 30vh auto;
+  border-radius: 100%;
+  border-top: 20px solid #544E61;
+  border-right: 20px solid #544E61;
+  border-left: 20px solid #544E61;
+  border-bottom: 20px solid transparent;
+  animation: rotate 0.5s infinite;
 }

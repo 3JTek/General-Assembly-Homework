@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 const lastFmKey = process.env.LASTFM_KEY
 
+import Loading from './Loading'
+
 class AlbumShow extends React.Component {
   constructor(props){
     super(props)
@@ -26,7 +28,7 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    if(Object.keys(this.state.albumInfo).length === 0) return null
+    if(Object.keys(this.state.albumInfo).length === 0) return <Loading />
     return(
       <div>
         <header>
@@ -47,8 +49,8 @@ class AlbumShow extends React.Component {
             <ul id="trackListing">
               {this.state.albumInfo.tracks.track.map(track =>
                 <li key={track.rank} className="columns">
-                  <p className="column">{track.name}</p>
-                  <a href={track.url} target="_blank" rel="noopener noreferrer" className="musicButton column is-one-fifth">Listen</a>
+                  <p className="column" key={track.name}>{track.name}</p>
+                  <a href={track.url} target="_blank" rel="noopener noreferrer" className="musicButton column is-one-fifth" key={track.url}>Listen</a>
                 </li>
               )}
             </ul>

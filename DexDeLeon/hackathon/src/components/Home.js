@@ -11,7 +11,8 @@ class Home extends React.Component {
 
     this.state = {
       search: '',
-      artists: []
+      artists: [],
+      submit: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,11 +24,12 @@ class Home extends React.Component {
       axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.search?apikey=${musixKey}&q_artist=${this.state.search}`)
         .then(res => this.setState({ artists: res.data.message.body.artist_list.slice(0, 5) }))
         .catch(error => alert(error))
+      this.setState({ submit: true })
     }
   }
 
   handleChange({ target: { value } }) {
-    this.setState({ search: value })
+    this.setState({ search: value, submit: false })
   }
 
 
@@ -57,6 +59,7 @@ class Home extends React.Component {
         </div>
         <SearchResults
           artists={this.state.artists}
+          submit={this.state.submit}
         />
       </div>
     )
