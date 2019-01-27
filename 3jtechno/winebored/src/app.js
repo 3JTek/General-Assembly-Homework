@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import 'bulma'
 import './style.scss'
 
-import Header from './components/Header'
+import Navbar from './components/commons/Navbar'
 import Home from './components/Home'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
@@ -13,22 +13,28 @@ import WinesIndex from './components/wines/WinesIndex'
 import WinesShow from './components/wines/WinesShow'
 import WinesNew from './components/wines/WinesNew'
 import WinesEdit from './components/wines/WinesEdit'
+import SecureRoute from './components/commons/SecureRoute'
+import FlashMessage from './components/commons/FlashMessage'
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <main>
-          <Header/>
+
+          <Navbar/>
+          <FlashMessage/>
+
           <Switch>
-            <Route path="/wines/edit/:id" component={WinesEdit} />
-            <Route path="/wines/new" component={WinesNew} />
+            <SecureRoute path="/wines/:id/edit" component={WinesEdit} />
+            <SecureRoute path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WinesShow} />
             <Route path="/wines" component={WinesIndex} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path='/' component={Home} />
           </Switch>
+
         </main>
       </BrowserRouter>
     )

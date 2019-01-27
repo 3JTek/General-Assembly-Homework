@@ -19,7 +19,7 @@ class WinesNew extends React.Component{
         tastingNotes: '',
         location: []
       },
-      error: {}
+      errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -46,12 +46,17 @@ class WinesNew extends React.Component{
 
   render(){
     return(
-      <WineForm
-        data = {this.state.data}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        errors={this.state.errors}
-      />
+      <section className="section">
+        <div className="container">
+          <div className="title is-1">New Wine</div>
+          <WineForm
+            data = {this.state.data}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            errors={this.state.errors}
+          />
+        </div>
+      </section>
     )
   }
 }

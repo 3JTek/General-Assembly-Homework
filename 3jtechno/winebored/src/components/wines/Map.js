@@ -21,8 +21,7 @@ class Map extends React.Component{
   createMap(){
     //Create and Display MapBox
     const {lat, lng} = this.props.latlng
-    console.log(this.props.latlng)
-    mapboxgl.accessToken = process.env.MAPBOX_TOKEN
+    mapboxgl.accessToken = 'pk.eyJ1IjoiM2p0ZWNobm8iLCJhIjoiY2pyMjNhY2NlMTMwdDQzcGM4dGRwOHBrZSJ9.sHLrYdbbZfH-8v4Nr_H0JQ' //process.env.MAPBOX_TOKEN
     return new mapboxgl.Map({
       container: this.mapDOMElement,
       center: [lat, lng].reverse(),
