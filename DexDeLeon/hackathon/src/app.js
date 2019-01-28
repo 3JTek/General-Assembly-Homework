@@ -9,6 +9,7 @@ import Home from './components/Home'
 import ArtistShow from './components/ArtistShow'
 import AlbumShow from './components/AlbumShow'
 import AlbumUndefined from './components/AlbumUndefined'
+import Loading from './components/Loading'
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <Switch>
+            <Route path="/loading" component={Loading} />
             <Route path="/:artist/undefined" component={AlbumUndefined} />
             <Route path="/:artist/:album" component={AlbumShow} />
             <Route path="/:artist" component={ArtistShow} />
