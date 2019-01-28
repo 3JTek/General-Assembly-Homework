@@ -49,7 +49,7 @@ app.delete('/pokemons/:id', (req, res) =>{
 
 app.put('/pokemons/:id', (req, res) =>{
   Pokemon
-    .update(req.body)
+    .update({_id: req.params.id}, req.body)
     .then(pokemon => res.status(200).json(pokemon))
     .catch(err => res.status(404).json(err))
 })
