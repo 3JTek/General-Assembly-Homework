@@ -13,11 +13,11 @@ $(() => {
         countries.forEach(country =>{
           $countries.append(`
           <div>
-          <h2>
-          ${country.name}
-          </h2>
-          <small>${country.nativeName}</small>
-          <img src="${country.flag}" atl="${country.name}" />
+            <h2>
+            ${country.name}
+            </h2>
+            <small>${country.nativeName}</small>
+            <img src="${country.flag}" atl="${country.name}" />
           </div>
           `)
         })

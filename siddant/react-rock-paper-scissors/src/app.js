@@ -61,13 +61,15 @@ class App extends React.Component{
   }
 
   reset(){
-    this.setState({display: {
-      computer: '',
-      player: '',
-      winner: '',
-      playerWon: 0,
-      computerWon: 0
-    } })
+    this.setState({
+      display: {
+        computer: '',
+        player: '',
+        winner: '',
+        playerWon: 0,
+        computerWon: 0
+      }
+    })
   }
 
   render(){
