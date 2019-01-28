@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
 const app = express()
 
@@ -9,11 +10,13 @@ const wildcatsSchema = new mongoose.Schema({
   name: {type: String, required: true},
   scientificName: {type: String},
   class: {type: String},
-  order: {type: String},
+  origin: {type: String},
   image: {type: String}
 })
 
 const Wildcat = mongoose.model('Wildcat', wildcatsSchema)
+
+app.use(bodyParser.json())
 
 app.get('/wildcats', (req, res) => {
   Wildcat
@@ -22,5 +25,14 @@ app.get('/wildcats', (req, res) => {
       res.status(200).json(wildcats))
 })
 
+app.post('/wildcats', (req, res) => {
+  Wildcat
+    .create(req.body)
+    .then(wildcat => res.status(201).json(wildcat))
+    .catch(err => res.status(422).json(err.errors))
+})
 
-app.listen(4000, () => console.log('Express is running on port 4000'))
+
+
+
+app.listen(4000, () => console.log('Express be running on port 4000'))
