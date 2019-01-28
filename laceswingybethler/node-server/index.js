@@ -32,7 +32,13 @@ app.post('/wildcats', (req, res) => {
     .catch(err => res.status(422).json(err.errors))
 })
 
-
+// app.show('/wildcats/:id', (req, res => {
+//   Wildcat
+//     .find()
+//     .then(wildcats =>
+//       res.status(200).json(wildcars.params.id))
+//     .catch(err => res.status(404).json(err.errors))
+//   })
 
 
 app.listen(4000, () => console.log('Express be running on port 4000'))
