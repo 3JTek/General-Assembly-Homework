@@ -43,19 +43,16 @@ GET EXAMPLE
 \
 POST EXAMPLE
 {
-  "name": "Exclamation Mark",
-  "description": "The exclamation mark (British English) or exclamation point (American English) is a punctuation mark usually used after an interjection or exclamation to indicate strong feelings or high volume (shouting), or to show emphasis, and often marks the end of a sentence",
-  "character": "!",
+  "name": "Question Mark",
+  "description": "The question mark is a punctuation mark that indicates an interrogative clause or phrase in many languages.",
+  "character": "?",
   "otherNames": [
-    "Exclamation",
-    "point",
-    "Bang",
-    "Shriek",
-    "Pling"
+    "interrogation point",
+    "query",
+    "eroteme"
   ],
-  "example": "You are crazy!"
+  "example": "What are you doing?"
 }
-
 
 *************************************/
 const express = require('express')
@@ -95,6 +92,7 @@ app.post('/marks', (req, res) => {
     .then(film => res.status(201).json(film))
     //Invalid form input
     .catch(err => {
+      //Get the name of the fields that have errored
       const keys = Object.keys(err.errors)
       res.status(422).json(`${keys} must be defined`)
     })
@@ -102,7 +100,7 @@ app.post('/marks', (req, res) => {
 
 //*** fail ***//
 app.post('/*', (req, res) =>{
-  res.status(422).json('This end point does not accept post methods')
+  res.status(422).json('This end point does not accept post requests')
 })
 
 
@@ -120,8 +118,6 @@ app.get('/marks/:id', (req, res, next) =>{
     .catch( () => next())
 })
 
-
-
 //Search for Names
 app.get('/marks/:name', (req, res) =>{
   //Make case insensitive
@@ -132,7 +128,6 @@ app.get('/marks/:name', (req, res) =>{
     .then( mark => res.status(200).json(mark) )
     .catch( err=> res.status(404).json(err.errors))
 })
-
 
 
 //list INDEX
@@ -150,6 +145,7 @@ app.get('/*', (req, res) =>{
 //****** UPDATE ******//
 
 //*** success ***//
+
 //Search for IDs
 app.put('/marks/:id', (req, res) =>{
   //Find id, put the body, return the new record (doesn't seem to work, it still returns original)
@@ -160,14 +156,15 @@ app.put('/marks/:id', (req, res) =>{
 })
 
 //*** fail ***//
-app.delete('/*', (req, res) =>{
-  res.status(422).json('This end point does not accept put methods')
+app.put('/*', (req, res) =>{
+  res.status(422).json('This end point does not accept put requests')
 })
 
 
 //****** DELETE ******//
 
 //*** success ***//
+
 //Search for IDs
 app.delete('/marks/:id', (req, res, next) =>{
   //Find name
@@ -191,10 +188,8 @@ app.delete('/marks/:name', (req, res) =>{
 
 //*** fail ***//
 app.delete('/*', (req, res) =>{
-  res.status(422).json('This end point does not accept delete methods')
+  res.status(422).json('This end point does not accept delete requests')
 })
-
-
 
 
 
@@ -202,7 +197,7 @@ app.delete('/*', (req, res) =>{
 //****** SERVER ERROR ******//
 app.use((err, req, res, next) => {
   console.log(err)
-  res.status(500).json({message: 'This is embarrasing!'})
+  res.status(500).json({message: 'Well, this is embarrasing...🤔'})
   next()
 })
 
