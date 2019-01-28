@@ -19,12 +19,14 @@ const Bourbon = mongoose.model('Bourbon', bourbonSchema)
 
 app.use(bodyParser.json())
 
+// Index request
 app.get('/bourbons',(req, res) => {
   Bourbon
     .find()
     .then(bourbons => res.status(200).json(bourbons))
 })
 
+// Add request
 app.post('/bourbons', (req, res) => {
   Bourbon
     .create(req.body)
@@ -32,6 +34,7 @@ app.post('/bourbons', (req, res) => {
     .catch(err => res.status(422).json(err.errors))
 })
 
+// Show request
 app.get('/bourbons/:id',(req, res) => {
   Bourbon
     .findById(req.params.id)
