@@ -25,6 +25,13 @@ app.get('/bourbons',(req, res) => {
     .then(bourbons => res.status(200).json(bourbons))
 })
 
+app.post('/bourbons', (req, res) => {
+  Bourbon
+    .create(req.body)
+    .then(bourbon => res.status(201).json(bourbon))
+    .catch(err => res.status(422).json(err.errors))
+})
+
 
 
 app.listen(4000, () => console.log('Listening on port 4000'))
