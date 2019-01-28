@@ -41,7 +41,7 @@ app.get('/rappers/:id', (req, res) => {
 app.delete('/rappers/:id', (req, res) => {
   Rapper
     .deleteOne({ _id: req.params.id })
-    .then(() => res.status(204))
+    .then(() => res.status(204).send())
     .catch( err => console.log(err.message))
 })
 
