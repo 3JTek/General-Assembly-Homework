@@ -17,6 +17,14 @@ const bourbonSchema = new mongoose.Schema({
 
 const Bourbon = mongoose.model('Bourbon', bourbonSchema)
 
+app.use(bodyParser.json())
+
+app.get('/bourbons',(req, res) => {
+  Bourbon
+    .find()
+    .then(bourbons => res.status(200).json(bourbons))
+})
+
 
 
 app.listen(4000, () => console.log('Listening on port 4000'))
