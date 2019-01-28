@@ -22,11 +22,13 @@ const Player = mongoose.model('Player', playerSchema)
 
 app.use(bodyParser.json())
 
-app.get('/players', (req, res) => {
+app.get('/players', (req, res,) => {
   Player
     .find()
     .then(players => res.status(200).json(players))
+
 })
+
 
 app.post('/players', (req, res) => {
   Player
@@ -34,6 +36,14 @@ app.post('/players', (req, res) => {
     .then(player => res.status(201).json(player))
     .catch(err => res.status(422).json(err.errors))
 })
+
+app.get('/players/:id', (req, res) => {
+  console.log(req)
+  Player
+    .findById(req.params.id)
+    .then(player => res.status(200).json(player))
+})
+
 
 
 app.listen(4000, () => console.log('Express is running on port 4000'))
