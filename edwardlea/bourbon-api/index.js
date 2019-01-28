@@ -32,6 +32,22 @@ app.post('/bourbons', (req, res) => {
     .catch(err => res.status(422).json(err.errors))
 })
 
+app.get('/bourbons/:id',(req, res) => {
+  Bourbon
+    .findById(req.params.id)
+    .then(bourbon => res.status(200).json(bourbon))
+})
 
+// handling errors by the requestor
+app.all('/*', (req, res) => {
+  res.status(404).json({ message: 'Not found' })
+})
+
+// handling errors with server / code
+app.use((err, req, res, next) => {
+
+  res.status(500).json({ message: 'Oops, this is embarassing!' })
+  next(err)
+})
 
 app.listen(4000, () => console.log('Listening on port 4000'))
