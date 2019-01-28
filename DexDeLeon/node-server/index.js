@@ -31,4 +31,10 @@ app.post('/guitars', (req, res) => {
     .catch(err => res.status(422).json(err.errors))
 })
 
+app.get('/guitars/:id', (req, res) => {
+  Guitar.find( { _id: req.params.id } )
+    .then(guitar => res.status(200).json(guitar))
+    .catch(err => res.status(404).json(err.errors))
+})
+
 app.listen(4000, () => console.log('Running on 4000'))
