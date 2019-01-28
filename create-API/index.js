@@ -45,5 +45,11 @@ app.get('/superheros/:id', (req, res) => {
     .then(superhero => res.status(200).json(superhero))
 })
 
+//Delete route
+app.delete('/superheros/:id', (req, res) => {
+  Hero
+    .findByIdAndRemove(req.params.id)
+    .then(superhero => res.status(200).json(superhero))
+})
 
 app.listen(4000, () => console.log('Express is running on port 4000'))
