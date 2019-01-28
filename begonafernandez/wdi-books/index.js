@@ -15,6 +15,12 @@ const bookSchema = new mongoose.Schema({
 const Book = mongoose.model('Book', bookSchema)
 app.use(bodyParser.json())
 
+app.get('/books', (req, res) => {
+  Book
+    .find()
+    .then(books => res.status(200).json(books))
+})
+
 app.post('/books', (req, res) => {
   Book
     .create(req.body)
