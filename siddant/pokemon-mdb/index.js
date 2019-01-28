@@ -17,10 +17,7 @@ const pokemonSchema = new mongoose.Schema({
 })
 const Pokemon = mongoose.model('Pokemon',pokemonSchema)
 
-
 app.use(bodyParser.json())
-
-
 
 app.get('/pokemons', (req, res) =>{
   Pokemon
@@ -32,6 +29,14 @@ app.post('/pokemons', (req, res) =>{
   Pokemon
     .create(req.body)
     .then(pokemon => res.status(201).json(pokemon))
+    .catch(err => res.status(422).json(err.errors))
+})
+
+app.get('/pokemons/:id', (req, res) =>{
+  Pokemon
+    .findById(req.params.id)
+    .then(pokemon => res.status(200).json(pokemon))
+    .catch(err => res.status(404).json(err))
 })
 
 app.listen(4000, ()=> console.log('server has been started at port 4000'))
