@@ -13,7 +13,7 @@ const CarabinerSchema = new mongoose.Schema({
   information: { type: String, required: true }
 })
 
-const Carabiner = mongoose.model('Film', CarabinerSchema)
+const Carabiner = mongoose.model('carabiner', CarabinerSchema)
 
 app.use(bodyParser.json())
 
@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.get('/Carabiners', (req, res) => {
   Carabiner
     .find()
-    .then(films => res.status(200).json(films))
+    .then(carabiners => res.status(200).json(carabiners))
 })
 
 app.post('/Carabiners', (req, res) => {
