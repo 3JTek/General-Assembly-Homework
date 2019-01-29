@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
+const WineForm = ({data, handleChange, handleSubmit, errors}) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -14,6 +14,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
             value={data.name}
           />
         </div>
+        {errors.name && <small className="help is-danger">Please enter a name</small>}
       </div>
       <div className="field">
         <label className="label">Origin</label>
@@ -26,6 +27,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
             value={data.origin}
           />
         </div>
+        {errors.origin && <small className="help is-danger">Please enter an origin</small>}
       </div>
       <div className="field">
         <label className="label">Image</label>
@@ -38,6 +40,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
             value={data.image}
           />
         </div>
+        {errors.image && <small className="help is-danger">Please enter a image</small>}
       </div>
       <div className="field">
         <label className="label">Abv</label>
@@ -50,6 +53,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
             value={data.abv}
           />
         </div>
+        {errors.abv && <small className="help is-danger">Please enter a abv</small>}
       </div>
       <div className="field">
         <label className="label">grape</label>
@@ -62,6 +66,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
             value={data.grape}
           />
         </div>
+        {errors.grape && <small className="help is-danger">Please enter a grape</small>}
       </div>
       <div className="field">
         <label className="label">Price</label>
@@ -74,6 +79,7 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
             value={data.price}
           />
         </div>
+        {errors.price && <small className="help is-danger">Please enter a price</small>}
       </div>
       <div className="field">
         <label className="label">Tasting notes</label>
@@ -111,7 +117,6 @@ const WineForm = ({data, handleChange, handleSubmit, handleDelete, errors}) => {
           />
         </div>
       </div>
-      <button onClick={handleDelete} className="button is-danger">Delete</button>
       <button className="button is-primary">Submit</button>
     </form>
   )

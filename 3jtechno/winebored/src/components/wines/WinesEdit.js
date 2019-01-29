@@ -9,6 +9,7 @@ class WinesEdit extends React.Component{
   constructor(){
     super()
     this.state = {
+      errors: {},
       data: {
         name: '',
         image: '',
@@ -23,7 +24,6 @@ class WinesEdit extends React.Component{
         }
       }
     }
-    this.handleDelete = this.handleDelete.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -49,19 +49,22 @@ class WinesEdit extends React.Component{
       this.state.data,
       {headers: {'Authorization': `Bearer ${Auth.getToken()}`}})
       .then(() => this.props.history.push('/wines'))
-      .catch(err => console.log(err.message))
-  }
-
-  handleDelete(){
-    axios.delete(`https://winebored.herokuapp.com/wines/${this.id}`,
-      {headers: {'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then(() => this.props.history.push('/wines'))
-      .catch(err => console.log(err.message))
+      .catch(err => this.setState({errors: err.message}))
   }
 
   render(){
     return(
-      <WineForm data = {this.state.data}  handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete}/>
+      <section className="section">
+        <div className="container">
+          <div className="title is-1">Edit</div>
+          <WineForm
+            data={this.state.data}
+            errors={this.state.errors}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handleDelete={this.handleDelete}/>
+        </div>
+      </section>
     )
   }
 }

@@ -21,11 +21,6 @@ class WinesIndex extends React.Component{
     return(
       <section className="section">
         <div className="container">
-          <Link to="/wines/new">
-            <div className="button is-primary">Add</div>
-          </Link>
-        </div>
-        <div className="container">
           <div className="columns is-centered is-multiline">
             {this.state.wines.map(wine =>
               <div className="column is-4" key={wine._id}>

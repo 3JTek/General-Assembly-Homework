@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import Auth from '../../lib/Auth'
 import axios from 'axios'
 
 import Map from './Map'
@@ -10,6 +11,7 @@ class WinesShow extends React.Component{
   constructor(){
     super()
     this.state = {}
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount(){
@@ -19,15 +21,20 @@ class WinesShow extends React.Component{
       .catch(err => console.log(err.message))
   }
 
+  handleDelete(){
+    axios.delete(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`,
+      {headers: {'Authorization': `Bearer ${Auth.getToken()}`}})
+      .then(() => this.props.history.push('/wines'))
+      .catch(err => console.log(err.message))
+  }
+
   render(){
     if(!this.state.wine) return false
     const {_id, name, image, origin, grape, price, tastingNotes, location} = this.state.wine
     return(
       <section className="section">
         <div className="container">
-          <Link to={`/wines/edit/${_id}`}>
-            <div className="button is-primary">Edit</div>
-          </Link>
+
           <h1 className="title is-1">{name}</h1>
           <h2 className="subtitle is-2">{grape}</h2>
           <h2 className="subtitle is-2">${price}</h2>
@@ -44,6 +51,10 @@ class WinesShow extends React.Component{
               <h4 className="title is-4">Tasting Notes</h4>
               <p>{tastingNotes}</p>
               <hr />
+              <Link to={`/wines/${_id}/edit`}>
+                <div className="button is-primary">Edit</div>
+              </Link>
+              <button onClick={this.handleDelete} className="button is-danger">Delete</button>
             </div>
 
             <div className="column">

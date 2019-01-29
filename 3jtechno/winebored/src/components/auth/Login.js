@@ -2,6 +2,7 @@ import React from 'react'
 
 import axios from 'axios'
 import Auth from '../../lib/Auth'
+import Flash from '../../lib/Flash'
 
 class Login extends React.Component{
   constructor(){
@@ -26,6 +27,7 @@ class Login extends React.Component{
     axios.post('https://winebored.herokuapp.com/login', this.state.data)
       .then((res) => {
         Auth.setToken(res.data.token)
+        Flash.setMessage('success', res.data.message)
         this.props.history.push('/wines')
       })
       .catch(err => console.log(err.message))
