@@ -169,7 +169,7 @@ app.put('/*', (req, res) =>{
 app.delete('/marks/:id', (req, res, next) =>{
   //Find name
   Mark.remove({_id: req.params.id})
-    .then( () => res.status(204))
+    .then( (mark) => res.status(204).json(mark))
     //If not found continue to the names
     .catch( () => next())
 })
@@ -181,7 +181,7 @@ app.delete('/marks/:name', (req, res) =>{
 
   //Find name
   Mark.delete({name: search})
-    .then( () => res.status(204))
+    .then( (mark) => res.status(204).json(mark))
     .catch( err => res.status(405).json(err.errors))
 })
 
