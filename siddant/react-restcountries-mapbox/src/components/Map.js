@@ -24,7 +24,6 @@ class Map extends React.Component{
             center: {lat: country.location[0], lng: country.location[1]},
             zoom: 5
           })
-
         })
         return new mapboxgl.Marker(markerElement)
           .setLngLat({lat: country.location[0], lng: country.location[1]})
@@ -51,3 +50,16 @@ class Map extends React.Component{
 }
 
 export default Map
+
+
+
+,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+          'client': 'EDUC_4',
+          'Authorization': 'Basic RURVQ180OjZxRkJtdmxrTDN6RA==',
+          'x-api-key': 'MFRqjbphK01Ti2gXLI0dE2iebhWHAMZHa0Kb11Dp',
+          'api-version': 'v102'
+        }
