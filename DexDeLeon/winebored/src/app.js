@@ -8,10 +8,10 @@ import './style.scss'
 
 import Header from './components/Header'
 import Home from './components/Home'
-import WineList from './components/wines/WineList'
+import WinesIndex from './components/wines/WinesIndex'
 import WineShow from './components/wines/WineShow'
-import AddWine from './components/wines/AddWine'
-import EditWine from './components/wines/EditWine'
+import WinesNew from './components/wines/WinesNew'
+import WinesEdit from './components/wines/WinesEdit'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
@@ -24,11 +24,11 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route path="/register" component={Register} />
-            <Route path="/wines/new" component={AddWine} />
+            <Route path="/wines/new" component={WinesNew} />
             <Route path="/login" component={Login} />
-            <Route path="/wines/:id/edit" component={EditWine} />
+            <Route path="/wines/:id/edit" component={WinesEdit} />
             <Route path="/wines/:id" component={WineShow} />
-            <Route path="/wines" component={WineList} />
+            <Route path="/wines" component={WinesIndex} />
             <Route path="/" component={Home} />
           </Switch>
 

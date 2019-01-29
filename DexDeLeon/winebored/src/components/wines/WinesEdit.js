@@ -4,7 +4,7 @@ import axios from 'axios'
 import WineForm from './WineForm'
 import Auth from '../../lib/Auth'
 
-class EditWine extends React.Component {
+class WinesEdit extends React.Component {
   constructor(){
     super()
 
@@ -54,4 +54,4 @@ class EditWine extends React.Component {
 
 }
 
-export default EditWine
+export default WinesEdit
