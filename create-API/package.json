@@ -1,0 +1,12 @@
+{
+  "name": "create-API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.4.7"
+  }
+}
