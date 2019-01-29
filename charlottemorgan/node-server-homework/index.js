@@ -40,7 +40,7 @@ app.get('/puppies/:id', (req, res) => {
 app.delete('/puppies/:id', (req, res) => {
   Puppy
     .deleteOne({ _id: req.params.id })
-    .then(() => res.status(204))
+    .then(() => res.status(204).send())
     .catch( err => console.log(err))
 })
 
