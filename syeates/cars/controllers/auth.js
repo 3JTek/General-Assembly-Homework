@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken')
 
 function registerRoute(req, res) {
   User.create(req.body)
-    .catch(err => res.status(422).json(err.errors))
+    .then(() => res.status(201).json({ message: 'Successs! Welcome'})
+      .catch(err => res.status(422).json(err.errors)))
 }
 
 function loginRoute(req, res) {
