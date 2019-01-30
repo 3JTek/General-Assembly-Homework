@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const pastasControllers = require('../controller/pastas')
+const pastasControllers = require('../controllers/pastas')
 const secureRoute = require('../lib/secureRoute')
 const authController = require('../controllers/auth')
 
@@ -13,8 +13,8 @@ router.route( '/register')
   .post(authController.register)
 
 
-router.login( '/login')
-  .get(authController.login)
+router.route( '/login')
+  .post(authController.login)
 
 
 router.route( '/pastas/:code')

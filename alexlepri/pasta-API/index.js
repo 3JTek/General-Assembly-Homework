@@ -18,4 +18,4 @@ app.use( bodyParser.json() )
 
 app.use(routes)
 
-app.listen(4000, () => console.log('IT IS WORKING IN PORT 4000'))
+app.listen(4000, () => console.log('IT IS WORKING ON PORT 4000'))
