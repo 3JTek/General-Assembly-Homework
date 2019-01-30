@@ -22,9 +22,18 @@ function loginRoute(req, res) {
     })
 }
 
+function confirmRoute(req, res) {
+  User.findOne({ confirmCode: req.params.code })
+    .then(user => {
+      if(!user) return res.status(401).json({ message: 'Not authorized'})
+    })
+
+}
+
 
 
 module.exports = {
   register: registerRoute,
-  login: loginRoute
+  login: loginRoute,
+  confirm: confirmRoute
 }

@@ -13,6 +13,7 @@ function secureRoute(req, res, next) {
 
 
   jwt
+    .verifyAsync(token, process.env.SECRET)
     .then(payload => {
       const now = Math.random(Date.now() / 1000 )
       if( now > payload.exp) throw new Error('Token expired')
