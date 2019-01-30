@@ -18,12 +18,11 @@ userSchema.virtual('passwordConfirmation')
 userSchema.pre('validate', function checkPasswordsMatch(next) {
   if(
     this.isModified('password') && // only runs if the password has been modified, i.e. created, or modified
-    this._passwordConfirmation !== this.password
+    this._passwordConfirmation !== this.password //is password === to passwordConfirmation
   ) {
     // if the passwords no not match invalidation is forced to through error, prior to validation taking place
     this.invalidate('passwordConfirmation', 'Passwords do not match')
   }
-
   next()
 })
 
@@ -33,7 +32,6 @@ userSchema.pre('save', function hashPassword(next) {
   if(this.isModified('password')) {
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8))
   }
-
   next()
 })
 
