@@ -13,9 +13,9 @@ function loginRoute(req, res){
       if(!user || !user.validatePassword(req.body.password)){
         return res.status(401).json({ message: 'Unauthorised' })
       }
-      const secret = process.env.SECRET
+
       const payload = { sub: user._id }
-      const token = jwt.sign(payload, secret, { expiresIn: '6h' } )
+      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '6h' } )
 
       res.json({
         token,
