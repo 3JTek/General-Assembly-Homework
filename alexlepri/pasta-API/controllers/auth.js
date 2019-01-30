@@ -8,8 +8,23 @@ function registerRoute(req, res) {
     .catch(err => res.status(422).json(err.errors))
 }
 
+function loginRoute(req, res) {
+  User.findOne({ email: req.body.email, verified: true })
+    .then(user => {
+      if(!user || !user.validationPassword(req.body.password)) {
+        return res.status(401).json({ message: 'Not autohrized'})
+      }
+
+      const payload = { sub: user._id }
+      const token = jwt.sign(payload, process.env.SECRET, { expireIn: '3h' })
+
+      res.json({ token, message: `Welcome back ${user.username}!`})
+    })
+}
+
 
 
 module.exports = {
-  register: registerRoute
+  register: registerRoute,
+  login: loginRoute
 }
