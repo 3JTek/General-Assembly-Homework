@@ -1,4 +1,5 @@
 const User = require('../model/user')
+const jwt = require('jsonwebtoken')
 
 function registerUser(req, res) {
   User
@@ -16,8 +17,14 @@ function loginUser(req, res) {
       if(!user || !user.validatePassword(req.body.password)){
         return res.status(401).json({message: 'unauthorized!!'})
       }
-      return res.status(200).json({message: `welcome back ${user.username}!!`})
+      const payload = { sub: user._id }
+      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '6h' })
 
+      res.json({
+        token,
+        message: `Welcome back ${user.username}!`
+      })
+      
     })
     .catch(err => res.status(422).json(err.errors))
 }

@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const routes = require('./config/routes')
 const app = express()
+require('dotenv').config()
 
 mongoose.connect('mongodb://localhost/superheros-db')
 
