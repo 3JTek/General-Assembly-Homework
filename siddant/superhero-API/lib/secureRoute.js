@@ -1,3 +1,27 @@
 const jwt = require('jsonwebtoken')
 const Promsie = require('bluebird')
 const User = require('../model/user')
+
+Promsie.promisifyAll('jwt')
+
+function secureRoute(req,res,next){
+  if(req.header.authorization) res.status(401).json({ message: 'No token set' })
+
+  const token = req.header.authorization.replace('Bearer ', '')
+
+  jwt
+    .verifyAsync(token, process.env.SECRET)
+    .then(payload => {
+      const now = Math.floor(Date.now() / 1000)
+      if(now > payload.exp) throw new Error('Token expired')
+      return User.findById(payload.sub)
+    })
+    .then(user => {
+      if(!user)throw new Error('Invalid token')
+      next()
+    })
+    .catch(err => res.status(401).json({ message: err.message }))
+}
+
+
+module.export = secureRoute
