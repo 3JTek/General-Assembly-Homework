@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 
 const routes = require('./config/routes')
 
-
 const app = express()
 
 
@@ -16,4 +15,4 @@ app.use( bodyParser.json() )
 
 app.use(routes)
 
-app.listen(4000, () => console.log('IT IS WORKING IN PORT 4000'))
+app.listen( 4000, () => console.log('Server is running on port 4000') )
