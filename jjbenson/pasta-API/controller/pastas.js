@@ -18,7 +18,15 @@ function showRoute(req, res){
     .findById(req.params.id)
     .then(pasta => res.status(200).json(pasta))
     .catch( err => res.status(422).json(err.errors) )
+}
 
+function updateRoute(req, res){
+  Pasta
+    .findById(req.params.id)
+    .then(film => film.set(req.body))
+    .then(film => film.save())
+    .then(film => res.status(200).json(film))
+    .catch(err => res.status(422).json(err.errors))
 }
 
 function deleteRoute(req, res) {
@@ -35,5 +43,6 @@ module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
+  update: updateRoute,
   delete: deleteRoute
 }
