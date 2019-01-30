@@ -9,12 +9,13 @@ function indexRoute(req, res) {
     .find(query)
     .select(select)
     .then(pastas => res.status(200).json(pastas))
+}
 
-function createRoute(req, res){
+function createRoute(req, res) {
   Pasta
     .create(req.body)
     .then( pastas => res.status(200).json(pastas))
-    .catch( err => res.status(422).json(err.errors) )
+    .catch( err => res.status(422).json(err.errors))
 }
 
 function showRoute(req, res) {
@@ -37,7 +38,7 @@ function deleteRoute(req, res) {
   Pasta
     .findById(req.params.id)
     .then(pasta => pasta.remove())
-    .then(() => res.sendStatus(204))
+    .then(() => res.sendStatus(204).end())
     .catch(err => res.status(422).json(err.errors))
 }
 
@@ -45,6 +46,6 @@ module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
-  delete: deleteRoute,
-  update: updateRoute
+  update: updateRoute,
+  delete: deleteRoute
 }
