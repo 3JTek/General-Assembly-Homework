@@ -14,7 +14,7 @@ userSchema.virtual('passwordConfirmation')
   })
 
 userSchema.pre('validate', function checkPasswordsMatch(next){
-  if(this.isModified('password') && 'password' !== this.__passwordConfirmation){
+  if(this.isModified('password') && this.password !== this._passwordConfirmation){
     this.invalidate('passwordConfirmation', 'Passwords do not match')
   }
   next()

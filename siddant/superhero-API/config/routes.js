@@ -1,5 +1,11 @@
 const router = require('express').Router()
 const superheroControler = require('../controllers/superheros.js')
+const authControler = require('../controllers/auth.js')
+
+
+router.route('/register')
+  .post(authControler.register)
+
 
 router.route('/superheros?field=')
   .get(superheroControler.index)
