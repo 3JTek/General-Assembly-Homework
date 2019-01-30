@@ -26,7 +26,14 @@ userSchema.pre('validate', function checkPasswordsMatch(next) {
   next()
 })
 
+//function to hash the password and add salt to encrypt it with bcrypt.
+userSchema.pre('save', function hashPassword(next) {
+  if(this.isModified('password')) {
+    this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8))
+  }
 
+  next()
+})
 
 
 

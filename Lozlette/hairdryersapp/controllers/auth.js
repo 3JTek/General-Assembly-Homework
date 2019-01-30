@@ -5,3 +5,26 @@ function registerRoute(req, res) {
     .then(user => res.status(201).json(user))
     .catch(err => res.status(422).json(err.errors))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = {
+  register: registerRoute
+}

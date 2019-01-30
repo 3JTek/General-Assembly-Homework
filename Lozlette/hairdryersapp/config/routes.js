@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const hairdryersController = require('../controllers/hairdryers')
+const authController = require('../controllers/auth')
 
 
 
@@ -12,6 +13,9 @@ router.route('/hairdryers/:id')
   .get(hairdryersController.show)
   .put(hairdryersController.update)
   .delete(hairdryersController.delete)
+
+router.route('/register')
+  .post(authController.register)
 
 
 module.exports = router
