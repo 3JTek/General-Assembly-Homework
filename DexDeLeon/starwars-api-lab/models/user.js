@@ -23,12 +23,16 @@ userSchema.pre('validate', function checkPassMatch(next){
   next()
 })
 
-userSchema.pre('save', function hashPass(next){
+userSchema.pre('save', function hashPassword(next){
   if(this.isModified('password')){
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(13))
   }
 
   next()
 })
+
+userSchema.methods.validatePassword = function(password){
+  return bcrypt.compareSync(password, this.password)
+}
 
 module.exports = mongoose.model('User', userSchema)
