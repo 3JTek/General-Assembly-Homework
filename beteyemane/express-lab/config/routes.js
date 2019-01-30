@@ -15,8 +15,8 @@ router.route('/mugs')
   .post(secureRoute, mugsController.create)
 
 router.route('/mugs/:id')
-  .get(mugsController.show )
-  .put(mugsController.update)
-  .delete(mugsController.delete)
+  .get(secureRoute, mugsController.show )
+  .put(secureRoute, mugsController.update)
+  .delete(secureRoute, mugsController.delete)
 
 module.exports = router
