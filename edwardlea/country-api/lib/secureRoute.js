@@ -4,9 +4,9 @@ const User = require('../models/user')
 
 Promise.promisifyAll(jwt)
 
-// secure route
+// secure route to confirm user is logged in
 function secureRoute (req, res, next){
-  if(!req.header.token) return res.status(401).json({ message: 'Token not provided'})
+  if(!req.headers.authorization) return res.status(401).json({ message: 'Token not provided'})
 
   const token = req.headers.authorization.replace('Bearer ', '')
 
