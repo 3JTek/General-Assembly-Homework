@@ -10,8 +10,8 @@ router.route('/register')
   .post(authController.register)
 
 
-// router.route('/login')
-//   .post(authController.login)
+router.route('/login')
+  .post(authController.login)
 
 router.route('/tracks/:id')
   .get(trackController.show)

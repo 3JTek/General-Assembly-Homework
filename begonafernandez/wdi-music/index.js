@@ -12,4 +12,4 @@ mongoose.connect('mongodb://localhost/wdi-track')
 app.use(bodyParser.json())
 app.use(routes)
 
-app.listen(4000, () => console.log('Express is running on port 4000'))
+app.listen(4000, () => console.log('listening'))
