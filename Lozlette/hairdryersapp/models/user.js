@@ -35,15 +35,10 @@ userSchema.pre('save', function hashPassword(next) {
   next()
 })
 
-
-
-
-
-
-
-
-
-
+//checks whether hashed password and req.body passwords match
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password)
+}
 
 
 module.exports = mongoose.model('User', userSchema)

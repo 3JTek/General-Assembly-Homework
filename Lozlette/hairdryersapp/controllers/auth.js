@@ -6,6 +6,16 @@ function registerRoute(req, res) {
     .catch(err => res.status(422).json(err.errors))
 }
 
+function loginRoute(req, res) {
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if(!user || !user.validatePassword(req.body.password)) {
+        return res.status(401).json({ message: 'Unauthorized' })
+      }
+      res.json({ message: `Welcome back ${user.username}!` })
+    })
+}
+
 
 
 
@@ -26,5 +36,6 @@ function registerRoute(req, res) {
 
 
 module.exports = {
-  register: registerRoute
+  register: registerRoute,
+  login: loginRoute
 }

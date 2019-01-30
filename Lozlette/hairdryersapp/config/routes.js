@@ -17,5 +17,7 @@ router.route('/hairdryers/:id')
 router.route('/register')
   .post(authController.register)
 
+router.route('/login')
+  .post(authController.login)
 
 module.exports = router
