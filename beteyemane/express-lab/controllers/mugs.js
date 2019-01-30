@@ -2,9 +2,8 @@ const Mug = require('../models/mug')
 
 function indexRoute (req, res) {
   console.log(req.query)
-  const { fields, ...rest } = req.query
   Mug
-    .find(rest, fields.split(',').join(' '))
+    .find(req.query)
     .then(mugs => res.json(mugs))
     .catch(err => res.status(422).json(err.errors))
 }

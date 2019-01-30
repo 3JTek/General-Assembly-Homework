@@ -1,13 +1,36 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  confirmCode: { type: String, required: true },
-  verified: { type: Boolean, default: false }
+  password: { type: String, required: true }
 })
 
+userSchema.virtual('passwordConfirmation')
+  .set(function passwordConfirmation(passwordConfirmation) {
+    this._passwordConfirmation = passwordConfirmation
+  })
 
+userSchema.pre('validate', function checkPasswordMatch(next) {
+  if(
+    this.isModified('password') &&
+    this._passwordConfirmation !== this.password
+  ) {
+    this.invalidate('passwordConfirmation', 'Passwords do not match')
+  }
+  next()
+})
 
-module.export = mongoose.model('User', userSchema)
+userSchema.pre('save', function hashPassword(next) {
+  if(this.isModified('password')) {
+    this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8))
+  }
+  next()
+})
+
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password)
+}
+
+module.exports = mongoose.model('User', userSchema)
