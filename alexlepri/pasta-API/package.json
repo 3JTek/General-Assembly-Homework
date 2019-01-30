@@ -1,0 +1,16 @@
+{
+  "name": "pasta-API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.8"
+  }
+}
