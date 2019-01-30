@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 function registerRoute(req, res) {
   User.create(req.body)
@@ -12,7 +13,10 @@ function loginRoute(req, res) {
       if(!user || !user.validatePassword(req.body.password)) {
         return res.status(401).json({ message: 'Unauthorized' })
       }
-      res.json({ message: `Welcome back ${user.username}!` })
+      const payload = { sub: user._id }
+      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '6h' })
+      //send back token and welcome back message
+      res.json({ token, message: `Welcome back ${user.username}!` })
     })
 }
 
