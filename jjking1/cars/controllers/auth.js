@@ -15,7 +15,7 @@ function loginRoute(req, res){
       }
 
       const payload = { sub: user._id }
-      const token = jwt.sign(payload, process.env.SECRET,{ expiresIn:  '6h' })
+      const token = jwt.sign(payload, process.env.SECRET, { expiresIn:  '6h' })
 
       res.json({
         token,
