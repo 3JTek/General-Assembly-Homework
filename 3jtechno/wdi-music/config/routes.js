@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const trackController = require('../controllers/tracks')
 const userController = require('../controllers/users')
-
+const secureRoute = require('../lib/secureRoute')
 
 router.route('/register')
   .post(userController.register)
@@ -11,11 +11,11 @@ router.route('/login')
 
 router.route('/tracks')
   .get(trackController.index)
-  .post(trackController.post)
+  .post(secureRoute, trackController.post)
 
 router.route('/tracks/:id')
   .get(trackController.show)
-  .delete(trackController.delete)
-  .put(trackController.update)
+  .delete(secureRoute, trackController.delete)
+  .put(secureRoute, trackController.update)
 
 module.exports = router
