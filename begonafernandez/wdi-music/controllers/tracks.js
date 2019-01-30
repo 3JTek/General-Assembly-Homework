@@ -1,7 +1,6 @@
 const Track = require('../models/track.js')
 
 function indexRoute(req, res) {
-  console.log(req.query.fields)
   const {fields, ...query } = req.query
   const fieldsArray = fields ? fields.split(',') : []
   Track
