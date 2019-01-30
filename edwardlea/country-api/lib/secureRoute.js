@@ -15,7 +15,7 @@ function secureRoute (req, res, next){
 
   // using the jwt verifyAsync method to check submitted token using the secret
   jwt.verifyAsync(token, process.env.SECRET)
-    // takes the payload from the jwt verification
+    // takes the payload from the jwt verification, sub, exp, etc.
     .then(payload => {
       // find time now is seconds
       const now = Math.floor(Date.now() / 1000)
