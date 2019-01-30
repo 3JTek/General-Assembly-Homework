@@ -1,4 +1,4 @@
-const Car = require( '../models/car');
+const Car = require( '../models/car')
 
 
 function indexRoute(req, res, next){
@@ -8,37 +8,42 @@ function indexRoute(req, res, next){
   Car
     .find(req.query)
     .then(cars => res.status(200).json(cars))
+    .catch(next)
 }
 
 
-function createRoute(req, res){
+function createRoute(req, res, next){
   Car
     .create(req.body)
     .then(car => res.status(201).json(car))
     .catch(err => res.status(422).json(err.errors))
+    .catch(next)
 }
 
-function updateRoute(req, res){
+function updateRoute(req, res, next){
   Car
     .findById(req.params.id)
     .then(car => car.set(req.body))
     .then(car => car.save())
     .then(car => res.json(car))
+    .catch(next)
 }
 
 
 
-function showRoute(req, res){
+function showRoute(req, res, next){
   Car
     .findById(req.params.id)
     .then(car => res.json(car))
+    .catch(next)
 }
 
-function deleteRoute(req, res){
+function deleteRoute(req, res, next){
   Car
-  .findById(req.params.id)
-  .then(car => car.remove())
-  .then(car => res.sendStatus(204))
+    .findById(req.params.id)
+    .then( car => car.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next)
 }
 
 module.exports = {
