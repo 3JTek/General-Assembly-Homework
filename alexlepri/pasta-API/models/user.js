@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true},
   email: { type: String, required: true, unique: true},
   password: { type: String, required: true},
-  confirmCode: { type: String, required: true}
+  confirmCode: { type: String, required: true},
+  verified: { type: Boolean, default: false}
 })
 
 userSchema.virtual('passwordConfirmation')
@@ -22,6 +23,13 @@ userSchema.pre('validate', function checkPasswordMatch(next) {
 
   next()
 
+})
+
+userSchema.pre('validate', function generateConfirmCode(next) {
+  if(this.isModified('email')) {
+    this.confirmCode = Math.random().toString(16).substr(2)
+  }
+  next()
 })
 
 userSchema.pre('save', function hashPassword(next) {
