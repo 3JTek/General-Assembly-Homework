@@ -8,3 +8,18 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true},
   confirmCode: { type: String, required: true}
 })
+
+userSchema.virtual('passwordConfirmation')
+  .set(function setPasswordConfirmation(passwordConfirmation) {
+    this._passwordConfirmation = passwordConfirmation
+  })
+
+
+userSchema.pre('validate', function checkPasswordMatch(next) {
+  if(this.isModified('password') && this._passwordConfirmation !== this.password) {
+    this.invalidate('passwordConfirmation', 'Wrong password')
+  }
+
+  next()
+
+})
