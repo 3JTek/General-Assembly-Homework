@@ -5,6 +5,9 @@ const authController = require('../controllers/auth')
 router.route('/register')
   .post(authController.register)
 
+router.route('/login')
+  .post(authController.login)
+
 router.route('/mugs')
   .get(mugsController.index)
   .post(mugsController.create)
