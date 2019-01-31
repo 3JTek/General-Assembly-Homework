@@ -6,34 +6,35 @@ function getGeoLocation(city){
   return rp(`${openCageURL}&q=${city}`)
 }
 
-function getForecast (lng, lat) {
+function getForecast(lng, lat) {
   return rp(`${darkSkyURL}/${lat},${lng}`)
 }
 
 function getMyForecast(req, res) {
 
   getGeoLocation(req.query.city)
-    .then(data => {
-      const dataObj = JSON.parse(data)
-      const lng = dataObj.features[0].geometry.coordinates[0]
-      const lat = dataObj.features[0].geometry.coordinates[1]
-      console.log(lng, lat);
-      getForecast(lng, lat)
-        .then(weatherData => {
-          const dailyForecast = JSON.parse(weatherData).daily
-          const dataFiltered = dailyForecast.data.map(el => {
-            return {
-              time: el.time,
-              summary: el.summary,
-              icon: el.icon,
-              temperatureHigh: el.temperatureHigh,
-              temperatureLow: el.temperatureLow
-            }
-          })
-          const newArray = {...dailyForecast, data: dataFiltered}
-          res.status(200).json(newArray)
-        })
+
+    .then(geoLocData => {
+      const geoLocDataObj = JSON.parse(geoLocData)
+      const [lng, lat] = geoLocDataObj.features[0].geometry.coordinates
+
+      return getForecast(lng, lat)
     })
+    .then(weatherData => {
+      const dailyForecast = JSON.parse(weatherData).daily
+      const dataFiltered = dailyForecast.data.map(el => {
+        return {
+          time: el.time,
+          summary: el.summary,
+          icon: el.icon,
+          temperatureHigh: el.temperatureHigh,
+          temperatureLow: el.temperatureLow
+        }
+      })
+      const dailyForcastFiltered = {...dailyForecast, data: dataFiltered}
+      res.status(200).json(dailyForcastFiltered)
+    })
+    .catch(err => res.status(422).json(err))
 }
 
 module.exports = {
