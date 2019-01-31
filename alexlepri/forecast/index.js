@@ -4,32 +4,37 @@ const bodyParser = require('body-parser')
 const rp = require('request-promise')
 
 
-// const accountSID = process.env.ACCOUNT
-// const authToken = process.env.TOKEN
-// const client = require('twilio')(accountSID, authToken)
-// const forecast = process.env.FORECAST
-// const location = process.env.LOCATION
-
-
-// API KEY
-//https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190131T143149Z.f1b19a84b6209adc.20e9eb95a45784e2b5260150697bb54567fecfd0&text=hello&lang=ru
-
 const app = express()
 
 app.use(bodyParser.json())
 
-app.post('/weather', (req, res) => {
-  console.log(`https://api.darksky.net/forecast/${process.env.FORECAST}/${req.body.latitude},${req.body.longitude}`)
-  rp(`https://api.darksky.net/forecast/${process.env.FORECAST}/${req.body.latitude},${req.body.longitude}`)
-    .then(data => res.status(200).json(JSON.parse(data)))
-    .catch(err => console.log(err.errors))
+
+app.get('/forecast', (req, res) => {
+  rp('https://api.opencagedata.com/geocode/v1/json?', {
+    qs: {
+      key: process.env.LOCATION,
+      q: req.query.city
+    },
+    json: true
+  })
+
+    .then(data => {
+      const { lat, lng } = data.results[0].geometry
+      rp(`https://api.darksky.net/forecast/${process.env.FORECAST}/${lat},${lng}`)
+        .then(forecastData => {
+          forecastData = JSON.parse(forecastData)
+          const data = forecastData.daily.data.map(day => {
+            const { time, summary, icon, temperatureHight, temperatureLow } = day
+            return { time, summary, icon, temperatureHight, temperatureLow }
+          })
+          const { summary, icon } = forecastData.daily
+          const output = { summary, icon, data }
+          res.status(200).json(output)
+        })
+
+    })
+
 })
-
-
-
-
-
-
 
 
 app.listen(4000, () => console.log('Express is running on port 4000'))
