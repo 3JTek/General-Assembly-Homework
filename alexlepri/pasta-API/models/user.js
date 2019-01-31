@@ -5,9 +5,7 @@ const bcrypt = require('bcrypt')
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true},
   email: { type: String, required: true, unique: true},
-  password: { type: String, required: true},
-  confirmCode: { type: String, required: true},
-  verified: { type: Boolean, default: false}
+  password: { type: String, required: true}
 })
 
 userSchema.virtual('passwordConfirmation')
@@ -25,12 +23,6 @@ userSchema.pre('validate', function checkPasswordMatch(next) {
 
 })
 
-userSchema.pre('validate', function generateConfirmCode(next) {
-  if(this.isModified('email')) {
-    this.confirmCode = Math.random().toString(16).substr(2)
-  }
-  next()
-})
 
 userSchema.pre('save', function hashPassword(next) {
   if(this.isModified('password')) {
@@ -39,6 +31,11 @@ userSchema.pre('save', function hashPassword(next) {
 
   next()
 
+
 })
+
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password)
+}
 
 module.exports = mongoose.model('User', userSchema)

@@ -16,11 +16,6 @@ router.route( '/register')
 router.route( '/login')
   .post(authController.login)
 
-
-router.route( '/confirm/:code')
-  .get(authController.confirm)
-
-
 router.route( '/pastas/:id')
   .get( pastasController.show)
 
