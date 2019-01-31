@@ -21,7 +21,17 @@ app.post('/forecast', (req, res) => {
       const { lat, lng } = data.results[0].geometry
       console.log(data.results[0].geometry)
       rp(`https://api.darksky.net/forecast/${process.env.WEATHER_KEY}/${lat},${lng}`)
-        .then(data => res.status(200).json(JSON.parse(data).daily.data))
+        .then(weatherData => {
+          weatherData = JSON.parse(weatherData)
+          const data = weatherData.daily.data.map( day => {
+            const { time, summary, icon, temperatureHigh, temperatureLow } = day
+            return { time, summary, icon, temperatureHigh, temperatureLow }
+          })
+          const { summary, icon } = weatherData.daily
+          const output = { summary, icon, data }
+
+          res.status(200).json(output)
+        })
     })
 })
 
