@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const forecastController = require('../controllers/translate')
+const forecastController = require('../controllers/forecast')
 
 
 router.route('/forecast')
