@@ -3,25 +3,20 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
-
-const rp = require('request-promise')
+const requestPromise = require('request-promise')
 
 app.use(bodyParser.json())
 
-
-app.post('/forecast', (req, res) => {
-  rp('https://api.opencagedata.com/geocode/v1/json?', {
-    qs: {
-      key: process.env.geocodingToken,
-      q: req.query.city
-    },
+app.get('/forecast', (req, res) => {
+  requestPromise(`https://api.opencagedata.com/geocode/v1/json?q=${req.query.city}&key=${process.env.geocodingToken}`, {
     json: true
   })
     .then( data => {
       const { lat, lng } = data.results[0].geometry
-      rp(`https://api.darksky.net/forecast/${process.env.forecastToken}/${lat},${lng}`)
+      requestPromise(`https://api.darksky.net/forecast/${process.env.forecastToken}/${lat},${lng}`,{json: true})
         .then(forecastData => {
-          forecastData = JSON.parse(forecastData)
+          //json parse converts data from the webpage from a string to an object
+          // forecastData = JSON.parse(forecastData)
           const data = forecastData.daily.data.map(day => {
             const { time, summary, icon, temperatureHigh, temperatureLow } = day
             return { time, summary, icon, temperatureHigh, temperatureLow }
