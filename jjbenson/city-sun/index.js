@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
-const rp = require('request-promise')
+const reqPro = require('request-promise')
 
 const app = express()
 
@@ -14,7 +14,7 @@ const openCageURL = 'https://api.opencagedata.com/geocode/v1/json'
 //Get Geocode from location
 app.get('/forecast', function geoCode(req, res, next){
   //Request-promise
-  rp(openCageURL,{
+  reqPro(openCageURL,{
     qs: {
       key: openCageKey,
       //Add the city from the initial request as a query string
@@ -35,7 +35,7 @@ app.get('/forecast', function geoCode(req, res, next){
 //Get weather from Geocode
 app.get('/forecast', function darkSky(req, res){
   //Request-promise
-  rp(darkSkyURL+'/'+darkSkyKey+'/'+req.geoCode,{
+  reqPro(darkSkyURL+'/'+darkSkyKey+'/'+req.geoCode,{
     qs: {
       //Exclude data to speed up API call
       exclude: 'currently,minutely,hourly,flags',
