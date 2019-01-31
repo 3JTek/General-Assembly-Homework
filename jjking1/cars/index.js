@@ -11,9 +11,6 @@ mongoose.connect('mongodb://localhost/cars')
 
 app.use(bodyParser.json())
 
-// app.get('/cars', (req, res) => {
-//   .find(req.query)
-// })
 
 app.use(routes)
 
