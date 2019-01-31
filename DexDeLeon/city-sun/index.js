@@ -10,7 +10,11 @@ app.get('/forecast', (req, res) => {
     .then(data => {
       const { lat, lng } = data.results[0].geometry
       const location = `${lat},${lng}`
-      res.status(200).json( location )
+      getWeatherData(location)
+        .then(data => {
+          res.status(200).json(data.daily)
+        })
+        .catch(err => res.status(400).json({ message: err.message }))
     })
     .catch(err => res.status(400).json({ message: err.message }))
 
@@ -34,7 +38,8 @@ function getWeatherData(location){
     qs: {
       units: 'uk2',
       exclude: 'currently,minutely,hourly,alerts,flags'
-    }
+    },
+    json: true
   }
 
   return rp(darkSkyOptions)
