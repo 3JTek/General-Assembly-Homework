@@ -10,11 +10,29 @@ app.use(bodyParser.json())
 
 // mongoose.connect('mongodb://localhost/city-sun')
 
-app.post('/weather', (req, res) => {
-  rp(`https://api.darksky.net/forecast/${process.env.DARKSKYKEY}/${req.body.latitude},${req.body.longitude}`)
-    .then(data => res.status(200). json(JSON.parse(data)))
-    .catch(err => console.log(err.error))
-})
+app.post('/forecast', (req, res) => {
+  rp('https://api.opencagedata.com/geocode/v1/json?', {
+    qs: {
+      key: process.env.GEOKEY,
+      q: req.query.city
+    },
+    json: true
+  })
+    .then( data => {
+      const {lat, lng } = data.results[0].geometry
+      rp(`https://api.darksky.net/forecast/${process.env.DARKSKYKEY}/${lat},${lng}`)
+        .then(weatherdata => {
+          weatherdata = JSON.parse(weatherdata)
+          const data =weatherdata.daily.data.map( day => {
+            const { time, summary, icon, temperatureHigh, temperatureLow } = day
+            return { time, summary, icon, temperatureHigh, temperatureLow }
+          })
+          const {summary, icon } = weatherdata.daily
+          const output = {summary, icon, data}
 
+          res.status(200).json(output)
+        })
+    })
+})
 
 app.listen(4000, () => console.log('Express running on 4000'))
