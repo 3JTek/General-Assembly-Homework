@@ -37,6 +37,8 @@ app.get('/forecast', function darkSky(req, res){
   //Request-promise
   rp(darkSkyURL+'/'+darkSkyKey+'/'+req.geoCode,{
     qs: {
+      //Exclude data to speed up API call
+      exclude: 'currently,minutely,hourly,flags',
       //Set units to SI
       units: 'uk2'
     },
