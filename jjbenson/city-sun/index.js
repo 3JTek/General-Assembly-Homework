@@ -10,10 +10,12 @@ const app = express()
 const darkSkyKey = process.env.DARKSKY_KEY
 const openCageKey = process.env.OPENCAGE_KEY
 
+const darkSkyURL = 'https://api.darksky.net/forecast/'
+const openCageURL = 'https://api.opencagedata.com/geocode/v1/json'
 
 
 app.get('/forecast', function geoCode(req, res, next){
-  rp('https://api.opencagedata.com/geocode/v1/json',{
+  rp(openCageURL,{
     qs: {
       key: openCageKey,
       q: req.query.city
@@ -22,22 +24,26 @@ app.get('/forecast', function geoCode(req, res, next){
   })
     .then((data)=>{
       const {lng, lat} = data.results[0].geometry
-      req.lng = lng
-      req.lat = lat
+      req.geoCode = lat+','+lng
       next()
     })
 })
+
 app.get('/forecast', function darkSky(req, res){
-  rp(`https://api.darksky.net/forecast/${darkSkyKey}/${req.lat},${req.lng}?units=uk2`)
+  rp(darkSkyURL+darkSkyKey+'/'+req.geoCode,
+    {
+      qs: {
+        units: 'uk2'
+      },
+      json: true
+    })
     .then(weatherData => {
-      weatherData = JSON.parse(weatherData)
-      const {summary, icon, data: wData} = weatherData.daily
+      const { summary, icon, data: wData } = weatherData.daily
       const data = wData.map( (day)=>{
-        const {time, summary, icon, temperatureHigh, temperatureLow} = day
+        const { time, summary, icon, temperatureHigh, temperatureLow } = day
         return { time, summary, icon, temperatureHigh, temperatureLow }
       } )
-      const output = { summary, icon, data}
-      res.json(output)
+      res.json({ summary, icon, data })
     })
 })
 
@@ -84,4 +90,3 @@ app.use((err, req, res, next) => {
 // })
 
 app.listen(4000, () => console.log('Express is running on port 4000'))
-//https://api.opencagedata.com/geocode/v1/json?key=05d1ee367fb14936a8372232782c01f1&pretty=1&no_annotations=1&q=Croydon
