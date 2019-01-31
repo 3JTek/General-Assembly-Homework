@@ -15,8 +15,8 @@ router.route('/countries')
 
 router.route('/countries/:id')
   .get(countriesController.show)
-  .put(countriesController.update)
-  .delete(countriesController.delete)
+  .put(secureRoute, countriesController.update)
+  .delete(secureRoute, countriesController.delete)
 
 
 
