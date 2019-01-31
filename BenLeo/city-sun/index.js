@@ -4,10 +4,6 @@ const express = require('express')
 const rp = require('request-promise')
 const bodyParser = require('body-parser')
 
-//REMOVE TO ENV
-const darkSkyKey= '93b14fc29bb085d147394b0d4fa7bed9'
-const openCageKey= '5e16e423b862420ebfd8c6bcbca6feab'
-
 const app = express()
 
 app.use(bodyParser.json())
@@ -17,7 +13,7 @@ app.route('/forecast')
     const options = {
       uri: 'https://api.opencagedata.com/geocode/v1/json',
       qs: {
-        key: openCageKey,
+        key: process.env.OPENCAGEKEY,
         q: req.body.city,
         limit: 1
       },
@@ -38,7 +34,7 @@ function getWeather(lat, lng) {
   app.get(function(req, res) {
     console.log('Calling DarkSky')
     const options = {
-      uri: `https://api.darksky.net/forecast/${darkSkyKey}/${lat},${lng}`,
+      uri: `https://api.darksky.net/forecast/${process.env.DARKSKYKEY}/${lat},${lng}`,
       json: true
     }
     rp(options)
