@@ -6,6 +6,17 @@ const rp = require('request-promise')
 const app = express()
 
 app.get('/forecast', (req, res) => {
+  getLocationData(req)
+    .then(data => {
+      const { lat, lng } = data.results[0].geometry
+      const location = `${lat},${lng}`
+      res.status(200).json( location )
+    })
+    .catch(err => res.status(400).json({ message: err.message }))
+
+})
+
+function getLocationData(req){
   const openCageOptions = {
     url: 'https://api.opencagedata.com/geocode/v1/json',
     qs: {
@@ -14,23 +25,19 @@ app.get('/forecast', (req, res) => {
     },
     json: true
   }
-  rp(openCageOptions)
-    .then(repo => res.status(200).json(repo.results[0].geometry))
-    .catch(err => res.status(400).json({ message: err.message }))
-})
-
-
-
-const darkSkyOptions = {
-  url: `https://api.darksky.net/forecast/${process.env.DARKSKY_KEY}/51.5074,0.1278`,
-  qs: {
-    units: 'uk2',
-    exclude: 'currently,minutely,hourly,alerts,flags'
-  }
+  return rp(openCageOptions)
 }
 
-rp(darkSkyOptions)
-  .then(res => console.log(JSON.parse(res).daily))
-  .catch(err => console.log(err.message))
+function getWeatherData(location){
+  const darkSkyOptions = {
+    url: `https://api.darksky.net/forecast/${process.env.DARKSKY_KEY}/${location}`,
+    qs: {
+      units: 'uk2',
+      exclude: 'currently,minutely,hourly,alerts,flags'
+    }
+  }
+
+  return rp(darkSkyOptions)
+}
 
 app.listen(4000, () => console.log('Express running on 4000'))
