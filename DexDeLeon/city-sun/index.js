@@ -5,7 +5,6 @@ const rp = require('request-promise')
 
 const app = express()
 
-
 function getLocationData(req){
   const openCageOptions = {
     url: 'https://api.opencagedata.com/geocode/v1/json',
