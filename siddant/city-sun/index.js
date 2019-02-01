@@ -7,7 +7,7 @@ const forecast = process.env.OCD_API_KEY
 
 const app = express()
 
-app.get('/forecast?:location', (req, res) => {
+app.get('/forecast?:city', (req, res) => {
   const NodeGeocoder = require('node-geocoder')
   const geocoder = NodeGeocoder({
     provider: 'opencage',
