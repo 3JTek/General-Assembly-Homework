@@ -35,8 +35,6 @@ function getdarkskyforecast(latitude, longitude) {
     .catch(err => console.log(err.message))
 
 }
-// getlatlng('London, uk')
-
 
 app.route('/forecast')
   .get(function (req, res) {
