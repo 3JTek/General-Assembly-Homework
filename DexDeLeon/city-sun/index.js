@@ -12,7 +12,19 @@ app.get('/forecast', (req, res) => {
       const location = `${lat},${lng}`
       getWeatherData(location)
         .then(data => {
-          res.status(200).json(data.daily)
+          const payload = data.daily.data.map(day => {
+            return {time: day.time,
+              summary: day.summary,
+              icon: day.icon,
+              temperatureHigh: day.temperatureHigh,
+              temperatureLow: day.temperatureLow
+            }
+          })
+          res.status(200).json({
+            summary: data.daily.summary,
+            icon: data.daily.icon,
+            data: payload
+          })
         })
         .catch(err => res.status(400).json({ message: err.message }))
     })
