@@ -14,7 +14,7 @@ app.get('/forecast?:city', (req, res) => {
     apiKey: forecast
   })
 
-  geocoder.geocode(req.query.location)
+  geocoder.geocode(req.query.city)
     .then((data) => {
       const option ={
         url: `https://api.darksky.net/forecast/${coordinate}/${data[0].latitude},${data[0].longitude}`,
