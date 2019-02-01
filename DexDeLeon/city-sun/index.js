@@ -13,7 +13,8 @@ app.get('/forecast', (req, res) => {
       getWeatherData(location)
         .then(data => {
           const payload = data.daily.data.map(day => {
-            return {time: day.time,
+            return {
+              time: day.time,
               summary: day.summary,
               icon: day.icon,
               temperatureHigh: day.temperatureHigh,
