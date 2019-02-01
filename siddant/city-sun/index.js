@@ -22,12 +22,19 @@ app.get('/forecast?:location', (req, res) => {
       }
       rp(option)
         .then(data => {
-          res.status(200).json(data)
+          const forecastData = data.daily.data.map(day => {
+            const { time, summary, icon, temperatureHigh, temperatureLow } = day
+            return { time, summary, icon, temperatureHigh, temperatureLow }
+          })
+          const { summary, icon } = data.daily
+          const output = { summary, icon, forecastData }
+          res.status(200).json(output)
         })
     })
     .catch(function(err) {
       console.log(err)
     })
 })
+
 
 app.listen(4000, () => console.log('express up on 4000'))
