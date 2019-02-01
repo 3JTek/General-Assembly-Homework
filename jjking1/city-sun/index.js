@@ -28,16 +28,16 @@ app.get('/weather', (req, res, next) => {
     },
     json: true
   }
-
+  debugger
   rp(options)
     .then(data => {
       const {lat, lng} = data.results[0].geometry
-
+      debugger
       rp(`https://api.darksky.net/forecast/${darkSkyToken}/${lat},${lng}`)
         .then((data) => {
+          debugger
           return JSON.parse(data).daily
         })
-
       .then(response => res.status(200).json( response ))
     })
 })
