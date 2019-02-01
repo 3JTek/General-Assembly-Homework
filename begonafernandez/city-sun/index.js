@@ -4,7 +4,7 @@ require('dotenv').config()
 
 const app = express()
 
-function getlatlng(location) {
+function getlatlngForecast(location) {
   const options = {
     uri: 'https://api.opencagedata.com/geocode/v1/json',
     qs: {
@@ -15,9 +15,10 @@ function getlatlng(location) {
     json: true
   }
 
-  rp(options)
+  return rp(options)
     .then(res => {
-      getdarkskyforecast(res.results[0].geometry.lat, res.results[0].geometry.lng)
+      const {lat, lng } = res.results[0].geometry
+      return getdarkskyforecast(lat, lng)
 
     })
     .catch(err => err.message)
@@ -30,15 +31,16 @@ function getdarkskyforecast(latitude, longitude) {
     json: true
   }
 
-  rp(options)
-    .then(res => console.log(res.daily))
+  return rp(options)
+    .then(res => res.daily)
     .catch(err => console.log(err.message))
 
 }
 
 app.route('/forecast')
   .get(function (req, res) {
-    res.json(getlatlng(req.query.city))
+    getlatlngForecast(req.query.city)
+      .then(daily => res.json(daily))
   })
 
 
