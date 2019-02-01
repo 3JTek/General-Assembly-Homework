@@ -25,10 +25,8 @@ function getlatlng(location) {
 
 
 function getdarkskyforecast(latitude, longitude) {
-  console.log(latitude)
-  console.log(longitude)
   const options = {
-    uri: `https://api.darksky.net/forecast/f1ad328526d3cf92ffe7f8f9de557cfc/${latitude},${longitude}`,
+    uri: `https://api.darksky.net/forecast/${process.env.DARKY_SKY}/${latitude},${longitude}`,
     json: true
   }
 
@@ -38,5 +36,12 @@ function getdarkskyforecast(latitude, longitude) {
 
 }
 // getlatlng('London, uk')
+
+
+app.route('/forecast')
+  .get(function (req, res) {
+    res.json(getlatlng(req.query.city))
+  })
+
 
 app.listen(4000, () => console.log('listening'))
