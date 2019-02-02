@@ -2,7 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 
+import 'bulma'
 import './style.scss'
+
+import Form from './components/Form'
 
 class App extends React.Component {
   constructor(){
@@ -10,6 +13,7 @@ class App extends React.Component {
 
     this.state = {
       message: '',
+      lang: '',
       langs: {}
     }
 
@@ -28,36 +32,25 @@ class App extends React.Component {
       .catch(err => console.error(err.message))
   }
 
-  changeHandler({ target: { value } }){
-    this.setState({ message: value })
+  changeHandler({ target: { name, value } }){
+    this.setState({ [name]: value })
   }
 
   submitHandler(e){
     e.preventDefault()
-    console.log(this.state.message)
+    console.log(this.state.message, this.state.lang)
   }
 
   render(){
     return (
       <div>
-        <h1>React SMS</h1>
-        <form onSubmit={this.submitHandler}>
-          <input
-            value={this.state.message}
-            onChange={this.changeHandler}
-          />
-          <select>
-            { Object.keys(this.state.langs).map((lang, i) =>
-              <option
-                key={i}
-                value={lang}
-              >
-                {this.state.langs[lang]}
-              </option>
-            )}
-          </select>
-          <button>Send Message</button>
-        </form>
+        <h1 className="title is-1">React SMS</h1>
+        <Form
+          submitHandler={this.submitHandler}
+          changeHandler={this.changeHandler}
+          message={this.state.message}
+          langs={this.state.langs}
+        />
       </div>
     )
   }
