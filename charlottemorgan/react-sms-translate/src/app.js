@@ -13,13 +13,15 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange({ target: { value }}) {
-    console.log(value)
+  handleSubmit(e){
+    e.preventDefault()
+    this.setState({ submit: this.state.value })
+    console.log(this.state)
   }
 
-  handleSubmit(e) {
-    e.preventDefault()
-    console.log(e.target.value)
+  handleChange( { target: { value }} ) {
+    console.log(value)
+    this.setState({ value })
   }
   // componentDidMount() {
   //     axios.get('/api/message', {
@@ -36,6 +38,7 @@ class App extends React.Component {
         <Form
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}/>
+        <p>{this.state.submit}</p>
       </div>
 
     )
