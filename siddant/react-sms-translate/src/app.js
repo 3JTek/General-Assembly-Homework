@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import 'bulma'
 import Form from './components/Forms.js'
 
+import axios from 'axios'
+
 class App extends React.Component{
 
   constructor(){
@@ -22,6 +24,11 @@ class App extends React.Component{
   }
   handleSubmit(e){
     e.preventDefault()
+    axios.post('/api/message',{
+      data: this.state
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
     console.log(this.state)
   }
 
