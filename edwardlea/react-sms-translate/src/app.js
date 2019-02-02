@@ -4,67 +4,70 @@ import axios from 'axios'
 
 import 'bulma'
 
+import Form from './components/form'
+
 class App extends React.Component {
   constructor(){
     super()
 
     this.state = {
-      to: null,
-      message: null,
-      lang: null
+      to: '',
+      message: '',
+      lang: '',
+      composing: true,
+      messageSent: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.resetForm = this.resetForm.bind(this)
   }
 
   handleSubmit(e){
     e.preventDefault()
-    axios.post('/api/message',
-      {
-        to: this.state.to,
-        message: this.state.message,
-        lang: this.state.lang
-      })
-      .then(res => console.log(res))
+    axios.post('/api/message',{
+      to: this.state.to,
+      message: this.state.message,
+      lang: this.state.lang
+    })
+      .then(() => this.setState({
+        messageSent: true,
+        composing: false,
+        to: '',
+        message: '',
+        lang: ''
+      }))
   }
 
   handleChange(e){
     e.preventDefault()
     const {name,value} = e.target
-    console.log(name, value)
     this.setState({ [name]: value })
+  }
+
+  resetForm(){
+    this.setState({messageSent: false, composing: true})
   }
 
   render(){
     return(
       <div className="container section">
         <h1 className="title is-1">Send your Translated Message!</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="field">
-            <label className="label">To</label>
-            <div className="control">
-              <input className="input" onChange={this.handleChange} value={this.state.to} name="to" type="text" placeholder="Telephone Number" />
-            </div>
-          </div>
-
-          <div className="field">
-            <label className="label">Language</label>
-            <div className="control">
-              <input className="input" onChange={this.handleChange} value={this.state.lang} name="lang" type="text" placeholder="Language" />
-            </div>
-          </div>
-
-
-          <div className="field">
-            <label className="label">Message</label>
-            <textarea className="textarea" name="message" onChange={this.handleChange} value={this.state.message} placeholder="e.g. Hello world"></textarea>
-          </div>
-
-          <div className="control">
-            <button className="button is-link">Submit</button>
-          </div>
-        </form>
+        {(this.state.composing) &&
+        <Form
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          to={this.state.to}
+          message={this.state.message}
+          lang={this.state.lang}
+        />}
+        {this.state.messageSent &&
+        <div>
+          <p> {this.state.message}</p>
+          <button className="button is-dark" onClick={this.resetForm} >
+          Send another Message</button>
+        </div>
+        }
 
       </div>
     )
