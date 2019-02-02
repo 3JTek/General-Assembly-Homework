@@ -26,7 +26,6 @@ function getWeatherData(location){
     },
     json: true
   }
-
   return rp(darkSkyOptions)
 }
 
