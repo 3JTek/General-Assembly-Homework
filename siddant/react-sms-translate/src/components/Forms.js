@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = ({handleChange, handleSubmit}) =>{
+const Form = ({handleChange, handleSubmit, langauges}) =>{
   return(
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -15,8 +15,9 @@ const Form = ({handleChange, handleSubmit}) =>{
         <div className="control">
           <div className="select">
             <select name="lang" onChange={handleChange}>
-              <option value="fr">French</option>
-              <option value="es">Spanish</option>
+              {Object.keys(langauges).map(lang =>
+                <option key={lang} value={lang}>{langauges[lang]}</option>
+              )}
             </select>
           </div>
         </div>

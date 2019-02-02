@@ -24,7 +24,7 @@ class App extends React.Component{
 
   componentDidMount(){
     axios.get('/api/language')
-      .then((languages) => console.log(languages.data.langs))
+      .then((languages) => this.setState({languages: languages.data.langs}))
       .catch(err => console.log(err))
   }
 
@@ -44,6 +44,7 @@ class App extends React.Component{
 
 
   render(){
+    if(!this.state.languages) return <p>Loading ...</p>
     return(
       <main className='section'>
         <section className="hero is-primary is-medium">
@@ -59,6 +60,7 @@ class App extends React.Component{
               <Form
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
+                langauges={this.state.languages}
               />
             </div>
           </div>
