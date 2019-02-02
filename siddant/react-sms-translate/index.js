@@ -9,7 +9,7 @@ const app = express()
 
 app.use(bodyParser.json())
 
-app.post('/message', (req, res) => {
+app.post('/api/message', (req, res) => {
   rp.post('https://translate.yandex.net/api/v1.5/tr.json/translate', {
     qs: {
       key: process.env.YANDEX_KEY,
