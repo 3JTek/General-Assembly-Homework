@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Header from './components/header'
 
-import axios from 'axios'
+// import axios from 'axios'
 
 
 
-class App extends React.Componet {
-  consctructor() {
-    super()
+class App extends React.Component {
+  constructor(props) {
+    super(props)
 
     this.state = {
       message: 'Ciao World'
@@ -15,8 +16,12 @@ class App extends React.Componet {
   }
 
   render() {
+
     return (
-      <h1>Hello World </h1>
+      <main>
+        <Header name="Alex" message={this.state.message} />
+      </main>
+
     )
   }
 }
