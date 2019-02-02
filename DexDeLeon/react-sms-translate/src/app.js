@@ -9,7 +9,8 @@ class App extends React.Component {
     super()
 
     this.state = {
-      message: ''
+      message: '',
+      langs: {}
     }
 
     this.changeHandler = this.changeHandler.bind(this)
@@ -45,6 +46,16 @@ class App extends React.Component {
             value={this.state.message}
             onChange={this.changeHandler}
           />
+          <select>
+            { Object.keys(this.state.langs).map((lang, i) =>
+              <option
+                key={i}
+                value={lang}
+              >
+                {this.state.langs[lang]}
+              </option>
+            )}
+          </select>
           <button>Send Message</button>
         </form>
       </div>
