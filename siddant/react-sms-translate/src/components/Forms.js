@@ -3,7 +3,6 @@ import React from 'react'
 const Form = ({handleChange, handleSubmit}) =>{
   return(
     <form onSubmit={handleSubmit}>
-
       <div className="field">
         <label className="label">Number To</label>
         <div className="control">

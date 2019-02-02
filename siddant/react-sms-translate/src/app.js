@@ -7,7 +7,11 @@ class App extends React.Component{
 
   constructor(){
     super()
-    this.state ={}
+    this.state ={
+      message: '',
+      number: '',
+      language: 'fr'
+    }
     this.handleChange =this.handleChange.bind(this)
     this.handleSubmit =this.handleSubmit.bind(this)
 
@@ -18,6 +22,7 @@ class App extends React.Component{
   }
   handleSubmit(e){
     e.preventDefault()
+    console.log(this.state)
   }
 
 
