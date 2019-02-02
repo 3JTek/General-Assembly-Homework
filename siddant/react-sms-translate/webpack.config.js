@@ -11,7 +11,6 @@ module.exports = {
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
       { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
       { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] }
     ]

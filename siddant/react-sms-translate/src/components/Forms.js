@@ -6,7 +6,7 @@ const Form = ({handleChange, handleSubmit}) =>{
       <div className="field">
         <label className="label">Number To</label>
         <div className="control">
-          <input onChange={handleChange} name="to" className="input" type="number" placeholder="0" min="0" />
+          <input onChange={handleChange} name="to" className="input is-medium" type="number" placeholder="0" min="0" />
         </div>
       </div>
 
@@ -16,7 +16,7 @@ const Form = ({handleChange, handleSubmit}) =>{
           <div className="select">
             <select name="lang" onChange={handleChange}>
               <option value="fr">French</option>
-              <option>With options</option>
+              <option value="es">Spanish</option>
             </select>
           </div>
         </div>

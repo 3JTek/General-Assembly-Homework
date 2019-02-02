@@ -29,4 +29,22 @@ app.post('/api/message', (req, res) => {
     .catch(err => res.status(500).json(err))
 })
 
+
+
+app.get('/api/language', (req, res) => {
+  rp.get('https://translate.yandex.net/api/v1.5/tr.json/getLangs', {
+    qs: {
+      key: process.env.YANDEX_KEY,
+      ui: '*'
+    },
+    json: true
+  })
+    .then((data) => res.status(200).json(data))
+    .catch(err => res.status(500).json(err))
+})
+
+
+
+
+
 app.listen(4000, () => console.log('Express is listening on port 4000'))
