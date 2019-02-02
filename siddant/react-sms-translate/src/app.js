@@ -12,7 +12,16 @@ class App extends React.Component{
     }
   }
 
-  
+  handleChange(e){
+    
+  }
+  handleSubmit(e){
+    e.preventDefault()
+    console.log('here')
+
+  }
+
+
   render(){
     return(
       <main className='section'>
@@ -20,7 +29,10 @@ class App extends React.Component{
           <div className='columns '>
             <div className='column'>
               <h1 className='title is-1'>Hello</h1>
-              <Form />
+              <Form
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+              />
             </div>
           </div>
         </div>
