@@ -38,7 +38,12 @@ class App extends React.Component {
 
   submitHandler(e){
     e.preventDefault()
-    console.log(this.state.message, this.state.lang)
+    axios.post('/api/message', {
+      message: this.state.message,
+      lang: this.state.lang,
+      to: '+447507687443'
+    })
+      .catch(err => console.error(err.message))
   }
 
   render(){
