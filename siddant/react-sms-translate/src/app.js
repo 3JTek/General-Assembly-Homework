@@ -7,18 +7,17 @@ class App extends React.Component{
 
   constructor(){
     super()
-    this.state ={
+    this.state ={}
+    this.handleChange =this.handleChange.bind(this)
+    this.handleSubmit =this.handleSubmit.bind(this)
 
-    }
   }
 
-  handleChange(e){
-    
+  handleChange({target: { name, value } }){
+    this.setState({[name]: value })
   }
   handleSubmit(e){
     e.preventDefault()
-    console.log('here')
-
   }
 
 
