@@ -1,11 +1,16 @@
 import React from 'react'
 
-const Form = ({ submitHandler, changeHandler, message, langs }) => {
+const Form = ({ submitHandler, changeHandler, message, langs, phone }) => {
   return (
     <div className="section">
       <div className="container">
         <form onSubmit={submitHandler}>
           <div className="field has-addons">
+            <div className="control">
+              <a className="button is-large is-static">
+                Message
+              </a>
+            </div>
             <div className="control is-expanded">
               <input
                 value={message}
@@ -33,6 +38,22 @@ const Form = ({ submitHandler, changeHandler, message, langs }) => {
                   )}
                 </select>
               </div>
+            </div>
+          </div>
+          <div className="field has-addons">
+            <div className="control">
+              <a className="button is-large is-static">
+                Phone Number
+              </a>
+            </div>
+            <div className="control is-expanded">
+              <input
+                value={phone}
+                onChange={changeHandler}
+                name="phone"
+                placeholder="Enter a phone number..."
+                className="input is-large"
+              />
             </div>
           </div>
           <div className="field">

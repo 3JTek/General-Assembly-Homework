@@ -6,6 +6,7 @@ import 'bulma'
 import './style.scss'
 
 import Form from './components/Form'
+import Loading from './components/Loading'
 
 class App extends React.Component {
   constructor(){
@@ -14,6 +15,7 @@ class App extends React.Component {
     this.state = {
       message: '',
       lang: '',
+      phone: '',
       langs: {}
     }
 
@@ -41,21 +43,26 @@ class App extends React.Component {
     axios.post('/api/message', {
       message: this.state.message,
       lang: this.state.lang,
-      to: '+447507687443'
+      to: this.state.phone
     })
+      .then(res => console.log(res.data.message))
       .catch(err => console.error(err.message))
   }
 
   render(){
     return (
       <div>
-        <h1 className="title is-1">React SMS</h1>
-        <Form
-          submitHandler={this.submitHandler}
-          changeHandler={this.changeHandler}
-          message={this.state.message}
-          langs={this.state.langs}
-        />
+        <h1 className="title is-1 has-text-centered">React SMS</h1>
+        {Object.keys(this.state.langs).length === 0 && <Loading />}
+        {Object.keys(this.state.langs).length > 0 &&
+          <Form
+            submitHandler={this.submitHandler}
+            changeHandler={this.changeHandler}
+            message={this.state.message}
+            langs={this.state.langs}
+            phone={this.state.phone}
+          />
+        }
       </div>
     )
   }

@@ -5,3 +5,23 @@
 body{
   margin: 0;
 }
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
+}
+
+div#loading {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 100%;
+  border-top: 15px solid #ccc;
+  border-right: 15px solid #ccc;
+  border-left: 15px solid #ccc;
+  border-bottom: 15px solid transparent;
+  animation: rotate 1s linear infinite;
+}
