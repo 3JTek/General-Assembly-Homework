@@ -6,6 +6,7 @@ const rp = require('request-promise')
 const twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN)
 
 const app = express()
+app.use(express.static(`${__dirname}/dist`))
 
 app.use(bodyParser.json())
 
