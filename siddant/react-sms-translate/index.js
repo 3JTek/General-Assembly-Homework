@@ -12,6 +12,7 @@ app.use(express.static(`${__dirname}/dist`))
 app.use(bodyParser.json())
 
 app.post('/api/message', (req, res) => {
+  console.log(req.body)
   rp.post('https://translate.yandex.net/api/v1.5/tr.json/translate', {
     qs: {
       key: process.env.YANDEX_KEY,

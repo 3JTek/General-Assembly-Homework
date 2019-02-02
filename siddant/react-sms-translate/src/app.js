@@ -11,8 +11,8 @@ class App extends React.Component{
     super()
     this.state ={
       message: '',
-      number: '',
-      language: 'fr'
+      to: '',
+      lang: 'fr'
     }
     this.handleChange =this.handleChange.bind(this)
     this.handleSubmit =this.handleSubmit.bind(this)
@@ -25,7 +25,7 @@ class App extends React.Component{
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/message',{
-      data: this.state
+      ...this.state
     })
       .then(res => console.log(res))
       .catch(err => console.log(err))
