@@ -4,6 +4,8 @@ import Form from './components/form'
 
 import axios from 'axios'
 
+import 'bulma'
+
 
 
 class App extends React.Component {
@@ -38,8 +40,7 @@ class App extends React.Component {
       <Form
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-        // message={this.state.message}
-        // phone={this.state.to}
+
       />
     )
   }
