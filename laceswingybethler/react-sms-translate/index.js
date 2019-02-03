@@ -11,9 +11,6 @@ app.use(express.static(`${__dirname}/dist`))
 
 app.use(bodyParser.json())
 
-//app.get('/api', (req, res) => {console.log('API wassup!')})
-//.then(()=>console.log('Get again!'))
-///.done()
 
 app.post('/api/message', (req, res) => {
   rp.post('https://translate.yandex.net/api/v1.5/tr.json/translate', {
@@ -27,7 +24,8 @@ app.post('/api/message', (req, res) => {
     .then(response => {
       const text = response.text[0]
       console.log(text)
-
+      console.log("HellO!")
+      console.log(req.body)
       return twilio.messages
         .create({ from: process.env.TWILIO_NR, to: req.body.to, body: response.text[0] })
     })
