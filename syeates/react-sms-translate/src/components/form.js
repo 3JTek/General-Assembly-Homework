@@ -5,13 +5,13 @@ const Form = ({ handlesubmit, handlechange }) => {
 
     <div className="container">
 
-    
+
       <h1 className="title is-3">Send a translated text message to your Phone!</h1>
 
       <form onSubmit={handlesubmit}>
 
         <div>
-          <label className="label"> 1. Enter the Number to send a text too:</label>
+          <label className="label"> 1. Enter the Number to send a text:</label>
           <input className="input is-primary" name="to" placeholder="Mobile number" onChange={handlechange} />
         </div>
 
