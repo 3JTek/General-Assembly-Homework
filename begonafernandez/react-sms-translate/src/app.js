@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import 'bulma'
 import axios from 'axios'
 
+import Hero from './components/Hero'
+import LanguageButton from './components/LanguageButton'
 
 class App extends React.Component{
   constructor() {
@@ -17,17 +19,19 @@ class App extends React.Component{
       }
     }
 
-    this.handChange = this.handChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  handChange({target: {name, value}}) {
+  handleChange({target: {name, value}}) {
     const data = {...this.state.data, [name]: value}
     this.setState({data})
   }
 
-  handleClick({ target: { value } }) {
-    this.setState({lang: value})
+  handleClick({ target: { name, value } }) {
+    const data = {...this.state.data, [name]: value}
+    this.setState({data})
   }
 
   handleSubmit(e) {
@@ -42,15 +46,7 @@ class App extends React.Component{
   render() {
     return(
       <main>
-        <section className="hero is-dark">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title is-1">The SMS translater</h1>
-              <p>Want to send a message to a friend that speaks another language?</p>
-              <p>Let us help</p>
-            </div>
-          </div>
-        </section>
+        <Hero />
         <div className="section">
           <div className="container">
             <form onSubmit={this.handleSubmit}>
@@ -63,7 +59,7 @@ class App extends React.Component{
                     type="text"
                     placeholder="Telephone number e.g +440988674543"
                     value={this.state.data.to}
-                    onChange={this.handChange}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -77,7 +73,7 @@ class App extends React.Component{
                     type="text"
                     placeholder="Write the text you want translated here"
                     value={this.state.data.message}
-                    onChange={this.handChange}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -90,7 +86,7 @@ class App extends React.Component{
                       name="lang"
                       value="es"
                       className="button"
-                      onClick={this.handChange}
+                      onClick={this.handleChange}
                     >Spanish</button>
                   </div>
                   <div className="column">
@@ -99,7 +95,7 @@ class App extends React.Component{
                       name="lang"
                       value="fr"
                       className="button"
-                      onClick={this.handChange}
+                      onClick={this.handleChange}
                     >French</button>
                   </div>
                   <div className="column">
@@ -108,7 +104,7 @@ class App extends React.Component{
                       name="lang"
                       value="el"
                       className="button"
-                      onClick={this.handChange}
+                      onClick={this.handleChange}
                     >Greek</button>
                   </div>
                   <div className="column">
@@ -117,18 +113,10 @@ class App extends React.Component{
                       name="lang"
                       value="he"
                       className="button"
-                      onClick={this.handChange}
+                      onClick={this.handleChange}
                     >Hebrew</button>
                   </div>
-                  <div className="column">
-                    <button
-                      type="button"
-                      name="lang"
-                      value="it"
-                      className="button"
-                      onClick={this.handChange}
-                    >Italian</button>
-                  </div>
+                  <LanguageButton  value="it" handleClick={this.handleClick}/>
                 </div>
               </div>
               <button className="button is-primary">Submit</button>
