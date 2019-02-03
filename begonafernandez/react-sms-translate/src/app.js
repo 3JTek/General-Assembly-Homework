@@ -5,7 +5,7 @@ import 'bulma'
 import axios from 'axios'
 
 import Hero from './components/Hero'
-import LanguageButton from './components/LanguageButton'
+import LanguageField from './components/LanguageField'
 
 class App extends React.Component{
   constructor() {
@@ -77,48 +77,7 @@ class App extends React.Component{
                   />
                 </div>
               </div>
-              <div className="field">
-                <label className="label">Language</label>
-                <div className="columns">
-                  <div className="column">
-                    <button
-                      type="button"
-                      name="lang"
-                      value="es"
-                      className="button"
-                      onClick={this.handleChange}
-                    >Spanish</button>
-                  </div>
-                  <div className="column">
-                    <button
-                      type="button"
-                      name="lang"
-                      value="fr"
-                      className="button"
-                      onClick={this.handleChange}
-                    >French</button>
-                  </div>
-                  <div className="column">
-                    <button
-                      type="button"
-                      name="lang"
-                      value="el"
-                      className="button"
-                      onClick={this.handleChange}
-                    >Greek</button>
-                  </div>
-                  <div className="column">
-                    <button
-                      type="button"
-                      name="lang"
-                      value="he"
-                      className="button"
-                      onClick={this.handleChange}
-                    >Hebrew</button>
-                  </div>
-                  <LanguageButton  value="it" handleClick={this.handleClick}/>
-                </div>
-              </div>
+              <LanguageField handleClick={this.handleClick}/>
               <button className="button is-primary">Submit</button>
             </form>
           </div>

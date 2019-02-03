@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LanguageButton = ({value, handleClick}) => {
+const LanguageButton = ({text, value, handleClick}) => {
   return (
     <div className="column">
       <button
@@ -9,7 +9,7 @@ const LanguageButton = ({value, handleClick}) => {
         value={value}
         className="button"
         onClick={handleClick}
-      >Italian</button>
+      >{text}</button>
     </div>
   )
 }
