@@ -37,9 +37,8 @@ class App extends React.Component{
     axios.post('/api/message',{
       ...this.state.data
     })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-    console.log(this.state)
+      .then(res => this.setState(res.data))
+      .catch(() => this.setState({message: 'Translation was un-successful. Message was not sent'}))
   }
 
 
@@ -51,6 +50,7 @@ class App extends React.Component{
           <div className="hero-body">
             <div className="container">
               <h1 className='title is-1'>React Sms Translator</h1>
+              <h2 className='title is-3'>Send a text message in a languge of your choosing!</h2>
             </div>
           </div>
         </section>
@@ -62,6 +62,7 @@ class App extends React.Component{
                 handleSubmit={this.handleSubmit}
                 langauges={this.state.languages}
               />
+              {this.state.message && <p>{this.state.message}</p>}
             </div>
           </div>
         </div>

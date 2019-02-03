@@ -27,7 +27,8 @@ const Form = ({handleChange, handleSubmit, langauges}) =>{
       <div className="field">
         <label className="label">Message</label>
         <div className="control">
-          <textarea  onChange={handleChange} name="message" className="textarea has-fixed-size" placeholder="Fixed size textarea"/>
+          <textarea  onChange={handleChange} name="message"
+            className="textarea has-fixed-size" placeholder="Your Message....."/>
         </div>
       </div>
 
