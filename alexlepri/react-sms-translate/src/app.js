@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Header from './components/header'
+import Form from './components/form'
 
 // import axios from 'axios'
 
@@ -18,10 +18,10 @@ class App extends React.Component {
   render() {
 
     return (
-      <main>
-        <Header name="Alex" message={this.state.message} />
-      </main>
-
+      <Form
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+      />
     )
   }
 }
