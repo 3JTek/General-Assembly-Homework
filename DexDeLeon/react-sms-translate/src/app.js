@@ -16,6 +16,7 @@ class App extends React.Component {
       message: '',
       lang: '',
       phone: '',
+      flag: '',
       langs: {},
       button: 'Send',
       status: 'info'
@@ -55,7 +56,7 @@ class App extends React.Component {
       this.setState({ button: 'Sending...' })
       axios.post('/api/message', {
         message: this.state.message,
-        lang: this.state.lang,
+        lang: this.state.lang.split(',')[0],
         to: this.state.phone
       })
         .then(res => {
