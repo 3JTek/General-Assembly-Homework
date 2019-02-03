@@ -6,32 +6,32 @@ const Composer = ({ handleChange, handleSubmit, phase, postData, handleDropDown,
     <Form onSubmit={handleSubmit}>
       {phase === 1 &&
         <div>
+          <Button color='blue'>
+          Next
+          </Button>
+          <Divider hidden/>
           <TextArea
             onChange={handleChange}
             value={postData.message}
             name='message'
             placeholder='Write your text message here...'
           />
-          <Divider hidden/>
-          <Button color='blue'>
-              Next
-          </Button>
         </div>
       }
 
 
       {phase === 2 &&
         <Container>
+          <Button color='blue'>
+          Next
+          </Button>
+          <Divider hidden/>
           <Dropdown fluid search selection
             placeholder='Select Language'
             name='lang'
             value={postData.lang}
             onChange={handleDropDown}
             options={languageOptions} />
-          <Divider hidden/>
-          <Button color='blue'>
-              Next
-          </Button>
         </Container>
       }
 

@@ -5,7 +5,7 @@ import axios from 'axios'
 
 // wanted to try to use something other than bulma
 // couldn't figure out to import the css so just put the cdn in head
-import { Container, Grid, Segment} from 'semantic-ui-react'
+import { Container, Grid, Segment } from 'semantic-ui-react'
 import Steps from './components/Steps'
 import Composer from './components/Composer'
 import Title from './components/Title'
