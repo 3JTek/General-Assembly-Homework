@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import axios from 'axios'
+import 'bulma'
+import './style.scss'
 
 class App extends React.Component {
   constructor() {
@@ -39,19 +41,31 @@ class App extends React.Component {
 
   render() {
     if(!this.state.languages) return null
+    console.log(this.state.languages)
     return(
       <main>
-        <h1> React SMS Homework </h1>
-        <form onSubmit={this.handleSubmit}>
-          <input placeholder="Enter Message" name="message" onChange={this.handleChange}>
-          </input>
-          <select name="lang" onChange={this.handleChange}>
-            {Object.keys(this.state.languages).map(langCode =>
-              <option key={langCode} value={langCode}> {this.state.languages[langCode]} </option>
-            )}
-          </select>
-          <button>Send Message</button>
-        </form>
+        <section className="section">
+          <div className="container">
+            <form onSubmit={this.handleSubmit}>
+              <div className="columns is-multiline is-centered">
+                <div className ="column is-narrow">
+                  <input className="input is-rounded is-small" placeholder="Enter Message" name="message" onChange={this.handleChange}>
+                  </input>
+                  <div className ="column select is-multiple is-small">
+                    <select name="lang" onChange={this.handleChange}>
+                      {Object.keys(this.state.languages).map(langCode =>
+                        <option key={langCode} value={langCode}> {this.state.languages[langCode]} </option>
+                      )}
+                    </select>
+                    <div className ="column">
+                      <button className="button is-small">Send Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
     )
   }

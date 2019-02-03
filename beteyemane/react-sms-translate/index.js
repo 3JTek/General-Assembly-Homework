@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const rp = require('request-promise')
 const twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN)
+// twilio.messages.each(messages => console.log(messages.sid))
 
 const app = express()
 
