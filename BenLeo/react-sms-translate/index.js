@@ -13,14 +13,14 @@ app.post('/api/message', (req, res) => {
   rp.post('https://translate.yandex.net/api/v1.5/tr.json/translate', {
     qs: {
       key: process.env.YANDEX_KEY,
-      text: req.body.message,
-      lang: req.body.lang
+      text: req.body.params.message,
+      lang: req.body.params.lang
     },
     json: true
   })
     .then(response => {
       return twilio.messages
-        .create({ from: process.env.TWILIO_NUMBER, to: req.body.to, body: response.text[0] })
+        .create({ from: process.env.TWILIO_NUMBER, to: req.body.params.to, body: response.text[0] })
     })
     .then(() => res.json({ message: 'Translation successful. Message sent' }))
     .catch(err => res.status(500).json(err))
