@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   handleChange({ target: { name, value } }) {
-    this.setState({ [name ]: value })
+    this.setState({ [ name ]: value })
   }
 
   handleSubmit(e) {
@@ -40,7 +40,6 @@ class App extends React.Component {
       <Form
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-
       />
     )
   }
