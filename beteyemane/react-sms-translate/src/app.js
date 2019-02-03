@@ -10,6 +10,7 @@ class App extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    // this.getLang = this.getLang.bind(this)
   }
 
   handleSubmit(e) {
@@ -26,21 +27,30 @@ class App extends React.Component {
     this.setState({ [name]: value })
   }
 
+  componentDidMount() {
+    axios.get('https://translate.yandex.net/api/v1.5/tr.json/getLangs', {
+      params: {
+        key: 'trnsl.1.1.20190202T152254Z.ca72f47331120192.c315e231da72f4034363101bb6238c8f5f4a95e1',
+        ui: 'en'
+      }
+    })
+      .then(res => this.setState({ languages: res.data.langs }))
+  }
+
   render() {
-    console.log(this.state.message)
+    if(!this.state.languages) return null
     return(
       <main>
         <h1> React SMS Homework </h1>
         <form onSubmit={this.handleSubmit}>
           <input placeholder="Enter Message" name="message" onChange={this.handleChange}>
           </input>
-          <input placeholder="Enter Language" name="lang" onChange={this.handleChange}>
-          </input>
-          <select>
-            <option>
-            </option>
+          <select name="lang" onChange={this.handleChange}>
+            {Object.keys(this.state.languages).map(langCode =>
+              <option key={langCode} value={langCode}> {this.state.languages[langCode]} </option>
+            )}
           </select>
-          <button>Press Me</button>
+          <button>Send Message</button>
         </form>
       </main>
     )
