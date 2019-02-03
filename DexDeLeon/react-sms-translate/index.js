@@ -27,7 +27,7 @@ app.post('/api/message', (req, res) => {
           to: req.body.to,
           body: response.text[0] })
     })
-    .then(() => res.json({ message: 'Translation successful. Message sent' }))
+    .then(() => res.json({ message: 'Sent!' }))
     .catch(err => res.status(500).json(err))
 })
 

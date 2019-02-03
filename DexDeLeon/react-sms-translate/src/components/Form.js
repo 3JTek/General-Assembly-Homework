@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = ({ submitHandler, changeHandler, message, langs, phone }) => {
+const Form = ({ submitHandler, changeHandler, message, langs, phone, button, status }) => {
   return (
     <div className="section">
       <div className="container">
@@ -58,8 +58,8 @@ const Form = ({ submitHandler, changeHandler, message, langs, phone }) => {
           </div>
           <div className="field">
             <div className="control">
-              <button className="button is-info is-large">
-                <span>Send</span>
+              <button className={`button is-${status} is-large`}>
+                <span>{button}</span>
               </button>
             </div>
           </div>

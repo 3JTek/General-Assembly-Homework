@@ -16,7 +16,9 @@ class App extends React.Component {
       message: '',
       lang: '',
       phone: '',
-      langs: {}
+      langs: {},
+      button: 'Send',
+      status: 'info'
     }
 
     this.changeHandler = this.changeHandler.bind(this)
@@ -40,13 +42,29 @@ class App extends React.Component {
 
   submitHandler(e){
     e.preventDefault()
-    // axios.post('/api/message', {
-    //   message: this.state.message,
-    //   lang: this.state.lang,
-    //   to: this.state.phone
-    // })
-    //   .then(res => console.log(res.data.message))
-    //   .catch(err => console.error(err.message))
+    if(this.state.message !== '' &&
+    this.state.lang !== '' &&
+    this.state.phone !== '') {
+      this.setState({ button: 'Sending...' })
+      axios.post('/api/message', {
+        message: this.state.message,
+        lang: this.state.lang,
+        to: this.state.phone
+      })
+        .then(res => {
+          this.setState({ button: res.data.message, status: 'success' })
+          setTimeout(() => {
+            this.setState({ button: 'Send', status: 'info' })
+          }, 1500)
+        })
+        .catch(err => {
+          console.error(err.message)
+          this.setState({ button: 'Failed', status: 'danger' })
+          setTimeout(() => {
+            this.setState({ button: 'Send', status: 'info' })
+          }, 1500)
+        })
+    }
   }
 
   render(){
@@ -61,6 +79,8 @@ class App extends React.Component {
             message={this.state.message}
             langs={this.state.langs}
             phone={this.state.phone}
+            button={this.state.button}
+            status={this.state.status}
           />
         }
       </div>
