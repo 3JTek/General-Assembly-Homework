@@ -11,6 +11,19 @@ app.use(express.static(`${__dirname}/dist`))
 
 app.use(bodyParser.json())
 
+app.get('/api/langlist',(req, res)=>{
+  rp.get('https://translate.yandex.net/api/v1.5/tr.json/getLangs', {
+    qs: {
+      key: process.env.YANDEX_KEY,
+      ui: 'en'
+    },
+    json: true
+  })
+    .then( (data)=>{
+      console.log(data)
+      res.json(data.langs)
+    })
+})
 app.post('/api/message', (req, res) => {
   console.log(req.body)
   rp.post('https://translate.yandex.net/api/v1.5/tr.json/translate', {
@@ -22,13 +35,17 @@ app.post('/api/message', (req, res) => {
     json: true
   })
     .then(response => {
+      req.translation = response.text[0]
       console.log('THEN',process.env.TWILIO_NUMBER,req.body.to,response.text[0])
       return twilio.messages
         .create({ from: process.env.TWILIO_NUMBER, to: req.body.to, body: response.text[0] })
     })
     .then(() => {
       console.log('TWILIO RETURN' )
-      res.json({ message: 'Translation successful. Message sent' })
+      res.json({
+        message: 'Translation successful. Message sent' ,
+        translation: req.translation
+      })
     })
     .catch(err => {
       console.log('TWILIO ERROR' )
