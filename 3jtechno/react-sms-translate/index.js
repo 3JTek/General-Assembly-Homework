@@ -9,6 +9,8 @@ const app = express()
 
 app.use(bodyParser.json())
 
+app.use(express.static(`${__dirname}/dist`))
+
 app.post('/api/message', (req, res) => {
   let translatedText = ''
   rp.post('https://translate.yandex.net/api/v1.5/tr.json/translate', {
