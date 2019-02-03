@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Form from './components/Form'
+import DropDown from './components/DropDown'
 
 import axios from 'axios'
+import 'bulma'
 
 class App extends React.Component {
 
@@ -29,7 +31,6 @@ class App extends React.Component {
   }
 
   handleChange( { target: { value }} ) {
-    console.log('VALUE', value)
     this.setState({ value })
   }
 
@@ -52,33 +53,25 @@ class App extends React.Component {
 
   render(){
     if (!this.state.countries) return <p> loading..... </p>
-  
     return (
-      <div>
-        <Form
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
-        <div>
-          <select
-            onChange={this.handleSelect}
-            name="lang"
-            defaultValue="Select a language.."
-          >
-            <option disabled>Select a language</option>
-            { Object.keys(this.state.countries.langs).map((lang, i) =>
-              <option
-                key={i}
-                value={lang}
-              >
-                {this.state.countries.langs[lang]}
-              </option>
-
-            )}
-          </select>
+      <div className="section">
+      
+        <div className="container">
+          <DropDown
+            handleSelect={this.handleSelect}
+            countries={this.state.countries}
+          />
         </div>
-        <div>
-          <p>{this.state.translatedText && this.state.translatedText}</p>
+        <div className="section">
+          <Form
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </div>
+        <div className="container is-widescreen">
+          <div className="title is-2">
+            {this.state.translatedText && this.state.translatedText}
+          </div>
         </div>
       </div>
     )
