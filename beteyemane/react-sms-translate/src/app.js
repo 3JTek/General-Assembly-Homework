@@ -16,31 +16,34 @@ class App extends React.Component {
     e.preventDefault()
     axios.post('/api/message', {
       message: this.state.message,
-      lang: 'fr',
+      lang: this.state.lang,
       to: '+447576424204'
     })
       .then(res => console.log(res))
   }
 
-  handleChange({ target: { value } }) {
-    this.setState({ message: value })
+  handleChange({ target: { name, value } }) {
+    this.setState({ [name]: value })
   }
-
 
   render() {
     console.log(this.state.message)
-    console.log(this.state)
     return(
       <main>
         <h1> React SMS Homework </h1>
         <form onSubmit={this.handleSubmit}>
-          <input placeholder="Enter Message" onChange={this.handleChange}>
+          <input placeholder="Enter Message" name="message" onChange={this.handleChange}>
           </input>
+          <input placeholder="Enter Language" name="lang" onChange={this.handleChange}>
+          </input>
+          <select>
+            <option>
+            </option>
+          </select>
           <button>Press Me</button>
         </form>
       </main>
     )
-
   }
 }
 
