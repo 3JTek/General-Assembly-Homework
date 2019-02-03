@@ -37,11 +37,14 @@ const Form = ({ handleSubmit, handleChange, langsArray }) => {
 
           <div className="field">
             <div className="control">
+
               <label className="title is-5"> Choose a language
-                <select name="lang"
-                  onChange={handleChange}>
-                  {langsArray.map((lang,i) => <option key={i}> {lang} </option> )}
-                </select> 
+                <div>
+                  <select name="lang"
+                    onChange={handleChange}>
+                    {Object.keys(langsArray).map((lang) => <option key={lang} value={lang}> {langsArray[lang]} </option> )}
+                  </select>
+                </div>
               </label>
             </div>
           </div>

@@ -7,6 +7,7 @@ import './style.scss'
 
 import Form from './components/Form'
 
+
 class App extends React.Component {
   constructor() {
     super()
@@ -38,12 +39,16 @@ class App extends React.Component {
       to: this.state.to
     })
       .then(res => console.log(res))
+      .catch((err) => err.message)
   }
 
   componentDidMount() {
     axios.get('https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20190202T152254Z.ca72f47331120192.c315e231da72f4034363101bb6238c8f5f4a95e1&ui=en')
       .then(res => this.setState({ langs: res.data.langs}))
   }
+
+
+
 
   render() {
 
