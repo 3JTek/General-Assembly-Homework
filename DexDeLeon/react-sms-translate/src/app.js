@@ -40,6 +40,13 @@ class App extends React.Component {
     this.setState({ [name]: value })
   }
 
+  colorButton(text, color){
+    this.setState({ button: text, status: color })
+    setTimeout(() => {
+      this.setState({ button: 'Send', status: 'info' })
+    }, 1500)
+  }
+
   submitHandler(e){
     e.preventDefault()
     if(this.state.message !== '' &&
@@ -52,17 +59,11 @@ class App extends React.Component {
         to: this.state.phone
       })
         .then(res => {
-          this.setState({ button: res.data.message, status: 'success' })
-          setTimeout(() => {
-            this.setState({ button: 'Send', status: 'info' })
-          }, 1500)
+          this.colorButton(res.data.message, 'success')
         })
         .catch(err => {
           console.error(err.message)
-          this.setState({ button: 'Failed', status: 'danger' })
-          setTimeout(() => {
-            this.setState({ button: 'Send', status: 'info' })
-          }, 1500)
+          this.colorButton('Failed', 'danger')
         })
     }
   }
