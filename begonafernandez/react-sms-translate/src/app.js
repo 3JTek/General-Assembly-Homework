@@ -11,6 +11,7 @@ import LanguageField from './components/LanguageField'
 import TextField from './components/TextField'
 import PhoneField from './components/PhoneField'
 import Footer from './components/Footer'
+import Successful from './components/Successful'
 
 class App extends React.Component{
   constructor() {
@@ -21,7 +22,8 @@ class App extends React.Component{
         message: '',
         to: '',
         lang: ''
-      }
+      },
+      submitted: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -31,12 +33,12 @@ class App extends React.Component{
 
   handleChange({target: {name, value}}) {
     const data = {...this.state.data, [name]: value}
-    this.setState({data})
+    this.setState({data, submitted: false})
   }
 
   handleClick({ target: { name, value } }) {
     const data = {...this.state.data, [name]: value}
-    this.setState({data})
+    this.setState({data, submitted: false})
   }
 
   handleSubmit(e) {
@@ -46,6 +48,7 @@ class App extends React.Component{
       message: this.state.data.message, to: this.state.data.to, lang: this.state.data.lang
     })
 
+    this.setState({submitted: true})
   }
 
   render() {
@@ -64,6 +67,7 @@ class App extends React.Component{
             </form>
           </div>
         </div>
+        <Successful submitted={this.state.submitted}/>
         <Footer />
       </main>
     )
