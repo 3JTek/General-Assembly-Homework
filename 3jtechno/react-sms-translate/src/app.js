@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import axios from 'axios'
+import 'bulma'
 
 import MessageForm from './components/MessageForm'
 import MessageResponse from './components/MessageResponse'
@@ -43,7 +44,14 @@ class App extends React.Component{
   render(){
     return(
       <main>
-        <h1>Send a translated to your friend</h1>
+        <section className="hero is-primary">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">TransSend a message to your friend 📧</h1>
+            </div>
+          </div>
+        </section>
+
         <MessageForm
           {...this.state.fieldsValue}
           handleChange={this.handleChange}
