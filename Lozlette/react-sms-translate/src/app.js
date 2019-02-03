@@ -19,12 +19,10 @@ class App extends React.Component {
 
   handleToChange({ target: { value } }) {
     this.setState({ to: value })
-    console.log(this.state)
   }
 
   handleLangChange( { target: { value }}){
     this.setState({ lang: value })
-    console.log(this.state)
   }
 
   handleMessageChange( { target: { value }}){
@@ -34,12 +32,7 @@ class App extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    axios.post('/api/message',{ params: {
-      to: this.state.to,
-      message: this.state.message,
-      lang: this.state.lang
-    }
-    })
+    axios.post('/api/message', this.state)
   }
 
   render(){
