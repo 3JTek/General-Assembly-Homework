@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom'
 
 import axios from 'axios'
 
+import MessageForm from './components/MessageForm'
+import MessageResponse from './components/MessageResponse'
+
 class App extends React.Component{
   constructor(){
     super()
 
     this.state = {
-      language: 'fr',
-      text: 'How are you going Australia, how was your summer?',
-      phone: '+33752755762'
+      fieldsValue: {
+        language: 'fr',
+        text: 'How are you going Australia, how was your summer?',
+        phone: '+33752755762'
+      }
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -19,15 +24,15 @@ class App extends React.Component{
 
   sendTranslatedText(){
     axios.post('api/message', {
-      message: this.state.text,
-      to: this.state.phone,
-      lang: this.state.language
+      message: this.state.fieldsValue.text,
+      to: this.state.fieldsValue.phone,
+      lang: this.state.fieldsValue.language
     })
       .then(res => this.setState({ translatedMessage: res.data.translatedMessage }))
   }
 
   handleChange({target: {name, value}}){
-    this.setState({[name]: value})
+    this.setState({fieldsValue: {...this.state.fieldsValue, [name]: value }})
   }
 
   handleSubmit(e){
@@ -39,25 +44,14 @@ class App extends React.Component{
     return(
       <main>
         <h1>Send a translated to your friend</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            name="text"
-            onChange={this.handleChange}
-            value={this.state.text}
-          />
-          <input
-            name="phone"
-            onChange={this.handleChange}
-            value={this.state.phone}
-          />
-          <input
-            name="language"
-            onChange={this.handleChange}
-            value={this.state.language}
-          />
-          <button>Submit</button>
-        </form>
-        <p>{this.state.translatedMessage && `${this.state.translatedMessage} ✅`} </p>
+        <MessageForm
+          {...this.state.fieldsValue}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        <MessageResponse
+          translatedMessage={this.state.translatedMessage}
+        />
       </main>
     )
   }
