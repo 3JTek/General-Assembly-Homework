@@ -9,22 +9,26 @@ import { Container, Grid, Segment } from 'semantic-ui-react'
 import Steps from './components/Steps'
 import Composer from './components/Composer'
 import Title from './components/Title'
+import Result from './components/Result'
 import './style.scss'
 
-
-
+// ---------------------------------------------------
+// the recipient number is hardcoded, not really any more time to go back and make it work for new numbers
+// please replace my number with yours in state to make it work for you. also the env files
+// ----------------------------------------------------
 
 class App extends React.Component{
   constructor(){
     super()
 
     this.state = {
+      result:'',
       languageOptions: '',
       phase: 1,
       postData: {
         message: '',
         lang: '',
-        to: ''
+        to: '+447502434799'
       }
     }
     this.handleChange = this.handleChange.bind(this)
@@ -47,7 +51,11 @@ class App extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    console.log('handling')
+    if(this.state.phase === 3){
+      axios.post('/api/message', this.state.postData )
+        .then(res => this.setState({ result: res.data.message }))
+        .catch(err => this.setState({ result: err.message }))
+    }
     this.setState({ phase: this.state.phase+1 })
   }
 
@@ -61,7 +69,6 @@ class App extends React.Component{
     this.setState({ postData: {...this.state.postData , lang: data.value}})
   }
 
-
   render(){
 
     return(
@@ -69,23 +76,31 @@ class App extends React.Component{
         <Grid columns={1} textAlign='center'>
           <Grid.Row>
               <Grid.Column width={8}>
-                <Segment>
-                  <Title />
-
-                  <Composer
-                    languageOptions={this.state.languageOptions}
-                    handleDropDown={this.handleDropDown}
-                    handleChange={this.handleChange}
-                    phase={this.state.phase}
-                    handleSubmit={this.handleSubmit}
-                    postData={this.state.postData}
+                {this.state.phase > 3 &&
+                  <Result
+                    message={this.state.result}
                   />
+                }
 
-                  <Steps
-                    phase={this.state.phase}
-                  />
+                { this.state.phase < 4 &&
+                  <Segment>
+                    <Title />
 
-                </Segment>
+                    <Composer
+                      languageOptions={this.state.languageOptions}
+                      handleDropDown={this.handleDropDown}
+                      handleChange={this.handleChange}
+                      phase={this.state.phase}
+                      handleSubmit={this.handleSubmit}
+                      postData={this.state.postData}
+                    />
+
+                    <Steps
+                      phase={this.state.phase}
+                    />
+
+                  </Segment>
+                }
               </Grid.Column>
           </Grid.Row>
         </Grid>
