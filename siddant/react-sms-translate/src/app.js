@@ -37,8 +37,8 @@ class App extends React.Component{
     axios.post('/api/message',{
       ...this.state.data
     })
-      .then(res => this.setState(res.data))
-      .catch(() => this.setState({message: 'Translation was un-successful. Message was not sent'}))
+      .then(res => console.log(res.data.message))
+      .catch(() => console.log('Translation was un-successful. Message was not sent'))
   }
 
 
