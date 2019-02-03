@@ -1,4 +1,12 @@
 {
+  "name": "react-sms-translate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "webpack-dev-server --mode=development",
+    "build": "webpack -p"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
