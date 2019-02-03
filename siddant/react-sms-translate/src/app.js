@@ -15,7 +15,7 @@ class App extends React.Component{
       data: {
         message: '',
         to: '',
-        lang: 'fr'
+        lang: ''
       }
     }
     this.handleChange =this.handleChange.bind(this)

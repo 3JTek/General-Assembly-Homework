@@ -15,6 +15,7 @@ const Form = ({handleChange, handleSubmit, langauges}) =>{
         <div className="control">
           <div className="select">
             <select name="lang" onChange={handleChange}>
+              <option value=''>Please Pick a languge</option>
               {Object.keys(langauges).map(lang =>
                 <option key={lang} value={lang}>{langauges[lang]}</option>
               )}
