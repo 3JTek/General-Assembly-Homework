@@ -18,18 +18,18 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange({ target: { value } }) {
-    this.setState({ message: value })
+  handleChange({ target: { name, value } }) {
+    this.setState({ [name ]: value })
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    this.setState({ message: null })
     axios.post('/api/message', {
       message: this.state.message,
-      lang: 'it',
+      lang: this.state.lang,
       to: '+447450643047'
     })
+    this.setState({ message: null })
 
   }
 
