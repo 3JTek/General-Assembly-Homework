@@ -72,7 +72,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <h1 className="title is-1 has-text-centered">React SMS</h1>
+        <h1 className="title is-1 has-text-centered">React SMS Translator</h1>
         {Object.keys(this.state.langs).length === 0 && <Loading />}
         {Object.keys(this.state.langs).length > 0 &&
           <Form
