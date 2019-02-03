@@ -54,9 +54,11 @@ class App extends React.Component {
   render(){
     if (!this.state.countries) return <p> loading..... </p>
     return (
-      <div className="section">
-      
-        <div className="container">
+      <div className="container">
+        <div className="section">
+          <h1 className="title is-1">Welcome to SMS-Translate</h1>
+        </div>
+        <div className="section">
           <DropDown
             handleSelect={this.handleSelect}
             countries={this.state.countries}
@@ -69,8 +71,11 @@ class App extends React.Component {
           />
         </div>
         <div className="container is-widescreen">
-          <div className="title is-2">
-            {this.state.translatedText && this.state.translatedText}
+          <div className="section">
+            <p className="title is-4">Message:</p>
+            <div className="title is-2">
+              {this.state.translatedText && this.state.translatedText}
+            </div>
           </div>
         </div>
       </div>
