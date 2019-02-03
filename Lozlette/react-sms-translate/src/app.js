@@ -11,25 +11,42 @@ class App extends React.Component {
     this.state = {}
 
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleToChange = this.handleToChange.bind(this)
+    this.handleLangChange = this.handleLangChange.bind(this)
+    this.handleMessageChange = this.handleMessageChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange({ target: { value } }) {
-    this.setState({ to: value, text: value, lang: value })
+  handleToChange({ target: { value } }) {
+    this.setState({ to: value })
+    console.log(this.state)
+  }
+
+  handleLangChange( { target: { value }}){
+    this.setState({ lang: value })
+    console.log(this.state)
+  }
+
+  handleMessageChange( { target: { value }}){
+    this.setState({ message: value })
     console.log(this.state)
   }
 
   handleSubmit(e){
     e.preventDefault()
-    console.log(this.state)
-    axios.get('/api/message')
-      .then(res => this.setState({ to: res.data, lang: this.state.lang, text: this.state.text }))
+    axios.post('/api/message',{ params: {
+      to: this.state.to,
+      message: this.state.message,
+      lang: this.state.lang
+    }
+    })
   }
 
   render(){
     return (
-      <Form handleChange={this.handleChange}
+      <Form handleToChange={this.handleToChange}
+        handleLangChange={this.handleLangChange}
+        handleMessageChange={this.handleMessageChange}
         handleSubmit={this.handleSubmit}
       />
     )

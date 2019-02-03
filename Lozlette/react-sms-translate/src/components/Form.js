@@ -1,20 +1,20 @@
 import React from 'react'
 
 
-const Form = ({ handleChange, handleSubmit }) => {
+const Form = ({ handleToChange, handleLangChange, handleMessageChange, handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
         placeholder="Enter your mobile number"
-        onChange={handleChange}>
+        onChange={handleToChange}>
       </input>
       <input
         placeholder="Language eg. ru for Russian"
-        onChange={handleChange}>
+        onChange={handleLangChange}>
       </input>
       <textarea
         placeholder="Type your message here"
-        onChange={handleChange}>
+        onChange={handleMessageChange}>
       </textarea>
       <button>Send</button>
     </form>
