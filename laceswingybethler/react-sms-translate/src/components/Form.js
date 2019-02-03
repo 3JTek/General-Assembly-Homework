@@ -1,25 +1,35 @@
 import React from 'react'
 
-const Form = ({ handleSubmit }) => {
+const Form = ({ handleSubmit, handleTextChange, handleLangChange, handleNrChange }) => {
   return (
-    <form>
+    <form
+      onSubmit={handleSubmit}>
       <div className="field">
         <div className="control">
-          <textarea className="textarea is-warning" placeholder="Warning textarea">
-            Enter text to translate
+          <input onChange={handleNrChange} className="input is-danger" type="text" placeholder="Contact number">
+          </input>
+        </div>
+      </div>
+
+      <div className="field">
+        <div className="control">
+          <textarea name="text" className="textarea is-warning" placeholder="Text text text" onChange={handleTextChange}>
+
           </textarea>
         </div>
       </div>
       <div className="field">
         <div className="control">
           <div className="select is-info">
-            <select>
-              <option>Select dropdown</option>
-              <option>With options</option>
+
+            <select onChange={handleLangChange}>
+              <option defaultValue value="de">German</option>
+              <option value="es">Spanish</option>
             </select>
           </div>
         </div>
       </div>
+
       <div className="control">
         <button className="button is-primary">
             Submit

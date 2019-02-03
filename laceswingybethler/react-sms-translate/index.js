@@ -27,13 +27,11 @@ app.post('/api/message', (req, res) => {
     .then(response => {
       const text = response.text[0]
       console.log(text)
-      console.log('In da club!')
 
-      //console.log(req)
       return twilio.messages
         .create({ from: process.env.TWILIO_NR, to: req.body.to, body: response.text[0] })
     })
-    //.then(message => console.log(message))
+    .then(message => console.log(message))
     .then(() => res.status(200).json({ message: 'Translation successful. Message sent' }))
     .catch(err => res.status(500).json(err.message))
 })
