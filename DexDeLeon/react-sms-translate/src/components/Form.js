@@ -58,7 +58,9 @@ const Form = ({ submitHandler, changeHandler, message, langs, phone }) => {
           </div>
           <div className="field">
             <div className="control">
-              <button className="button is-info is-large">Send Message</button>
+              <button className="button is-info is-large">
+                <span>Send</span>
+              </button>
             </div>
           </div>
         </form>

@@ -40,13 +40,13 @@ class App extends React.Component {
 
   submitHandler(e){
     e.preventDefault()
-    axios.post('/api/message', {
-      message: this.state.message,
-      lang: this.state.lang,
-      to: this.state.phone
-    })
-      .then(res => console.log(res.data.message))
-      .catch(err => console.error(err.message))
+    // axios.post('/api/message', {
+    //   message: this.state.message,
+    //   lang: this.state.lang,
+    //   to: this.state.phone
+    // })
+    //   .then(res => console.log(res.data.message))
+    //   .catch(err => console.error(err.message))
   }
 
   render(){

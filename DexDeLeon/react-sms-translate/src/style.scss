@@ -6,6 +6,32 @@ body{
   margin: 0;
 }
 
+button.button {
+  padding: 0 10%;
+  transition: all 0.5s;
+  transition: 0.5s;
+
+  &:hover span:after {
+    opacity: 1;
+    padding-left: 20px;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    &:after {
+      content: '\00bb';
+      font-size: 2em;
+      position: absolute;
+      top: -0.5em;
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+}
+
 @keyframes rotate {
   0% {transform: rotate(0deg);}
   25% {transform: rotate(90deg);}
