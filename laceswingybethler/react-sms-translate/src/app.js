@@ -11,20 +11,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log('component did mount!')
+
     axios.post('/api/message', {
-      params: {
-        message: 'Good morning sunshine!',
-        lang: 'de',
-        to: '+447870681920'
-      }
+      message: 'Good morning sunshine!',
+      lang: 'de',
+      to: '+447870681920'
     })
-    .then(()=>console.log('All done'))
+      .then(()=>console.log('All done'))
 //      .then(res => this.setState({ message: res.message })
 //    )
   }
 
   render() {
-    if (!this.state) return null
+    //if (!this.state) return null
     return (
       <main>
         <div>Hullo?</div>

@@ -27,7 +27,9 @@ app.post('/api/message', (req, res) => {
     .then(response => {
       const text = response.text[0]
       console.log(text)
-      console.log(req)
+      console.log("In da club!")
+
+      //console.log(req)
       return twilio.messages
         .create({ from: process.env.TWILIO_NR, to: req.body.to, body: response.text[0] })
     })
