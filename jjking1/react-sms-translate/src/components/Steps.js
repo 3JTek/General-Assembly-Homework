@@ -2,10 +2,10 @@ import React from 'react'
 import { Step, Icon } from 'semantic-ui-react'
 
 
-const Steps = () => {
+const Steps = ({ phase }) => {
   return(
     <Step.Group widths={3}>
-      <Step active>
+      <Step active={phase === 1}>
         <Icon name='pencil' />
         <Step.Content>
           <Step.Title>Compose</Step.Title>
@@ -13,7 +13,7 @@ const Steps = () => {
         </Step.Content>
       </Step>
 
-      <Step>
+      <Step active={phase === 2}>
         <Icon name='world' />
         <Step.Content>
           <Step.Title>Language</Step.Title>
@@ -21,7 +21,7 @@ const Steps = () => {
         </Step.Content>
       </Step>
 
-      <Step>
+      <Step active={phase === 3}>
         <Icon name='envelope' />
         <Step.Content>
           <Step.Title>Send</Step.Title>
