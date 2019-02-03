@@ -2,7 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Form from './components/Form'
+import Header from './components/Header'
 import axios from 'axios'
+import './style.css'
+
+import 'bulma'
 
 class App extends React.Component {
   constructor() {
@@ -37,11 +41,14 @@ class App extends React.Component {
 
   render(){
     return (
-      <Form handleToChange={this.handleToChange}
-        handleLangChange={this.handleLangChange}
-        handleMessageChange={this.handleMessageChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <Header />
+        <Form handleToChange={this.handleToChange}
+          handleLangChange={this.handleLangChange}
+          handleMessageChange={this.handleMessageChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
     )
   }
 }
