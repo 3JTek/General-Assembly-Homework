@@ -20,7 +20,8 @@ class App extends React.Component {
       lang: this.state.lang,
       to: '+447770672016'
     })
-      .then(res => console.log(res))
+      // .then(res => console.log(res))
+      .catch(err => err.message)
   }
 
   handleChange({ target: { name, value } }) {
