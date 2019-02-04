@@ -24,7 +24,6 @@ const Form = ({ handleSubmit, handleChange, to, message, lang }) => {
               <option value="es">Spanish</option>
               <option value="gr">Greek</option>
               <option value="it">Italian</option>
-
             </select>
           </div>
         </div>
