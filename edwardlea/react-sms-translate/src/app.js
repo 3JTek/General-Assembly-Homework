@@ -15,7 +15,8 @@ class App extends React.Component {
       message: '',
       lang: '',
       composing: true,
-      messageSent: false
+      messageSent: false,
+      messageSending: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,6 +25,7 @@ class App extends React.Component {
   }
 
   handleSubmit(e){
+    this.setState({messageSending: true})
     e.preventDefault()
     axios.post('/api/message',{
       to: this.state.to,
@@ -33,27 +35,33 @@ class App extends React.Component {
       .then(() => this.setState({
         messageSent: true,
         composing: false,
-        to: '',
-        message: '',
-        lang: ''
+        messageSending: false
       }))
+      .catch((err) => console.log(err.error))
   }
 
-  handleChange(e){
-    e.preventDefault()
-    const {name,value} = e.target
+  handleChange({target: {name, value}}){
     this.setState({ [name]: value })
   }
 
   resetForm(){
-    this.setState({messageSent: false, composing: true})
+    this.setState({
+      messageSent: false,
+      composing: true,
+      to: '',
+      message: '',
+      lang: ''
+    })
   }
 
   render(){
     return(
       <div className="container section">
         <h1 className="title is-1">Send your Translated Message!</h1>
-        {(this.state.composing) &&
+        {this.state.messageSending && (
+          <h2 className="title is-2">Message sending...</h2>
+        )}
+        {(this.state.composing && !this.state.messageSending) &&
         <Form
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
@@ -63,12 +71,10 @@ class App extends React.Component {
         />}
         {this.state.messageSent &&
         <div>
-          <p> {this.state.message}</p>
+          <h4 className="title is-4">Message Sent: {this.state.message}</h4>
           <button className="button is-dark" onClick={this.resetForm} >
           Send another Message</button>
-        </div>
-        }
-
+        </div>}
       </div>
     )
   }
