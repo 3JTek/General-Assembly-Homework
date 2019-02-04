@@ -39,18 +39,19 @@ app.get('/pokemons/:id', (req, res) =>{
     .then(pokemon => res.status(200).json(pokemon))
     .catch(err => res.status(404).json(err))
 })
-//delete
-app.delete('/pokemons/:id', (req, res) =>{
-  Pokemon
-    .remove({_id: req.params.id})
-    .then(res.status(200).json({message: 'pokemon has been deleted'}))
-    .catch(err => res.status(404).json(err))
-})
 //edit
 app.put('/pokemons/:id', (req, res) =>{
   Pokemon
     .update({_id: req.params.id}, req.body)
     .then(res.status(200).json({message: 'pokemon has been updated'}))
+    .catch(err => res.status(404).json(err))
+})
+
+//delete
+app.delete('/pokemons/:id', (req, res) =>{
+  Pokemon
+    .remove({_id: req.params.id})
+    .then(res.status(200).json({message: 'pokemon has been deleted'}))
     .catch(err => res.status(404).json(err))
 })
 
