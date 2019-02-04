@@ -30,8 +30,8 @@ class App extends React.Component{
       }
     })
       //Placeholder response, to be replaced with dyanmic response once working
-      .then(() => this.setState({ reponseMessage: 'Translation succesful. Message sent' }))
-      .catch((err) => console.log(err))
+      .then(() => this.setState({ responseMessage: 'Translation succesful. Message sent' }))
+      .catch((err) => console.log(err.message))
   }
 
   render() {
