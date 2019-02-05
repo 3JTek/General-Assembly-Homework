@@ -11,9 +11,7 @@ const commentSchema = new mongoose.Schema({
 
 const extraSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  flavour: { type: mongoose.Schema.ObjectId, ref: 'Flavour', required: true },
   image: {type: String},
-  gelato: { type: mongoose.Schema.ObjectId, ref: 'Gelato', required: true },
   comments: [commentSchema]
 })
 
