@@ -1,4 +1,4 @@
-const Player = require('../models/players')
+const Player = require('../models/player')
 
 
 function indexRoute(req, res){

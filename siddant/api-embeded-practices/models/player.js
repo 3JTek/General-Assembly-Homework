@@ -9,14 +9,4 @@ const playerSchema = new mongoose.Schema({
   comment: { type: String}
 })
 
-
-// playerSchema.virtual('team', {
-//   ref: 'Team',
-//   localField: '_id',
-//   foreignField: 'name'
-// })
-//
-// playerSchema.set('toJSON', { virtuals: true })
-
-
 module.exports = mongoose.model('Player', playerSchema)

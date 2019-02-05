@@ -1,24 +1,24 @@
-const Team = require('../models/team')
+const League = require('../models/league')
 
 
 function indexRoute(req, res){
-  Team
+  League
     .find()
-    .then(player => res.status(200).json(player))
+    .then(league => res.status(200).json(league))
     .catch(err => res.status(404).json(err))
 }
 
 function addRoute(req, res){
-  Team
+  League
     .create(req.body)
-    .then(players  => res.status(201).json(players))
+    .then(league  => res.status(201).json(league))
     .catch(err => res.status(422).json(err))
 }
 
 function showRoute(req, res){
-  Team
+  League
     .findById(req.params.id)
-    .then(player => res.json(player))
+    .then(league => res.json(league))
     .catch(err => res.status(404).json(err))
 }
 

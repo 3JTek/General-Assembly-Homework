@@ -22,15 +22,26 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
     })
     .then(data => {
       console.log(data)
-      // return Track.create({
-      //   title: 'Firestarter',
-      //   length: 280,
-      //   album: data.album,
-      //   artist: data.artist
-      // })
+      return Promise.props({
+        player: Player.create({
+          name: 'Paul pogba',
+          goals: 90,
+          appearance: 250,
+          image: 'https://www.foxsportsasia.com/uploads/2018/12/pogba-.jpg',
+          team: data
+        }),
+
+        league: League.create({
+          name: 'premier league',
+          team: data,
+          region: 'England',
+          division: 1
+        })
+      })
+
 
     })
-    //.then(() => console.log('Database successfully seeded'))
+    .then((data) => console.log(data))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close())
 })

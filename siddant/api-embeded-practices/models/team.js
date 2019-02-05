@@ -8,6 +8,4 @@ const teamSchema = new mongoose.Schema({
   established: { type: Date, required: true }
 })
 
-
-
 module.exports = mongoose.model('Team', teamSchema)
