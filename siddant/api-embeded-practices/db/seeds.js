@@ -47,12 +47,42 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
       })
     })
     .then(data => {
-      return Player.create({
-        name: 'Paul pogba',
-        goals: 90,
-        appearance: 250,
-        image: 'https://www.foxsportsasia.com/uploads/2018/12/pogba-.jpg',
-        team: data.team1
+      return Promise.props({
+        player1: Player.create({
+          name: 'Paul pogba',
+          goals: 90,
+          appearance: 250,
+          image: 'https://www.foxsportsasia.com/uploads/2018/12/pogba-.jpg',
+          team: data.team1
+        }),
+        player2: Player.create({
+          name: 'Sergio Agüero',
+          goals: 157,
+          appearance: 227,
+          image: 'https://e2.365dm.com/18/03/768x432/skysports-sergio-aguero-man-city_4265275.jpg?20180326085532',
+          team: data.team2
+        }),
+        player3: Player.create({
+          name: 'Alexis Sánchez',
+          goals: 63,
+          appearance: 147,
+          image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/07/16/20/alexissanchez1607a.jpg?w968',
+          team: data.team1
+        }),
+        player4: Player.create({
+          name: 'Marcus Rashford',
+          goals: 26,
+          appearance: 100,
+          image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/02/03/17/Marcus-Rashford.jpg',
+          team: data.team1
+        }),
+        player5: Player.create({
+          name: 'Jesse Lingard',
+          goals: 17,
+          appearance: 105,
+          image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/05/21/lingard.jpg',
+          team: data.team1
+        })
       })
     })
     .catch(err => console.log(err))
