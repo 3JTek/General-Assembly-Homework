@@ -26,6 +26,13 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         movie: data.movie
       })
     })
+    .then(data => {
+      return Actor.create({
+        name: 'Ellen Page',
+        age: 31,
+        movie: data.movie
+      })
+    })
     .then(() => console.log('Database successfully seeded'))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close())

@@ -16,6 +16,7 @@ function createRoute(req, res) {
 function showRoute(req, res) {
   Movie
     .findById(req.params.id)
+    .populate({path: 'comments.user', select: '-email'})
     .then(movies => res.json(movies))
 }
 
