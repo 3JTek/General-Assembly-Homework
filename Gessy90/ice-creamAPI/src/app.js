@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import 'bulma'
-import './style.scss'
+// import './style.scss'
+
 
 import {BrowserRouter, Route, Switch } from 'react-router-dom'
 
