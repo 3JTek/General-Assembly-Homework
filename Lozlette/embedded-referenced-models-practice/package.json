@@ -4,16 +4,36 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server --mode=development",
     "start": "node index",
+    "build": "webpack -p",
     "seed": "node db/seeds"
   },
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
     "bcrypt": "^3.0.3",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
+    "bulma": "^0.7.2",
+    "css-loader": "^2.1.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.9"
+    "mongoose": "^5.4.9",
+    "node-sass": "^4.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.1",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   }
 }

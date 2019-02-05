@@ -3,8 +3,15 @@ const Book = require('../models/book')
 function indexRoute(req, res) {
   Book
     .find()
-    .populate({ path: 'author', select: 'name' })
+    // .populate({ path: 'author', select: 'name' })
     .then(books => res.json(books))
+}
+
+function createRoute(req, res) {
+  Book
+    .create(req.body)
+    .then(book => res.status(201).json(book))
+    .catch(err => console.log(err.message))
 }
 
 function showRoute(req, res) {
@@ -34,5 +41,6 @@ function commentCreateRoute(req, res) {
 module.exports = {
   index: indexRoute,
   show: showRoute,
+  create: createRoute,
   commentCreate: commentCreateRoute
 }
