@@ -13,10 +13,8 @@ router.get('/authors/:id', authorsController.show)
 
 router.get('/books', booksController.index)
 router.get('/books/:id', booksController.show)
+router.post('/books', booksController.create)
 
-router.route('/books')
-  .get(booksController.index)
-  .post(booksController.create)
 
 router.post('/books/:id/comments', secureRoute, booksController.commentCreate)
 

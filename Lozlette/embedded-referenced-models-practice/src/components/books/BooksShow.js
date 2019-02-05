@@ -26,7 +26,7 @@ class BooksShow extends React.Component {
           <div className="columns">
             <div className="column">
               <figure className="image">
-                <img src={image} alt={title} />
+                <img className="imageLarge" src={image} alt={title} />
               </figure>
             </div>
 
