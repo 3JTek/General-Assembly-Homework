@@ -5,6 +5,9 @@ function indexRoute(req, res){
     .find()
     .populate('skaters')
     .then(teams => res.json(teams))
+    .catch(err => {
+      console.log(err.msg)
+    })
 }
 
 function showRoute(req, res) {
@@ -12,6 +15,9 @@ function showRoute(req, res) {
     .findById(req.params.id)
     .populate('skaters')
     .then(team => res.json(team))
+    .catch(err => {
+      console.log(err.msg)
+    })
 }
 
 module.exports = {

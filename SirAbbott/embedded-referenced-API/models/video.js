@@ -12,6 +12,7 @@ const videoSchema = new mongoose.Schema({
   title: { type: String, required: true },
   team: { type: mongoose.Schema.ObjectId, ref: 'Team', required: true },
   image: { type: String },
+  skaters: [{ type: mongoose.Schema.ObjectId, ref: 'Skater' }],
   comments: [ commentSchema ]
 })
 

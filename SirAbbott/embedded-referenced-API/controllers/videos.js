@@ -3,8 +3,11 @@ const Video = require('../models/video')
 function indexRoute(req, res) {
   Video
     .find()
-    .populate({ path: 'team', select: 'name'})
+    .populate([{ path: 'team', select: 'name'}, { path: 'skaters', select: 'name'}])
     .then(videos => res.json(videos))
+    .catch(err => {
+      console.log(err.msg)
+    })
 }
 
 function showRoute(req, res) {
@@ -12,6 +15,9 @@ function showRoute(req, res) {
     .findById(req.params.id)
     .populate({ path: 'team', select: 'name'})
     .then(video => res.json(video))
+    .catch(err => {
+      console.log(err.msg)
+    })
 }
 
 function commentCreateRoute(req, res) {
@@ -23,6 +29,9 @@ function commentCreateRoute(req, res) {
       return video.save()
     })
     .then(video => res.status(201).json(video))
+    .catch(err => {
+      console.log(err.msg)
+    })
 }
 
 module.exports = {

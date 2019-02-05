@@ -22,6 +22,7 @@ function loginRoute(req, res) {
         message: `Welcome back ${user.username}!`
       })
     })
+    .catch(err => res.status(422).json(err.errors))
 }
 
 module.exports = {
