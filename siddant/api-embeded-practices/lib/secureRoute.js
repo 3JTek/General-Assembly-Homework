@@ -4,10 +4,10 @@ const User = require('../models/user')
 
 Promise.promisifyAll(jwt)
 
-function secureRoute(req,res,next){
-  if(!req.header.authorization) res.status(401).json({ message: 'No token set' })
+function secureRoute(req, res, next){
+  if(!req.headers.authorization) res.status(401).json({ message: 'No token set' })
 
-  const token = req.header.authorization.replace('Bearer ', '')
+  const token = req.headers.authorization.replace('Bearer ', '')
 
   jwt
     .verifyAsync(token, process.env.SECRET)
@@ -18,6 +18,7 @@ function secureRoute(req,res,next){
     })
     .then(user => {
       if(!user)throw new Error('Invalid token')
+      req.currentUser = user
       next()
     })
     .catch(err => res.status(401).json({ message: err.message }))
