@@ -1,6 +1,5 @@
 const League = require('../models/league')
 
-
 function indexRoute(req, res){
   League
     .find()
