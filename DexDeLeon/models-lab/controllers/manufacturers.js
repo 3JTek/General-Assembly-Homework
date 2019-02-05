@@ -6,6 +6,13 @@ function indexRoute(req, res){
     .then(manufacturers => res.json(manufacturers))
 }
 
+function showRoute(req, res){
+  Manufacturer
+    .findById(req.params.id)
+    .then(manufacturer => res.json(manufacturer))
+}
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  show: showRoute
 }
