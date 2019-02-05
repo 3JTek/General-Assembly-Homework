@@ -11,7 +11,9 @@ function indexRoute(req, res) {
 }
 
 function createRoute(req, res) {
-  BlogPost.create(req.body)
+  req.body.author = req.currentUser
+  BlogPost
+    .create(req.body)
     .then(post => res.status(201).json(post))
 }
 
