@@ -19,7 +19,7 @@ function createRoute(req, res) {
     .catch(err => res.status(422).json(err.errors))
 }
 
-function showRoute(res,req){
+function showRoute(req, res){
   Restaurant
     .findById(req.params.id)
     .populate({
