@@ -3,20 +3,17 @@ const teamsController = require('../controllers/teams')
 const playersController = require('../controllers/players')
 
 const authController = require('../controllers/auth')
+const secureRoute = require('../lib/secureRoute')
 
 
+router.get('/players', playersController.index)
+router.post('/players', secureRoute, playersController.create)
 
-router.route('/players')
-  .get(playersController.index)
-  .post(playersController.create)
-
-router.route('/players/:id')
-  .get(playersController.show)
+router.get('/players/:id', playersController.show)
 
 
-router.route('/teams')
-  .get(teamsController.index)
-  .post(teamsController.create)
+router.get('/teams', teamsController.index)
+router.post('/teams',secureRoute, teamsController.create)
 
 router.get('/teams/:id', teamsController.show)
 
