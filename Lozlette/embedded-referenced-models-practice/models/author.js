@@ -2,8 +2,15 @@ const mongoose = require('mongoose')
 
 const authorSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  book: { type: mongoose.Schema.ObjectId, ref: 'Book', required: true },
   image: { type: String }
 })
+
+authorSchema.virtual('books', {
+  ref: 'Book',
+  localField: '_id',
+  foreignField: 'author'
+})
+
+authorSchema.set('toJSON', { virtuals: true })
 
 module.exports = mongoose.model('Author', authorSchema)

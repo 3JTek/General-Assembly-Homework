@@ -3,6 +3,7 @@ const Author = require('../models/author')
 function indexRoute(req, res) {
   Author
     .find()
+    .populate('books')
     .then(author => res.json(author))
 }
 
