@@ -15,6 +15,17 @@ teamSchema.virtual('players', {
   foreignField: 'team'
 })
 
+teamSchema.virtual('league', {
+  ref: 'League',
+  localField: '_id',
+  foreignField: 'team'
+})
+
+teamSchema.set('toJSON', {
+  virtuals: true
+})
+
+
 teamSchema.set('toJSON', {virtuals: true})
 
 module.exports = mongoose.model('Team', teamSchema)

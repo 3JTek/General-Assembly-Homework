@@ -17,6 +17,7 @@ function addRoute(req, res){
 function showRoute(req, res){
   League
     .findById(req.params.id)
+    .populate('team')
     .then(league => res.json(league))
     .catch(err => res.status(404).json(err))
 }

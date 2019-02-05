@@ -18,6 +18,7 @@ function addRoute(req, res){
 function showRoute(req, res){
   Player
     .findById(req.params.id)
+    .populate('team')
     .then(player => res.json(player))
     .catch(err => res.status(404).json(err))
 }
@@ -32,8 +33,6 @@ function commentCreateRoute(req, res) {
     })
     .then(track => res.status(201).json(track))
 }
-
-
 
 module.exports = {
   index: indexRoute,
