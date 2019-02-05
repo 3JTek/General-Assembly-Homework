@@ -11,7 +11,7 @@ function indexRoute(req, res) {
 function showRoute(req, res) {
   Author
     .findById(req.params.id)
-    .populate('novels')
+    .populate({ path: 'novels', select: '-comments' })
     .then(author => res.json(author))
 }
 

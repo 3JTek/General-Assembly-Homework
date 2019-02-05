@@ -11,14 +11,6 @@ const Book = require('../models/book')
 
 mongoose.connect(process.env.MONGODB_URI, (err, db) => {
   db.dropDatabase()
-    // .then(() => {
-    //   return User.create({
-    //     username: 'bego',
-    //     email: 'bego@bego.com',
-    //     password: 'bego',
-    //     passwordConfirmation: 'bego'
-    //   })
-    // })
     .then(() => {
       return Promise.props({
         author: Author.create({

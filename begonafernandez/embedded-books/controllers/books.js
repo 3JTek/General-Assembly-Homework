@@ -14,6 +14,23 @@ function showRoute(req, res) {
     .then(book => res.json(book))
 }
 
+function createRoute(req, res) {
+  Book
+    .create(req.body)
+    .then(fish => res.status(201).json(fish))
+    .catch(err => console.log(err.message))
+}
+
+function updateRoute(req, res) {
+  Book
+    .findById(req.params.id)
+    .then(book => book.set(req.body))
+    .then(book => book.save())
+    .then(book => res.status(200).json(book))
+    .catch(err => res.status(422).json(err.errors))
+}
+
+
 function commentCreateRoute(req, res) {
   req.body.user = req.currentUser
   Book
@@ -28,5 +45,7 @@ function commentCreateRoute(req, res) {
 module.exports = {
   index: indexRoute,
   show: showRoute,
-  commentCreate: commentCreateRoute
+  commentCreate: commentCreateRoute,
+  create: createRoute,
+  update: updateRoute
 }

@@ -16,7 +16,6 @@ const bookSchema = new mongoose.Schema({
 
 bookSchema.set('toJSON', {
   transform(doc, json) {
-    delete json.author
     delete json.__v
     return json
   }

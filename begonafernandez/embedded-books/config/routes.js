@@ -11,8 +11,13 @@ router.post('/login', authController.login)
 router.get('/authors', authorController.index)
 router.get('/authors/:id', authorController.show)
 
-router.get('/books', bookController.index)
-router.get('/books/:id', bookController.show)
+router.route('/books')
+  .get(bookController.index)
+  .post(bookController.create)
+
+router.route('/books/:id')
+  .get(bookController.show)
+  .put(bookController.update)
 
 router.post('/books/:id/comments', secureRoute, bookController.commentCreate)
 
