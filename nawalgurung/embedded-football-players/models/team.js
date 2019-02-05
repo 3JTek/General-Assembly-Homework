@@ -8,4 +8,14 @@ const teamSchema = new mongoose.Schema({
   established: { type: Date}
 })
 
+
+teamSchema.virtual('players', {
+  ref: 'Player',
+  localField: '_id',
+  foreignField: 'team'
+})
+
+teamSchema.set('toJSON', { virtuals: true })
+
+
 module.exports = mongoose.model('Team', teamSchema)

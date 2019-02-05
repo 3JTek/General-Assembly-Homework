@@ -6,9 +6,10 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-const routes = require('./config/routes')
 
 mongoose.connect(process.env.MONGODB_URI)
+const routes = require('./config/routes')
+
 
 app.use(bodyParser.json())
 
