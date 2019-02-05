@@ -11,5 +11,4 @@ router.get('/players', playersController.index)
 router.get('/players/:id', playersController.show)
 
 
-
 module.exports = router
