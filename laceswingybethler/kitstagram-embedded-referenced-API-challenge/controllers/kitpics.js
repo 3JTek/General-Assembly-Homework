@@ -1,4 +1,4 @@
-const Kitpic = require('../models/kitpic')
+//const Kitpic = require('../models/kitpic')
 
 function indexRoute(req, res) {
   Kitpic
@@ -21,13 +21,13 @@ function showRoute(req, res) {
 
 function commentCreateRoute(req, res) {
   req.body.user = req.currentUser
-  Kitpic
+  Picture
     .findById(req.params.id)
-    .then(kitpic => {
-      kitpic.comments.push(req.body)
-      return kitpic.save()
+    .then(picture => {
+      picture.comments.push(req.body)
+      return picture.save()
     })
-    .then(kitpic => res.status(201).json(kitpic))
+    .then(picture => res.status(201).json(kitpic))
 }
 
 

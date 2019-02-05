@@ -8,11 +8,11 @@ const userSchema = new mongoose.Schema({
   kittens: { type: mongoose.Schema.ObjectId, ref: 'Kitten' }
 })
 
-userSchema.virtual('kittens', {
-  ref: 'Kitten',
-  localField: '_id',
-  foreignField: 'user'
-})
+// userSchema.virtual('kittens', {
+//   ref: 'Kitten',
+//   localField: '_id',
+//   foreignField: 'user'
+// })
 
 userSchema.set('toJSON', { virtuals: true })
 
