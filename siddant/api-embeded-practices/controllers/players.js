@@ -22,9 +22,22 @@ function showRoute(req, res){
     .catch(err => res.status(404).json(err))
 }
 
+function commentCreateRoute(req, res) {
+  req.body.user = req.currentUser
+  Player
+    .findById(req.params.id)
+    .then(player => {
+      player.comments.push(req.body)
+      return player.save()
+    })
+    .then(track => res.status(201).json(track))
+}
+
+
 
 module.exports = {
   index: indexRoute,
   create: addRoute,
-  show: showRoute
+  show: showRoute,
+  comment: commentCreateRoute
 }

@@ -14,7 +14,7 @@ const playerSchema = new mongoose.Schema({
   goals: { type: Number, required: true },
   appearance: { type: Number, required: true },
   image: { type: String, required: true },
-  comment: [commentSchema]
+  comments: [commentSchema]
 })
 
 module.exports = mongoose.model('Player', playerSchema)

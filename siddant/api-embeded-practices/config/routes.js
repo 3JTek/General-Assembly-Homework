@@ -10,6 +10,7 @@ router.get('/players', playersController.index)
 router.post('/players', secureRoute, playersController.create)
 
 router.get('/players/:id', playersController.show)
+router.post('/players/:id/comment', secureRoute, playersController.comment)
 
 
 router.get('/teams', teamsController.index)
