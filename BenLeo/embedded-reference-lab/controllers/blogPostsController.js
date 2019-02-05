@@ -16,7 +16,7 @@ function createRoute(req, res) {
 }
 
 function commentCreateRoute(req, res) {
-  req.body.user = req.currentUser
+  req.body.author = req.currentUser
   BlogPost
     .findById(req.params.id)
     .then(post => {
