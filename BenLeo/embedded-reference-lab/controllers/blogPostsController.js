@@ -10,6 +10,12 @@ function indexRoute(req, res) {
     .then(blogPosts => res.json(blogPosts))
 }
 
+function createRoute(req, res) {
+  BlogPost.create(req.body)
+    .then(post => res.status(201).json(post))
+}
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  create: createRoute
 }

@@ -11,7 +11,7 @@ router.post('/login', authController.login)
 //GET ALL BLOG POSTS
 router.get('/blog', blogPostsController.index)
 //CREATE A NEW BLOG POSTS >>> SECURE
-router.post('/blog')
+router.post('/blog', blogPostsController.create)
 
 //CREATE NEW BLOG COMMENT >>> SECURE
 router.post('/blog/comments')
