@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index",
-    "seed": "node db/seeds"
+    "serve": "webpack-dev-server --mode=development",
+    "build": "webpack -p",
+    "start": "node index"
   },
   "dependencies": {
     "babel-loader": "^8.0.5",
