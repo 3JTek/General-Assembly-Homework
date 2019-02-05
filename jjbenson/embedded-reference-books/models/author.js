@@ -28,20 +28,24 @@ authorSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {
     console.log('pre JSON',json)
-    json.series = json.series.map((ser)=>{
-      delete ser.books
-      delete ser.author
-      delete ser.id
-      return ser
-    })
-    json.books = json.books.map((book)=>{
-      delete book.quotes
-      delete book.author
-      delete book.id
-      delete book.series.books
-      delete book.series.id
-      return book
-    })
+    if(json.series){
+      json.series = json.series.map((ser)=>{
+        delete ser.books
+        delete ser.author
+        delete ser.id
+        return ser
+      })
+    }
+    if(json.books){
+      json.books = json.books.map((book)=>{
+        delete book.quotes
+        delete book.author
+        delete book.id
+        delete book.series.books
+        delete book.series.id
+        return book
+      })
+    }
     console.log('post JSON',json)
     delete json.__v
     delete json.id

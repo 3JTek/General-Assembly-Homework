@@ -6,7 +6,8 @@ function indexRoute(req, res) {
     .populate([{
       path: 'author', select: 'name'
     },{
-      path: 'series', select: 'name'
+      path: 'series',
+      select: 'name'
     }])
     .then(books => res.json(books))
 }
@@ -14,7 +15,16 @@ function indexRoute(req, res) {
 function showRoute(req, res) {
   Book
     .findById(req.params.id)
-    // .populate('author')
+    .populate([{
+      path: 'author', select: 'name'
+    },{
+      path: 'series',
+      select: 'name books',
+      populate: {
+        path: 'books',
+        select: 'title'
+      }
+    }])
     .then(book => res.json(book))
 }
 

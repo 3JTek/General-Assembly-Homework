@@ -6,17 +6,17 @@ const authorsController = require('../controllers/authors')
 const seriesController = require('../controllers/series')
 const booksController = require('../controllers/books')
 
-router.post('/register', authController.register)
-router.post('/login', authController.login)
+router.post('/api/register', authController.register)
+router.post('/api/login', authController.login)
 
-router.get('/authors', authorsController.index)
-router.get('/authors/:id', authorsController.show)
+router.get('/api/authors', authorsController.index)
+router.get('/api/authors/:id', authorsController.show)
 
-router.get('/series', seriesController.index)
-router.get('/series/:id', seriesController.show)
+router.get('/api/series', seriesController.index)
+router.get('/api/series/:id', seriesController.show)
 
-router.get('/books', booksController.index)
-router.get('/books/:id', booksController.show)
+router.get('/api/books/:id', booksController.show)
+router.get('/api/books', booksController.index)
 
 // router.post('/books/:id/comments', secureRoute, booksController.commentCreate)
 
