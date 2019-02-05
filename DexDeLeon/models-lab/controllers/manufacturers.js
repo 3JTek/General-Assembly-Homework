@@ -1,4 +1,4 @@
-const Manufacturer = require('../models/artist')
+const Manufacturer = require('../models/manufacturer')
 
 function indexRoute(req, res){
   Manufacturer
