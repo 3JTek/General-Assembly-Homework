@@ -16,7 +16,7 @@ router.get('/blog', blogPostsController.index)
 router.post('/blog', secureRoute, blogPostsController.create)
 
 //CREATE NEW BLOG COMMENT >>> SECURE
-router.post('/blog/comments')
+router.post('/blog/:id/comments', secureRoute, blogPostsController.commentCreate)
 
 
 module.exports = router

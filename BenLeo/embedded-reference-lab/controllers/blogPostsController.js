@@ -15,7 +15,19 @@ function createRoute(req, res) {
     .then(post => res.status(201).json(post))
 }
 
+function commentCreateRoute(req, res) {
+  req.body.user = req.currentUser
+  BlogPost
+    .findById(req.params.id)
+    .then(post => {
+      post.comments.push(req.body)
+      return post.save()
+    })
+    .then(post => res.status(201).json(post))
+}
+
 module.exports = {
   index: indexRoute,
-  create: createRoute
+  create: createRoute,
+  commentCreate: commentCreateRoute
 }
