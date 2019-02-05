@@ -1,22 +1,19 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const Dotenv = require('dotenv-webpack')
 module.exports = {
   entry: './src/app.js',
   output: {
+    filename: 'bundle.js',
     path: path.resolve('dist'),
-    filename: 'bundle.js'
+    publicPath: '/'
   },
   module: {
     rules: [
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
-      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
-      { test: /\.(woff|woff2)$/, loader: 'url-loader?prefix=font/&limit=5000' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' }
+      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] }
     ]
   },
   devServer: {
@@ -25,14 +22,10 @@ module.exports = {
     open: true,
     port: 8000,
     watchContentBase: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:4000',
-        secure: false
-      }
-    }
+    historyApiFallback: true
   },
   plugins: [
+    new Dotenv(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
