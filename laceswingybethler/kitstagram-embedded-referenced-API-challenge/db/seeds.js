@@ -19,12 +19,12 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         passwordConfirmation: 'billybob'
       })
     })
-    .then(user => {
+    .then(() => {
       return Kitten.create({
         name: 'Fat Catty',
         breed: 'Tabster',
         age: 3,
-        owner: user._id,
+        //owner: user._id,
         picture: {
           image: 'https://i.pinimg.com/564x/15/76/91/157691566169a091e046c457a5dd8938.jpg',
           comments: {}

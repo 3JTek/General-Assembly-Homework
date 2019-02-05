@@ -19,7 +19,7 @@ function showRoute(req, res) {
 }
 
 
-function commentCreateRoute(req, res) {
+//function commentCreateRoute(req, res) {
   req.body.user = req.currentUser
   Picture
     .findById(req.params.id)
@@ -27,12 +27,5 @@ function commentCreateRoute(req, res) {
       picture.comments.push(req.body)
       return picture.save()
     })
-    .then(picture => res.status(201).json(kitpic))
-}
-
-
-module.exports = {
-  index: indexRoute,
-  show: showRoute,
-  commentCreate: commentCreateRoute
+    .then(picture => res.status(201).json(picture))
 }

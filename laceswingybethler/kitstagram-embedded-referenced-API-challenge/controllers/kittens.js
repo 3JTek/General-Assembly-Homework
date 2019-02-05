@@ -15,32 +15,32 @@ function showRoute(req, res) {
     .then(kitten => res.json(kitten))
 }
 
-//allow owners to post kittens
-function postRoute(req, res) {
+
+//allow users to create kittens
+function createKittenRoute(req, res) {
+  //req.body.owner = req.currentUser
   Kitten
-    .find()
-    .then(kitten => {
-      kitten.push(req.body)
-      return kitten.save()
-        .then(kitten => res.status(201).json(kitten))
-    })
+    .create(req.body)
+    .then(kitten => res.status(201).json(kitten))
+    .catch(err => res.status(422).json(err.errors))
 }
 
 //allow users to create comments on pictures
-function commentCreateRoute(req, res) {
-  req.body.user = req.currentUser
-  Kitten
-    .findById(req.params.id)
-    .then(kitten => {
-      kitten.comments.push(req.body)
-      return kitten.save()
-    })
-    .then(kitten => res.status(201).json(kitten))
-}
+// function commentCreateRoute(req, res) {
+//   req.body.user = req.currentUser
+//   Kitten
+//     .findById(req.params.id)
+//     .then(kitten => {
+//       kitten.comments.push(req.body)
+//       return kitten.save()
+//     })
+//     .then(kitten => res.status(201).json(kitten))
+// }
 
 
 module.exports = {
   index: indexRoute,
   show: showRoute,
-  post: postRoute
+  createKitten: createKittenRoute
+
 }
