@@ -32,7 +32,6 @@ class Navbar extends React.Component {
             <Link className="navbar-item" to="/">
               <strong>Restaurant Finder</strong>
             </Link>
-
             <a
               onClick={this.toggleNavbar}
               className={`navbar-burger ${this.state.navbarOpen && 'is-active'}`}

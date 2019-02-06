@@ -5,9 +5,7 @@ class RestaurantsShow extends React.Component {
   constructor(){
     super()
 
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   componentDidMount() {
@@ -28,7 +26,6 @@ class RestaurantsShow extends React.Component {
           <h4 className="title is-4">Cuisine: {cuisine}</h4>
           <h4 className="title is-4">Address: {address}</h4>
           <hr />
-
         </div>
       </section>
     )
