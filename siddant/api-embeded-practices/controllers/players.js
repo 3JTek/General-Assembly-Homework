@@ -18,7 +18,8 @@ function addRoute(req, res){
 function showRoute(req, res){
   Player
     .findById(req.params.id)
-    .populate('team')
+    .populate([{path: 'team', select: '-established'}, {path: 'comments.user', select: '-email -password'}])
+    //populate('team comments.user')
     .then(player => res.json(player))
     .catch(err => res.status(404).json(err))
 }
@@ -32,6 +33,8 @@ function commentCreateRoute(req, res) {
       return player.save()
     })
     .then(track => res.status(201).json(track))
+    .catch(err => res.status(422).json(err))
+
 }
 
 module.exports = {
