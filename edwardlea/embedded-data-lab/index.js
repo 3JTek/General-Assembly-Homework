@@ -12,6 +12,6 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(bodyParser.json())
 
-app.use('/api', routes)
+app.use('/api', routes) //applies /api to all routes
 
 app.listen(4000, () => console.log('Up and running on port 4000'))

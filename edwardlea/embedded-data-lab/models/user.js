@@ -27,7 +27,6 @@ userSchema.pre('save', function hashPassword(next) {
   if(this.isModified('password')) {
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8))
   }
-
   next()
 })
 
@@ -35,6 +34,7 @@ userSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.password)
 }
 
+//removes password from json response
 userSchema.set('toJSON', {
   transform(doc, json) {
     delete json.password

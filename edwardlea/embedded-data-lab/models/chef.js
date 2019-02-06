@@ -12,8 +12,10 @@ chefSchema.virtual('restaurant', {
   foreignField: 'chef'
 })
 
+//invokes the use of vertuals within the model
 chefSchema.set('toJSON', {
   virtuals: true,
+  //removes feilds from the json response
   transform(doc, json) {
     delete json.__v
     delete json.id
