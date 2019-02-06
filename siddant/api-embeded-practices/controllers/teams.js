@@ -18,7 +18,8 @@ function addRoute(req, res){
 function showRoute(req, res){
   Team
     .findById(req.params.id)
-    .populate('players league')
+    //.populate(' league players' )
+    .populate([{path: 'players', select: '-comments'}, {path: ' league', select: 'leaguename '}])
     .then(player => res.json(player))
     .catch(err => res.status(404).json(err))
 }

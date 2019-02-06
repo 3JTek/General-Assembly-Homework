@@ -18,10 +18,12 @@ teamSchema.virtual('players', {
 
 
 teamSchema.set('toJSON', {
-  virtuals: true
+  virtuals: true,
+  transform(doc, json) {
+    delete json.__v
+    delete json.id
+    return json
+  }
 })
-
-
-teamSchema.set('toJSON', {virtuals: true})
 
 module.exports = mongoose.model('Team', teamSchema)
