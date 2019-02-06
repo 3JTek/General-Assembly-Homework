@@ -20,8 +20,19 @@ function showRoute(req, res) {
     .then(movies => res.json(movies))
 }
 
+function commentCreateRoute(req, res) {
+  Movie
+    .findById(req.params.id)
+    .then(movies => {
+      movies.comments.push(req.body)
+      return movies.save()
+    })
+    .then(track => res.status(201).json(track))
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
-  create: createRoute
+  create: createRoute,
+  commentCreate: commentCreateRoute
 }

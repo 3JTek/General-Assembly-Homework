@@ -15,5 +15,6 @@ router.get('/movies', movieController.index)
 router.get('/movies/:id', movieController.show)
 router.post('/movies', secureRoute, movieController.create)
 
+router.post('/movies/:id/comments', secureRoute, movieController.commentCreate)
 
 module.exports = router

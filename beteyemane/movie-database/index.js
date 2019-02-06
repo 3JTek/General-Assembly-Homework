@@ -10,6 +10,6 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(bodyParser.json())
 
-app.use(routes)
+app.use('/api', routes)
 
 app.listen(process.env.PORT, () => console.log(`Up and running on port ${process.env.PORT}`))
