@@ -13,7 +13,6 @@ function createSuperHero(req, res) {
     .create(req.body)
     .then(superhero => res.status(200).json(superhero))
     .catch(err => res.status(422).json(err.errors))
-
 }
 
 function showSuperHero(req, res) {
