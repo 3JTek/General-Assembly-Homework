@@ -32,7 +32,6 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.order_string_alphabetically('python is cool'), 'chilnooopsty')
         self.assertEqual(problems.order_string_alphabetically('Testing Rocks'), 'cegiknorsstt')
 
-    @unittest.skip
     def test_title_case(self):
         self.assertEqual(problems.title_case('this is it'), 'This Is It')
 
