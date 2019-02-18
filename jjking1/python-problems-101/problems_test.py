@@ -18,35 +18,35 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.celcius_to_farenheit(-40), -40)
         self.assertEqual(problems.celcius_to_farenheit(100), 212)
 
-    
+
     def test_number_reverse(self):
         self.assertEqual(problems.number_reverse(123), 321)
         self.assertEqual(problems.number_reverse(4001), 1004)
         self.assertEqual(problems.number_reverse(78.567), 765.87)
 
-    @unittest.skip
+
     def test_palindrome_check(self):
         self.assertEqual(problems.palindrome_check('pop'), True)
         self.assertEqual(problems.palindrome_check('dog'), False)
         self.assertEqual(problems.palindrome_check('nurses run'), True)
         self.assertEqual(problems.palindrome_check('will not work'), False)
 
-    @unittest.skip
+
     def test_order_string_alphabetically(self):
         self.assertEqual(problems.order_string_alphabetically('happy'), 'ahppy')
         self.assertEqual(problems.order_string_alphabetically('python is cool'), 'chilnooopsty')
         self.assertEqual(problems.order_string_alphabetically('Testing Rocks'), 'cegiknorsstt')
 
-    @unittest.skip
+
     def test_title_case(self):
         self.assertEqual(problems.title_case('this is it'), 'This Is It')
 
-    @unittest.skip
+
     def test_num_of_vowels(self):
         self.assertEqual(problems.num_of_vowels('yellow submarine'), 6)
         self.assertEqual(problems.num_of_vowels('Yellow Submarine'), 6)
 
-    @unittest.skip
+
     def test_frame(self):
         self.assertEqual(problems.frame('Rumplestiltskin'), '*******************\n* Rumplestiltskin *\n*******************')
         self.assertEqual(problems.frame('Hello Kitty'), '***************\n* Hello Kitty *\n***************')
