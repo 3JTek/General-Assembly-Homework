@@ -52,4 +52,6 @@ def num_of_vowels(string):
 # eg: frame('Hello Kitty') => * Hello Kitty *
 #                             ***************
 def frame(string):
-    pass
+    num = len(string) + 4
+
+    return '*' * num + '\n*' + ' ' + string + ' ' + '*\n' + '*' * num
