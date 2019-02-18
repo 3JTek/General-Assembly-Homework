@@ -12,7 +12,7 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.area_of_circle(10), 314.1592653589793)
         self.assertEqual(problems.area_of_circle(1), 3.141592653589793)
 
-    @unittest.skip
+    # @unittest.skip
     def test_celcius_to_farenheit(self):
         self.assertEqual(problems.celcius_to_farenheit(0), 32)
         self.assertEqual(problems.celcius_to_farenheit(-40), -40)
