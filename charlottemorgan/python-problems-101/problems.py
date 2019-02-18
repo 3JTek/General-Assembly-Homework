@@ -43,7 +43,7 @@ def order_string_alphabetically(string):
 # write a function that capitalizes the first letter of each word
 # eg. title_case('the lord of the rings') => 'The Lord Of The Rings'
 def title_case(string):
-    pass
+    return string.title()
 
 
 # write a function that returns the number of vowels in a string case insensitive
