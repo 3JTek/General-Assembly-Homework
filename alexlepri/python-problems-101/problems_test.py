@@ -24,7 +24,7 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.number_reverse(4001), 1004)
         self.assertEqual(problems.number_reverse(78.567), 765.87)
 
-    @unittest.skip
+    # @unittest.skip
     def test_palindrome_check(self):
         self.assertEqual(problems.palindrome_check('pop'), True)
         self.assertEqual(problems.palindrome_check('dog'), False)

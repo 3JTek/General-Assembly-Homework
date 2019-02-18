@@ -26,7 +26,10 @@ def number_reverse(number):
 # write a function to check if a word or phrase is a palindrome returning a boolean
 # eg. palindrome_check('dad') => True, palindrome('nonsense') => False
 def palindrome_check(string):
-    pass
+    if string.replace(" ", "") == (string.replace(" ", ""))[::-1]:
+      return True
+    else: return False
+
 
 
 # write a function that returns the letters of a word or phrase in alphabetical order case insensitive
