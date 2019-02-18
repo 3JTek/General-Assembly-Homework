@@ -31,17 +31,17 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.palindrome_check('nurses run'), True)
         self.assertEqual(problems.palindrome_check('will not work'), False)
 
-    @unittest.skip
+    # @unittest.skip
     def test_order_string_alphabetically(self):
         self.assertEqual(problems.order_string_alphabetically('happy'), 'ahppy')
         self.assertEqual(problems.order_string_alphabetically('python is cool'), 'chilnooopsty')
         self.assertEqual(problems.order_string_alphabetically('Testing Rocks'), 'cegiknorsstt')
 
-    @unittest.skip
+    # @unittest.skip
     def test_title_case(self):
         self.assertEqual(problems.title_case('this is it'), 'This Is It')
 
-    @unittest.skip
+    # @unittest.skip
     def test_num_of_vowels(self):
         self.assertEqual(problems.num_of_vowels('yellow submarine'), 6)
         self.assertEqual(problems.num_of_vowels('Yellow Submarine'), 6)

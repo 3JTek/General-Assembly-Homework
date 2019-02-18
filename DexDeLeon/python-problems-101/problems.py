@@ -35,20 +35,22 @@ def palindrome_check(string):
 # write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 # eg. order_string_alphabetically('javascript is cool') => 'aacciijlooprsstv'
 def order_string_alphabetically(string):
-    pass
-
+    uni_str = string.lower().replace(' ', '')
+    str_list = sorted(list(uni_str))
+    return ''.join(str_list)
 
 # write a function that capitalizes the first letter of each word
 # eg. title_case('the lord of the rings') => 'The Lord Of The Rings'
 def title_case(string):
-    pass
+    return string.title()
 
 
 # write a function that returns the number of vowels in a string case insensitive
 # 'y' should not be considered a vowel
 # eg: num_of_vowels('Yellow Submarine') => 6
 def num_of_vowels(string):
-    pass
+    str_list = list(string)
+    return sum([str_list.count('a'), str_list.count('e'), str_list.count('i'), str_list.count('o'), str_list.count('u')])
 
 
 # write a function that frames a string in asterisks (*)
