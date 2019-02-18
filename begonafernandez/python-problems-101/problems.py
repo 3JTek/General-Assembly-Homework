@@ -22,19 +22,21 @@ def number_reverse(number):
 # write a function to check if a word or phrase is a palindrome returning a boolean
 # eg. palindrome_check('dad') => True, palindrome('nonsense') => False
 def palindrome_check(string):
-    pass
+    s = string.lower().replace(' ', '')
+    return s == s[::-1]
 
 
 # write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 # eg. order_string_alphabetically('javascript is cool') => 'aacciijlooprsstv'
 def order_string_alphabetically(string):
-    pass
+    return ''.join(sorted(string.lower().replace(' ','')))
 
 
 # write a function that capitalizes the first letter of each word
 # eg. title_case('the lord of the rings') => 'The Lord Of The Rings'
 def title_case(string):
-    pass
+    words = string.split()
+    return ' '.join([word.capitalize() for word in words])
 
 
 # write a function that returns the number of vowels in a string case insensitive
