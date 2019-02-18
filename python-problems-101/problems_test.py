@@ -35,7 +35,6 @@ class ProblemsTest(unittest.TestCase):
     def test_title_case(self):
         self.assertEqual(problems.title_case('this is it'), 'This Is It')
 
-    @unittest.skip
     def test_num_of_vowels(self):
         self.assertEqual(problems.num_of_vowels('yellow submarine'), 6)
         self.assertEqual(problems.num_of_vowels('Yellow Submarine'), 6)
