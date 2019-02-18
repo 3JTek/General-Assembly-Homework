@@ -17,7 +17,7 @@ def celcius_to_farenheit(celcius):
 
 # write a function that will reverse a number (eg. 456733 become 337654)
 def number_reverse(number):
-    pass
+    float(str(number)[::-1])
 
 
 # write a function to check if a word or phrase is a palindrome returning a boolean
