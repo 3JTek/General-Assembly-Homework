@@ -1,34 +1,43 @@
 # write a function that returns "Hello World!" if no argument is given, or "Hello <argument>!" otherwise
 # eg: hello() => "Hello World!"; hello("Mike") => "Hello Mike!"
 def hello(string='World'):
-    pass
+    return f'Hello {string}!'
 
 
 # write a function that will calculate the area of a circle, given the radius
 def area_of_circle(radius):
-    pass
+    import math
+    return radius * radius * math.pi
 
 
 # write a function to convert celcius to farenheit
 def celcius_to_farenheit(celcius):
-    pass
+    return celcius*9/5+32
 
 
 # write a function that will reverse a number (eg. 456733 become 337654)
 def number_reverse(number):
-    pass
-
+    return (float(str(number)[::-1]))
 
 # write a function to check if a word or phrase is a palindrome returning a boolean
 # eg. palindrome_check('dad') => True, palindrome('nonsense') => False
 def palindrome_check(string):
-    pass
+    string = string.replace(' ', '')
+    rev_string = ''
+    for char in reversed(string):
+        rev_string = rev_string + char
+
+    return string == rev_string
 
 
 # write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 # eg. order_string_alphabetically('javascript is cool') => 'aacciijlooprsstv'
 def order_string_alphabetically(string):
-    pass
+    string = string.lower().replace(' ', '')
+    new_string = ''
+    for char in sorted(string):
+        new_string = new_string + char
+    return new_string
 
 
 # write a function that capitalizes the first letter of each word
