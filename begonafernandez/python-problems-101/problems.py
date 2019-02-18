@@ -1,22 +1,22 @@
+from math import exp, pi
 # write a function that returns "Hello World!" if no argument is given, or "Hello <argument>!" otherwise
 # eg: hello() => "Hello World!"; hello("Mike") => "Hello Mike!"
 def hello(string='World'):
     return f'Hello {string}!'
 
-
 # write a function that will calculate the area of a circle, given the radius
 def area_of_circle(radius):
-    pass
+    return pi * pow(radius, 2)
 
 
 # write a function to convert celcius to farenheit
 def celcius_to_farenheit(celcius):
-    pass
+    return celcius * 9 / 5 + 32
 
 
 # write a function that will reverse a number (eg. 456733 become 337654)
 def number_reverse(number):
-    pass
+    return float(str(number)[::-1])
 
 
 # write a function to check if a word or phrase is a palindrome returning a boolean
