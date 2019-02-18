@@ -6,7 +6,7 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.hello(), 'Hello World!')
         self.assertEqual(problems.hello('Mike'), 'Hello Mike!')
 
-    @unittest.skip
+    # @unittest.skip
     def test_area_of_circle(self):
         self.assertEqual(problems.area_of_circle(4), 50.26548245743669)
         self.assertEqual(problems.area_of_circle(10), 314.1592653589793)

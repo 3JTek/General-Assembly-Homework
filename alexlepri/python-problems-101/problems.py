@@ -5,8 +5,12 @@ def hello(string='World'):
 
 
 # write a function that will calculate the area of a circle, given the radius
+import math
 def area_of_circle(radius):
-    pass
+
+    area = (math.pi * (radius ** 2))
+    return area
+
 
 
 # write a function to convert celcius to farenheit
