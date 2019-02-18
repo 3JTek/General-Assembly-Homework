@@ -39,7 +39,6 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.num_of_vowels('yellow submarine'), 6)
         self.assertEqual(problems.num_of_vowels('Yellow Submarine'), 6)
 
-    @unittest.skip
     def test_frame(self):
         self.assertEqual(problems.frame('Rumplestiltskin'), '*******************\n* Rumplestiltskin *\n*******************')
         self.assertEqual(problems.frame('Hello Kitty'), '***************\n* Hello Kitty *\n***************')
