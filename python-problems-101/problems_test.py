@@ -27,7 +27,6 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.palindrome_check('nurses run'), True)
         self.assertEqual(problems.palindrome_check('will not work'), False)
 
-    @unittest.skip
     def test_order_string_alphabetically(self):
         self.assertEqual(problems.order_string_alphabetically('happy'), 'ahppy')
         self.assertEqual(problems.order_string_alphabetically('python is cool'), 'chilnooopsty')
