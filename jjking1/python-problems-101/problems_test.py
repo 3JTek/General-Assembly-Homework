@@ -6,19 +6,19 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.hello(), 'Hello World!')
         self.assertEqual(problems.hello('Mike'), 'Hello Mike!')
 
-    @unittest.skip
+
     def test_area_of_circle(self):
         self.assertEqual(problems.area_of_circle(4), 50.26548245743669)
         self.assertEqual(problems.area_of_circle(10), 314.1592653589793)
         self.assertEqual(problems.area_of_circle(1), 3.141592653589793)
 
-    @unittest.skip
+
     def test_celcius_to_farenheit(self):
         self.assertEqual(problems.celcius_to_farenheit(0), 32)
         self.assertEqual(problems.celcius_to_farenheit(-40), -40)
         self.assertEqual(problems.celcius_to_farenheit(100), 212)
 
-    @unittest.skip
+    
     def test_number_reverse(self):
         self.assertEqual(problems.number_reverse(123), 321)
         self.assertEqual(problems.number_reverse(4001), 1004)
