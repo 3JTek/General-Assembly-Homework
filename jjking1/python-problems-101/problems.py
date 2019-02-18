@@ -69,5 +69,4 @@ def num_of_vowels(string):
 def frame(string):
     length = len(string)
     borders = ('*' * (length+4))
-    print(f'{borders}\n* {string} *\n{borders}')
     return (f'{borders}\n* {string} *\n{borders}')
