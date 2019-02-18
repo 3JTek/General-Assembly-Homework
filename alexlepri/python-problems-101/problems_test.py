@@ -18,7 +18,7 @@ class ProblemsTest(unittest.TestCase):
         self.assertEqual(problems.celcius_to_farenheit(-40), -40)
         self.assertEqual(problems.celcius_to_farenheit(100), 212)
 
-    @unittest.skip
+    # @unittest.skip
     def test_number_reverse(self):
         self.assertEqual(problems.number_reverse(123), 321)
         self.assertEqual(problems.number_reverse(4001), 1004)
