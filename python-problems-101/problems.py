@@ -12,7 +12,7 @@ def area_of_circle(radius):
 
 # write a function to convert celcius to farenheit
 def celcius_to_farenheit(celcius):
-    pass
+    return (celcius * 9/5)+32
 
 
 # write a function that will reverse a number (eg. 456733 become 337654)
