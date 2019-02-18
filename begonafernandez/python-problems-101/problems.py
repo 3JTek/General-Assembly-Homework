@@ -43,7 +43,8 @@ def title_case(string):
 # 'y' should not be considered a vowel
 # eg: num_of_vowels('Yellow Submarine') => 6
 def num_of_vowels(string):
-    pass
+    vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
+    return sum([string.replace(' ', '').count(v) for v in vowels])
 
 
 # write a function that frames a string in asterisks (*)
