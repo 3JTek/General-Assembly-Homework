@@ -60,7 +60,7 @@ def frame(string):
     new_string = string.center(len(string)+2)
     new_string = new_string.center(len(new_string)+2, '*')
     new_string = new_string.center(len(new_string)+2, '\n')
-    new_string = new_string.center(len(string)+len(string), '*')
+    new_string = new_string.center(len(new_string)+ 2 * len(string)+8, '*')
     # new_string = new_string.center(len(new_string)+15, '*')
 
     return new_string
