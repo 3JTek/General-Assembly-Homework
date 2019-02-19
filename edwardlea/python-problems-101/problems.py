@@ -30,6 +30,7 @@ def number_reverse(number):
 
     string = str(number)
     reversed_string = string[::-1]
+    
     return float(reversed_string)
 
 
@@ -53,6 +54,7 @@ def order_string_alphabetically(string):
         # list.sort(array)
         no_spaces = list(string.replace(" ", "").lower())
         list.sort(no_spaces)
+
         return ''.join(no_spaces)
 
 
@@ -81,4 +83,5 @@ def num_of_vowels(string):
 #                             ***************
 def frame(string):
     frameWidth = len(string) + 4
+
     return '*' * frameWidth + '\n' + '* ' + string + ' *\n' + '*' * frameWidth
