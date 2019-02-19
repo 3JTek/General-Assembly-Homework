@@ -1,28 +1,45 @@
 -- 1. Select the names of all products that are not on sale.
+SELECT name FROM products WHERE on_sale = false;
 
 -- 2. Select the names of all products that cost less than £20.
+ SELECT name FROM products WHERE price  < 20;
 
 -- 3. Select the name and price of the most expensive product.
+SELECT name, price FROM products ORDER BY price desc LIMIT 1
 
 -- 4. Select the name and price of the second most expensive product.
+SELECT name, price FROM products ORDER BY price desc OFFSET 1 LIMIT 1;
 
 -- 5. Select the name and price of the least expensive product.
+SELECT name, price FROM products ORDER BY price ASC LIMIT 1;
 
 -- 6. Select the names and prices of all products, ordered by price in descending order.
+SELECT name, price FROM products ORDER BY price DESC;
 
 -- 7. Select the average price of all products.
+ SELECT AVG(price) FROM products;
 
 -- 8. Select the sum of the price of all products.
+SELECT SUM(price) FROM products;
 
 -- 9. Select the sum of the price of all products whose prices is less than £20.
+SELECT SUM(price) FROM products where price < 20;
 
 -- 10. Select the id of the user with the name "Alex Chin".
+SELECT id from users WHERE name = 'Alex Chin';
 
 -- 11. Select the names of all users whose names start with the letter "E".
+SELECT name from users WHERE name LIKE 'E%';
 
 -- 12. Select the number of users whose first names are "Benjamin".
+SELECT COUNT(*) FROM users WHERE name LIKE 'Benjamin %'
 
 -- 13. Select the number of users who want a "Teddy Bear".
+SELECT id FROM products where name = 'Teddy Bear';
+SELECT COUNT(*)  FROM wishlists WHERE product_id = 1;
+
+with inner join
+SELECT COUNT(*) FROM products INNER JOIN wishlists ON wishlists.product_id = products.id  where products.name = 'Teddy Bear'
 
 -- 14. Select the count of items on the wishlish of the user with your name.
 
