@@ -1,7 +1,8 @@
 -- 1. Select the names of all products that are not on sale.
+SELECT  * FROM products WHERE on_sale = FALSE;
 
 -- 2. Select the names of all products that cost less than £20.
-
+SELECT  * FROM products WHERE price < 20;
 -- 3. Select the name and price of the most expensive product.
 
 -- 4. Select the name and price of the second most expensive product.
