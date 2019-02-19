@@ -42,10 +42,13 @@ with inner join
 SELECT COUNT(*) FROM products INNER JOIN wishlists ON wishlists.product_id = products.id  where products.name = 'Teddy Bear'
 
 -- 14. Select the count of items on the wishlish of the user with your name.
+SELECT COUNT(*) from wishlists INNER JOIN users ON wishlists.user_id = users.id WHERE users.name = 'Begona Fernandez';
 
 -- 15. Select the count and name of all products on the wishlist, ordered by count in descending order.
+SELECT products.name, COUNT(*) FROM wishlists INNER JOIN products ON wishlists.product_id = products.id GROUP BY products.name ORDER BY COUNT DESC;
 
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
+SELECT products.name, COUNT(*) FROM wishlists INNER JOIN products ON wishlists.product_id = products.id WHERE on_sale = false GROUP BY products.name ORDER BY COUNT DESC;
 
 -- 17. Insert a user with the name "Jonathan Anderson" into the users table.
 
