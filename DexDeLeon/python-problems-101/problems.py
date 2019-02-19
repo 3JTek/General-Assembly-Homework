@@ -8,7 +8,7 @@ def hello(string='World'):
 
 # write a function that will calculate the area of a circle, given the radius
 def area_of_circle(radius):
-    return math.pow(radius, 2) * math.pi
+    return (radius ** 2) * math.pi
 
 
 # write a function to convert celcius to farenheit
@@ -49,8 +49,10 @@ def title_case(string):
 # 'y' should not be considered a vowel
 # eg: num_of_vowels('Yellow Submarine') => 6
 def num_of_vowels(string):
-    str_list = list(string)
+    str_list = list(string.lower())
     return sum([str_list.count('a'), str_list.count('e'), str_list.count('i'), str_list.count('o'), str_list.count('u')])
+# len([char for char in string if char in 'aeiou'])
+
 
 
 # write a function that frames a string in asterisks (*)
@@ -62,3 +64,4 @@ def frame(string):
     framed_str = framed_str.center( len(framed_str) + 2, '*' )
     framed_str = framed_str.center( len(framed_str) + 2, '\n' )
     return framed_str.center( len(framed_str) + 2 * len(string) + 8, '*' )
+    # num * 'str' will return that many repetitions of the string
