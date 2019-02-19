@@ -27,9 +27,9 @@ SELECT COUNT(*) FROM wishlists WHERE product_id = (SELECT id FROM products WHERE
 -- 14. Select the count of items on the wishlish of the user with your name.
 SELECT COUNT(*) FROM wishlists WHERE user_id = (SELECT id FROM users WHERE name LIKE 'Josh%');
 -- 15. Select the count and name of all products on the wishlist, ordered by count in descending order.
-
+SELECT products.name, COUNT(*) AS total FROM wishlists, products WHERE wishlists.product_id = products.id GROUP BY products.name;
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
-
+SELECT products.name, COUNT(*) AS total FROM wishlists, products WHERE wishlists.product_id = products.id AND on_sale = FALSE GROUP BY products.name ORDER BY total DESC;
 -- 17. Insert a user with the name "Jonathan Anderson" into the users table.
 INSERT INTO users (created_at, name) VALUES (now(), 'Jonathan Anderson');
 -- 19. Insert a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Python Programming Language" using sub queries to find the user id and the product id.
