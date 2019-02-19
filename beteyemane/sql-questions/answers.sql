@@ -86,10 +86,12 @@ VALUES ('2019-02-01',
 
 --20. Update the name of the "Jonathan Anderson" user to be "Jon Anderson".
 
-UPDATE users SET name='Jon Anderson' WHERE name='Jonathan Anderson';
+UPDATE users SET name='Jon Anderson' WHERE id=15;
 
 -- 21. Delete the user with the name "Jon Anderson".
 
- DELETE FROM users WHERE name='Jon Anderson';
+ DELETE FROM users WHERE id=15;
 
 -- 22. Delete the wishlist item for the user you just deleted.
+
+ DELETE FROM wishlists WHERE user_id=15;
