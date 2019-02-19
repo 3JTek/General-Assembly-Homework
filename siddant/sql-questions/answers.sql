@@ -47,10 +47,13 @@ INSERT INTO users (created_at, name) VALUES (NOW(), 'Jonathan Anderson');
 
 INSERT INTO wishlists (created_at, user_id, product_id) VALUES (NOW(), 15, 4);
 
+INSERT INTO wishlists (created_at, user_id, product_id) VALUES
+(now(),(SELECT id FROM users WHERE name = 'Jonathan Anderson'),(SELECT id FROM products WHERE name='The Python Programming Language'));
+
 --20. Update the name of the "Jonathan Anderson" user to be "Jon Anderson".
 UPDATE users SET name = 'Jon Anderson' WHERE id = 15;
 -- 21. Delete the user with the name "Jon Anderson".
 DELETE FROM users WHERE name='Jon Anderson';
 
 -- 22. Delete the wishlist item for the user you just deleted.
-DELETE FROM wishlist WHERE name='Jon Anderson';
+DELETE FROM wishlists WHERE id = (SELECT id FROM wishlists ORDER BY id DESC LIMIT 1);
