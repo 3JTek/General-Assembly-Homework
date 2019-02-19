@@ -49,11 +49,16 @@ SELECT name FROM users WHERE name LIKE 'E%';
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
 
 -- 17. Insert a user with the name "Jonathan Anderson" into the users table.
+INSERT INTO users (name) VALUES
+('Jonathan Anderson');
 
 -- 19. Insert a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language" using sub queries to find the user id and the product id.
 
 --20. Update the name of the "Jonathan Anderson" user to be "Jon Anderson".
+UPDATE users SET name='Jon Anderson' WHERE name='Jonathan Anderson';
 
 -- 21. Delete the user with the name "Jon Anderson".
+DELETE FROM users WHERE id=15;
+-- Where target user's ID is === 15
 
 -- 22. Delete the wishlist item for the user you just deleted.
