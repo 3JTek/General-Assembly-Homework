@@ -25,9 +25,9 @@ SELECT id FROM users WHERE name='Alex Chin';
 SELECT name FROM users WHERE name LIKE 'E%';
 
 -- 12. Select the number of users whose first names are "Benjamin".
-
+SELECT COUNT(name) FROM users WHERE name LIKE 'Benjamin%';
 -- 13. Select the number of users who want a "Teddy Bear".
-
+SELECT COUNT(*) FROM wishlists WHERE product_id = (SELECT id FROM products WHERE name ='Teddy Bear');
 -- 14. Select the count of items on the wishlish of the user with your name.
 
 -- 15. Select the count and name of all products on the wishlist, ordered by count in descending order.
