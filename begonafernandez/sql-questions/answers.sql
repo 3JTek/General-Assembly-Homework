@@ -51,11 +51,14 @@ SELECT products.name, COUNT(*) FROM wishlists INNER JOIN products ON wishlists.p
 SELECT products.name, COUNT(*) FROM wishlists INNER JOIN products ON wishlists.product_id = products.id WHERE on_sale = false GROUP BY products.name ORDER BY COUNT DESC;
 
 -- 17. Insert a user with the name "Jonathan Anderson" into the users table.
+ INSERT INTO users (name) VALUES ('Jonathan Anderson');
 
 -- 19. Insert a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language" using sub queries to find the user id and the product id.
 
 --20. Update the name of the "Jonathan Anderson" user to be "Jon Anderson".
+UPDATE users set name = 'Jon Anderson' where name = 'Jonathan Anderson';
 
 -- 21. Delete the user with the name "Jon Anderson".
+ DELETE FROM users where name = 'Jon Anderson';
 
 -- 22. Delete the wishlist item for the user you just deleted.
