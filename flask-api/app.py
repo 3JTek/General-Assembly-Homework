@@ -36,3 +36,10 @@ def musicals_index():
     musicals_schema = MusicalSchema(many=True)
 
     return musicals_schema.jsonify(musicals), 200
+
+@app.route('/musicals/<int:id>', methods=['GET'])
+def musicals_show(id):
+    musical = Musical.query.get(id)
+    musicals_schema = MusicalSchema()
+
+    return musicals_schema.jsonify(musical), 200
