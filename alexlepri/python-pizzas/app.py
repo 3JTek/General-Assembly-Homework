@@ -25,4 +25,9 @@ class Pizza(db.Model):
 class PizzaSchema(ma.ModelSchema):
 
     class Meta:
-        model: Pizza
+        model = Pizza
+
+
+@app.route('/')
+def home():
+    return jsonify({ 'message': 'Hello World!' }), 200
