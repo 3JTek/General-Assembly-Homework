@@ -17,13 +17,12 @@ SELECT name, price FROM products WHERE price=(SELECT MAX(price) FROM products);
 
 
 -- 4. Select the name and price of the second most expensive product.
-SELECT name FROM products ORDER BY price DESC;
-SELECT price FROM products WHERE name='Brown Leather Boots';
+SELECT name, price FROM products WHERE price <(SELECT MAX(price) FROM products) ORDER BY price
+DESC LIMIT 1
 
 
 -- 5. Select the name and price of the least expensive product.
-SELECT name FROM products ORDER BY price ASC;
-SELECT price FROM products WHERE name='Set of 12 Mason Jars';
+SELECT name, price FROM products = (SELECT MIN(price) FROM products)
 
 -- 6. Select the names and prices of all products, ordered by price in descending order.
 
@@ -66,6 +65,8 @@ SELECT COUNT(*) FROM wishlists WHERE user_id=0;
 
 SELECT COUNT(user_id) FROM wishlists GROUP BY product_id ORDER BY count DESC;
 
+
+
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
 
 
@@ -94,4 +95,4 @@ UPDATE users SET name='Jon Anderson' WHERE id=15;
 
 -- 22. Delete the wishlist item for the user you just deleted.
 
- DELETE FROM wishlists WHERE user_id=15;
+ DELETE FROM wishlists WHERE id=78;
