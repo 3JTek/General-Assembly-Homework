@@ -40,6 +40,7 @@ SELECT name FROM users WHERE name LIKE 'Benjamin%';
 -- 14. Select the count of items on the wishlish of the user with your name.
 SELECT COUNT(*) FROM wishlists WHERE user_id = (SELECT id FROM users WHERE name = 'Charlotte');
 -- 15. Select the count and name of all products on the wishlist, ordered by count in descending order.
+SELECT COUNT(name), name FROM products JOIN wishlists ON products.id = wishlists.product_id GROUP BY name ORDER BY count DESC;
 
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
 
@@ -48,9 +49,20 @@ INSERT INTO users (name) VALUES
 ('Jonathan Anderson');
 
 -- 19. Insert a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language" using sub queries to find the user id and the product id.
+INSERT INTO products (name, price, on_sale) VALUES
+('The Ruby Programming Language', 10, true);
+
+SELECT id FROM products WHERE name='The Ruby Programming Language'; 11
+SELECT id FROM users WHERE name='Jonathan Anderson'; 15
+
+INSERT INTO wishlists (user_id, product_id) VALUES
+(11, 15);
 
 --20. Update the name of the "Jonathan Anderson" user to be "Jon Anderson".
+UPDATE users SET name = 'Jon Anderson' WHERE id = 15;
 
 -- 21. Delete the user with the name "Jon Anderson".
+DELETE FROM users WHERE name='Jon Anderson';
 
 -- 22. Delete the wishlist item for the user you just deleted.
+DELETE FROM wishlists WHERE product_id=15;
