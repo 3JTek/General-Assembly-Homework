@@ -7,7 +7,7 @@ app = Flask(__name__) #file name main
 app.config['SQLALCHEMY_DATABASE_URI']= 'postgres://localhost:5432/flask-homework'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-class Teams(db.Model):
+class Team(db.Model):
 
     __tablename__='teams'
 
