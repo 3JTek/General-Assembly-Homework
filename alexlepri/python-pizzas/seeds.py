@@ -27,8 +27,7 @@ with app.app_context():
 
 
 
-
-        # ADD THE DONUTS TO THE DATABASE SESSION
+#  ========== ADD THE DONUTS TO THE DATABASE SESSION ===================
 
     db.session.add(margherita)
     db.session.add(super)
@@ -41,6 +40,6 @@ with app.app_context():
     db.session.add(potato)
 
 
-    # SAVE THE DATA
+# ========== SAVE THE DATA =============
 
     db.session.commit()
