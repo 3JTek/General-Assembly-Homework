@@ -39,12 +39,18 @@ SELECT id FROM users WHERE name='Alex Chin';
 SELECT name FROM users WHERE name LIKE 'E%';
 
 -- 12. Select the number of users whose first names are "Benjamin".
+SELECT
+COUNT(*)
+FROM users WHERE name LIKE 'Benjamin%';
 
 -- 13. Select the number of users who want a "Teddy Bear".
+SELECT COUNT(user_id) FROM wishlists WHERE product_id = 1;
 
 -- 14. Select the count of items on the wishlish of the user with your name.
 
+
 -- 15. Select the count and name of all products on the wishlist, ordered by count in descending order.
+SELECT products.name, COUNT(*) AS total FROM wishlists, products WHERE wishlists.product_id=products.id GROUP BY products.name ORDER BY total DESC;
 
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
 
@@ -59,6 +65,7 @@ UPDATE users SET name='Jon Anderson' WHERE name='Jonathan Anderson';
 
 -- 21. Delete the user with the name "Jon Anderson".
 DELETE FROM users WHERE id=15;
--- Where target user's ID is === 15
+-- Where target user's ID === 15, could also use 'name'
 
 -- 22. Delete the wishlist item for the user you just deleted.
+DELETE FROM wishlists WHERE product_id IS NULL;
