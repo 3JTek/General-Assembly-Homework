@@ -38,3 +38,5 @@ INSERT INTO wishlists (created_at, user_id, product_id) VALUES (now(), (SELECT i
 UPDATE users SET name='Jon Anderson' WHERE name='Jonathan Anderson';
 -- 21. Delete the user with the name "Jon Anderson".
 DELETE FROM users WHERE name='Jon Anderson';
+-- 22. Deletes the wishlist item for the user you just deleted.
+DELETE FROM wishlists WHERE user_id=null
