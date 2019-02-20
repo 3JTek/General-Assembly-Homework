@@ -89,19 +89,24 @@ WHERE user_id=(
 );
 
 -- 15. Select the count and name of all products on the wishlist, ordered by count in descending order.
-SELECT COUNT(user_id), product_id
+-- Order in the select determines the order of columns in output.
+SELECT name, COUNT(user_id)
 FROM wishlists
-WHERE product_id IN (
-  SELECT id, name
-  FROM products
-  WHERE id=product_id
-)
-GROUP BY product_id
+JOIN products
+ON products.id=wishlists.product_id
+GROUP BY products.name
 ORDER BY count
 DESC;
 
 -- 16. Select the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
-
+SELECT name, COUNT(user_id)
+FROM wishlists
+JOIN products
+ON products.id=wishlists.product_id
+WHERE products.on_sale=false
+GROUP BY products.name
+ORDER BY count
+DESC;
 
 -- 17. Insert a user with the name "Jonathan Anderson" into the users table.
 INSERT INTO users (name, created_at)
