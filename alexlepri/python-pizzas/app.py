@@ -18,7 +18,7 @@ class Pizza(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=True)
     toppings = db.Column(db.String(60), nullable=True)
-    dought = db.Column(db.String(40), nullable=True)
+    dough = db.Column(db.String(40), nullable=True)
     price = db.Column(db.Float, nullable=False)
 
 
@@ -31,3 +31,12 @@ class PizzaSchema(ma.ModelSchema):
 @app.route('/')
 def home():
     return jsonify({ 'message': 'Hello World!' }), 200
+
+
+@app.route('/pizzas', methods=['GET'])
+def pizzas_index():
+    pizzas = Pizza.query.all()
+    pizzas_schema = PizzaSchema(many=True)
+
+
+    return pizzas_schema.jsonify(pizzas), 200
