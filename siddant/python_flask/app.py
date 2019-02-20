@@ -37,3 +37,9 @@ def teams_index():
     teams = Team.query.all()
     teams_schema = TeamSchema(many=True)
     return teams_schema.jsonify(teams), 200
+
+@app.route('/teams/<int:id>', methods=['GET'])
+def teams_show(id):
+    team = Team.query.get(id)
+    teams_schema = TeamSchema()
+    return teams_schema.jsonify(team), 200
