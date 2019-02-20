@@ -7,6 +7,8 @@ app = Flask(__name__) #file name main
 app.config['SQLALCHEMY_DATABASE_URI']= 'postgres://localhost:5432/flask-homework'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy(app)
+
 class Team(db.Model):
 
     __tablename__='teams'
@@ -15,7 +17,7 @@ class Team(db.Model):
     name = db.Column(db.String(), nullable= False)
     location = db.Column(db.String(40), nullable=True) #not needed
     established = db.Column(db.String(40), nullable=True)
-    league = db.Column(db.Integer,, default= False)
+    league = db.Column(db.Integer, default= False)
 
 @app.route('/')
 def home():
