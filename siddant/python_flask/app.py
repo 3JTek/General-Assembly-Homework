@@ -22,3 +22,10 @@ class Team(db.Model):
 @app.route('/')
 def home():
     return jsonify({'message':'Hello World!'}), 200
+
+
+@app.route('/teams', methods=['GET'])
+def teams_index():
+    teams = Team.query.all()
+    print(teams)
+    return 200
