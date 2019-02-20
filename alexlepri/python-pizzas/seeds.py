@@ -23,11 +23,9 @@ with app.app_context():
 
     napoli = Pizza(name='Napoli', toppings='Tomato Sauce, Mozzarella, Anchovies, Capers, Oregano', dough='Neapolitan Crust', price=10)
 
-    rich = Pizza(name='Deluxe', toppings='Tomato Sauce,Mascarpone Cheese, Prawns, Rocket, Chilli, Onion', dough='Flatbread', price=15)
-
     potato = Pizza(name='Potato Pizza', toppings='Mozzarella, Pancetta, Potato, Onion, Rosemary', dough='Thin Crust', price=9)
 
-    
+
 
 
         # ADD THE DONUTS TO THE DATABASE SESSION
@@ -39,6 +37,8 @@ with app.app_context():
     db.session.add(cool)
     db.session.add(alex)
     db.session.add(cheese)
+    db.session.add(napoli)
+    db.session.add(potato)
 
 
     # SAVE THE DATA
