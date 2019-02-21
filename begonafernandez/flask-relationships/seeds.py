@@ -14,3 +14,9 @@ with app.app_context():
 
     waverley = Book(title='Waverley', author=scott)
     waverley.save()
+
+    mannering = Book(title='Guy Mannering', author=scott)
+    mannering.save()
+
+    bleak = Book(title='Bleak house', author=dickens)
+    bleak.save()

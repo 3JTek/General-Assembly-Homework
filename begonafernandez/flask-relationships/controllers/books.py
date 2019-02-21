@@ -10,3 +10,8 @@ api = Blueprint('books', __name__)
 def index():
     books = Book.query.all()
     return books_schema.jsonify(books)
+
+@api.route('/books/<int:book_id>', methods=['GET'])
+def show(book_id):
+    book = Book.query.get(book_id)
+    return book_schema.jsonify(book)

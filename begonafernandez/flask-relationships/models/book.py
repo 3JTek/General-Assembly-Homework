@@ -1,4 +1,5 @@
 from app import db, ma
+from marshmallow import fields
 from .base import BaseModel
 
 class Book(db.Model, BaseModel):
@@ -9,5 +10,7 @@ class Book(db.Model, BaseModel):
     author = db.relationship('Author', backref='books')
 
 class BookSchema(ma.ModelSchema):
+    author = fields.Nested('AuthorSchema')
+
     class Meta:
         model = Book
