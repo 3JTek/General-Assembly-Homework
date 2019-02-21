@@ -3,11 +3,6 @@ from .author import Author, AuthorSchema
 from marshmallow import fields
 from .base import BaseModel, BaseSchema
 
-# readlists_stories = db.Table('readlists_stories',
-#     db.Column('readlist_id', db.Integer, db.ForeignKey('readlist.id'), primary_key=True),
-#     db.Column('story_id', db.Integer, db.ForeignKey('story.id'), primary_key=True),
-# )
-
 
 class Book(db.Model, BaseModel):
 
