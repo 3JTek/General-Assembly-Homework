@@ -12,6 +12,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
+
+
 @app.route('/')
 def home():
     return jsonify({ 'message': 'Hello World!' }), 200
