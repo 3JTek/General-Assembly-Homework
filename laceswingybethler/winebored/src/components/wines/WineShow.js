@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+
+import { Route, Link, Switch } from 'react-router-dom'
 import WinesEdit from './WinesEdit'
 
 class WineShow extends React.Component {

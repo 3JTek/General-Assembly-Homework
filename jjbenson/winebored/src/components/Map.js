@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhlb2JpcmNoIiwiYSI6ImNqcjY4ZzRpaDEzMzYzeXRnaDAwanY4M2kifQ.qPRSOdFwuQsp5X1QkTPHeg'
 
 import { Redirect } from 'react-router'
 

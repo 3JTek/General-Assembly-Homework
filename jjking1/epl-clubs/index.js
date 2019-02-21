@@ -47,13 +47,13 @@ app.get('/epl-clubs', (req,res) => {
 
 app.post('/epl-clubs', (req, res) => {
   Club
-      .create(req.body)
-      .then(club => res.status(201).json(club))
-      .catch(err => res.status(422).json(err.errors))
+    .create(req.body)
+    .then(club => res.status(201).json(club))
+    .catch(err => res.status(422).json(err.errors))
 })
 
 app.all('/*', (req, res) => {
-  res.status(404).json({ message: "not found" })
+  res.status(404).json({ message: 'not found' })
 })
 
 

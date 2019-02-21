@@ -29,7 +29,7 @@ class WinesEdit extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`https://winebored.herokuapp.com/wines/${this.state.match.params.id}`)
+    axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
       .then(res => this.setState({ points: res.data }))
   }
 

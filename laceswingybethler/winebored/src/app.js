@@ -26,8 +26,8 @@ class App extends React.Component {
           </nav>
 
           <Switch>
-            <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines/:id" component={WineShow} />
+            <Route path="/wines/new" component={WinesNew} />
             <Route path="/wines" component={WinesIndex} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />

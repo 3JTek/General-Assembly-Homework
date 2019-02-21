@@ -9,7 +9,7 @@ const Book = require('../models/book')
 const Author = require('../models/author')
 
 
-mongoose.connect(process.env.MONGODB_URI, (err, db) => {
+mongoose.connect('mongodb://localhost/modelsblog', (err, db) => {
   db.dropDatabase()
 
     .then(() => {

@@ -23,13 +23,13 @@ class App extends React.Component {
             <Nav />
           </nav>
           <Switch>
-            <Route path="/wines/edit" component={WineEdit}/>
+            <Route path="/wines/:id/edit" component={WineEdit}/>
             <Route path="/wines/new" component={WineNew}/>
             <Route path="/wines/login" component={Login}/>
             <Route path="/wines/register" component={Register}/>
             <Route path="/wines/:id" component={WinesShow}/>
             <Route path="/wineboreds" component={WineboredsIndex}/>
-            <Route exact path="/" component={Home}/>
+            <Route path="/" component={Home}/>
           </Switch>
         </main>
       </BrowserRouter>

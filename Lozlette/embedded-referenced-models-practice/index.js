@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -8,7 +8,7 @@ const app = express()
 
 const routes = require('./config/routes')
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect('mongodb://localhost/modelsblog')
 
 app.use(bodyParser.json())
 

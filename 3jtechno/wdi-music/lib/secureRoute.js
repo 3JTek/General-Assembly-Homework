@@ -5,7 +5,7 @@ const User = require('../models/user')
 Promise.promisifyAll(jwt)
 
 function secureRoute(req, res, next){
-console.log(req.headers);
+  console.log(req.headers);
   if(!req.headers.authorization) res.status(401).json('Not Authorised')
 
   const token = req.headers.authorization.replace('Bearer ', '')
