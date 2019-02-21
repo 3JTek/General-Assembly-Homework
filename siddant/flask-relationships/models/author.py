@@ -6,7 +6,9 @@ class Author(db.Model, BaseModel):
 
     __tablename__ = 'authors'
 
-    author_name = db.Column(db.String(40), nullable=False)
+    author_first_name = db.Column(db.String(40), nullable=False)
+    author_last_name = db.Column(db.String(40), nullable=False)
+
     nationality = db.Column(db.String(80), nullable=False)
     age = db.Column(db.Integer, nullable=False)
 
