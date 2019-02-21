@@ -18,6 +18,7 @@ class Thunderbird(db.Model):
     pilot = db.Column(db.String(30), nullable=False)
     max_speed = db.Column(db.Integer, nullable=True)
     weapons = db.Column(db.String(100), nullable=True)
+    is_cool = db.Column(db.Boolean)
 
 class ThunderbirdSchema(ma.ModelSchema):
     class Meta:
