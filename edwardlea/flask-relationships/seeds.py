@@ -10,3 +10,5 @@ with app.app_context():
 
     alex = User(username='alex', email='alex@email.com')
     alex.save()
+
+    
