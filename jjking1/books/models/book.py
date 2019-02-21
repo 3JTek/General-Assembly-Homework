@@ -11,7 +11,7 @@ from .base import BaseModel, BaseSchema
 
 class Book(db.Model, BaseModel):
 
-    __tablename__ = 'stories'
+    __tablename__ = 'books'
 
     title = db.Column(db.String(40), nullable=False)
     rating = db.Column(db.Integer, nullable=True)
@@ -23,7 +23,7 @@ class Book(db.Model, BaseModel):
 
 
 
-class StorySchema(ma.ModelSchema, BaseSchema):
+class BookSchema(ma.ModelSchema, BaseSchema):
     author = fields.Nested('AuthorSchema', exclude=('age', 'nationality'))
     class Meta:
         model = Book
