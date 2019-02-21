@@ -14,7 +14,7 @@ class Store(db.Model, BaseModel):
 
 class StoreSchema(ma.ModelSchema, BaseSchema):
 
-    books = fields.Nested('BookSchema', exclude=('stores', 'author', ), many=True)
+    books = fields.Nested('BookSchema', exclude=('stores', 'created_at', 'id', 'author', ), many=True)
 
     class Meta:
         model = Store

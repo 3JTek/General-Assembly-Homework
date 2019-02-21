@@ -27,5 +27,6 @@ class Book(db.Model, BaseModel):
 
 class BookSchema(ma.ModelSchema, BaseSchema):
     author = fields.Nested('AuthorSchema', exclude=('age', 'nationality'))
+    stores = fields.Nested('StoreSchema', exclude=('id', 'books'), many=True)
     class Meta:
         model = Book
