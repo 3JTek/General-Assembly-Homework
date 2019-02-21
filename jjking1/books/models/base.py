@@ -1,5 +1,5 @@
-from app import db
 from datetime import datetime
+from app import db
 from marshmallow import fields
 
 #gives additional methods to other models

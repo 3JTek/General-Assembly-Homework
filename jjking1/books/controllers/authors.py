@@ -5,11 +5,12 @@ author_schema = AuthorSchema()
 authors_schema = AuthorSchema(many=True) #turns schemas into readable json for front end
 
 
-router = Blueprint('authors', __name__) #router(or api) just for the users, will be joined together in routes folder
+#router(or api) just for the users, will be joined together in routes folder
+router = Blueprint('authors', __name__)
 
-@router.route('/authors/<int:id>', methods=['GET']) #could put methods=['GET', 'POST']
-def show(id):
-    author = Author.query.get(id)
+@router.route('/authors/<int:author_id>', methods=['GET']) #could put methods=['GET', 'POST']
+def show(author_id):
+    author = Author.query.get(author_id)
     return author_schema.jsonify(author)
 
 @router.route('/authors', methods=['GET']) #could put methods=['GET', 'POST']

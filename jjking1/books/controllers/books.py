@@ -6,12 +6,12 @@ books_schema = BookSchema(many=True)
 
 router = Blueprint('books', __name__)
 
-@api.route('/books', methods=['GET'])
+@router.route('/books', methods=['GET'])
 def index():
-    videos = Video.query.all()
-    return videos_schema.jsonify(videos)
+    books = Book.query.all()
+    return books_schema.jsonify(books)
 
-@api.route('/videos/<int:id>', methods=['GET'])
-def show(id):
-    video = Video.query.get(id)
-    return video_schema.jsonify(video)
+@router.route('/books/<int:book_id>', methods=['GET'])
+def show(book_id):
+    book = Book.query.get(book_id)
+    return book_schema.jsonify(book)
