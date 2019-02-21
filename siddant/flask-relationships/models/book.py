@@ -3,6 +3,7 @@ from marshmallow import fields
 from .base import BaseModel, BaseSchema
 from .author import Author, AuthorSchema
 
+
 class Book(db.Model, BaseModel):
 
     __tablename__ = 'books'
