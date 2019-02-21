@@ -18,4 +18,4 @@ class Photo(db.Model, BaseModel):
 class PhotoSchema(ma.ModelSchema, BaseSchema):
 
     class Meta:
-        model = photo
+        model = Photo

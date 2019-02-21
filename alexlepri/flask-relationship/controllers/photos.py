@@ -1,7 +1,7 @@
 from flask import Blueprint
-from models.user import Photo, PhotoSchema
+from models.photo import Photo, PhotoSchema
 
-photo_schema = PhotoSchema(many=True)
+photos_schema = PhotoSchema(many=True)
 
 api = Blueprint('photos', __name__)
 
