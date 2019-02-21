@@ -12,7 +12,7 @@ def index():
     authors = Author.query.all()
     return authors_schema.jsonify(authors)
 
-@api.route('/author/<int:author_id>', methods=['GET'])
+@api.route('/authors/<int:author_id>', methods=['GET'])
 def show(author_id):
     author = Author.query.get(author_id)
     return author_schema.jsonify(author)
