@@ -14,6 +14,8 @@ ma = Marshmallow(app)
 
 
 
-@app.route('/')
-def home():
-    return jsonify({ 'message': 'Hello World!' }), 200
+# @app.route('/')
+# def home():
+#     return jsonify({ 'message': 'Hello World!' }), 200
+
+from config import routes
