@@ -9,12 +9,13 @@ class Book(db.Model, BaseModel):
 
     title = db.Column(db.String(40), nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey('authors.id'))
-    author = db.relationship('Author', backref='books')
     rating = db.Column(db.Integer, nullable=True)
     published_year = db.Column(db.Integer, nullable=False)
+    author = db.relationship('Author', backref='books')
+
 
 class BookSchema(ma.ModelSchema, BaseSchema):
-    author = fields.Nested('AuthorSchema', exclude=('age','nationality'))
+    author = fields.Nested('AuthorSchema', exclude=('age', 'nationality'))
 
     class Meta:
         model = Book
