@@ -1,6 +1,7 @@
 from app import db, ma
+from .base import BaseModel, BaseSchema
 
-class User(db.Model):
+class User(db.Model, BaseModel):
 
     __tablename__ = 'users'
 
@@ -8,7 +9,7 @@ class User(db.Model):
     email = db.Column(db.String(80), nullable=False)
 
 
-class UserSchema (ma.ModelSchema):
+class UserSchema (ma.ModelSchema, BaseSchema):
 
     class Meta:
         model = User
