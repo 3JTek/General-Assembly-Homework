@@ -5,7 +5,8 @@ user_schema = UserSchema()
 
 api = Blueprint('users', __name__)
 
-@api.route('/users/<int:id>', methods=['GET'])
+# ===== ASSIGN THE ROUTE TO SHOW USER BY ID ========
+@api.route('/users/<int:id>', methods=['GET'])  #  <int:id> ---> INTEGER ID NUMBER!!!
 def  show(id):
-    user = User.query.get(user_id)
-    return user_schema.jsonify(user_id)
+    user = User.query.get(user_id)  # REMEMBER MUST BE ALWAYS SINGULAR ======
+    return user_schema.jsonify(user_id)  # REMEMBER MUST BE ALWAYS SINGULAR ===

@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 
-
+#  ====== TESTING THE ROUTE ON PORT 4000 ==========
 @app.route('/')
 def home():
     return jsonify({ 'message': 'Hello World!' }), 200
