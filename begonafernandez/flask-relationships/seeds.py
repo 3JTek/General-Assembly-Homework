@@ -16,10 +16,10 @@ with app.app_context():
     dickens = Author(name='Charles Dickens')
     dickens.save()
 
-    waverley = Book(title='Waverley', author=scott, series=waverley_series)
+    waverley = Book(title='Waverley', author=scott, series=[waverley_series])
     waverley.save()
 
-    mannering = Book(title='Guy Mannering', author=scott, series=waverley_series)
+    mannering = Book(title='Guy Mannering', author=scott, series=[waverley_series])
     mannering.save()
 
     bleak = Book(title='Bleak house', author=dickens)
