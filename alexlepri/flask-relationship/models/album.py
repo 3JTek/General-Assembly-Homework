@@ -1,6 +1,7 @@
 from app import db, ma
 from .base import BaseModel, BaseSchema
 from .user import User, UserSchema
+from marshmallow import fields
 
 
 
@@ -14,6 +15,13 @@ class Album(db.Model, BaseModel):
 
 
 class AlbumSchema(ma.ModelSchema, BaseSchema):
+
+
+    photos = fields.Nested('PhotoSchema', many=True, exclude=('album', 'user' ))
+    user = fields.Nested('UserSchema', exclude=('email', ))
+
+
+
 
     class Meta:
         model = Album

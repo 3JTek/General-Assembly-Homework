@@ -9,6 +9,7 @@ class User(db.Model, BaseModel):
     email = db.Column(db.String(80), nullable=False)
 
 class UserSchema(ma.ModelSchema, BaseSchema):
+    
 
     class Meta:
         model = User

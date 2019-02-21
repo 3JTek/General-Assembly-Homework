@@ -28,11 +28,11 @@ lake_como.save()
 lake_garda = Photo(caption='amazing lake',
 filename='lakegarda.jpeg',
 location='garda',
-user=alex
+user=alex,
 )
 lake_garda.save()
 
 
 
-italian_lakes = Album(name='italian lakes trip', user=alex)
+italian_lakes = Album(name='italian lakes trip', user=alex, photos=[lake_como, lake_garda])
 italian_lakes.save()
