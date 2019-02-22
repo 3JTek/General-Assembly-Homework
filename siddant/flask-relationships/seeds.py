@@ -13,5 +13,10 @@ with app.app_context():
     lord_of_the_ring = Book(title="The Lord of the Rings", rating=5, author=tolkien, published_year=1954)
     lord_of_the_ring.save()
 
-    store = Store(name="Camden Lock Books", location='london', hours_of_operation='9-5', books=[lord_of_the_ring])
+    the_hobbit = Book(title="The Hobbit", rating=5, author=tolkien, published_year=1937)
+    the_hobbit.save()
+
+    store = Store(name="Camden Lock Books", location='london', hours_of_operation='9-5', books=[lord_of_the_ring, the_hobbit] )
     store.save()
+    store1 = Store(name="algate east Books", location='london, aldgate', hours_of_operation='9-5', books=[lord_of_the_ring])
+    store1.save()
