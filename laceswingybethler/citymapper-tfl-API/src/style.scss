@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.container {
+  background-image: linear-gradient(darkblue, white, cornflowerblue);
+}
+.tube-lines{
+    background: blue;
+}
+
+.line-box {
+        max-width: 50%;
+        margin: 0 auto;
+        border: 1px solid black;
+        background: white;
+}

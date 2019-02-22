@@ -1,0 +1,152 @@
+$wineRed: #722f37;
+$wineRedTrnsprnt: rgba(45, 18, 22, 0.6);
+
+header{
+
+  h1.title {
+    color: $wineRed;
+  }
+
+  nav.navbar {
+    background: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    width: 100%;
+
+    & div#navMenu{
+      background: transparent;
+    }
+
+    a.navbar-item {
+      color: #000;
+
+      &:hover{
+        color: $wineRed;
+      }
+    }
+  }
+}
+
+body {
+  background-image: url('/assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  section {
+
+    .container.wineShow {
+      background: $wineRedTrnsprnt;
+      padding: 2%;
+      border-radius: 25px;
+
+      h1.title, h2.subtitle, h4.title, p {
+        color: #fff;
+      }
+
+      div.map {
+        width: 100%;
+        height: 20em;
+      }
+    }
+  }
+}
+
+.hero {
+
+  h1,h2 {
+    color: #fff;
+  }
+}
+
+.section {
+  padding-top: 8%;
+
+  .container {
+    margin: auto;
+  }
+
+  div.card {
+    height: 100%;
+    border-radius: 10px;
+    transition: border 0.13s ease;
+
+    h3 {
+      transition: background 0.13s ease, color 0.13s ease;
+    }
+
+    &:hover {
+      border: 5px solid $wineRed;
+
+      h3 {
+        background: $wineRed;
+        color: #ccc;
+      }
+    }
+  }
+
+  figure.image {
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  img {
+    margin: auto;
+    width: 30%;
+    padding: 2%;
+  }
+}
+
+form {
+  padding: 2%;
+  background: $wineRedTrnsprnt;
+  border-radius: 25px;
+
+  label.label {
+    color: #fff;
+  }
+}
+
+#buttons {
+  justify-content: space-around;
+
+  a, button {
+    display: flex;
+    tranition: border 0.13s ease;
+
+    &:hover {
+      border: 5px solid $wineRed
+    }
+  }
+}
+
+@media only screen and (max-width: 1087px){
+
+  section.section,
+  main.section {
+    padding-top: 10%;
+
+    .container.wineShow{
+      padding: 5%;
+    }
+  }
+}
+@media only screen and (max-width: 768px){
+
+  section.section,
+  main.section {
+    padding-top: 12%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+
+  section.section,
+  main.section {
+    padding-top: 18%;
+
+    .container.wineShow{
+      padding: 5%;
+    }
+  }
+}

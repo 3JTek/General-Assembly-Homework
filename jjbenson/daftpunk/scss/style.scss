@@ -1,0 +1,116 @@
+@import ".vars";
+
+body {
+  box-sizing: border-box;
+  background-color: $black;
+  color:$white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100vh;
+
+  background-image: url("../images/helmet.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 90%;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+
+@keyframes animateFrame {
+  0%, 100% {
+    background-color: $black-trans;
+    border: $border-thickness dotted $red;
+  }
+  25% {
+    background-color: $semi-transparent;
+    border: $border-thickness dotted $white;
+  }
+}
+
+@keyframes action1Anim {
+  0%,100%{
+    transform:rotate(0deg) scale(1);
+  }
+  25%{
+    transform:rotate(20deg) scale(1.5);
+  }
+}
+
+@keyframes action2Anim {
+  0%,100%{
+    transform:rotate(0deg) scale(1);
+  }
+  25%{
+    transform:rotate(-20deg) scale(1.5);
+  }
+}
+
+@keyframes action3Anim {
+  0%,100%{
+    transform:rotate(0deg) scale(1);
+  }
+  25%{
+    transform:rotate(-30deg) scale(1.5);
+  }
+}
+
+
+
+button {
+  user-select: none;
+  width: 24%;
+  height: 24%;
+
+  font-family: 'Permanent Marker', cursive;
+
+  font-size: 2em;
+  font-weight: 400;
+  color:$red;
+  background-color: $black-trans;
+  border: $border-thickness dotted $red;
+  border-radius: 0px;
+
+  &.pressed{
+    color:$white;
+    background-color: $semi-transparent;
+    border: $border-thickness solid $white;
+
+    &.action0{
+      animation: animateFrame 1s, action1Anim 1s;
+    }
+    &.action1{
+      animation: animateFrame 1s, action2Anim 1s;
+    }
+    &.action2{
+      animation: animateFrame 1s, action3Anim 1s;
+    }
+  }
+
+  &:hover{
+    color:$white;
+    text-shadow: 0 0 20px $white
+  }
+
+  &:focus {
+    outline: 0;
+    color:$white;
+    text-shadow: 0 0 20px $white
+
+  }
+
+  div {
+    transform: rotate(-7deg);
+  }
+}

@@ -1,0 +1,57 @@
+/* red - #832a25 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: Roboto, sans-serif;
+}
+
+#logo {
+  display: block;
+  margin: auto;
+  width: 20%;
+}
+
+div.buttons {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+button.button {
+  border: solid 2px #222;
+  background: radial-gradient(#000 35%, #832a25);
+  width: 23%;
+  height: 23%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-weight: 800;
+  outline: none;
+  font-size: 1em;
+}
+
+button.first-row {
+  color: #832a25;
+}
+
+button.second-row {
+  color: #6b6a4e;
+}
+
+button.third-row {
+  color: #69591a;
+}
+
+button.last-row {
+  color: #510e0c;
+}

@@ -1,0 +1,198 @@
+// sass scss/style.scss:css/style.css --style compressed --watch
+@import 'variables';
+@import 'mixins';
+
+*{
+  box-sizing: border-box;
+}
+
+
+
+body{
+  font-family: proxima-nova,sans-serif;
+  margin: 0;
+  hr{
+    margin: 40px auto;
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  footer{
+    margin: 0;
+    padding: 50px;
+    background-color: #eaede6;
+    display: flex;
+    justify-content: center;
+    div{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 15px 0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+  }
+}
+
+main{
+  width: 70%;
+  margin: 35px auto;
+  header{
+    padding-top: auto;
+    // justify-content: space-between;
+    width: 100%;
+    img{
+      flex-grow: 3;
+      padding-bottom: 30px;
+    }
+    nav{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: 600;
+      :last-child{
+        text-align: right;
+        margin-left: 30%;
+        color: $exif-red;
+      }
+    }
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    .big-articles{
+      display: flex;
+      flex-wrap: wrap;
+      width: 63%;
+      aside{
+        font-size: 15px;
+        color: grey;
+      }
+      img{
+        width: 100%;
+      }
+      div{
+        border-bottom: 2px solid grey;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    .side-panel{
+      width: 33%;
+      align-self: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .contest{
+        background-color: $exif-red;
+        margin-top: auto;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        p{
+          padding-bottom: 6px;
+        }
+        h3{
+          color: white;
+          text-align: center;
+          margin-top: auto;
+        }
+
+        form{
+          ::placeholder{
+            opacity: 1;
+            color: white;
+            font-weight: 800;
+            font-size: 12px;
+          }
+          input{
+            line-height: 2;
+            border: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 6px;
+            color: white;
+            background-color: $exif-red;
+            width: 75%;
+            padding-top: 5px;
+          }
+          :first-child{
+            width: 100%;
+          }
+          button{
+            width: 20%;
+            background-color: $exif-red;
+            color: white;
+            padding-bottom: 6px;
+            border: none;
+            border-bottom: 2px solid white;
+            line-height: 2;
+            padding-top: 5px;
+            font-size: 12px;
+            font-weight: 800;
+            opacity: 1;
+          }
+        }
+      }
+      .categories{
+        line-height: 1.8;
+        padding: 2px;
+        display: inline-block;
+        a {
+          border: 1px solid grey;
+          margin-top: 1px;
+          padding: 5px 5px;
+        }
+
+        h3 {
+          color: black;
+        }
+
+      }
+      .search-bar{
+        width: 100%;
+        flex-grow: 1;
+        padding-bottom: 20px;
+        input{
+          width: 100%;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .small-articles{
+    padding-top: 50px;
+    width: 66%;
+    text-align: right;
+    article{
+      display: flex;
+      text-align: left;
+      justify-content: space-between;
+      border-bottom: 2px solid grey;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      .description-small{
+        width: 40%;
+      }
+    }
+    button{
+      border-radius: 0;
+      border: 2px solid grey;
+      padding: 17px;
+      font-size: 13px;
+    }
+  }
+}

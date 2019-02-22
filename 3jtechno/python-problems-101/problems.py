@@ -57,6 +57,7 @@ def num_of_vowels(string):
             nb_vowel += 1
 
     return nb_vowel
+
 # [char for char in list_letter if char in vowel]
 
 # write a function that frames a string in asterisks (*)

@@ -1,0 +1,14 @@
+@mixin placeholder($var_colour){
+  ::placeholder {
+      color: $var_colour;
+      opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: $var_colour;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+     color: $var_colour;
+  }
+}

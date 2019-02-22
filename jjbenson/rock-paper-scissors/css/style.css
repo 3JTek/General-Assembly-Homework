@@ -1,0 +1,250 @@
+@keyframes jump {
+  0% {
+    background-position: 0px -640px;
+    bottom: 0px; }
+  15% {
+    bottom: 0px; }
+  30% {
+    bottom: 120px; }
+  45% {
+    bottom: 110px; }
+  60% {
+    bottom: 80px; }
+  75% {
+    bottom: 40px; }
+  100% {
+    background-position: -490px -640px;
+    bottom: 0px; } }
+@keyframes walking {
+  from {
+    background-position: 0px -240px; }
+  to {
+    background-position: -350px -240px; } }
+@keyframes kneel {
+  from {
+    background-position: 0px -720px; }
+  to {
+    background-position: -70px -720px; } }
+@keyframes stance {
+  from {
+    background-position: 0px -80px; }
+  to {
+    background-position: -280px -80px; } }
+@keyframes hadoken {
+  from {
+    background-position: 0px 0px; }
+  to {
+    background-position: -280px 0px; } }
+@keyframes punch {
+  from {
+    background-position: 0px -160px; }
+  to {
+    background-position: -210px -160px; } }
+/* kick */
+@keyframes kick {
+  from {
+    background-position: 0px -480px; }
+  to {
+    background-position: -350px -480px; } }
+/* reverse kick */
+@keyframes reversekick {
+  from {
+    background-position: 0px -560px; }
+  to {
+    background-position: -350px -560px; } }
+@keyframes scaleWeapon {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(1.2);
+    opacity: 0; } }
+@keyframes weaponTextAnim {
+  0% {
+    left: 60px;
+    top: 0px; }
+  100% {
+    left: 80px;
+    top: -100px; } }
+@keyframes cpuWeaponTextAnim {
+  0% {
+    left: 20px;
+    top: -80px; }
+  100% {
+    left: -80px;
+    top: -180px; } }
+body {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  color: white; }
+
+main {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 800px; }
+  main button {
+    color: black;
+    background-color: white;
+    font-family: 'Press Start 2P', cursive;
+    height: 4em;
+    padding: 1em 2em 1em 2em; }
+    main button:focus {
+      outline: none; }
+  main .fight-box {
+    max-width: 800px;
+    width: 100%; }
+    main .fight-box .fight-box-top {
+      display: flex;
+      justify-content: flex-end;
+      display: flex;
+      padding: 20px 100px; }
+    main .fight-box .fight-box-middle {
+      display: flex;
+      justify-content: space-between; }
+      main .fight-box .fight-box-middle .fight-box-middle-left {
+        flex-grow: 1;
+        padding: 1em; }
+        main .fight-box .fight-box-middle .fight-box-middle-left .player-weapon-text {
+          width: 100px; }
+          main .fight-box .fight-box-middle .fight-box-middle-left .player-weapon-text p {
+            text-transform: capitalize;
+            padding: 0;
+            margin: 0;
+            color: grey; }
+            main .fight-box .fight-box-middle .fight-box-middle-left .player-weapon-text p:first-child {
+              color: blue; }
+      main .fight-box .fight-box-middle .fight-box-middle-right {
+        flex-grow: 1;
+        padding: 1em; }
+        main .fight-box .fight-box-middle .fight-box-middle-right .cpu-weapon-text {
+          width: 100px; }
+          main .fight-box .fight-box-middle .fight-box-middle-right .cpu-weapon-text p {
+            text-transform: capitalize;
+            padding: 0;
+            margin: 0;
+            color: grey; }
+            main .fight-box .fight-box-middle .fight-box-middle-right .cpu-weapon-text p:first-child {
+              color: red; }
+      main .fight-box .fight-box-middle .fight-box-middle-middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 450px;
+        height: 330px;
+        background-image: url("../images/jet.jpg");
+        background-size: contain; }
+        main .fight-box .fight-box-middle .fight-box-middle-middle .health-bars {
+          width: 100%;
+          display: flex;
+          justify-content: space-between; }
+          main .fight-box .fight-box-middle .fight-box-middle-middle .health-bars .player-health-bar-outer {
+            width: 50%;
+            background-color: black; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .health-bars .player-health-bar-outer .player-health-bar-inner {
+              height: 20px;
+              width: 100%;
+              background-color: yellow;
+              transition: width 0.5s; }
+          main .fight-box .fight-box-middle .fight-box-middle-middle .health-bars .cpu-health-bar-outer {
+            width: 50%;
+            background-color: black; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .health-bars .cpu-health-bar-outer .cpu-health-bar-inner {
+              height: 20px;
+              width: 100%;
+              margin-left: auto;
+              background-color: yellow;
+              transition: width 0.5s; }
+        main .fight-box .fight-box-middle .fight-box-middle-middle .fighters {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          transition: width 0.5s, left 0.1s; }
+          main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image {
+            position: relative; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.stance, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.stance {
+              animation: stance steps(4) 0.4s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.rock, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.rock {
+              animation: punch steps(3) 0.3s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.paper, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.paper {
+              animation: kick steps(5) 0.5s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.scissors, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.scissors {
+              animation: reversekick steps(5) 0.5s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.spock, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.spock {
+              animation: hadoken steps(4) 0.4s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.lizard, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.lizard {
+              animation: jump steps(7) 0.5s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.lose, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.lose {
+              animation: kneel steps(1) 0.4s infinite; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player-image.walking, main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu-image.walking {
+              animation: walking steps(5) 0.5s infinite; }
+          main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player {
+            display: flex;
+            flex-direction: column-reverse; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player .player-image-weapon {
+              display: none;
+              position: relative;
+              top: 0px;
+              left: 50px;
+              font-size: 1em;
+              color: blue; }
+              main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player .player-image-weapon.active {
+                display: block;
+                animation: weaponTextAnim linear 0.5s, scaleWeapon linear 0.5s; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .player .player-image {
+              width: 70px;
+              height: 80px;
+              /* exactly the size of an image in our sprite */
+              background-image: url("../images/sprite.png"); }
+          main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu {
+            align-self: flex-end;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-end; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu .cpu-image-weapon {
+              align-self: flex-end;
+              display: none;
+              position: relative;
+              top: -80px;
+              left: 20px;
+              font-size: 1em;
+              color: red; }
+              main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu .cpu-image-weapon.active {
+                display: block;
+                animation: cpuWeaponTextAnim linear 0.5s, scaleWeapon linear 0.5s; }
+            main .fight-box .fight-box-middle .fight-box-middle-middle .fighters .cpu .cpu-image {
+              width: 70px;
+              height: 80px;
+              /* exactly the size of an image in our sprite */
+              background-image: url("../images/sprite.png");
+              transform: scaleX(-1); }
+      main .fight-box .fight-box-middle .vs-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1; }
+        main .fight-box .fight-box-middle .vs-text p {
+          font-size: 2em; }
+    main .fight-box .fight-box-bottom {
+      padding: 1em;
+      text-align: center;
+      height: 5em; }
+      main .fight-box .fight-box-bottom .result {
+        line-height: 1.5em; }
+        main .fight-box .fight-box-bottom .result .cpu {
+          text-transform: capitalize;
+          color: red; }
+        main .fight-box .fight-box-bottom .result .player {
+          text-transform: capitalize;
+          color: blue; }
+
+/*# sourceMappingURL=style.css.map */

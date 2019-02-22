@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Whack a Mole</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main>
+
+      <audio id='sound' src="media/whack.mp3" alt='music that plays'></audio>
+
+      <section class="wrapper">
+      <div class="gamestart animated fadeIn slower ">
+        <div class="headingholder animated bounce slower">
+          <h1>Whack a mole</h1>
+          <h2>press start to play the game</h2>
+        </div>
+        <div class="buttonholder animated bounce slower">
+          <button id='gamestartBtn'>Start</button>
+        </div>
+      </div>
+
+
+      <div class="gameboard animated fadeIn" >
+        <div id="showScore">
+        <p>You Scored:<span  class="score"></span></p>
+        <p>Time Remaining: <span id="countDisplay"></span></p>
+        </div>
+        <div id="moleshow">
+          <div class="moleholder" id="0">
+          </div>
+          <div class="moleholder" id="1">
+          </div>
+          <div class="moleholder" id="2">
+          </div>
+          <div class="moleholder" id="3">
+          </div>
+          <div class="moleholder" id="4">
+          </div>
+          <div class="moleholder" id="5">
+          </div>
+          <div class="moleholder" id="6">
+          </div>
+          <div class="moleholder" id="7">
+          </div>
+          <div class="moleholder" id="8">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="gameOver animated bounceInUp slower" >
+        <div class="headingholder animated jackInTheBox
+ slower">
+          <h1>GAME OVER</h1>
+          <p>You Scored:<span  class="score"></span></p>
+          <h2>press reset to play the game again</h2>
+        </div>
+        <div class="buttonholder animated jackInTheBox
+ slower">
+          <button id='restartGame'> reset</button>
+        </div>
+      </div>
+
+
+    </section>
+
+    </main>
+  </body>
+</html>

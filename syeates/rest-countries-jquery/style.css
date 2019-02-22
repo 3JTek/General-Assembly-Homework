@@ -1,0 +1,33 @@
+/* body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.Search{
+  display: flex;
+  justify-content: center;
+}
+
+.countries{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+
+}
+
+.country{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  border: 1px solid black;
+  max-width: 200px
+
+}
+
+img {
+  max-width: 150px;
+}

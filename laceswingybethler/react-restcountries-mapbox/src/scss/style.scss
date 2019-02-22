@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+.map {
+  height: 100vh;
+}
+
+.flag-marker {
+  height: 100px;
+  width: 50px;
+  content: '';
+}
+.mapboxgl-popup {
+        max-width: 100px;
+        font: 9pt 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+
+h4 {
+  margin: 5px 2px 2px 2px;
+}
+
+p {
+  color: grey;
+  //font-style: italic;
+  margin: 4px;
+
+}

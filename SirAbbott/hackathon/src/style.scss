@@ -1,0 +1,144 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+$family-sans-serif: 'Source Code Pro', monospace;
+$column-gap: 0.25rem;
+$control-radius: 0;
+$control-radius-small: 0;
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/form.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/layout/section.sass";
+@import "~bulma/sass/grid/_all.sass";
+@import "~bulma/sass/layout/section.sass";
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  margin: 30px;
+}
+
+.welcome-hero {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+
+  hr {
+    background-color: black;
+    height: 3px;
+    border: 0;
+  }
+
+  .line {
+    position: relative;
+    top: 50%;
+    width: 16em;
+    margin: 0 auto;
+    border-right: 2px solid black;
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+
+  .anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 28em;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: black;
+    }
+
+    to {
+      border-right-color: transparent;
+    }
+  }
+
+  .train-link {
+    color: #f44180;
+  }
+}
+
+.option-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 80vh;
+
+  h1 {
+    text-align: center;
+  }
+
+  button {
+    margin: 2px;
+    width: 33%;
+  }
+
+  button:hover {
+    background-color: #f44180;
+  }
+}
+
+.question-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  width: 70%;
+  margin: auto;
+}
+
+.questionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  text-align: center;
+  margin: auto;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+  justify-content: space-between;
+}
+
+button {
+  width: 25%;
+  padding: 60px;
+  font-size: 1rem;
+}
+
+.answerBox {
+  width: 70%;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.gameover-screen {
+  font-size: 1.2em;
+
+  .play-again {
+    color: #f44180;
+  }
+}
