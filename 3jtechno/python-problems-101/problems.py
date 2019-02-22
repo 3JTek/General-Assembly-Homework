@@ -21,6 +21,7 @@ def celcius_to_farenheit(celcius):
 def number_reverse(number):
     print('')
     return float(''.join(reversed(str(number))))
+    # return float(str(number)[::-1])
 
 # write a function to check if a word or phrase is a palindrome returning a boolean
 # eg. palindrome_check('dad') => True, palindrome('nonsense') => False
@@ -47,7 +48,7 @@ def title_case(string):
 # eg: num_of_vowels('Yellow Submarine') => 6
 def num_of_vowels(string):
     print('')
-    vowel = ['a', 'e', 'u', 'i', 'o']
+    vowel = 'aeuio'
     list_letter = list(string)
     nb_vowel = 0
 
@@ -56,7 +57,7 @@ def num_of_vowels(string):
             nb_vowel += 1
 
     return nb_vowel
-
+# [char for char in list_letter if char in vowel]
 
 # write a function that frames a string in asterisks (*)
 #                             ***************

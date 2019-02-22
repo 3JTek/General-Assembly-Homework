@@ -7,12 +7,10 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-flask-alchemy = "*"
-psycopg2-binary = "*"
 flask-sqlalchemy = "*"
-marshmallow-sqlalchemy = "*"
+psycopg2-binary = "*"
 flask-marshmallow = "*"
-pylint = "*"
+marshmallow-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,9 +1,15 @@
 const rp = require('request-promise')
 const darkSkyURL = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}`
-const openCageURL = `https://api.opencagedata.com/geocode/v1/geojson?&key=${process.env.OPENCAGE_API_KEY}`
 
 function getGeoLocation(city){
-  return rp(`${openCageURL}&q=${city}`)
+  return rp({
+    method: 'GET',
+    uri: 'https://api.opencagedata.com/geocode/v1/geojson?',
+    qs: {
+      q: city,
+      key: process.env.OPENCAGE_API_KEY
+    }
+  })
 }
 
 function getForecast(lng, lat) {
@@ -21,8 +27,9 @@ function getMyForecast(req, res) {
       return getForecast(lng, lat)
     })
     .then(weatherData => {
+      debugger
       const dailyForecast = JSON.parse(weatherData).daily
-      const dataFiltered = dailyForecast.data.map(el => {
+      dailyForecast.data = dailyForecast.data.map(el => {
         return {
           time: el.time,
           summary: el.summary,
@@ -31,8 +38,8 @@ function getMyForecast(req, res) {
           temperatureLow: el.temperatureLow
         }
       })
-      const dailyForcastFiltered = {...dailyForecast, data: dataFiltered}
-      res.status(200).json(dailyForcastFiltered)
+      // const dailyForcastFiltered = {...dailyForecast, data: dataFiltered}
+      res.status(200).json(dailyForecast)
     })
     .catch(err => res.status(422).json(err))
 }

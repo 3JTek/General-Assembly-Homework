@@ -13,5 +13,5 @@ class Car(db.Model):
 
 class CarSchema(ma.ModelSchema):
 
-  class Meta:
-    model = Car
+    class Meta:
+        model = Car
