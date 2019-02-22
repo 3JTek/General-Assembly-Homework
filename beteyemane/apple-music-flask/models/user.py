@@ -12,7 +12,7 @@ class User(db.Model, BaseModel):
 class UserSchema(ma.ModelSchema, BaseSchema):
 
     articles = fields.Nested('ArticleSchema', many=True, exclude=('user', ))
-    reading_lists = fields.Nested('Reading_ListSchema', many=True, exclude=('user', ))
+    reading_lists = fields.Nested('Reading_ListSchema', many=True, exclude=('user', 'articles'))
 
     class Meta:
         model = User

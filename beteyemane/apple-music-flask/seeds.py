@@ -10,8 +10,8 @@ with app.app_context():
     beteyemane = User(username='beteyemane', email='beteyemane@hotmail.co.uk')
     beteyemane.save()
 
-    berlin_wall = Article(title='The Berlin Wall', author='Mr B Wall', page_length=10)
+    berlin_wall = Article(title='The Berlin Wall', author='Mr B Wall', page_length=10, user=beteyemane)
     berlin_wall.save()
 
-    best_walls = Reading_List(title='Best Walls', articles=[berlin_wall])
+    best_walls = Reading_List(title='Best Walls', articles=[berlin_wall], user=beteyemane)
     best_walls.save()

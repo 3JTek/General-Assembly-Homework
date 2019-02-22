@@ -6,7 +6,7 @@ class BaseModel:
 
     id  = db.Column(db.Integer, primary_key=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    update_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def save(self):
         self.updated_at = datetime.utcnow()

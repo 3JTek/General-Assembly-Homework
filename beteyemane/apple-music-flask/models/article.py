@@ -1,6 +1,6 @@
 from app import db, ma
-from .user import User, UserSchema
 from marshmallow import fields
+from .user import User, UserSchema
 from .base import BaseModel, BaseSchema
 from .reading_list import Reading_List, Reading_ListSchema
 
