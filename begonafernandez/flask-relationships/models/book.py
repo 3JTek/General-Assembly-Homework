@@ -18,7 +18,7 @@ class Book(db.Model, BaseModel):
 
 class BookSchema(ma.ModelSchema):
     author = fields.Nested('AuthorSchema')
-    series = fields.Nested('SeriesSchema')
+    series = fields.Nested('SeriesSchema', many=True)
 
     class Meta:
         model = Book
