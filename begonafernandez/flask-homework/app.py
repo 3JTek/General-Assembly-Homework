@@ -24,6 +24,9 @@ class BookSchema(ma.ModelSchema):
         model = Book
 
 
+
+
+
 @app.route('/books', methods=['GET'])
 def books_index():
     books = Book.query.all()
