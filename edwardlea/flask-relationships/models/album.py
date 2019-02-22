@@ -13,8 +13,10 @@ class Album(db.Model, BaseModel):
 
 class AlbumSchema(ma.ModelSchema, BaseSchema):
 
-    user = fields.Nested('UserSchema', exclude=('email', 'photos', 'albums', 'created_at', 'updated_at'))
-    photos = fields.Nested('PhotoSchema', exclude=('albums', 'user', 'created_at', 'updated_at'), many=True)
+    user = fields.Nested('UserSchema',
+    exclude=('email', 'photos', 'albums', 'created_at', 'updated_at'))
+    photos = fields.Nested('PhotoSchema',
+    exclude=('albums', 'user', 'created_at', 'updated_at'), many=True)
 
 
     class Meta:
