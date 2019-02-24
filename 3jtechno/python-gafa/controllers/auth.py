@@ -12,6 +12,7 @@ def register():
     if errors:
         return jsonify(errors), 422
 
+    #this function ".save" comes from the base.py
     user.save()
 
     return  jsonify({'message': 'Registration Successful'}), 201

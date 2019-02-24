@@ -1,6 +1,6 @@
-# lib/secure_route.py
 from functools import wraps
 import jwt
+#"g" is a global object accessible by python from anywhere
 from flask import request, jsonify, g
 from config.environment import secret
 from models.user import User
