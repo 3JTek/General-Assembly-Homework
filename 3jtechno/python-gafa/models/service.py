@@ -17,7 +17,7 @@ class Service(db.Model, Base):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
     type = db.Column(db.String(30), nullable=False)
-    corporation_id = db.Column(db.Integer, db.ForeignKey('corporations.id'))
+    corporation_id = db.Column(db.Integer, db.ForeignKey('corporations.id'), nullable=False)
 
     users = db.relationship('User', secondary=services_users, backref='services')
     corporation = db.relationship('Corporation', backref='services')
