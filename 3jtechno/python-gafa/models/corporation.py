@@ -14,7 +14,7 @@ class CorporationSchema(ma.ModelSchema):
 
     services = fields.Nested('ServiceSchema', many=True, exclude=('corporation', 'id'))
     users = fields.Nested('UserSchema', many=True)
-    
+
     class Meta:
         model = Corporation
         exclude = ('id',)

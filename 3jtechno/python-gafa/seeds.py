@@ -27,8 +27,10 @@ with app.app_context():
 
     db.session.commit()
 
-    whatsapp = Service(name='WhatsApp', type='messenging system', corporation=facebook, users=[jerem, charly])
-    instagram = Service(name='Instaram', type='social network', corporation=facebook, users=[linda])
+    whatsapp = Service(name='WhatsApp', type='messenging system',
+    corporation=facebook, users=[jerem, charly])
+    instagram = Service(name='Instaram', type='social network',
+    corporation=facebook, users=[linda])
     aws = Service(name='Amazon Web Services', type='hosting provider', corporation=amazon, users=[charly, linda, jerem])
     icloud = Service(name='iCloud', type='on the cloud data storage', corporation=apple, users=[charly])
 
