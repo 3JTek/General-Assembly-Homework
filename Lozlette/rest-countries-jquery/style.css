@@ -1,0 +1,22 @@
+
+
+img {
+  width: 160px;
+  height: 110px;
+  display: block;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.countries > div {
+  width: 20%;
+  border: 1px solid grey;
+  margin: 10px;
+  text-align: center;
+}

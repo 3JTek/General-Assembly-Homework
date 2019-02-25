@@ -1,0 +1,54 @@
+body {
+  font-family: Arial,Helvetica,freesans,sans-serif;
+}
+
+p {
+  font-size: 15px;
+}
+
+p, .subtitle, .title {
+  color: black;
+}
+
+.navbar-top, .navbar-bottom {
+  border-top: 1px solid rgba(18,18,18,0.2);
+  background-color: #ffd230;
+}
+
+.navbar-top, .navbar-brand {
+  height: 60px;
+}
+
+.navbar-menu {
+    height: 35px;
+}
+
+.navbar-item{
+  font-size: 15px;
+  color: #121212;
+  padding: 0 6px;
+}
+
+.section {
+  padding-top: 20px;
+}
+
+.column {
+  padding: .4em;
+}
+
+.up {
+  padding-bottom: 0;
+}
+
+.title {
+  font-size: 2.375rem;
+  font-weight: bold;
+}
+
+.subtitle, .sub{
+  font-weight: bold;
+}
+.navbar-start .navbar-item {
+  border-right: 1px solid rgba(18,18,18,0.2);
+}

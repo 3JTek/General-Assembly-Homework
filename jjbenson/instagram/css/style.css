@@ -1,0 +1,160 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+* {
+  margin:0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fafafa;
+  color: #999;
+}
+body, input {
+  font-family: 'Karla', sans-serif;
+}
+main {
+  overflow: auto;
+  max-width: 1178px;
+  margin:auto;
+  padding:30px 0;
+}
+button {
+  background-color: #3897f0;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  padding: 8px;
+  margin: 10px;
+  width: 85%;
+}
+.bold {
+  font-weight: 800;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.bold.account {
+  color: black;
+}
+main section {
+  float:left;
+  width:50%;
+  padding: 10px 0px;
+}
+main section > img {
+  position:absolute;
+  right:50%;
+  top:80px;
+}
+main section h1 {
+  display:none;
+}
+main section h2 {
+  margin:0;
+  padding:12px;
+  font-size: 18px;
+  width:80%;
+  margin: auto;
+}
+main section h3 {
+  margin:0;
+}
+main section > * {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+main section div {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+}
+main section form {
+  padding:10px;
+}
+main section form input {
+  width: 85%;
+  font-size: 18px;
+  margin:2px auto;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+main section form button  {
+  width: 85%;
+  margin:8px auto;
+}
+main section form p {
+  border:0px solid black;
+  width: 75%;
+  margin:4px auto;
+  padding-top: 14px;
+}
+main section div {
+  max-width: 350px;
+}
+main section div.no_box {
+  background-color: #fafafa;
+  border-width:0px;
+  overflow: auto;
+}
+main section div.center {
+  margin:0;
+  padding:0;
+  overflow: auto;
+}
+main section div.center span{
+  float:left;
+  width:50%;
+  margin:0;
+  padding:8px;
+}
+
+footer {
+  overflow: auto;
+  max-width: 1178px;
+  margin: auto;
+  padding: 40px;
+  font-size: 12px;
+}
+footer nav {
+  float: left;
+  color:#003569;
+}
+footer div {
+  float:right;
+}
+footer nav a {
+  margin:0 8px;
+}
+@media screen and (max-width: 992px) {
+  button {
+    width: calc(100% - 16px);
+  }
+  main section {
+    width:100%;
+  }
+  main section:first-child{
+    display:none;
+  }
+  main section img {
+    margin-top:15px;
+  }
+  main section form input {
+    width: 100%;
+  }
+  main section form button {
+    width: 100%;
+  }
+  footer {
+    text-align: center;
+    padding:4px;
+  }
+  footer div {
+    float:none;
+  }
+  footer nav {
+    float:none;
+  }
+}

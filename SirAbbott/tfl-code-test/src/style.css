@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Hammersmith One', sans-serif;
+}
+ header {
+   background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Underground.svg/1200px-Underground.svg.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+   height: 150px;
+   width: 150px;
+   margin: auto;
+   margin-top: 10px;
+ }
+
+body{
+  background: white;
+  margin: 0;
+  color: white;
+}
+
+.lines {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 20px;
+}
+
+div {
+  margin: 10px;
+}
+
+#piccadilly {
+  background: #2905a1;
+  border: 2px solid black;
+}
+
+#victoria {
+  background: #00a3e0;
+  border: 2px solid black;
+}
+
+#waterloo-city {
+  background: #7dd1b8;
+  border: 2px solid black;
+}
+
+#bakerloo {
+  background: #B36305;
+  border: 2px solid black;
+}
+
+#central {
+  background: #E32017;
+  border: 2px solid black;
+}
+
+#circle {
+  background: #FFD300;
+  border: 2px solid black;
+}
+
+#district {
+  background: #00782A;
+  border: 2px solid black;
+}
+
+#hammersmith-city {
+  background: #F3A9BB;
+  border: 2px solid black;
+}
+
+#jubilee {
+  background: #A0A5A9;
+  border: 2px solid black;
+}
+
+#metropolitan {
+  background: #9B0056;
+  border: 2px solid black;
+}
+
+#northern {
+  background: #000000;
+  border: 2px solid black;
+}

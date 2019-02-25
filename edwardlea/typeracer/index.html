@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Typo-Racer</title>
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="data.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Typo-Racer</h1>
+    <div class="score">
+      <div>
+        <p>Word Count</p>
+        <p class="word-count-box"></p>
+      </div>
+      <div>
+        <p>Words per Minute</p>
+        <p class="wpm-box"></p>
+      </div>
+      <div>
+        <p>Time Remaining</p>
+        <p class="count-down"></p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="sample-text-box" readonly>
+      Welcome to typo-racer!<br>
+      Type the text correctly before the timer runs out!<br>
+      Press play to begin!!!
+    </div>
+    <textarea class="input-text-box"></textarea>
+    <button class='play-button' autofocus>Play</button>
+  </main>
+</body>
+</html>
