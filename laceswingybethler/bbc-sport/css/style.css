@@ -1,2 +1,0 @@
-*{box-sizing:border-box}header{padding:0;margin-bottom:0;padding-bottom:0}header .navbar{flex-wrap:wrap}header .navbar .navbar-brand{flex-grow:1;width:100%}header .navbar .navbar-menu{border-top:1px solid black;margin:1px;padding:2px}header .navbar .navbar-menu a.navbar-item{border-right:1px solid black}header .navbar .navbar-menu a.navbar-item:hover{border-bottom:3px solid black}header .navbar .navbar-menu a.navbar-item:last-child{border-right:none}ho a{color:black}
-/*# sourceMappingURL=style.css.map */
