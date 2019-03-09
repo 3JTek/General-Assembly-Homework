@@ -3,7 +3,7 @@ import jwt
 from sqlalchemy.ext.hybrid import hybrid_property
 from app import db, ma, bcrypt
 from config.environment import secret
-from marshmallow import validates_schema, ValidationError, fields
+from marshmallow import validates_schema, ValidationError, fields, validate
 from models.base import Base
 
 class User(db.Model, Base):
@@ -31,7 +31,7 @@ class User(db.Model, Base):
             'iat': datetime.utcnow(),
             'sub': self.id
         }
-    
+
         token = jwt.encode(
             payload,
             secret,
@@ -49,7 +49,10 @@ class UserSchema(ma.ModelSchema):
                 'Password does not match password confimation'
             )
 
-    password = fields.String(required=True)
+    password = fields.String(
+    required=True,
+    validate=[validate.Length(min=8, max=50)]
+    )
     password_confirmation = fields.String(required=True)
 
     services = fields.Nested('ServiceSchema', many=True, exclude=('users',))

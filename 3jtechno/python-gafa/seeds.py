@@ -1,13 +1,26 @@
 from app import app, db
 from models.corporation import Corporation
 from models.service import Service
-from models.user import User
+from models.user import User, UserSchema
+
+user_schema = UserSchema()
 
 with app.app_context():
     db.drop_all()
     db.create_all()
 
-    jerem = User(username="jerem", email="jerem@gmail.com")
+    #Here we use the schema to handle the password & password_confirmation
+    # which does not exist as is in the db.
+    jerem, errors = user_schema.load({
+    'username': 'jerem',
+    'email': 'jerem@gmail.com',
+    'password': 'wdiwdiwdi',
+    'password_confirmation': 'wdiwdiwdi'
+    })
+
+    if errors:
+        raise Exception(errors)
+
     charly = User(username="charly", email="charly@gmail.com")
     linda = User(username="linda", email="linda@gmail.com")
 
@@ -28,7 +41,7 @@ with app.app_context():
     db.session.commit()
 
     whatsapp = Service(name='WhatsApp', type='messenging system',
-    corporation=facebook, users=[jerem, charly])
+    corporation=facebook, users=[jerem, charly], likes=[jerem])
     instagram = Service(name='Instaram', type='social network',
     corporation=facebook, users=[linda])
     aws = Service(name='Amazon Web Services', type='hosting provider', corporation=amazon, users=[charly, linda, jerem])
